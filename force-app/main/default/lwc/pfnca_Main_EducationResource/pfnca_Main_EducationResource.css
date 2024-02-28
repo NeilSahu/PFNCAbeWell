@@ -1,0 +1,256 @@
+:host {
+	--colr-primary: #008BA7;
+	--colr-primary-dark: #193A5A;
+	--colr-secondary-light: #FF9F37;
+	--colr-secondary-dark: #D77E0E;
+	--colr-tertiary: #7E964E;
+	--colr-light-gray: #DEE2E6;
+	--colr-medium-gray: #C6C6C6;
+	--colr-background: #F5F7F4;
+	--colr-black: #000000;
+	--colr-regular-font: #343a40;
+}
+
+h2 {
+	color: var(--colr-black);
+	font-size: 2.5rem;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Playfair Display';
+}
+
+h5 {
+	/* font-size: 1.25rem;
+	color: var(--colr-primary);
+	font-weight: bold; */
+}
+
+p {
+
+	
+font-family: "IBM Plex Sans";
+font-size: 18px;
+font-weight: normal;
+line-height: 24px;
+font-style: normal;
+text-align: center;
+color: #000000;
+opacity: 0.8;
+
+	/* position: relative;
+	width: 323px; */
+	/* height: 53px; */
+	/* font-size: 1rem;
+	text-align: center;
+	font: normal normal normal 18px/24px IBMPLEXSANS;
+	letter-spacing: 0px; */
+	/* color: #000000; */
+	/* opacity: 0.8;
+	color: var(--colr-regular-font); */
+	/* overflow: hidden;
+	height: 53px;
+	display: block;
+	text-overflow: ellipsis; */
+}
+
+.container {
+	padding: 4rem clamp(3rem, 6%, 6rem) 2rem clamp(3rem, 6%, 6rem);
+	display: flex;
+	flex-direction: column;
+	gap: 3rem 0;
+	align-items: center;
+}
+
+.main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* gap: 3rem; */
+	max-width: 88rem;
+
+}
+
+.card-box {
+	display: flex;
+	width: 100%;
+
+	/* flex-wrap: wrap; */
+}
+
+.resource-card-box {
+	gap: 3rem clamp(1.5rem, 4%, 3rem);
+}
+
+.resource-card {
+	width: 22%;
+}
+
+.story-card-box {
+	gap: 3rem clamp(1.5rem, 5%, 4rem);
+}
+
+.story-card {
+	width: 30%;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem 0;
+	text-align: center;
+	margin-top: 3rem;
+
+}
+
+
+
+.card img {
+	height: 13rem;
+	max-height: 12.5rem;
+	width: 100%;
+	aspect-ratio: 1.83/1;
+	object-fit: cover;
+	border-top-right-radius: 4rem;
+	border-bottom-left-radius: 4rem;
+}
+
+.card h5 {
+	font-family: "IBM Plex Sans";
+font-size: 22px;
+font-weight: bold;
+line-height: 28px;
+font-style: normal;
+text-align: center;
+color: #008ba7;
+text-transform: uppercase;
+
+	/* cursor: pointer;
+	user-select: none;
+	text-align: center;
+	font: normal normal bold 22px/28px IBMPLEXSANS;
+	letter-spacing: 0px;
+	color: #008BA7;
+	text-transform: uppercase;
+	opacity: 1; */
+}
+    /* cursor: pointer;
+    user-select: none;
+    text-align: center;
+    font: normal normal bold 22px/28px IBM PLEX SANS;
+    letter-spacing: 0px;
+    color: #008BA7;
+    text-transform: uppercase;
+    opacity: 1;
+    position: absolute;
+    width: 256.4px;
+    height: 86.4px;
+    transform: rotate(-1deg);
+    font-family: "IBM Plex Sans";
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 28px;
+    font-style: normal;
+    text-align: center;
+    color: #008ba7;  */
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px) {}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+
+	.card img {
+
+		border-top-right-radius: clamp(3rem, 6vw, 4rem);
+		border-bottom-left-radius: clamp(3rem, 6vw, 4rem);
+	}
+
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+	.container {
+		padding: 1rem 3rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	.resource-card-box {
+		gap: 3rem clamp(1.5rem, 8%, 3.2rem);
+	}
+
+	.resource-card {
+		width: 46%;
+	}
+
+	.story-card-box {
+		gap: 3rem clamp(1.5rem, 8%, 3.2rem);
+		flex-wrap: wrap;
+	}
+
+	.story-card {
+		width: 46%;
+	}
+
+	.get-started-text-box img {
+
+		width: 50%;
+		display: flex;
+		justify-content: center;
+
+		height: 29rem;
+		align-items: center;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: -3rem -3rem;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='200' width='200'%3E%3Ccircle cx='115' cy='115' r='70' stroke-width='1' fill='%23c3c4c391' /%3E%3Ccircle cx='115' cy='115' r='80' stroke-width='1' stroke='%23ffe3c6' fill='transparent' /%3E%3Ccircle cx='50' cy='65' r='40' stroke-width='1' fill='%23c3c4c391' /%3E%3C/svg%3E");
+	}
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+
+	.container {
+		padding: 1rem 1rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	.resource-card {
+		width: 100%;
+	}
+
+	.story-card {
+		width: 100%;
+	}
+
+	.card-box {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 320px) {
+
+	.container {
+		padding: 1rem 0.5rem;
+	}
+
+	h2 {
+		font-size: 1.5rem;
+	}
+
+	.resource-card {
+		width: 100%;
+	}
+
+	.story-card {
+		width: 100%;
+	}
+
+	.card-box {
+		display: block;
+	}
+}

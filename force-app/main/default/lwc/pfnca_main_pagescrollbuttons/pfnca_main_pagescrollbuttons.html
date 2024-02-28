@@ -1,0 +1,20 @@
+<template>
+	<div class="mainContainer">
+		<div if:true={isDivVisible}>
+
+			<button onclick={topFunction} class="topButton" title="More Options">
+                    <svg class="" aria-hidden="true" data-id="scrollup" xmlns="http://www.w3.org/2000/svg" width="45" height="45">
+                        <use href={uparrowURL}></use>
+                    </svg>
+            </button>
+		</div>
+        
+		<div if:true={isDivVisibleDown}>
+			<button onclick={DownFunction} class="downButton" title="More Options">
+                    <svg class="" aria-hidden="true" data-id="scrolldown" xmlns="http://www.w3.org/2000/svg" width="45" height="45">
+                        <use href={downarrowURL}></use>
+                    </svg>
+            </button>
+		</div>
+	</div>
+</template>

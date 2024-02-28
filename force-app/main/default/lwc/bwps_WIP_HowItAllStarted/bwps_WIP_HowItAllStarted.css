@@ -1,0 +1,612 @@
+.container {
+    width: 100% !important;
+    padding: 0rem;
+}
+
+.hias-text {
+    padding: 1rem 2rem 1rem 4rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='567.998' height='542' viewBox='0 0 567.998 542'%3E%3Cg id='Background_Circle_Graphic' transform='translate(10.998 -1523)'%3E%3Cg id='Ellipse_57' data-name='Ellipse 57' transform='translate(37 1558)' fill='none' stroke='%23ff9f37' stroke-width='1' opacity='0.19'%3E%3Cellipse cx='260' cy='253.5' rx='260' ry='253.5' stroke='none'/%3E%3Cellipse cx='260' cy='253.5' rx='259.5' ry='253' fill='none'/%3E%3C/g%3E%3Cpath id='Subtraction_9' data-name='Subtraction 9' d='M22776.5,11164a135.283,135.283,0,0,1-34.437-4.435,133.327,133.327,0,0,1-31.059-12.533v-226.064a133.242,133.242,0,0,1,31.059-12.533,136.108,136.108,0,0,1,61.141-1.794,132.991,132.991,0,0,1,66.99,35.435,131.439,131.439,0,0,1,16.18,19.239,129.03,129.03,0,0,1,12.215,22.083,127.944,127.944,0,0,1,0,101.205,129.03,129.03,0,0,1-12.215,22.083,131.987,131.987,0,0,1-35.791,35.113,133.135,133.135,0,0,1-47.379,19.561A136.005,136.005,0,0,1,22776.5,11164Z' transform='translate(-22722 -9381)' fill='rgba(245,247,244,0.59)' opacity='0.818'/%3E%3Cellipse id='Ellipse_56' data-name='Ellipse 56' cx='237.5' cy='233' rx='237.5' ry='233' transform='translate(59 1579)' fill='%23f5f7f4' opacity='0.818'/%3E%3C/g%3E%3C/svg%3E");
+background-repeat: no-repeat ;
+}
+.faqcontainer {
+    background: #fff 0% 0% no-repeat padding-box;
+    /* background: #F5F7F4 0% 0% no-repeat padding-box; */
+        padding: 4rem;
+}
+/* .faq {
+    margin-bottom: 22px;
+} */
+.question{
+font: normal normal bold 22px/90px IBM Plex Sans;
+}
+p.answer{
+    font: normal normal normal 20px/24px IBM Plex Sans;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    padding-left: 3rem;
+}
+.hias-heading {
+    /* color: #008ba7; */
+    font: normal normal 800 40px/86px Playfair Display;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    padding: 0rem 0rem 2rem;
+    /* margin-top: 2%; */
+}
+
+.hias-content {
+    font-size: 20px;
+    font-weight: 300;
+    width: 82%;
+}
+
+.hias-content p {
+    margin: 0rem 1rem 2rem;
+    text-align: left;
+    /* font: normal normal normal 22px/32px IBM Plex Sans; */
+    font-size: 20px;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 0.8;
+
+    }
+
+.hias-photo {
+    /* padding: 2rem; */
+    height: 100% !important;
+}
+
+.hias-photo-div {
+    text-align: center;
+}
+
+.hias-photo-div img {
+   border-radius: 160px 15px;
+    height: 100%;
+    width: 100%;
+    margin: 8rem auto;
+    border: 5px solid #F5F7F4;
+    box-shadow: 0px 5px 15px #00000026;
+}
+
+.Gallery-image img {
+    height: 8rem;
+    width: 8rem;
+    margin: 0.5rem 0.5rem;
+}
+
+.about-bewell {
+    padding: 1rem 4rem;
+}
+
+.hias-text-gallery {
+    padding: 2rem 3rem 1rem 1rem
+}
+
+.hias-heading-gallery {
+    font: normal normal 800 40px/52px Playfair Display;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    padding: 0rem 0rem 2rem;
+}
+
+.hias-content-gallery {
+    margin: 0rem 0rem 2rem 2rem;
+    text-align: left;
+    /* font: normal normal normal 22px/32px IBM Plex Sans; */
+    font-size: 22px;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 0.8;
+}
+
+.banner-slide {
+    width: 100%;
+    height: 470px;
+    z-index: 0;
+    background: #000;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%
+        /* background-size: cover;
+    background-position: 50% 50%; */
+}
+
+.banner-overlay {
+    position: absolute;
+    width: 71vw;
+    /* background: rgba(200, 200, 200, 0.2); */
+    left: -200px;
+    transform: skew(-24deg, 0deg);
+    background: rgba(255, 255, 255, 0.6);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    /* /* border: 1px solid rgba(255, 255, 255, 0.18); */
+}
+
+.banner-content {
+    margin-left: 18rem;
+    transform: skew(24deg, 0deg);
+    height: 470px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    /* /* z-index: 10; */
+}
+.box-blue-button {
+background-color: #008BA7;
+color: white;
+width: fit-content;
+height: auto;
+padding: 0.2rem;
+/* margin-left: 34.5rem; */
+border: 1px solid white;
+font-weight: 700;
+justify-content: left;
+cursor: pointer;
+}
+
+.blue-button {
+padding: 8px 1.1rem;
+margin: auto;
+background-color: #008BA7;
+color: white;
+border: 1px solid rgba(255, 255, 255, 0.5);
+letter-spacing: 1px;
+cursor: pointer;
+}
+.blue-button:hover{
+    background-color: #036477;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 0px 0px;
+}
+
+/* For Desktops: */
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 48%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 61.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+/* h1 {
+    color: white;
+    font-size: 36px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 5px;
+    line-height: 58px;
+}
+
+p {
+    color: white;
+    font-size: 24px;
+    line-height: 38px;
+}
+
+a.button {
+    padding: 18px 50px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    background: #F39C12;
+    text-decoration: none;
+}
+
+a:hover {
+    background: darken(#F39C12, 10%);
+} */
+
+
+
+/* -------------------FAQ--------------------- */
+
+
+.hr-line:after {
+    content: " ";
+    display: block;
+    border-bottom: 2px solid black;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.c-question{
+    display: flex;
+    justify-content: space-between;
+    margin-block: 3.5rem;
+    cursor: pointer;
+}
+
+.hias-content.faq{
+    width: 100%;
+}
+
+details[open] summary ~ * {
+    animation: open 0.5s ease-in-out;
+    /* width: 72rem; */
+    color: #343A40;
+    font: normal normal normal 20px/26px IBMPlexSans;
+    
+
+  }
+  
+  @keyframes open {
+    0% {
+      opacity: 2s;
+    }
+    100% {
+      opacity: 2s;
+    }
+  }
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  details summary {
+    width: 100%;
+    /* padding: 1.7rem 0; */
+    font-family: IBMPlexSans;
+  padding: 0rem 3rem 1.7rem 0rem;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    list-style: none;
+    color: #008ba7; 
+
+    border-bottom: 1px solid #70707036;
+  }
+  
+  details summary:after {
+    content: " ";
+    /* color: #008BA7; */
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    right: 0;
+    top: 1rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='93' height='93' viewBox='0 0 93 93'%3E%3Cdefs%3E%3Cfilter id='Bounding_Box' x='0' y='0' width='93' height='93' filterUnits='userSpaceOnUse'%3E%3CfeOffset dy='5' input='SourceAlpha'/%3E%3CfeGaussianBlur stdDeviation='7.5' result='blur'/%3E%3CfeFlood flood-opacity='0.149'/%3E%3CfeComposite operator='in' in2='blur'/%3E%3CfeComposite in='SourceGraphic'/%3E%3C/filter%3E%3C/defs%3E%3Cg id='Expand' transform='translate(22.5 17.5)'%3E%3Cg transform='matrix(1, 0, 0, 1, -22.5, -17.5)' filter='url(%23Bounding_Box)'%3E%3Cg id='Bounding_Box-2' data-name='Bounding Box' transform='translate(22.5 17.5)' fill='%23f5f7f4' stroke='%23c6c6c6' stroke-width='1'%3E%3Crect width='48' height='48' rx='6' stroke='none'/%3E%3Crect x='0.5' y='0.5' width='47' height='47' rx='5.5' fill='none'/%3E%3C/g%3E%3C/g%3E%3Cpath id='close' d='M24.886,25.987l-5.8,5.8a.756.756,0,0,1-.565.227.8.8,0,0,1-.567-1.359l5.8-5.8-5.8-5.8a.756.756,0,0,1-.227-.565.776.776,0,0,1,.794-.794.756.756,0,0,1,.565.227l5.8,5.8,5.8-5.8a.794.794,0,0,1,1.359.567.756.756,0,0,1-.227.565l-5.8,5.8,5.8,5.8a.8.8,0,0,1-1.132,1.132Z' transform='translate(24.734 -10.744) rotate(45)' fill='%231a395a' stroke='%23193a5a' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-size: 3rem;
+    background-repeat: no-repeat;
+    font-size: 22px;
+
+    
+  }
+  details[open] summary:after {
+    content: "";
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='93' height='93' viewBox='0 0 93 93'%3E%3Cdefs%3E%3Cfilter id='Bounding_Box' x='0' y='0' width='93' height='93' filterUnits='userSpaceOnUse'%3E%3CfeOffset dy='5' input='SourceAlpha'/%3E%3CfeGaussianBlur stdDeviation='7.5' result='blur'/%3E%3CfeFlood flood-opacity='0.149'/%3E%3CfeComposite operator='in' in2='blur'/%3E%3CfeComposite in='SourceGraphic'/%3E%3C/filter%3E%3C/defs%3E%3Cg id='Collapse' transform='translate(22.5 17.5)'%3E%3Cg transform='matrix(1, 0, 0, 1, -22.5, -17.5)' filter='url(%23Bounding_Box)'%3E%3Cg id='Bounding_Box-2' data-name='Bounding Box' transform='translate(22.5 17.5)' fill='%23f5f7f4' stroke='%23c6c6c6' stroke-width='1'%3E%3Crect width='48' height='48' rx='6' stroke='none'/%3E%3Crect x='0.5' y='0.5' width='47' height='47' rx='5.5' fill='none'/%3E%3C/g%3E%3C/g%3E%3Cline id='Line_221' data-name='Line 221' x1='19.5' transform='translate(14.5 24.426)' fill='none' stroke='%23193a5a' stroke-linecap='round' stroke-width='2.5'/%3E%3C/g%3E%3C/svg%3E");
+
+  }
+  details[open] summary {
+    padding: 0rem 3rem 0rem 0rem;
+    /* color: #41677e; */
+    /* font-size: 20px; */
+    border-bottom: 0px solid #d4ebec;
+    color: #343A40;
+  }
+  
+  details summary {
+    outline: 0;
+    /* font-size: 20px;
+    width: 72rem; */
+    
+  }
+  details p {
+    font-size: 0.95rem;
+    margin: 0 0 2.5rem;
+    padding-inline: 1.5rem;
+  }
+  details div:after{
+    content: " ";
+    display: block;
+    border-bottom: 2px solid #dedfde;
+  }
+
+/* --------------------------------------------- */
+@media only screen and (max-width: 1200px) and (min-width: 1024px) {
+    .banner-overlay {
+        width: 80vw;
+    }
+
+    .banner-content {
+        margin-left: 30%;
+    }
+    .hias-content{
+        column-count: 2;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .col-8 {
+       width: 59rem;
+    }
+    .hias-photo-div img{
+        margin: 1rem 20rem;
+    }
+    .about-bewell {
+        padding: 5rem 4rem;
+    }
+    details summary {
+       width: auto;
+    }
+    details[open] summary ~ * {
+        width: auto;
+     }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .banner-overlay {
+        width: 80vw;
+    }
+    .col-8 {
+       width: 57rem;
+    }
+    .col-6{
+        width: 47%;
+        margin-left: 3%;
+    }
+    .banner-content {
+        margin-left: 42%;
+    }
+    .hias-content{
+        column-count: 2;
+    }
+    .hias-photo{
+        padding: 0rem 4rem;
+        width: 53rem;
+    }
+    .about-bewell {
+        padding: 3rem 1.5rem;
+    }
+    .hias-content.participate{
+        column-count: 1;
+    }
+    .hias-content.faq{
+            column-count: 1;
+        }
+    .question {
+        font: normal normal bold 19px/36px IBM Plex Sans;
+        white-space: nowrap;
+    }
+    details[open] summary {
+        font-size: 15px;
+        width: auto;
+    }
+    /* details summary{
+        font-size: 15px;
+        white-space: normal;
+        width: 33rem;
+    }
+    details[open] summary ~ *{
+        width: 31rem;
+        font-size: 15px;
+        white-space: normal;
+    } */
+    details summary {
+       width: auto;
+       font-size: 15px;
+    }
+    details[open] summary ~ * {
+        width: auto;
+        font-size: 15px;
+     }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+    .col-4 {
+        width: 100%;
+    }
+    .banner-overlay {
+        width: 100%;
+        border-radius: 0px;
+        transform: skew(0deg, 0deg);
+        left: 0px;
+    }
+    .hias-content{
+        margin: 0rem 0rem 0rem 1rem;
+        width: auto;
+    }
+    .hias-text {
+        padding: 2rem 0rem 0rem 0rem;
+    }
+    .hias-content-gallery{
+        margin: 0px auto;
+    }
+    .banner-content {
+        margin-left: 0px;
+        transform: skew(0deg, 0deg);
+        text-align: center;
+        align-items: center;
+    }
+    .hias-heading{
+        /* font: normal normal 800 31px/86px Playfair Display; */
+        white-space: nowrap;
+        padding: 1rem 1rem 1rem;
+    }
+    .hias-text-gallery {
+        padding: 0rem 1rem 3rem 1rem;
+    }
+    .col-8{
+        width: 91.66%;
+    }
+    /* .hias-photo-div{
+        width: 18rem;
+   } */
+   .hias-photo-div img{
+        margin: 0rem auto;
+    }
+    .col-6 {
+        width: auto;
+    }
+    .about-bewell{
+        padding: 2rem 1rem;
+    }
+    details[open] summary {
+        font-size: 15px;
+        white-space: normal;
+    }
+    details summary{
+        font-size: 15px;
+        white-space: normal;
+        width: auto;
+        /* font: normal normal 800 15px/49px Playfair Display; */
+    }
+    details[open] summary ~ *{
+        width: auto;
+        font-size: 15px;
+        white-space: normal;
+    }
+    .faqcontainer {
+      padding: 0px ;
+    }
+    /* .container p{
+        width: 19rem;
+    } */
+    .hias-content.faq{
+        padding: 0rem;
+        margin: 0px auto;
+    }
+    .hias-content.participate{
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .col-4 {
+        width: 100%;
+    }
+    .banner-overlay {
+        width: 100%;
+        border-radius: 0px;
+        transform: skew(0deg, 0deg);
+        left: 0px;
+    }
+    .hias-content{
+        margin: 0rem 0rem 0rem 1rem;
+        width: auto;
+    }
+    .hias-text {
+        padding: 2rem 0rem 0rem 0rem;
+    }
+    .hias-content-gallery{
+        margin: 0px auto;
+    }
+    .banner-content {
+        margin-left: 0px;
+        transform: skew(0deg, 0deg);
+        text-align: center;
+        align-items: center;
+    }
+    .hias-heading{
+        /* font: normal normal 800 31px/86px Playfair Display; */
+        white-space: nowrap;
+        padding: 1rem 1rem 1rem;
+    }
+    .hias-text-gallery {
+        padding: 0rem 1rem 3rem 1rem;
+    }
+    .col-8{
+        width: 91.66%;
+    }
+    /* .hias-photo-div{
+        width: 18rem;
+   } */
+   .hias-photo-div img{
+        margin: 0rem auto;
+    }
+    .col-6 {
+        width: auto;
+    }
+    .about-bewell{
+        padding: 2rem 1rem;
+    }
+    details[open] summary {
+        font-size: 15px;
+        white-space: normal;
+    }
+    details summary{
+        font-size: 15px;
+        white-space: normal;
+        width: auto;
+        font: normal normal 800 15px/49px Playfair Display;
+    }
+    details[open] summary ~ *{
+        width: auto;
+        font-size: 15px;
+        white-space: normal;
+    }
+    .faqcontainer {
+      padding: 0px ;
+    }
+    /* .container p{
+        width: 19rem;
+    } */
+    .hias-content.faq{
+        padding: 0rem;
+        margin: 0px auto;
+    }
+    .hias-content.participate{
+        margin: 0px;
+    }
+}
+
+
+
+
+
+/* grid - system */
+.row::after {
+    content: "";
+    width: 100%;
+    clear: both !important;
+    display: table !important;
+}

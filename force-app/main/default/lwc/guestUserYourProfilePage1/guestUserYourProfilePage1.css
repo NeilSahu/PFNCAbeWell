@@ -1,0 +1,294 @@
+.Master-container
+{
+	background-color: #f5f7f4;
+}
+.PersonalInformation
+{
+	width: auto;
+	height: auto;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.PersonalInformationDiv2 > .BasicInfo
+{
+	display: flex;
+}
+.PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv
+{
+	width: 50%;
+}
+.PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv > input
+{
+	width: 80%;
+	border:2px solid #008ba7;
+    border-radius: 10px;
+    height: 3rem;
+    margin: 1%;
+    font-size: 1.1rem;
+}
+.ContactInformation
+{
+	width: auto;
+	height: auto;
+	margin-top: 3%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+p
+{
+	color: #088ca4;
+}
+.ContactInformationDiv2
+{
+	display: flex;
+	flex-direction: column;
+}
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo
+{
+	display: flex;
+}
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv
+{
+	width: 50%
+} 
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1
+{
+	width: 50%
+} 
+
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input
+{
+	width: 78%;
+	border:2px solid #008ba7;
+    border-radius: 10px;
+    height: 3rem;
+    margin: 1%;
+    font-size: 1.1rem;
+} 
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 >input
+{
+	width: 85%;
+	border:2px solid #008ba7;
+    border-radius: 10px;
+    height: 3rem;
+    margin: 1%;
+    font-size: 1.1rem;
+} 
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > .select 
+{
+	width: 67%;
+    border-radius: 10px;
+    height: 3rem;
+    margin: 1%;
+    font-size: 1.1rem;
+} 
+.EmergencyContactInfo
+{
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 3%;
+}
+.select > select:nth-of-type(1) {
+        font: inherit;
+        border: 2px solid #008ba7;
+        width: 100%;
+        height: 3rem;
+        border-radius: 10px;
+        font-size: 1rem;
+        margin-left: 0%;
+  }
+.EmergencyContactInfo > .EmergencyContactInfoDiv1 > p
+{
+	color: #008ba7;
+}
+.EmergencyContactInfo > .EmergencyContactInfoDiv2 
+{
+	display: flex;
+}
+.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv 
+{
+	width: 50%;
+}
+.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv > input
+{
+	width: 80%;
+	border:2px solid #008ba7;
+    border-radius: 10px;
+    height: 3rem;
+    font-size: 1.1rem;
+}
+.SocialMediaInfo
+{
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 3%;
+}
+/* h6
+{
+	color: red;
+} */
+.SocialMediaInfoInnerDiv
+{
+	display: flex;
+}
+.SocialMediaInfoInnerDiv > .SocialMediaInfoInnerDiv2
+{
+	/* background-color: #f3dedc; */
+	width: 21%;
+	text-align: center;
+	display: none;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 480px)
+{
+	.PersonalInformationDiv2 > .BasicInfo{
+		width: 100%;
+		display: block;
+	}
+	.PersonalInformation > .PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv{
+		width: 100%;
+	}
+	.PersonalInformation > .PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input{
+		width: 100%;
+		border: 1.8px solid #008ba7;
+		margin: 0%;
+	}
+	.ContactInformationDiv2 {
+        display: block;
+    } 
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo {
+		display: block;
+        width: 100%;
+    }
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv{
+        width: 100%;
+    }
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input {
+        width: 100%;
+		border: 1.8px solid #008ba7;
+		margin: 0%;
+    }
+
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1
+	{
+		width: 100%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > input
+	{
+		width: 100%;
+		border: 1.8px solid #008ba7;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > .select
+	{
+		width: 100%;
+	}
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv {
+       width: 100%;
+    }
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv  > input {
+       width: 100%;
+	   border: 1.8px solid #008ba7;
+	   margin: 0%;
+    } 
+	.SocialMediaInfoInnerDiv
+	{
+		display: block;
+	}
+	.SocialMediaInfoInnerDiv > .SocialMediaInfoInnerDiv2
+	{
+		width: 58%;
+	}
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 {
+       display: block
+	}
+}
+@media only screen and (min-width: 480px) and (max-width: 768px)
+{
+	.PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv > input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 >input 
+    {
+		width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation> .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > .select {
+        width: 84%;
+	}
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv > input
+	{
+		width: 90%;
+		margin: 0%;
+	}
+	.SocialMediaInfoInnerDiv > .SocialMediaInfoInnerDiv2
+	{
+		width: 36%;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+	.PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv > input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 >input 
+    {
+		width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation> .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > .select {
+        width: 84%;
+	}
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv > input
+	{
+		width: 90%;
+		margin: 0%;
+	}
+	.SocialMediaInfoInnerDiv > .SocialMediaInfoInnerDiv2
+	{
+		width: 32%;
+	}
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px)
+{
+	.PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv > input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 >input 
+    {
+		width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation> .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > .select {
+        width: 84%;
+	}
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv > input
+	{
+		width: 90%;
+		margin: 0%;
+	}
+	.SocialMediaInfoInnerDiv > .SocialMediaInfoInnerDiv2
+	{
+		width: 32%;
+	}
+}

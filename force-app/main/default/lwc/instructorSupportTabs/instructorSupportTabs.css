@@ -1,0 +1,131 @@
+.dummy {
+	color: black;
+}
+
+.container {
+	background-color: #193a5a;
+	border: 1px solid white;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 4rem;
+	overflow: hidden;
+	overflow-x: auto;
+}
+
+.containerTabs {
+	width: max-content;
+	margin: auto;
+	display: flex;
+}
+
+.container div {
+	width: max-content;
+	min-width: max-content;
+}
+
+.Resources {
+	margin-right: 45px;
+}
+
+.Resources p {
+	margin: 16px 0px 16px;
+	color: white;
+}
+
+.Resources hr {
+	color: #ff9f37;
+	background-color: #ff9f37;
+	margin: 0px;
+	height: 9px;
+}
+
+
+.Faqs {
+	margin-right: 45px;
+	cursor: pointer;
+}
+
+.Faqs p {
+	margin: 16px 0px 16px;
+	color: white;
+}
+
+.Faqs hr {
+	color: #ff9f37;
+	background-color: #ff9f37;
+	margin: 0px;
+	height: 9px;
+}
+
+
+.contact p {
+	margin: 16px 0px 16px;
+	color: white;
+	cursor: pointer;
+}
+
+.contact hr {
+	color: #ff9f37;
+	background-color: #ff9f37;
+	margin: 0px;
+	height: 9px;
+}
+
+
+@media only screen and (max-width: 750px) {
+	.Faqs {
+		margin-right: 40px;
+	}
+}
+
+@media only screen and (max-width: 728px) {
+	.Faqs {
+		margin-right: 30px;
+	}
+}
+
+@media only screen and (max-width: 688px) {
+	.container {
+		height: 5.5rem;
+	}
+}
+
+@media only screen and (max-width: 467px) {
+	.Faqs {
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 446px) {
+	.Faqs {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (max-width: 428px) {
+	.Faqs {
+		font-size: 13px;
+		margin-right: 20px;
+	}
+}
+
+@media only screen and (max-width: 376px) {
+	.Faqs {
+		font-size: 11px;
+		margin-right: 17px;
+		margin-left: 5px;
+	}
+}
+
+@media only screen and (max-width: 368px) {
+
+	/* .Faqs{
+		font-size: 11px;
+    	margin-right: 17px;
+    	margin-left: 5px;
+	} */
+	.container {
+		height: 4.9rem;
+	}
+}

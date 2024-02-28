@@ -1,0 +1,55 @@
+<template>
+    <div class="Master-Container">
+        <div class="DetailInfo">
+            <div class="Information">
+            <div class="InformationHeader">
+                <p>HOW DID YOU FIRST LEARN ABOUT BE WELL PARKINSON'S?</p>
+            </div>
+            <div class="BasicQuestions">
+                <div class="InnerDiv">
+                    <lightning-radio-group class="RadioButton" name="radioGroup" options={options} value={value} type="radio"></lightning-radio-group><br> <br><br>
+                </div>
+                <div class="InnerDiv2">
+                    <lightning-radio-group class="RadioButton" name="radioGroup" options={options1} value={value} type="radio"></lightning-radio-group>
+                </div>
+            </div>
+        </div>
+        <div class='TherapistInfo'>
+            <div class="Header">
+                <p>IF YOU ARE REFFERED BY A HEALTH CARE PROFESSION SUCH AS A PHYSICIAN, OR A THERAPIST(PHYSICAL,OCCUPATIONAL OR SPEECH),PLEASE TELL US THEIR...</p><br>
+            </div>
+            <div class="Detail">
+                <div class="DetailDiv1">
+                    <label>Name</label><br>
+                    <input type="text" placeholder="  Maddy Zimmer"></input><br>
+                    <label>State</label>
+                    <div class="select">
+                            <select s data-id="month_drop">
+                                <option value="none" selected disabled hidden>Select State</option>
+                                <option value='1'>Rajasthan</option>
+                                <option value='2'>Maharashtra</option>
+                                <option value='3'>Arunachal Pradesh</option>
+                                <option value='4'>Andhra Pradesh</option>
+                                <option value='5'>Bihar</option>
+                                <option value='6'>Chattisgarh</option>
+                                <option value='7'>Goa</option>
+                                <option value='8'>Gujarat</option>
+                                <option value='9'>Haryana</option>
+                                <option value='10'>Jammu & Kashmir</option>
+                                <option value='11'>Jharkhand</option>
+                                <option value='12'>Kerela</option>
+                            </select>
+                        </div>
+                </div>
+                <div class="DetailDiv2">
+                    <label>City</label><br>
+                    <input type="text" placeholder="   Bloomfield"></input><br>
+                    <label>Email Address</label><br>
+                    <input type="text" placeholder="   mzimmmer@gmail.com"></input>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    </div>
+</template>

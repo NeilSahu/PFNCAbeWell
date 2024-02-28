@@ -1,0 +1,157 @@
+<template>
+	<!-- <c-bwps_-w-i-p_-dynamic-hero title="How It Works" img-url={heroImage} isbutton="true" buttontext="GET GUEST PASS">
+	</c-bwps_-w-i-p_-dynamic-hero> -->
+	<c-pfnca_-main_-dynamic-hero title="How It Works" img-url={heroImage} isbutton="true" buttontext="GET GUEST PASS"></c-pfnca_-main_-dynamic-hero>
+
+	<div>
+		<div class="row">
+			<div class="column">
+				<div class="card-content-parent">
+					<div class="txt-container-width">
+						<div class="card-heading">
+							<div class="sub-card-heading">How to Participate</div>
+						</div>
+						<div class="card-content">
+							<p>Don’t let the technology overwhelm you. The online classes are easy to join and
+								participate. Please see the video tutorial about how it works and download the
+								Step-by-step Guide to assist you when you need it.</p>
+						</div>
+					</div>
+					<div class='btn-container-width'>
+						<div class="step-margin">
+							<a style="color: #448ba7;" class="span-content" href=#><img class="span-style"
+									src={downloadIcon}>
+								STEP-BY-STEP-GUIDE</a>
+						</div>	
+						<div class="btn-container margin-buttons">
+							<a href={handleLiveClassScheduleClick}>
+								<div class="box-blue-button">
+									<button class="blue-button">LIVE CLASS SCHEDULE</button>
+								</div>
+							</a>
+							<a if:false={VALID_USER} href={handleGetStartedClick}>
+								<div class="box-white-button">
+									<button class="white-button">GET STARTED</button>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<hr class="card-line">
+			</div>
+			<div class="column" style={participateBackground}>
+				<div class="image-background">
+					<div class="icon-position">
+						<img style="filter: grayscale(0.8); width :7rem; height:auto;" src={butterfly}>
+					</div>
+					<div class="centered">Online classes are easy to participate in</div>
+					<div class="button-position">
+						<div class="box-blue-button-white-border">
+							<button class="blue-button" data-vimeoid={howToParticipateResourceId}
+								data-status='howtoparticipate' onclick={iframeHandler}>WATCH THE VIDEO</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<div class="card-content-parent">
+					<div class="txt-container-width">
+						<div class="card-heading">
+							<div class="sub-card-heading"> Live Classes </div>
+						</div>
+						<div class="card-content">
+							<p>PFNCA provides about 30 wellness classes live online each week focusing on exercise and
+								voice strengthening.
+							</p>
+							<p style="color:#EAA273;margin-top: 2rem;"> Add CTA text about: Join our community and start
+								enjoying the classes today. .
+							</p>
+						</div>
+					</div>
+					<div class="btn-container-width">
+						<div class="btn-container margin-buttons">
+							<a href={handleLiveClassScheduleClick}>
+								<div class="box-blue-button">
+									<button class="blue-button">LIVE CLASS SCHEDULE</button>
+								</div>
+							</a>
+							<a if:false={VALID_USER} href={handleGetStartedClick}>
+
+								<div class="box-white-button">
+									<button class="white-button">GET STARTED</button>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<hr class="card-line">
+			</div>
+			<div class="column" style={liveClassBackground}>
+				<div class="image-background">
+					<div class="icon-position">
+						<img style="filter: grayscale(0.8); width :7rem; height:auto;" src={butterfly}>
+					</div>
+					<div class="centered">What are the live classes</div>
+					<div class="button-position">
+						<div class="box-blue-button-white-border">
+							<button class="blue-button" data-vimeoid={liveClassesResourceId} data-status='liveclasses'
+								onclick={iframeHandler}>WATCH THE VIDEO</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="column">
+				<div class="card-content-parent">
+					<div class="txt-container-width">
+						<div class="card-heading">
+							<div class="sub-card-heading">Classes on Demand</div>
+						</div>
+						<div class="card-content">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+								ut labore et dolore magna aliqua.
+							</p>
+						</div>
+					</div>
+					<div class="btn-container-width">
+						<div class="btn-container margin-buttons">
+							<a href={handleClassOnDemandClick}>
+
+								<div class="box-blue-button">
+									<button class="blue-button">CLASSES ON DEMAND</button>
+								</div>
+							</a>
+							<a if:false={VALID_USER} href={handleGetStartedClick}>
+								<div class="box-white-button">
+									<button class="white-button">GET STARTED</button>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column" style={classesOnDemandBackground}>
+				<div class="image-background">
+					<div class="icon-position">
+						<img style="filter: grayscale(0.8); width :7rem; height:auto;" src={butterfly}>
+					</div>
+					<div class="centered">Explore a taste of our classes</div>
+					<div class="button-position">
+						<div class="box-blue-button-white-border">
+							<button class="blue-button" data-vimeoid={classesOnDemandResourceId} data-status='ondemand'
+								onclick={iframeHandler}>WATCH THE VIDEO</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<c-bwps_-contact-form_works></c-bwps_-contact-form_works>
+	<c-bwps_-w-i-p_-review-slider></c-bwps_-w-i-p_-review-slider>
+	<c-stay-connected-footer></c-stay-connected-footer>
+
+
+</template>

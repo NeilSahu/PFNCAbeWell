@@ -1,0 +1,74 @@
+<template>
+	<div class="SettingUI">
+		<form action="" data-id="form">
+			<div class="profile_form">
+				<div class="basicInfo">
+
+					<div class="input-box half-width">
+						<label>First Name</label>
+						<input name="FirstName" class="enable-input" type="text" data-id="FirstName" value={FirstName}
+                            title={infoTitle} disabled={inputDisabled}></input>
+						<!-- value={data.LastName} -->
+					</div>
+					<div class="input-box half-width">
+						<label>Last Name</label>
+						<input name="LastName" class="enable-input" type="text" data-id="LastName" value={LastName}
+                            title={infoTitle} disabled={inputDisabled}></input>
+
+					</div>
+
+					<div class="input-box">
+						<label>Phone Number</label>
+						<input type="phone" class="enable-input" name="Phone" placeholder="123 456 789" value={phone}
+                        data-id="PhoneNo" title={infoTitle} disabled={inputDisabled}></input>
+					</div>
+
+					<div class="input-box">
+						<label>Email Address</label>
+						<input name="Email" class="enable-input" type="email" value={email} title={infoTitle} disabled={inputDisabled}></input>
+					</div>
+					<div class="input-box">
+						<label>Street Address</label>
+						<input name="Street" class="enable-input" type="text" value={address} title={infoTitle} disabled={inputDisabled}></input>
+					</div>
+					<div class="input-box">
+						<label>Apartment, suite, etc.</label>
+						<input name="Apartment, suite, etc." class="enable-input" type="text" value={apartmentSuiteEtc} title={infoTitle} disabled={inputDisabled}></input>
+					</div>
+					<div class="input-box half-width">
+						<label>City</label>
+						<input name="City" class="enable-input" type="text" value={city} title={infoTitle} disabled={inputDisabled}></input>
+					</div>
+
+					<div class="input-box half-width">
+						<label>State</label>
+						<input name="State" class="enable-input" type="text" value={state} title={infoTitle} disabled={inputDisabled}></input>
+					</div>
+
+				
+
+				<div class="input-box half-width">
+					<label>ZIP / Postal Code</label>
+					<input name="PostalCode" class="enable-input" type="text" value={ZipPostalCode} title={infoTitle} disabled={inputDisabled}></input>
+				</div>
+                
+				<div class="input-box half-width">
+					<label>country</label>
+					<input name="Country" class="enable-input" type="text" value={country} title={infoTitle} disabled={inputDisabled}></input>
+				</div>
+
+
+
+
+			</div>
+	</div>
+	</form>
+	<div class="edit-submit-button-box">
+		<button class="edit-submit-button" data-id="Profile-edit" onclick={handleEditSubmitButtonClick} >
+                    {editSubmitButtonText}
+                </button>
+	</div>
+
+	</div>
+	<c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

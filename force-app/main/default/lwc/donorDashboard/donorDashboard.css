@@ -1,0 +1,215 @@
+.heading-color {
+    color: #0090AA;
+}
+
+.ThankYouModal{
+    text-align: center;
+    font-size: 36px;
+    background-color: #f5f7f4;
+}
+.donation-heading{
+    margin: 1.5rem 0.5rem;
+}
+.madalRecuringForm
+{
+    margin: 0 auto;
+    width: 55%;
+    max-width: 42rem;
+    min-width: 20rem;
+}
+
+.heading h1{
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 6rem 2rem 1rem 2.5rem;
+}
+
+.heading-font1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box-button {
+    background-color: #ff9f37;
+    color: white;
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem;
+}
+
+.orange-button {
+    padding: 0.5rem 2rem;
+    margin: auto;
+    background-color: #ff9f37;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+}
+
+.align-text {
+    text-align: center !important;
+}
+.recurring-donation {
+    padding-top: 4rem;
+    margin: 0rem 2rem;
+    font-weight: 900;
+}
+
+.donation-box {
+    width: 100%;
+    height: 12rem;
+    border-radius: 15px;
+    background-color: #f5f7f4;
+}
+
+.donation-box-center {
+    width: 30%;
+  /*  text-align: center;*/
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+}
+
+.donation-box .box-button {
+    width: fit-content;
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.donation-box-text {
+    margin-bottom: 7px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.donation-box-text p{
+    font-weight: 500;
+}
+
+.donation-box .box-button .donation-button {
+    padding: 0.5rem 2rem;
+    margin: 0.2rem;
+    background-color: #ff9f37;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* @media only screen and (max-width: 1024px) and (min-width:768px ){
+
+    .donation-box .box-button{
+        width: 12rem;
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .donation-box{
+        width: 100%!important;
+    }
+
+    .donation-box-center{
+        width: 62%;
+    }
+
+    .donation-box .box-button{
+        margin-top: 2rem;
+    }
+
+    .heading h1{
+        font-size: 2rem;
+        font-weight: 900;
+        margin: 6rem 2rem 1rem 2.5rem;
+    }
+
+    .donation-heading{
+        margin: 1.5rem 0.5rem;
+    }
+
+    .recurring-donation{
+        margin: 0rem 2rem;
+    }
+}
+
+@media only screen and (max-width: 480px) and (min-width:320px){
+    .heading h1{
+        font-size: 2rem;
+        font-weight: 900;
+        margin: 6rem 2rem 1rem 2.5rem;
+    }
+
+    .donation-heading h4{
+        font-size: 0.8rem;
+        margin-left: -3rem;
+    }
+
+    .recurring-donation{
+        padding-top: 2rem;
+    }
+
+    .donation-box{
+        margin-left: -4rem;
+        width: 19.5rem;
+    }
+
+    .donation-box-center{
+        width: 81%;
+    }
+
+    .donation-box-text{
+        margin-bottom: 51px;
+    }
+
+    .donation-box .box-button{
+        width: 9.5rem;
+        font-size: 8px;
+    }
+} */
+@media only screen and (max-width: 1024px) and (min-width:768px ){
+    .donation-box .box-button{
+        width: 12rem;
+        font-size: 11px;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .donation-box{
+        width: 100%!important;
+    }
+    .donation-box-center{
+        width: 62%;
+    }
+    .donation-box .box-button{
+        margin-top: 2rem;
+    }
+    .donation-heading{
+        margin-left: 1rem;
+    }
+    .recurring-donation{
+        margin: 0rem 2rem;
+    }
+}
+@media only screen and (max-width: 480px) and (min-width:320px){
+    .heading h1{
+        font-size: 1.3rem;
+    }
+    .donation-heading h4{
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+    }
+    .recurring-donation{
+        padding-top: 2rem;
+    }
+    .donation-box{
+        margin-left: 0rem;
+        width: 17.5rem;
+    }
+    .donation-box-center{
+        width: 81%;
+    }
+    .donation-box-text{
+        margin-bottom: 51px;
+    }
+    .donation-box .box-button{
+        width: 9.5rem;
+        font-size: 8px;
+    }
+}

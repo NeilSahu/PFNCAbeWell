@@ -1,0 +1,49 @@
+<template>
+    <div>
+        <div>
+            <div class="headerContianer">
+                <div class="innerHeadingClass">
+                    <div class="NotificationHeading"><span>Notifications</span></div>
+                    <div class="totalNotificationClass"><span>You have {totalNotifications} notifications</span></div>
+                </div>
+                <div class="bellIconClass"><img src={bellIcon} class="bellImageClass"></div>
+            </div>
+            <div>
+                <div class="notificationCardHeadingContainer">
+                    <div>{totalNotifications} Notifications</div>
+                    <div class="notificationInnerHeading">
+                        <div class="checkContainer"><lightning-icon onclick={notificationMarkread} class="checkClass" icon-name="utility:check" alternative-text="Utility check" title="Check"></lightning-icon><span class="markClass" onclick={notificationMarkread}>Mark all as read</span></div>
+                        <!-- <div><lightning-icon class="clearClass" icon-name="utility:clear" alternative-text="Utility clear" title="Clear"></lightning-icon><span class="clearAllClass">Clear All</span></div> -->
+                    </div>
+                </div>
+                <div class="notificationCardContainer">
+                    <template if:false={isEmpty} for:each={totalRecords} for:item="notify" for:index="index">
+                        <div key={notify.id} class="notifyCardClass">
+                            <div class="notifyCardHeaderClass">
+                               <div class="cardHeadingClass">
+                                 <!-- status icon -->
+                                 <div class={notify.ButtonColor}></div>
+                                 <!-- name and active time-->
+                                 <div>
+                                     <div class="nameClass"> <span>{notify.Name}</span></div>
+                                     <div class="timeClass"> <span>{notify.Active__c}</span> </div>
+                                 </div>
+                               </div>
+                                <!-- profile picture -->
+                                <div class="profileClass">
+                                    <img src={notify.image} alt="not found" class="profilePictureClass">
+                                </div>
+                            </div>
+                            <div class="messageClass"><span>{notify.Message__c}</span></div>
+                        </div>
+                    </template>
+                    <div if:true={isEmpty} class="emptyContainer">
+                        <span>
+                            You don't have notification.
+                        </span>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,91 @@
+.slds-fade-in-open{
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* .slds-modal__header {
+    border-radius: 1rem 1rem 0rem 0rem;
+} */
+
+.slds-p-around_large{
+    overflow-y: auto;
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+.slds-icon_small {
+    fill:(255,255,255,0.8);
+}
+.slds-modal__header {
+    border: none;
+    padding: 0px;
+}
+
+
+.flexfooter{
+background-color: rgba(0,139,167,255);
+width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.flecfooterchild{
+    width: 30%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.EMAILbtndiv{
+    padding: 5px;
+    width: 50%;
+    background: #ff9f37;
+    MARGIN: 0 auto
+}
+.EMAILbtn{
+    font-family: Arial; 
+    color: white;
+    border:1px solid rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    padding: 6px;
+    background: #ff9f37;
+    width: 100%;
+    text-decoration: none;
+}
+.Change-color-of-icon {
+   color: white;
+}
+@media screen and (max-width: 810px){
+    .flecfooterchild{
+        width: 50%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+}
+
+
+@media screen and (max-width: 500px){
+    .flecfooterchild{
+        width: 70%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+}
+@media screen and (max-width: 320px){
+    .flecfooterchild{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 1rem;
+    }
+
+}

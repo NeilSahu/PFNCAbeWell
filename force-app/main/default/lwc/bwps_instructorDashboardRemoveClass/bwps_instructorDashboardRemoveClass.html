@@ -1,0 +1,39 @@
+<template>
+    <!-- <button onclick={donateClickHandler}>click to open</button> -->
+    <div if:true={showModal} data-id='form-modal' class="form-overlay">
+        <div class="card-placement">
+            <div class="cross" onclick={off}>X</div>
+            <div class="card">
+                <div class="card-heading">
+                    <h3>SELECT CLASSES YOU WANT TO REMOVE</h3>
+                </div>
+                <template for:each={sclass} for:item="cls">
+                    <div class="all-checkboxes" key={cls.Id} >
+                        <input class="Check-box" onchange={getDataRemoveClasses} type="checkbox" data-id={cls.Id} >
+                        <label for={cls.ID}> {cls.Name}</label><br>
+                    </div>
+                </template>
+                <div class="remove-class" >
+                    <div class="box-orange-button">
+                        <button class="orange-button" onclick={deleteButton}> DELETE
+                         </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div if:true={conformDelete} data-id='form-conform-delete' class="form-overlay">
+         <div class="delete-box card-placement">
+          <div class="cross" onclick={offDelete}>X</div>
+          <div class="card">
+              <h1>Are you sure you want to remove?</h1>
+              <div class="remove-class" >
+                  <div class="box-orange-button">
+                    <button class="orange-button" onclick={conformForDelete}> REMOVE
+                     </button>
+                   </div>
+             </div>
+          </div>
+         </div>
+    </div>
+</template>

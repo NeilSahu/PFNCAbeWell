@@ -1,0 +1,81 @@
+<template>
+
+	<div class="container-header">
+
+		<div class="Achievement-details">
+			<template if:true={showAch}>
+				<div class="Achievement-details-BatchesEarnedNumber-popup-wrapper">
+					<div class="Achievement-details-BatchesEarnedNumber-popup-wrapper-container">
+						<!-- <div onclick={handleHideAch} style="cursor:pointer" class="Achievement-details-close">
+							Close <div class="hide-button"><span>X</span></div>
+					
+						</div> -->
+						<div class="Achievement-details-close">
+							<div onclick={handleHideAch}>
+								<span>Close</span>
+								<img src={close}>
+							</div>
+						</div>
+
+						<h1>EARN ACHIEVEMENTS</h1>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+							labore et dolore magna aliqua. <br><br>
+							Ut enim ad minim veniam quis exercitation ullamca laboris nisi ut aliquip ex ea commodo
+							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+							fugiat nulla pariatur. Excepteur sint occaecat cupidatat npn proident,sunt in culpa qui
+							offcia deserunt mollit anim id est laborum.
+						</p>
+
+					</div>
+				</div>
+			</template>
+			<div class="Achievement-details-BatchesEarned">
+				<div class="Achievement-details-BatchesEarnedNumber">
+					<h3>Achievements</h3>
+				</div>
+				<div class="Achievement-details-BatchesEarnedNumber">
+					<p onclick={handleShowAch}>HOW TO EARN ACHIEVEMENTS?</p>
+
+				</div>
+			</div>
+			<div class="Achievement-details-Badges">
+				<br><br>
+
+				<div class="wrapper">
+					<lightning-layout multiple-rows="true">
+						<template if:false={AchievementDetails.length}>
+							<p class="blank-block">You Have No Achievements</p>
+						</template>
+						<template if:true={AchievementDetails}>
+							<template for:each={AchievementDetails} for:item="res">
+
+								<lightning-layout-item key={res.id} class="layout">
+
+
+									<div class="">
+										<img src={badge1} class="container-box-img">
+									</div>
+
+									<div>
+										<h1 class="">{res.Badge}</h1>
+									</div>
+									<!-- <div class="wrapper-div">
+
+									<p class="Image-num"> {res.Points__c}+</p> <br><br> <br>
+                            </div>
+									<span class="image-name">
+                                        {res.Name}
+                                </span> -->
+
+
+								</lightning-layout-item>
+							</template>
+						</template>
+					</lightning-layout>
+				</div>
+				<br><br>
+			</div>
+		</div>
+	</div>
+</template>

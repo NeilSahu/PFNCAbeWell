@@ -1,0 +1,316 @@
+/* navigation bar */
+.nav {
+    width: 100% !important;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:100;
+}
+.leftlink {
+    float: left;
+}
+.nav .header-logo {
+    float: left;
+    padding: 0.5rem 3rem 0.5rem 3.5rem;
+}
+
+.nav>.nav-btn {
+    display: none;
+}
+.nav>.nav-links {
+    display: inline;
+    font-size: 18px;
+}
+.rightlink {
+    float: right !important;
+    padding-top: 5px;
+}
+.nav>.nav-links>a {
+    display: inline-block;
+    padding: 26px 10px 13px 10px;/*top 33 to 26*/
+    text-decoration: none;
+    color: #000000b7;
+}
+.homeNav{
+  padding-top: 33px !important;
+}
+/* .nav >.nav-links>a:hover {
+    background-color: rgba(237, 237, 237, 0.746);
+} */
+/* .nav>.nav-check {
+    display: none;
+} */
+.box-button {
+    background-color: #ff9f37;
+    color: white;
+    height: auto;
+    padding: 0.2rem;
+}
+.box-blue-button {
+    background-color: #008CA7;
+    color: white;
+    width: fit-content;
+    height: 3rem;
+    padding: 0.2rem;
+}
+.box-blue-button:hover{
+    background-color: #036477;
+}
+.blue-button {
+    padding: 0.4rem 1.4rem;
+    margin: auto;
+    background-color: #008CA7;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.blue-button:hover{
+    background-color: #036477;
+}
+.orange-button {
+    padding: 0.5rem 2rem;
+    margin: auto;
+    background-color: #ff9f37;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.disable-btn{
+    padding: 0.4rem 1.4rem;
+    margin: auto;
+    background-color: #C6C6C6;
+    color: white;
+    border: 1px solid #F5F7F4;
+}
+.disable-btn-box{
+    background-color: #C6C6C6;
+    color: white;
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem;
+}
+.shadow-bottom {
+    box-shadow: 0 5px 5px -7px #333;
+}
+.profilecontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: right !important;
+    /* padding-top: 5px; */
+    padding: 26px 56px 13px 10px;
+    
+}
+
+.profilecontainer > div{
+    cursor: pointer;
+}
+
+.mainProfileMenuContainerBox{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+}
+
+.m-donate-link, .m-dashboard-link{
+    display: none;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 560px){
+
+    .rightlink.dashboard-link{
+        display: none !important;
+    }
+    .m-dashboard-link{
+        display: block;
+    }
+   
+}
+@media only screen and (max-width: 560px){
+
+    .rightlink.dashboard-link{
+        display: none !important;
+    }
+    .rightlink.donate-link{
+        display: none !important;
+    }
+
+    .m-donate-link, .m-dashboard-link{
+        display: block;
+    }
+
+    .profilecontainer{
+        padding-right: 1rem;
+    }
+
+    .nav .header-logo{
+        padding-left: 1rem;
+    }
+
+}
+
+@media (max-width:810px) {
+    /* .nav {
+        width: 100% !important;
+        background-color: #ffffff;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 1.1rem;
+    }
+    .nav>.nav-btn>label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    } */
+    /* .nav>.nav-btn>label:hover,
+    .nav .nav-check:checked~.nav-btn>label {
+        background-color: rgba(255, 255, 255, 1);
+    } */
+    /* .nav>.nav-btn>label>span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+    .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #fff;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 5.8rem;
+        left: 0rem;
+    }
+    .nav-links>.rightlink>.box-button {
+        width: fit-content;
+    }
+    .nav-links>.rightlink>.box-blue-button {
+        width:fit-content;
+    }
+    .nav>.nav-links>a {
+        display: block;
+        width: 100%;
+    }
+    .resp-header-link {
+        margin-left: 0.45rem;
+        margin-bottom: 1rem;
+    }
+    .rightlink {
+        float: none !important;
+    } */
+    /* .nav>.nav-check:not(:checked)~.nav-links {
+        height: 0px;
+    } */
+    /* .nav>.nav-check:checked~.nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    } */
+
+    /* .profilecontainer{
+        padding-right: 10px;
+    } */
+}
+
+/* Profile Menu Container CSS */
+.mainProfileMenuContainer{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    margin-top: 5%;
+}
+.mainContainer{
+    padding: 0% 0%;
+    width: 14rem;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 1.5rem 2rem 2rem rgb(0 20 45 / 8%);
+    margin: 1rem;
+    margin-right: 3rem;
+}
+.buttonContainer{
+    /* display: flex;
+    justify-content: end;
+    align-items: center; */
+}
+.buttonInnerClass{
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: #008BA7;
+    /* width: 7rem; */
+}
+.buttonOutterClass{
+    border: 1px solid #008BA7;
+    padding: 1px;
+    background-color: #008BA7;
+    width: fit-content;
+}
+.headerContainer{
+    display: flex;
+    margin-top: 2%;
+}
+.nameClass{
+    margin-left: 5%;
+    color: #04b8c7;
+    font-weight: 600;
+}
+
+.lineClass{
+    width: 85%;
+    height: 2px;
+    background-color: #12b8ed;
+    margin: 3% 0px;
+}
+.profileImage{
+    width: 30px;
+    height: 30px;
+}
+.profileImage img{
+    border-radius: 16px;
+}
+.menuItemClass{
+    cursor: pointer;
+}
+.profileItem{
+    margin: 4% 0%;
+}
+
+.profileItem a:hover{
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+}
+
+.btnClass{
+    border: none;
+    background-color: #008BA7;
+    color: white;
+    font-size: 1rem;
+    white-space: nowrap;
+    /* font-weight: 600; */
+    width: 100%;
+}
+
+.buttonInnerClass :hover{
+    background-color: #036477;
+}
+/* @media only screen and (min-width:768px ) and (max-width:1024px ){
+    .mainProfileMenuContainer{
+        margin-top: -51%;
+    }
+} */

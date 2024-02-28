@@ -1,0 +1,218 @@
+@font-face {
+    font-family: PlayfairDisplay;
+    src: url(/resource/PlayfairDisplayFont);
+}
+
+.container {
+    width: 100% !important;
+}
+
+.slds-col_padded,
+.slds-col--padded {
+    padding: 0rem !important;
+}
+.imageClass{
+    aspect-ratio:16/9;
+}
+.bg-image {
+    filter: blur(1px);
+    height: 32rem;
+    width: 100%;
+    background:linear-gradient(
+          rgba(0, 0, 0, 0.7), 
+          rgba(0, 0, 0, 0.7)
+        );
+}
+
+.text-section {
+    position: absolute;
+    color: #f2f2f2;
+    font-size: 15px;
+    /* margin: 0px auto 10rem; */
+    width: fit-content;
+    text-align: center;
+    left: 50%;
+    /* right: 44%; */
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.heading-text {
+    /* font-size: 3rem;
+    font-weight: 700;
+    font-family: PlayfairDisplay;
+    margin:0px auto 1rem;
+    width: fit-content;
+    color: #f2f2f2; */
+    margin: 0px auto 2rem;
+    width: fit-content;
+    font: normal normal 900 60px/76px Playfair Display;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+.description-text{
+
+    /* text-align: center;
+    font-weight: 500;
+    font-size: 1.375rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    opacity: 1;
+    width: 28rem; */
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 28rem;
+    font: normal normal normal 22px/32px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+
+   
+}
+.box-blue-button {
+    background-color: #008BA7;
+    color: white;
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem;
+    margin: 0px auto;
+}
+.blue-button {
+    /* padding: 0.5rem 1rem;
+    margin: auto;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    background-color: #008bA7;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5); */
+    padding: 0.5rem 1rem;
+    margin: auto;
+    background-color: #008bA7;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font: normal normal normal 18px/24px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+}
+.blue-button:hover{
+    background-color: #036477;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    text-decoration: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.slideNumbers {
+    font-size: 12px;
+    position: absolute;
+    padding: 8px 12px;
+    top: 0;
+    color: #f2f2f2;
+}
+.dotes{
+    bottom: 1rem;
+    right: 47%;
+    position: absolute;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #bbb;
+    margin: 0 2px;
+    display: inline-block;
+}
+
+.active,
+.dot:hover {
+    background-color: #008BA7;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+    .dotes{
+       right: 45%;
+   }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    .dotes{
+       right: 45%;
+   }
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .container img {
+        width: 100%;
+        height: 29rem;
+        object-fit: cover;
+   }
+   .dotes{
+       right: 44%;
+   }
+    .heading-text {
+    font-size: 2.8125rem;
+   }
+
+}
+@media only screen and (max-width: 480px) and (min-width: 0px){
+    .container img {
+        width: 100%;
+        height: 29rem;
+        object-fit: cover;
+   }
+   .heading-text {
+    font-size: 2rem;
+   }
+   .description-text {
+     width: 18rem;
+   }
+   .dotes{
+       right: 40%;
+   }
+
+   .description-text{
+       font-size: 1rem;
+       
+   }
+}

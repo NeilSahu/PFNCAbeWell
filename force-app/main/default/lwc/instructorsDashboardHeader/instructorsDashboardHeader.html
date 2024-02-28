@@ -1,0 +1,257 @@
+<template>
+    <div class="nav shadow-bottom">
+        <input type="checkbox" id="nav-check" class="nav-check">
+        <div class="header-logo">
+            <a href="/PFNCADNA/s/instructordashboardtodayclasses"><img src={Header_logo} height="70" width="140"
+                    alt="LOGO"> </a>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+        <div class="nav-links ">
+            <div class="rightlink mobileViewClass">
+                <div class="leftlink" onclick={showProfileOptions}>
+                    <img src={profileImg} height="26px" width="35px" alt=""
+                        style="max-width: 100%; height: auto;margin-right: 5px;padding: 2px;border-radius: 18px;">
+                    <div style="margin: 0.2rem 0rem 0rem;float: right !important;padding-top: 7px;">Profile</div>
+                </div>
+                <template if:true={profileOptions}>
+                    <div class="profileOptionsOverlay" onclick={showProfileOptions}></div>
+                    <div class="profileOptions">
+                        <div class="userName"><span>{userFirstName}</span></div>
+                        <ul>
+                            <!-- <li><a href="/PFNCADNA/s/instructordashboardform"
+                                    class="profileNavigation">Account Setting</a></li> -->
+                            <li><a onclick={showProfileMenuMethod} class="profileNavigation">Account Setting</a></li>
+                            <li><a href="/PFNCADNA/s/instructoragreement" class="profileNavigation">Instructor
+                                    Agreement</a></li>
+                            <li><a href="/PFNCADNA/s/instructordashboard" class="profileNavigation">Calendar</a></li>
+                        </ul>
+                        <a href={logoutLink}>
+                            <div class="buttonInnerClass"><button class="btnClass">LOG OUT</button></div>
+                        </a>
+
+                    </div>
+                </template>
+            </div>
+
+
+            <a href="/PFNCADNA/s/instructordashboardtodayclasses" class="rightlink dashboardBtn"
+                style="padding: 18px 10px 13px 5px !important;" data-id="dis-btn-link">
+                <div class="box-blue-button" data-id="MyDBBtnBox">
+                    <button class="blue-button" data-id="MyDBBtn"> MY DASHBOARD</button>
+                </div>
+            </a>
+            <a class="rightlink" onclick={showNotifications}>
+                <div style="position:relative;">
+                    <img class="bellicon" src={bellIcon}>
+                    <template if:true={notificationCountVisibility}>
+                        <div class="notificationCount"><span>{notificationCount}</span></div>
+                    </template>
+                </div>
+            </a>
+
+            <!-- <a href="/PFNCADNA/s/instructordashboard" class="leftlink resp-header-link  homeNav " target="_self">HOMEPAGE</a>  -->
+            <div class="headerTabs">
+                <!-- <a href="/PFNCADNA/s/instructordashboard" data-id="1"
+                    class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                    <span class="menuItemClass">CALENDAR</span>
+                </a> -->
+                <a href="/PFNCADNA/s/instructorclassroom" data-id="2"
+                    class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                    <span class="menuItemClass">MY CLASSROOM</span>
+                </a>
+                <!-- <a href="/PFNCADNA/s/instructorstaffroom"  data-id="3" class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                <span class="menuItemClass">STAFF ROOM</span>
+            </a> -->
+                <!-- <a href="/PFNCADNA/s/instructorresourcespage" data-id="4"
+                    class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                    <span class="menuItemClass">RESOURCES</span>
+                </a> -->
+                <a href="/PFNCADNA/s/yournotes" data-id="5" class="leftlink resp-header-link  homeNav anchorLinkClass"
+                    target="_self">
+                    <span class="menuItemClass">NOTES</span>
+                </a>
+                <a href="/PFNCADNA/s/instructorsupporttabs" data-id="6"
+                    class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                    <span class="menuItemClass">SUPPORT</span>
+                </a>
+                <a href="/PFNCADNA/s/instructorreferralprogram" data-id="7"
+                    class="leftlink resp-header-link  homeNav anchorLinkClass" target="_self">
+                    <!-- <span class="menuItemClass">REFERRAL PROGRAM</span> -->
+                    <span class="menuItemClass">REFERRAL</span>
+                </a>
+            </div>
+
+
+            <!-- <div class="leftlink resp-header-link  homeNav anchorLinkClass" style="display:flex;padding-left: 1%;">
+                <img class="bellicon" src={bellIcon} onclick={showNotifications}>
+                <a href="/PFNCADNA/s/instructordashboardtodayclasses" class="rightlink" data-id="dis-btn-link" >
+                    <div class="box-blue-button" data-id="MyDBBtnBox">
+                        <button class="blue-button"  data-id="MyDBBtn"> MY DASHBOARD</button>
+                    </div>
+                </a>
+             
+            </div> -->
+            <!-- <div class="leftlink resp-header-link  homeNav anchorLinkClass" style="display:flex;margin:-10.8px 1rem;width: 9%; justify-content: center;">
+                <a  style="   color: rgb(0, 140, 167);">
+                    <div class="leftlink menuItemClass"><img src={profileImg} onclick={showProfileMenuMethod} height="26px" width="45px" alt="" ></div>
+                    <div class="leftlink menuItemClass name" onclick={showProfileMenuMethod} style="margin: 0.6rem 0rem;">{userFirstName}</div>
+                </a>
+            </div> -->
+            <!-- <a href="/PFNCADNA/s/donationpage" class="rightlink anchorLinkClass">
+                <div class="box-button">
+                    <button class="orange-button" >DONATE</button>
+                </div>
+            </a> -->
+        </div>
+
+        <div if:true={showProfileMenu} class="mainProfileMenuContainer">
+            <div class="mainContainer">
+                <!-- LOGOUT Button -->
+                <!-- <div class="buttonContainer">
+                    <div class="buttonOutterClass">
+                        <div class="buttonInnerClass">
+                            <button class="btnClass">LOG OUT</button>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Profile Details -->
+                <div class="profileContainer">
+                    <div class="headerContainer">
+                        <div class="profileImage"><img src={profileImg}></div>
+                        <div class="nameClass"><span>{userName}</span></div>
+                    </div>
+                    <div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod}
+                                data-name="Achievements">Achievements</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod}
+                                data-name="Class History">Class History</span></div>
+                    </div>
+                    <div class="lineClass"></div>
+                    <div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod}
+                                data-name="Account Settings">Account Settings</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod}
+                                data-name="Profile Survey">Profile Survey</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod}
+                                data-name="Payment Method">Payment Method</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod}
+                                data-name="Payment History">Payment History</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod}
+                                data-name="Waiver">Waiver</span></div>
+                    </div>
+                    <div class="lineClass"></div>
+                    <div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod}
+                                data-name="Support">Support</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod}
+                                data-name="Notifications">Notifications</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <template if:true={mobileHeaderMenuOptions}>
+            <div class="mobileHeaderMenuOptions">
+                <div class="mobileHeaderMenuOptionsHeader">
+                    <a href="/PFNCADNA/s/instructordashboardtodayclasses"><img src={img_Home} alt=""
+                            style="padding: 10px;"></a>
+                    <img src={img_Close} alt="" style="width: 65px;padding: 5px 0px 0px;cursor: pointer;"
+                        onclick={showMobileHeaderMenuOptions}>
+                </div>
+                <div class="mobileHeaderMenuOptionsTabs">
+                    <div class="mobileHeaderMenuOptionsSingleTab">
+                        <a href="/PFNCADNA/s/instructorclassroom">
+                            <div class="mobileHeaderMenuOptionsSingleTabImage">
+                                <img src={classroomIcon} alt="">
+                            </div>
+                            <p class="mobileHeaderMenuOptionsSingleTabText">MY CLASSROOM</p>
+                        </a>
+                    </div>
+                    <!-- <div class="mobileHeaderMenuOptionsSingleTab">
+                        <a href="/PFNCADNA/s/instructorresourcespage">
+                            <div class="mobileHeaderMenuOptionsSingleTabImage">
+                                <img src={ResourcesIcon} alt="">
+                            </div>
+                            <p class="mobileHeaderMenuOptionsSingleTabText">Resources</p>
+                        </a>
+                    </div> -->
+                    <div class="mobileHeaderMenuOptionsSingleTab">
+                        <a href="/PFNCADNA/s/instructorsupporttabs">
+                            <div class="mobileHeaderMenuOptionsSingleTabImage">
+                                <img src={SupportIcon} alt="">
+                            </div>
+                            <p class="mobileHeaderMenuOptionsSingleTabText">SUPPORT</p>
+                        </a>
+                    </div>
+                    <div class="mobileHeaderMenuOptionsSingleTab">
+                        <a href="/PFNCADNA/s/instructorreferralprogram">
+                            <div class="mobileHeaderMenuOptionsSingleTabImage">
+                                <img src={ReferralIcon} alt="">
+                            </div>
+                            <p class="mobileHeaderMenuOptionsSingleTabText">REFERRAL </p>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div class="searchSite">Search Site</div> -->
+                <div class="box-blue-button logout" data-id="MyDBBtnBox">
+                    <a href={logoutLink}>
+                        <button class="blue-button" data-id="MyDBBtn"> LOG OUT</button>
+                    </a>
+                </div>
+            </div>
+        </template>
+        <div class="mobileHeaderBottomActions">
+            <div class="mobileHeaderBottomActionsTabs">
+
+                <div class="mobileHeaderBottomActionsSingleTab" onclick={showMobileHeaderMenuOptions}
+                    style="cursor: pointer;">
+                    <div class="tabImage">
+                        <img src={menuIcon} alt="">
+                    </div>
+                    <p class="tabText">Menu</p>
+                </div>
+                <a href="/PFNCADNA/s/instructordashboard">
+                    <div class="mobileHeaderBottomActionsSingleTab">
+                        <div class="tabImage">
+                            <img src={calendarIcon} alt="">
+                        </div>
+                        <p class="tabText">Calendar</p>
+                    </div>
+                </a>
+                <a href="/PFNCADNA/s/instructorclassroom">
+                    <div class="mobileHeaderBottomActionsSingleTab">
+                        <div class="tabImage">
+                            <img src={classesIcon} alt="">
+                        </div>
+                        <p class="tabText">Classes</p>
+                    </div>
+                </a>
+                <a href="/PFNCADNA/s/yournotes">
+                    <div class="mobileHeaderBottomActionsSingleTab">
+                        <div class="tabImage">
+                            <img src={notesIcon} alt="">
+                        </div>
+                        <p class="tabText">Notes</p>
+                    </div>
+                </a>
+                <a href="/PFNCADNA/s/instructordashboardtodayclasses">
+                    <div class="mobileHeaderBottomActionsSingleTab">
+                        <div class="tabImage">
+                            <img src={dashboardIcon} alt="">
+                        </div>
+                        <p class="tabText">Dashboard</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="notificationClass" if:true={showNotificationFlag}>
+        <c-instructor-notifications ongetclosebutton={handleClose}></c-instructor-notifications>
+    </div>
+</template>

@@ -1,0 +1,589 @@
+/***************************ifrem UI****************/
+.ifrem-container{
+    width: 98%;
+    height: 90%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 2rem Auto;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    top: 3rem;
+}
+.ifrem-container > span{
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+.ifrem-container > iframe {
+    width: 80%;
+    height: 90%;
+}
+
+ /***************************ifrem UI****************/
+.Weakcontainer{
+  margin-top:30px;
+  display: flex;
+  flex-direction: column;
+  /* -ms-flex-align: center; */
+}
+.time-show{
+    display: flex;
+    flex-direction: column;
+    width: 7rem;
+}
+.time-show > .time {
+    height: 6rem;
+    width: 100%;
+    padding: 36px 6px;
+}
+.time-show > :nth-child(9){
+    border-bottom: 1px solid rgb(197, 195, 195);
+}
+.time-show > :nth-child(1){
+    border-top: 1px solid rgb(197, 195, 195);
+}
+.time-show > .time > span {
+    margin: auto;
+}
+.weak-show{
+    width: 80%;
+    margin: auto;
+}
+.forExtra-space{
+    width: 7rem ;
+}
+.day {
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.day > li {
+    width: 14.25%;
+    text-align: center;
+}
+
+.Weak-day{
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    font-size: 1.1rem;
+}
+.Weak-day > .date{
+  margin: auto;
+  width: 14.2857%;
+  height: 2rem;
+  text-align: center;
+ }
+ /* .Weak-day > .date > span{
+    margin-left: 50%;
+ } */
+ .event-box{
+    width: 100%;
+    position: relative;
+ }
+ .event-box .chid-child {
+    width: 14.2857%;
+    height: 6rem;
+    border: 1px solid rgb(197, 195, 195);
+    float: left;
+    padding: 0.3rem;
+    position: relative;
+ }
+
+ .triangle-up {
+	width: 0;
+	height: 0;
+	border-left: 14px solid transparent;
+	border-right: 14px solid transparent;
+	border-bottom: 28px solid #7e964e;
+    margin: auto;
+}
+
+.event-parent-box {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+}
+
+.full-block{
+    width: 100% ;
+    background-color: #008ba7;
+    color: white;
+    /* margin: 0 !important; */
+    height: 100% ;
+    border-top-left-radius: 21px;
+    padding: 0.8rem ;
+}
+.full-block > p{
+    height: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.half-block-up{
+    width: 96%;
+    height: 48%;
+    position: absolute;
+    border-top-left-radius: 22px;
+    background-color: #008ba7;
+    color: white;
+    top: 3px ;
+    right: 3px;
+    padding: 0.2rem 1rem;
+    overflow: hidden;
+  
+}
+.half-block-up > p{
+    height: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+}
+.half-block-down{
+    width: 96%;
+    height: 56%;
+    position: absolute;
+    border-top-left-radius: 22px;
+    background-color: #008ba7;
+    color: white;
+    bottom: 3px ;
+    right: 3px;
+    padding: 0.2rem 1rem;
+}
+.preventClicks{
+    pointer-events: none;
+}
+.half-block-down > p{
+    height: max-content;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+}
+/*********************************************** Event Card UI css*******************************************************/
+.time-details{
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    background: #008BA7 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 3px 6px #343a4091;
+    color: white;
+    height: 1.5rem;
+    display: flex;
+    padding: 0px 5px;
+    align-items: center;
+}
+.eventCard{
+    position: absolute;
+    display: none;
+    z-index: 90;
+    height:max-content;
+    width: 25rem;
+    box-shadow: 1px 6px 10px 1px #e5e5e5;
+    background-color: white;
+    padding: 4px;
+}
+.imgContainer{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 13rem;
+    position: relative;
+}
+.hide-button{
+    width: 21px;
+    text-align: center;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 91%;
+    position: absolute;
+    top: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.instructor-info-Container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 93%;
+    margin: 0px auto;
+    padding: 22px 0px;
+    height: 2rem;
+    border-bottom: 2px solid rgb(184, 179, 179);
+}
+.instructor-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.instructor-info > span{
+    margin-left: 7px;
+}
+.class-intencity{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.class-intencity > img{
+   height: 31px;
+   width: 31px;
+}
+.class-intencity > span{
+    margin-left: 7px;
+}
+.class-name{
+    width: 90%;
+    margin: 0px auto;
+    font-weight: bold;
+    padding: 8px 0px;
+}
+.class-detail{
+    width: 90%;
+    margin: 0px auto;
+    font-size: 0.9rem;
+    padding: 11px 0px;
+    color: #807575;
+}
+.class-detail > p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+} 
+.card-footer-buttons{
+    padding: 12px 0px;
+    display: flex;
+    align-items: center;
+    width: 92%;
+    margin: 0px auto;
+}
+.share-buttons{
+    width: 22%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.share-buttons  img {
+    width: 40px;
+}
+.action-buttons{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    font-size: 1rem;
+}
+.action-buttons > span{
+    font-size: 0.9rem;
+}
+.box-orange-button {
+    background-color: #008BA7;
+    color: white;
+    padding: 0.2rem;
+    width: fit-content;
+    height: fit-content;
+    /* width: 14rem; */
+
+}
+.btnDisabled{
+    background-color: gray !important;
+    pointer-events: none !important;
+}
+.box-orange-button > .orange-button {
+    background-color: inherit;
+    pointer-events: inherit;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin: auto;
+    align-items: center;
+    display: flex;
+    width: fit-content;
+    min-width: 4rem;
+    justify-content: center;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+    }
+/*********************************************** Event Card UI css end*******************************************************/
+
+
+/***************<<<<<<<<Media Queries>>>>>>>>**********************/
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+    .half-block-up{
+        font-size: 12px;
+    }
+    .half-block-down{
+        font-size: 12px;
+    }
+    .full-block{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+      /***    event card ui****/
+      .eventCard{
+        width: 21rem;
+    }
+    .imgContainer{
+        height: 11rem;
+    }
+    .instructor-info-Container{
+        width: 96%;
+    }
+    .class-name{
+        width: 96%;
+    }
+    .class-detail{
+    width: 96%;
+    }
+    .card-footer-buttons{
+        width: 97%;
+    }
+    .action-buttons{
+        width: 74%;
+        margin-left: 7px;
+    }
+      /***    event card ui****/
+} 
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .weak-show {
+        width: 90%;
+    }
+   /* .day > li {
+       padding-left: 3.9%;
+} */
+.event-parent-box {
+    width: 90%;
+    margin-bottom: 4px;
+}
+.time-show{
+    width: 5rem;
+}
+.time-show > .time > span {
+    font-size: 14px;
+}
+.forExtra-space {
+    width: 5.1rem;
+}
+.Weak-day{
+    height: 3rem;
+    font-size: 1.1rem;
+}
+/* .Weak-day > .date {
+    height: 80%;
+} */
+/* .Weak-day > .date > span {
+    margin-left: 38%;
+} */
+.event-box .chid-child{
+   border-top: none;
+   border-bottom: none;
+   height: 3rem;
+}
+.triangle-up {
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 20px solid #7e964e;
+    /* margin-left: 35%; */
+}
+.time-show > .time{
+    height: 3rem;
+    padding: 12px 6px;
+}
+.time-show > :nth-child(1){
+    border-top: none;
+}
+.time-show > :nth-child(9){
+    border-bottom: none;
+}
+.half-block-up  > p {
+ display: none;
+}
+.half-block-down  > p {
+    display: none;
+   }
+   .full-block > p{
+    display: none;
+   }
+   .half-block-up {
+    width: 66%;
+    height: 61%;
+    border-top-left-radius: 16px;
+    right: 13%;
+    padding: 0px;
+}
+.half-block-down {
+    width: 61%;
+    height: 61%;
+    border-top-left-radius: 16px;
+    right: 13%;
+    padding: 0px; 
+}
+.full-block{
+    width: 83% ;
+    height: 90%;
+    border-top-left-radius: 16px;
+    padding: 0px;
+}
+/***************** event UI fixes************/
+.eventCard {
+    top: 3rem; 
+    left: 50%;
+    width: 20rem;
+    transform: translate(-50%); 
+}
+.imgContainer{
+    height: 10rem;
+}
+.instructor-info-Container{
+    width: 97%;
+}
+.class-name{
+    width: 97%;
+}
+.class-detail{
+width: 97%;
+}
+.card-footer-buttons{
+    width: 98%;
+}
+.action-buttons{
+    width: 77%;
+    margin-left: 3px;
+}
+/***************** event UI END************/
+
+}
+@media only screen and (max-width: 480px)and (min-width: 0px){
+.day {
+     font-size: 0.8rem;
+    }
+.weak-show {
+        width: 98%;
+        margin-bottom: 4px;
+}
+.event-parent-box {
+    width: 98%;
+}
+.time-show{
+    width: 3.5rem;
+}
+.time-show > .time > span {
+    font-size: 10px;
+    font-weight: 550;
+}
+.forExtra-space {
+    width: 3.5rem;
+}
+.Weak-day{
+    height: 2.8rem;
+    font-size: 0.8rem;
+}
+.Weak-day > .date {
+    height: 80%;
+    width: 14%;
+}
+.event-box .chid-child{
+    border-top: none;
+    border-bottom: none;
+    height: 2.5rem;
+    padding: 0.1rem;
+}
+.triangle-up {
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 18px solid #7e964e;
+    /* margin-left: 31%; */
+}
+.time-show > .time{
+    height: 2.5rem;
+    padding: 8px 1px;
+}
+.time-show > :nth-child(1){
+    border-top: none;
+}
+.time-show > :nth-child(9){
+    border-bottom: none;
+}
+.full-block > p{
+    display: none;
+    }
+.half-block-up > p {
+    display: none;
+    }
+.half-block-down > p {
+    display: none;
+}
+.half-block-up {
+    width: 50%;
+    height: 45%;
+    border-top-left-radius: 12px;
+    right: 20%;
+    padding: 0px;
+}
+.half-block-down {
+    width: 50%;
+    height: 48%;
+    border-top-left-radius: 12px;
+    right: 20%;
+    padding: 0px; 
+}
+.full-block{
+    width: 57%;
+    height: 55%;
+    border-top-left-radius: 12px;
+    padding: 0px;
+    margin: auto;
+}
+/***************** event UI fixes************/
+.eventCard {
+    top: 3rem; 
+    left: 50%;
+    width: 20rem;
+    transform: translate(-50%); 
+}
+.imgContainer{
+    height: 10rem;
+}
+.instructor-info-Container{
+    width: 97%;
+}
+.class-name{
+    width: 97%;
+}
+.class-detail{
+width: 97%;
+}
+.card-footer-buttons{
+    width: 98%;
+}
+.action-buttons{
+    width: 77%;
+    margin-left: 3px;
+}
+/***************** event UI END************/
+
+
+/* .Weak-day > .date > span {
+    margin-left: 28%;
+} */
+/* .day > li {
+    margin: 0px auto 0px 0px;
+    padding-left: 2%;
+} */
+}

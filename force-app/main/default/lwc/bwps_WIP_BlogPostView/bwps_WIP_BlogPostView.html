@@ -1,0 +1,45 @@
+<template>
+    <div class="container section-to-print">
+        <div class="quick-action-container">
+            <div class="back-btn" onclick={handleBack}> <img src={backIcom} class="backlIcon"> BACK  </div>
+            <div class="action-box">
+
+                <label for="" onclick={handleDownloadPDF}>
+                    <img src={downloadIcon} alt="pdfIcon">
+                    <span class="icon-text">DOWNLOAD PDF</span>
+                </label>
+                <!-- <label for="">
+                  <a href="/PFNCADNA/s/bwps-wip-signin">  <img src={shareIcon} alt="LIKE">
+                    <span class="icon-text">SHARE</span></a>
+                </label> -->
+
+                <!-- <label for="">
+                     <a href="/PFNCADNA/s/bwps-wip-signin"><img src={likeIcon} alt="share">
+                    <span class="icon-text">ADD TO FAVORITES</span> </a>
+                </label> -->
+                <template if:true={isLoggedInMemberOrGuest}>
+                    <label data-id={blogId} data-isfav="true" for="" onclick={favoriteHandler}>
+                        <img src={unFavIcon} alt="like" if:false={blogFavStatus}>
+                        <img src={favIcon} alt="unlike" if:true={blogFavStatus}>
+                        <span class="icon-text" if:false={blogFavStatus}>ADD TO FAVORITES</span> 
+                        <span class="icon-text" if:true={blogFavStatus} >REMOVE FAVORITE</span> 
+                    </label>
+                </template>
+            </div>
+        </div>
+        <div class="blog-container">
+            <div class="blog-head">
+                <div class="heading-box">
+                    <h1>{blogHeading}</h1>
+                    <p>{blogAuthor} &nbsp; | &nbsp; {blogDate}</p>
+                </div>
+                <div class="image-box">
+                    <img src={blogImage} alt="blog-image">
+                </div>
+            </div>
+            <div class="blog-info">
+                Loading..
+            </div>
+        </div>
+    </div>
+</template>

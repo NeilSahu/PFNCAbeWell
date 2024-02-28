@@ -1,0 +1,192 @@
+<!-- sldsValidatorIgnore -->
+<template>
+	<template if:false={InstDetailView}>
+		<template if:false={FilterApply}>
+			<Div class="mainDiv">
+				<div class="center">
+					<h2 class="MainHeading">Classes on Demand</h2>
+				</div>
+				<div class="searchdiv">
+					<div class="inpcls">
+						<input type="text" id="Email" data-inpsearch="inpsrch" value={inpsrch} name="Email"
+							class="searchInput" placeholder="KEYWORD..." required>
+					</div>
+					<div class="filter-flex">
+						<div class="btndiv">
+							<button type="button" class="button" onclick={buttonSearch}
+								data-search="srchbtn">SEARCH</button>
+						</div>
+						<div class="filtersize mouse-pointer">
+							<img onclick={FilterApplied} src={FilterImg}>
+							<p class="colorset" onclick={FilterApplied}>FILTERS</p>
+						</div>
+					</div>
+				</div>
+				<template if:true={FilterSearch}>
+					<div class="row">
+						<div class="col-6">
+							<!-- change to hide time filter -->
+							<div class="filter-data" style="display:none;">
+								<div class="filter-text"><img src={TimeLogo}> &nbsp; Time</div>
+								<div class="filter-btn" data-time="mrng" onclick={TimeFilter}>Morning</div>
+								<div class="filter-btn" data-time="aftn" onclick={TimeFilter}>Afternoon</div>
+								<div class="filter-btn" data-time="eve" onclick={TimeFilter}>Evening</div>
+							</div>
+							<div class="filter-data">
+								<div class="filter-text"><img src={durationLogo}> &nbsp; Duration</div>
+								<div class="filter-btn" data-duration="quarterly" onclick={DurationFilter}>15 min
+								</div>
+								<div class="filter-btn" data-duration="halfhour" onclick={DurationFilter}>30 min
+								</div>
+								<div class="filter-btn" data-duration="fullhour" onclick={DurationFilter}>50 min</div>
+							</div>
+							<div class="filter-data">
+								<div class="filter-text"><img src={levelLogo}> &nbsp;Intensity</div>
+								<div class="filter-btn" data-intensity="low" data-id="low" onclick={IntensityFilter}>Low
+								</div>
+								<div class="filter-btn" data-intensity="medium" data-id="medium"
+									onclick={IntensityFilter}>Medium
+								</div>
+								<div class="filter-btn" data-intensity="high" data-id="high" onclick={IntensityFilter}>
+									High</div>
+							</div>
+						</div>
+						<div class="col-6">
+							
+							<div class="filter-Label">
+								<div class="filter-inst"><img src={typeLogo}></div>
+								<p>Class Type</p>
+							</div>
+							<div class="filter-data2">
+								<div class="filter-picklist">
+									<select name="Second" value={clsVal} data-id="clsSelect" onchange={FilterClasses}
+										class="picklist-Val mouse-pointer">
+										<option value="none" selected disabled>Select a Class</option>
+										<template for:each={Classes} for:item="cls">
+											<option class="picklist-option" value={cls.Id} data-id={cls.Id}
+												key={cls.Id}>{cls.Name}</option>
+										</template>
+									</select>
+								</div>
+							</div>
+							<div class="filter-Label">
+								<div class="filter-inst"><img src={userIcon1}></div>
+								<p>Instructor</p>
+							</div>
+							<div class="filter-data2" style="margin-bottom:1rem;">
+								<div class="filter-picklist">
+									<select name="Instructors" id="Instructor" value={InsVal} data-id="insSelect"
+										onchange={FilterClasses} class="picklist-Val mouse-pointer">
+										<option value="none" selected disabled>Select a Instructor</option>
+										<template for:each={instructors} for:item="ins">
+											<option value={ins.Id} data-id={ins.Id} key={ins.Id}>{ins.Name}</option>
+										</template>
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+				</template>
+				<hr>
+				<div class="clear-filter">
+					<div>
+						<p class="record-count" style="color: white;">{totalData} Results </p>
+					</div>
+					<div>
+						<p class="record-count mouse-pointer" style="color: white;" onclick={clearFilter}>Clear Filter
+						</p>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template if:true={value}>
+			<div class="row">
+				<template if:false={paginationData.length}>
+					<p class="blank-block">No Classes are Available</p>
+				</template>
+				<template if:true={paginationData}>
+					<template for:each={paginationData} for:item="SC">
+						<div class="col-4" key={SC.name}>
+							<div class="cardOutterClass">
+								<div class="cardInnerClass">
+									<div class="innerclass">
+										<img src={SC.Photo} class="cardImageClass">
+										<div class="cardNameLevelClass">
+											<div class="cardNameClass mordenLimitName">
+												<img src={userIcon}> {SC.BWPS_instructor__r.Name}
+											</div>
+											<div class="cardLevelClass"> <img class="cardLevelInts"
+													src={SC.integrityLogo}> {SC.Integrity__c}</div>
+										</div>
+									</div>
+									<hr class="lineFavClass">
+									<div class="cardFooterContainer2">
+										<div class="cardFooterIconContainer2">
+											<div class="exerciseContainer">
+												<h1 class="exerciseNameCLass mordenLimitName" data-btnstatus="name"
+													data-name={SC.BWPS_instructor__r.Name} data-schname={SC.Name}
+													data-descp={SC.BWPS_Description__c} data-ints={SC.Integrity__c}
+													data-key={SC.Id} onclick={scheduleClassDetailViewHandle}>{SC.Name}
+												</h1>
+											</div>
+											<div class="descriptionClass mordenLimit">{SC.BWPS_Description__c}</div>
+										</div>
+									</div>
+
+									<div class="cardFooterContainer">
+										<div class="cardFooterIconContainer">
+											<div>
+												<img class="iconClass cardIconClass" src={favIcon}
+													if:true={SC.classFavStatus} onclick={favoriteHandler}
+													data-id={SC.Id} data-isfav={SC.classFavStatus}>
+												<img class="iconClass cardIconClass" src={unFavIcon}
+													if:false={SC.classFavStatus} onclick={favoriteHandler}
+													data-id={SC.Id} data-isfav={SC.classFavStatus}>
+											</div>
+											<!-- <div style="margin-left: 15%;">
+                                        <img src={shareIcon} class="iconClass cardIconClass">
+                                    </div> -->
+										</div>
+										<div class="cardFooterButtonContainer" data-btnstatus="btn"> <!-- data-name={SC.BWPS_instructor__r.Name} data-schname={SC.Name}
+											data-descp={SC.BWPS_Description__c} data-ints={SC.Integrity__c}
+											data-key={SC.Id} onclick={scheduleClassDetailViewHandle} -->
+											<div class={SC.btnClass}>
+												<div class="buttonInnerContainer">
+													<span class="buttonClass" data-btnstatus="btn"
+														data-name={SC.BWPS_instructor__r.Name} data-schname={SC.Name}
+														data-descp={SC.BWPS_Description__c} data-ints={SC.Integrity__c}
+														data-key={SC.Id}
+														onclick={scheduleClassDetailViewHandle}>{SC.btnLabel}</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</template>
+				</template>
+			</div>
+		</template>
+
+		<!-- <div class="row setCenter"> -->
+		<div class="">
+			<div class="pagination-Container">
+				<template if:true={value}>
+					<c-bwps-_-w-i-p-_-pagination-child if:true={paginationShow} totalrecords={totalData}
+						page-size={pageSize} onpagination={handlePaginationAllData}></c-bwps-_-w-i-p-_-pagination-child>
+				</template>
+			</div>
+		</div>
+	</template>
+	<template if:true={InstDetailView}>
+		<div>
+			<c-bwps_-w-i-p_-class-details-view scheduleclassname={scheduleClassName} classviewtype={classViewType}
+				scheduleclassinstname={scheduleClassInstName} scheduelclassdescription={scheduelClassDescription}
+				scheduleclassintensity={scheduleclassintensity} classdata={selectedClass}
+				onclassdetailreturn={trueparent} onselectlive={liveCick}>
+			</c-bwps_-w-i-p_-class-details-view>
+		</div>
+	</template>
+	<c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

@@ -1,0 +1,38 @@
+<template>
+
+ 
+
+    <div class="margin-x"> 
+        <div class="heading"> 
+            <h1 class="heading-color">Welcome, {userName}!</h1> 
+        </div> 
+        <div class="recurring-donation"> 
+            <div class="donation-heading"> 
+                <h4 class="heading-color">RECURRING DONATIONS</h4> 
+            </div> 
+            <div class="donation-box"> 
+                <div class="donation-box-center"> 
+                    <div class="donation-box-text"> 
+                        <p>You currently do not have any recurring donations.</p> 
+                    </div> 
+                    <!-- <a href="/s/recurringdonation"><div class="box-button"> <button class="orange-button" onclick={handleClick}>ADD A RECURRING DONATION</button>
+                        
+                    </div>
+                   </a>   -->
+                   <!-- <div>
+                        <template if:true={showdata}>
+                        <c-bwps_-Donor-Dashboard-Donate-Form oncallpasstoparent={passToParent}> </c-bwps_-Donor-Dashboard-Donate-Form>
+                   </template>
+                   </div> -->
+                   <div class="box-button">
+                   <button class="orange-button" onclick={handleClick}>ADD A RECURRING DONATION</button>
+                   </div>
+                   <c-bwps_-Donor-Dashboard-Donate-Form ></c-bwps_-Donor-Dashboard-Donate-Form>
+
+                </div> 
+            </div> 
+        </div>
+    </div>
+    
+    
+</template>

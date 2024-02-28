@@ -1,0 +1,30 @@
+<template>
+	<div class="container" style={backgroundImage}>
+		<div class="container-center">
+			<h3>Stay Connected</h3>
+			<!-- style="margin-bottom: -14px;" -->
+			<p >
+				Get the best in yoga, fitness, and wellness delivered right to your inbox.<br>
+				Be the first to know about new classes, stories, playlists, and more.
+			</p>
+			<div class="input-box">
+
+				<label for="email">Email address*</label>
+				<!-- style="margin-top: 24px;" -->
+				<div class="input-caption" >
+					<input type="email" required id="email" class="input" name="email" value={email} data-id="email"
+						placeholder="Please Enter Your Email Address" onfocusout={emailValidation}>
+					<p class="caption Required-text-div"><sup>*</sup> REQUIRED</p>
+				</div>
+				
+
+				<div class="box-blue-button">
+					<button class="blue-button" onclick={Subscribe}>SUBSCRIBE</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<template if:true={submitted}>
+		<lightning-spinner variant="brand" alternative-text="Loading" size="large"> </lightning-spinner>
+	</template>
+</template>

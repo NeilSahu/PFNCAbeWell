@@ -1,0 +1,25 @@
+<template>
+  <div class="slider-container" style={backgroundStyle}>
+    <div class="slider-content"> 
+      <div class="slider-items active">
+        <template for:each={testimonalArray} for:item="testObj">
+          <div key={testObj.id} class="img-box">
+            <img src={testObj.image} class="slider-img">
+            <div class="text-container">
+            <div class="slider-name">{testObj.name}</div>
+            <span class="slider-volunteer">{testObj.designation}</span>
+            </div>
+          </div>
+          <div key={testObj.id} class="peragraph">
+            <p>"{testObj.message}"</p>
+          </div>
+        </template>
+      </div>
+    </div>
+    <div class="dot-container">
+        <button  class="dot-btn btn-visible"></button>
+        <button  class="dot-btn" ></button>
+        <button class="dot-btn"  ></button>
+    </div>
+  </div>
+</template>

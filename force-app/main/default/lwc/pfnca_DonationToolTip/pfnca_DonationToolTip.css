@@ -1,0 +1,38 @@
+.container{
+	text-align:center;	
+}
+
+.text-Line{
+	padding-left:2rem;
+	padding-top:5rem;
+	position:relative;
+}
+.inline-text{
+	border-radius:10px;
+	top: -3px;
+	right: 30px;
+	width: 14rem;
+	background-color:#008BA7;
+	position:absolute;
+}
+.boarder{
+	border-radius:10px;
+	background-color:#008BA7;
+}
+.margin-text{
+	margin-bottom: 10px;
+}
+.margin-text img{
+	border-radius:10px;
+	margin-top: 4px;
+}
+.text-donate{
+	font: normal normal bold 10px/14px IBMPlexSans; 
+	margin-bottom:5px;
+}
+.small-text{
+	padding: 0%	6% 0% 6%;
+}
+.memory-text{
+	font: normal normal 10px/14px IBMPlexSans;
+}

@@ -1,0 +1,57 @@
+<template>
+  <div class="mainContainer">
+    <div class="header-wrapper">
+        <div>
+          <h1 class="h1">Welcome, {userFirstName}. Today is {currentFormattedDate}.</h1> 
+        </div>
+        <div class="header-wrapper-search">
+          <div class="div2">
+            <!-- <lightning-icon variant="brand" class="searchIconColorSH" icon-name='utility:search' alternative-text='search' size='small' title='search'></lightning-icon>
+            <a class = 'search' > SEARCH FOR A CLASS</a>   -->
+           <!-- <a> <img src={BELLICON} class="bellicon" onclick={showNotificationMethod}  >
+           </a>
+           <div class="notificationCount"><span>{totalNotifications}</span></div>
+            <div if:true={showNotificationFlag}>
+              <c-notification-component totalrecords={notificationVisibel}></c-notification-component>
+            </div>-->
+          <div class="secondDivSH">
+            <lightning-icon variant="brand" class="searchIconColorSH2" icon-name='utility:search' alternative-text='search'
+              size='small' title='search' onclick={searchIconHandler}></lightning-icon>
+            <!-- <span class="searchIconColorSH2" style="color:#008ba7">SEARCH YOUR FAVORITES</span> -->
+            <input type="search" placeholder="SEARCH FOR A CLASS" class="searchIconColorSH2 searchInputClass" onkeyup = {searchHandler}>
+          </div>
+          </div>
+        </div>
+    </div>
+    <!-- <div if:true={showNotificationFlag}>
+      <c-notification-component></c-notification-component>
+    </div> -->
+    <div class="box2">          
+      <div class="box2-passinfo">
+        <span if:false={isMember}>You have {reamainingPassDays} days left in your guest pass.</span>
+        <!-- <span class="box2-passinfo-link">Learn more</span> -->
+      </div>
+      <div class="box2-button">
+        <div class="Master-button2">
+          <button label="HOW TO PARTICIPATE"  class="button2" onclick={navigateToParticipate}>HOW TO PARTICIPATE</button>
+        </div> 
+        <div if:false={isMember} class="Master-button1">
+          <button label="BECOME A MEMBER"   class="button1" onclick={navigateToBecomeMember}>BECOME A MEMBER</button>
+        </div>
+      </div>
+    </div>      
+  </div>
+  	<template if:true={flowcall}>
+		<div class="payment-modal-container">
+			<div class="payment-modal-main">
+				<div class="payment-modal-close">
+					<span onclick={offpay}>X</span>
+					</div>
+				<lightning-flow flow-api-name={flowApiName} flow-input-variables={flowInputVariables}
+					onstatuschange={handleFlowStatusChange}>
+				</lightning-flow> <!-- Invoke a Screen flow in LWC -->
+			</div>
+		</div>
+  	</template>
+    <lightning-spinner if:true={showSpinner} alternative-text="Loading" size="large"></lightning-spinner>
+</template>

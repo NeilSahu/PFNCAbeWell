@@ -1,0 +1,41 @@
+.container{
+
+
+border: 2px solid black;
+margin: 2% 5% 0% 5%;
+}
+.back-button-handler{
+       /* height: 1rem; */
+       background-color:#E5E5E5;
+       width: fit-content;
+       padding: 7px 14px;
+       border-radius: 2px;
+       box-shadow: 1px 4px 11px 1px rgb(0 0 0 / 45%);
+       /* margin-bottom: 1rem; */
+       position: absolute;
+}
+.ButtonText{
+	margin: 1% 0% 4% 5%;
+}
+.image-background{
+	background:rgba(0,0,0,0.4);
+	width:100%;
+	height:100%;
+}
+
+.box-blue-button-white-border{
+    background-color: #008CA7;
+    color: white;
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem;
+    border: 1px solid #FFFFFF;
+}
+
+.blue-button {
+    padding: 0.5rem 2rem;
+    margin: auto;
+    background-color: #008CA7;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}

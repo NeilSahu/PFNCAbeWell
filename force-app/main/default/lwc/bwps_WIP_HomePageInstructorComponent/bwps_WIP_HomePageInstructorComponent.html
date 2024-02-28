@@ -1,0 +1,67 @@
+<template>
+	<div class="ins_Master">
+		<div class="intro">
+			<div class="main_intro">
+				<h1>Passionate Instructors</h1>
+			</div>
+			<div class="sub-intro">
+				<p>Our highly trained instructors are truly passionate about helping people slow Parkinson's through
+					each of their specialized fields.</p>
+			</div>
+		</div>
+		<!-- <div class="slidecontainer">
+			<input type="range" min="0" max ={sliderMaxVal} value="0" class="slider" data-id="myRange" onchange={sliderChange}>
+        </div> -->
+        <div id="slider-container" class="slider" data-id="slider">
+            
+            <!-- <c-child> -->
+                <template for:each={Arr} for:item="tranner">
+                    <div class="slide"  key={tranner.Id}>
+                        <div  class="card">
+                            <div class="inst-img">
+                               <img class="instimg" src={tranner.imgUrl} alt="1">
+                            </div>
+                            <br>
+                            <div class="name-exp">
+                                <h1>{tranner.Name}</h1>
+                                <p>{tranner.Type}</p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            <!-- </c-child> -->
+            
+        </div>
+        <template if:true={slideButton}>
+             <div class="slider-button-box">
+
+                <button  class="control-prev-btn" onclick={handlePrev}><div class="arrow-left"></div> </button>
+
+                <button class="control-next-btn" onclick={handleNext}> <div class="arrow-right"></div> </button>
+
+            </div>
+        </template>
+        
+			<!-- <div class="slider-container-1">
+       <div class="parent-instructor row"  data-id="container_I">
+        <template for:each={Arr} for:item="tranner">
+            <div data-id="card-1" class="card col-3" key={tranner.Id}>
+                <div class="inst-img">
+                  <img src={tranner.imgUrl} alt="1">
+                </div>
+                <br>
+                <div class="name-exp">
+                    <h1>{tranner.Name}</h1>
+                     <p>{tranner.Type}</p>
+                </div>
+            </div>
+        </template>
+       </div> -->
+			<!-- </div> -->
+			<!-- <div class="box-slid-button">
+        <button class="slide-button" onclick={preview} > &#10094; </button>
+        <button class="slide-button" onclick={next} > &#10095; </button>
+    </div> -->
+
+	</div>
+</template>

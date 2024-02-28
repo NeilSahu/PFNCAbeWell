@@ -1,0 +1,410 @@
+<template>
+	<div class="Master_Profile_Info">
+		<div class="Profile_Info_Header">
+			<!-- <a>	<img class="headerIcon" src={bellIcon} onclick={showNotificationMethod} > </a> -->
+			<div if:true={showNotificationFlag}>
+				<c-notification-component></c-notification-component>
+			</div>
+			<div class="BellIcon_Div">
+
+				Profile Survey
+			</div>
+			<div class="Page_Detail">
+
+				<div class="Page_Number">
+					<div class="circle1 one">1</div>
+					<div class="circle2 two">2</div>
+					<div class="circle3 three">3</div>
+					<div class="circle4 four">4</div>
+					<div class="circle5 five">5</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<template if:true={firstChild}>
+
+
+				<div class="Master-container">
+					<div class="PersonalInformation">
+						<div class="PersonalInformationDiv1">
+							<p>PERSONAL INFORMATION</p>
+						</div>
+						<div class="PersonalInformationDiv2">
+							<div class="BasicInfo">
+								<div class="BasicInfoInnerDiv">
+									<label>First Name</label>
+									<input data-id="firstname" type="text" required placeholder="Nicole" value={fname}></input>
+
+								</div>
+								<div class="BasicInfoInnerDiv">
+									<label>Last Name</label>
+									<input data-id="lastname" type="text" required placeholder="Welesh" value={lastname} ></input>
+								</div>
+							</div>
+							<div class="BasicInfo">
+								<div class="BasicInfoInnerDiv">
+									<label>Birthday</label>
+									<input data-id="birthday" type="date"  placeholder=" mm-dd-y"  value={birthday} onchange={handleDateChange}></input>
+
+								</div>
+								<div class="BasicInfoInnerDiv">
+
+									<label>Gender</label>
+									<div class="genderPicklist">
+										<select  data-id="Gender" >
+
+											<option value={genderSelected} selected>Select</option>
+											<option value="Male" >Male</option>
+											<option value="Female">Female</option>
+											<option value="Other">Other</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ContactInformation">
+						<div class="ContactInformationDiv1">
+							<p>CONTACT INFORMATION</p>
+						</div>
+						<div class="ContactInformationDiv2">
+
+							<div class="ContactInformationDiv3">
+								<label>Email Address</label>
+								<input data-id="EmailAddress" type="Email" required placeholder="Email Address" value={email}></input>
+							</div>
+							<div class="ContactInformationDiv3">
+								<label>Phone Number</label>
+								<input type="number" data-id="homePhone" required placeholder="123456789"  value={homePhone}></input>
+							</div>
+							<!-- <div class="ContactInformationDiv3">
+								<label>Address</label>
+								 <input type="text" data-id="homePhone" required placeholder="  123 Street"  ></input>
+							</div> -->
+							<div class="ContactInformationDiv3">
+								<label>Street Address</label>
+								<input data-id="street" type="text" required placeholder="4059 Asylum Avenue" value={street}></input>
+							</div>
+							<div class="ContactInformationDiv3">
+								<label>Apartment,suite,etc.</label>
+								<input type="text" data-id="Apartment" required placeholder="townholl"  value={apartment} ></input>
+							</div>
+
+
+							<div class="ContactInformationParent">
+								<div class="ContactInformationDiv3 half-width">
+
+									<label>City</label>
+									<input data-id="city" type="text" required placeholder="Clifton" value={city}></input>
+								</div>
+
+								<div class="ContactInformationDiv3 qurater-width">
+									<label>State</label>
+									<input data-id="state" type="text" required placeholder="New Jersey" value={state}></input>
+
+								</div>
+
+								<div class="ContactInformationDiv3 qurater-width1">
+									<label>ZIP/Postal code</label>
+									<input data-id="postalcode" type="number" required placeholder="12345" value={postalcode} class="zipCode"></input>
+
+								</div>
+
+							</div>
+							<div class="ContactInformationDiv3">
+								<label>Country</label>
+								<input type="text" data-id="Country" required placeholder="US" value={country}></input>
+							</div>
+
+
+						</div>
+					</div>
+
+
+
+					<div class="SocialMediaInfo">
+						<div class="SocialMediaInfoDiv1">
+							<p>CONTACT INFORMATION</p>
+						</div>
+						<div class="SocialMediaInfoDiv2">
+							<div class="SocialMediaInfoInnerDiv">
+								<div class="SocialMediaInfoInnerDiv1">
+									<h6 class="SocialMedia">Do you use Facebook? </h6>
+								</div>
+
+							</div>
+							<div class="SocialMediaInfoInnerDiv">
+								<form data-id="test">
+									<br><input style="cursor: pointer;" class="yesClass" data-value="Yes" value="Yes" data-id="facebookUserYes" type="radio" id="yes" name="select" onclick={radioClickHandler}>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                     
+									<label for="html">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<input style="cursor: pointer;" class="noClass" data-value="No" value="No"  data-id="facebookUserNo" type="radio" id="no" name="select" onclick={radioClickHandler}>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                                    <label for="html">No</label><br>
+												  </form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</template>
+			<template if:true={secondChild}>
+
+				<div class="EmergencyContactInfo">
+					<div class="EmergencyContactInfoDiv1">
+						<p>EMERGENCY CONTACT INFORMATION</p><br>
+                        </div>
+						<div class="EmergencyContactInfoDiv2">
+							<div class="EmergencyContactInfoInnerDiv">
+								<label>First Name</label><br>
+								<input data-id="fname" type="text" required  placeholder="  Nicole" value={name}></input><br>
+
+								<label>Phone Number</label><br>
+								<input data-id="phone" type="number" required placeholder="   1365652365" value={phone}></input>
+							</div>
+							<div class="EmergencyContactInfoInnerDiv">
+								<label>Last Name</label><br>
+								<input data-id="lname" type="text" required  placeholder="  Brooks" value={lname}></input><br>
+
+								<label>Relationship</label><br>
+								<!-- <input data-id="relationship" type="text" required placeholder="  " value={relationship}></input> -->
+								<div class="genderPicklist relationDropdown">
+									<select  data-id="relationship">
+											<option value={relationshipSelected} selected>Select</option>
+											<option value="Father">Father</option>
+											<option value="Mother">Mother</option>
+											<option value="Brother">Brother</option>
+											<option value="Sister">Sister</option>
+											<option value="Other">Other</option>
+									</select>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+			</template>
+			<template if:true={thirdChild}>
+				<div class="Master-Container">
+					<div class="parent-block">
+						<div class="Information">
+							<div class="InformationHeader">
+								<p>I AM</p>
+
+							</div>
+							<div class="BasicQuestions">
+								<div class="InnerDiv">
+
+									<input type="radio"  data-label="Living with Parkinsons's" data-id="Living with Parkinsons's" onclick={handleClickq1} name="age" value="30">
+									<label >Living with Parkinsons's</label><br><br>
+									<input type="radio" data-label="Living with another movement disorder (ataxia,psp,etc)" onclick={handleClickq1} data-id="Living with another movement disorder (ataxia,psp,etc)" name="age" value="60">
+									<label >Living with another movement disorder (ataxia,psp,etc)</label><br><br>
+									<input type="radio" data-label="Personal/Medical Aide" data-id="Personal/Medical Aide" onclick={handleClickq1}  name="age" value="100">
+									<label >Personal/Medical Aide</label>
+								</div>
+								<div class="InnerDiv2">
+
+									<input type="radio" data-label="A carepartner" data-id="A carepartner" onclick={handleClickq1}  name="age" value="30">
+									<label >A carepartner</label><br><br>
+									<input type="radio" data-label="A relative someone with parkinson's (not primary carepartner)" data-id="A relative someone with parkinson's (not primary carepartner)" onclick={handleClickq1}   name="age" value="60">
+									<label >A relative someone with parkinson's (not primary carepartner)</label><br><br>
+									<input type="radio" data-label="other" onclick={handleClickq1} data-id="other" name="age" value="100">
+									<label >Other</label>
+								</div>
+							</div>
+						</div> <br><br>
+						<div class="Information">
+							<div class="InformationHeader">
+								<p> If YOU LIVING WITH PARKINSON'S HOW LONG AGO WERE YOU DIAGNOSED?</p>
+							</div>
+
+							<div class="numOfyear">
+								<input data-id="years" type="text" required placeholder="4 years" value={question2} ></input>
+							</div>
+							<!-- <div class="BasicQuestions">
+								<div class="InnerDiv">
+
+									<input data-label="Less then 2 Year ago" type="radio" data-id="Less then 2 Year ago"  name="age1" onclick={handleC} value="30">
+									<label > Less then 2 Year ago</label><br><br>
+									<input data-label="7 to 15 years ago" type="radio" data-id="7 to 15 years ago" name="age1" onclick={handleC} value="60">
+									<label > 7 to 15 years ago</label><br><br>
+									<input data-label="I do not have Parkinson's`" type="radio" data-id="I do not have Parkinson's`" name="age1" onclick={handleC} value="100">
+									<label > I do not have Parkinson's`</label>
+								</div>
+								<div class="InnerDiv2">
+
+									<input data-label="2 to 7 years ago" data-id="2 to 7 years ago" onclick={handleC} type="radio"  name="age1" value="30">
+									<label > 2 to 7 years ago</label><br><br>
+									<input data-label="More then 15 years ago" data-id="More then 15 years ago" onclick={handleC} type="radio"  name="age1" value="60">
+									<label > More then 15 years ago</label><br><br>
+
+									</div>
+								</div> -->
+						</div>
+					</div>
+				</div>
+
+			</template>
+			<template if:true={fourthChild}>
+				<div class="Master-Container">
+					<div class="DetailInfo">
+						<div class="Information1">
+							<div class="Information">
+								<div class="InformationHeader">
+									<p>HOW DID YOU FIRST LEARN ABOUT BE WELL PARKINSON'S?</p>
+								</div>
+								<div class="BasicQuestions">
+									<div class="InnerDiv">
+										<input type="radio"  data-label="I was referred by my Physician'" data-id="I was referred by my Physician'" onclick={handleclick}  name="age" value="30">
+										<label > I was referred by my Physician'</label><br><br>
+										<input type="radio"  data-label="I was reffered by Senior Living Community'" data-id="I was reffered by Senior Living Community'" onclick={handleclick} name="age" value="60">
+										<label > I was reffered by Senior Living Community'</label><br><br>
+										<input type="radio" data-label="A Support group" data-id="A Support group" onclick={handleclick}  name="age" value="100">
+										<label > A Support group</label><br><br>
+										<input type="radio" data-label="other" data-id="Other" onclick={handleclick}  name="age" value="100">
+										<label > Other</label>
+									</div>
+									<div class="InnerDiv2">
+										<input type="radio" data-label="I was reffered by a health professional e.g. Physical Therapist'" data-id="I was reffered by a health professional e.g. Physical Therapist'" onclick={handleclick} name="age" value="30">
+										<label > I was reffered by a health professional e.g. Physical Therapist'</label><br><br>
+										<input type="radio" data-label="I was reffered by a friend'" data-id="I was reffered by a friend'" onclick={handleclick}  name="age" value="60">
+										<label > I was reffered by a friend'</label><br><br>
+										<input type="radio"  data-label="Internet Search" data-id="Internet Search" name="age" onclick={handleclick} value="60">
+										<label > Internet Search</label>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='TherapistInfo'>
+							<div class="Header">
+								<p>IF YOU ARE REFFERED BY A HEALTH CARE PROFESSION SUCH AS A PHYSICIAN, OR A
+									THERAPIST(PHYSICAL,OCCUPATIONAL OR SPEECH),PLEASE TELL US THEIR...</p><br>
+            </div>
+								<div class="Detail">
+									<div class="DetailDiv1">
+										<label>Name</label><br>
+										<input type="text"  data-id="name1" placeholder="Maddy Zimmer" value={name1}></input><br>
+										<label>State</label><br>
+										<input type="text"  data-id="state_drop" placeholder="Florida" value={state1}></input><br>
+										<!-- <div class="select">
+											<select  data-id="state_drop">
+
+													<option value="none" selected disabled hidden>Select State</option>
+													<option value='Rajasthan'>Rajasthan</option>
+													<option value='Goa'>Goa</option>
+													<option value='Gujarat'>Gujarat</option>
+													<option value='Haryana'>Haryana</option>
+													<option value='Kerela'>Kerela</option>
+										    </select>
+										</div> -->
+									</div>
+									<div class="DetailDiv2">
+										<label>City</label><br>
+										<input type="text" data-id="city1" placeholder="Bloomfield" value={city1}></input><br>
+										<label>Email Address</label><br>
+										<input type="text"  data-id="Email1" placeholder="mzimmmer@gmail.com" value={email1}></input>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+			</template>
+			<template if:true={fifthChild}>
+
+				<div class="parent-box">
+					<div class="parent-item">
+						<h1 class="heading">
+							OPTIONAL DONATION OPPORTUNITIES
+						</h1>
+						<p>
+							Your annual membership fee covers software and other costs for "back-end" expenses
+							to produce Be Well Parkinson's classes. Please consider a donation to support the
+							efforts of Parkinson Foundation.org/Be Well Parkinson's.
+						</p>
+					</div>
+
+					<div class="parent-item-row">
+
+						<div class="text-container">
+							<div class="child-text-container">
+								<span class="span">
+                    Tax Deductible contribution to support 
+                    ParkinsonFoundation.org/Be Well Parkinson’s 
+                </span>
+								<div>
+									<div class="peragraph ">
+										<p>
+											Your support helps Parkinson Foundation.org/Be
+											Well Parkinson's continue providing programs and
+											services to those impacted by Parkinson's Disease.
+											Thank you for your consideration.
+										</p>
+									</div>
+								</div>
+							</div>
+							<br><br>
+							<div class="input-bar">
+								<span>Enter Amount</span>
+								<input type="number" data-id="donation" placeholder="0.00$" value={donation}>
+                </div>
+							</div>
+
+							<div class="Sibling-text-container">
+								<div class="vertical hide"></div>
+								<div class='child-text-container  floatright'>
+									<span class="span">
+
+                        Tax Deductible Donation so those who cannot afford
+                       the annual administrative fee can participate.
+                    </span>
+									<div class="peragraph ">
+										<p>
+											Your support helps cover administrative fees for those
+											that have a financial hardship so they can participate
+											in the Be Well Parkinson's Program. With the support of our donors,
+											no one is turned away due to financial hardship. If donations
+											received exceed amount needed to cover fees for those who request
+											financial assistance by the end of the organization's fiscal year,
+											funds will be used for general operating purposes.
+										</p>
+									</div>
+								</div>
+								<div class="input-bar-second floatleft">
+									<span>Enter Amount</span>
+									<input type="number" data-id="donation1" placeholder="0.00$" value={annualDonation}>
+                               </div>
+
+								</div>
+							</div>
+						</div>
+			</template>
+		</div>
+		<div class="btn">
+			<div class="buttondiv" if:true={backButton}>
+				<button class="button" onclick={handlePreviousButton}>BACK</button>
+			</div>
+			<div class="buttondiv1">
+				<button class="button1" onclick={handleClick}>NEXT</button>
+			</div>
+		</div>
+
+		<!-- 
+		<template if:true={firstChild}>
+
+			<div class="footerTextClass">
+				<p class="footerTextp" style="color :red"> please complete all the required questions before submitting
+					your survey.</p>
+
+			</div>
+		</template> -->
+
+		<br>
+		<br>
+		<br>
+    </div>
+		<c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

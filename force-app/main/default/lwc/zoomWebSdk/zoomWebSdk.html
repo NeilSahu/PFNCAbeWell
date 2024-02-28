@@ -1,0 +1,46 @@
+<template>
+    <!-- <c-your-today-schedule-component onsenddata={handleZoomData}></c-your-today-schedule-component> -->
+    <div if:true={showClassIframe} class="universalContainer">
+        <div class="iframe-mainContainer">
+            <div class="ifrem-container2">
+                <span onclick={showHideIframe}>&#10006;</span>
+                <iframe src={url} style="width: 100%;height: 100%;" target="blank" allow="microphone; camera; fullscreen" allowfullscreen="allowfullscreen"></iframe>
+                <!-- <iframe src={url} sandbox="allow-same-origin allow-forms allow-scripts" allowfullscreen="allowfullscreen" allow="microphone; camera; fullscreen" style="height: 400px;width: 100%"></iframe>  -->
+            </div>
+        </div>
+    </div>
+    <div if:true={showVimeoIframe} class="universalContainer">
+        <div class="iframe-mainContainer">
+            <div class="ifrem-container2">
+                <span onclick={hideVimeoIframeMethod}>&#10006;</span>
+                <iframe src={currentVideoUrl} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="iframe-tag"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open slds-modal_large">
+    <div class="slds-modal__container">
+        modal header start
+        <header class="slds-modal__header">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                <lightning-icon icon-name="utility:close"
+                alternative-text="close"    
+                variant="inverse"
+                size="small" ></lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Welcome in Apex Hours</h2>
+        </header>
+
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <iframe src={url} style="height: 400px;width: 100%" allow="microphone; camera; fullscreen"></iframe>
+        </div>
+
+        <footer class="slds-modal__footer">
+            <button class="slds-button slds-button_neutral" onclick={hideModalBox}>Cancel</button>
+        </footer>
+    
+    </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div> -->
+</template>

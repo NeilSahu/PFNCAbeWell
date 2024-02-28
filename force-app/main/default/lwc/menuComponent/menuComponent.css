@@ -1,0 +1,244 @@
+*{
+    padding: 0px;
+    margin: 0px; 
+}
+.mainContainer{
+    display: none;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px -5px 15px rgb(50 50 50 / 20%);
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    padding: 0vw;
+}
+.menuContainer, .mobileMenuContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #008ba7;
+    font-size: 2vw;
+    padding: 2vw;
+    width: 100%;
+    z-index: 100;
+}
+.menuButtonContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 35px 0px;
+}
+.menuClass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.iconClass{
+    width: 50px;
+    height: 50px;
+}
+.footerClass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+.lineClass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1px;
+    background-color: #b1adad;
+    flex-direction: column;
+    margin: 1px;
+}
+.showMenuComponent{
+    position: absolute;
+    z-index: 100;
+}
+@media only screen and (max-width:768px ){
+    .mainContainer{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        box-shadow: 0px -5px 15px rgb(50 50 50 / 20%);
+        background-color: white;
+        bottom: 0;
+        left: 0;
+        padding: 0vw;
+        z-index: 100;
+    }
+    .menuContainer{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #008ba7;
+        font-size: 2vw;
+        padding: 2vw;
+        width: 100%;
+        z-index: 100;
+    }
+    .mobileMenuContainer{
+        color: #008ba7;
+        font-size: 2vw;
+        padding: 2vw;
+        width: 100%;
+        z-index: 100;
+    }
+    .mobileMenuContainer{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        color: #008ba7;
+        font-size: 2vw;
+        padding: 2vw;
+        width: 100%;
+        z-index: 100;
+    }
+    .menuClass{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footerClass{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+    }
+    .lineClass{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 1px;
+        background-color: #b1adad;
+        flex-direction: column;
+        margin: 1px;
+    }
+}
+.mainProfileMenuContainer{
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:#f5f7f4;
+    position: fixed;
+    width: 100%;
+    padding-top: 3%;
+}
+/* Profile Menu Mobile */
+@media only screen and (max-width:768px ){
+    .mainProfileMenuContainer{
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: ;
+        position: fixed;
+        width: 100%;
+        padding-top: 3%;
+    }
+    .headerContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 20px;
+    }
+    .homeClass{
+        color: #008ba7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .homeClass a{
+        display: block;
+        margin-left: 50px;
+    }
+    .buttonInnerClass{
+        border: 1px solid white;
+        background-color: #008ba7;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttonOutterClass{
+        display: none;
+        border: 1px solid #008ba7;
+        background-color: #008ba7;
+    }
+    .btnClass{
+        background-color: #008ba7;
+        border: none;
+        color: white;
+        width: 16vw;
+        max-height: 4vw;
+        font-size: 2.5vw;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .menuButtonContainer{
+        margin: 0px;
+    }
+    .menuContainer{
+        display: flex;
+        justify-content: space-around;
+        color: #008ba7;
+        font-weight: 600;
+        font-size: 3vw;
+        background-color: #f5f7f4;
+    }
+    .mobileMenuContainer{
+        color: #008ba7;
+        font-weight: 600;
+        font-size: 3vw;
+    }
+    .menuInnerContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 5.5vw 0vw;
+        font-size: 1rem;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .menuInnerContainer img{
+        width: 80PX;
+        HEIGHT: 80px;
+    }
+    .searchContainer{
+        display: none;
+        /* display: flex; */
+        justify-content: center;
+        padding-bottom: 20%;
+    }
+    .searchInnerContainer{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 6vw;
+    }
+    .searchInputClass{
+        border-radius: 20px;
+        border: none;
+        text-align: center;
+        box-shadow: 0px 6px 10px 1px rgb(0 0 0 / 15%) inset;
+        height: 7vw;
+        width: 60vw;
+    }
+}

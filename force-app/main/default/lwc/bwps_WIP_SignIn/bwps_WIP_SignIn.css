@@ -1,0 +1,162 @@
+.row::after {
+	content: "";
+    width:100%;
+	clear: both !important;
+	display: table !important;
+}
+
+[class*="col-"] {
+	float: left;
+	padding: 0px 0px;
+}
+
+/* For Desktops: */
+.col-1 {
+	width: 8.33%;
+}
+
+.col-2 {
+	width: 16.66%;
+}
+
+.col-3 {
+	width: 25%;
+}
+
+.col-4 {
+	width: 33.33%;
+}
+
+.col-5 {
+	width: 41.66%;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-7 {
+	width: 58.33%;
+}
+
+.col-8 {
+	width: 66.66%;
+}
+
+.col-9 {
+	width: 75%;
+}
+
+.col-10 {
+	width: 83.33%;
+}
+
+.col-11 {
+	width: 91.66%;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+.signin-form{
+
+    height: 45rem;
+
+    padding: 3rem 2rem 1rem;
+    background-color: #006ba7;
+    color: white !important;
+}
+.login-details{
+    width: fit-content;
+    margin: 0px auto;
+}
+.signin-heading h1{
+    font-size: 30px;
+    font-weight: 900;
+    margin: 3rem 0rem;
+}
+.Login-form input, .Login-form label{
+    line-break: auto;
+}
+.Login-form label{
+    margin: 0rem 0rem 2rem 0rem;
+    font-weight: 600;
+}
+.Login-form input{
+    padding: 0.7rem 1rem;
+    width: 27rem;
+    border-radius: 10px;
+    border: none;
+    background-color: WHITE;
+    color: #000000;
+    margin: 0rem 0rem 2rem 0rem;
+}
+.rememberMe-div{
+    display: flex;
+    justify-content: space-between;
+}
+.rememberMe-div a{
+    color: white;
+    text-decoration: none;
+}
+.box-orange-button {
+    margin: 4rem auto 0rem;
+    background-color: #ff9f37;
+    color: white;
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem;
+}
+.orange-button {
+    padding: 0.5rem 2rem;
+    margin: auto;
+    background-color: #ff9f37;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.not-member{
+    margin: 2rem auto;
+    width: fit-content;
+}
+.not-member a{
+    color: white;
+    text-decoration: none;
+}
+
+.box-white-button {
+    background-color: white;
+    color: #006ba7;
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem;
+}
+
+.white-button {
+    padding: 0.5rem 1rem;
+    margin: auto;
+    background-color: white;
+    color: #006ba7;
+    border: 0.5px solid #006ba7;
+}
+.get-pass-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.back-image{
+    background-image:url('/resource/WebsiteGeneralFiles/SignInPageImage.png');
+}
+
+.checkbox input{
+    width: 1rem;
+    margin-right: 1rem;
+}
+
+/* .submit-button-div{
+    
+} */
+/* @media (min-width: 65em){
+.community_layout-section_section .section-content{
+    padding: 0px !important;
+}
+} */

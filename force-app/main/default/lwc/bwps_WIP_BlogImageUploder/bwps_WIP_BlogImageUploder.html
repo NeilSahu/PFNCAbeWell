@@ -1,0 +1,18 @@
+<template>
+       <lightning-card title="Upload Blog Image" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+            <lightning-input type="file" 
+            accept=".png, .jpge"
+            label="Attachment" onchange={openfileUpload}></lightning-input>
+        </div>
+        <template if:true={fileData}>
+            <p>{fileData.filename}</p>
+        </template>
+        <lightning-button variant="brand" label="submit" title="Submit" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+         <br><br>
+          <h1>Image related to blog content.</h1>
+         <div class="ImageOfblog" data-id="blog-image"> 
+            <img src={imageFile} alt="#">
+         </div>
+    </lightning-card>
+</template>

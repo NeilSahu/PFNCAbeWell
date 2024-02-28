@@ -1,0 +1,155 @@
+<template>
+	<c-bwps_-w-i-p_-dynamic-hero title="Live Class Schedule (EST)" isbutton="true" buttontext="GET GUEST PASS"
+		img-url={heroImage}></c-bwps_-w-i-p_-dynamic-hero>
+	<div class="container">
+		<div class="schedule-date-box">
+			<div class="previous-date-btn" onclick={handlePreviousDateChange}></div>
+			<div class="date-picker">
+				<label for="date-picker">
+                    <!-- <img src={calendarIcon} alt=""> -->
+                    <input class="date-picker-input" type="date" name="" value={dateValue} id="date-picker" onchange={handleDateChange}>
+                    <p class="formattedDateValue">{formattedDateValue}</p>
+                </label>
+
+			</div>
+			<div class="next-date-btn" onclick={handleNextDateChange}></div>
+		</div>
+		<template if:true={showTodayButton}>
+			<div class="showTodayClassButton">
+				<button onclick={handleShowToday}>SHOW TODAY'S CLASSES</button>
+			</div>
+		</template>
+		<div class="blue-line"></div>
+		<template if:false={showFullData}>
+			<template if:false={classData.length}>
+				<p class="blank-block">No Live Class Scheduled</p>
+			</template>
+			<template if:true={classData}>
+				<template for:each={classData} for:item="classes">
+					<div class="scheduled-classes-box" key={classes.Id}>
+						<div class="schedule-time">
+							<p>{classes.BWPS_StartTime__c} EST</p>
+						</div>
+						<div class="class-info">
+							<div class="class-name-box">
+								<h2>{classes.Name}</h2>
+							</div>
+
+							<div class="class-brief-box">
+								<p>{classes.BWPS_Description__c}</p>
+							</div>
+
+							<div class="instructor-box">
+								<img src={profileIcon} alt="profile">
+                        {classes.Instructor}
+                    </div>
+
+								<div class="capacity-box">
+									<div><img src={capacityIcon} alt="capacity">{classes.Integrity__c}</div>
+										<div>
+											<img src={classes.duration_icon} alt="durationIcon">{classes.Duration} Min</div>
+										</div>
+									</div>
+									<div class="class-actions">
+										<div>
+											<!-- <div class="memberIconContainer">
+                            <div><img src={profileIcon} alt="profileIcon"></div>
+                            <div><img src={profileIcon} alt="profileIcon"></div>
+                            <div><img src={profileIcon} alt="profileIcon"></div>
+                            <div><img src={profileIcon} alt="profileIcon"></div>
+                            <div>+{classes.totalMembers}</div>
+                        </div> -->
+											<div>
+												<!-- <button data-id={classes.Id} data-value={buttonStatus} onclick={onJoinButtonClick}>{buttonStatus}</button> -->
+												<button data-id={classes.Id} data-value={buttonStatus} onclick={onJoinButtonClick}>JOIN</button>
+											</div>
+										</div>
+
+										<div>
+											<!-- <img src={shareIcon} alt="shareIcon"> -->
+											<!-- <img if:true={classes.classFavStatus} style="cursor: pointer;" src={favIcon} alt="likeIcon" data-type='HALF' data-id={classes.Id} data-status={classes.classFavStatus} onclick={handleLikeClick}>
+											<img if:false={classes.classFavStatus} style="cursor: pointer;" src={unFavIcon} alt="likeIcon" data-type='HALF' data-id={classes.Id} data-status={classes.classFavStatus} onclick={handleLikeClick}> -->
+										</div>
+									</div>
+								</div>
+				</template>
+			</template>
+		</template>
+		<template if:true={showFullData}>
+			<template if:false={ScheduleClass.length}>
+				<p class="blank-block">No Live Class Scheduled</p>
+			</template>
+			<template if:true={ScheduleClass}>
+				<template for:each={ScheduleClass} for:item="classes">
+					<div class="scheduled-classes-box" key={classes.Id}>
+						<div class="schedule-time">
+							<p>{classes.BWPS_StartTime__c} EST</p>
+						</div>
+						<div class="class-info">
+							<div class="class-name-box">
+								<h2>{classes.Name}</h2>
+							</div>
+
+							<div class="class-brief-box">
+								<p>{classes.BWPS_Description__c}</p>
+							</div>
+
+							<div class="instructor-box">
+								<img src={profileIcon} alt="profile">
+                        {classes.Instructor}
+                    </div>
+
+								<div class="capacity-box">
+									<div><img src={capacityIcon} alt="capacity">{classes.Integrity__c}</div>
+										<div>
+											<img src={classes.duration_icon} alt="durationIcon">{classes.Duration} Min</div>
+										</div>
+									</div>
+									<div class="class-actions">
+										<div>
+											<div class="memberIconContainer">
+												<div><img src={profileIcon} alt="profileIcon"></div>
+													<div><img src={profileIcon} alt="profileIcon"></div>
+														<div><img src={profileIcon} alt="profileIcon"></div>
+															<div><img src={profileIcon} alt="profileIcon"></div>
+																<div>+{classes.totalMembers}</div>
+															</div>
+															<div>
+																<!-- <a href="/PFNCADNA/s/login"><button onclick={onJoinButtonClick}>JOIN</button></a> -->
+																<button data-id={classes.Id} data-value={buttonStatus} onclick={onJoinButtonClick}>{buttonStatus}</button>
+															</div>
+														</div>
+
+														<div>
+															<!-- <img src={shareIcon} alt="shareIcon"> -->
+															<!-- <img style="cursor: pointer;" src={likeIcon} alt="likeIcon" onclick={handleLikeClick}> -->
+															<img if:true={classes.classFavStatus} style="cursor: pointer;" src={favIcon} alt="likeIcon" data-type='FULL' data-id={classes.Id} data-status={classes.classFavStatus} onclick={handleLikeClick}>
+															<img if:false={classes.classFavStatus} style="cursor: pointer;" src={unFavIcon} alt="likeIcon" data-type='FULL' data-id={classes.Id} data-status={classes.classFavStatus} onclick={handleLikeClick}>
+
+                    </div>
+														</div>
+													</div>
+				</template>
+			</template>
+		</template>
+		<div class="full-list-button-container">
+			<template if:true={showExpandCollapseButton}>
+				<template if:true={showFullDataButton}>
+					<div class="full-list-button" onclick={handleFullList}>
+						<p>&plus;</p>
+						<p>SEE FULL LIST</p>
+					</div>
+				</template>
+				<template if:false={showFullDataButton}>
+
+					<div class="full-list-button" onclick={handleFullList}>
+						<p>&minus;</p>
+						<p>SEE LESS</p>
+					</div>
+				</template>
+
+			</template>
+		</div>
+	</div>
+	<c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

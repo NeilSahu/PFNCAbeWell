@@ -1,0 +1,55 @@
+<template>
+	<div class="container1">
+		<div class="Heading">
+			<h1>Videos</h1>
+		</div>
+
+		<div class="DivForGrid">
+			<div class="slds-grid slds-wrap gridsContainer">
+				<template if:true={showAllData}>
+					<template for:each={Arr} for:item="res">
+						<div key={res.Id} class="slds-col slds-size_1-of-4 container">
+							<div class="container-box">
+								<div class="iframeContainer">
+									<iframe src={res.Link} class="Img-parent" frameborder="0"
+										allow="autoplay; fullscreen" allowfullscreen></iframe>
+								</div>
+								<div>
+									<h1 class="container-box-Quizes">{res.text1}</h1>
+								</div>
+								<div class="Name">
+									<p>{res.Name}</p>
+								</div>
+							</div>
+						</div>
+
+					</template>
+				</template>
+				<template if:false={showAllData}>
+					<template if:false={filteredArr.length}>
+						<p class="blank-block">No Records Found </p>
+					</template>
+					<template if:true={filteredArr}>
+						<template for:each={filteredArr} for:item="res">
+							<div key={res.Id} class="slds-col slds-size_1-of-4 container">
+								<div class="container-box">
+									<div>
+										<iframe src={res.Link} class="Img-parent" frameborder="0"
+											allow="autoplay; fullscreen" allowfullscreen></iframe>
+									</div>
+									<div>
+										<h1 class="container-box-Quizes">{res.text1}</h1>
+									</div>
+									<div class="Name">
+										<p>{res.Name}</p>
+									</div>
+								</div>
+							</div>
+						</template>
+					</template>
+				</template>
+			</div>
+		</div>
+	</div>
+
+</template>

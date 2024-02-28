@@ -1,0 +1,43 @@
+<template>
+    <!-- <lightning-card> -->
+        <div class="notificationContainer" value="onNotification" onclick={showHideHandler}>
+            <div class="innerContainer">
+                <div class="notificationHeadingClass">
+                    <div class="notificationHeaderClass"> <span class="notificationClass">NOTIFICATIONS</span> </div>
+                    <div class="markClass"> 
+                         <div class="eventIconClass">
+                             <img class="tick" src={doubletick}>
+                         </div>
+                        <div class="markAsReadClass"><a onclick={readNotificationHandler}>Mark all as read</a></div>
+                    </div>
+                </div>
+                <div class="notificationCardContainer">
+                    <template if:true={isNotMarked} for:each={totalrecords} for:item="notify" for:index="index">
+                        <div key={notify.id} class="notifyCardClass">
+                            <div class="notifyCardHeaderClass">
+                               <div class="cardHeadingClass">
+                                 <!-- status icon -->
+                                 <div class={notify.ButtonColor}></div>
+                                 <!-- name and active time-->
+                                 <div>
+                                     <div class="nameClass"> <span>{notify.Name}</span></div>
+                                     <div class="timeClass"> <span>{notify.Active__c}</span> </div>
+                                 </div>
+                               </div>
+                                <!-- profile picture -->
+                                <div class="profileClass">
+                                    <img src={notify.image} alt="not found" class="profilePictureClass">
+                                </div>
+                            </div>
+                            <div class="messageClass"><span>{notify.Message__c}</span></div>
+                        </div>
+                    </template> 
+                </div>
+                <div class="lineClass"></div>
+                <div class="allNotifyClass"> 
+                    <span class="viewAllNotifyClass" onclick={navigateToNotification}>View all notifications</span>
+                </div>
+            </div>
+        </div>
+    <!-- </lightning-card> -->
+</template>

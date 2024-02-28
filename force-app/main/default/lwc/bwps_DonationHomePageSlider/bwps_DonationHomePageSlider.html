@@ -1,0 +1,48 @@
+<template>
+  <div class="slider-container" style={backgroundStyle}>
+    <div class="slider-content"> 
+    <div class="slider-items active">
+      <template for:each={testimonalArray} for:item="testObj">
+        <div key={testObj.id} class="img-box">
+          <img src={testObj.image} class="slider-img">
+          <div class="text-container">
+          <div class="slider-name">{testObj.name}</div>
+          <span class="slider-volunteer">{testObj.designation}</span>
+          </div>
+        </div>
+        <div key={testObj.id} class="peragraph">
+          <p>"{testObj.message}"</p>
+        </div>
+      </template>
+    </div>
+  </div>
+<div class="dot-container">
+    <button  class="dot-btn btn-visible"></button>
+    <button  class="dot-btn" ></button>
+    <button class="dot-btn"  ></button>
+</div>
+  </div>
+
+
+  <!-- <div class="container" style={backgroundStyleImg}> -->
+    <!-- <div class="container-header">
+        <div class="container-header-Div1">
+            <span>Stay Connected</span>
+        </div>
+        <div class="container-header-Div2">
+            <p>Get the best in yoga, fitness, and wellness delivered to your inbox.  Be the first to know about new classes, stories, playlists and more.</p>
+        </div>
+        <div class="container-header-Div3">
+            <div class="container-header-Div3-InnerDiv1">
+                <input data-id="firstname" type="text" placeholder="Your Email*" required  ></input>
+            </div>
+            <div class="container-header-Div3-InnerDiv2">
+                <div class="buttondiv">
+                    <button class="button" >SUBMIT</button>
+                </div>
+            </div>
+         </div>
+    </div> -->
+    <c-stay-connected-footer></c-stay-connected-footer>
+<!-- </div> -->
+</template>

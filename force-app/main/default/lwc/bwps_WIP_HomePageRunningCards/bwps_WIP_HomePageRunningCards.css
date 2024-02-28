@@ -1,0 +1,168 @@
+h1{
+text-align: center;
+text-decoration: solid;
+font-size: 40px;
+}
+.time-div{
+height: 54px;
+text-align: center;
+margin-top: 3rem;
+margin-left: 130px;
+}
+.list-of-time{
+display: block;
+height: 4rem;
+
+
+}
+.time-item{
+text-align: center;
+margin-top: 14px;
+font-size: 1rem;
+}
+.liDec{
+margin-left: 2rem;
+text-align: center;
+height: 48px;
+width: 8rem;
+float: left;
+border: 1px solid rgb(41, 223, 211);
+border-radius: 6px;
+}
+.super-div{
+height:51rem;
+}
+.slider-container{
+margin-top: 2rem;
+display: flex;
+justify-content: center;
+height: 70%;
+width: 100%;
+box-sizing: border-box;
+scroll-snap-align: center;
+background: white;
+transform-origin: center center;
+transform: scale(1);
+flex-shrink: 0;
+}
+.Parent-div{
+height: 34rem;
+display: flex;
+align-items: center;
+margin-left: 0px;
+overflow-x: scroll;
+overflow-y: hidden;
+position: relative;
+scroll-behavior: smooth;
+scroll-snap-type: x mandatory;
+ -ms-overflow-style: none;
+scrollbar-width: none;
+width: 86%;
+margin-right: 10rem;
+}
+.Parent-div::-webkit-scrollbar {
+    display: none; 
+}
+.card{
+float: left;
+height: 31.5rem;
+width: 27rem;
+margin-top:5px;
+margin-left: 2rem;
+border: 2px solid rgb(236, 233, 233);
+box-shadow: 6px 2px 17px 0px #b9b6b6;
+transform-origin: center center;
+transform: scale(1);
+scroll-snap-align: center;
+flex-shrink: 0;
+}
+img{
+height: 16rem;
+width: 99.5%;
+margin-left: 1px;
+margin-top: 1px;
+margin-right: 1px;
+}
+
+.class-time{
+height: 2rem;
+width: 99.5%;
+background: linear-gradient(180deg, #0f738a 2%, #0baace,#00a2c3 100%);
+margin-left: 1px;
+padding: 4px;
+}
+.changeColor{
+
+--lwc-colorTextIconDefault:#008ba7;
+}
+.circule {
+float:left;
+height: 2rem;
+width: 2rem;
+border:2px Solid #008ba7;
+border-radius: 2rem;
+padding-left: 2px;
+overflow: hidden;
+padding-top: 5px;
+padding-bottom: 0px;
+margin-top: 11px;
+margin-left: 22px;
+}
+.box-blue-button {
+float: left;
+background-color: #008CA7;
+color: white;
+padding: 0.2rem;
+width: fit-content;
+height: fit-content;
+margin-left: 17rem;
+margin-top: -42px;
+}
+.blue-button {
+background-color: #008CA7;
+color: white;
+border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.box-slid-button{
+width: 10%;
+height: 3rem;
+margin: 01px 0 0 43rem;;
+}
+.slide-button {
+float: left;
+margin-left: 20px;
+height: 3rem;
+width: 3rem;
+font-size: 2rem;
+background-color: #f5f7f4;
+border: 1px solid rgba(223,223,223,255);
+border-radius: 5px;
+box-shadow: 7px 7px 17px 0px #b9b6b6;
+}
+@media only screen and (max-width: 600px) {
+    .Parent-div{
+        width: 95%;
+        margin-right: 1px;
+        }
+
+        .card{
+            float: left;
+            height: 30.5rem;
+            width: 19rem !important;
+            margin-top:2px;
+            margin-left: 1rem;
+          
+            }
+            img{
+                height: 11rem;
+                width: 99.5%;
+            }
+            .box-blue-button {
+              
+                padding: 0.2rem;
+                width: fit-content;
+                height: fit-content;
+                margin-left: 12rem;
+                margin-top: -42px;
+                }
+  }

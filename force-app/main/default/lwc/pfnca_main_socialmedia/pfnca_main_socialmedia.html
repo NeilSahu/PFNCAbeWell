@@ -1,0 +1,18 @@
+<template>
+    <div class="main-div">
+        <template if:true={WhiteIcons}>
+            <div class="social-media-link">
+                <a href="https://www.facebook.com/PFNCA/" target="_blank"><div class="w-fb"><img src={whitefacebook}></div></a>
+                <a href="https://twitter.com/pfnca?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><div class="w-twi"><img src={whiteTwitter}></div></a>
+                <a href="https://www.instagram.com/pfnca/?hl=en" target="_blank"><div class="w-twi"><img src={whiteInstragram}></div></a>
+            </div>
+        </template>
+        <template if:true={blueIcons}>
+            <div class="social-media-link">
+                <a href="https://www.facebook.com/PFNCA/" target="_blank"><div class="b-fb"><img src={blueFacebook}></div></a>
+                <a href="https://twitter.com/pfnca?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><div class="b-twi"><img src={blueTwitter}></div></a>
+                <a href="https://www.instagram.com/pfnca/?hl=en" target="_blank"><div class="b-insta"><img src={blueInstragram}></div></a>
+            </div>
+        </template>
+    </div>
+</template>

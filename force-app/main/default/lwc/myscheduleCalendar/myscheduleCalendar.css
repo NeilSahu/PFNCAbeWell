@@ -1,0 +1,497 @@
+/* CALENDAR CSS */
+.mySchedule-Header{
+    align-items:center;
+    display: flex;
+    flex-direction: column;
+    background: #008ba7;
+    width: 100% !important;
+    color: white;
+    }
+    .mySchedule-Header > .text1{
+    margin: 3% 0% 0% 0%;
+    }
+    .mySchedule-Header > .text1 > h1{
+    font-size: 2.5rem;
+    font-weight: 700;
+    }
+    .mySchedule-Header > .text2{
+    margin: 1% 0% 1% 0%;
+    }
+    .mySchedule-Header > .text2 > p{
+    font-size: 1.1rem;
+    }
+    .mySchedule-button-section{
+        display: flex;
+        width: 50%;
+        margin: auto;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+    .box-orange-button {
+        background-color: #008ca7;
+        color: white;
+        height: fit-content;
+        padding: 0.2rem;
+        margin-right: 2rem;
+        border: 0.5px solid white;
+    }
+    
+    .box-blue-button {
+        background-color: #FF9F37;
+        color: white;
+        width: fit-content;
+        height: auto;
+        padding: 0.25rem;
+    }
+    
+    .green-button {
+        padding: 0.5rem 2rem;
+        margin: auto;
+        background-color: #FF9F37;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .green-button:hover{
+        background-color: #D77E0E;
+    }
+    
+    .orange-button {
+        padding: 0.5rem 2rem;
+        margin: auto;
+        background-color: #008ca7;
+        color: white;
+        width: 10rem;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    .orange-button:hover{
+  
+	background-color: #036477;
+}
+    
+    .bell-icon{
+        display: none;
+        position: absolute;
+        z-index: 10;
+        top: 3rem;
+        right: 6rem;
+    }
+ /***************************ifrem UI****************/
+.ifrem-container{
+    width: 90%;
+    height: 32rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+.ifrem-container > span{
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+.ifrem-container > iframe {
+    width: 80%;
+    height: 90%;
+}
+.Remove{
+cursor: pointer;
+}
+
+ /***************************ifrem UI****************/
+/***************************ADD REMOVE CLASS MODEL CSS*************************/
+.model-header{
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+}
+.model-header > label {
+    color: #008ba7;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.model-header > input {
+    padding: 5px;
+    width: 40%;
+    border-radius: 2rem;
+    border: 2px solid #008ba7;
+}
+.list-view{
+    width: 100%;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: 30% 20% 30% 20%;
+    margin: 2px auto;
+    padding: 10px 0px 10px 0px;
+    border-bottom: 2px solid #c7c7cf;
+}
+.list-view > input {
+    width: 100%;
+    height: 15px;
+}
+.class-count{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7px auto;
+}
+.box-Blue-button{
+    width: fit-content;
+    padding: 0.2rem;
+    color: white;
+    background-color: #008ba7;
+    /* margin: 0px auto; */
+}
+.box-Blue-button> .blue-button{
+    background-color: #008ba7;
+    padding: 0.5rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.box-orange{
+    width: fit-content;
+    padding: 0.2rem;
+    color: white;
+    background-color: #ff9900;;  
+}
+.box-orange > .orange-button-btn {
+    background-color: #ff9900;
+    padding: 0.5rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.footer-remove{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+.confirmation-msg{
+    text-align: center;
+    padding: 1.5rem;
+    font-weight: bold;
+ }
+ .footer-confirmation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ }
+ .enroll-class-container{
+    min-height: 10rem;
+ }
+ .footer-addClass{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .schedule-class-data{
+    width: 80%;
+    margin: 0px auto;
+ }
+ .schedule-class-data > .item-head{
+    padding: 9px;
+ }
+ .item-head > .list-head{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0px auto;
+ }
+/*********************************************************************************************************************************/
+.calendarParent{
+    border-radius: 20px;
+    height: 12rem;
+    background-color: rgba(245,247,244,255);
+    width: 90%;
+    margin: auto;
+    border: 1.5px solid rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: row;
+}
+.calendarParent1{
+    width: 40%;
+    margin: 0px auto 0px 30%;
+}
+.calendarParent1 > .type{
+    margin: 0rem auto !important;
+    width: 12rem;
+    text-align: center;
+    padding: 3rem 0rem 1rem 0rem;
+}
+.type > .box{
+    border: 1.5px solid rgba(0,0,0,0.2);
+    border-radius:10px;
+    display: flex;
+} 
+.type .day{
+    text-align: center;
+}
+
+.box-click-active{
+    border: 1px solid rgba(0,0,0,0.2) !important;
+    border-radius: 7px !important;
+    background: rgba(0,0,0,0.13) !important;
+}
+.box-click-deactive{
+    border: none;
+    background: none;
+}
+.type a{
+    color: rgba(0,0,0,1);
+    width:50%;
+    padding:3px 4px;
+    text-decoration: none !important;
+    text-align: center;
+}
+.type  a:hover{
+    text-decoration: none !important;
+}
+.dateParent{
+    width: 22rem;
+    margin: 0.5rem auto;
+    display: flex;
+}
+.dateParent .prev-button{
+    padding: 10px 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 7px;
+    float: left;
+}
+.dateParent  .next-button{
+    padding: 10px 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 7px;
+    float: right;
+} 
+.dateParent .date-text{
+    width: inherit;
+    text-align: center;
+    font-weight: 600;
+    padding-top: 0.6rem;
+}
+.clendar-icon{
+margin-right: auto;
+display: flex;
+flex-direction: column;
+padding: 3rem 0px;
+justify-content: space-between;
+width: 20%;
+}
+.clendar-icon > div > span{
+margin-left: 10px;
+width: max-content;
+color: #929292;
+}
+/* ****************** */
+
+/***************<<<<<<<<Media Queries>>>>>>>>**********************/
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+   .bell-icon {
+        right: 5rem;
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+.calendarParent{
+    flex-direction: column;
+     height: 14rem;
+}
+.calendarParent1{
+    width: 100%;
+    margin: 0px auto;
+} 
+.calendarParent1 > .type{
+    padding: 2rem 0rem 1rem 0rem;
+}
+.clendar-icon{
+flex-direction: row;
+padding: 0px;
+justify-content: space-evenly;
+width: 90%;
+margin: auto;
+}
+.bell-icon {
+    top: 2rem;
+    right: 4rem;
+  }
+  .mySchedule-button-section {
+    width: 70%;
+}
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+.calendarParent{
+    flex-direction: column;
+     height: 14rem;
+}
+.calendarParent1{
+    width: 100%;
+    margin: 0px auto;
+} 
+.calendarParent1 > .type{
+ padding: 2rem 0rem 1rem 0rem;
+}
+.clendar-icon{
+flex-direction: row;
+padding: 0px;
+justify-content: space-evenly;
+width: 90%;
+margin: auto;
+}
+ .bell-icon {
+        display: none;
+    }
+    .mySchedule-button-section{
+        width: 95%;
+    }
+    .box-orange-button {
+        height: fit-content;
+    }
+    .orange-button {
+        width: 7rem;
+        font-size: 0.8rem;
+    }
+    .box-blue-button {
+        width: fit-content;
+        height: fit-content;
+        padding: 0.2rem;
+    }
+    .green-button[c-myscheduleCalendar_myscheduleCalendar] {
+        width: 13rem;
+        font-size: 0.8rem;
+    }
+    .date-text{
+        padding: 0.3rem 2.5rem;
+    }
+    .dateParent {
+        width: 20rem;
+    }
+}
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+.calendarParent{
+flex-direction: column;
+ height: 16rem;
+width: 92%;
+margin: 0px auto;
+}
+.calendarParent1{
+width: 100%;
+margin: 0px auto;
+} 
+.calendarParent1 > .type{
+    padding: 2rem 0rem 1rem 0rem;
+}
+.clendar-icon{
+flex-direction: row;
+padding: 0px;
+justify-content: space-evenly;
+width: 90%;
+margin: auto;
+}
+    .bell-icon {
+        display: none;
+    }
+    .mySchedule-Header > .text1 > h1 {
+    font-size: 2rem;
+ }
+ .mySchedule-Header > .text2 > p {
+    font-size: 1rem;
+    margin: auto 20px;
+ }
+ .mySchedule-button-section {
+    width: 95%;
+    flex-direction: column;
+}
+.box-orange-button {
+    width: fit-content;
+    margin: 10px auto;
+}
+.box-blue-button{
+    margin: 10px auto;
+}
+/********************************************************************************************/ 
+    .date-text{
+        padding: 0.3rem 2.5rem;
+    }
+    .dateParent {
+        width: 16rem;
+    }
+    .dateParent  .prev-button{
+        padding: 6px 11px;
+    }
+    .dateParent  .next-button{
+        padding: 6px 11px;
+    }
+}   
+@media only screen and (max-width: 320px)  {
+.calendarParent{
+flex-direction: column;
+ height: 14rem;
+width: 90%;
+margin: auto;
+}
+.calendarParent1{
+width: 100%;
+margin: 0px auto;
+} 
+.calendarParent1 > .type{
+    padding: 2rem 0rem 1rem 0rem;
+}
+.clendar-icon{
+flex-direction: row;
+padding: 0px;
+margin: auto;
+justify-content: space-evenly;
+width: 90%;
+}
+.clendar-icon > div > span{
+font-size: 0.8rem;
+margin-left: 6px;
+}
+
+.bell-icon {
+        display: none;
+}
+.mySchedule-Header > .text1 > h1 {
+    font-size: 2rem;
+ }
+ .mySchedule-Header > .text2 > p {
+    font-size: 1rem;
+    margin: auto 20px;
+ }
+ .mySchedule-button-section {
+    width: 95%;
+    flex-direction: column;
+}
+.box-orange-button {
+    width: fit-content;
+    margin: 10px auto;
+}
+.box-blue-button{
+    margin: 10px auto;
+}
+/******************************************************************************************/
+    .calendarParent{
+        width: 82%;
+        margin: 0px auto;
+    }   
+    .date-text{
+        padding: 0.3rem 1.5rem;
+    }
+    .dateParent {
+        width: 90%;
+    }
+    .dateParent  .prev-button{
+        padding:4px 8px;
+    }
+    .dateParent  .next-button{
+        padding: 4px 8px;
+    }
+    .dateParent .date-text{
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,218 @@
+<template>
+
+	<div class="desktop-header-container">
+		<div class="nav shadow-bottom">
+			<div class="header-logo">
+				<a href="/pfnca/pfnca-main-homepage"><img src={Header_logo} height="95px" width="172px" alt="LOGO"> </a>
+			</div>
+
+			<div class="nav-links">
+				<a href="/pfnca/pfnca-main-browseclassespage" class="leftlink homeNav anchorLinkClass" target="_self">
+					<span data-id='browseclasses' class="menuItemClass">Browse Classes</span>
+				</a>
+
+				<a href="/pfnca/pfnca-main-howtoparticipate" class="leftlink homeNav anchorLinkClass" target="_self">
+					<span data-id='howtoparticipate' class="menuItemClass">How To Participate</span>
+				</a>
+
+				<a href="/pfnca/pfnca-main-faqs" class="leftlink homeNav anchorLinkClass" target="_self">
+					<span data-id='faqs' class="menuItemClass">FAQS</span>
+				</a>
+
+				<a href="/pfnca/pfnca-main-blog" class="leftlink homeNav anchorLinkClass" target="_self">
+					<span data-id='blog' class="menuItemClass">Blog</span>
+				</a>
+
+				<a href="/pfnca/pfnca-main-aboutus" class="leftlink homeNav anchorLinkClass" target="_self">
+					<span data-id='aboutus' class="menuItemClass">About Us</span>
+				</a>
+
+				<a href="/pfnca/pfnca-main-contactus" class="leftlink homeNav anchorLinkClass" target="_self">
+					<span data-id='contactus' class="menuItemClass">Contact Us</span>
+				</a>
+
+				<a class="rightlink anchorLinkClass">
+					<div class="box-blue-button" data-join="join">
+						<button class="blue-button" onclick={openNavigateToDonatePage}>Join</button>
+					</div>
+				</a>
+
+				<a href="/pfnca/pfnca-main-login" class="rightlink anchorLinkClass">
+					<div class="box-white-button" data-login="login">
+						<button class="white-button">Login</button>
+					</div>
+				</a>
+
+				<a class="rightlink anchorLinkClass">
+					<div class="box-white-button" data-donate="donate">
+						<button class="white-button" onclick={openNavigateToDonatePage}>Donate</button>
+					</div>
+					<template if:true={showdonationtooltip}>
+						<div style="height: 0px;">
+							<c-pfnca_-donation-tool-tip></c-pfnca_-donation-tool-tip>
+						</div>
+					</template>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="tablet-header-container">
+		<div class="tablet-link-box">
+
+			<div class="tablet-top">
+				<a class="tablet-home-link" href="/pfnca/pfnca-main-homepage">
+					<img src={img_Home}>
+					<span>Home</span>
+				</a>
+
+				<span style={closeBackgroundImage} onclick={handleNavModalClose}></span>
+			</div>
+
+			<div class="tablet-main">
+				<a class="tablet-nav-link" href="/pfnca/pfnca-main-browseclassespage">
+					<img src={img_Browse_Classes}>
+					<span>Browse Classes</span>
+				</a>
+
+				<a class="tablet-nav-link" href="/pfnca/pfnca-main-howtoparticipate">
+					<img src={img_How_to_Participate}>
+					<span>How to participate</span>
+				</a>
+
+				<a class="tablet-nav-link" href="/pfnca/pfnca-main-faqs">
+					<img src={img_FAQs}>
+					<span>FAQs</span>
+				</a>
+
+				<a class="tablet-nav-link" href="/pfnca/pfnca-main-blog">
+					<img src={img_Blog}>
+					<span>Blog</span>
+				</a>
+
+				<a class="tablet-nav-link" href="/pfnca/pfnca-main-aboutus">
+					<img src={img_About}>
+					<span>About Us</span>
+				</a>
+
+				<a class="tablet-nav-link" href="/pfnca/pfnca-main-contactus">
+					<img src={img_Contact}>
+					<span>Contact us</span>
+				</a>
+			</div>
+		</div>
+		<div class="nav shadow-bottom">
+			<div class="header-logo">
+				<a href="/pfnca/pfnca-main-homepage"><img src={Header_logo}  height="78" width="142" alt="LOGO"> </a>
+			</div>
+			<div class="nav-links">
+				<div class="tablet-menu-hemburger" onclick={handleNavModalOpen}>
+					<img src={img_Menu}>
+					<span style={menuStyle}>Menu</span>
+				</div>
+
+				<a class="rightlink anchorLinkClass">
+					<div class="box-blue-button" data-join="join">
+						<button class="blue-button" onclick={openNavigateToDonatePage}>Join</button>
+					</div>
+				</a>
+
+				<a href="/pfnca/pfnca-main-login" class="rightlink anchorLinkClass">
+					<div class="box-white-button" data-login="login">
+						<button class="white-button">Login</button>
+					</div>
+				</a>
+
+				<a href="/pfnca/pfnca-main-donationpage" class="rightlink anchorLinkClass">
+					<div class="box-white-button" data-donate="donate">
+						<button class="white-button" onclick={openNavigateToDonatePage}>Donate</button>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="mobile-header-container">
+		<div class="m-header-top" data-id="m-header-top">
+			<div class="m-header-logo">
+				<a href="/pfnca/pfnca-main-homepage">
+					<img src={Header_logo} alt="LOGO"  height="60" width="109">
+                </a>
+			</div>
+			<div class="m-active-menu">
+				<img src={img_ActiveMenu} alt="menu">
+				<span>{activeMenu}</span>
+			</div>
+			<div class="">
+				<a class="">
+					<div class="">
+						<button class="m-blue-button" onclick={openNavigateToDonatePage}>Donate</button>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="m-header-main" data-id="m-header-main">
+
+			<div class="m-nav-top">
+				<a class="tablet-home-link" href="/pfnca/pfnca-main-homepage">
+					<img src={img_Home}>
+					<span>Home</span>
+				</a>
+				<span style={closeBackgroundImage} onclick={handleMobileNavModalClose}></span>
+			</div>
+
+			<div class="m-nav-main">
+
+				<a class="m-nav-link" href="/pfnca/pfnca-main-browseclassespage">
+					<img src={img_Browse_Classes}>
+					<span>Browse Classes</span>
+				</a>
+				<a class="m-nav-link" href="/pfnca/pfnca-main-howtoparticipate">
+					<img src={img_How_to_Participate}>
+					<span>How to participate</span>
+				</a>
+				<a class="m-nav-link" href="/pfnca/pfnca-main-faqs">
+					<img src={img_FAQs}>
+					<span>FAQs</span>
+				</a>
+				<a class="m-nav-link" href="/pfnca/pfnca-main-blog">
+					<img src={img_Blog}>
+					<span>Blog</span>
+				</a>
+				<a class="m-nav-link" href="/pfnca/pfnca-main-aboutus">
+					<img src={img_About}>
+					<span>About Us</span>
+				</a>
+				<a class="m-nav-link" href="/pfnca/pfnca-main-contactus">
+					<img src={img_Contact}>
+					<span>Contact us</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="m-header-bottom">
+
+			<div class="m-menu-hemburger" onclick={handleMobileNavModalOpen}>
+				<img src={img_Menu}>
+				<span>Menu</span>
+			</div>
+
+			<div class="">
+				<a href="/pfnca/pfnca-main-login" class="">
+					<div class="">
+						<button class="m-blue-button" >Get Guest Pass</button>
+					</div>
+				</a>
+			</div>
+
+			<a href="/pfnca/pfnca-main-login" class={mobileLoginClass}>
+				<div class="">
+					<button class="m-white-button">Login</button>
+				</div>
+			</a>
+		</div>
+	</div>
+
+	<c-bwps_-Donor-Dashboard-Donate-Form></c-bwps_-Donor-Dashboard-Donate-Form>
+</template>

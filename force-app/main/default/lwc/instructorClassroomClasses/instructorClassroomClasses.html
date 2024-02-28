@@ -1,0 +1,158 @@
+<template>
+    <div class="myClassesComponent">
+        <h1 class="myClassroomHeading">My Classroom</h1>
+        <div class="mainContainer">
+            <div class="firstContainer">
+                <template if:true={initialLoader}>
+                    <div class="demo-only" style="height:15rem;position:relative">
+                        <div class="slds-spinner_container">
+                            <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                                <span class="slds-assistive-text">Loading</span>
+                                <div class="slds-spinner__dot-a"></div>
+                                <div class="slds-spinner__dot-b"></div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <template if:true={noScheduleClasses}>
+                    <p class="noScheduleClasses">No Schedule Classes !</p>
+                </template>
+                <template for:each={scheduleClassesArray} for:item="sc" for:index="index">
+                    <div key={sc.Id} class="cardMainContainer">
+                        <div class="cardContainer">
+                            <div class="cardHeaderContainer">
+                                <!-- class image -->
+                                <div class="cardImageContainer">
+                                    <img src={sc.scImage} class="cardImgClass">
+                                </div>
+                                <div class="cardHeaderTextClass">
+                                    <!-- name and intensity -->
+                                    <div class="cardClassNameClass">
+                                        <span data-key={sc.Id} data-schname={sc.Name}
+                                            data-name={sc.BWPS_instructor__r.Name} data-descp={sc.BWPS_Description__c}
+                                            data-ints={sc.Integrity__c}
+                                            onclick={scheduleClassDetailViewHandle}>{sc.Name}</span>
+                                    </div>
+                                    <div class="cardLevelContainer">
+                                        <img src={sc.Level} class="cardLevelImgClass">
+                                        <span class="cardLevelTextClass">{sc.Integrity__c}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardFooterContainer">
+                                <!-- share icon and text -->
+                                <div style="display: flex;">
+                                    <div class="shareIconContainer">
+                                        <img src={shareImage} onclick={navigateToReferralPage} class="shareIconClass">
+                                    </div>
+                                    <div class="shareBtnContainer">
+                                        <span class="shareTextClass" onclick={navigateToReferralPage}>SHARE</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardBodyContainer">
+                            <!-- classes header -->
+                            <div class="bodyTextClass">
+                                <span>{sc.TotalLineItems} {sc.label}</span>
+                            </div>
+                            <!-- drop down icon -->
+                            <div class="dropdownContainer">
+                                <!-- <img src="#" class="dropdownImgClass"> -->
+                                <lightning-icon if:false={sc.dropdown} icon-name="utility:chevrondown"
+                                    alternative-text="down" size="x-small" title="x-small size" class="dropdownImgClass"
+                                    onclick={dropdownHandler} data-index={index}>
+                                </lightning-icon>
+                                <lightning-icon if:true={sc.dropdown} icon-name="utility:chevronup"
+                                    alternative-text="up" size="x-small" title="x-small size" class="dropdownImgClass"
+                                    onclick={dropdownHandler} data-index={index}>
+                                </lightning-icon>
+                            </div>
+                            <template if:true={sc.dropdown} for:each={sc.Schedule_Class_Line_Items__r} for:item="scli">
+                                <div key={scli.Id} class="classContainer">
+                                    <!-- for date -->
+                                    <div class="dateContainer">
+                                        <lightning-icon icon-name="utility:event" alternative-text="event"
+                                            size="x-small" title="x-small size" class="calendarImgClass">
+                                        </lightning-icon>
+                                        <span>{scli.shortDay}, {scli.month} {scli.date}</span>
+                                    </div>
+                                    <!-- for start and time -->
+                                    <div class="timeContainer">
+                                        <span>{scli.scliStartTime} - {scli.scliEndTime}</span>
+                                    </div>
+                                    <!-- for status -->
+                                    <!-- <div class="statusContainer">
+                                    <lightning-icon 
+                                            icon-name="utility:product_transfer" 
+                                            alternative-text="product_transfer" 
+                                            size="x-small"
+                                            title="x-small size"
+                                            class="transferImgClass">
+                                    </lightning-icon>
+                                    <span>Does not repeat</span>
+                                </div> -->
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="secondContainer">
+                <div class="mainContainerClass">
+                    <div class="calendarParent">
+                        <div class="dateParent">
+                            <a class="perv-tag" onclick={prevClickHandler}>
+                                <div class="prev-button">
+                                    &lt;
+                                </div>
+                            </a>
+                            <input class="date-picker-input" style={calendarIconClass} type="date" name=""
+                                value={dateValue} id="date-picker" onchange={handlePickedDate}>
+                            <div class="date-text fullDate">
+
+                            </div>
+                            <a class="next-tag" onclick={nextClickHandler}>
+                                <div class="next-button">
+                                    &gt;
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <hr class="lineClass">
+                </div>
+                <div>
+                    <template for:each={timeArray} for:item="time">
+                        <div key={time.Id} class="timeCardContainer">
+                            <div>
+                                <span>{time.Time}</span>
+                            </div>
+                            <div class="clsNameClass">
+                                <span>{time.scliName}</span>
+                            </div>
+                        </div>
+                        <hr class="timeLineClass" key={time.Id}>
+                    </template>
+                </div>
+            </div>
+        </div>
+        <!-- <div>
+        <div style="padding:56.22% 0 0 0;position:relative;"> -->
+        <!-- <iframe src="https://player.vimeo.com/video/785706250?h=ee0ade8f4f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Hardik interview"></iframe> -->
+        <!-- <iframe src="https://player.vimeo.com/video/785706250?h=ee0ade8f4f&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=260837" width="1366" height="768" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Hardik interview"></iframe> -->
+        <!-- </div> -->
+        <!-- <script src="https://player.vimeo.com/api/player.js"></script> -->
+        <!-- </div> -->
+
+    </div>
+
+    <template if:true={InstDetailView}>
+        <div>
+            <c-bwps_-w-i-p_-class-details-view scheduleclassname={scheduleClassName} classviewtype={classViewType}
+                scheduleclassinstname={scheduleClassInstName} scheduelclassdescription={scheduelClassDescription}
+                scheduleclassintensity={scheduleclassintensity} classdata={selectedClass}
+                onclassdetailreturn={trueparent} onselectlive={liveCick}>
+            </c-bwps_-w-i-p_-class-details-view>
+        </div>
+    </template>
+</template>

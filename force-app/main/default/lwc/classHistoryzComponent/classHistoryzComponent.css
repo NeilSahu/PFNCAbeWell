@@ -1,0 +1,897 @@
+.headerContianer {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    /* background-color: #008ba7; */
+    /* width: 100%;
+    height: 15rem; */
+    margin-top: 5rem;
+    margin-left: 3rem;
+}
+
+.modalHeader {
+    font-family: IBMPlexSans;
+    font-size: 1.375rem;
+    font-weight: bold;
+    /* margin-bottom: 0.125rem; */
+}
+
+.div2 {
+    position: absolute;
+    top: 100px;
+    right: 39px
+}
+
+.card-error-input {
+    margin: 1rem 0rem;
+    width: 100%;
+    height: 42px;
+    text-indent: 1rem;
+    border: 1px solid #fd5c5c !important;
+}
+
+.card-error-desc {
+    margin: 1rem 0rem;
+    width: 100%;
+    text-indent: 1rem;
+    padding: 15px;
+    max-width: 100%;
+    min-width: 100%;
+    border: 1px solid #fd5c5c !important;
+}
+
+.notificationClass {
+    position: absolute;
+    top: 4px;
+    left: 3rem
+}
+
+.innerHeadingClass {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.NotificationHeading {
+    font: normal normal 800 40px/52px Playfair Display;
+    letter-spacing: 0px;
+    color: #000000;
+}
+
+/* 
+.bellIconClass img {
+    position: absolute;
+    top: 81px;
+    right: 50px;
+    cursor: pointer;
+} */
+.TakeAttendance {
+    width: 96%;
+    margin: 4rem 1.3rem;
+}
+
+.heading-attendance {
+    padding-top: 0.6rem;
+    font: normal normal normal 16px/20px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 1;
+}
+
+.ClassTaken {
+    font: normal normal bold 20px/26px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #000000;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-bottom: 2%;
+}
+
+.attendance-details {
+    margin: 2rem 0rem 2rem 0rem;
+    border-radius: 20px;
+    /* background-color: #f5f7f4; */
+    /* padding: 1.3rem; */
+}
+
+.attendance-information {
+    border: 1px solid #DEE2E6;
+    border-radius: 20px;
+    margin-left: 2rem;
+    width: 95%;
+}
+
+.sort-filter-link2.sort-filter-deactive {
+
+    color: black;
+}
+
+.sort-filter {
+    display: flex;
+    padding: 1rem;
+    width: 100%;
+    margin-top: -41px;
+    font-size: 1rem;
+    margin-left: 5rem;
+}
+
+.sort-filter h3 {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.sort-filter a {
+    padding-left: 3rem;
+    padding-top: 5px;
+}
+
+.sort-filter-active {
+    color: #008ba7;
+}
+
+.sort-filter-deactive {
+    color: black;
+}
+
+.attendance-list {
+    width: 80%;
+    margin: 0rem auto;
+    padding: 3rem 0rem;
+}
+
+.attendance-details .attendance-details-header {
+    padding: 0rem 1rem 1rem 2rem;
+    display: flex;
+}
+
+.table-heading-icon {
+    float: left;
+    height: 20px;
+    width: 20px;
+    margin: 5px 9px;
+}
+
+.att-row {
+    text-align: center;
+    height: 4rem;
+    text-decoration: underline;
+
+}
+
+.att-row a {
+    color: black;
+}
+
+.att-row img {
+    height: 45px;
+    width: 45px;
+}
+
+.heading-calendar {
+    width: fit-content;
+    margin: 0rem auto;
+    display: flex;
+}
+
+.heading-calendar .prev-button {
+    padding: 10px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 7px;
+    float: left;
+}
+
+.heading-calendar .next-button {
+    padding: 10px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 7px;
+    float: right;
+}
+
+.attendance-user-image {
+    margin-right: 3px;
+    margin-bottom: 4px;
+    width: 23px;
+    height: 23px;
+    opacity: 1;
+}
+
+.dot1,
+.dot2,
+.dot3 {
+    background: #fff;
+    width: 5px;
+    height: 5px;
+    border: double;
+    border-color: grey;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.dot {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.dot1 {
+    animation: jump 1.6s -0.32s linear infinite;
+    background: grey;
+}
+
+.dot2 {
+    animation: jump 1.6s -0.16s linear infinite;
+    background: grey;
+}
+
+.dot3 {
+    animation: jump 1.6s linear infinite;
+    background: #006400;
+}
+
+.loadMore {
+    font-size: 1rem;
+    white-space: nowrap;
+    background-color: #008ba7;
+    color: white;
+    border: none;
+    font-weight: 600;
+    padding: 7px;
+}
+
+.loadMore:hover {
+    background-color: #036477;
+}
+
+.loadMoreClass:hover {
+    background-color: #036477;
+}
+
+.loadMoreClass {
+    border: 1px solid white;
+}
+
+.loadContainer {
+    border: 1px solid #008ba7;
+    background-color: #008ba7;
+    padding: 1px;
+    width: 13%;
+    margin-top: 3%;
+    margin-left: 43%;
+    text-align: center;
+    cursor: pointer;
+}
+
+@keyframes jump {
+
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    40% {
+        -webkit-transform: scale(2.0);
+        transform: scale(2.0);
+    }
+}
+
+
+[class*="col-"] {
+    float: left;
+    padding: 0px 0px;
+    text-align: left;
+    font: normal normal normal 16px/20px IBMPlexSans;
+    /* font: normal normal normal 14px/18px IBMPlexSans; */
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 1;
+}
+
+.DataParent {
+    padding: 10px 0px;
+}
+
+
+/* For Desktops: */
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: max-content;
+    padding-right: 25px;
+}
+
+.col-9 {
+    width: calc(100% - 120px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 5px;
+}
+
+.col-9 .name {
+    width: calc(100% - 330px);
+}
+
+.col-9 .grid-item {
+    width: 160px;
+}
+
+.col-9 .report {
+    width: 130px;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: fit-content;
+    font-size: 1rem;
+}
+
+.text {
+    margin-left: 15%;
+    font-size: 1.5rem;
+}
+
+label {
+    /* color:#008ba7; */
+    color: black;
+    font-size: 1rem
+}
+
+.input1 {
+
+    /* width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #008ba7;
+    height: 37px;
+	margin-top: 6px; */
+    width: 100%;
+    margin-top: 6px;
+    padding: 0 1rem;
+    border: 1px solid #008ba7;
+    border-radius: 0;
+    height: 3rem;
+
+}
+
+.input2 {
+    width: 100%;
+    /* border-radius: 10px; */
+    border: 1px solid;
+    border-color: #008ba7;
+    height: 115px;
+    margin-top: 6px;
+    padding: 0 1rem;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.button2 {
+    margin: 3px;
+    color: white;
+    background-color: #008ba7;
+    border: 0.25px solid #ece7e7;
+    font-size: 1rem;
+    padding: 3px 22px;
+    text-transform: uppercase;
+}
+
+.btn {
+    background-color: #008ba7;
+    padding-right: 0px;
+    width: fit-content;
+    margin: 11px auto;
+}
+
+.disable-btn {
+    margin: 3px;
+    color: white;
+    background-color: #C6C6C6;
+    border: 0.25px solid #ece7e7;
+    font-size: 1rem;
+    padding: 3px 22px;
+}
+
+.disable-btn-box {
+    background-color: #C6C6C6;
+    padding-right: 0px;
+    width: fit-content;
+    margin: 11px auto;
+}
+
+hr {
+    margin: 9px auto;
+}
+
+h3.heading-attendance-h3 {
+    font-weight: bold;
+}
+
+/* ///////////////// Media for tab view //////////////////////// */
+@media only screen and (max-width: 1200px) and (min-width: 1024px) {
+    .TakeAttendance {
+        width: 96%;
+    }
+
+    /* .attendance-list{
+        width:70%;
+        margin:0rem auto;
+        padding:0rem 4rem;
+    } */
+    /* .attendance-details .attendance-details-header{
+        padding: 0rem 1rem 1rem 1rem;
+        display:flex;
+    }
+    .table-heading-icon{
+        float: left;
+        height: 20px;
+        width: 20px;
+        margin: 5px 9px;
+    }
+    .att-row{
+        text-align: center;
+        height: 4rem;
+    }
+    .att-row img{
+        height:45px;
+        width:45px;
+    }
+    .heading-calendar{
+        width: fit-content;
+        margin: 0rem auto;
+        display: flex;
+    }
+    .heading-calendar  .prev-button{
+        padding: 10px 15px;
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 7px;
+        float: left;
+    }
+    .heading-calendar  .next-button{
+        padding: 10px 15px;
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 7px;
+        float: right;
+    } */
+
+}
+
+/* ///////////////// Media for tab view //////////////////////// */
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+
+    /* .attendance-list{
+        width: 72%;
+        margin: 0rem auto;
+        padding: 0rem 0rem;
+    }
+    .table-heading-icon{
+        margin: 6px 4px;
+    }
+     */
+    .headerContianer {
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+
+    .TakeAttendance {
+        width: 100%;
+        margin: 0rem 0rem;
+    }
+
+    .sort-filter {
+        margin-left: 3rem;
+    }
+
+    .attendance-details {
+        margin: 2rem 0rem 2rem 0rem;
+    }
+
+    .attendance-information {
+        margin-left: 0rem;
+        width: 100%;
+    }
+
+    .attendance-list {
+        width: 89%;
+        padding: 3rem 0rem;
+    }
+
+    .table-heading-icon {
+        height: 16px;
+        width: 16px;
+        margin: 8px 0px;
+    }
+
+    .heading-Attendance h1 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .heading-attendance h3 {
+        margin-left: -15px;
+    }
+
+    .loadContainer {
+        width: fit-content;
+    }
+
+    .loadMore {
+        padding: 6px 23px;
+    }
+}
+
+
+
+/* ///////////////// Media for mobile view //////////////////////// */
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+
+    .headerContianer {
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+
+    .TakeAttendance {
+        width: 100%;
+        margin: 0rem 0rem;
+    }
+
+    .sort-filter {
+        margin-left: 3rem;
+    }
+
+    .attendance-details {
+        margin: 2rem 0rem 2rem 0rem;
+    }
+
+    .attendance-information {
+        margin-left: 0rem;
+        width: 100%;
+    }
+
+    .attendance-list {
+        width: 95%;
+        padding: 3rem 0rem;
+    }
+
+    .table-heading-icon {
+        height: 16px;
+        width: 16px;
+        margin: 8px 0px;
+    }
+
+    .heading-Attendance h1 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .heading-attendance h3 {
+        margin-left: -15px;
+    }
+
+    .loadContainer {
+        width: fit-content;
+        margin-left: 36%;
+    }
+
+    .loadMore {
+        padding: 6px 23px;
+    }
+
+    .col-3 {
+        padding-right: 60px;
+    }
+
+    .col-9 {
+        flex-direction: column;
+        width: calc(100% - 150px);
+    }
+
+    .col-9 .name {
+        width: 100%;
+    }
+}
+
+/* ///////////////// Media for Mobile view //////////////////////// */
+
+@media only screen and (max-width: 600px) and (min-width: 480px) {
+    .input1 {
+        font-size: 18px;
+    }
+
+    .TakeAttendance {
+        margin: 1.25rem 0rem;
+    }
+
+    .headerContianer {
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+
+    .ClassTaken {
+        display: none;
+    }
+
+    .attendance-list {
+        width: 95%;
+        padding: 0rem 0rem;
+    }
+
+    .attendance-details {
+        margin: 0rem 0rem 0rem 0rem;
+        /* padding: 10px; */
+    }
+
+    .attendance-information {
+        margin-left: 0.7rem;
+        width: 100%;
+    }
+
+    .sort-filter {
+        margin-left: 0rem;
+        white-space: nowrap;
+    }
+
+    .sort-filter a {
+        padding-left: 17px;
+        padding-top: 2px;
+    }
+
+    .sort-filter-active {
+        color: #008ba7;
+        margin-left: -1rem;
+    }
+
+    .sort-filter-deactive {
+        color: black;
+        margin-left: 30px;
+    }
+
+    .attendance-details .attendance-details-header {
+        padding: 0rem 1rem 1rem 1rem;
+    }
+
+    *,
+    *:before,
+    *:a td {
+        text-align: center;
+        margin-right: 4px;
+    }
+
+    .table-heading-icon {
+        float: none;
+        height: 16px;
+        width: 16px;
+        margin: 5px 9px;
+    }
+
+    .sort-filter {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin-top: 6px;
+    }
+
+    .bellIconClass {
+        display: none;
+    }
+
+    /*     
+    .bellIconClass img {
+        right: -212px;
+    } */
+    .loadContainer {
+        width: fit-content;
+        margin-left: 32%;
+        margin-bottom: 2rem;
+    }
+
+    /* .lazyLoadData{
+        margin-left: -1rem;
+    } */
+    .loadMore {
+        font-size: 0.725rem;
+        padding: 4px 11px;
+    }
+
+    .container {
+        font-size: 2rem;
+    }
+
+    .col-3 {
+        padding-right: 60px;
+    }
+
+    .col-9 {
+        flex-direction: column;
+        width: calc(100% - 150px);
+    }
+
+    .col-9 .name {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .input1 {
+        font-size: 18px;
+    }
+
+    .TakeAttendance {
+        margin: 1.25rem 0rem;
+    }
+
+    .headerContianer {
+        margin-top: 2rem;
+        margin-left: 1rem;
+    }
+
+    .ClassTaken {
+        display: none;
+    }
+
+    .attendance-list {
+        width: 95%;
+        padding: 0rem 0rem;
+    }
+
+    .attendance-details {
+        margin: 0rem 0rem 0rem 0rem;
+        /* padding: 10px; */
+    }
+
+    .attendance-information {
+        width: 97%;
+        margin: 0rem 1rem 0rem 1rem;
+    }
+
+    /* .sort-filter{
+        margin-left: 0rem;
+        white-space: nowrap;
+      
+    } */
+    .sort-filter a {
+        padding-left: 0px;
+        padding-top: 2px;
+    }
+
+    .sort-filter-active {
+        color: #008ba7;
+        /*  margin-left: -1rem; */
+    }
+
+    .sort-filter-deactive {
+        color: black;
+        /* margin-left: 30px; */
+    }
+
+    .attendance-details .attendance-details-header {
+        padding: 0rem 1rem 1rem 1rem;
+    }
+
+    *,
+    *:before,
+    *:a td {
+        text-align: center;
+        margin-right: 4px;
+    }
+
+    .table-heading-icon {
+        float: none;
+        height: 16px;
+        width: 16px;
+        margin: 5px 9px;
+    }
+
+    .sort-filter {
+        display: flex;
+        gap: 1rem;
+        justify-content: space-between;
+        padding: 0;
+        margin-left: 0;
+        margin-top: 6px;
+    }
+
+    .bellIconClass {
+        display: none;
+    }
+
+    /*     
+    .bellIconClass img {
+        right: -212px;
+    } */
+    .loadContainer {
+        width: fit-content;
+        margin-left: 32%;
+        margin-bottom: 2rem;
+    }
+
+    /* .lazyLoadData{
+        margin-left: -1rem;
+    } */
+    .loadMore {
+        font-size: 0.725rem;
+        padding: 4px 11px;
+    }
+
+    .container {
+        font-size: 2rem;
+    }
+
+    .DataParent {
+        padding-bottom: 10px;
+    }
+
+    .col-3 {
+        padding-right: 25px;
+    }
+
+    .col-9 {
+        flex-direction: column;
+        width: calc(100% - 115px);
+    }
+
+    .col-9 .name {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .DataParent {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 15px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .col-3 {
+        width: 100%;
+        padding: 10px 0px;
+    }
+
+    .col-9 {
+        width: 100%;
+    }
+}

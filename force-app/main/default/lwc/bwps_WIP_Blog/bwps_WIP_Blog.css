@@ -1,0 +1,324 @@
+:host {
+	--colr-primary: #008BA7;
+	--colr-primary-dark: #193A5A;
+	--colr-primary-darker: #036477;
+	--colr-secondary-light: #FF9F37;
+	--colr-secondary-dark: #D77E0E;
+	--colr-tertiary: #7E964E;
+	--colr-light-gray: #DEE2E6;
+	--colr-medium-gray: #C6C6C6;
+	--colr-background: #F5F7F4;
+	--colr-black: #000000;
+	--colr-regular-font: #343a40;
+}
+
+.main-container{
+    margin: 3rem clamp(3rem, 6vw, 6rem);
+    /* padding-inline: 6rem; */
+}
+.flex{
+    display: flex;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    gap: 5%;
+}
+
+/* Css for header blog */
+.header-blog{
+    width: 65%;
+}
+.h-blog-photo{
+    border: 5px solid #f5f7f4;
+    box-shadow: 0px 5px 15px #00000026;
+}
+.h-blog-photo >img{
+    object-fit: contain;
+    width: 100%;
+   aspect-ratio: 2.4/1; 
+   cursor: pointer;
+}
+.h-blog-detail{
+    padding-inline: 0.7rem;
+}
+.h-blog-auther-date-box{
+    font-size: 1rem;
+    margin-top: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: var(--colr-regular-font);
+    opacity: 0.5;
+
+}
+.h-blog-heading{
+    font-size: 1.125rem;
+    font-weight: bold;
+    color:  var(--colr-primary);
+    cursor: pointer;
+
+}
+.h-blog-description{
+    margin-top: 0.8rem;
+    font-size: 1.125rem;
+    color: #000000;
+    opacity: 0.7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+/* CSS for search and Categories */
+.search-catrgories-container{
+    row-gap: 5%;
+    width: 30%;
+}
+.search-box{
+    /* height: 2.5rem; */
+    display: flex;
+    gap: 1.5rem;
+}
+.search-box input{
+    background: #ffffff;
+    border: 1px solid var(--colr-primary);
+    height: 3rem;
+    width: 100%;
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+
+    /* height: 100%;
+    background-color: #f5f7f4;
+    border: #f5f7f4;
+    border-radius: 5px;
+     */
+}
+
+
+.categories-box{
+    height: 85%;
+    /* background-color: #f5f7f4; */
+    border-radius: 5px;
+    padding-inline: 1rem;
+    padding-block: 2rem;
+}
+
+.categories{
+   display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* flex-direction: column;*/
+}
+.categories div{
+    /* border-bottom: 1px solid #dadcd9; */
+    padding: 0.5rem;
+    font-size: 1.125rem;
+}
+.categories > :last-child{
+    border-bottom: 0px;
+}
+.category{
+    cursor: pointer;
+    color: #193A5A;
+    background-color: #f5f7f4;
+    border-radius: 6px;
+    box-shadow: 0px 1px 2px #00000026;
+    height: 3rem;
+    font-size: 1.125rem;
+}
+.category.selected{
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+.category:hover{
+    font-weight: bold;
+}
+
+
+.c-heading{
+    font-size: 1.375rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    text-align: left;
+    color: #000000;
+    text-transform: uppercase;
+    opacity: 1;
+
+}
+
+.c-hr-line:after {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #dadcd9;
+}
+
+
+/* CSS for blogs */
+.blogs-container{
+    flex-wrap: wrap;
+    padding-block:3rem;
+    column-gap: 5%;
+}
+.blog{
+    width: 30%;
+    margin-top: 3rem;
+}
+.blog-photo{
+    border: 5px solid #f5f7f4;
+    box-shadow: 0px 5px 15px #00000026;
+}
+.blog-photo >img{
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 139/83;
+    cursor: pointer;
+}
+.blog-detail{
+    padding-inline: 0.5rem;
+}
+.blog-auther-date-box{
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    color: var(--colr-regular-font);
+    opacity: 0.5;
+
+}
+.blog-heading{
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--colr-primary);
+
+}
+.blog-description{
+    margin-top: 0.5rem;
+    font-size: 1.125rem;
+    color: #000000;
+    opacity: 0.7;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   -webkit-line-clamp: 2;
+   display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+/* CSS for blog pagination */
+.pagination-container{
+    justify-content: center;
+    column-gap: 1rem;
+}
+.page{
+    width: 2.8rem;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #0000007d;
+    border-radius: 7px;
+    font-size: 1.125rem;
+    color: #7e7e7e;
+    font-weight: bold;
+}
+.selected-page{
+    color: black;
+    background-color: #dde2e6;
+    border: transparent;
+}
+
+.next-btn, .prev-btn{
+    border: 1px solid #000000;
+    font-size: 1.4rem;
+    padding-bottom: 1px;
+}
+
+.blue-button{
+    height: 3rem;
+    padding-inline: 1rem;
+    /* font-weight: bold; */
+    font-size: 1.125rem;
+    color: white;
+    background-color: var(--colr-primary);
+    outline: 1px solid #FFFFFF4D;
+    outline-offset: -4px;
+    border: 3px solid var(--colr-primary);
+}
+
+.blue-button:hover{
+    background-color: var(--colr-primary-darker);
+    outline: transparent;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .main-container{
+        margin: 3rem clamp(1rem, 4vw, 3rem);
+    }
+    .header{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .header-blog{
+        width: 100%;
+    }
+    .search-catrgories-container{
+        row-gap: 0;
+        width: 100%;
+    }
+    .search-box{
+        height: 2.5rem;
+    }
+    
+    .categories-box{
+        text-align: center;
+        margin-block: 1.5rem;
+    }
+    .blog{
+        width: 45%;
+    }
+    .blogs-container{
+        column-gap: 10%;
+    }
+}
+.blogsnotfound{
+    text-align: center;
+    padding: 5rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
+@media only screen and (max-width: 480px) and (min-width: 320px){
+    .main-container{
+        margin: clamp(0.5rem, 4vw, 1rem);
+    }
+    .header{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .header-blog{
+        width: 100%;
+    }
+    .search-catrgories-container{
+        row-gap: 0;
+        width: 100%;
+    }
+    .search-box{
+        height: 2.5rem;
+    }
+    .search-box>input{
+        text-align: center;
+
+    }
+    .categories-box{
+        text-align: center;
+        margin-block: 1.5rem;
+    }
+    .blog{
+        width: 100%;
+    }
+}

@@ -1,0 +1,9 @@
+<template>
+    <article class="slds-card" style="padding: 20px;">
+        <lightning-combobox label="Select Profile:" options={profileList}></lightning-combobox>
+        <lightning-textarea label="Notification Message:" style="margin-top:20px"></lightning-textarea>
+        <div style="display: flex;justify-content: center;padding-top: 20px;">
+            <button class="slds-button slds-button_brand" onclick={sendNotification}>Notify Users</button>
+        </div>
+    </article>
+</template>

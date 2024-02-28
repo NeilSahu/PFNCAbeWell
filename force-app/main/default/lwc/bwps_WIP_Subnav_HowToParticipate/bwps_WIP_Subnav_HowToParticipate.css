@@ -1,0 +1,59 @@
+.sub-nav {
+	width: 100%;
+	background-color: #193a5a;
+	position: relative;
+    overflow-x: scroll;
+	scrollbar-width: none;
+	-ms-overflow-style: none;  
+ 
+}
+.sub-nav::-webkit-scrollbar{
+	display: none;
+}
+.sub-nav-link {
+	display: flex;
+	list-style: none;
+}
+.sub-nav-link li {
+	padding: 1.3rem 3rem 1rem 8rem;
+
+	font-size: 22px;
+	white-space: nowrap;
+}
+.sub-nav-link li>div {
+	text-decoration: none;
+	/* color: white; */
+	cursor: pointer;
+	/* font: normal normal normal 21px/24px IBM Plex Sans; */
+	letter-spacing: 0px;
+	color: #FFFFFF;
+}
+.active-marker{
+	height: 0.4rem;
+	width: 2rem;
+	background-color: #ff9f37;
+	position: absolute;
+	bottom: 0;
+}
+@media only screen and (max-width: 480px) and (min-width: 320px){
+	.sub-nav-link li{
+		/* padding: 3rem 1rem 1rem 1rem; */
+		padding: 1rem;
+		/* font-size: 17px; */
+	}
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+	.sub-nav-link li{
+		/* padding: 1rem 3rem 1rem 3rem; */
+
+		padding: 1rem;
+		/* font-size: 17px; */
+	}
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+	.sub-nav-link li{
+		/* padding: 2rem 3rem 1rem 3rem; */
+		padding: 1rem;;
+		/* font-size: 17px; */
+	}
+}

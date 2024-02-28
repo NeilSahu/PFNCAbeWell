@@ -1,0 +1,81 @@
+.container1 {
+  margin: 0px 3rem;
+}
+
+.Heading {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  color: black;
+  margin: 35px 0px 35px;
+}
+
+.container-box-img {
+  width: 100%;
+  border-radius: 0px 35px 0px 35px;
+}
+
+.container-box {
+  padding: 0px 22px 40px;
+}
+
+.container-box-Quizes {
+  margin: 25px 0px 10px;
+  color: #008ba7;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.container-box-Date {
+  margin-bottom: 5px;
+  color: #343a40;
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.blank-block {
+  text-align: center;
+  width: 100%;
+  color: gray;
+  font-size: x-large;
+}
+
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+
+  .container1 {
+    margin: 0 1rem;
+  }
+
+  .container {
+    width: 33.33%;
+  }
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+
+  .container {
+    width: 50%;
+  }
+
+  .container1 {
+    margin: 0 1rem;
+  }
+
+  .container-box {
+    padding: 0px 20px 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .container1 {
+    margin: 0 1rem;
+  }
+
+  .container {
+    width: 100%;
+  }
+}

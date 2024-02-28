@@ -1,0 +1,255 @@
+<template>
+
+    <div class="container">
+        <div class="header">
+        <h1>Account Settings</h1> 
+        <div class="profilepicContainer" if:true={showAccountInfo}>
+          <div class="imageContainer">
+             <img src={profileImg}  data-id="output" onclick={getImage}/>
+          </div>
+          <div><lable  onclick={uploadImage} data-id="img-change">CHANGE IMAGE</lable></div>
+          <div><lable  onclick={removeimage}>REMOVE IMAGE</lable></div> 
+        </div>
+        </div>
+        <div class="main">
+            <div class="sidebar">
+                <p onclick={handleSidebar} class="active" data-id="accountInfo">ACCOUNT INFORMATION</p>
+                <!-- <p onclick={handleSidebar} class="" data-id="paymentMethod">PAYMENT METHOD</p> -->
+            </div>
+            <div class="view-box">
+                <template if:true={showAccountInfo}>
+                    <form class="form profile-form" data-id="form">
+                        <h3>EDIT PROFILE</h3>
+                        <div class="input-box half-width">
+                            <label>First Name</label>
+						    <input name="FirstName" type="text" placeholder="Enter your first name" value={userFirstName} disabled={inputDisabled}></input>
+                        </div>
+                        <div class="input-box half-width">
+                            <label>Last Name</label>
+						    <input name="LastName"  type="text" placeholder="Enter your last name" value={userLastName} disabled={inputDisabled} ></input>
+                        </div>
+                        <div class="input-box half-width">
+                            <label>Birthday</label>
+						    <input name="Birthday" type="date" value={userBirthday} disabled={inputDisabled} >
+                        </div>
+                        <div class="input-box half-width">
+                            <label>Gender</label>
+                            <select name="gender" disabled={inputDisabled} data-id="gender-drop">
+                                <option value="default" disabled selected>Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <label>Email Address</label>
+						    <input name="Email" type="email" placeholder="Email Address" value={userEmail} disabled={inputDisabled} >
+                            <span class ="errorClass" if:true={emailError}>Please enter valid email.</span>
+                        </div>
+                        <div class="input-box">
+                            <label>Phone Number</label>
+						    <input type="phone" name="Phone" placeholder="123 45 678" value={phoneNumber} disabled={inputDisabled}>
+                            <span class ="errorClass" if:true={phoneError}>Please enter valid phone number.</span>
+                        </div>
+                                                
+                        <div class={classOfAddress}>
+                            <label>Address</label>
+						    <input type="text" name="Address" value={userAddress} placeholder="123 Street Name" disabled={inputDisabled}>
+                        </div>
+                        <div class="input-box">
+                            <label>Apartment, suite, etc.</label>
+						    <input type="text" value={userApartment} name="ApartmentSuite" disabled={inputDisabled}>
+                        </div>
+                        <div class="input-box half-width">
+                            <label>City</label>
+						    <input type="text" value={userCity} name="City" disabled={inputDisabled}>
+                        </div>
+                        <div class="input-box qurater-width">
+                            <label>State</label>
+						    <input type="text" value={userState} name="State" disabled={inputDisabled}>
+                        </div>
+                        <div class="input-box qurater-width">
+                            <label>ZIP / Postal Code</label>
+						    <input type="text" value={userZipPostalCode} name="ZipPostalCode" disabled={inputDisabled}>
+                            <span class ="errorClass" if:true={zipCodeError}>Please enter valid zip code.</span>
+                        </div>
+                        <div class="input-box">
+                            <label>Country</label>
+						    <input type="text" value={userCountry} name="Country" disabled={inputDisabled}>
+                        </div>
+                           <!-- <div class="input-box">
+                            <label>Address</label>
+						    <input type="text" name="Address" value={userAddress} placeholder="123 Street Name" disabled>
+                         </div> -->
+                        <div class="edit-submit-button-box">
+                            <button class="edit-submit-button" data-id="Profile-edit" onclick={handleEditSubmitButtonClick} > 
+                                {editSubmitButtonText}
+                            </button>
+                        </div>
+                    </form>
+                    <form class="form password-form"  data-id="form2">
+                        <h3>CHANGE PASSWORD</h3>
+                        <div class="input-box">
+                            <label>Current Password</label>
+						    <input type="password" name="oldPassword" data-id="oldpass" placeholder="Enter current password" disabled={passwordInputDisabled} value={oldPass}>
+                        </div>
+                        <div class="input-box">
+                            <label>New Password</label>
+						    <input type="password" name="newPassword" data-id="newpass" placeholder="Enter new password" disabled={passwordInputDisabled} value={newPass}>
+                        </div>
+                        <div class="input-box">
+                            <label>Confirm Password</label>
+						    <input type="password" name="retypePassword" data-id="repass"  placeholder="Re-type password" disabled={passwordInputDisabled} value={confPass}>
+                        </div>
+                        <div class="edit-submit-button-box">
+                            <button class="edit-submit-button" data-id="Profile-edit" onclick={handlePasswordEditSubmitButtonClick} > 
+                                {passwordEditSubmitButtonText}
+                            </button>
+                        </div>
+                    </form>
+                </template>
+                <template if:false={showAccountInfo}>
+                    <div style="display: flex; justify-content: center">
+                        <h1 style="font-size: 3rem; margin:1rem;">In development</h1>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+    <template if:true={isSavetrue}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+
+
+	<!-- <div class="accountSettingHeader">
+
+
+		<div class="div2">
+			<a> <img class="bellicon" src={bellIcon}  onclick={showNotificationMethod} > </a>
+				<div class="notificationCount"><span>{totalNotifications}</span></div>
+				<div if:true={showNotificationFlag}>
+					<c-notification-component totalrecords={notificationVisibel}></c-notification-component>
+				</div>
+		</div>
+		<div class="text1">
+			<h1>Account Settings</h1>
+		</div>
+		<div class="text2">
+			<p>Edit your account settings and update your password here.</p>
+		</div>
+	</div>
+
+	<div class="SettingUI">
+		<form action="" data-id="form">
+			<div class="profile_form">
+				<div class="profile-img-sec">
+					<span>Profile Photo</span>
+					<div class="profile-pic">
+						<div>
+							<img src={profileImg} data-id="output" width="200" />
+                </div>
+							<div>
+								<div class="box-orange-button">
+									<label class="orange-button"> UPLOAD PHOTO
+                         <input name="profilePic" type='file' class="orange-button enable" data-id="imgInput" onchange={inputImg} disabled>
+                        </label>
+								</div>
+								<span>Maximum size of 1 MB.JPG, GIF, or PNG </span>
+							</div>
+						</div>
+					</div>
+					<div class="basicInfo">
+						<label>First Name</label>
+						<input class="enable" name="FirstName" type="text" placeholder="Enter your first name" value={userFirstName} disabled></input>
+						<label>Last Name</label>
+						<input class="enable" name="LastName"  type="text" placeholder="Enter your last name" value={userLastName} disabled ></input>
+						<label>Location</label>
+						<input class="enable" name="Location" type="location" value={location} placeholder="Enter your location" disabled></input>
+						<label>Gender</label>
+						<div class="radioInput">
+							<input class="enable"  type="Radio" name="gender" data-id="Female" value="Female" disabled></input>
+							<span>Female</span>
+							<input class="enable"  type="Radio" name="gender" data-id="Male"  value="Male" disabled></input>
+							<span>Male</span>
+							<input class="enable" type="Radio" name="gender"  data-id="Other"  value="Other" disabled></input>
+							<span>Other</span>
+							<input class="enable" type="Radio" name="gender"  data-id="donot-say"  value="donot-say" disabled></input>
+							<span>I'd rather not say</span>
+						</div>
+						<label>Birthday</label>
+						<div class="select">
+							<select class="enable" name="Month" data-id="month_drop"  onchange={dayClick} disabled>
+                      <option value="none" selected disabled hidden>
+                        Month
+                    </option>
+                    <option value='01'>Janaury</option>
+                    <option value='02'>February</option>
+                    <option value='03'>March</option>
+                    <option value='04'>April</option>
+                    <option value='05'>May</option>
+                    <option value='06'>June</option>
+                    <option value='07'>July</option>
+                    <option value='08'>August</option>
+                    <option value='09'>September</option>
+                    <option value='10'>October</option>
+                    <option value='11'>November</option>
+                    <option value='12'>December</option>
+                  </select>
+							<select class="enable" name="day"  data-id="Day_drop"  onclick={dayClick} disabled>
+                    <option value="none" selected disabled hidden>
+                        Day
+                    </option>
+               </select>
+							<select class="enable" name="Year"  data-id="year_drop"  onchange={dayClick} disabled>
+                <option value="none" selected disabled hidden>
+                    Year
+                </option>
+               </select>
+						</div>
+						<label>Phone Number</label>
+						<input class="enable"  type="phone" name="Phone" placeholder="123 45 678" value={phoneNumber} data-id="mask" disabled></input>
+					</div>
+				</div>
+		</form>
+		<div class="editButton">
+			<div class="box-orange-button">
+				<button class="orange-button" onclick={saveDetail} data-id="profile-edit-button"> EDIT
+         </button>
+			</div>
+		</div>
+		<br><br>
+		<div class="line"></div>
+		<br><br>
+		<div class="profile_form">
+			<div class="basicInfo">
+				<label for="">Email:</label>
+				<div class="basicInfo edit-email" style="float: left;">
+					<input name="email" type="Email" data-id="emailField" placeholder="Your email address is email@email.com" value={userEmail} onchange={getEmail}>
+					<button onclick={updateUserEmailAddress}>Edit</button>
+				</div>
+				<input name="re-email" type="Email" data-id="re-emailField" placeholder="Re-type new email address" onchange={getEmail}>
+    </div>
+			</div>
+			<br> <br>
+			<div class="line"></div>
+			<br><br>
+			<form action="" data-id="form2">
+				<div class="profile_form">
+					<div class="basicInfo">
+						<label for=""> Password:</label>
+						<input type="password" name="oldPassword" placeholder="Enter current password">
+						<input type="password" name="newPassword" placeholder="Enter new Password">
+						<input type="password" name="retypePassword" placeholder="Re-type password">
+			        </div>
+					</div>
+			</form>
+			<div class="editButton">
+				<div class="box-orange-button">
+					<button class="orange-button" onclick={updatePassword}> CHANGE PASSWORD
+         </button>
+				</div>
+			</div>
+		</div> -->
+
+
+
+</template>

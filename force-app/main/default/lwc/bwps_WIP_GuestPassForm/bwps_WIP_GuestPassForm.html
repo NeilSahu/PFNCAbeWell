@@ -1,0 +1,87 @@
+<!-- bwps_WIP_GetAGuestPass -->
+
+<template>
+    <div class="row">
+        <div class="col-7">
+            <div class="signup-form">
+                <div class="login-details">
+                    <div class="signup-heading">
+                        <h1>Get a Guest Pass</h1>
+                    </div>
+                    <div class="subtitle">
+                        Start your free membership trial today with a guest pass. You will get access to our platform and you can watch upto 8 classes. After your guest pass expires,you will be asked to pay a $50.00 membership fee.
+                    </div>
+                    <div class="Login-form">
+                        <form class="form">
+                            <label for="email">Email Address</label><br>
+                            <input type="email" id="email" name="email" data-id="email" ><br>
+                            <label for="password">Password</label><br>
+                            <input type="password" id="password" name="password" data-id="password" ><br>
+                            <label for="password">Retype Password</label><br>
+                            <input type="password" id="retypepassword" name="retypepassword" data-id="retypepassword" ><br>
+                            <label for="phone">Phone Number</label><br>
+                            <input type="number" id="phone" name="phone" data-id="phone" minlength="10" maxlength="10"><br>
+                        </form>
+                    </div> 
+                    <div class="get-pass-buttons">
+                        <div class="not-member">
+                            Already a member? <a href="#">Sign in</a>
+                        </div>
+                        <div class="box-orange-button">
+                            <button class="orange-button" onclick={handleClick}>SUBMIT</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="faqcontainer">
+                <details class="faq">
+                    <summary class="faq-heading">
+                        <div class="faq-question">What services do I get access to with a guest pass?</div>
+                    </summary>
+                    <p class="faq-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut feugiat elit. Proin iaculis ultricies dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ornare egestas lorem, eget aliquet leo venenatis eu.</p>
+                </details>
+                <hr>
+                <details class="faq">
+                    <summary class="faq-heading">
+                        <div class="faq-question">How can I purchase a full membership?</div>
+                    </summary>
+                    <p class="faq-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut feugiat elit. Proin iaculis ultricies dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ornare egestas lorem, eget aliquet leo venenatis eu.</p>
+                </details>
+                <hr>
+                <details class="faq">
+                    <summary class="faq-heading">
+                        <div class="faq-question">How do I access classes after I signup for the guest pass?</div>
+                    </summary>
+                    <p class="faq-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut feugiat elit. Proin iaculis ultricies dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ornare egestas lorem, eget aliquet leo venenatis eu.</p>
+                </details>
+                <hr>
+                <details class="faq">
+                    <summary class="faq-heading">
+                        <div class="faq-question">Who do I contact if I am having trouble?</div>
+                    </summary>
+                    <p class="faq-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut feugiat elit. Proin iaculis ultricies dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ornare egestas lorem, eget aliquet leo venenatis eu.</p>
+                </details>
+                <hr>
+                <details class="faq">
+                    <summary class="faq-heading">
+                        <div class="faq-question">How much does it cost to sign up?</div>
+                    </summary>
+                    <p class="faq-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut feugiat elit. Proin iaculis ultricies dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ornare egestas lorem, eget aliquet leo venenatis eu.</p>
+                </details>
+                <hr>
+                <details class="faq">
+                    <summary class="faq-heading">
+                        <div class="faq-question">I can't afford the full membership fees. Is there any help you can offer?</div>
+                    </summary>
+                    <p class="faq-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut feugiat elit. Proin iaculis ultricies dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ornare egestas lorem, eget aliquet leo venenatis eu.</p>
+                </details>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-12 bgimagediv">
+        <img src={signupImage}>
+    </div>
+</template>

@@ -1,0 +1,165 @@
+.new {
+    color: black;
+}
+
+.headerContainer{
+    margin: 3rem 6% 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: black;
+    width: 88%;
+    grid-column-start: 1;
+    font: normal normal 800 40px/52px Playfair Display;
+    letter-spacing: 0px;
+    opacity: 1;
+}
+
+/* .headerContainer{
+    margin: 3rem 6% 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-size: xxx-large;
+    font-weight: 700;
+    color: black;
+    font-family: Play Display;
+}
+
+.headerClass{
+    white-space: nowrap;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    font: normal normal 800 40px/52px Playfair Display;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+} */
+
+
+.bodyContainer{
+    /* padding: 8% 0%; */
+    padding-top: 8%;
+
+}
+.bellImageClass{
+    width: 40px;
+    cursor: pointer;
+    position: absolute;
+    top: 33px;
+    right: 39px;
+}
+.bellIconClass{
+    display: flex;
+    justify-content: flex-end;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin-top: -10%;
+    margin-right: 2%;
+}
+.downloadIconClass{
+    cursor: pointer;
+}
+.notificationCount{
+    position: absolute;
+    top: 1px;
+    right: -4px;
+    width: 20px;
+    border: 0.5px solid black;
+    border-radius: 50%;
+    height: 20px;
+    text-align: center;
+    color: white;
+    pointer-events: none;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    font-weight: 800;
+}
+.div2 {
+   position: absolute;
+    top: 60px;
+    right: 39px;
+    font-size: 20px;
+}
+
+.mainBodyContainer{
+    display: flex;
+    justify-content: space-around;
+}
+.firstContainer{
+    /* padding: 0% 4%; */
+}
+.signedClass{
+    color: black;
+    /* font-weight: 600; */
+    margin-left: 0%;
+}
+.dateClass{
+    font-weight: 900;
+    margin-top: 8%;
+    margin-left: 0%;
+    white-space: nowrap;
+    font-size: 1rem;
+}
+.textContainer{
+    width: 65%;
+    padding-left: 6%;
+}
+.signedLineClass{
+    width: 130%;
+    height: 2px;
+    background-color: #458EA9;
+    margin: 10% 0%;
+}
+.dateLineClass{
+    width: 100%;
+    height: 2px;
+    background-color: rgb(191 188 188);
+    margin: 10% 0%;
+}
+.downloadContainer{
+    display: flex;
+    /* color: #EE9F36; */
+    justify-content: start;
+    align-items: center;
+    /* margin-left: 8%; */
+    /* margin-top: 35%; */
+}
+.downloadClass{
+    margin-left: 0%;
+    white-space: nowrap;
+    font-size: 1rem;
+    color: #008ba7;
+    font-weight: 900;
+}
+.downloadClass:hover{
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 480px){
+    .div2{
+        display: none;
+    }
+
+    .mainBodyContainer{
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .textContainer,
+    .firstContainer{
+        width: 100%;
+        padding: 0;
+    }
+
+    .textContainer{
+        padding-top: 30px;
+    }
+}

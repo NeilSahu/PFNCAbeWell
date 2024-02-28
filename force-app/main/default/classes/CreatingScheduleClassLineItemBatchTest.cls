@@ -1,0 +1,4 @@
+@istest
+public class CreatingScheduleClassLineItemBatchTest {
+    
+}

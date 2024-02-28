@@ -1,0 +1,1118 @@
+.headerIcon{
+	float: right;
+    height: 41px;
+    position: absolute;
+    top: 20px;
+    right: 23px;
+}
+
+/* .notificationCount{
+    position: absolute;
+    top: 1px;
+    right: -4px;
+    width: 20px;
+    border: 0.5px solid black;
+    border-radius: 50%;
+    height: 20px;
+    text-align: center;
+    color: white;
+    pointer-events: none;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    font-weight: 800;
+} */
+
+.div2 {
+    	position: absolute;
+    top: 39px;
+    right: 39px
+}
+/* img.bellIcon {
+    height: 32px;
+    width: 38px;
+} */
+.mainCardContainerClass{
+	align-items: inherit;
+    padding: 2%;
+}
+
+.iconClass{
+	cursor: pointer;
+    width: 30px;
+    height: 30px;
+    --sds-c-icon-color-foreground-default: #efa217;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #008BA7;
+  opacity: 1; /* Firefox */
+}
+.firstHeaderDiv{
+	width: 100%;
+    height: 126px;
+    /* background-color: #008BA7; */
+    font-size: 30px;
+    font-weight: bolder;
+	font: normal normal 800 40px/52px Playfair Display;
+	letter-spacing: 0px;
+	color: #000000;
+	opacity: 1;
+    /* text-align: center; */
+    padding: 5% 0% 0% 3.4%;
+}
+.outerDivSH{
+	/* display: flex;
+    flex-direction: row; */
+	display: inline-block;
+	width: 100%;
+	padding: 2% 0% 1% 2.3%;
+}
+
+.firstDivSH{
+	float: left;
+	width: 70%;
+	color: #008BA7;
+}
+.firstDivSH > h4{
+    margin: auto 2%;
+	font-weight: bold;
+    margin-left: 4.5%;
+    font-size: 157%;
+}
+.firstDivSH > a{
+    margin: auto 2%;
+    width: fit-content;
+    align-items: center;
+}
+
+.secondDivSH{
+	float: right;
+    margin-right: 5%;
+    width: 23%;
+	margin-top: 3.5%;
+    display: flex;
+
+	
+}
+
+.secondDivSH > lightning-icon{
+	--lwc-colorTextIconDefault:#008ba7;
+	margin: 0% 0% 0% 8%;
+    width: 12%;
+	/* width: fit-content; */
+}
+
+.searchIconColorSH{
+	white-space: nowrap;
+	width: 100%;
+	cursor: pointer;
+	font-size: 1rem;
+	border: none;
+    padding-left: 6px;
+	border-radius: 10px;
+	--sds-c-icon-color-foreground-default: #008BA7;
+	overflow: hidden;
+    /* text-overflow: ellipsis; */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.secondDivSH > span{
+	--lwc-colorTextIconDefault: #008ba7;
+	margin: 0% 0% 0% 7%;
+}
+.secondOuterDivSH{
+	
+		overflow: hidden;
+		/* background-color:#f5f7f4; */
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-top: 15px;
+		/* border-radius: 24px; */
+		width: auto;
+
+		background: #F5F7F4 0% 0% no-repeat padding-box;
+		border: 1px solid #DEE2E6;
+		border-radius: 21px;
+		opacity: 1;
+}
+.secondOuterDivSH > lightning-card > article{
+	BACKGROUND-COLOR: #f5f7f4
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+.emptyContainer{
+	width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20rem;
+    font-size: large;
+    font-weight: 600;
+}
+
+.innerTemplateDivSH{
+	BACKGROUND-COLOR: WHITE;
+    text-align: center;
+    margin: 5% 5%;
+    max-height: 100%;
+    BOX-SHADOW: 0.5px 0.5px 14px 0px #e4dede;
+}
+
+.innerTemplateDivChildFirstSH{
+	height: 100%;
+    width: 100%;
+    padding: 2% 2% 2% 2%;
+}
+.innerTemplateDivSecondChildSH{
+	padding: 2% 2% 2% 2%;
+    font-weight: bold;
+    margin-right: 50%;
+}
+.layoutElementSH{
+	width: 33.33%;
+	BACKGROUND-COLOR: #f5f7f4;
+}
+
+.textFirstSH > .Name> span
+{
+	margin-top: 3%;
+    margin-left: 7.5%;
+}
+.textSH > .textFirstSH > span{
+	font-size: 0.7rem !important;
+	color: rgb(204, 204, 204);
+}
+
+.textSH > .textSecondSH > span{
+	font-size: 0.7rem !important;
+	color: rgb(204, 204, 204);
+}
+
+.outerTextSH{
+	width: 93%;
+    padding: 1% 0% 0% 5%;
+	margin-top: 0.7%;
+    margin-bottom: 10.9%;
+}
+
+.outerTextSH > .textFirstSH{
+    height: auto;
+	margin-top: -2.5px;
+	margin-left: -2%;
+	display: flex;
+	width: 50%!important;
+}
+/* .outerDivSH >  */
+.textFirstSH > img{
+	/* float: left !important; */
+	padding: 2%;
+	/* max-width: 100%; */
+	float: inherit;
+}
+
+.textFirstSH > span{
+	font-size: smaller ;
+    float: right;
+	margin-top: 5%;
+}
+
+.textSecondSH{
+	float: right;
+    width: 32%;
+	margin-right: 8%;
+    margin-top: -2%;
+}
+
+
+.textSecondSH > img{
+	float: left;
+	margin-right: 40%;
+}
+
+.textSecondSH > span{
+	font-size: smaller;
+    float: right;
+	margin-right: -15%;
+    margin-top: -25%;
+}
+
+.innerDivSH{
+	height: 100%;
+    width: 100%;
+	position: relative;
+
+}
+.innerDivSH > div {
+	height: 32px;
+    width: 100%;
+    padding: 12px;
+    text-align: left;
+    padding-top: 5px;
+    background: #008BA7 0% 0% no-repeat padding-box;
+    box-shadow: inset 0px 3px 6px #343a4091;
+    opacity: 1;
+    font: normal normal medium 14px/18px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    font-family: IBMPlexSans;
+    text-transform: uppercase;
+
+}
+
+.innerTemplateDivSH > .innerDivSH > img{
+	/* padding: 5px; */
+	WIDTH: 100%;
+	/* box-shadow: 0.5px 0.5px 14px 0px #e4dede; */
+}
+.solid{
+	border-top: 1px solid rgb(204, 204, 204);
+    margin: 2% 0% 0% 5%;
+    width: 90%;
+}
+.ExerciseSH{
+	padding: 2% 2% 8% 6%;
+    font-weight: bold;
+    max-width: 300px;
+	height: 5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* margin-top: 2%; */
+    /* margin-bottom: 18%;*/
+}
+.descriptionTextClass{
+	/* color:gray; */
+    margin:2%;
+    margin-top:1%;
+    margin-bottom:1%;
+    /* font-style: italic; */
+    /* min-height: 1.45rem; */
+	/* text-align: start; */
+	padding-left: 4%;
+	text-align: left;
+	font: italic normal normal 16px/20px IBMPlexSans;
+	letter-spacing: 0px;
+	color: #666667;
+	opacity: 0.8;
+	height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ExerciseSH > h4{
+	text-align: left;
+    font: normal normal bold 16px/24px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #008BA7;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.ActionSH{
+	PADDING-BOTTOM: 10PX;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2% 3%;
+}
+
+.ActionSH > .InnerFirstActionSH{
+	height: auto;
+	width: 50%;
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* .ActionSH >  */
+.InnerSecondActionSH{
+	height: auto;
+    color: white;
+    padding: 4px 2px 4px 2px;
+}
+.ActionSH > .InnerFirstActionSH >.likeButton
+{
+	width: 34px;
+    height: 30px;
+	cursor: pointer;
+}
+.ActionSH > .InnerFirstActionSH > .share
+{
+	width: 30px;
+    height: 30px;
+	cursor: pointer;
+}
+.START{
+	display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+	background-color: #008BA7;
+	white-space: nowrap;
+}
+.JOINED, .JOIN, .RESUME, .PLAY , .NONE , .buttonContainer{
+	display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+	background-color: #008ba7;
+	white-space: nowrap;
+}
+.btnDisabled{
+    background-color: gray !important;
+    pointer-events: none !important;
+}
+.COMPLETED{
+	display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2rem;
+    background-color: #008ba7;
+	white-space: nowrap;
+}
+/* .InnerSecondActionSH >  */
+.orange-buttonSH{
+   	color: white;
+    /* border: 1px solid white; */
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	background-color: inherit;
+	width:  fit-content;
+	height: fit-content;
+}
+
+.orange-buttonSH:hover{
+	background-color: #036477;
+}
+.JOINED:hover{
+	background-color: #036477;
+}
+ 
+.green-buttonSH{
+	color: white;
+	width:  fit-content;
+	height: fit-content;
+    /* border: 1px solid white; */
+	border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: #008ba7;
+}
+.InnerFirstActionSH > img{
+	    margin: 1% 4% 1% 0%;
+}
+.DetailDiv
+{
+	display: flex;
+    margin: 3% 4%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.DetailDiv > .TrainerName
+{
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    white-space: nowrap;
+}
+.DetailDiv > .TrainerName > .Image >img
+{
+	width: 100%;
+}
+.DetailDiv > .TrainerName > .Name
+{
+	margin-top: 2.5%;
+    margin-left: 5%;
+	text-align: left;
+	font: normal normal normal 16px/20px IBMPlexSans;
+	letter-spacing: 0px;
+	color: #343A40;
+	opacity: 1;
+}
+.DetailDiv > .ActiveGraph
+{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	white-space: nowrap;
+}
+.ActiveGraph > .graph
+{
+	width: 30px;
+	height: 30px;
+}
+.ActiveGraph > .graph > img
+{
+	width: 30px;
+    height: 30px;	
+
+}
+.ActiveGraph > .highActive 
+{
+	margin-left: 5%;
+    margin-top: 6px;
+    text-align: left;
+    font: normal normal normal 16px/20px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 1;
+}
+.image{
+	width: 30px;
+	height: 30px;
+}
+.menuClass{
+	cursor: pointer;
+    position: relative;
+    font: normal normal normal 17px/20px IBMPlexSans;
+    color: white;
+}
+.underlineClass{
+	background: transparent 0% 0% no-repeat padding-box;
+    border: 2px solid #008BA7;
+    border-radius: 16px;
+    opacity: 1;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    margin-left: 1rem;
+    background-color: #008ba7;
+    padding: 0.2rem 1.5rem;
+}
+.menuClassUnclicked{
+	color: black;
+	cursor: pointer;
+    position: relative;
+    top: 0.4rem;
+	margin-left: 1rem;
+    font: normal normal normal 17px/20px IBMPlexSans;
+}
+
+
+@media only screen and (max-width: 1200px) and (min-width:1024px ){
+	.firstHeaderDiv{
+		/* padding:7% 0% 0% 2% !important; */
+	}
+	.firstDivSH{
+		float: none;
+		width: 100%;
+	}
+	.secondDivSH{
+		width: fit-content;
+	}
+	.firstDivSH > h4{
+		margin: auto 2%;
+		width: 100%;
+		align-items: center;
+		float: none;
+	}
+	.menuall{
+		gap: 1rem;
+		margin-left: 1rem;
+	}
+	.outerDivSH{
+		padding: 2% 0% 2% 0%;
+    }
+	.secondOuterDivSH{
+		margin: 0px auto;
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-top: 15px;
+	}
+	.secondDivSH > lightning-icon {
+		/* margin: 0px auto;  */
+	     width: 16%;
+	}
+	.searchIconColorSH {
+		width: 100%;
+	}
+	.DetailDiv
+	{
+		width: 100%;
+	}
+    /* .firstDivSH{
+			float: none;
+			width: 100%;
+		} */
+	/* .secondDivSH
+	{
+			float: right;
+			margin-right: 6%;
+            font-size: 63%;
+		} */
+	.DetailDiv
+	{
+		width: 100%;
+		display: flex;
+	}
+	.DetailDiv > .TrainerName
+	{
+		width: 62%;
+	}
+	.DetailDiv > .ActiveGraph
+	{
+		width: 38%;
+		margin-right: 7%;
+		/* margin-top: 6%; */
+	}
+	.DetailDiv > .TrainerName > .Name
+	{
+		font-size: 90%;
+		margin-left: 2%;
+		margin-top: 3%;
+		
+	}
+	.DetailDiv > .TrainerName > .image > img
+	{
+		width: 70%;
+	}
+	.layoutElementSH{
+		width: 33.33%;
+	}
+	.DetailDiv > .ActiveGraph > .highActive
+	{
+		margin-left: -5%;
+		margin-top: -3%;
+	}
+	.DetailDiv > .ActiveGraph > .highActive > span
+	{
+			font-size: 90%;
+            margin-left: 8%;
+	}
+	.DetailDiv > .ActiveGraph > .graph > img
+	{
+		width: 72%;
+	}
+	.START
+	{
+		margin-right: 0%;
+	}
+	.COMPLETED
+	{
+		margin-right: 0%;
+	}
+	.JOINED
+	{
+		margin-right: 0%;
+	}
+
+  }
+  @media only screen and (max-width: 1024px) and (min-width:768px ){
+    .firstHeaderDiv{
+		/* padding: 13% 0% 0% 3% !important */
+	}
+	.firstDivSH{
+		float: none;
+		width: 100%;
+	}
+	.secondDivSH{
+		width: fit-content;
+	}
+	.firstDivSH > h4{
+		margin: auto 2%;
+		width: 100%;
+		align-items: center;
+		float: none;
+	}
+	.menuall{
+		gap: 1rem;
+		margin-left: 1rem;
+	}
+	.outerDivSH{
+		padding: 2% 0% 2% 0%;
+    }
+	.secondOuterDivSH{
+		margin: 0px auto;
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-top: 15px;
+	}
+	.secondDivSH > lightning-icon {
+		/* margin: 0px auto;  */
+	     width: 16%;
+	}
+	.searchIconColorSH {
+		width: 100%;
+	}
+	.layoutElementSH{
+			/* max-width: 65;
+			min-width: 65%; */
+			width: 50%;
+	}
+	.DetailDiv > .TrainerName
+	{
+		width: 62%;
+		margin-top: 1%;
+	}
+	.DetailDiv > .ActiveGraph
+	{
+		width: 38%;
+		margin-right: 7%;
+	}
+	.DetailDiv > .TrainerName > .Image >img
+	{
+			width: 68%!important;
+	}
+	.DetailDiv > .TrainerName > .Name
+	{
+		margin-left: 1%;
+		margin-top: 1%;
+	}
+	.DetailDiv > .TrainerName > .Name > span
+	{
+		font-size: 90%;
+	}
+	.DetailDiv > .ActiveGraph > .graph
+	{
+		margin-right: -9%;
+		width: 50px;
+		height: 30px;
+
+	}
+	.DetailDiv > .ActiveGraph > .graph > img
+	{
+		width: 50%;
+	}
+	.DetailDiv > .ActiveGraph > .highActive
+	{
+		margin-top: 5%;
+	}
+	.DetailDiv > .ActiveGraph > .highActive > span{
+		font-size: 90%;
+	}
+	.JOINED
+	{
+		margin-right: 0%;
+	}
+	.START
+	{
+		margin-right: 0%;
+	}
+	.COMPLETED
+	{
+		margin-right: 0%;
+	}
+  }
+  @media only screen and (max-width: 768px) and (min-width: 640px) {
+	  .firstHeaderDiv{
+		/* padding: 13% 0% 0% 3% !important; */
+		height: 10rem;
+	}
+	.firstDivSH{
+		float: none;
+		width: 100%;
+	}
+	.secondDivSH{
+		width: fit-content;
+	}
+	.firstDivSH > h4{
+		margin: auto 2%;
+		width: 100%;
+		align-items: center;
+		float: none;
+	}
+	.menuall{
+		gap: 1rem;
+	}
+	.outerDivSH{
+		padding: 2% 0% 2% 0%;
+    }
+	.secondOuterDivSH{
+		margin: 0px auto;
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-top: 15px;
+	}
+	.secondDivSH > lightning-icon {
+		/* margin: 0px auto;  */
+	     width: 16%;
+	}
+	.searchIconColorSH {
+		width: 100%;
+	}
+	.layoutElementSH{
+			/* max-width: 65;
+			min-width: 65%; */
+			width: 50%;
+	}
+	.DetailDiv 
+	{
+		width: 92%;
+	}
+	.DetailDiv > .TrainerName
+	{
+		width: 62%;
+		margin-top: 1%;
+	}
+	.DetailDiv > .ActiveGraph
+	{
+		width: 50%;
+    	justify-content: flex-end;
+		margin-right: 0%;
+	}
+	.DetailDiv > .TrainerName > .Image >img
+	{
+			width: 68%!important;
+	}
+	.DetailDiv > .TrainerName > .Name
+	{
+		margin-left: 1%;
+		margin-top: 1%;
+	}
+	.DetailDiv > .TrainerName > .Name > span
+	{
+		font-size: 90%;
+	}
+	.DetailDiv > .ActiveGraph > .graph
+	{
+		/* margin-right: -9%; */
+		margin-right: 0%;
+		width: fit-content;
+	}
+	.DetailDiv > .ActiveGraph > .graph > img
+	{
+		width: 100%;
+	}
+	.DetailDiv > .ActiveGraph > .highActive
+	{
+		margin-top: 5%;
+    	margin-left: 3px;
+	}
+	.DetailDiv > .ActiveGraph > .highActive > span{
+		font-size: 90%;
+	}
+	.JOINED
+	{
+		margin-right: 0%;
+	}
+	.START
+	{
+		margin-right: 0%;
+	}
+	.COMPLETED
+	{
+		margin-right: 0%;
+	}
+  }
+
+  @media only screen and (max-width: 640px) and (min-width: 540px){
+	  .firstHeaderDiv{
+		/* padding: 13% 0% 0% 3% !important; */
+		height: 10rem;
+	}
+	.firstDivSH{
+		float: none;
+		width: 100%;
+	}
+	.secondDivSH{
+		float: right;
+		width: 9.3rem;
+	}
+	.firstDivSH > h4{
+		margin: auto 2%;
+		width: 100%;
+		align-items: center;
+		float: none;
+	}
+	.menuall{
+		gap: 1rem;
+	}
+	.outerDivSH{
+		padding: 2% 0% 2% 0%;
+    }
+	.secondOuterDivSH{
+		margin: 0px auto;
+		margin-left: 50px;
+		margin-right: 50px;
+		margin-top: 15px;
+	}
+	.secondDivSH > lightning-icon {
+		/* margin: 0px auto;  */
+		width: 22%;
+	}
+	.searchIconColorSH {
+		width: 50%;
+	}
+	.layoutElementSH{
+			/* width: 65% !important; */
+			/* max-width: 65;
+			min-width: 65%; */
+			width: 100% !important;
+	}
+		.textSecondSH{
+		float: right;
+		width: 43% !important;
+	}
+	.textFirstSH{
+		float: left;
+		height: 25px;
+		width: 55% !important;
+	}
+	.InnerFirstActionSH{
+		height: 20px;
+		MARGIN-RIGHT: 44% !important;
+		display: inline;
+	}
+	.ActiveGraph > .graph
+	{
+		margin-top: -2%;
+	}
+	.ActiveGraph > .highActive
+	{
+			margin-top: 1%;
+	}
+	.COMPLETED
+	{
+		margin-right: 0;
+		margin-top: -2%;
+	}
+	.JOINED
+	{
+		margin-right:0;
+	}
+	.START
+	{
+		margin-right: 0;
+	}
+  }
+
+  @media only screen and (max-width: 540px){
+	.firstHeaderDiv{
+		/* padding: 23% 0% 0% 3% !important */
+	}
+	.firstDivSH{
+		float: none;
+		width: 100%;
+	}
+	.secondDivSH{
+		float: right;
+		width: 9.3rem;
+	}
+	.firstDivSH > h4{
+		margin: auto 2%;
+		width: 100%;
+		align-items: center;
+		float: none;
+	}
+	.menuall{
+		gap: 1rem;
+	}
+	.outerDivSH{
+		padding: 2% 0% 2% 0%;
+    }
+	.secondOuterDivSH{
+		margin: 0px auto;
+		margin-left: 15px;
+		margin-right: 15px;
+		margin-top: 15px;
+	}
+	.secondDivSH > lightning-icon {
+		/* margin: 0px auto;  */
+		width: 22%;
+	}
+	.searchIconColorSH {
+		width: 50%;
+	}
+	.layoutElementSH{
+			/* width: 65% !important; */
+			/* max-width: 65;
+			min-width: 65%; */
+			width: 100% !important;
+	}
+		.textSecondSH{
+		float: right;
+		width: 43% !important;
+	}
+	.textFirstSH{
+		float: left;
+		height: 25px;
+		width: 55% !important;
+	}
+	.InnerFirstActionSH{
+		height: 20px;
+		MARGIN-RIGHT: 44% !important;
+		display: inline;
+	}
+  }
+
+/* vikas card class  */
+
+.favClassTextContainer{
+    width: 90%;
+    margin-bottom: 4%;
+}
+.exerciseNameCLass{
+    font-size: 1.3vw;
+    color:black;
+    font-weight: bold;
+}
+.favTextClass{
+    font-size: 1.1vw;
+}
+.cardOutterClass{
+    width: 30%;
+    margin-bottom: 4%;
+}
+.cardInnerClass{
+    border: 1px solid #ddd7d7;
+    width:90%;
+    height:auto;
+    margin-top: 0.5vw;
+    padding-bottom: 3%;
+}
+.cardImageClass{
+    width: 100%;
+    height:100%;
+    padding: 1%;
+}
+.cardNameLevelClass{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1% 3%;
+}
+.cardNameClass{
+    margin: 1%;
+}
+.cardLevelClass{
+    margin: 2%;
+}
+.exerciseContainer{
+    margin-left: 3%;
+    margin-top:1%;
+    margin-bottom:1%;
+}
+.descriptionClass{
+    color:gray; 
+    margin:3%;
+    margin-top:6%;
+    margin-bottom:1%;
+    font-style: italic;
+}
+.cardFooterContainer{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-left:2%;
+    margin-top:1%;
+}
+.cardFooterIconContainer{
+    display: flex; 
+    margin: 3% 1%;
+}
+.cardFooterButtonContainer{
+    margin: 5%;
+    margin-right:6%;
+}
+.cardButtonClass{
+    background-color: rgb(223 168 13);
+    color: white;
+    border: rgb(255, 153, 0);
+    font-weight: 500;
+    padding: 0.2vw 1.5vw;
+}
+
+/* share a Class css code */
+.addAClass{
+    color: #008BA7;
+    font-weight: 600;
+}
+.Donation-form-div{
+	width: 67%;
+	margin-left: 18%;
+
+	/* border: 2px solid; */
+}
+.Donation-form-div p{
+	text-align: center;
+	margin-top: 8%;
+	margin-bottom: 8% ;
+	font-size: 1.7rem;
+	font-weight: bold;
+	color:#008ba7;
+}
+
+.Add-card-form-date{
+
+	width: 50%;
+	float: left;
+}
+
+label {
+	color:#008ba7;
+	font-size: 1rem
+}
+
+.input1{
+width: 100%;
+border-radius: 10px;
+border: 1px solid;
+border-color: #008ba7;
+height: 37px;
+margin-top: 6px;
+}
+/* .input2{
+width: 100%;
+border-radius: 10px;
+border: 1px solid;
+border-color: #008ba7;
+height: 115px; 
+margin-top: 6px;
+} */
+.descriptionClass{
+	min-width: 100%;
+	max-width: 100%;
+	border-radius: 10px;
+	border: 1px solid;
+	border-color: #008ba7;
+	height: 115px;
+	min-height: 37px;
+	margin-top: 6px;
+}
+.button2{
+	margin: 2px;
+	color: white;
+	background-color: #ff9f37;
+	border: 0.25px solid #ece7e7;
+	font-size: 1rem;
+	padding: 3px 22px;
+}
+
+.btn {
+	background-color: #ff9f37;
+	padding-right: 0px;
+	width: fit-content;
+	margin: 11px auto;
+}
+.closeIcon{
+--sds-c-icon-color-foreground: white;
+}
+
+
+@media only screen and (max-width: 480px){
+
+	
+    .notificationCount{
+        display: none;
+    }
+    .bellIcon {
+       display: none;
+    }
+	.div2{
+		display: none;
+	}
+}

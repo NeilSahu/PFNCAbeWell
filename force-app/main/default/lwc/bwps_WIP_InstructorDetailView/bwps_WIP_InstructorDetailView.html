@@ -1,0 +1,192 @@
+<template>
+    <div class="main-container">
+        <!-- Back Button Html -->
+        <!-- <div class="back-btn-container">
+            <div class="back-button-handler" onclick={backClickedHandle}>&lt;</div>
+            <div class="back-btn-text">BACK</div>
+        </div> -->
+        <div class="back-btn-container">
+            <div class="back-btn" onclick={backClickedHandle}>
+                <img src={backIcom} class="backlIcon">
+                Back
+            </div>
+        </div>
+        <!-- Perent div for grid content-->
+        <div class="parent">
+            <!-- Instructor Photo -->
+            <div class="inst-photo is-desktop">
+                <img src={instructorprofile} alt="Photo Not Uploaded">
+            </div>
+            <!-- Instructor name & Exercise -->
+            <div class="inst-name-exercise is-desktop">
+                <div class="ins-name">
+                    <h1>{instructorname}</h1>
+                </div>
+                <div class="instructorDetails">
+                    <div class="inst-exercise">
+                        <span if:true={instructorExpIcon}><img class="inst-post-logo" src={instructorExpIcon} alt="Logo"></span>
+                        <!-- <span><img class="inst-post-logo" src={inst_detail.exerciseIconUrl} alt="Logo"></span> -->
+                        <span>{instructorexp}</span>
+                    </div>
+                    <!-- Like Btn -->
+                    <div class="like-btn-container is-desktop">
+                        <img if:true={isFav} class="like-btn" src={favIcon} data-id={instructor} alt="like"
+                            onclick={instLikeClickHandler}>
+                        <img if:false={isFav} class="like-btn" src={unFavIcon} data-id={instructor} alt="unlike"
+                            onclick={instLikeClickHandler}>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Share Btn -->
+            <!-- <div class="share-btn-container is-desktop">
+                <img class="share-btn" src={inst_detail.inst_shareUrl} alt="share" onclick={instShareClickHandler}>
+            </div> -->
+            <!-- For mobile view detail(Instructor Photo, Inst name, Exercise, Like & Share Btn) -->
+            <div class="inst-mobile-view is-mobile">
+                <img src={ProfilePhoto} alt="Photo not uploaded">
+                <div class="inst-icons">
+                    <div class="inst-name-exercise-mobile">
+                        <div class="ins-name">
+                            <!-- <h1>{inst_detail.inst_name}</h1> -->
+                            <h1>{instructorname}</h1>
+                        </div>
+                        <div>
+                            <span><img class="inst-post-logo" src={inst_detail.exerciseIconUrl} alt="Logo"></span>
+                            <span>
+                                <!-- {inst_detail.inst_type} -->
+                                {instructorexp}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="like-share-icon-mobile">
+                        <a href="/PFNCADNA/s/bwps-wip-signin"><img class="like-btn" src={inst_detail.inst_likeUrl}
+                                alt="like"> </a>
+                        <!-- <img class="share-btn" src={inst_detail.inst_shareUrl} alt="share" onclick={instShareClickHandler}> -->
+                    </div>
+
+                </div>
+            </div>
+            
+            <!-- For Instructor deatil -->
+            <div class="inst-detail">
+                <div class="hr"></div>
+                <p>{inst_detail.about_inst}</p>
+
+
+                <!-- HTML For Live classes -->
+                <!-- <h2 class="heading">Live Classes</h2>
+                <template if:false={scheduleClass.length}>
+                    <p class="blank-block"> No Live Classes</p>
+                </template>
+                <template if:true={scheduleClass}>
+                    <template for:each={scheduleClass} for:item="live_class">
+                        <div class="live-classes" key={live_class}>
+                            <div class="class-timing">{live_class.classDay} AT {live_class.class_timimg} EST</div>
+                            <div class="class-activity-name">{live_class.activity_name}</div>
+                            <div class="activity-description">{live_class.activity_description}</div>
+                            <div class="hr-line" style="margin-bottom: 5px;"></div>
+                            <div class="class-inst-profile">
+                                <img class="inst-profile" src={live_class.inst_profile_icon} alt="icon">
+                                <h3 class="class-inst-name">{live_class.inst_name}</h3>
+                            </div>
+                            <div class="hr-line" style="margin-top: 5px;"></div>
+                            <div class="cap-dur">
+                                <div class="class-capacity"><img class="capacity-icon"
+                                        src={live_class.seating_capacity_icon} alt="icon">
+                                    <div class="cap-text">{live_class.seating_capacity_text}</div>
+                                </div>
+                                <div class="class-duration"><img class="duration-icon" src={live_class.duration_icon}
+                                        alt="icon">
+                                    <div class="dur-text">{live_class.duration_text} Min</div>
+                                </div>
+                            </div>
+                            <div class="like-share-join-container">
+                                <div class="share-like-icon">
+                                    <img class="share-icon" src={live_class.inst_shareUrl} alt="share">
+                                    <img class="like-icon" src={live_class.inst_likeUrl} alt="like" data-id={instructor} data-status={live_class.favClassStatus} onclick={scLikeClickHandler}>
+                                </div>
+                                <div class="box-member-join-btn">
+                                    <div class="class-members">
+                                    <div class="profile-1 profiles">
+                                        <img class="persion" src={live_class.inst_profile_icon} alt="">
+                                    </div>
+                                    <div class="profile-2 profiles">
+                                        <img class="persion" src={live_class.inst_profile_icon} alt="">
+                                    </div>
+                                    <div class="profile-3 profiles">
+                                        <img class="persion" src={live_class.inst_profile_icon} alt="">
+                                    </div>
+                                    <div class="profile-4 profiles">
+                                        <img class="persion" src={live_class.inst_profile_icon} alt="">
+                                    </div>
+                                    <div class="members">+{live_class.members}</div>
+                                </div> 
+                                    <div class="box-blue-button">
+                                        <button class="blue-button">JOIN</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hr-line-bottom"></div>
+                        </div>
+                    </template>
+                </template>
+
+
+                Classes on demand
+                <h2 class="heading">Classes On Demand</h2>
+                <div class="d-class-container">
+                    <template if:false={scheduleClassDemand.length}>
+                        <p class="blank-block"> No Classes On Demand</p>
+                    </template>
+                    <template if:true={scheduleClassDemand}>
+                        <template for:each={scheduleClassDemand} for:item="demand_class">
+                            <div class="d-class" key={demand_class}>
+                                <div>
+                                    <div class="d-class-photo"><img src={demand_class.d_class_photo} alt=""></div>
+                                    <div class="d-class-status side-margin">
+                                        <div class="d-class-inst-profile">
+                                            <img class="d-class-icon" src={demand_class.inst_profile_icon} alt="">
+                                            <h3>{demand_class.inst_name}</h3>
+                                        </div>
+                                        <div class="intensity">
+                                            <img class="d-class-seating-icon d-class-icon"
+                                                src={demand_class.seating_status_icon} alt="">
+                                            <P>{demand_class.seating_capacity_text} </P>
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="d-hr-line side-margin"></div>
+                                    <div class="d-class-name side-margin">{demand_class.d_class_name}</div>
+                                    <div class="d-class-description side-margin">{demand_class.d_class_description}
+                                    </div>
+                                </div>
+                                <div class="d-class-share-start side-margin">
+                                    <div class="d-class-like-share-btn">
+                                        <img class="d-class-icon" src={demand_class.inst_shareUrl} alt="">
+                                        <img class="d-class-icon d-class-like-btn" src={demand_class.inst_likeUrl}
+                                            alt="">
+                                    </div>
+                                    <div class="box-blue-button box-start-btn">
+                                        <button class="blue-button start-btn">START</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </div>  -->
+            </div>
+        </div>
+
+    </div>
+
+    <c-bwps_-w-i-p_-review-slider></c-bwps_-w-i-p_-review-slider>
+    <!-- <c-stay-connected-footer></c-stay-connected-footer> -->
+    <template if:true={loading}>
+        <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+    </template>
+    <c-toast-message auto-close-time="1000"></c-toast-message>
+</template>

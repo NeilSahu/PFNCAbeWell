@@ -1,0 +1,58 @@
+.mainContainer {
+    padding-right: 4%;
+    padding-left: 1%;
+}
+
+.lineClass {
+    background-color: #ffc863;
+    width: 100%;
+    margin-left: -2%;
+}
+
+.cardContainer {
+    margin: 6% 0%;
+    background: #f5f7f4;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.headerClass {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.cardHeaderContainer {
+    display: flex;
+    padding-bottom: 10px;
+    /* margin-left: 37%; */
+}
+
+.cardHeaderTextContainer {
+    margin-left: 2%;
+    font-size: 0.75rem;
+    margin-bottom: 1%;
+}
+
+.imageClass {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    /* margin-bottom: -3rem; */
+}
+
+.cardHeaderTimeClass {
+    font-size: 0.8rem;
+}
+
+.buttonContainer {
+    width: fit-content;
+    padding: 2px;
+    background-color: #448BA7;
+    color: white;
+}
+
+.annBtnClasss {
+    background-color: inherit;
+    border: 1px solid white;
+}

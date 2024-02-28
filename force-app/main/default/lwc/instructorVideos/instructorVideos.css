@@ -1,0 +1,122 @@
+.iframeContainer {
+  width: 267px;
+  border-radius: 0px 40px;
+  overflow: hidden;
+}
+
+iframe {
+  margin-left: -17px;
+}
+
+.container {
+  width: 100%;
+  max-width: 267px;
+  margin-top: 15px;
+}
+
+.container-box {
+  width: max-content;
+  margin: auto;
+}
+
+
+
+
+.container1 {
+  margin: 0px 3rem;
+}
+
+.Heading {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  margin: 35px 0px 35px;
+}
+
+.Name {
+  color: #008ba7;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  width: 267px;
+  /* padding: 5px 0px 20px; */
+  margin: 25px 0px 10px;
+}
+
+.gridsContainer {
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container1 {
+    margin: 0 1rem
+  }
+
+  .gridsContainer {
+    justify-content: space-evenly !important;
+    padding: 0px;
+  }
+}
+
+/*
+
+.Img-parent {
+  border-radius: 2px 44px;
+  width: 100%;
+}
+
+.container-box-Quizes {
+  margin: 25px 0px 10px;
+  
+}
+
+.container-box-Date {
+  margin-bottom: 5px;
+}
+
+.blank-block {
+  text-align: center;
+  width: 100%;
+  color: gray;
+  font-size: x-large;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+
+  .container1 {
+    margin: 0px 60px;
+  }
+
+  .container {
+    width: 33.33%;
+  }
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 600px) {
+
+  .container {
+    width: 50%;
+  }
+
+  .container1 {
+    margin: 0px 50px;
+  }
+
+  .container-box {
+    padding: 0px 20px 25px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .container1 {
+    margin: 0px 30px;
+  }
+
+  .container {
+    width: 100%;
+  }
+} */

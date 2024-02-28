@@ -1,0 +1,380 @@
+<template>
+	<div class="container">
+		<div class="form-container">
+			<div class="image-box">
+				<img src={signinImg} alt="signinimg">
+        </div>
+				<div class="main-box">
+					<!-- <div class="nav-box">
+						<div class={memberCssClass} data-nav="member" onclick={handleNavigation}>
+							MEMBER
+						</div>
+						<div class={guestCssClass} data-nav="guest" onclick={handleNavigation}>
+							GUEST
+						</div>
+						<div class={donorCssClass} data-nav="donor" onclick={handleNavigation}>
+							DONOR
+						</div>
+						<div class={instructorCssClass} data-nav="instructor" onclick={handleNavigation}>
+							INSTRUCTOR
+						</div>
+					</div> -->
+					<div class="form-box">
+						<template if:true={showMemberForm}>
+
+							<div class="sub-nav-box">
+								<div class={memberLoginCssClass} data-subnav="memberLogin"
+									onclick={handleSubNavigation}>
+									LOGIN
+								</div>
+								<div class={becomeMemberCssClass} data-subnav="becomeMember"
+									onclick={handleSubNavigation}>
+									BECOME A MEMBER
+								</div>
+								<div class={getAGuestPassCssClass} data-subnav="getAGuestPass"
+									onclick={handleSubNavigation}>
+									GET A GUEST PASS
+								</div>
+
+							</div>
+
+							<template if:true={showMemberLogin}>
+								<form class="form">
+									<div class="input-box">
+
+										<label for="memberEmailAddress">Email Address*</label>
+										<input id="memberEmailAddress"  data-id="memberEmailAddress" placeholder="Email Address" type="email" onchange={handleUserNameChange} required>
+
+                            </div>
+										<div class="input-box">
+
+											<label for="memberPassword">Password*</label>
+											<input id="memberPassword" data-id="memberPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required>
+
+                            </div>
+
+											<div class="password-remember-me-box">
+
+												<div class="remember-me">
+													<!-- onclick={handlleRememberMe} -->
+													<input id="memberRememberMe" data-id='memberRememberMe' type="checkbox"> 
+													<label for="memberRememberMe">Remember Me</label>
+												</div>
+												<div>
+													<a href="/PFNCADNA/s/forget-password">Forgot password?</a>
+												</div>
+											</div>
+
+											<div class="button-box">
+												<button type="submit" onclick={handleLogin}>LOGIN</button>
+											</div>
+								</form>
+							</template>
+							<template if:true={showBecomeMember}>
+								<form class="form">
+										<p>Start your membership today. Your will get access to
+										our platform,you will be asked to pay a $50.00 membership fee.</p>
+									<div class="input-box half-width">
+
+										<label for="becomeMemberFName">First Name*</label>
+										<input id="becomeMemberFName" data-id="becomeMemberFName" placeholder="First Name" type="text" value={firstName} onchange={handleFirstNameChange} required>
+										<span class={requiredTooltipDisplayData.firstName}>This field is required.</span>
+									</div>
+									<div class="input-box half-width">
+
+										<label for="becomeMemberLName">Last Name*</label>
+										<input id="becomeMemberLName" data-id="becomeMemberLName" placeholder="Last Name" type="text" value={lastName} onchange={handleLastNameChange} required>
+										<span class={requiredTooltipDisplayData.lastName}>This field is required.</span>
+									</div>
+									<div class="input-box ">
+
+										<label for="becomeMemberEmailAddress">Email Address*</label>
+										<input id="becomeMemberEmailAddress" data-id="becomeMemberEmailAddress" placeholder="Email Address" type="email" value={email} onkeyup={handleEmailChange} required>
+										<span class={requiredTooltipDisplayData.email}>This field is required.</span>
+										<span class={errorTooltipDisplayData.email}>{emailError}</span>
+									</div>
+
+									<div class="input-box ">
+                                        <label for="becomeMemberEmailAddressconfirmconfirm">Confirm Email Address*</label>
+                                        <input id="becomeMemberEmailAddressconfirmconfirm" data-id="becomeMemberEmailAddressconfirmconfirm" placeholder="Confirm Email Address" type="email" value={confirmEmail} onchange={handleEmailChangeconfirm} required>
+                                        <span class={requiredTooltipDisplayData.email}>This field is required.</span>
+                                        <span class={errorTooltipDisplayData.email}>{emailError}</span>
+                                    </div>
+
+									<div class="input-box">
+										<label for="becomeMemberPassword">Password*</label>
+										<input id="becomeMemberPassword" data-id="becomeMemberPassword" placeholder="Password" type="password" value={password} onchange={handlePasswordChange} required>
+										<span class={requiredTooltipDisplayData.password}>This field is required.</span>
+										<span class={errorTooltipDisplayData.password}>{passwordError}</span>
+									</div>
+									<div class="input-box">
+										<label for="becomeMemberconfirm">Confirm Password*</label>
+										<input id="becomeMemberconfirm" data-id="becomeMemberconfirm" placeholder="Confirm Password" type="password" value={confirmPassword} onchange={handleconfirmPassword} required>
+										<span class={requiredTooltipDisplayData.confirmPassword}>This field is required.</span>
+										<span class={errorTooltipDisplayData.confirmPassword}>{passwordError}</span>
+									</div>
+								</form>
+								<div class="button-box">
+									<button type="button" onclick={handleRegister}>MAKE A PAYMENT</button>
+								</div>
+							</template>
+							<template if:true={showGetAGuestPass}>
+
+								<form class="form">
+									<p>Start your free membership trial today with a guest pass. Your will get access to
+										our platform and you can watch up to 8 classes. After your gust pass expires,
+										you will be asked to pay a $50.00 membership fee.</p>
+									<div class="input-box half-width">
+										<label for="guestFName">First Name*</label>
+										<input id="guestFName" data-id="guestFName" placeholder="First Name" type="text" onchange={handleFirstNameChange} required>
+										<span class={requiredTooltipDisplayData.firstName}>This field is required.</span>
+
+									</div>
+									<div class="input-box half-width">
+
+										<label for="guestLName">Last Name*</label>
+										<input id="guestLName" data-id="guestLName" placeholder="Last Name"  type="text" onchange={handleLastNameChange} required>
+										<span class={requiredTooltipDisplayData.lastName}>This field is required.</span>
+
+									</div>
+									<div class="input-box ">
+
+										<label for="guestEmailAddress">Email Address*</label>
+										<input id="guestEmailAddress" data-id="guestEmailAddress" placeholder="Email Address" type="email" onkeyup={handleEmailChange} required>
+										<span class={requiredTooltipDisplayData.email}>This field is required.</span>
+										<span class={errorTooltipDisplayData.email}>{emailError}</span>
+									</div>
+
+									
+									<div class="input-box ">
+                                        <label for="guestEmailAddressconfirm">Confirm Email Address*</label>
+                                        <input id="guestEmailAddressconfirm" data-id="guestEmailAddressconfirm" placeholder="Confirm Email Address" type="email" value={confirmEmail} onchange={handleEmailChangeconfirm1} required>
+                                        <span class={requiredTooltipDisplayData.email}>This field is required.</span>
+                                        <span class={errorTooltipDisplayData.email}>{emailError}</span>
+                                    </div>
+
+									<div class="input-box half-width">
+
+										<label for="guestPassword">Password*</label>
+										<input id="guestPassword" data-id="guestPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required>
+										<span class={requiredTooltipDisplayData.password}>This field is required.</span>
+										<span class={errorTooltipDisplayData.password}>{passwordError}</span>
+									</div>
+									<div class="input-box">
+										<label for="guestconfirm">Confirm Password*</label>
+										<input id="guestconfirm" data-id="guestconfirm" placeholder="Confirm Password" type="password" value={confirmPassword} onchange={handleconfirmPassword} required>
+										<span class={requiredTooltipDisplayData.confirmPassword}>This field is required.</span>
+										<span class={errorTooltipDisplayData.confirmPassword}>{passwordError}</span>
+									</div>
+									<div class="button-box">
+										<button type="submit" onclick={handleRegister} >SIGN UP</button>
+									</div>
+
+
+								</form>
+							</template>
+							
+						</template>
+						<template if:true={showGuestForm}>
+
+							<div class="sub-nav-box">
+
+								<div class={guestLoginCssClass} data-subnav="guestLogin" onclick={handleSubNavigation}>
+									GUEST LOGIN
+								</div>
+								<div class={guestSignUpCssClass} data-subnav="guestSignUp"
+									onclick={handleSubNavigation}>
+									GUEST SIGN UP
+								</div>
+
+
+							</div>
+
+							<template if:true={showGuestLogin}>
+								<form class="form">
+									<div class="input-box">
+
+										<label for="GuestEmailLoginAddress">EMAIL ADDRESS*</label>
+										<input id="GuestEmailLoginAddress"  data-id="GuestEmailLoginAddress" placeholder="Email Address" type="email" onchange={handleUserNameChange} required>
+
+                            		</div>
+										<div class="input-box">
+
+											<label for="GuestLoginPassword">PASSWORD*</label>
+											<input id="GuestLoginPassword" data-id="GuestLoginPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required>
+
+                            		</div>
+
+											<div class="password-remember-me-box">
+
+												<div class="remember-me">
+													<input id="GuestRememberMe" data-id='memberRememberMe' type="checkbox">
+													<label for="GuestRememberMe">Remember Me</label>
+												</div>
+												<div>
+													<a href="/PFNCADNA/s/forget-password">Forgot password?</a>
+												</div>
+											</div>
+
+											<div class="button-box">
+												<button type="submit" onclick={handleLogin}>LOGIN</button>
+											</div>
+								</form>
+							</template>
+							<!-- <template if:true={showGuestSignUp}>
+
+								<form class="form">
+									<p>Start your free membership trial today with a guest pass. Your will get access to
+										our platform and you can watch up to 8 classes. After your gust pass expires,
+										you will be asked to pay a $50.00 membership fee.</p>
+									<div class="input-box half-width">
+										<label for="guestFName">First Name*</label>
+										<input id="guestFName" data-id="guestFName" placeholder="First Name" type="text" onchange={handleFirstNameChange} required>
+										<span class={requiredTooltipDisplayData.firstName}>This field is required.</span>
+
+									</div>
+									<div class="input-box half-width">
+
+										<label for="guestLName">Last Name*</label>
+										<input id="guestLName" data-id="guestLName" placeholder="Last Name"  type="text" onchange={handleLastNameChange} required>
+										<span class={requiredTooltipDisplayData.lastName}>This field is required.</span>
+
+									</div>
+									<div class="input-box ">
+
+										<label for="guestEmailAddress">EMAIL ADDRESS*</label>
+										<input id="guestEmailAddress" data-id="guestEmailAddress" placeholder="Email Address" type="email" onkeyup={handleEmailChange} required>
+										<span class={requiredTooltipDisplayData.email}>This field is required.</span>
+										<span class={errorTooltipDisplayData.email}>{emailError}</span>
+									</div>
+									<div class="input-box half-width">
+
+										<label for="guestPassword">PASSWORD*</label>
+										<input id="guestPassword" data-id="guestPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required>
+										<span class={requiredTooltipDisplayData.password}>This field is required.</span>
+										<span class={errorTooltipDisplayData.password}>{passwordError}</span>
+									</div>
+									<div class="input-box">
+										<label for="guestconfirm">CONFIRM PASSWORD*</label>
+										<input id="guestconfirm" data-id="guestconfirm" placeholder="Confirm Password" type="password" value={confirmPassword} onchange={handleconfirmPassword} required>
+										<span class={requiredTooltipDisplayData.confirmPassword}>This field is required.</span>
+										<span class={errorTooltipDisplayData.confirmPassword}>{passwordError}</span>
+									</div>
+									<div class="button-box">
+										<button type="submit" onclick={handleRegister} >SIGN UP</button>
+									</div>
+
+
+								</form>
+							</template> -->
+						</template>
+						<template if:true={showDonorForm}>
+
+							<form class="form">
+								<div class="input-box">
+
+									<label for="donorEmailAddress">EMAIL ADDRESS*</label>
+									<input id="donorEmailAddress" data-id="donorEmailAddress" placeholder="Email Address" type="email" onchange={handleUserNameChange} required>
+
+                            </div>
+									<div class="input-box">
+
+										<label for="donorPassword">PASSWORD*</label>
+										<input id="donorPassword" data-id="donorPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required>
+
+                            </div>
+
+										<div class="password-remember-me-box">
+
+											<div class="remember-me">
+												<input id="donorRememberMe" type="checkbox" data-id='memberRememberMe'>
+												<label for="donorRememberMe" data-id="donorRememberMe">Remember Me</label>
+											</div>
+											<div>
+												<a href="/PFNCADNA/s/forget-password">Forgot password?</a>
+											</div>
+										</div>
+
+										<div class="button-box">
+											<button type="submit" onclick={handleLogin}>LOGIN</button>
+											<!-- <span>
+                                    * Required
+                                </span> -->
+										</div>
+
+
+
+							</form>
+						</template>
+						<template if:true={showInstructorForm}>
+
+							<form class="form">
+								<div class="input-box">
+
+									<label for="instructorEmailAddress">EMAIL ADDRESS*</label>
+									<input id="instructorEmailAddress" data-id="instructorEmailAddress" placeholder="Email Address" type="email" onchange={handleUserNameChange} required>
+
+                            </div>
+									<div class="input-box">
+
+										<label for="instructorSignupPassword">PASSWORD*</label>
+										<input id="instructorSignupPassword" data-id="instructorSignupPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required>
+
+                            </div>
+
+										<div class="password-remember-me-box">
+
+											<div class="remember-me">
+												<input id="instructorRememberMe" data-id='memberRememberMe' type="checkbox">
+												<label for="instructorRememberMe">Remember Me</label>
+											</div>
+											<div>
+												<a href="/PFNCADNA/s/forget-password">Forgot password?</a>
+											</div>
+										</div>
+
+										<div class="button-box">
+											<button type="submit" onclick={handleLogin}>LOGIN</button>
+											<!-- <span>
+                                    * Required
+                                </span> -->
+										</div>
+
+
+
+							</form>
+						</template>
+					</div>
+				</div>
+			</div>
+			<div class="faq-container">
+
+				<h2>FAQS</h2>
+
+				<details>
+					<summary>
+						lorem ipsum krhfkf kjhkef iuweq bfsdf
+					</summary>
+					<p>lorem ipsum krhfkf kjhkef iuweq bfsdf lorem ipsum krhfkf kjhkef iuweq bfsdf lorem ipsum krhfkf
+						kjhkef iuweq bfsdf lorem ipsum krhfkf kjhkef iuweq bfsdf lorem ipsum krhfkf kjhkef iuweq bfsdf
+					</p>
+				</details>
+
+			</div>
+		</div>
+		<template if:true={showSpinner}>
+			<lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+		</template>
+		<template if:true={flowcall}>
+			<div class="payment-modal-container">
+				<div class="payment-modal-main">
+					<div class="payment-modal-close">
+						<span class ="payclose" onclick={offpay}>X</span>
+					</div>
+					<lightning-flow flow-api-name={flowApiName} flow-input-variables={flowInputVariables}
+						onstatuschange={handleFlowStatusChange}>
+					</lightning-flow> <!-- Invoke a Screen flow in LWC -->
+				</div>
+			</div>
+		</template>
+</template>

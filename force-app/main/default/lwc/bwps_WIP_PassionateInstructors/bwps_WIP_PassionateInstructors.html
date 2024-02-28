@@ -1,0 +1,49 @@
+<template>
+    <div class="container">
+        <div class="heading-box">
+            <h2>PASSIONATE INSTRUCTORS</h2>
+            <p>Our highly trained instructors are truly passionate about
+                helping people slow Parkinson's through each of their
+                specialized fields.</p>
+        </div>
+            <div class="slider-container">
+                <div id="slider-container" class="slider" data-id="slider">
+                    <!-- 
+                        <div class="slide">
+                            <c-child></c-child>
+                        </div> 
+                    -->
+                    <template for:each={data.instructors} for:item="instructor">
+                        <div class="slide" key={instructor}>
+
+                            <div class="card">
+                                
+                                <div class="img-box">
+                                    <img src={instructor.imgUrl} alt="1">
+                                </div>
+
+                                <div class="info">
+                                    <h3>{instructor.name}</h3>
+                                    <p>{instructor.exp}</p>
+                                </div>                        
+                                 
+                            </div>
+
+                        </div>
+
+                    </template>
+                </div>
+                <div class="slider-button-box">
+
+                    <button class="control-prev-btn" onclick={handlePrev}>
+                        <div class="arrow-left"></div>
+                    </button>
+
+                    <button class="control-next-btn" onclick={handleNext}>
+                        <div class="arrow-right"></div>
+                    </button>
+
+                </div>
+        </div>
+    </div>
+</template>

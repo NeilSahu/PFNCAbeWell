@@ -1,0 +1,73 @@
+<template>
+    <div class="mainContainer">
+        <div>
+            <hr class="lineClass">
+        </div>
+        <div class="headerClass">
+            <span>Announcements for Students</span>
+        </div>
+        <div>
+            <template if:true={noAnouncementStudent}>
+                <p style="text-align: center;padding: 40px 0px;font-weight: bold;color: #777;">No Announcement !</p>
+            </template>
+            <template for:each={Arr1} for:item="it">
+                <div key={it.Id} class="cardContainer">
+                    <div class="cardHeaderContainer">
+                        <div class="imageContainer">
+                            <img src={it.Img} class="imageClass">
+                        </div>
+                        <div class="cardHeaderTextContainer">
+                            <div>
+                                <span>Administrator</span>
+                            </div>
+                            <div class="cardHeaderTimeClass">
+                                <span>{it.Time}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span>
+                            {it.Detail}
+                        </span>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <div class="mainContainer">
+        <div>
+            <hr class="lineClass">
+        </div>
+        <div class="headerClass">
+            <span>Instructor Updates</span>
+        </div>
+        <div>
+            <template if:true={noAnouncementInstructor}>
+                <p style="text-align: center;padding: 40px 0px;font-weight: bold;color: #777;">No Announcement !</p>
+            </template>
+            <template for:each={Arr} for:item="it">
+                <div key={it.Id} class="cardContainer">
+                    <div class="cardHeaderContainer">
+                        <div class="imageContainer">
+                            <img src={it.Img} class="imageClass">
+                        </div>
+                        <div class="cardHeaderTextContainer">
+                            <div>
+                                <span>Administrator</span>
+                            </div>
+                            <div class="cardHeaderTimeClass">
+                                <span>{it.Time}</span>  
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span>
+                            {it.Detail}
+                        </span>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

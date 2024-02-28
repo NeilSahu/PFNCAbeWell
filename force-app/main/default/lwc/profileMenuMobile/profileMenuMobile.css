@@ -1,0 +1,53 @@
+@media only screen and (max-width:768px ){
+    .mainContainer{
+        padding: 0% 10%;
+    }
+    .buttonContainer{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+    .buttonInnerClass{
+        border: 1px solid white;
+        background-color: rgb(68,139,167);
+    }
+    .buttonOutterClass{
+        border: 1px solid rgb(68,139,167);
+        padding: 1px;
+        background-color: rgb(68,139,167);
+    }
+    .headerContainer{
+        display: flex;
+        margin-top: 2%;
+    }
+    .nameClass{
+        margin-left: 5%;
+        color: #04b8c7;
+        font-weight: 600;
+    }
+
+    .lineClass{
+        width: 85%;
+        height: 2px;
+        background-color: #12b8ed;
+        margin: 3% 0px;
+    }
+    .profileImage{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+    .profileItem{
+        margin: 1% 0%;
+    }
+    .btnClass{
+        border: none;
+        background-color: rgb(68,139,167);
+        color: white;
+        font-size: 80%;
+        white-space: nowrap;
+        font-weight: 600;
+        width: 19vw;
+        height: 5vw;
+    }
+}

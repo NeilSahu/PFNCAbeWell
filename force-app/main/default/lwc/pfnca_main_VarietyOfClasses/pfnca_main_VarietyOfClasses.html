@@ -1,0 +1,46 @@
+<template>
+	<div class="container">
+		<div class="heading-box">
+			<h2>Variety of Classes With Different Levels</h2>
+		</div>
+		<div class="card-box">
+			<template for:each={Arr} for:item="res">
+				<div class="card" key={res.Id}>
+					<img src={res.Img} alt="img">
+					<h5>{res.Name}</h5>
+				</div>
+			</template>
+
+			<div class="card">
+				<img src={img1} alt="img">
+				<h5>EXERCISE FOR 
+                PARKINSON'S</h5>
+			</div>
+
+			<div class="card">
+				<img src={img2} alt="img">
+				<h5>BOXING FOR 
+                PARKINSON'S</h5>
+			</div>
+
+			<div class="card">
+				<img src={img4} alt="img">
+				<h5>COMMUNICATION 
+                CLUB</h5>
+			</div>
+
+			<div class="card">
+				<img src={img3} alt="img">
+				<!-- <h5>OTHER FORMATS TO
+                    INSPIRE YOU</h5> -->
+				<h5>OTHER FORMATS TO INSPIRE YOU</h5>
+			</div>
+		</div>
+		<div class="button-box button">
+			<a href={typesOfClassesLink}>
+				<button>TYPES OF CLASSES</button>
+			</a>
+
+		</div>
+	</div>
+</template>

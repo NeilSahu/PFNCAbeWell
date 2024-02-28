@@ -1,0 +1,382 @@
+.myClassroomHeading {
+    width: fit-content !important;
+    font-size: 2.5rem;
+    color: #000000;
+    font-weight: 900;
+    margin-top: 45px;
+    padding: 1rem 4rem 0rem 3rem;
+}
+
+body {
+    --date-picker-background: none;
+}
+
+.firstContainer {
+    width: 65%;
+    /* height: 654px; */
+    overflow-y: scroll;
+    margin: 3% 0%;
+}
+
+.firstContainer::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.firstContainer {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+
+.cardMainContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    color: #000000;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightgray;
+    margin-bottom: 5%;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardLevelContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cardLevelTextClass {
+    margin-left: 15px;
+}
+
+.cardHeaderContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cardFooterContainer {
+    min-width: max-content;
+    margin-top: 12px;
+    margin-right: 25px;
+}
+
+.cardBodyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    background-color: #F5F7F4;
+    margin-top: 2%;
+    flex-direction: column;
+}
+
+.cardHeaderTextClass {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.cardContainer {
+    width: 100%;
+}
+
+.cardImgClass {
+    width: 90px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.cardLevelImgClass,
+.shareIconClass {
+    width: 30px;
+    height: 30px;
+}
+
+.shareTextClass,
+.shareIconClass,
+.dropdownContainer {
+    cursor: pointer;
+}
+
+.cardClassNameClass {
+    margin-bottom: 10%;
+    font-size: larger;
+    font-weight: 600;
+    color: #008ba7;
+}
+
+.cardClassNameClass span{
+    cursor: pointer;
+}
+
+.shareIconContainer {
+    margin-right: 10px;
+}
+
+
+.dropdownContainer {
+    position: absolute;
+    right: 4%;
+    top: 11px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #a9a4a4;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.calendarImgClass,
+.transferImgClass {
+    width: 25px;
+    height: 25px;
+}
+
+.classContainer {
+    display: flex;
+    /* justify-content: center; */
+    align-items: flex-start;
+    background-color: white;
+    width: 96%;
+    margin-bottom: 2%;
+    padding: 2% 0%;
+}
+
+.bodyTextClass {
+    margin: 2% 0%
+}
+
+.statusContainer,
+.timeContainer,
+.dateContainer {
+    margin-left: 4%;
+}
+
+
+
+/* second container css */
+.secondContainer {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 1% 2%;
+    margin: 3% 0%;
+    width: 32%;
+    height: 48vw;
+    overflow-y: scroll;
+}
+
+.secondContainer::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+.lineClass {
+    height: 2px;
+    background-color: #448BA7;
+    width: 100%;
+    margin: 6% 0%;
+}
+
+.timeLineClass {
+    height: 1px;
+    background-color: gray;
+    width: 100%;
+    margin: 0px;
+}
+
+.timeCardContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.clsNameClass {
+    margin-left: 5%;
+    font-weight: 600;
+}
+
+/* Calendar css */
+.mainContainerClass {
+    padding: 3% 0%;
+    padding-bottom: 1%;
+}
+
+a {
+    color: rgba(0, 0, 0, 1);
+    width: 15%;
+    padding: 3px 0px;
+    text-decoration: none !important;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.dateParent {
+    width: 100%;
+    margin: 0rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.dateParent .prev-button {
+    padding: 4px 13px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px 8px rgb(0 0 0 / 18%), 0 0px 1px rgb(0 0 0 / 22%);
+    border-radius: 7px;
+    float: left;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.dateParent .next-button {
+    padding: 4px 13px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px 8px rgb(0 0 0 / 18%), 0 0px 1px rgb(0 0 0 / 22%);
+    border-radius: 7px;
+    float: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.date-text {
+    margin: 0% 1%;
+    font-size: 16px;
+    text-align: center;
+}
+
+/********************Calender Comp date Picker UI**************************/
+.date-picker-input {
+    border: none;
+    /* background-image: var(--date-picker-background); */
+    width: 30px;
+    height: 30px;
+}
+
+.date-picker-input::-webkit-calendar-picker-indicator {
+    /* background-image: -internal-light-dark(-webkit-image-set(--date-picker-background 1x), -webkit-image-set(--date-picker-background 1x)); */
+    /* background-image: -internal-light-dark(-webkit-image-set(url() 1x), -webkit-image-set(url() 1x)); */
+    background-image: var(--date-picker-background);
+    /* background-size: auto; */
+    cursor: pointer;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.date-picker-input::-webkit-datetime-edit {
+    /* padding-left: 3rem; */
+    display: none;
+}
+
+.date-picker-input:focus,
+.date-picker-input:active {
+    border: none;
+    outline: none;
+}
+
+
+.noScheduleClasses {
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    opacity: 0.6;
+    padding: 200px 0px;
+}
+
+/* Tab Responsivenes */
+/* @media only screen and (max-width: 1024px) and (min-width:768px ){} */
+@media only screen and (max-width: 1024px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .firstContainer {
+        width: 100%;
+    }
+
+    .secondContainer {
+        /* width: 94%;
+        height: 132vw */
+        display: none;
+    }
+
+    .cardLevelImgClass {
+        width: 20px;
+        height: 20px;
+    }
+
+    .cardLevelTextClass {
+        font-size: 15px;
+    }
+
+    .cardClassNameClass {
+        margin-bottom: 5%;
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    .cardHeaderTextClass {
+        width: 100%;
+    }
+
+    .shareTextClass {
+        font-size: small;
+    }
+
+    .dropdownContainer {
+        top: 12px;
+    }
+
+    .dateParent {
+        width: 94%;
+        margin: 0rem 8px;
+    }
+
+    .prev-button,
+    .next-button {
+        padding: 0px 9px;
+    }
+}
+
+/* Mobile View */
+@media only screen and (max-width: 1024px) {
+    .dropdownContainer {
+        top: 5px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cardFooterContainer {
+        margin-right: 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .mainContainer {
+        padding: 2rem 1rem !important;
+    }
+}

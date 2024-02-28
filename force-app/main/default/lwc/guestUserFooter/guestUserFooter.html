@@ -1,0 +1,65 @@
+<!-- <template>
+    <div class="ParentDiv">
+        <div class="footer-container">
+            <div class="footer-header">
+                <div class="footer-header-links"> 
+                    <button label="FAQS"  onclick={navigateToFaq} >FAQS</button>
+                    <button label="ABOUT US"  onclick={navigateToAboutUs} >ABOUT US</button>
+                    <button label="BLOG"  onclick={navigateToBlog} >BLOG</button>
+                    <button label="GIFT OF MEMBERSHIP"  onclick={navigateToMembership} >GIFT OF MEMBERSHIP</button>
+                    <button label="DONATE"  onclick={navigateToDonatePage} >DONATE </button>
+                </div>
+                <div class="footer-header-social-icons">
+                    <a href="https://www.facebook.com/PFNCA/" target="_blank"> <img src={facebook_logo} > </a>
+                    <a href="https://twitter.com/pfnca?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><img src={twitter_logo}></a>
+                    <a href="https://www.instagram.com/pfnca/?hl=en" target="_blank"><img src={insta_logo}></a>
+                </div>
+            </div>
+            <div class="footer-bottom-line"> 
+                <div class="left"> &#169; 2021 Be Well Parkinson's. All Right Reserved</div> 
+                <div> <a class="linkStyle" href="https://parkinsonfoundation.org/">parkinsonfoundation.org </a> </div>
+                <div class="right">Privacy | Terms</div>
+            </div>
+        </div>
+    </div>
+    <c-menu-component></c-menu-component>
+</template> -->
+
+
+
+<template>
+	<div class="ParentDiv">
+		<div class="footer-container">
+			<div class="top-box">
+				<div class="site-link">
+
+					<!-- <div><a class="linkclass" href="/PFNCADNA/s/bwps-wip-getaguestpass">GUEST PASSES</a> </div> -->
+					<div if:true={VALID_USER}><a class="linkclass" href="/PFNCADNA/s/guestusersignin">GUEST PASSES</a>
+					</div>
+					<!-- <div><a class="linkclass" href="/PFNCADNA/s/guestusergiftamembership">GIFT OF MEMBERSHIP</a> </div> -->
+					<div onclick={giftOfMembershipPage}><a class="linkclass">GIFT OF MEMBERSHIP</a> </div>
+				</div>
+
+				<div class="site-icon-box">
+
+					<div><a class=".org-link" href="https://parkinsonfoundation.org/"
+							target="_blank">parkinsonfoundation.org </a> </div>
+					<div class="social-icon-box">
+						<a href="https://www.facebook.com/PFNCA/" target="_blank"> <img src={facebook_logo} > </a>
+							<a href="https://twitter.com/pfnca?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+								target="_blank"><img src={twitter_logo}></a>
+								<a href="https://www.instagram.com/pfnca/?hl=en"
+									target="_blank"><img src={insta_logo}></a>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="bottom-box"></div> -->
+
+			<div class="footer-bottom-line">
+				<div class="left"> &#169; {currentYear} Be Well Parkinson's. All Right Reserved.</div>
+				<div class="right"> <a>Privacy </a>|<a> Terms</a></div>
+			</div>
+		</div>
+	</div>
+
+</template>

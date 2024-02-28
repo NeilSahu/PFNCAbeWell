@@ -1,0 +1,97 @@
+<template>
+    <!-- <img src={FavouritArticleImage1}></img> -->
+    <div class="MainDiv">
+        <!-- <div class="FavouriteInstructorSuper"> -->
+            <!-- <div class="FavouriteInstructor">
+                <p>YOUR FAVOURITE INSTRUCTORS</p>
+            </div> -->
+
+            <div class="container">
+                <lightning-layout multiple-rows="true">
+                    <template if:true={haveFavInstructor} for:each={visibleCardElementArray} for:item="cardElementItem">
+                        <lightning-layout-item if:true={cardElementItem.instructorFavStatus} key={cardElementItem.Id} class="layoutElement">
+                            <div class="InstructorData">
+                                <div class="inst-img">
+                                    <img src={cardElementItem.instImage} alt="1">
+                                </div>
+                                <br>
+                                <div class="name-exp">
+                                    <h1>{cardElementItem.Name}</h1>
+                                    <p>{cardElementItem.BWPS_Type__c} Instructor</p>
+                                    <!-- <img src={likeButton}> -->
+                                    <img class="likeButton" src={favIcon} if:true={cardElementItem.instructorFavStatus} onclick={favoriteHandler2} data-id={cardElementItem.Id} data-isfav={cardElementItem.instructorFavStatus}>
+                                    <img class="likeButton" src={unFavIcon} if:false={cardElementItem.instructorFavStatus} onclick={favoriteHandler2} data-id={cardElementItem.Id} data-isfav={cardElementItem.instructorFavStatus}>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                    </template>
+                     <div if:false={haveFavInstructor} class="container emptyContainer">
+                        <span style="color:black;">
+                            No Favorties Instructors
+                        </span>
+                    </div>
+                </lightning-layout>
+                <!-- <div class="Instructor row"  data-id="container_I">
+                    <template for:each={data.tranners} for:item="tranner">
+                        <div data-id="card-1" class="card col-3" key={tranner}>
+                            <div class="inst-img">
+                                <img src={tranner.imgUrl} alt="1">
+                            </div>
+                            <br>
+                            <div class="name-exp">
+                                <h1>{tranner.name}</h1>
+                                <p>{tranner.exp}</p>
+                                <img src="/sfsites/c/file-asset/imageHeart?v=1">
+                            </div>
+                        </div>
+                    </template>
+                </div> -->
+            </div>
+        <!-- </div> -->
+       
+        <!-- <div class="ArticleSuper"> -->
+            <!-- <div class="Articles">
+                <p>YOUR FAVOURITE ARTICLE</p>
+            </div> -->
+            
+            <!-- <div class="ArticleDetail">
+                <lightning-layout multiple-rows="true" style="align-items :inherit;">
+                    <template for:each={reports.articles} for:item="article">
+                        <lightning-layout-item key={article.imgUrl} class="ArticleLayout">
+                            <div class="ArticleData">
+                                <div class="Imagerow">
+                                    <img src={article.imgUrl}>
+                                </div>
+                                <br>
+                                <div class="NameExpression">
+                                    <p class="DateDetail">{article.date}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{article.date1}</p>
+                                    <h1>{article.lessons}</h1>
+                                    <p>{article.Details}</p>
+                                    <img src={likeButton}>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout> -->
+                <!-- <div class="ArticleDetailRow secondrow">
+                    <template for:each={reports.articles} for:item="article">
+                        <div class="ArticleImages col-4" key={article}>
+                            <div class="Imagerow">
+                                <img src={article.imgUrl}>
+                            </div>
+                            <br>
+                            <div class="nameExpression">
+                                <p class="dateDetails">{article.date}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{article.date1}</p>
+                                <h1>{article.lessons}</h1>
+                                <p>{article.Details}</p>
+                                <img src="/sfsites/c/file-asset/imageHeart?v=1">
+                            </div>
+                        </div>
+                    </template>
+                </div> -->
+            <!-- </div>  -->
+        <!-- </div> -->
+    </div>
+    <!-- Toast Event Child Calling -->
+    <c-toast-message auto-close-time="1000"></c-toast-message>
+</template>

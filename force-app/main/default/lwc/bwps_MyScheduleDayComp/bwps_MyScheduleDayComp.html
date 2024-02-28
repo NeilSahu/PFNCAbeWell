@@ -1,0 +1,83 @@
+<template>
+    <div class="day-up-lable">
+        <label>{totalclasses} classes scheduled</label>
+    </div>
+    <br>
+    <div class="Calender-View-ParentCard">
+        <div class="Calender-View-column-Card">
+            <template for:each={eventsofday} for:item="event">
+            <!-- loop -->
+            <div class="Card-container" key={event.Id}>
+                <div class="timer-btn-container">
+                    <button class="timer-btn">{event.time}</button>
+                </div>
+                <div class="card-gradparent">
+                <div class="card-parent">
+                 <div class="img-container">
+                     <img src={imgsrc} class='img' alt="" srcset="">
+                     <span if:true={event.isOver} class="over-tag">OVER</span>
+                     <span class="time-tag">{event.timeAndDay}</span>
+                 </div>
+                 <div class="cardsection">
+                    <div class="column-card">
+                        <div class="headericon">
+                            <div class="firsticon">
+                                <img class="userLogo" src={UserLogo} alt="" srcset="">
+                                <span class="iconheading">{event.instructor}</span>
+                            </div>
+                            <div class="secondicon">
+                                <img class='levelLogo' src={event.lavel} alt="" srcset="">
+                                <span class="iconheading">{event.intensity}</span>
+                            </div>
+                        </div>
+                        <div class="card-peragraph">
+                         <h1 class="h1" data-key={event.Id}
+                                        data-schname={event.Name}
+                                        data-name={event.instructor}
+                                        data-descp={event.description}
+                                        data-ints={event.intensity}
+                                        onclick={scheduleClassDetailViewHandle} >{event.Name}</h1>
+                         <p class="p1">{event.description}</p>
+                        </div>
+                        <div class="footer-icons">
+                            <div class="logoparent">
+                                <img class="logo" src={event.favClassStatus} data-image={event.Id} alt="" srcset="" onclick={favHandler}>
+                                <!-- <img class="logo" src={sharelogo} alt="" srcset="">     -->
+                            </div>
+                           
+                           <span class="timespan">{event.timeAndDay}</span>
+                        <div class={event.btnClass}>
+                            <button class="orange-button-btn" onclick={playClass} data-key={event.Id} data-classname={event.btnLabel} >{event.btnLabel}</button>
+                            <!-- data-name={event.Schedule_Class__r.BWPS_instructor__r.Name} data-meetingid={event.LectureId__c} data-videoid={event.BWPS_Vimeo_video_Id__c}  -->
+                           </div>
+                        </div>
+                    </div>
+    
+                 </div>
+                </div>
+             </div>
+            </div>
+        </template>
+        </div>
+    </div>
+    <br><br>
+    <div>
+        <template if:true={loding}>
+            <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+          </template>
+    </div>
+    <div if:true={showIframe} class="ifrem-container">
+        <span onclick={StartClass}>&#10006;</span>
+        <iframe src={playersrc} width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+   </div>
+   <c-toast-message auto-close-time="3000"></c-toast-message>
+   <template if:true={InstDetailView}>
+        <div class="classComplateDetailPage">
+            <c-bwps_-w-i-p_-class-details-view scheduleclassname={scheduleClassName} classviewtype={classViewType}
+                scheduleclassinstname={scheduleClassInstName} scheduelclassdescription={scheduelClassDescription}
+                scheduleclassintensity={scheduleclassintensity} classdata={selectedClass}
+                onclassdetailreturn={trueparent} onselectlive={liveCick}>
+            </c-bwps_-w-i-p_-class-details-view>
+        </div>
+    </template>
+</template>

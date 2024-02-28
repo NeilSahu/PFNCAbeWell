@@ -1,0 +1,24 @@
+<template>
+    <div class="sub-nav">
+		<ul style="display:flex" class="sub-nav-link">
+			<li>
+				<div data-id = 'hias' onclick={pageChangeHandler}>How It All Started</div>
+				<template if:true={HowItAllStarted}>
+					<div class="active-marker"></div>
+				</template>
+			</li>
+			<li>
+				<div data-id = 'pp' onclick={pageChangeHandler}>Parkinson's Platform</div>
+				<template if:true={ParkinsonD}>
+					<div class="active-marker"></div>
+				</template>
+			</li>
+		</ul>
+	</div>
+	<template if:true={HowItAllStarted}>
+		<c-bwps_-w-i-p_-how-it-all-started></c-bwps_-w-i-p_-how-it-all-started>
+	</template>
+	<template if:true={ParkinsonD}>
+        <c-bwps_-w-i-p_-parkinson-platform></c-bwps_-w-i-p_-parkinson-platform>
+	</template>
+</template>

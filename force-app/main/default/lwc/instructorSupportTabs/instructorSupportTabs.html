@@ -1,0 +1,46 @@
+<template>
+    <div class="container">
+        <div class="containerTabs">
+            <!-- <div>
+                <div class="Faqs" onclick={handleAgreement}>
+                    <p>Instructor Agreement</p>
+                    <hr if:true={agreement}>
+                </div>
+            </div> -->
+    
+            <div>
+                <div class="Faqs" onclick={handleResources}>
+                    <p>Be Well Platform Learning Resources</p>
+                    <hr if:true={Resources}>
+                </div>
+            </div>
+    
+            <div class="Faqs" onclick={handleFaq}>
+                <p>FAQs</p>
+                <hr if:true={Faqs}>
+    
+            </div>
+            <div class="Faqs" onclick={handleContact}>
+                <p>Contact Us</p>
+                <hr if:true={contact}>
+            </div>
+        </div>
+    </div>
+
+    <!-- <template if:true={agreement}>
+        <c-b-w-p-s_-instructor-agreement></c-b-w-p-s_-instructor-agreement>
+    </template> -->
+
+    <template if:true={Resources}>
+        <c-instructor-videos></c-instructor-videos>
+        <c-instructor-sampl-class-flows></c-instructor-sampl-class-flows>
+        <!-- <c-instructor-resourse-quizes></c-instructor-resourse-quizes> -->
+    </template>
+    <template if:true={Faqs}>
+        <c-instructor-support-faq></c-instructor-support-faq>
+        <c-instructor-support-contact-us text-heading="Still have question?"></c-instructor-support-contact-us>
+    </template>
+    <template if:true={contact}>
+        <c-instructor-support-contact-us text-heading="Have question?"></c-instructor-support-contact-us>
+    </template>
+</template>

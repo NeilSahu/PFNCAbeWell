@@ -1,0 +1,94 @@
+<template>
+    <div if:true={showMenu} class="showMenuComponent">
+        <!-- <c-mobile-menu-component></c-mobile-menu-component> -->
+        <div class="mainProfileMenuContainer">
+            <div class="headerContainer">
+                <div class="homeClass">
+                    <!-- navigate to home page -->
+                    <img src={home} data-name="My Activity" onclick={menuHandler}></img>
+                    <a href="/PFNCADNA/s/guestuserdashboard">Be Well Homepage</a>
+                </div>
+                <div>
+                    <div class="buttonOutterClass">
+                        <a href={logoutLink}>
+                            <div class="buttonInnerClass">
+                                <button class="btnClass">LOG OUT</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <!-- X to close menu -->
+                    <img src={cancel} data-name="Menu" onclick={menuHandler}></img>
+                </div>
+            </div>
+            <div class="mobileMenuContainer">
+                <div class="menuButtonContainer">
+                    <div class="menuInnerContainer">
+                        <img src={browse} data-name="BrowseClass" onclick={handleSubMenu}></img>
+                        <span onclick={handleSubMenu} data-name="BrowseClass">Browse Classes</span>
+                    </div>
+                    <div class="menuInnerContainer">
+                        <img src={howto} data-name="HowToParticipate" onclick={handleSubMenu}></img>
+                        <span onclick={handleSubMenu} data-name="HowToParticipate">How to participate</span>
+                    </div>
+                </div>
+                <div class="menuButtonContainer">
+                    <div class="menuInnerContainer">
+                        <img src={faqs} onclick={handleSubMenu} data-name="Faq"></img>
+                        <span onclick={handleSubMenu} data-name="Faq">FAQs</span>
+                    </div>
+                    <div class="menuInnerContainer">
+                        <img src={blog} onclick={handleSubMenu} data-name="Blog"></img>
+                        <span onclick={handleSubMenu} data-name="Blog">Blog</span>
+                    </div>
+                </div>
+                <div class="menuButtonContainer">
+                    <div class="menuInnerContainer">
+                        <img src={about} data-name="AboutUs" onclick={handleSubMenu}></img>
+                        <span onclick={handleSubMenu} data-name="AboutUs">About Us</span>
+                    </div>
+                    <div class="menuInnerContainer">
+                        <img src={contact} data-name="ContactUs" onclick={handleSubMenu}></img>
+                        <span onclick={handleSubMenu} data-name="ContactUs">Contact us</span>
+                    </div>
+                </div>
+            </div>
+            <div class="searchContainer">
+                <div class="searchInnerContainer">
+                    <input type="search" class="searchInputClass" name="" id="" placeholder="Search Site">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mainContainer">
+        <div class="menuContainer">
+            <div class="menuClass" data-name="Menu" onclick={menuHandler}>
+                <div> <img src={menu}>
+                </div>
+                <div><span>Menu</span></div>
+            </div>
+            <div class="menuClass" data-name="My Activity" onclick={menuHandler}>
+                <div> <img src={activity}> </div>
+                <div><a href="/PFNCADNA/s/guestuserdashboard">My Activity</a></div>
+            </div>
+            <!-- <div class="menuClass" data-name="My Classes" onclick={menuHandler}>
+                <div><img src={classes}></div>
+                <div><a href="/PFNCADNA/s/myclassespage">My Classes</a></div>
+            </div> -->
+            <div class="menuClass" data-name="My Schedule" onclick={menuHandler}>
+                <div><img src={schedule}></div>
+                <div><a href="/PFNCADNA/s/myschedule">My Schedule</a></div>
+            </div>
+            <div class="menuClass" data-name="My Favorites" onclick={menuHandler}>
+                <div> <img src={favorites}></div>
+                <div><a href="/PFNCADNA/s/favoritepage">My Favorites</a></div>
+            </div>
+        </div>
+        <!-- <div class="footerClass">
+            <div class="lineClass"></div>
+            <div> <span><img src="#">bewell.com</span></div>
+            <div class="lineClass"></div>
+        </div> -->
+    </div>
+</template>

@@ -1,0 +1,66 @@
+<template>
+
+    <div class="container">
+
+        <div class="back-btn-container">
+            <div class="back-btn">
+                <img src={backIcom} class="backlIcon" onclick={backClickedHandle}>
+                <span>Back</span>
+            </div>
+        </div>
+
+
+        <div class="class-detail-top" style={classBackgroundImage}>
+            <!-- <div class="class-background"> -->
+            <template if:true={classviewtype}>
+                <div class="class-handle">
+                    <img src={lockIcon} alt="lock">
+                    <button class="blue-btn">
+                        <p class="onDesktop" onclick={doLogin}>UNLOCK THIS CLASS</p>
+                        <p class="on-mobile">UNLOCK</p>
+                    </button>
+                </div>
+            </template>
+            <!-- </div> -->
+        </div>
+        <div class="class-detail-main">
+            <div class="class-deatil-head">
+                <div class="class-inst-deatil">
+                    <div class="exercise-breif">{scheduleclassname}</div>
+                    <div class="class-inst-name">{scheduleclassinstname}</div>
+                </div>
+                <div class="sharing-activity-container">
+                    <template if:true={classviewtype}>
+                        <div class="like-share-container">
+                            <!-- <div class="share-icon"><img  class="icon" src={share_icon} alt=""></div> -->
+                            <div class="like-icon"><img class="icon" src={like_icon} alt="" onclick={doLogin}></div>
+                        </div>
+                    </template>
+                    <div class="activity-status">
+                        <img class="icon capacity-icon" src={intensityLogo} alt="">
+                        <span>{scheduleclassintensity}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hr-line"></div>
+            <div class="class-breif">
+                <p>{scheduelclassdescription}</p>
+            </div>
+            <div class="required-props"><b>Required props: </b>none</div>
+            <template if:true={classviewtype}>
+                <div class="unlock-schedule-btns">
+                    <div class="btn-box unlock-btn-box">
+                        <div class="btn unlock-btn" onclick={doLogin}>UNLOCK THIS CLASS</div>
+                    </div>
+                    <div class="btn-box live-btn-box">
+                        <div class="btn live-btn" onclick={clickLiveClass}>LIVE CLASS SCHEDULE</div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <template if:true={showfooter}>
+        <c-guest-user-footer></c-guest-user-footer>
+    </template>
+</template>

@@ -1,0 +1,240 @@
+<!--
+* @description	 This is Schedule calendar component show dynamic calendar based on day week or month. 
+* @date       	 09-10-2022      	
+*-->
+
+
+<template>
+ <div if:true={showNotificationFlag}>
+        <c-notification-component totalrecords={notificationVisibel}></c-notification-component>
+ </div>
+ <!-- <div if:true={showIframe} class="ifrem-container">
+     <span onclick={offIframe}>&#10006;</span>
+    <iframe src='https://player.vimeo.com/video/790330772?h=25271ef863' frameborder='0' allowfullscreen></iframe>
+</div> -->
+<div class="mySchedule-Header">
+    <img src={bellicon} alt="" class="bell-icon"  onclick={showNotificationMethod}>
+    <div class="text1">
+        <h1>Schedule</h1>
+    </div>
+    <div class="text2">
+        <!-- <p>{StartString}</p> -->
+        <p>Enter in class 10 minutes prior</p>
+    </div>
+    <div class="mySchedule-button-section">
+        <!-- <div class="box-orange-button">
+            <button class="orange-button" onclick={StartClass}>START</button>
+        </div> -->
+        <div class="box-blue-button">
+            <button class="green-button" onclick={redirectToParticipate}>HOW TO PARTICIPATE</button>
+        </div>
+    </div>
+</div>
+<br><br><br>
+<div class="calendarParent">
+<div class="calendarParent1">
+    <div class="type">
+        <div class="box">
+            <a onclick={dayClickHandler} class="box-click-active day-tag" id="day-tag">
+                <div class="day">
+                    Day
+                </div>
+            </a>
+            <a onclick={weekClickHandler} class="week-tag" id="week-tag">
+                <div class="week">
+                    Week
+                </div>
+            </a>
+            <a onclick={monthClickHandler} class="month-tag" id="month-tag" style="display:none;">
+                <div class="month">
+                    Month
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="dateParent">
+        <a if:true={showBackButton} class="perv-tag" onclick={prevClickHandler}>
+            <div class="prev-button">
+                &lt;
+            </div>
+        </a>
+        <div class="date-text fullDate">
+            
+        </div>
+        <a class="next-tag" onclick={nextClickHandler}>
+            <div class="next-button">
+                &gt;
+            </div>
+        </a>
+    </div>
+</div> 
+<div class="clendar-icon">
+<div style="display:none;">
+<lightning-icon icon-name='utility:reminder' alternative-text='reminder' variant='warning' size='Medium' title='reminder' onclick={addEvent}></lightning-icon>
+    <span>Add to a calendar</span>
+</div>
+    <!-- <div onclick={removeClassHandler} class="Remove">
+    <img src={removeIcon} alt="#" style="width: 30px;" >
+    <span >Remove a class</span>
+    </div>-->
+</div>   
+</div>
+<br><br>
+<c-calendar-Comp  date={updatedDate} subsmap={allSubEntityMap}></c-calendar-Comp>
+    <c-week-Calendar weekevnts={weekData} eventmap={evetMap} subsmap={allSubEntityMap}></c-week-Calendar>
+    <!-- <template if:true={dayBtn}> -->
+    <c-bwps_-My-Schedule-Day-Comp eventsofday={eventsData} loding={dayDataloading} totalclasses={totalDayRec}></c-bwps_-My-Schedule-Day-Comp>
+    <!-- </template> -->
+
+    <!--Remove and Add class UI-->
+    <template if:true={removeClass}>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={removeClassClose}>
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="52px" height="52px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+        <path fill="#FFFFFF" d="M31,25.4L44,12.3c0.6-0.6,0.6-1.5,0-2.1L42,8.1c-0.6-0.6-1.5-0.6-2.1,0L26.8,21.2c-0.4,0.4-1,0.4-1.4,0
+            L12.3,8c-0.6-0.6-1.5-0.6-2.1,0l-2.1,2.1c-0.6,0.6-0.6,1.5,0,2.1l13.1,13.1c0.4,0.4,0.4,1,0,1.4L8,39.9c-0.6,0.6-0.6,1.5,0,2.1
+            l2.1,2.1c0.6,0.6,1.5,0.6,2.1,0L25.3,31c0.4-0.4,1-0.4,1.4,0l13.1,13.1c0.6,0.6,1.5,0.6,2.1,0l2.1-2.1c0.6-0.6,0.6-1.5,0-2.1
+            L31,26.8C30.6,26.4,30.6,25.8,31,25.4z"/>
+        </svg>
+        <span class="slds-assistive-text">Cancel and close</span>
+        </button>
+        <div class="slds-modal__header model-header">
+        <label for="Date">SELECT A DATE</label>
+        <input type="Date" placeholder="select a date" onchange={handelDateChange}>
+        </div>
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+            <div class="class-count">
+            <span>{numberOfClasses} Schedule classes</span>
+            </div>
+            <div class="repetingItem">
+                <div class="list-view">
+                    <span> Class Name </span>
+                    <span>Start Time</span>
+                    <span>Instructor Name</span>
+                    <span>Remove</span>
+                </div>
+                </div>
+            <template for:each={eventsOfDay} for:item="eventItem">
+            <div key={eventItem} class="repetingItem">
+            <div class="list-view">
+                <span>{eventItem.Name}</span>
+                <span> {eventItem.BWPS_StartTime__c}</span>
+                <span>{eventItem.Schedule_Class__r.BWPS_instructor__r.Name}</span>
+                <input type="checkbox" data-id={eventItem.Id}  onclick={getIdOfEvt}>
+            </div>
+            </div>
+            </template >
+        </div>
+        <div class="slds-modal__footer slds-modal__footer_directional footer-remove">
+        <!-- <button class="slds-button slds-button_neutral">Skip This Step</button>
+        <button class="slds-button slds-button_brand">Save &amp; Next</button> -->
+        <div class="box-Blue-button">
+            <button class="blue-button" onclick={removeNextHandler}>NEXT</button>
+        </div>
+        </div>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+
+    </template>
+    <!--remove ui Confirmation  -->
+    <template if:true={conformremove}>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={conformColose}>
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="52px" height="52px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+        <path fill="#FFFFFF" d="M31,25.4L44,12.3c0.6-0.6,0.6-1.5,0-2.1L42,8.1c-0.6-0.6-1.5-0.6-2.1,0L26.8,21.2c-0.4,0.4-1,0.4-1.4,0
+            L12.3,8c-0.6-0.6-1.5-0.6-2.1,0l-2.1,2.1c-0.6,0.6-0.6,1.5,0,2.1l13.1,13.1c0.4,0.4,0.4,1,0,1.4L8,39.9c-0.6,0.6-0.6,1.5,0,2.1
+            l2.1,2.1c0.6,0.6,1.5,0.6,2.1,0L25.3,31c0.4-0.4,1-0.4,1.4,0l13.1,13.1c0.6,0.6,1.5,0.6,2.1,0l2.1-2.1c0.6-0.6,0.6-1.5,0-2.1
+            L31,26.8C30.6,26.4,30.6,25.8,31,25.4z"/>
+        </svg>
+        <span class="slds-assistive-text">Cancel and close</span>
+        </button>
+        <div class="slds-modal__header model-header">
+        <!-- <label for="Date">SELECTED DATE: {dateOfDay} </label> -->
+        </div>
+        <div class="slds-modal__content slds-p-around_medium">
+            <div class="confirmation-msg"> Are you sure you want to remove selected classes form calendar ?</div>
+        </div>
+        <div class="slds-modal__footer slds-modal__footer_directional footer-confirmation">
+        <div class="box-Blue-button">
+            <button class="blue-button" onclick={conformColose}>cancle</button>
+        </div>
+        <div class="box-orange-button">
+            <button class="orange-button" onclick={removeFromCalender}>REMOVE</button>
+        </div>
+        </div>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+<!--remove ui Confirmation end  -->
+<!--end of add remove UI-->
+
+<!--Add a class UI -->
+<template if:true={addClass}>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closeAddClass}>
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="52px" height="52px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+        <path fill="#FFFFFF" d="M31,25.4L44,12.3c0.6-0.6,0.6-1.5,0-2.1L42,8.1c-0.6-0.6-1.5-0.6-2.1,0L26.8,21.2c-0.4,0.4-1,0.4-1.4,0
+            L12.3,8c-0.6-0.6-1.5-0.6-2.1,0l-2.1,2.1c-0.6,0.6-0.6,1.5,0,2.1l13.1,13.1c0.4,0.4,0.4,1,0,1.4L8,39.9c-0.6,0.6-0.6,1.5,0,2.1
+            l2.1,2.1c0.6,0.6,1.5,0.6,2.1,0L25.3,31c0.4-0.4,1-0.4,1.4,0l13.1,13.1c0.6,0.6,1.5,0.6,2.1,0l2.1-2.1c0.6-0.6,0.6-1.5,0-2.1
+            L31,26.8C30.6,26.4,30.6,25.8,31,25.4z"/>
+        </svg>
+        <span class="slds-assistive-text">Cancel and close</span>
+        </button>
+    <div class="slds-modal__header model-header">
+        <label for="Date"> ENROLL A CLASS </label>
+    </div>
+<div class="slds-modal__content slds-p-around_medium">
+    <div class="enroll-class-container"> 
+    <c-bwps_-custom-lookup
+    name="scheduleClassLookup"
+    field-label="Search class"
+    child-object-api-name="Enrolled_Class__c"
+    target-field-api-name="Schedule_Class__c"
+    value={scheduleClassId}
+    required="false"
+    add-to-recent="true"
+    onvalueselected={handleSelectedLookup}
+>
+</c-bwps_-custom-lookup>
+<template if:true={classDataModel}>
+<div class="schedule-class-data">
+<div class="item-head">
+    <div class="list-head">
+        <span> Class Name: {scheduleClass.Name}</span>
+        <span>Date:  {scheduleClass.BWPS_Date__c}</span>
+        <span>Start Time: {scheduleClass.BWPS_StartTime__c}</span>
+        <span>End Time: {scheduleClass.BWPS_EndTime__c} </span>
+        <span>Frequency: {scheduleClass.BWPS_ClassFrequency__c}</span>
+        <span>Schedule Days: {scheduleClass.Schedule_Days__c}</span>
+        <span>Instructor Name: {scheduleClass.BWPS_instructor__r.Name}</span>
+        <span> Status: {scheduleClass.BWPS_Status__c}</span>
+    </div>
+</div>
+</div>
+</template>
+   </div>
+    </div>
+    <div class="slds-modal__footer slds-modal__footer_directional footer-addClass">
+    <!-- <div class="box-Blue-button">
+        <button class="blue-button" onclick={conformColose}>cancle</button>
+    </div> -->
+    <div class="box-orange">
+        <button class="orange-button-btn" onclick={enroledHandler} >ENROLL CLASS</button>
+    </div>
+    </div>
+    </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+    </template>
+
+<!--Add a class UI End -->
+    <c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

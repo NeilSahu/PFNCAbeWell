@@ -1,0 +1,36 @@
+<template>
+<div class="ins_Master">
+     <div class="intro">
+        <div class="main_intro">
+         <h1>PASSIONATE INSTRUCTORS</h1>
+        </div>
+        <div class="sub-intro">
+            <p>our highly trained instructors are truly passionate apout hrlping people slow<br class="br_br">parkinson's through each of there specialized fields.</p>
+        </div>
+    </div>
+    <div class="slidecontainer">
+     <input type="range" min="0" max ={sliderMaxVal} value="0" class="slider" data-id="myRange" onchange={sliderChange}>
+    </div>
+
+    <div class="slider-container-1">
+       <div class="parent-instructor row"  data-id="container_I">
+        <template for:each={data.tranners} for:item="tranner">
+            <div data-id="card-1" class="card col-3" key={tranner}>
+                <div class="inst-img">
+                  <img src={tranner.imgUrl} alt="1">
+                </div>
+                <br>
+                <div class="name-exp">
+                    <h1>{tranner.name}</h1>
+                     <p>{tranner.exp}</p>
+                </div>
+            </div>
+        </template>
+       </div>
+    </div>
+    <div class="box-slid-button">
+        <button class="slide-button" onclick={preview} > &#10094; </button>
+        <button class="slide-button" onclick={next} > &#10095; </button>
+    </div>
+</div>
+</template>

@@ -1,0 +1,33 @@
+<template>
+	<div class="container1">
+          
+				     <div class="Heading"> <h1>Quizes</h1> </div>
+
+		<div class="DivForGrid">
+			<div class="slds-grid slds-wrap">
+				<template for:each={response} for:item="res">
+
+					<div key={res.Id} class="slds-col slds-size_1-of-3 container">
+						<div class="container-box">
+
+							<div class="Img-parent">
+									<img src={myImage} class="container-box-img">  
+							</div>
+
+								<div>
+									<h1 class="container-box-Quizes">{res.Name}</h1>
+								</div>
+                                <div class="QuizesText">
+									<p>{res.Description__c}</p>
+								</div>
+							</div>
+
+						</div>
+										
+				</template>
+			</div>
+		</div>
+	</div>
+                                         <!-- <div onclick={NextHandler}> next data</div>
+										<div onclick={PreviousHandler}>previous data</div> -->
+</template>

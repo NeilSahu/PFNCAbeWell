@@ -1,0 +1,128 @@
+<template>
+    <div class="notesPage">
+        <div class="new-search">
+            <div class="flex-block">
+                <div class="btn-div yours">
+                    <h1 class="note-details note-headings" style="width: fit-content!important; font-size: 2.5rem;">Your
+                        Notes</h1>
+                    <div class="btn-container">
+                        <div class="box-blue-button">
+                            <button class="blue-button" onclick={NewNoteClickHandler} data-search="srchbtn">Add New
+                                Note</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-block">
+                <div class="searchdiv">
+                    <div class="search-size">
+                        <div class="inpcls">
+                            <input type="email" id="Email" data-inpsearch="inpsrch" value={inpsrch} name="Email"
+                                class="searchInput" placeholder="Enter keyword" required>
+                        </div>
+                        <div class="filter-flex">
+                            <div class="box-blue-searchButton">
+                                <button class="blue-button" onclick={buttonSearch} data-search="srchbtn">SEARCH</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="note-details note-headings">RECENT NOTES</div>
+            <div class=" row note-details">
+                <template if:false={notesData.length}>
+                     <p class="blank-block">You don't have any notes !</p>
+                </template>
+                <template if:true={notesData}>
+                <template for:each={notesData} for:item="note">
+                    <div class="singleNote col-4" key={note.Id} data-id={note.Id}>
+                        <div class="notes-main">
+                            <div class="edit-block">
+                                <div class="note-date">{note.CreatedDate} </div>
+                                <div class="note-icon" data-id={note.Id} data-title={note.Title}
+                                    data-date={note.CreatedDate} data-desc={note.Body} onclick={handleData}>
+                                    <img src={pencil} width="20px" height="20px"
+                                        style="cursor: pointer;width: 25px;margin: 10px 20px 10px 0px;">
+                                </div>
+                            </div>
+                            <div class="note-title" data-id={note.Id}>{note.Title}</div>
+                            <div class="note-description mordenLimit">{note.Body}</div>
+                        </div>
+                    </div>
+                </template>
+                </template>
+                <!-- <template if:true={showmodel}>
+                <c-b-w-p-s_-edit-box notes={yourNotes}></c-b-w-p-s_-edit-box>
+                </template> -->
+            </div>
+        </div>
+        <template if:true={showmodel}>
+            <div data-id='form-modal' class="form-overlay">
+                <div class="card-placement">
+                    <div class="cross" onclick={off}>X</div>
+                    <div class="card">
+                        <div class="model-stitle">{SelectedTitle}</div>
+                        <div class="model-sdate"> <span class="model-datetxt">last Modified &ensp;</span>{SelectedDate}
+                        </div>
+                        <!-- <div class="model-desc">{SelectedDescription}</div> -->
+                        <div class="model-desc"><textarea class="newnote-desc" data-id="selectinsdesc" id="storyselected"
+                                name="story" rows="8" cols="33">{SelectedDescription}</textarea></div>
+                        <hr>
+                        <div class="model-button">
+                            <!-- <div><button onclick={off}>DELETE</button></div> -->
+                            <!-- <div class="model-btnspc"><button class="btnclr" onclick={off}>SAVE</button></div> -->
+                            <div class="box-blue-button">
+                                <button class="blue-button" onclick={deleteNote} data-search="srchbtn"
+                                    style="Color:#1b3e59;background: white;">DELETE</button>
+                            </div>
+                            <div class="box-blue-button">
+                                <button class="blue-button" data-idnotes={Noteid} onclick={UpdateNoteHandle}
+                                    data-search="srchbtn">SAVE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template if:true={Notesshowmodel}>
+            <div data-id='note-modal' class="form-overlay">
+                <div class="card-placement">
+                    <div class="cross" onclick={offAdd}>X</div>
+                    <div class="card">
+                        <div class="heading">Add New Note</div>
+                        <div><input class="newnote-title" data-id="insttl" type="text" name="Title" placeholder="Title">
+                        </div>
+                        <div> 
+                            <select name="class" value={clsVal} data-id="clsSelect" id="class2" class="newnote-title">
+                                <option value="none" selected disabled>--SELECT CLASS--</option>
+                                <template for:each={classArray} for:item="cls">
+                                    <option key={cls.Id} data-id="ClassId" value={cls.Id}>{cls.Name}</option>
+                                </template>
+                                <option value="Other">Other</option>
+                            </select></div>
+                        <!-- <div class="model-sdate"> <span class="model-datetxt">last Modified &ensp;</span>{SelectedDate}</div> -->
+                        <div><textarea class="newnote-desc" data-id="insdesc" id="story" name="story" rows="5" cols="33"
+                                placeholder="Add your note description ove here..."></textarea></div>
+                        <hr>
+                        <div class="model-button">
+                            <!-- <div><button onclick={offAdd}>DELETE</button></div> -->
+                            <!-- <div class="model-btnspc"><button class="btnclr" onclick={offAdd}>SAVE</button></div> -->
+                            <div class="box-blue-button">
+                                <button class="blue-button" onclick={offAdd} data-search="srchbtn"
+                                    style="Color:#1b3e59;background: white;">CANCEL</button>
+                            </div>
+                            <div class="box-blue-button">
+                                <button class="blue-button" onclick={InsertNoteHandle} data-search="srchbtn">SAVE</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </div>
+    <template if:false={notesaction}>
+					<lightning-spinner variant="brand" alternative-text="Loading" size="large"> </lightning-spinner>
+				</template>
+</template>

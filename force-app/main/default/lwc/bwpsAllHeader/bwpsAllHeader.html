@@ -1,0 +1,48 @@
+<template>
+    <template if:true={isInstructor}>
+        <c-instructors-dashboard-header></c-instructors-dashboard-header>
+        <div style="margin-top:4rem;">
+            <c-instructor-today-class></c-instructor-today-class>
+        </div>
+        <!-- <c-instructor-dashboard-calendar></c-instructor-dashboard-calendar>
+        <c-calendar-list-view></c-calendar-list-view>
+        <c-instructors-dashboard-card></c-instructors-dashboard-card> -->
+        <div style="margin-bottom:2rem;">
+            <c-bwps_-dashboard-footer></c-bwps_-dashboard-footer>
+        </div>
+    </template>
+    <template if:true={isDonor}>
+        <c-bwps_-donor-dashboard-header></c-bwps_-donor-dashboard-header>
+        <div style="margin: 8rem 0rem 2rem 0rem ;">
+            <c-bwps_-donor-campaign-component></c-bwps_-donor-campaign-component>
+        </div>
+        <c-donation-history></c-donation-history>
+
+        <div style="margin: 2rem 0rem 2rem 0rem ;">
+        <c-bwps_-donor-blog></c-bwps_-donor-blog>
+        </div>
+          <div style="margin: 2rem 0rem 2rem 0rem ;">
+        <c-bwps_-donor-changing-life></c-bwps_-donor-changing-life>
+          </div>
+        <div style="margin: 2.5rem 0rem 1.7rem 0rem ;">
+             <c-bwps_-dashboard-footer></c-bwps_-dashboard-footer>
+        </div>     
+    </template>
+    <template if:true={isGuest}>
+        <c-guest-user-header></c-guest-user-header>
+        <div style="margin-top:6rem;">
+            <c-myschedule-calendar></c-myschedule-calendar>
+        </div>
+        <!-- <div style="margin-top:6rem;">
+            <c-guestuser-welcomepage></c-guestuser-welcomepage>
+        </div>
+        <c-zoom-web-sdk></c-zoom-web-sdk>
+        <c-your-today-schedule-component></c-your-today-schedule-component>
+        <c-on-demand-classes-component></c-on-demand-classes-component>
+        <c-upcoming-classes-component></c-upcoming-classes-component>
+        <c-guest-user-try-class></c-guest-user-try-class>
+        <c-guest-user-help-center></c-guest-user-help-center> -->
+        <c-menu-component></c-menu-component>
+        <c-guest-user-footer></c-guest-user-footer>
+    </template>
+</template>

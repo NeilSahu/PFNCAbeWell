@@ -1,0 +1,358 @@
+/* .donation-home-page-container {
+    /*width: 107%;
+    margin-left: -3.2rem;
+     margin-top: 1.4rem; 
+} */
+
+.donation-theme-imagge{
+    width: 100%;
+}
+.image-container {
+    width: 100%;
+}
+.image-container > img {
+    width: 100%;
+    height: 22rem;
+}
+
+.bewell-logo {
+    margin: 4rem 0px 0px 0px;
+}
+.bewell-logo > .logo-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+} 
+.bewell-logo > .logo-container > img {
+    width: 60%;
+    /* height: 15rem; */
+ }
+  .express-gratitude{
+    margin: 2rem 0px 0px 0px;
+    
+ }
+ .express-gratitude > .gratitude-contant{
+        width:61%;
+        margin: auto;
+        text-align: center;
+        font-size: 22px;
+        color: #343A40;
+        line-height: 32px;
+ }
+ .donation-methods-container{
+    margin: 4rem 0px 0px 0px;
+ }
+ .donation-methods-container > .except-method-heading {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    /* font-size: 2.6rem; */
+    /* font-weight: 900; */
+    /* color: #008ba7; */
+
+    font: normal normal 800 40px/52px Playfair Display;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+.donation-methods {
+        display: flex;
+        flex-direction: column;
+}
+.donation-methods > .payment-method {
+    width: 60%;
+    margin: 2rem auto auto 21%;
+    display: flex;
+    flex-direction: row;
+    /* height: 15rem; */
+    padding: 1rem;
+
+}
+.payment-method > .payment-method-logo {
+    width: 15%;
+}
+.payment-method > .payment-method-logo > img {
+    width: 90px;
+    height: 90px;
+    margin: 0.6rem;
+}
+.payment-method > .donation-action{
+    width: 80%;
+    border-bottom: 2px solid #008ba7;
+    padding: 1rem 1rem;
+}
+.payment-method > .botom-border-none {
+    border-bottom: none;
+}
+.donation-heading {
+    /* font-size: 1.7rem;
+    font-weight: bold;
+    color: #008ba7; */
+
+    font: normal normal bold 30px/34px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #000000;
+    text-transform: uppercase;
+    opacity: 1;
+}
+.donation-action > p {
+    /* color: #777a7e;
+    font-size: 1.2rem; */
+    padding: 1rem 0px;
+
+    text-align: left;
+    font: normal normal normal 22px/32px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 1;
+}
+
+.box-orange-button {
+    background-color: #008BA7;
+    color: white;
+    padding: 0.2rem;
+    width: fit-content;
+    height: fit-content;
+    /* width: 14rem; */
+
+}
+.box-orange-button > .orange-button:hover{
+    background-color: #036477;
+}
+.box-orange-button > .orange-button {
+background-color: #008BA7;
+color: white;
+border: 1px solid rgba(255, 255, 255, 0.5);
+padding: 0.5rem 2rem;
+margin: auto;
+width: 100%;
+align-items: center;
+display: flex;
+width: fit-content;
+padding: 0.5rem 3rem;
+}
+.donation-action >.text-style-none{
+    text-decoration: none;
+}
+.donation-action > .yello-text{
+    /* color: #ff9f37;
+    font-size: 1.2rem;
+    font-weight: bold; */
+    text-align: left;
+    font: normal normal normal 22px/32px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 1;
+
+}
+.donation-action > .yello-text span{
+    
+    text-align: left;
+    font: normal normal normal 18px/24px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #008BA7;
+    text-transform: uppercase;
+    opacity: 1;
+
+}
+
+.donation-action > a > img {
+        width: 25px;
+        padding: 5px;
+}
+
+/********************************** Media Queries *************************************************************/
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+    .bewell-logo > .logo-container > img {
+        width: 60%;
+        /* height: 12.5rem; */
+    }
+    .express-gratitude {
+        font-size: 1.1rem;
+    }
+    .donation-methods-container > .except-method-heading {
+        width: 80%;
+        font-size: 2.4rem;
+    }
+    .express-gratitude > .gratitude-contant {
+        width:61%;
+        margin: auto;
+        text-align: center;
+    }
+    .donation-methods > .payment-method {
+        width: 80%;
+    }
+    .payment-method > .donation-action {
+        width: 65%;
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    .bewell-logo > .logo-container > img {
+        width: 60%;
+        /* height: 10.5rem; */
+    }
+    .express-gratitude {
+        font-size: 1rem;
+    }
+    .donation-methods-container > .except-method-heading {
+        width: 80%;
+        font-size: 2.3rem;
+    }
+    .donation-action > p{
+        font-size: 1rem;
+    }
+    .express-gratitude > .gratitude-contant {
+        width: 66%;
+        margin: auto;
+        text-align: center;
+    }
+    .donation-methods > .payment-method {
+        width: 75%;
+        margin: auto;
+        /* height: 14rem; */
+    }
+    .payment-method > .payment-method-logo {
+        width: 20%;
+    }
+    .payment-method > .payment-method-logo > img {
+        padding: 0.5rem;
+    }
+    .payment-method > .donation-action {
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .donation-home-page-container {
+        /* width: 105%;
+        margin-left: -1rem; */
+    }
+    .image-container > img {
+        height: 15rem;
+    }
+    .bewell-logo {
+        margin: 2rem 0px 0px 0px;
+    }
+    .bewell-logo > .logo-container {
+        width: 65%;
+    }
+    .bewell-logo > .logo-container > img {
+        width: 70%;
+        /* height: 10rem; */
+    }
+    .express-gratitude {
+        font-size: 1rem;
+    }
+    .donation-methods-container > .except-method-heading {
+        width: 98%;
+        font-size: 1.5rem;
+    }
+    .donation-heading {
+        font-size: 1.3rem;
+    }
+    .donation-action > p{
+        font-size: 0.76rem;
+        padding: 5px 0px 1rem 0px;
+    }
+    .express-gratitude > .gratitude-contant {
+        width: 75%;
+        margin: auto;
+        text-align: center;
+    }
+    .donation-action > .yello-text {
+        font-size: 1rem;
+    }
+    .donation-methods > .payment-method {
+        width: 75%;
+        /* height: 13rem; */
+        margin: auto;
+    }
+    .payment-method > .payment-method-logo {
+        width: 23%;
+    }
+    .payment-method > .payment-method-logo > img {
+        padding:3px;
+        margin: 0;
+    }
+    .payment-method > .donation-action {
+        width: 75%;
+    }
+    .donation-heading {
+        font-size: 1.3rem;
+    }
+    .donation-action > a > img {
+        width: 35px;
+        padding: 5px;
+    }
+}
+@media only screen and (max-width: 480px) and (min-width: 0px){
+    .donation-home-page-container {
+        /* width: 105%;
+        margin-left: -0.5rem; */
+    }
+    .image-container > img {
+        height: 10rem;
+    }
+    .bewell-logo {
+        margin: 2rem 0px 0px 0px;
+    }
+    .bewell-logo > .logo-container {
+        width: 100%;
+    }
+    .bewell-logo > .logo-container > img {
+        width: auto;
+        /* height: 10rem; */
+    }
+    .express-gratitude {
+        font-size: 1rem;
+    }
+    .donation-methods-container {
+        margin: 2rem 0px 0px 0px;
+    }
+    .donation-methods-container > .except-method-heading {
+        width: 98%;
+        font-size: 1.3rem;
+    }
+    .donation-heading {
+        font-size: 1.3rem;
+    }
+    .donation-action > p{
+        font-size: 0.76rem;
+        padding: 5px 0px 1rem 0px;
+    }
+    .box-orange-button > .orange-button {
+        padding: 0.5rem 1rem;
+    }
+    .express-gratitude > .gratitude-contant {
+        width: 80%;
+    }
+    .donation-action > .yello-text {
+        font-size: 1rem;
+    }
+    .donation-methods > .payment-method {
+        width: 96%;
+        /* height: 11rem; */
+        margin: auto;
+        padding: 5px;
+    }
+    .payment-method > .payment-method-logo {
+        width: 23%;
+    }
+    .payment-method > .payment-method-logo > img {
+        padding: 8px;
+        margin: 0;
+        height: 60px;
+        width: 60px;
+    }
+    .payment-method > .donation-action {
+        width: 70%;
+        padding: 10px;
+    }
+    .donation-heading {
+        font-size: 1rem;
+    }
+    .donation-action > a > img {
+        width: 35px;
+        padding: 5px;
+    }
+}

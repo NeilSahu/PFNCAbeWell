@@ -1,0 +1,72 @@
+@import "c/sharedStyles";
+
+.box-button-small{
+    width: 92px;
+	height: 32px;
+}
+
+.box-button-large{
+    width: 110px;
+    height: 47px;
+}
+
+.box-button {
+	opacity: 1;
+    background-color: var(--pfnca-color-white);
+	border: 1px solid var(--pfnca-color-primary); 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+
+.box-button.active {
+    background-color: var(--pfnca-color-primary);
+	border: 1px solid var(--pfnca-color-white); 
+}
+
+.box-button-disabled {
+	opacity: 1;
+    background-color: var(--pfnca-color-mediumGrey);
+	border: 1px solid var(--pfnca-color-white); 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.btn-small{
+    width: 86px;
+	height: 26px;
+}
+
+.btn-large{
+    width: 102px;
+    height: 39px;
+}
+
+.btn {
+    margin: 1px;
+	opacity: 1;
+    background-color: var(--pfnca-color-white);
+	border: 1px solid var(--pfnca-color-primary4D); 
+	text-align: center;	
+	color: var(--pfnca-color-primary);
+}
+
+.btn:hover{
+	border: 1px solid var(--pfnca-color-primary4D); 
+    background-color: var(--pfnca-color-lightGrey);
+}
+
+.btn.active{
+    background-color: var(--pfnca-color-primary);
+	border: 1px solid var(--pfnca-color-white4D); 
+	color: var(--pfnca-color-white);
+}
+
+.btn:disabled{
+    background-color: var(--pfnca-color-mediumGrey);
+	border: 1px solid var(--pfnca-color-white4D); 
+    cursor: not-allowed;
+	color: var(--pfnca-color-white);
+}

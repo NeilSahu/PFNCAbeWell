@@ -1,0 +1,22 @@
+<template>
+    <!-- bwps_WIP_InstructorDashboardForm -->
+    <div class="container">
+        <h1>Profile</h1>
+        <div class="main">
+            <div class="sidebar">
+                <p onclick={handleSidebar} class="active" data-id="accountInfo">ACCOUNT INFORMATION</p>
+                <!-- <p onclick={handleSidebar} class="" data-id="paymentMethod">PAYMENT METHOD</p> -->
+            </div>
+            <div class="view-box">
+                <template if:true={showAccountInfo}>
+                    <c-bwps_-w-i-p_-instructor-dashboard-form></c-bwps_-w-i-p_-instructor-dashboard-form>
+                </template>
+                <!-- <template if:false={showAccountInfo}>
+                    <div style="display: flex; justify-content: center">
+                        <h1 style="font-size: 3rem; margin:1rem;">In development</h1>
+                    </div>
+                </template> -->
+            </div>
+        </div>
+    </div>
+</template>

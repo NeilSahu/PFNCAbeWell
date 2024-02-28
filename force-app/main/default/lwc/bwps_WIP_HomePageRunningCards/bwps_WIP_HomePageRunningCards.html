@@ -1,0 +1,86 @@
+<template>
+    <div class="super-div">
+        <div>
+            <h1>Upcomming Live Classes</h1>
+        </div>
+        <div class="time-div">
+            <ul class="list-of-time">
+                <span class="liDec">
+                    <li class="time-item">9AM-10AM</li>
+                </span>
+                <span class="liDec">
+                    <li class="time-item">10AM-11AM</li>
+                </span>
+                <span class="liDec">
+                    <li class="time-item">11AM-12PM</li>
+                </span>
+                <span class="liDec">
+                    <li class="time-item">12PM-1PM</li>
+                </span>
+                <span class="liDec">
+                    <li class="time-item">1PM-2PM</li>
+                </span>
+                <span class="liDec">
+                    <li class="time-item">2PM-3PM</li>
+                </span>
+                <span class="liDec">
+                    <li class="time-item">3PM-4PM</li>
+                </span>
+                <span class="liDec">
+                    <li class="time-item">4PM-5PM</li>
+                </span>
+            </ul>
+        </div>
+        <div class="slider-container">
+            <div class="Parent-div media11" data-id="container" id="container">
+                <template for:each={data} for:item="acc">
+                    <div data-id="card" class="card" key={acc}>
+                        <img src="/sfsites/c/file-asset/eee_1?v=1" alt="">
+                        <div class="class-time"> <span style="font-size: 1rem; color:white; margin-left:10px;">09:00AM /
+                                TODAY</span></div>
+                        <div class="user-detail" style="height: 42px;">
+                            <div class="circule">
+                                <lightning-icon icon-name='utility:user' alternative-text='user' class="changeColor"
+                                    size='small' title='user'></lightning-icon>
+                            </div>
+                            <span
+                                style="color:  #5e5f60; font-size:18px;float:left; margin-top: 16px;margin-left: 7px;">{acc}</span>
+                            <div>
+                                <img src="/sfsites/c/file-asset/signal_11?v=1" alt=""
+                                    style="float:left;height: 31px;width: 32px;margin-left: 105px;margin-top: 12px;">
+                                <span
+                                    style="color:  #5e5f60; font-size:18px;float:left; margin-top: 16px;margin-left: 5px;">Low/Seated</span>
+                            </div>
+                        </div>
+                        <div
+                            style="height:0px; width:90%;border:1px solid rgb(194, 188, 188);margin-left: 27px;background-color:rgb(194, 188, 188);margin-top: 10px;">
+                        </div>
+                        <div><span
+                                style="color:  #008ba7; font-size:20px;float:left; margin-top: 7px;margin-left: 28px;">EXCERCISE
+                                FOR PARKINSON'S</span> </div>
+                        <br>
+                        <span style="color:#b5b8bd; font-size:15px;float:left; margin-top: 21px;margin-left: 28px;">Made
+                            possible with suppot from Lorin Encore.</span>
+                        <br>
+                        <div style="margin-top:44px ;height: 5rem;">
+                            <img src="/sfsites/c/file-asset/share?v=1" alt=""
+                                style="float:left;height: 31px;width: 32px;margin-left: 27px; margin-top: 2rem;">
+                            <div class="circule"
+                                style="margin-top: 2rem; padding-top: 2px;padding-left: 0px; border: 2px Solid #da8923;">
+                                <img src="/sfsites/c/file-asset/heart?v=1" alt=""
+                                    style="    height: 21px; width: 25px;margin-left: 2px; margin-top: 5px;">
+                            </div>
+                            <div class="box-blue-button">
+                                <button class="blue-button">JOIN</button>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <div class="box-slid-button">
+            <button class="slide-button" onclick={next} data-target-id="container"> &#10094; </button>
+            <button class="slide-button" onclick={preview} data-target-id="container"> &#10095; </button>
+        </div>
+    </div>
+</template>

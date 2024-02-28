@@ -1,0 +1,46 @@
+<template>
+
+	<!-- <div class="container-header">
+		<div class="container-profileSurvey">
+				<div class="div2">
+					<a> <img src={BELLICON} onclick={showNotificationMethod}  > </a>
+						<div class="notificationCount"><span>{totalNotifications}</span></div>
+						<div if:true={showNotificationFlag}>
+							<c-notification-component totalrecords={notificationVisibel}></c-notification-component>
+						</div>
+				</div>
+				<h1>Profile Survey</h1>
+
+		</div>
+
+		<div class="ProfileText">
+			<p>Please fill out our questionnaire to complete your profile</p>
+
+			<a href="/PFNCADNA/s/guestuserprofilesurveyform"><div class="SaveButtonDiv">
+
+				<div class="saveBtn">
+					<span class="profileTextClass">COMPLETE YOUR PROFILE</span>
+				</div>
+			</div> </a>
+		</div>
+	</div> -->
+
+	<div class="container">
+		<img src={img_background} alt="backImg" class="bgImg">
+		<div class="main">
+			<h1>
+				Profile Survey
+			</h1>
+
+			<p>Please fill out our questionnaire to complete your profile.</p>
+			<div class="SaveButtonDiv">
+
+				<div class="saveBtn">
+					<span class="profileTextClass" onclick={saveButton}>{editProfile}</span>
+				</div>
+			</div> 
+		</div>
+	</div>
+
+
+</template>

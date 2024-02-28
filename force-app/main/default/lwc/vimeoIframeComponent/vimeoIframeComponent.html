@@ -1,0 +1,9 @@
+<template>
+   <div class="iframe-mainContainer">
+        <div if:true={showVimeoIframe} class="ifrem-container">
+            <span onclick={showHideVimeoIframe}>&#10006;</span>
+            <!-- <iframe src='https://www.youtube.com/watch?v=h0NTCAGqZDE' frameborder='0' allowfullscreen></iframe> -->
+            <iframe src={currentVideoUrl} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="iframe-tag"></iframe>
+        </div>
+    </div>
+</template>

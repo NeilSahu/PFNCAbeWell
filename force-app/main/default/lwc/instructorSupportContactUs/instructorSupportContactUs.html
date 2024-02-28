@@ -1,0 +1,46 @@
+<template>
+
+	<template if:true={loader}>
+		<div class="demo-only">
+			<div class="slds-spinner_container">
+				<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+					<span class="slds-assistive-text">Loading</span>
+					<div class="slds-spinner__dot-a"></div>
+					<div class="slds-spinner__dot-b"></div>
+				</div>
+			</div>
+		</div>
+	</template>
+
+	<div class="container">
+		<div class="butterfly-img">
+			<img src={butterFlyIcon} alt="#">
+		</div>
+		<div class="containerDiv">
+
+			<div class="containerDivHeader">
+
+				<h1>{textHeading}</h1>
+				<p>Cannot find answer to your question? Please use the form below to get in touch with our team.</p>
+			</div>
+			<div class="containerDivInput">
+				<label for="Subject">Select Subject</label> <br>
+				<input data-id="Subject" type="text" placeholder="Select subject" class="input1" size="50"
+					required><br><br>
+
+				<label for="">Your message</label> <br>
+				<textarea data-id="Description" rows="4" cols="50" class="input2" placeholder="Type your message..."
+					name="message" type="textarea" required></textarea>
+
+
+			</div>
+			<div class="buttondiv">
+				<div class="ButtonDivchild">
+					<button class="button" onclick={handleClick} type="submit">SEND</button>
+				</div>
+			</div>
+			<div></div>
+
+		</div>
+	</div>
+</template>

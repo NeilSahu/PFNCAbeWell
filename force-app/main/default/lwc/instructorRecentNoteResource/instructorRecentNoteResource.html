@@ -1,0 +1,36 @@
+<template>
+    <div class="mainContainer">
+        <div class="recentResourceContainer">
+            <div>
+                <hr class="lineClass">
+                <div style="font-weight:bold;font-size: 1.2rem;">RECENT RESOURCES</div>
+            </div>
+            <div class="recentMainContainer">
+                <template for:each={Arr} for:item="obj">
+                    <div key={obj.Id}>
+                        <div class="resImageContainer">
+                            <div class="resImageInnerClass">
+                                <iframe src={obj.Link} frameborder="0" allow="autoplay; fullscreen"
+                                    allowfullscreen></iframe>
+                                <!-- <iframe src="https://player.vimeo.com/video/510761397?h=b9dbbd7091" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+                                <!-- <iframe src="https://player.vimeo.com/video/$+{code}+"  frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe> -->
+                            </div>
+                        </div>
+                        <div class="resourceDateClass">
+                            <span>{splitUpdatedDate}</span>
+                        </div>
+                        <div class="noteTextClass">
+                            <a href="/PFNCADNA/s/instructorresourcespage"><span>{obj.Name}</span></a>
+                        </div>
+                        <div class="resCardFooterContainer">
+                            <div class="resCardFooterTextClass">
+                                <span>{obj.Description}</span>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+</template>

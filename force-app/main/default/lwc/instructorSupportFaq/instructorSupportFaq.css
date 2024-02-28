@@ -1,0 +1,165 @@
+.catagory-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 40px 30px 20px;
+}
+
+.help-heading-text {
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.hr-line:after {
+  content: " ";
+  display: block;
+  border-bottom: 0.5px solid #5EB6C7;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.c-questions-box {
+  padding-inline: 6rem;
+  padding-top: 9rem;
+  border-radius: 20px;
+  background-color: #f5f7f4;
+  height: auto;
+  margin-inline: 2rem;
+}
+
+.c-question {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 3.5rem;
+  cursor: pointer;
+}
+
+
+
+
+
+
+details[open] summary~* {
+  animation: open 0.5s ease-in-out;
+}
+
+@keyframes open {
+  0% {
+    opacity: 2s;
+  }
+
+  100% {
+    opacity: 2s;
+  }
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  width: calc(100% - 20px);
+  padding: 1.7rem 0;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  list-style: none;
+  color: #448BA7;
+  border-bottom: 1px solid #d4ebec;
+}
+
+details summary div:after {
+  content: "+";
+  color: gray;
+  position: absolute;
+  margin-top: -2rem;
+  right: -40px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid #ccc7c7;
+  font-size: 1.5rem;
+  /* font-weight: 900; */
+  box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 10%);
+  border-radius: 5px;
+}
+
+/* .hideClass{
+    color: gray;
+    position: absolute;
+    margin-top: -2rem;
+    right: 0;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #ccc7c7;
+    font-size: 1.5rem;
+    font-weight: 900;
+    box-shadow: 0px 0px 5px 2px rgb(0 0 0 / 10%); 
+  } */
+/* details summary:after {
+    content: "+";
+    color: gray;
+    position: absolute;
+    font-size: 1.75rem;
+    line-height: 0;
+    margin-top: 0.75rem;
+    right: 0;
+  } */
+details[open] summary div:after {
+  content: "-";
+  font-size: 2rem;
+}
+
+details[open] summary {
+  padding: 1.2rem 0;
+  color: black;
+  border-bottom: 0px solid #d4ebec;
+}
+
+details summary {
+  outline: 0;
+}
+
+details p {
+  font-size: 0.95rem;
+  margin: 0 0 2.5rem;
+  padding-inline: 1.5rem;
+}
+
+details>.q-hr-line:after {
+  content: " ";
+  display: block;
+  border-bottom: 2px solid #dedfde;
+}
+
+.carousel-box {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3.5rem;
+  z-index: 1;
+  position: relative;
+  top: 2.5rem;
+}
+
+.catagory-carousel {
+  display: flex;
+  width: 90%;
+}
+
+.catagory {
+  width: 35%;
+  aspect-ratio: 3/2.1;
+  text-align: center;
+  box-shadow: rgb(0 0 0 / 25%) 0px 2px 5px;
+  border-radius: 2.2rem;
+  margin-inline: 2rem;
+  color: #008CA7;
+  background-color: white;
+  cursor: pointer;
+}

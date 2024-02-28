@@ -1,0 +1,672 @@
+/* CALENDAR CSS */
+.calendarParent{
+    border-radius: 20px;
+    height: 6rem;
+    width: fit-content;
+    /* margin-left: 35%; */
+}
+.spinner{
+    margin-top: 10rem;
+}
+.noclass{
+    font-size: xx-large; 
+    margin-top: 0rem;
+    margin-left: 5rem;
+}
+.calendarParent > .type{
+    margin: 0rem auto !important;
+    width: 12rem;
+    text-align: center;
+    padding: -2rem 0rem 1rem 0rem;
+}
+.type > .box{
+    border-radius:10px;
+    display: flex;
+} 
+.type .day{
+    text-align: center;
+}
+hr{
+    border-top: 2px solid #008ba7;
+    width: 96%;
+}
+.box-click-active{
+    border: 1px solid rgba(0,0,0,0.2) !important;
+    border-radius: 7px !important;
+    background: rgba(0,0,0,0.13) !important;
+}
+.box-click-deactive{
+    border: none;
+    background: none;
+}
+.type a{
+    color: rgba(0,0,0,1);
+    width:33.33%;
+    padding:3px 4px;
+    text-decoration: none !important;
+    text-align: center;
+}
+.type  a:hover{
+    text-decoration: none !important;
+}
+.dateParent{
+    width: fit-content;
+    margin: 0rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    white-space: nowrap;
+    /* margin-right: 0rem; */
+    font-size: 14px;
+    font-weight: bold;
+}
+/* .dateParent .prev-button{
+    padding: 8px 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 5px;
+    float: left;
+    margin-left: -48%;
+}
+.dateParent  .next-button{
+    padding: 8px 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 5px;
+    float: right;
+    margin-right: -49%
+}  */
+/* .dateParent .date-text{
+    width:inherit;
+} */
+/* ****************** */
+/* **************** */
+
+.TakeAttendance{
+    width: 95%;
+    margin: 4% 5%;
+}
+.back-btn{
+    color: black;
+    display: flex;
+    margin-left: 21px;
+    height: fit-content;
+}
+.back-btn img{
+    height: 14px;
+    width: 19px;
+    margin-right: 4px;
+    margin-top: 8px;
+    cursor: pointer;
+    transform: scaleX(-1);
+}
+.back-btn h3{
+    font-size: 18px;
+    cursor: pointer;
+    color: #008ba7;
+}
+.heading-attendance{
+    padding-top: 0.6rem;
+    font-weight: 100;
+}
+.heading-Attendance h1{
+    /* font-weight: 600; */
+    font-size: 20px;
+    width: 100%;
+    /* margin-left: 23px; */
+} 
+.searchIconColorSH{
+    margin: 0px 7px;
+    border: 1px solid#008ba7;
+    /* font-size: 14px; */
+    padding: 2px 24px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.attendanceiconcont{
+    margin: 0rem 43rem;
+    display: flex
+}
+
+.attendance-information{
+    background-color:white;
+    border-radius: 20px;
+    /* margin: 35px; */
+    padding-bottom: 27px;
+    font-size: 1rem;
+}
+
+.sort-filter a{
+    /* padding-left: 1rem;
+    padding-top: 2px; */
+    margin-left: 0.5rem;
+    
+
+}
+.sort-filter{
+   display: flex;
+    /* padding: 2%; */
+    justify-content: space-between;
+    white-space: nowrap; 
+    cursor: pointer; 
+    margin-bottom: 5%;   
+}
+.sort-filter-active{
+    color: #008ba7;
+    cursor: pointer;
+    margin-left: 8px;
+    margin-right: 5px;
+}
+.sort-filter-deactive{
+    color: black;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.attendance-list{
+    width:97%;
+    /* margin:0rem auto;
+    padding:0rem 3rem; */
+}
+.attendance-details{
+    display: flex;
+}
+.attendance-details .attendance-details-header{
+    /* padding: 1rem 0rem 3rem 0rem;
+    margin:0px 35px; */
+    /* display:flex; */
+    justify-content: space-between;
+}
+.table-heading-icon{
+    /* //float: left; */
+    height: 20px;
+    /* //width: 20px; */
+    /* margin: 0px 11px; */
+}
+.att-row{
+    text-align: center;
+    height: 5rem;
+    width: 19%;
+}
+.att-row img{
+    height: 64px;
+    width: 66px;
+}
+.heading-calendar{
+    width: fit-content;
+    margin: 0rem auto;
+    display: flex;
+}
+.adduserImg{    
+    width: 23px;
+    height: 24px;
+    /* margin-left: 51rem;
+    margin-right: -13rem; */
+}
+.adduserclass img{
+    height: 14px;
+}
+.closeIcon{
+    fill :black;
+}
+.add-user-image{
+    width: 31px;
+    margin-left: 17rem;
+}
+.form-overlay {
+    position: fixed;
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 200 !important;
+    cursor: pointer;
+  }
+.search {
+    display: flex;
+    padding: -15px;
+    background-color: #F5F5F4;
+    height: 41px;
+    padding: 0rem 2rem;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.search-footer{
+    margin-bottom: -5rem;
+    height: 72px;
+    background-color: #F5F5F4;
+
+}
+.search-footer-next{
+    margin-bottom: -5rem;
+    height: 98px;
+    background-color: #F5F5F4;
+
+}
+.slds-modal__header{
+    background-color: #f5f5f7;
+    height: 4rem;
+}
+
+ .slds-p-around_large {
+    height: 16rem;
+ }
+
+.search label {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.adduserclass {
+    margin-right: 4%;
+}
+.searchInput {
+    display: inherit;
+    width: 100%;
+    padding: 1em 2em;
+    margin-left: 29px;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+.searchlogo{
+    height: 28px;
+    margin-left: -14px;
+    margin-top: 2px;
+}
+/* .heading-calendar  .prev-button{
+    padding: 10px 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 7px;
+    float: left;
+}
+.heading-calendar  .next-button{
+    padding: 10px 15px;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    border-radius: 7px;
+    float: right;
+} */
+.attendance-user-image {
+    margin-right: 16px;
+    margin-bottom: 4px;
+    height: 36px;
+   
+}
+.filter-user-image{
+    height: 33px;
+    cursor: pointer;
+    
+}
+
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+.searchClass{
+    background-color: #008ba7;
+    color: white;
+    height: auto;
+    padding: 0.2rem;
+    width: fit-content;
+}
+.searchbutton{
+    /* padding: 0.5rem 2rem; */
+    margin: auto;
+    background-color: #008ba7;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 4px 16px;
+    font-weight: 500;
+}
+.submitClass{
+    background-color: #008ba7;
+    color: white;
+    height: auto;
+    padding: 0.2rem;
+    width: fit-content;
+    margin: 0px auto;
+}
+.submitbutton{
+    /* padding: 0.5rem 2rem; */
+    margin: auto;
+    background-color: #008ba7;
+    color: white;
+    /* width: 7rem; */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 3px 1rem;
+    text-transform: uppercase;
+}
+.submitClassDisabled{
+    background-color:gray;
+    color: white;
+    height: auto;
+    padding: 0.2rem;
+    width: fit-content;
+    margin:1rem auto;
+            }
+
+.submitbuttonDisabled{
+    padding: 0.5rem 2rem;
+    margin: auto;
+    background-color:gray;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+h4{
+    font-weight: bold;
+    margin-right: -1rem;
+    margin-left: 7px;
+}
+.secondDivSH {
+    display: flex;
+    margin: -3rem 0rem 0rem 53rem;
+}
+.presentContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+}
+.absentContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+}
+.trowClass{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+/* ///////////////// Media for tab view //////////////////////// */
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+    .attendance-list{
+        width:70%;
+        margin:0rem auto;
+        padding:0rem 4rem;
+    }
+    .attendance-details .attendance-details-header{
+        padding: 0rem 1rem 1rem 1rem;
+        
+    }
+    .table-heading-icon{
+        /* float: left; */
+        height: 20px;
+        /* width: 20px; */
+        /* margin: 5px 9px; */
+    }
+    .att-row{
+        text-align: center;
+        height: 5rem;
+        width: 19%;
+    }
+    .att-row img{
+        height: 64px;
+        width: 66px
+    }
+    .heading-calendar{
+        width: fit-content;
+        margin: 0rem auto;
+        display: flex;
+    }
+    .heading-calendar  .prev-button{
+        padding: 10px 15px;
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 7px;
+        float: left;
+    }
+    .heading-calendar  .next-button{
+        padding: 10px 15px;
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 7px;
+        float: right;
+    }
+    .dateParent{
+        width: 100%;
+        margin: 0rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        white-space: nowrap;
+        margin-right: 9px;
+        font-size: 14px;
+        font-weight: bold;
+        }
+    .dateParent .prev-button{
+        padding: 8px 15px;
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 5px;
+        float: right;
+        margin-left: 2%;
+    }
+    .dateParent  .next-button{
+        padding: 8px 15px;
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 5px;
+        float: right;
+        margin-right: -49%
+    } 
+}
+
+/* ///////////////// Media for tab view //////////////////////// */
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    .attendance-list{
+        width: 80%;
+        margin: 0rem auto;
+        padding: 0rem 0rem;
+    }
+
+    .attendance-details .attendance-details-header{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .heading-attendance{
+        width: fit-content;
+        /* margin: 15px auto; */
+    }
+    .table-heading-icon{
+        margin: 6px 4px;
+    }
+    .secondDivSH {
+        margin: -2rem 0rem 0rem 21.5rem;
+    }
+    .attendanceiconcont{
+        margin: -1rem 11rem;
+    }
+    .dateParent{
+        width: 30%;
+        margin: 0rem auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        white-space: nowrap;
+        /* margin-right: 0; */
+        font-size: 14px;
+        font-weight: bold;
+        /* margin-left: -4rem; */
+    }
+    .dateParent .prev-button{
+        padding: 8px 15px;
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 5px;
+        float: left;
+        margin-left: -48%;
+    }
+    .dateParent  .next-button{
+        padding: 8px 15px;
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 5px;
+        float: right;
+        margin-right: -49%
+    } 
+    .calendarParent {
+        /* border-radius: 20px; */
+        height: 6rem;
+        width: 60%;
+        margin: 0px auto;
+    }
+    .sort-filter{
+        padding: 2% 3%;
+    }
+    .attendance-user-image {
+        margin-right: 8px;
+    }
+}
+
+/* ///////////////// Media for mobile view //////////////////////// */
+@media only screen and (max-width: 768px) and (min-width: 480px){
+
+    .TakeAttendance{
+        width: 100%;
+        margin: 6rem 0rem;
+    }
+    .attendance-details{
+        margin: 2rem 0rem 2rem 0rem;
+    }
+    .attendance-list{
+        width: 89%;
+        padding: 0rem 0rem;
+    }
+    .table-heading-icon{
+        height: 16px;
+        width: 16px;
+        margin: 8px 0px;
+    }
+    .heading-attendance h1{
+        /* font-weight: bold; */
+        font-size: 16px;
+    } 
+    
+}
+
+/* ///////////////// Media for Mobile view //////////////////////// */
+@media only screen and (max-width: 480px){
+    .TakeAttendance{
+        margin: 6rem 0rem;
+    } 
+     hr{
+        width: auto;
+    }
+    .calendarParent{
+        margin-top: 2rem;
+        width: auto;
+    }
+    .secondDivSH {
+       margin: 2rem 0rem 2rem -0.5rem;
+    }
+    .attendance-list{
+       width: fit-content;
+    padding: 0rem 0rem 0rem 1.5rem;
+    }
+    .absentContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+    }
+    .att-row{
+        width: 25%;
+   }
+    .adduserclass {
+        margin-left: -15%;
+        margin-top: 11%;
+    }
+    .attendance-information{
+       width: fit-content;
+       display: table-cell
+    } 
+    .attendanceiconcont {
+        margin: 1rem 5rem;
+        display: flex;
+    }
+    .attendance-details{
+        display: contents;
+    }
+    .attendance-details .attendance-details-header {
+        /* padding: 1rem 0rem 3rem 0rem; */
+        /* display: flex; */
+        justify-content: space-between;
+        display: contents;
+    }
+    .trowClass{
+        display: flex;
+        justify-content: space-between;
+    }
+    .table-heading-icon{
+        /* float: none; */
+        height: 16px;
+        /* width: 16px;
+        margin: 5px 11px; */
+    }
+    .attendance-user-image {
+        float: none;
+        /* display: none; */
+        margin-left: -15%;
+    }
+    .calendarParent{
+        margin-top: 3rem;
+       margin-left: -2rem;
+    }
+    .heading-attendance h1{
+        /* font-weight: bold; */
+        font-size: 17px;
+    } 
+    .dateParent{
+        width: auto;
+        /* margin: 1rem -5rem; */
+        font-size: 16px;
+        /* white-space: nowrap; */
+        /* font-weight: bold; */
+        justify-content: right;
+        /* margin-top: 8%; */
+        /* margin-right: 13rem; */
+    }
+    .dateParent .prev-button{
+        padding: 8px 15px;
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 5px;
+        float: left;
+        margin-left: -48%;
+    }
+    .dateParent  .next-button{
+        border: 1px solid rgba(0,0,0,0.2);
+        box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+        border-radius: 5px;
+        float: right;
+        margin-right: -35%;
+    } 
+    .h4{
+        font-weight: bold;
+        margin-right: 0rem;
+        margin-left: 3px;
+    }
+    .noclass{
+        font-size: large;
+        margin-top: 1rem;
+        margin-left: 3rem;
+    }
+    .presentContainer {
+        width: 7rem;
+    }
+}

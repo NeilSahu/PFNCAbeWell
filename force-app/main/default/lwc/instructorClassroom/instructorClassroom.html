@@ -1,0 +1,15 @@
+<template>
+    <div class="      " style="display: flex;">
+        <div class= "menuall"  ></div>
+            <div onclick={handleRecentUnderline} data-id="" value="Recent"> <span  class="menuClass recentClass" >Classes</span> 
+                <div if:true={showRecentLine} class="underlineClass"></div>
+
+            </div>
+            <div style="margin-left: 1vw;" onclick={handleCompletedUnderline} > <span class="menuClass completeClass" >Participants</span>
+                <div if:true={showCompletedLine} class="underlineClass"></div>
+            </div>
+             <div style="margin-left: 1vw;" onclick={handleInProgressUnderline}> <span class="menuClass progressClass" >Messages</span>
+                <div if:true={showInProgressLine} class="underlineClass"></div>
+            </div>
+    </div>
+</template>

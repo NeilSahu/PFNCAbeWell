@@ -1,0 +1,39 @@
+<template>
+    <div class="blogs-container flex" style="padding-block: 1rem;">
+        <div class="blog">
+            <div class="blog-header-item">
+                KNOWLEDGE CENTER
+            </div>
+        </div>
+        <div class="blog">
+            <div class="blog-header-item">
+                OUR RECENT ARTICLES
+            </div>
+        </div>
+        <div class="blog">
+            <div class="blog-header-item">
+                
+            </div>
+        </div>
+    </div>
+    <div class="blogs-container flex">
+        <template for:each={blogsRecord} for:item="blog">
+            <div class="blog" key={id}>
+                <div class="blog-photo"><img src={blog.photo} alt=""></div>
+                <div class="blog-detail">
+                    <div class="blog-auther-date-box">{blog.auther} &nbsp; &nbsp; | &nbsp; &nbsp; {blog.date}
+                    </div>
+                    <div class="blog-heading" onclick={handleBlogClick} data-id={blog.id}>{blog.heading}</div>
+                    <div class="blog-description">{blog.description}</div>
+                </div>
+            </div>
+        </template>
+    </div>
+    
+    <template if:true={showBlog}>
+    <div class="blog-modal section-to-print">  
+        <c-bwps_-w-i-p_-blog-post-view blog-id={blogId} blog-heading={blogHeading} blog-date={blogDate} blog-author={blogAuthor} blog-image={blogImage} blog-info={blogInfo} onbackclick={handleBackClick}></c-bwps_-w-i-p_-blog-post-view> 
+    </div>
+
+    </template>
+</template>

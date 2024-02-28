@@ -1,0 +1,111 @@
+<!--
+* @author     	 Cyntexa Labs
+* @description	 Month component with current date Use in myScheduleComp  as child. 
+* @date       	 09-10-2022      	
+*-->
+
+
+
+<template>
+       <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+    <!-- <button onclick={getMonthData}>onclick</button> -->
+    <template if:true={showCalendar}>
+      <div class="container" style="margin-top:30px" >
+        <div class="calendar" data-id="calenderparentCard">
+          <ul class="day">
+            <li>SUN</li>
+            <li>MON</li>
+            <li>TUE</li>
+            <li>WED</li>
+            <li>THU</li>
+            <li>FRI</li>
+            <li>SAT</li>
+          </ul>
+          <div class="month month-days" data-id="month-days"> 
+            <template if:true={isLoading}>
+              <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+            </template>
+            <template for:each={fullmonth} for:item="month">
+              <div key={month.key}>
+                <template if:false={month.istoday}>
+                  <div class={month.calandarMonth} data-id={month.data_id}>
+                    <div class="date-date">
+                      <span>{month.value}</span>
+                    </div>
+                    <div class="events">
+                      <template for:each={month.eventdata} for:item="eventItem">
+                        <div style="display:flex" key={eventItem}>
+                          <div class="event" data-id={eventItem.Id} onclick={getEvent}></div>
+                        </div>
+                      </template>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              <div key={month.key}>
+                <template if:true={month.istoday}>
+                  <div data-id={month.data_id} class="todayDate" >
+                    <div class="tody-p">
+                      <div class="triangle-right"></div>
+                      <span>{month.value}</span>
+                    </div>
+                    <div class="events">
+                      <template for:each={month.eventdata} for:item="eventItem">
+                        <div style="display:flex" key={eventItem}>
+                          <div class="event" data-id={eventItem.Id} onclick={getEvent}></div>
+                        </div>
+                      </template>
+                    </div>
+                     </div>
+                    </template>
+                  </div>
+                </template>
+          </div> 
+        <div  class="eventCard" data-id="eventCardData">
+               <div class="event-card-parent">
+                    <div class="imgContainer" style={backgroundStyle} > 
+                       <div class="hide-button" onclick={hideEvent}><span>X</span></div>
+                        <div class="time-details"> <span>{clickedEvent.time}</span></div>
+                    </div>
+                    <div class="instructor-info-Container">
+                      <div class="instructor-info">
+                         <div><img src={usericon} alt="#"></div>
+                          <span>{clickedEvent.instructor}</span>
+                      </div>
+                      <div class="class-intencity">
+                        <img src={clickedEvent.intencityicon} alt="#">
+                        <span>{clickedEvent.intensity}</span>
+                      </div>
+                    </div>
+                    <div class="class-name">
+                      <span>{clickedEvent.Name}</span>
+                    </div>
+                    <div class="class-detail">
+                       <p>{clickedEvent.description}</p>
+                    </div>
+                    <div class="card-footer-buttons"> 
+                      <div class="share-buttons">
+                        <div><img src={clickedEvent.favClassStatus} data-image={clickedEvent.Id} alt="#" onclick={favHandler}></div>
+                        <!-- <div><img src={usericon} alt="#"></div> -->
+                      </div>
+                      <div class="action-buttons">
+                        <div><span>{clickedEvent.time}</span></div>
+                        <div>
+                           <div class={clickedEvent.btnClass}>
+                                 <button class="orange-button" onclick={play} data-id="play-button"> {clickedEvent.btnLabel}
+                                </button>
+                           </div>
+                        </div>
+                      </div>
+                    </div>
+               </div>
+            </div>
+         </div>
+        </div>
+        <div if:true={showIframe} class="ifrem-container">
+          <span onclick={StartClass}>&#10006;</span>
+          <iframe src={playersrc} width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+     </div>
+        </template>
+        <c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

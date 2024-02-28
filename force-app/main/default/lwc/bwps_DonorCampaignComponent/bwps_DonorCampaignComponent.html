@@ -1,0 +1,62 @@
+<template>
+    <div class="container">
+        <div class="name-heading">
+                <h1>Welcome, {userName}!</h1> 
+        </div>
+        <div class="campaign-container">
+            <div class="section1">
+                <div class="compaign">
+                    <div class="compaign-image">
+                        <img src={bg1}>
+                    </div>
+                    <div class="campaign-content">
+                        <div class="upcoming-events">
+                            <div class="heading-Section">UPCOMMING EVENT</div>
+                            <div class="join-us">
+                                <div class="head"> JOIN US</div>
+                                <div class="date"> October 2nd,<br> 2022</div>
+                            </div>
+                        </div>
+                        <div class="heading">
+                           {name}
+                        </div>
+                        <div class="content mordenLimit">
+                           {Description}
+                        </div>
+                        <!-- <div class="btn">
+                            <a href="#" class="rightlink">
+                                <div class="box-blue-button">
+                                    <button class="blue-button">REGISTER</button>
+                                </div>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="section2">
+                <!-- <div class="About-site"></div> -->
+                <div class="compaign">
+                    <div class="compaign-image">
+                        <img src={bg2}>
+                    </div>
+                    <div class="campaign-content">
+                        <div class="heading">
+                            How your donation has helps
+                        </div>
+                        <div class="about-content">
+                            The Parkinson Foundation of the National Capital Area improves the quality of life of those impacted by Parkinson’s disease, their care partners and families, and fosters a sense of community to ensure that no one battles this disease alone.
+                        </div>
+                        <div class="btn">
+                            <a href="#" class="rightlink">
+                                <div class="box-blue-button">
+                                    <!-- <button class="blue-button">OUR ROLE AND IMPACT</button> -->
+                                    <button class="blue-button" onclick={redirectToAboutUs}>OUR ROLE AND IMPACT</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

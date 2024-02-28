@@ -1,0 +1,521 @@
+<template>
+	<div data-id='form-modal' class="form-overlay">
+		<div class="card-placement">
+			<div if:true={closecancel} class="cross"><span onclick={off}>&#10006;</span></div>
+			<template if:true={card1}>
+				<div class="card">
+					<div class="card-heading">
+						<img src={secureDonationImageUrl} height="25px" width="25px">
+						<h3>SECURE DONATION</h3>
+					</div>
+					<div class="page-navigator">
+						<span class="round-span round-span-selected">1</span>
+						<span class="round-span">2</span>
+						<span class="round-span">3</span>
+						<span class="round-span">4</span>
+						<span class="round-span">5</span>
+					</div>
+					<div class="about-form">
+						<h4>
+							Personal InformationS
+						</h4>
+					</div>
+					<div class="card-input">
+						<label data-id="first-label">First Name*</label>
+						<input  data-id="firstName" value={firstName} name="FirstName" type="text" onchange={getFormData}  placeholder="First Name" required></input>
+						<label data-id="last-label">Last Name*</label>
+						<input data-id="lastName" value={lastName} name="LastName" type="text" onchange={getFormData} placeholder="Last Name" required></input>
+						<label data-id="email-label">Email Address* </label>
+						<input  data-id="Email" value={Email} name="EmailAddress" type="email" onchange={getFormData} placeholder="Email Address" required></input>
+						<label data-id="confirm-email-label">Confirm Email Address* </label>
+						<input  data-id="ConfirmEmail" value={ConfirmEmail} name="ConfirmEmailAddress" type="email" onchange={getFormData} placeholder="Confirm Email Address" required></input>
+						<label data-id="phone-label">Phone Number *</label>
+						<!-- <input  type="tel" data-id="Phone"  name="Phone" onchange={getFormData} value={Phone} required></input> -->
+						<input  data-id="Phone" name="Phone" type="number" value={Phone} onchange={getFormData}  min="10" max="10" placeholder="Phone Number" required></input>
+
+					</div>
+					<div class="navigate-buttons">
+						<div class="box-button">
+							<button class="orange-button" onclick={continueClickHandler}>
+                                CONTINUE
+                            </button>
+						</div>
+					</div>
+				</div>
+			</template>
+
+			<template if:true={card2}>
+				<div class="card">
+					<div class="back-button-handler" onclick={backClickHandler}>
+						<!-- &lt; -->
+					</div>
+					<div class="card-heading">
+						<img src={secureDonationImageUrl} height="25px" width="25px">
+						<h3>SECURE DONATION</h3>
+					</div>
+					<div class="page-navigator">
+						<span class="round-span round-span-selected">1</span>
+						<span class="round-span round-span-selected">2</span>
+						<span class="round-span">3</span>
+						<span class="round-span">4</span>
+						<span class="round-span">5</span>
+					</div>
+					<div class="about-form">
+						<h4>
+							Mailing Address
+						</h4>
+					</div>
+					<div class="card-input">
+						<label>Street Address</label>
+						<input  data-id="MailingStreet" value={MailingStreet} name="Street Address" onchange={getFormData}  type="text" placeholder="Street Address"></input>
+						<input  data-id="MailingApartment" value={MailingApartment} name="Apartment" onchange={getFormData} type="text" placeholder="Apartment / Suite / Floor"></input>
+						<br>
+						<label>City</label>
+						<input  data-id="MailingCity" value={MailingCity} name="City" onchange={getFormData} type="text" placeholder="City"></input>
+						<div class="state">
+							<div>
+								<label>State</label>
+								<input data-id="MailingState" value={MailingState} name="State" onchange={getFormData} type="text" placeholder="State"></input>
+							</div>
+							<div>
+								<label data-id="MailingPostalCode-label" >ZIP / Postal Code</label>
+								<input  data-id="MailingPostalCode" value={MailingPostalCode} name="ZipCode" onchange={getFormData} type="number" min="6" max="6" placeholder="ZIP/Postal Code" style="width: 13rem;"></input>
+							</div>
+						</div>
+						<label>Country</label>
+						<input  data-id="MailingCountry" name="Country" onchange={getFormData} value={MailingCountry} type="text" placeholder="Country"></input>
+					</div>
+					<div class="navigate-buttons">
+						<div class="box-button">
+							<button class="orange-button" onclick={continueClickHandler}>
+                                CONTINUE
+                            </button>
+						</div>
+						<!-- <div class="skip-link">
+							<a data-id="skipLink" onclick={continueClickHandler}>Skip to the next step</a>
+						</div> -->
+					</div>
+				</div>
+			</template>
+
+			<template if:true={card3}>
+				<div class="card" style=" overflow-y: scroll;">
+					<div class="back-button-handler" onclick={backClickHandler}>
+
+					</div>
+					<div class="card-heading">
+						<img src={secureDonationImageUrl} height="25px" width="25px">
+						<h3>SECURE DONATION</h3>
+					</div>
+					<div class="page-navigator">
+						<span class="round-span round-span-selected">1</span>
+						<span class="round-span round-span-selected">2</span>
+						<span class="round-span round-span-selected">3</span>
+						<span class="round-span">4</span>
+						<span class="round-span">5</span>
+					</div>
+					<template if:true={payMethodError}>
+						<div class="pay-error">
+							Please select donation type
+						</div>
+					</template>
+					<div class="amount-section">
+						<!--<div class="row">
+							<div class="col-12">
+								<div class="amount-div amount-div-full-width" data-id="giveonce"
+									onclick={GiveOnceOrMonthly}>Give Once</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6">
+								<div class="amount-div" data-id="monthly" onclick={GiveOnceOrMonthly}>Monthly</div>
+							</div>
+							<div class="col-6">
+								<div class="amount-div" data-id="quaterly" onclick={GiveOnceOrMonthly}>Quaterly</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6">
+								<div class="amount-div" data-id="semiAnnual" onclick={GiveOnceOrMonthly}>Semi Annual
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="amount-div" data-id="annual" onclick={GiveOnceOrMonthly}>Annually</div>
+							</div>
+						</div>-->
+						<div class="row">
+							<div class="col-12">
+								<select name="DonationType" value={Donationval} data-id="DonationSelect" onchange={GiveOnceOrMonthly}
+										class="picklist-Val amount-div amount-div-full-width">
+										//<option value="none" selected disabled>Select a Donation Type</option>
+											<option selected class="picklist-option" value="GiveOnce" data-id="giveonce"
+												>Give Once</option>
+												<option class="picklist-option" value="Monthly" data-id="monthly"
+												>Monthly</option>
+												<option class="picklist-option" value="Quaterly" data-id="quaterly"
+												>Quaterly</option>
+												<option class="picklist-option" value="Semi Annual" data-id="semiAnnual"
+												>Semi Annual</option>
+												<option class="picklist-option" value="Annual" data-id="annual"
+												>Annual</option>
+									</select>
+							</div>
+						</div>
+						<div class="row amount-row-padding">
+							<div class="col-4">
+								<div class="amount-div amount-section-margin amt-sec" data-id="20"
+									onclick={amountClickHandler}>$20</div>
+							</div>
+							<div class="col-4">
+								<div class="amount-div amount-section-margin amt-sec" data-id="50"
+									onclick={amountClickHandler}>$50</div>
+							</div>
+							<div class="col-4">
+								<div class="amount-div amount-section-margin amt-sec" data-id="100"
+									onclick={amountClickHandler}>$100</div>
+							</div>
+						</div>
+						<div class="row amount-row-padding">
+							<div class="col-4">
+								<div class="amount-div amount-section-margin amt-sec" data-id="150"
+									onclick={amountClickHandler}>$150</div>
+							</div>
+							<div class="col-4">
+								<div class="amount-div amount-section-margin amt-sec" data-id="200"
+									onclick={amountClickHandler}>$200</div>
+							</div>
+							<div class="col-4">
+								<div class="amount-div amount-section-margin amt-sec" data-id="500"
+									onclick={amountClickHandler}>$500</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="enter-amount">
+									<div class="currency-div">$</div>
+									<input type="number" name="amount" value={amount} data-id="amount-input" placeholder="Enter Amount" onkeyup={amountInputChange}>
+                                </div>
+								</div>
+							</div>
+							<template if:true={recurring}>
+								<div class="row">
+									<div class="col-12" style="text-align:center;">
+										How would you like to end the recurring payment?
+									</div>
+
+								</div>
+								<div class="row amount-row-padding">
+									<div class="col-4">
+										<div class="amount-div amount-section-margin amt-sec" data-id="by-count"
+											onclick={handleRecurringEndtype}>By Count</div>
+									</div>
+									<div class="col-4">
+										<div class="amount-div amount-section-margin amt-sec" data-id="by-date"
+											onclick={handleRecurringEndtype}>By Date</div>
+									</div>
+									<div class="col-4">
+										<div class="amount-div amount-section-margin amt-sec" data-id="unending"
+											onclick={handleRecurringEndtype}>Unending</div>
+									</div>
+								</div>
+								<template if:true={showRecuuringEndCount}>
+									<div class="row">
+										<div class="col-12">
+											<input class="reccuring-end-input" data-id="countselected" type="number" value={stopSelectedCount} min="2" placeholder="Number of payments" onchange={getFormData}>
+											</div>
+										</div>
+								</template>
+								<template if:true={showRecuuringEndDate}>
+									<div class="row">
+										<div class="col-12">
+											<input class="reccuring-end-input" type="date" data-id="dateselected" value={stopSelectedDate} onchange={getFormData}>
+											</div>
+										</div>
+								</template>
+							</template>
+
+
+
+							<div class="row">
+								<div class="col-12">
+									<div style="padding: 6% 4.5% 0% !important;">
+										<label class="checkbox-style">Include transaction charges {CalculatedTransactionCharge}
+                                        <input type="checkbox"  name="IncludeTransactionChargeCheckbox" onchange={ShowIncludeTransactionChargeCheckbox} checked={IncludeTransactionChargeCheckbox}>
+                                        <span class="checkmark"></span>
+                                    </label>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<div style="padding: 6% 4.5% 0% !important;">
+										<label class="checkbox-style">Give in honor or in memory
+                                        <input type="checkbox"  name="GiveHonorCheckbox" onchange={ShowGiveHonorNameField} checked={GivenHonorOrMemory}>
+                                        <span class="checkmark"></span>
+                                    </label>
+										<div if:true={GivenHonorOrMemory}>
+											<div class="row">
+												<div class="col-6">
+													<div class="amount-div" data-id="HonorIn"
+														onclick={HandleGiveHonorOrMemory}>HONOR</div>
+												</div>
+												<div class="col-6">
+													<div class="amount-div" data-id="MemoryIn"
+														onclick={HandleGiveHonorOrMemory}>MEMORY</div>
+												</div>
+											</div>
+										</div>
+										<template if:true={GivenHonorOrMemory}>
+											<div class="name-input">
+												<label for="memoriesHFName" if:true={honor}>Honoree’s First Name*</label>
+												<label for="memoriesHFName" if:true={Inmemory}>Memorial First Name*</label>
+												<input type="text" data-id="memoriesHFName" value={memoHFName} onchange={getFormData} class="GiveHonorName"  placeholder="First Name of someone special">
+                                        	</div>
+												<div class="name-input">
+													<label for="memoriesHLname" if:true={honor}>Honoree’s Last Name*</label>
+													<label for="memoriesHLname" if:true={Inmemory}>Memorial Last Name*</label>
+													<input type="text" data-id="memoriesHLName" value={memoHLName} onchange={getFormData} class="GiveHonorName"  placeholder="Last Name of someone special">
+                                       			</div>
+													<div class="name-input">
+														<label for="memoriesEmail">Email*</label>
+														<input type="email" data-id="memoriesEmail" value={memoEmail} onchange={getFormData} class="GiveHonorName"  placeholder="Email of someone special">
+                                        			</div>
+														<div class="name-input">
+															<label for="memoriesConfirmEmail">ConfirmEmail*</label>
+															<input type="email" data-id="memoriesConfirmEmail" value={memoConfirmEmail} onchange={getFormData} class="GiveHonorName"  placeholder="Confirm Email">
+                                        			</div>
+															<div if:true={Inmemory} class="name-input">
+																<label for="memoriesRFName">Name of Person to be Notified - First Name</label>
+																<input type="text" data-id="memoriesRFName" value={memoRFName} onchange={getFormData} class="GiveHonorName"  placeholder="Name of Person to be Notified - First Name">
+                                        				</div>
+																<div if:true={Inmemory} class="name-input">
+																	<label for="memoriesRLName">Name of Person to be Notified - Last Name</label>
+																	<input type="text" data-id="memoriesRLName" value={memoRLName} onchange={getFormData} class="GiveHonorName"  placeholder="Name of Person to be Notified - Last Name">
+                                        					</div>
+
+																	<label class="checkbox-style">Send a card in the mail.
+																	<input type="checkbox"  name="CheckboxForAddress" onchange={ShowCardSendAddress} checked={CardSendAddress}>
+																	<span class="checkmark"></span>
+																</label>
+																	<template if:true={CardSendAddress}>
+																		<div class="name-input">
+																			<label>Street Address</label>
+																			<input class="SendMailAddInput" data-id="SendMailingStreet" value={SendMailingStreet} name="Street Address" onchange={getFormData}  type="text" placeholder="Street Address"></input>
+																			<input  data-id="SendMailingApartment" value={SendMailingApartment} name="Apartment" onchange={getFormData} type="text" placeholder="Apartment / Suite / Floor"></input>
+																			<br>
+																			<label>City</label>
+																			<input  data-id="SendMailingCity" value={SendMailingCity} name="City" onchange={getFormData} type="text" placeholder="City"></input>
+																			<div class="Sendstate">
+																				<div>
+																					<label>State</label>
+																					<input data-id="SendMailingState" value={SendMailingState} name="State" onchange={getFormData} type="text" placeholder="State"></input>
+																				</div>
+																				<div>
+																					<label data-id="MailingPostalCode-label" >ZIP / Postal Code</label>
+																					<input  data-id="SendMailingZipCode" value={SendMailingZipCode} name="ZipCode" onchange={getFormData} type="number" min="6" max="6" placeholder="ZIP/Postal Code"></input>
+																				</div>
+																			</div>
+																			<label>Country</label>
+																			<input  data-id="SendMailingCountry" name="Country" onchange={getFormData} value={SendMailingCountry} type="text" placeholder="Country"></input>
+
+
+																			<!--<label for="SendMailAddress">Address</label>
+																		<label for="SendMailingStreet">Street Address</label>
+																		<input type="text" id="SendMailingStreet" data-id="SendMailingStreet" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing Street" value={SendMailingStreet} />
+
+																		<label for="SendMailingCity">City</label>
+																		<input type="text" id="SendMailingCity" data-id="SendMailingCity" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing City" value={SendMailingCity} />
+
+																		<label for="SendMailingState">State</label>
+																		<input type="text" id="SendMailingState" data-id="SendMailingState" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing State/Province" value={SendMailingState} />
+
+																		<label for="SendMailingZipCode">Zip/Postal Code</label>
+																		<input type="text" id="SendMailingZipCode" data-id="SendMailingZipCode" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing Zip/Postal Code" value={SendMailingZipCode} />
+
+																		<label for="SendMailingCountry">Country</label>
+																		<input type="text" id="SendMailingCountry" data-id="SendMailingCountry" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing Country" value={SendMailingCountry} />
+
+																		
+																		<textarea data-id="SendMailAddress" onchange={getFormData}  class="GiveHonorName" placeholder="Give your complete Address here" >{RecipientAddress}</textarea> -->
+																		</div>
+																	</template>
+																	<div class="name-input">
+																		<label for="memoriesMessage">Description(Optional)</label>
+																		<textarea data-id="memoriesMessage" onchange={getFormData} class="GiveHonorName" placeholder="Give your message here (Optional)" >{memoMessage}</textarea>
+																	</div>
+																	<div class="name-input">
+																		<label for="tributePhoto">Celebrate special occasions, honor someone living with Parkinson's or remember someone special. Upload a photo to be included with your message that will be sent by email to the person above when they are notified of your gift.</label>
+																	</div>
+																	<div class="memories-file">
+																		<input type='file' class="GiveHonorName"  data-id="memories-imgInput" onchange={openfileUpload}>
+                                        </div>
+										</template>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="navigate-buttons">
+							<div class="box-button">
+								<button class="orange-button" onclick={continueClickHandler}>
+                                CONTINUE
+                            </button>
+							</div>
+						</div>
+					</div>
+			</template>
+
+			<template if:true={card4}>
+				<template if:false={donationcreated}>
+					<lightning-spinner variant="brand" alternative-text="Loading" size="large"> </lightning-spinner>
+				</template>
+				<template if:true={donationcreated}>
+					<div class="card">
+						<div class="back-button-handler" onclick={backClickHandler}>
+
+						</div>
+						<div class="card-heading">
+							<img src={secureDonationImageUrl} height="25px" width="25px">
+							<h3>SECURE DONATION</h3>
+						</div>
+						<div class="page-navigator">
+							<span class="round-span round-span-selected">1</span>
+							<span class="round-span round-span-selected">2</span>
+							<span class="round-span round-span-selected">3</span>
+							<span class="round-span round-span-selected">4</span>
+							<span class="round-span">5</span>
+						</div>
+						<div class="payment-methods">
+							<template if:true={honor}>
+								<div class="dedicated-name">
+									Dedicated To<br>{memoName}
+                            </div>
+							</template>
+							<div class="entered-amount">
+								${totalAmount}
+							</div>
+							<div class="costs-cover">
+								<label class="checkbox-style">Cover Transaction Costs
+                                <input  type="checkbox"  name="TransactionCostCheckbox" onchange={AddTransactionCost} checked={IncludeTransactionChargeCheckbox} disabled>
+                                <span class="checkmark"></span>
+                            </label>
+							</div>
+							<div class="transaction-cost">
+								<template if:true={coverTC}>
+									<div class="cost">
+										<span>Transaction Costs</span>
+										<span>${transactionCost}</span>
+									</div>
+								</template>
+								<div class="donate-now">
+									<span>Donate Now</span><span>${totalAmount}</span>
+								</div>
+							</div>
+							<div class="payment-option">
+								<h1>Payment Option</h1>
+								<div class="row">
+									<div class="col-6">
+										<div></div>
+										<div class="payment-options-btn" data-id="cc" onclick={paymentMethodHandler}>
+											<img src={creditcardImg}>
+											Credit Card
+										</div>
+										</div>
+										<div class="col-6">
+											<div class="payment-options-btn" data-id="bt"
+												onclick={paymentMethodHandler}>
+												<img src={bankTransferImg}>
+										             	Bank Transfer
+									               	</div>
+											</div>
+											<!--<div class="col-6">
+
+											<div class="payment-options-btn" data-id="pp"
+												onclick={paymentMethodHandler}>
+												<img src={payPalImg}>
+											PayPal
+										</div>
+											</div>-->
+										</div>
+										<!--<div class="row">
+											<div class="col-6">
+												<div class="payment-options-btn" data-id="gp"
+													onclick={paymentMethodHandler}>
+													<img src={googlePayImg}>
+											Google Pay
+										</div>
+												</div>
+												<div class="col-6">
+													<div class="payment-options-btn" data-id="bt"
+														onclick={paymentMethodHandler}>
+														<img src={bankTransferImg}>
+										             	Bank Transfer
+									               	</div>
+													</div>
+												</div>-->
+									</div>
+								</div>
+							</div>
+				</template>
+			</template>
+			<template if:true={creditcard}>
+				<div class="card">
+					<div class="back-button-handler" onclick={backClickHandler}>
+
+					</div>
+					<div class="card-heading">
+						<img src={secureDonationImageUrl} height="25px" width="25px">
+						<h3>SECURE DONATION</h3>
+					</div>
+					<div class="page-navigator">
+						<span class="round-span round-span-selected">1</span>
+						<span class="round-span round-span-selected">2</span>
+						<span class="round-span round-span-selected">3</span>
+						<span class="round-span round-span-selected">4</span>
+						<span class="round-span round-span-selected">5</span>
+					</div>
+					<div class="payment-methods">
+						<div class="dedicated-name">
+							Dedicated To<br>Michael
+                        </div>
+							<div class="entered-amount">
+								$149.00 USD
+							</div>
+						</div>
+						<div class="navigate-buttons">
+							<div class="box-button">
+								<button class="orange-button">
+                                Donate
+                            </button>
+							</div>
+						</div>
+					</div>
+			</template>
+			<!-- <div class="card">
+                <h1>Title text payment1</h1>
+            </div>
+            <div class="card">
+                <h1>Title text payment2</h1>
+            </div>
+            <div class="card">
+                <h1>Title text payment3</h1>
+            </div>
+            <div class="card">
+                <h1>Title text payment4</h1>
+            </div> -->
+		</div>
+
+		<template if:true={flowcall}>
+			<!-- <div class="payment-modal-container"> -->
+			<div class="payment-modal-main">
+				<div class="payment-modal-close">
+					<span onclick={offpay}>&#10006;</span>
+				</div>
+				<lightning-flow flow-api-name={flowApiName} flow-input-variables={flowInputVariables}
+					onstatuschange={handleFlowStatusChange}>
+				</lightning-flow> <!-- Invoke a Screen flow in LWC -->
+			</div>
+			<!-- </div> -->
+		</template>
+	</div>
+</template>

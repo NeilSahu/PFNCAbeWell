@@ -1,0 +1,21 @@
+<template>
+    <div class="main-container" style="background-color: white;">
+        <div class="catagory-container">
+            <div class="help-heading-text">FREQUENTLY ASKED QUESTIONS</div>
+            <div class="hr-line"></div>
+            <div class="carousel-questions-box">
+                <template for:each={showFaqData} for:item="ques_ans">
+                    <details key={ques_ans.Id}>
+                        <summary>
+                            <div style="font-size: 20px;">{ques_ans.Name}</div>
+                            <div class="showClass" onclick={showHideHandler}></div>
+                        </summary>
+
+                        <p style="font-size: 18px;">{ques_ans.Answer__c}</p>
+                        <div class="q-hr-line"></div>
+                    </details>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

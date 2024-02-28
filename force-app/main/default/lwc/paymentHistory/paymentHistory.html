@@ -1,0 +1,75 @@
+<template>
+    <div class="headerContianer">
+        <div class="NotificationHeading"><span>Payment History</span></div>
+        <div class="secondDivSH">
+            <lightning-icon variant="brand" class="searchIconColorSH" icon-name='utility:search' alternative-text='search'
+                size='small' title='search' onclick={searchIconHandler}></lightning-icon>
+            <!-- <span class="searchIconColorSH" style="color:#008ba7">SEARCH YOUR FAVORITES</span> -->
+            <input type="search" placeholder="SEARCH" class="searchIconColorSH searchInputClass" onkeyup = {updateVisiblePaymentRecordArray}>
+        </div>
+        <!-- <div class="innerHeadingClass">
+            <div class="NotificationHeading"><span>Payment History</span></div>
+        </div>
+        <div class="bellIconClass"><img src={bellIcon} onclick={showNotificationMethod}></div>
+        <div class="div2">
+            <a> <img src={bellIcon} onclick={showNotificationMethod}  > </a>
+            <div class="notificationCount"><span>{totalNotifications}</span></div>
+            <div if:true={showNotificationFlag}>
+                <c-notification-component totalrecords={notificationVisibel}></c-notification-component>
+            </div>
+        </div> -->
+    </div>
+    <div class="slds-card" style="margin: 0% 4%;border-radius: 21px;">
+        <div if:false={isEmpty} class="middleDiv">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-5 headings">
+                    <b>DATE</b>
+                </div>
+                <div class="slds-col slds-size_1-of-5 headings">
+                    <b>AMOUNT</b>
+                </div>
+                <div class="slds-col slds-size_1-of-5 headings">
+                    <b>PAYMENT METHOD</b>
+                </div>
+                <div class="slds-col slds-size_1-of-5 headings headingsStatus">
+                    <b>STATUS</b>
+                </div>
+                <div class="slds-col slds-size_1-of-5 headings">     
+                </div>  
+            </div>
+            <!-- <div class="line">
+            </div> -->
+            <template for:each={tempArr} for:item="paymentRecord">
+                <div class="slds-grid slds-wrap text" key={paymentRecord.Id}>
+                    <div class="slds-col slds-size_1-of-5" > 
+                        {paymentRecord.Date}    
+                    </div>
+                    <div class="slds-col slds-size_1-of-5 ">  
+                        {paymentRecord.Amount}   
+                    </div>
+                    <div class="slds-col slds-size_1-of-5 "> 
+                        {paymentRecord.PaymentMethod}    
+                    </div>
+                    <div class="slds-col slds-size_1-of-5 textStatus ">   
+                        {paymentRecord.Status}  
+                    </div>
+                    <a style="display: none;"
+                        data-id="WaiverRules">
+                    </a>
+                    <div class="slds-col slds-size_1-of-5 downloadPdf" data-item={paymentRecord.Id}>   
+                        <!-- <lightning-icon data-id={paymentRecord.Id} onclick={downloadWavierPdfMethod} icon-name="utility:arrow_bottom" alternative-text="arrow_bottom" size="xx-small"></lightning-icon> -->
+                        <img src={downloadIcon} data-id={paymentRecord.Id} data-name={paymentRecord.Name} data-date={paymentRecord.Date} data-paymentmethod={paymentRecord.PaymentMethod} data-status={paymentRecord.Status} data-amount={paymentRecord.Amount} onclick={downloadWavierPdfMethod} style="margin-right:1rem;" alt="arrow_bottom" >
+                        <b data-id={paymentRecord.Id} data-name={paymentRecord.Name} data-date={paymentRecord.Date} data-paymentmethod={paymentRecord.PaymentMethod} data-status={paymentRecord.Status} data-amount={paymentRecord.Amount} onclick={downloadWavierPdfMethod}>Download PDF</b>  
+                    </div>
+                </div>
+                <div class="line" key={paymentRecord.Id}></div>
+            </template>
+        </div>
+        <div if:true={isEmpty} class="middleDiv2">
+            <p class="emptyContainer">No payment is found</p>
+        </div>
+    </div>
+    <template if:true={loading}>
+        <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+    </template>
+</template>

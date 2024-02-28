@@ -1,0 +1,42 @@
+<template>
+    <div class="sub-nav">
+		<ul style="display:flex;margin-top: 1rem;" class="sub-nav-link">
+			<li>
+				<div data-id = 'lcs' onclick={pageChangeHandler}>Live Class Schedule</div>
+				<template if:true={LiveClassSchedule}>
+
+					<div class="active-marker"></div>
+				</template>
+			</li>
+			<li>
+				<div data-id = 'cod' onclick={pageChangeHandler}>Classes on Demand</div>
+				<template if:true={ClassesOnDemand}>
+
+					<div class="active-marker"></div>
+				</template>
+			</li>
+            <li>
+				<div data-id = 'ins' onclick={pageChangeHandler}>Instructors</div>
+				<template if:true={Instructors}>
+					<div class="active-marker"></div>
+				</template>
+				
+			</li>
+		</ul>
+	</div>
+	<template if:true={ClassesOnDemand}>
+		<div class="browse-class">
+		<c-b-w-p-s_-w-i-p_-browse-classes filterclassid = {classId} fiterintensity ={intensityURL} onselectlive={LiveClassSchedule}></c-b-w-p-s_-w-i-p_-browse-classes>
+		</div>
+	</template>
+	<template if:true={Instructors}>
+		<c-bwps_-w-i-p_-instructors></c-bwps_-w-i-p_-instructors>
+		<c-pfnca_-main_-stay-connected-footer></c-pfnca_-main_-stay-connected-footer>
+		<c-bwps_-w-i-p_-review-slider></c-bwps_-w-i-p_-review-slider>
+	</template>
+	<template if:true={LiveClassSchedule}>
+		<c-bwps_-w-i-p_-live-class-schedule></c-bwps_-w-i-p_-live-class-schedule>
+		<c-bwps_-w-i-p_-review-slider></c-bwps_-w-i-p_-review-slider>
+		<c-pfnca_-main_-stay-connected-footer></c-pfnca_-main_-stay-connected-footer>
+	</template>
+</template>

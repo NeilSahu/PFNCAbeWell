@@ -1,0 +1,611 @@
+<template>
+    <div class="ClassesYouTeach slds-m-left_xx-large slds-m-top_xx-large">
+        <h1>CLASSES YOU TEACH</h1>
+    </div>
+    <div class="CardsBorder slds-m-around_xx-large">
+        
+
+        <div class="slds-grid AddandRemoveClass slds-m-right_large slds-m-bottom_medium">
+            <div class="slds-grid slds-m-right_medium AddandRemoveClassInnerDiv">
+                <img src={AddIcon} class="slds-m-right_small addIconClass hoverClass">
+                <h1 class="slds-m-right_xx-large slds-m-top_xxx-small hoverClass" onclick={AddAClass}>Add a Class</h1>
+                <!-- Show More Class Modal -->
+                <!-- modal start -->      
+                <template if:true={isShowAddClassChoiceModal} >
+
+                    <!--
+                        I Used SLDS for this code
+                        Here is link https://www.lightningdesignsystem.com/components/modals/
+                    --> 
+
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-08" aria-modal="true" aria-describedby="modal-content-id-8" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                    <!-- modal header start -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideAddClassChoiceModalBox}>
+                            <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2  class="slds-text-heading_medium slds-hyphenate addAClass">Choose Class Type</h2>
+                    </header>
+
+                    <!-- modal body start -->
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-radio-group name="classOption"
+                          label="Choose Class Option"
+                          options={options}
+                          value={value}
+                          type="radio"
+                          class="classOptionClass"></lightning-radio-group>
+                        
+                    </div>
+                    <!-- modal footer start-->
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral cancelBtnClass cancelEditBtnClass" onclick={hideAddClassChoiceModalBox}>CANCEL</button>
+                        <button class="slds-button slds-button_neutral cancelBtnClass cancelEditBtnClass" onclick={nextAddClassChoiceModalMethod}>NEXT</button>
+                    </footer>
+
+                    </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </template>
+                <!-- modal end -->
+            </div>
+            <div class="slds-grid AddandRemoveClassInnerDiv slds-m-right_xx-large" style="margin-right: -1rem;">
+                <img src={MinusIcon} class="slds-m-right_small removeIconClass hoverClass">
+                <h1 class="slds-m-top_xxx-small hoverClass" onclick={RemoveAClass}>Remove a Class</h1>
+                <div>
+                    <c-bwps_instructor-dashboard-remove-class sclass={scheduleClassesArray}>
+
+                    </c-bwps_instructor-dashboard-remove-class>
+                </div>
+            </div>
+        </div>
+
+        <div class="slds-grid slds-wrap GridDiv">
+
+            <template if:true={scArrFlag} for:each={scheduleClassesArray} for:item="scheduleClass">
+                <div class="CardsBorderInnerDiv slds-col slds-small-size_1-of-3 " key={print}>
+                    
+                    <div>
+                        <img class="img1" src={scheduleClass.scImage}>
+                        <div class="LowSeated">
+                            <div class="innerLowSeatedClass">
+                                <div>
+                                    <img class="signalIconClass" src={scheduleClass.Level} onclick={handleSignal} style="margin: 0;">
+                                </div>
+                                <div class="lowSeatedTextClass">
+                                    <h1>{scheduleClass.Integrity__c}</h1>
+                                </div>
+                            </div>
+                            <div>
+                                <img class="shareImage" src={share} onclick={handleShare} data-id={scheduleClass.Id} data-description={scheduleClass.BWPS_Description__c}>
+                            </div>
+                        </div>
+                        
+    
+                        <hr class="hr">
+    
+    
+                        <div class="ExerciseForParkison">
+                            <h1>{scheduleClass.Name}</h1>
+                        </div>
+                        
+                        <div class="scLineItemCardMainClass">
+                            <template for:each={scheduleClass.Schedule_Class_Line_Items__r} for:item="scLineItem">
+                                <template if:true={scLineItem.firstCard}>
+                                    <div key={scLineItem.key} class="scLineItemFirstCard">
+                                        <div class="scLineItemCardClass" >
+                                            <h1 class={scLineItem.action}>{scLineItem.scLineItemTime} {scLineItem.shortDay}</h1>
+                                            <div class="box-button">
+                                                <button class="orange-button" data-id={scLineItem.Id} onclick={showEditPageModalMethod}>{scLineItem.action}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                                <template if:true={scLineItem.secCard}>
+                                    <div key={scLineItem.key} class="scLineItemSecondCard">
+                                        <div class="scLineItemCardClass" >
+                                            <h1 class={scLineItem.action}>{scLineItem.scLineItemTime} {scLineItem.shortDay}</h1>
+                                            <div class="box-button">
+                                                <button class="orange-button" data-id={scLineItem.Id} onclick={showEditPageModalMethod}>{scLineItem.action}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </template>
+                                
+                            </template>
+                        </div>
+                        <div  class="moreContainerClass">
+                            {scheduleClass.footText}
+                            <button if:true={scheduleClass.moreCheck} class="moreBtnClass" onclick={showMoreSCLineItemMethod} data-id={scheduleClass.Id}>See More...</button>
+                        </div>
+                        <!-- <div class="TimeAndEditButton">
+                    
+                            <div class="TimeAndEditButton1">
+                                <h1 class={print.action}>{print.time1}</h1>
+                                <div class="box-button">
+                                    <button class="orange-button">{print.action}</button>
+                                </div>
+                            </div>
+                            <div class="TimeAndEditButton1">
+                                <h1 class={print.action}>{print.time2}</h1>
+                                <div class="box-button">
+                                    <button class="orange-button">{print.action}</button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </template>
+            <div if:false={scArrFlag} class="noDataClass">
+                <div>
+                    <p>Classes you teach will be listed here. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Add a One Time Class modal -->
+    <!-- modal start -->      
+    <template if:true={isShowModal}>
+
+        <!--
+            I Used SLDS for this code
+            Here is link https://www.lightningdesignsystem.com/components/modals/
+        --> 
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+        <!-- modal header start -->
+        <header class="slds-modal__header">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                <lightning-icon icon-name="utility:close"
+                alternative-text="close"
+                variant="inverse"
+                size="small" ></lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate addAClass">Add a One Time Class</h2>
+        </header>
+
+        <!-- modal body start -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <label class="inputBoxLabelClass">Schedule Class Name</label>
+                <input type="text" class="inputBoxColorClass scName" data-id={} value="">
+                <!-- <label class="inputBoxLabelClass">Class</label>
+                <input type="text" class="inputBoxColorClass className" data-id={} value=""> -->
+
+                <label for="class" class="inputBoxLabelClass">Choose class:</label>
+                <select name="class" id="class" class="inputBoxColorClass className">
+                    <template for:each={classArray} for:item="cls">
+                        <option key={cls.Id} class="uiInputSelectOption" value={cls.Id}>{cls.Name}</option>
+                    </template>
+                </select>
+                <label class="inputBoxLabelClass">Start Date</label>
+                <input type="date" class="inputBoxColorClass startDate" data-id={} value="">
+                
+                <label for="intensity" class="inputBoxLabelClass">Choose Intensity:</label>
+                <select name="intensity" id="intensity" class="inputBoxColorClass intensity">
+                    <option class="uiInputSelectOption" value="Low/Seated">Low/Seated</option>
+                    <option class="uiInputSelectOption" value="Medium">Medium</option>
+                    <option class="uiInputSelectOption" value="High/Active">High/Active</option>
+                </select>
+                <!-- <label class="inputBoxLabelClass">Start Time</label>
+                <input type="time" class="inputBoxColorClass startTime" data-id={} value=""> -->
+
+                <label class="inputBoxLabelClass">Start Time</label>
+                <div class="startTimeContainerClass">
+                    <div class="timeContainer">
+                        <select id="startTime" class="inputBoxColorClass startTimeHours">
+                            <template for:each={timeHoursArray} for:item="time">
+                                <option key={time} class="uiInputSelectOption" value={time}>{time}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass startTimeMins">
+                            <template for:each={timeMinsArray} for:item="time">
+                                <option key={time} class="uiInputSelectOption" value={time}>{time}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass startTimeAmPm">
+                            <option class="uiInputSelectOption" value="am">AM</option>
+                            <option class="uiInputSelectOption" value="pm">PM</option>
+                        </select>
+                    </div>
+                </div>   
+                <!-- <label class="inputBoxLabelClass">End Time</label>
+                <input type="time" class="inputBoxColorClass endTime" data-id={} value=""> -->
+                <label class="inputBoxLabelClass">End Time</label>
+                <div class="endTimeContainerClass">
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass endTimeHours">
+                            <template for:each={timeHoursArray} for:item="time">
+                                <option key={time} class="uiInputSelectOption" value={time}>{time}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass endTimeMins">
+                            <template for:each={timeMinsArray} for:item="time">
+                                <option key={time} class="uiInputSelectOption" value={time}>{time}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass endTimeAmPm">
+                            <option class="uiInputSelectOption" value="am">AM</option>
+                            <option class="uiInputSelectOption" value="pm">PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!-- modal footer start-->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral cancelBtnClass" onclick={hideModalBox}>CANCEL</button>
+                <button class="slds-button slds-button_neutral saveBtnClass" onclick={saveClassMethod} data-classtype="oneTime">SAVE</button>
+            </footer>
+
+            </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    <!-- modal end -->
+
+
+    <!-- Add a Recurring Class modal -->
+    <!-- modal start -->      
+    <template if:true={isRecurringModal}>
+
+        <!--
+            I Used SLDS for this code
+            Here is link https://www.lightningdesignsystem.com/components/modals/
+        --> 
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-09" aria-modal="true" aria-describedby="modal-content-id-9" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+        <!-- modal header start -->
+        <header class="slds-modal__header">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                <lightning-icon icon-name="utility:close"
+                alternative-text="close"
+                variant="inverse"
+                size="small" ></lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 id="modal-heading-09" class="slds-text-heading_medium slds-hyphenate addAClass">Add a Recurring Class</h2>
+        </header>
+
+        <!-- modal body start -->
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-9">
+                <label class="inputBoxLabelClass">Schedule Class Name</label>
+                <input type="text" class="inputBoxColorClass scName" data-id={} value="">
+                <!-- <label class="inputBoxLabelClass">Class</label>
+                <input type="text" class="inputBoxColorClass className" data-id={} value=""> -->
+
+                <label for="class" class="inputBoxLabelClass">Choose class:</label>
+                <select name="class" id="class3" class="inputBoxColorClass className">
+                    <template for:each={classArray} for:item="cls">
+                        <option key={cls.Id} class="uiInputSelectOption" value={cls.Id}>{cls.Name}</option>
+                    </template>
+                </select>
+                <lightning-dual-listbox
+                    id="selectDays"
+                    name="Select Days"
+                    label="Select Days"
+                    source-label="Available Days"
+                    selected-label="Chosen Days"
+                    options={listDays}
+                    value={defaultOptions}
+                    onchange={handleDayChange}
+                    class="classType"
+                >
+                </lightning-dual-listbox>
+                <label class="inputBoxLabelClass">Class Frequency</label>
+                <input type="number" class="inputBoxColorClass classFrequency" data-id={} value="">
+                <label class="inputBoxLabelClass">Start Date</label>
+                <input type="date" class="inputBoxColorClass startDate" data-id={} value="">
+
+                
+                <label for="intensity" class="inputBoxLabelClass">Choose Intensity:</label>
+                <select name="intensity" id="intensity2" class="inputBoxColorClass intensity">
+                    <option class="uiInputSelectOption" value="Low/Seated">Low/Seated</option>
+                    <option class="uiInputSelectOption" value="Medium">Medium</option>
+                    <option class="uiInputSelectOption" value="High/Active">High/Active</option>
+                </select>
+                <!-- <label class="inputBoxLabelClass">Start Time</label>
+                <input type="time" class="inputBoxColorClass startTime" data-id={} value=""> -->
+                <label class="inputBoxLabelClass">Start Time</label>
+                <div class="startTimeContainerClass">
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass startTimeHours">
+                            <template for:each={timeHoursArray} for:item="time">
+                                <option key={time} class="uiInputSelectOption" value={time}>{time}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass startTimeMins">
+                            <template for:each={timeMinsArray} for:item="time">
+                                <option key={time} class="uiInputSelectOption" value={time}>{time}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass startTimeAmPm">
+                            <option class="uiInputSelectOption" value="am">AM</option>
+                            <option class="uiInputSelectOption" value="pm">PM</option>
+                        </select>
+                    </div>
+                </div> 
+                <!-- <label class="inputBoxLabelClass">End Time</label>
+                <input type="time" class="inputBoxColorClass endTime" data-id={} value=""> -->
+                <label class="inputBoxLabelClass">End Time</label>
+                <div class="endTimeContainerClass">
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass endTimeHours">
+                            <template for:each={timeHoursArray} for:item="time">
+                                <option key={time} class="uiInputSelectOption" value={time}>{time}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass endTimeMins">
+                            <template for:each={timeMinsArray} for:item="time">
+                                <option key={time} class="uiInputSelectOption" value={time}>{time}</option>
+                            </template>
+                        </select>
+                    </div>
+                    <div class="timeContainer">
+                        <select class="inputBoxColorClass endTimeAmPm">
+                            <option class="uiInputSelectOption" value="am">AM</option>
+                            <option class="uiInputSelectOption" value="pm">PM</option>
+                        </select>
+                    </div>
+                </div>
+                <label class="inputBoxLabelClass">Description</label>
+                <input type="text" class="inputBoxColorClass description" data-id={} value="">
+            </div>
+            <!-- modal footer start-->
+            <footer class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral cancelBtnClass" onclick={hideModalBox}>CANCEL</button>
+                <button class="slds-button slds-button_neutral saveBtnClass" onclick={saveClassMethod} data-classtype="recurring">SAVE</button>
+            </footer>
+
+            </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    <!-- modal end -->
+
+    <!-- Edit Class Modal -->
+    <!-- modal start -->      
+    <template if:true={isEditShowModal}>
+
+        <!--
+            I Used SLDS for this code
+            Here is link https://www.lightningdesignsystem.com/components/modals/
+        --> 
+        <!--form data-->
+      
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+            <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideEditModalBox}>
+                        <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small"
+                        class="closeIcon" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate addAClass">Edit a Class</h2>
+                </header>
+            <!-- modal body start -->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                <form action="" data-id="ScheduleLineItem">
+                    <!-- <lightning-input type="text" label="Schedule Class Name" class="inputBoxColorClass"></lightning-input>
+                    <lightning-input type="text" label="Class" class="inputBoxColorClass"></lightning-input>
+                    <lightning-input type="date" label="Start Date" class="inputBoxColorClass"></lightning-input>
+                    <lightning-input type="text" label="instructor" class="inputBoxColorClass"></lightning-input>
+                    <lightning-input type="text" label="Integrity" class="inputBoxColorClass"></lightning-input>
+                    <lightning-input type="time" label="Start Time" class="inputBoxColorClass"></lightning-input>
+                    <lightning-input type="time" label="End Time" class="inputBoxColorClass"></lightning-input> -->
+                    <label class="inputBoxLabelClass">Schedule Class Name</label>
+                    <input type="text" name="ClassName" class="inputBoxColorClass scName" value={nameOfclass} disabled>
+                    <!-- <label class="inputBoxLabelClass">Class</label>
+                    <input type="text" class="inputBoxColorClass className" data-id={} value=""> -->
+
+                    <!-- <label for="class" class="inputBoxLabelClass">Choose class:</label>
+                    <select name="class" id="class2" class="inputBoxColorClass className">
+                        <template for:each={classArray} for:item="cls">
+                            <option key={cls.Id} class="uiInputSelectOption" value={cls.Id}>{cls.Name}</option>
+                        </template>
+                    </select> -->
+                    <label class="inputBoxLabelClass">Start Date</label>
+                    <input type="date" name="StartDate" class="inputBoxColorClass startDate"  value={ScheduleLineItemRec.BWPS_ClassDate__c}>
+                    <!-- <label class="inputBoxLabelClass">instructor</label>
+                    <input type="text" class="inputBoxColorClass" data-id={} value=""> -->
+                    <!-- <label for="instructor">Choose instructor:</label>
+                    <select name="instructor" id="instructor">
+                        <template for:each={instructorArray} for:item="option">
+                            <option key={option.label} class="uiInputSelectOption" value={option.value}>{option.value}</option>
+                        </template>
+                    </select> -->
+                    <!-- <label class="inputBoxLabelClass">Integrity</label>
+                    <input type="text" class="inputBoxColorClass integrity" data-id={} value=""> -->
+                    <!-- <label for="integrity" class="inputBoxLabelClass">Choose Integrity:</label>
+                    <select name="integrity" id="integrity2" class="inputBoxColorClass integrity">
+                        <option class="uiInputSelectOption" value="Low/Seated">Low/Seated</option>
+                        <option class="uiInputSelectOption" value="Medium">Medium</option>
+                        <option class="uiInputSelectOption" value="High/Active">High/Active</option>
+                    </select> -->
+                    <label class="inputBoxLabelClass">Start Time</label>
+                    <input type="time" name="StartTime" class="inputBoxColorClass startTime" value={ScheduleLineItemRec.BWPS_StartTime__c}>
+                    <label class="inputBoxLabelClass">End Time</label>
+                    <input type="time" name="EndTime" class="inputBoxColorClass endTime" value={ScheduleLineItemRec.BWPS_EndTime__c} >
+                    <label class="inputBoxLabelClass">Description</label>
+                    <input type="text" name="Description" class="inputBoxColorClass description" value={nameOfclass} disabled>
+                </form>
+            </div>
+        <template if:true={isLoading}>
+        <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+       </template>
+        <!-- modal footer start-->
+        <footer class="slds-modal__footer">
+            <div class="footerContainer">
+                <div class="cancelContainer">
+                    <button class="slds-button slds-button_neutral cancelBtnClass cancelEditBtnClass" onclick={hideEditModalBox}>CANCEL</button>
+                </div>
+                <div class="saveContainer">
+                    <button class="slds-button slds-button_neutral saveBtnClass saveEditBtnClass" onclick={saveEditClassMethod}>SAVE</button>
+                </div>
+            </div>
+        </footer>
+
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        
+    </template>
+    <!-- modal end -->
+    <!-- <div if:true={isShowSendModal} class="slds-modal__container">
+        <div class="slds-modal__content slds-p-around_large">
+            <div class="container">
+                <div class="container-header">
+                    <img src={BELLICON}>
+                    <h1>Send Mail</h1>
+                </div>
+                <div class="Donation-form-div">
+                    <div class="Add-card-form"> 
+                        <label for="Email" >Email</label>
+                        <input data-id="Email" type="text" class="input1 emailClass" placeholder="" size="50" > <br><br>
+
+                        <label for="Subject" >Subject</label>
+                        <input data-id="Subject" type="text" class="input1 subjectClass" size="50"><br><br>
+
+                        <label for="Description" >Description</label>
+                        <input data-id="Description" type="" class="input2" size="50"><br><br> 
+                        <textarea rows="4" cols="50" name="comment" form="usrform" class="input2 descriptionClass" data-id="Description">
+                        </textarea>
+                        <div class="btn" >
+                            <Button type="text" onclick={sendMailMethod}  class="button2">Submit</Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <template if:true={isShowSendModal}>
+
+        <!--
+           send mail modal
+        --> 
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open" key={scheduleClass.Id}>
+            <div class="slds-modal__container">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideSendModalBox}>
+                        <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small"
+                        class="closeIcon" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-hyphenate container-header addAClass">Send Mail</h2>
+                </header>
+
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_large">
+                    <div class="container">
+                        <!-- <div class="container-header">
+                            <h1>Send Mail</h1>
+                        </div> -->
+                        <div class="Donation-form-div">
+                            <div class="Add-card-form"> 
+                                <label for="Email" >Email</label>
+                                <input data-id="Email" type="text" class="input1 emailClass" placeholder="" size="50" > <br><br>
+
+                                <label for="Subject" >Subject</label>
+                                <input data-id="Subject" type="text" class="input1 subjectClass" size="50"><br><br>
+
+                                <label for="Description" >Description</label>
+                                <!-- <input data-id="Description" type="" class="input2" size="50"><br><br> -->
+                                <textarea rows="4" cols="50" name="comment" form="usrform" class="input2 descriptionClass" data-id="Description">
+                                </textarea>
+                                <div class="btn" >
+                                    <Button type="text" onclick={sendMailMethod}  class="button2">Submit</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- Show More Class Modal -->
+    <!-- modal start -->      
+    <template if:true={isAllClassShowModal}>
+
+        <!--
+            I Used SLDS for this code
+            Here is link https://www.lightningdesignsystem.com/components/modals/
+        --> 
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+        <!-- modal header start -->
+        <header class="slds-modal__header">
+            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideAllClassModalBox}>
+                <lightning-icon icon-name="utility:close"
+                alternative-text="close"
+                variant="inverse"
+                size="small"
+                class="closeBtnClass" ></lightning-icon>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+            <h2 class="slds-text-heading_medium slds-hyphenate addAClass">All Class</h2>
+        </header>
+
+        <!-- modal body start -->
+        <div class="slds-modal__content slds-p-around_medium allClassContainerClass slds-grid slds-wrap">
+            <template for:each={showMoreScheduleClassLineItemArray} for:item="scLineItem">
+                <div key={scLineItem.Id} class="seeMoreCardClass">
+                    <div class="scNameClass">
+                        <h1>{scLineItem.Name}</h1>
+                    </div>
+                    <div class="scLineItemFirstCard slds-col slds-size_1-of-2 seeMoreLineItemClass">
+                        <div class="scLineItemCardClass" >
+                            <!-- <h1 class={scLineItem.action}>{scLineItem.Name}</h1> -->
+                            <h1 class={scLineItem.action}>{scLineItem.BWPS_ClassDate__c}</h1>
+                            <h1 class={scLineItem.action}>{scLineItem.scLineItemTime} {scLineItem.shortDay}</h1>
+                            <div class="box-button">
+                                <button class="orange-button" onclick={showEditPageModalMethod} data-id={scLineItem.Id}>{scLineItem.action}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <!-- modal footer start-->
+        <footer class="slds-modal__footer">
+            <button class="slds-button slds-button_neutral cancelBtnClass cancelEditBtnClass" onclick={hideAllClassModalBox}>CANCEL</button>
+        </footer>
+
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- modal end -->
+    <c-toast-message auto-close-time="1000"></c-toast-message>
+
+</template>

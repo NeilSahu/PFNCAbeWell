@@ -1,0 +1,645 @@
+.ClassesYouTeach{
+    color: #008ba7;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.CardsBorder{
+    background-color: rgb(249 244 244);
+    border-radius: 24px;
+    border: 1px solid lightgray;
+    padding: 2rem 0rem;
+    margin-top: 1.5%;
+    margin-bottom: 0%;
+}
+
+.GridDiv{
+    width: 100%;
+    margin: 0% 1.5%;
+    min-height: 10vw;
+}
+.noDataClass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 5% 0%;
+}
+.seeMoreCardClass{
+    width: 46%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f1eaea;
+    margin: 2%;
+}
+
+.CardsBorderInnerDiv{
+    background-color: white;
+    width: 30%;
+    padding-bottom: 1rem;
+    margin: 1.5rem 0.7rem;
+}
+.addIconClass, .removeIconClass{
+    width: 25px;
+    height: 25px;
+}
+.closeIcon{
+    --sds-c-icon-color-foreground: white;
+}
+
+.img1{
+    height: auto;
+    width: 100%;
+    padding: 3px;
+    aspect-ratio: 15/8;
+}
+.EDIT{
+    display: block;
+    font-weight: 600;
+    font-size: smaller;
+}
+.SCHEDULE{
+    display: none;
+    font-weight: 600;
+}
+
+.LowSeated{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3.5% 4%;
+}
+.innerLowSeatedClass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lowSeatedTextClass{
+    margin-left: 5%;
+    width: 13vw;
+    white-space: nowrap;
+}
+
+.LowSeated img{
+    height: auto;
+    width: 2vw;
+}
+
+.signalIconClass{
+   width: 30px;
+   height: 30px;
+}
+.LowSeated h1{
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.shareImage{
+    
+    width: 2.2rem;
+    cursor: pointer;
+}
+
+.hr{
+    width: 90%;
+    margin: 0% 5%;
+}
+
+.ExerciseForParkison{
+    font-size: 1.3vw;
+    font-weight: 600;
+    margin: 4% 6%;
+    min-height: 3.1rem;
+}
+
+.TimeAndEditButton{
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0% 5%;
+}
+
+.TimeAndEditButton1{
+    border: 1px solid #FF9900;
+    border-radius: 15px;
+    text-align: center;
+    padding: 0.5rem 0.5rem;
+    margin: 1%;
+    width: 67%;
+}
+
+
+.TimeAndEditButton1 h1{
+    font-weight: 900;
+    margin-top: 0.2rem;
+}
+
+
+.TimeAndEditButton2{
+    border: 2px solid #FF9900;
+    border-radius: 15px;
+    width: 10vw;
+    text-align: center;
+    padding: 0.9rem 0.7rem;;
+    margin: 0.5rem;
+}
+
+.TimeAndEditButton2 h1{
+    font-size: 1vw;
+    font-weight: 900;
+    margin-top: 0.2vw;
+    margin-bottom: 0.5vw;
+}
+
+.box-button {
+    background-color: #FF9900;
+    color: white;
+    height: auto;
+    padding: 2px;
+    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+.orange-button {
+    
+    background-color: #FF9F37;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: auto;
+}
+.addAClass{
+    color: #008CA7;
+    font-weight: 600;
+}
+
+.inputBoxLabelClass{
+    display: block;
+    margin-bottom: 10px;
+    color: #008CA7;
+    font-weight: 600;
+}
+.footerContainer{
+    display: flex;
+    justify-content: flex-end;
+}
+.saveContainer{
+    background-color: #FF9F37;
+    padding: 2px;
+    /* border-radius: 5px; */
+    margin-right: 2%;
+}
+.cancelContainer{
+    background-color:#008CA7;
+    padding: 2px;
+    /* border-radius: 5px; */
+    margin-right: 2%;
+}
+
+.inputBoxColorClass{
+    border: 1px solid #0694cc;
+    border-radius: 10px;
+    width: 100%;
+    height: 2rem;
+    padding-left: 2%;
+    margin-bottom: 4%;
+}
+.saveBtnClass{
+    background-color: #EE9E33;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0px;
+}
+.cancelBtnClass{
+    background-color: #448CA7;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0px;
+}
+.scLineItemCardMainClass{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin: 0% 2%;
+}
+.scLineItemCardClass{
+    width: 100%;
+    padding: 10px;
+}
+.scLineItemSecondCard, .scLineItemFirstCard{
+    width: 46%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #FF9F37;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+    margin: 0% 2%;
+    white-space: nowrap;
+}
+.seeMoreLineItemClass{
+    width: 70%;
+    margin: 1% 2%;
+    margin-bottom: 2%;
+}
+.moreContainerClass{
+    font-size: 14px;
+    padding-left: 17px;
+    padding-top: 10px;
+}
+.moreBtnClass{
+    color: black;
+    font-size: 14px;
+    border: none;
+    background-color: white;
+    white-space: nowrap;
+    text-align: center;
+}
+.scNameClass{
+    font-size: 1.1vw;
+    font-weight: 600;
+    margin: 2% 8%;
+    min-height: 2.5rem;
+    text-align: center;
+}
+.closeBtnClass{
+    --sds-c-icon-color-foreground: white;
+}
+.AddandRemoveClass{
+    color: grey;
+    font-size: 1rem;
+    display: none;
+    justify-content: end;
+    margin: 0% 6%;
+}
+
+.AddandRemoveClassInnerDiv{    
+    white-space: nowrap;
+}
+.hoverClass{
+    cursor: pointer;
+}
+.endTimeContainerClass, .startTimeContainerClass{
+    display: flex;
+}
+.timeContainer{
+    width: 20%;
+    margin-right: 2%;
+}
+
+@media only screen and (max-width:1280px) and (min-width:1200px){
+    /* .shareImage{
+        margin-left: 21rem;
+    } */
+} 
+
+@media only screen and (max-width: 1200px) and (min-width:1024px ){
+    /* .CardsBorderInnerDiv{
+        margin: 2rem 2rem;
+    } */
+
+    /* .shareImage{
+        margin-left: 25rem;
+    } */
+}
+
+
+@media only screen and (max-width: 1024px) and (min-width:768px ){
+    
+    /* .box-button {
+        margin-left: -0.1vw;
+    }
+    .AddandRemoveClassInnerDiv{
+        margin-right: -3rem;
+        margin-right: 4rem;
+    }
+    .AddandRemoveClassInnerDiv h1{
+        margin-right: 5rem;
+    }
+
+    .LowSeated h1{
+        margin-top: -1.2rem;
+        margin-left: 2rem;
+        font-size: 0.8rem;
+    }
+
+    .shareImage{
+        margin-top: -3.9vw;
+        margin-left: 20rem;
+    }
+
+    .orange-button{
+        height: 1.5rem;
+    }
+
+    .img1{
+        width: 22rem;
+    } */
+
+    .CardsBorderInnerDiv{
+        margin: 2rem 0.6rem;
+    }
+    .scLineItemSecondCard, .scLineItemFirstCard{
+        white-space: break-spaces;
+    }
+    .scNameClass{
+        font-size: 1.7vw;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px){
+
+    /* .box-button {
+        margin-top: 2.5rem;
+        width: 10.3rem;
+        padding-bottom: 0.1rem;
+    }
+
+    .AddandRemoveClassInnerDiv h1{
+        margin-right: 0rem;
+    }
+
+    .img1{
+        width: 100%;
+    }
+
+    .LowSeated img{
+        width: 2.7rem;
+    }
+
+    .LowSeated h1{
+        margin-top: -2.5rem;
+        margin-left: 4rem;
+        font-size: 1.8rem;
+        color: gray;
+    }
+
+    .shareImage{
+        margin-top: -6vw;
+        width: 2.2rem; 
+        float: right
+    }
+
+    .orange-button{
+        width: 9.9rem;
+        height: auto;
+        font-size: 1.2rem;
+        margin-top: 0.1rem;
+        margin-left: 0.01rem;
+
+    }
+
+    .TimeAndEditButton1{
+        padding: 0.5rem 1.5rem;
+        margin: 0.5rem;
+        width: 13rem;
+        height: 8rem;
+    }
+
+    .TimeAndEditButton1 h1{
+        font-size: 1.4rem;
+    }
+    .ExerciseForParkison{
+        font-size: 1.7rem;   
+    }
+
+    .box-button{
+        margin-top: 2rem;
+        width: 10.3rem;
+        padding-bottom: 0.1rem;
+    } */
+    .CardsBorderInnerDiv{
+        width: 45%; 
+        margin: 1.5rem 0.5rem;
+    }
+    .scLineItemSecondCard, .scLineItemFirstCard{
+        white-space: break-spaces;
+    }
+    .ExerciseForParkison{
+        font-size: 2vw;
+    }
+    .LowSeated{
+        font-size: 1rem;
+    }
+    .scNameClass{
+        font-size: 1.1vw;
+        font-weight: 600;
+        margin: 2% 8%;
+        min-height: 2.5rem;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 550px){
+
+   
+    /* .AddandRemoveClass{
+        height: 1rem;
+        margin-right: 0rem;
+    }
+
+    .AddandRemoveClassInnerDiv h1{
+        margin-right: 1rem;
+    }
+
+    .orange-button {
+        margin-left: 0rem;
+        width: 4.9rem;
+        font-size: 0.6rem;
+    }
+    
+    .img1{
+        width: 14rem;
+    }
+
+    .shareImage{
+        margin-left: 11.5rem;
+        margin-top: -1.5rem;
+    }
+
+    .LowSeated h1{
+        margin-left: 2rem;
+        font-size: 0.8rem;
+        margin-top: -1.1rem;
+    }
+
+    .LowSeated img{
+        width: 1.2rem;
+        margin-top: -2.2rem;
+    }
+
+    .CardsBorderInnerDiv{
+        width: 14rem;
+    }
+
+    .ExerciseForParkison{
+        font-size: 0.7rem;
+        margin-left: 0.3rem;
+    }
+    .TimeAndEditButton1{
+        width: 6rem;
+    }
+
+    .TimeAndEditButton1 h1{
+        font-size: 0.6rem;
+    }
+
+    .box-button{
+        padding-bottom: 0.1rem;
+        width: 5rem;
+        margin-left: -0.1rem;
+    } */
+    .scLineItemCardMainClass{
+        flex-direction: column;
+    }
+    .scLineItemSecondCard, .scLineItemFirstCard{
+        white-space: break-spaces;
+        width: 92%;
+        margin-bottom: 5%;
+    }
+    .LowSeated{
+        font-size: 0.7rem;
+    }
+}
+@media only screen and (max-width: 480px) and (min-width: 320px){
+    .CardsBorderInnerDiv{
+        width: 45%; 
+        margin: 1.5rem 0.5rem;
+    }
+    .scLineItemSecondCard, .scLineItemFirstCard{
+        white-space: break-spaces;
+    }
+    .ExerciseForParkison{
+        font-size: 5vw;
+    }
+    .LowSeated{
+        font-size: 1rem;
+    }
+    .CardsBorderInnerDiv{
+        margin: 1.5rem 1rem;
+        width: 100%;
+    }
+    .signalIconClass{
+        height: auto;
+        width: 5vw;
+    }
+    .ClassesYouTeach{
+        font-weight: 700;
+    }
+    .LowSeated img{
+        height: auto;
+        width: 5vw;
+    }
+    .CardsBorder, .ClassesYouTeach{
+        margin: 3%;
+    }
+    .Calender-View-column-Box{
+        padding: 0px;
+    }
+    .seeMoreCardClass{
+        width: 96%;
+    }
+    .scNameClass{
+        font-size: 1.5rem;
+    }
+}
+/* send mail modal css  */
+.containe{
+    background-color: white; 
+ }
+ .container-header h1 {
+       text-align: center;
+     font-size: 30px;
+     font-style: inherit;
+     font-weight: bolder;
+     padding-top: 10px;
+     color: #008ba7;
+ }
+ 
+ .container-header img {
+     position: absolute;
+     top: 38px;
+     right: 42px;
+     display: none;
+ }
+ 
+ .Donation-form-div{
+     width: 67%;
+     margin-left: 18%;
+ 
+     /* border: 2px solid; */
+ }
+ .Donation-form-div p{
+     text-align: center;
+     margin-top: 8%;
+     margin-bottom: 8% ;
+     font-size: 1.7rem;
+     font-weight: bold;
+     color:#008ba7;
+ }
+ 
+ .Add-card-form-date{
+ 
+     width: 50%;
+     float: left;
+ }
+ 
+ label {
+     color:#008ba7;
+     font-size: 1rem
+ }
+ 
+ .input1{
+ 
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #008ba7;
+    height: 37px;
+    margin-top: 6px;
+ 
+ }
+ /* .input2{
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #008ba7;
+    height: 115px; 
+    margin-top: 6px;
+ } */
+ .descriptionClass{
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #008ba7;
+    height: 115px;
+    min-height: 37px;
+    margin-top: 6px;
+}
+ 
+ 
+ .button2{
+     margin: 3px;
+     color: white;
+     background-color: #ff9f37;
+     border: 0.25px solid #ece7e7;
+     font-size: 1rem;
+     padding: 3px 22px;
+ }
+ 
+ .btn {
+     background-color: #ff9f37;
+     padding-right: 0px;
+     width: fit-content;
+     margin: 11px auto;
+ }
+ .closeIcon{
+    --sds-c-icon-color-foreground: white;
+ }

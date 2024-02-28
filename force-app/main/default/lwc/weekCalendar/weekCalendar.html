@@ -1,0 +1,116 @@
+<!---
+* @author     	 Cyntexa Labs
+* @description	 This is week component child component of myscheduleCalender. 
+* @date       	 02-08-2022      	
+*-->
+
+
+<template>
+ <template if:true={showWeak}>
+    <div class="Weakcontainer">
+        <div class="weak-show">
+              <ul class="day">
+               <div class="forExtra-space"></div>
+               <li>SUN</li>
+               <li>MON</li>
+               <li>TUE</li>
+               <li>WED</li>
+               <li>THU</li>
+               <li>FRI</li>
+               <li>SAT</li>
+              </ul>
+              <div class="Weak-day">
+               <div class="forExtra-space"></div>
+               <template for:each={weekArray} for:item="dateVal">
+                   <div class="date" key={dateVal.key}>   
+                       <span>{dateVal.date}</span>
+                       <template if:true={dateVal.todayDate}>
+                           <div class="triangle-up">
+                           </div>
+                       </template>
+                   </div>
+               </template>
+              </div>
+        </div>
+        <div class="event-parent-box" data-id="event-continer-box">
+           <div class="time-show">
+               <div class="time"> <span>09:00AM </span> </div>
+               <div class="time"> <span>10:00AM</span> </div> 
+               <div class="time"> <span>11:00AM</span> </div>  
+               <div class="time"> <span>12:00PM</span> </div> 
+               <div class="time"> <span>01:00PM</span> </div> 
+               <div class="time"> <span>02:00PM</span> </div> 
+               <div class="time"> <span>03:00PM</span> </div> 
+               <div class="time"> <span>04:00PM</span> </div> 
+               <div class="time"> <span>05:00PM</span> </div> 
+            </div>
+           <div class="event-box">
+               <template for:each={weekevnts} for:item="eventVal">
+               <div key={evantVal} class="chid-child">
+                   <template for:each={eventVal.eventsClass} for:item="evt">
+                    <div key={evt.Id} class={evt.classCss} data-id={evt.Id} onclick={getdataEvnt}>
+                       <p class="preventClicks">{evt.time}</p>
+                       <p class="preventClicks">{evt.Name}</p>
+                    </div>
+                   </template>
+               </div>
+               </template>
+               <!--$$$$$$$$$$$$$$$$$$$ Event card $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+               <div  class="eventCard" data-id="eventCardData">
+                <div class="event-card-parent">
+                     <div class="imgContainer" style={backgroundStyle} > 
+                        <div class="hide-button" onclick={hideEvent}><span>X</span></div>
+                         <div class="time-details"> <span>{clickedEvent.time}</span></div>
+                     </div>
+                     <div class="instructor-info-Container">
+                       <div class="instructor-info">
+                          <div>
+                            <img src={usericon} alt="#">
+                             <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" id ="Instructor">;
+                             <use xlink:href={insLogo}></use>
+                              </svg> -->
+                           </div>
+                           <span>{clickedEvent.instructor}</span>
+                       </div>
+                       <div class="class-intencity">
+                         <img src={clickedEvent.intencityicon} alt="#">
+                         <span>{clickedEvent.intensity}</span>
+                       </div>
+                     </div>
+                     <div class="class-name">
+                       <span>{clickedEvent.Name}</span>
+                     </div>
+                     <div class="class-detail">
+                        <p>{clickedEvent.description}</p>
+                     </div>
+                     <div class="card-footer-buttons">
+                       <div class="share-buttons">
+                        <div><img src={clickedEvent.favClassStatus} alt="#" data-image={clickedEvent.Id} onclick={favHandler}></div> 
+                         <!-- <div><img src={usericon} alt="#"></div> -->
+                          <!-- <svg xmlns="http://www.w3.org/2000/svg" height="40" id ="Favorite">;
+                         <use xlink:href={like}></use>
+                         </svg> -->
+                       </div>
+                       <div class="action-buttons">
+                         <div><span>{clickedEvent.time}</span></div>
+                         <div>
+                            <div class={clickedEvent.btnClass}>
+                                  <button class="orange-button" onclick={play} data-id="play-button"> {clickedEvent.btnLabel}
+                                 </button>
+                            </div>
+                         </div>
+                       </div>
+                     </div>
+                </div>
+              </div>
+                 <!--$$$$$$$$$$$$$$$$$$$ Event end $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+              </div>
+          </div>
+     </div>
+     <div if:true={showIframe} class="ifrem-container">
+      <span onclick={StartClass}>&#10006;</span>
+      <iframe src={playersrc} width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+ </div>
+ </template> 
+ <c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

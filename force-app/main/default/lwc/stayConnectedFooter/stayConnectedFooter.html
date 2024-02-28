@@ -1,0 +1,57 @@
+<template>
+	<!-- <div class="row"> -->
+	<!-- <div class="column1">
+            <img src={StayConnectedButterfly} class="butterfly-img">
+        </div> -->
+	<!-- <div class="column2">
+			<div class="footer-heading-text-div">
+				<p class="footer-heading-text">Stay Connected</p>
+			</div>
+			<div class="footer-heading-text-description">
+				<p>Get the best in yoga, fitness, and wellness delivered right to your inbox. Be the first to know about
+					new classes, stories, playlists, and more.</p>
+			</div>
+			<div class="child-row child-row-margin">
+				<div class="child-column1">
+					<label for="email">Email address*</label>
+				</div>
+				<div class="child-column2">
+					<input type="email" required id="email" class="email-input" name="email" value={email} data-id ="email" placeholder="Please Enter Your Email Address">
+                </div>
+					<div class="child-column3">
+						<div class="box-blue-button">
+							<button class="blue-button" onclick={Subscribe}>SUBSCRIBE</button>
+						</div>
+					</div>
+				</div>
+				<div class="Required-text-div">
+					<p><sup>*</sup> REQUIRED</p>
+				</div>
+			</div>
+	</div> -->
+
+	<div class="container" style={backgroundImage}>
+		<h3>Stay Connected</h3>
+		<p>
+			Get the best in yoga, fitness, and wellness delivered right to your inbox. Be the first to know about
+			new classes, stories, playlists, and more.
+		</p>
+		<div class="input-box">
+
+			<label for="email">Email address*</label>
+			<div class="input-caption">
+				<input type="email" required id="email" class="input" name="email" value={email} data-id="email"
+					placeholder="Please Enter Your Email Address" onfocusout={emailValidation}>
+				<!-- <p class="caption"><sup>*</sup> REQUIRED</p> -->
+			</div>
+
+			<div class="box-blue-button">
+				<button class="blue-button" onclick={Subscribe}>SUBSCRIBE</button>
+			</div>
+		</div>
+
+	</div>
+	<template if:true={submitted}>
+		<lightning-spinner variant="brand" alternative-text="Loading" size="large"> </lightning-spinner>
+	</template>
+</template>

@@ -1,0 +1,81 @@
+<template>
+    <c-bwps_-w-i-p_-dynamic-hero title="About Us" isdescription="true" description="Our company and mission" img-url={heroImage}></c-bwps_-w-i-p_-dynamic-hero>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="hias-text">
+                    <div class="hias-heading">{FirstTitle}</div>
+                    <div class="hias-content">
+                        <p>{FirstDescription}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class='hias-photo'>
+                    <div class="hias-photo-div">
+                        <img src={FirstImage} alt="Image Not Found">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                 <div class="about-bewell">
+                    <!-- <div class="row"> -->
+                        <!-- <template for:each={Gallery} for:item="gal"> -->
+                            <!-- <div class="col-4 Gallery-image" key={gal.count}> --> 
+                                <img src={SecondImage}>
+                            <!-- </div>
+                        </template>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="hias-text-gallery">
+                    <div class="hias-heading-gallery">{SecondTitle}</div>
+                    <div class="hias-content-gallery">
+                        <p>{SeondDescription}</p>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-slide"  style={backgroundStyle}>
+            <div  class="banner-overlay">
+                <div class="banner-content">
+                    
+                    <div class="hias-heading">How to Participate</div>
+                    <div class="hias-content participate">
+                        <p> There is no cost for specific classes. Participants sign up once a year on a calendar year basis and can take as many classes as they like. There is an annual administrative fee to register. This fee can be waived if it is prohibitive for you to participate.</p>
+                    </div>
+                    <div class="box-blue-button" onclick={Subscribe}>
+                            <button class="blue-button" >PARTICIPATE NOW</button>    
+                    </div>
+                    <!-- <h1>Here is the main heading <br>can be over two lines.</h1>
+                    <p>A little bit of space for a subheading <br>again over two lines.</p>
+                    <a href="https://www.creativescript.co.uk" class="button">I'm a button!</a> -->
+                </div>
+            </div>
+        </div> 
+        <div class="faqcontainer">
+            <div class="hias-heading">
+                <div class="faq"> FAQs</div>
+                <div class="hias-content faq">
+                    <template for:each={data} for:item="res" for:index="index">
+                        <!-- <div key={faq.Id}> -->
+                            <details id={index} ontoggle={handleDetailsToggle} key={res.id}>
+                                <summary class="summary">{res.Name}</summary>
+                                <p>{res.Answer__c}</p>
+                                <div class="q-hr-line"></div>
+                            </details>
+                            <!-- <h1 class="question"> {faq.Name}</h1>
+                            <p class="answer">{faq.Answer__c}</p>
+                            <hr>
+                        </div> -->
+                    </template>
+                </div>
+             </div>
+        </div>
+    </div>
+    <c-stay-connected-footer></c-stay-connected-footer>
+</template>

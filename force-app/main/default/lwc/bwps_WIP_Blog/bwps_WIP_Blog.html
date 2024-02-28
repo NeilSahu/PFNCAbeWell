@@ -1,0 +1,67 @@
+<template>
+    <div class="blogsPage">
+        <c-bwps_-w-i-p_-dynamic-hero title="Live well with Parkinson's" isdescription="true"
+            description="Lifestyle tips and stories from members and experts." img-url={heroImage}></c-bwps_-w-i-p_-dynamic-hero>
+       <template if:false={blogNotFornd}>
+        <div class="main-container">
+            <div class="header flex">
+                <div class="header-blog">
+                    <div class="h-blog-photo"><img src={header_blog.photo} data-img ={header_blog.id}  onclick={handleBlogClick} alt=""></div>
+                    <div class="h-blog-detail">
+                        <div class="h-blog-auther-date-box" >{header_blog.auther} &nbsp; &nbsp; | &nbsp; &nbsp;
+                            {header_blog.date}</div>
+                        <div class="h-blog-heading" data-id={header_blog.id} onclick={handleBlogClick}>{header_blog.heading}</div>
+                        <div class="h-blog-description">{header_blog.description}</div>
+                    </div>
+                </div>
+                <div class="search-catrgories-container flex-column">
+                    <div class="search-box">
+                        <input type="text" placeholder="Keyword..." onchange={handleSearchValue}>
+                        <button class="blue-button" onclick={handleSearch}>SEARCH</button>
+                    </div>
+                    <div class="categories-box">
+                        <div class="c-heading">Categories</div>
+                        <div class="categories">
+                            <div class="category" onclick={handleCategoryClick}>Warm Up</div>
+                            <div class="category" onclick={handleCategoryClick}>Exercise</div>
+                            <div class="category" onclick={handleCategoryClick}>Communication</div>
+                            <div class="category" onclick={handleCategoryClick}>Boxing</div>
+                            <div class="category" onclick={handleCategoryClick}>Dance</div>
+                            <!-- <div class="category" onclick={handleCategoryClick}>Cool Down</div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="blogs-container flex">
+                <template for:each={blogsRecord} for:item="blog">
+                    <div class="blog" key={id}>
+                        <div class="blog-photo"><img src={blog.photo} data-img ={blog.id}  onclick={handleBlogClick} alt=""></div>
+                        <div class="blog-detail">
+                            <div class="blog-auther-date-box">{blog.auther} &nbsp; &nbsp; | &nbsp; &nbsp; {blog.date}
+                            </div>
+                            <div class="blog-heading" onclick={handleBlogClick} data-id={blog.id}>{blog.heading}</div>
+                            <div class="blog-description" data-des ={blog.id}  onclick={handleBlogClick} >{blog.description}</div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <!-- <div class="pagination-container flex" if:true={isVisiblePaginaton}>
+                <div class="next-btn page flex" onclick={prevClickHandler} if:true={isPrev}>&lt;</div>
+                <template for:each={currentPages} for:item="page">
+                    <div class="page flex page-number" key={page.page_number} onclick={pageClickHandler}
+                        data-value={page.page_number}>{page.page_number}</div>
+                </template>
+                <div class="next-btn page flex" onclick={nextClickHandler} if:true={isNext}>&gt;</div>
+            </div> -->
+            <template if:true={showPaginationComponent}>
+                <c-bwps-_-w-i-p-_-pagination-child totalrecords={totalData} page-size={pageSize} onpagination={handlePagination}></c-bwps-_-w-i-p-_-pagination-child>
+            </template>
+        </div>
+       </template>
+       <div if:true={blogNotFornd} class="blogsnotfound"><h1>BLOGS NOT FOUND</h1></div>
+    </div>
+    <template if:false={showBlog}>
+        <c-bwps_-w-i-p_-blog-post-view blog-id={blogId} blog-heading={blogHeading} blog-date={blogDate} blog-author={blogAuthor} blog-image={blogImage} blog-info={blogInfo} onbackclick={handleBackClick}></c-bwps_-w-i-p_-blog-post-view> 
+        <c-bwps_-w-i-p_-blogs-recent-updates recent-updates-blogs={recentUpdatesBlogs} onrecentblogclick={handleRecentBlogClick}></c-bwps_-w-i-p_-blogs-recent-updates>
+    </template>
+</template>

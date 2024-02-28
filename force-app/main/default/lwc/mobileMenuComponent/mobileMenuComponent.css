@@ -1,0 +1,68 @@
+@media only screen and (max-width:768px ){
+    .headerContainer{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .homeClass{
+        color: #0aa7e6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttonInnerClass{
+        border: 1px solid white;
+        background-color: rgb(68,139,167);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttonOutterClass{
+        border: 1px solid rgb(68,139,167);
+        padding: 1px;
+        background-color: rgb(68,139,167);
+    }
+    .btnClass{
+        background-color: rgb(68,139,167);
+        border: none;
+        color: white;
+        width: 16vw;
+        max-height: 4vw;
+        font-size: 2.5vw;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .menuContainer{
+        display: flex;
+        justify-content: space-around;
+        color: #0aa7e6;
+        font-weight: 600;
+        font-size: 3vw;
+    }
+    .menuInnerContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 12vw 0vw;
+    }
+    .searchContainer{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 4%;
+    }
+    .searchInnerContainer{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 6vw;
+    }
+    .searchInputClass{
+        border-radius: 20px;
+        border: none;
+        text-align: center;
+        box-shadow: 0px 6px 10px 1px rgb(0 0 0 / 15%) inset;
+        height: 7vw;
+        width: 60vw;
+    }
+}

@@ -1,0 +1,93 @@
+<template>
+
+	<div class="container" style={backgroundStyle}>
+		<div class="main educational-resource-box">
+			<!-- <div class="get-started-text-box" style={backgroundStyle}>
+                <img src={bgimg} alt="bee">
+            </div> -->
+			<h2>Educational Resources</h2>
+
+			<div class="card-box resource-card-box">
+				<div class="card-box story-card-box">
+					<template for:each={EduResources} for:item="res">
+						<div class="card resource-card" key={res.Id}>
+							<img src={res.ResourceImage} alt="">
+							<h5 onclick={handleClick} data-id={res.Id}>
+								{res.Name}
+							</h5>
+							<!-- <p>{res.Description__c}</p> -->
+						</div>
+					</template>
+				</div>
+				<!-- <div class="card resource-card">
+                    <img src={img2} alt="">
+                    <h5>LESSONS FROM BEING
+                        THE CHILD OF A
+                        PARENT WITH...
+                        </h5>
+                </div>
+                <div class="card resource-card">
+                    <img src={img1} alt="">
+                    <h5>6 TIPS FOR
+                        EXERCISING AT HOME
+                        WITH PARKINSON'S
+                        </h5>
+                </div>
+                <div class="card resource-card">
+                    <img src={img2} alt="">
+                    <h5>WALK OFF
+                        PARKINSON'S VIRTUAL
+                        </h5>
+                </div> -->
+			</div>
+
+			<!-- <div class="get-started-image-box">
+                    <img src={bgimg} alt="img">
+            </div> -->
+            </div>
+		<div class="main stories-box">
+
+				<h2>Stories From Our Community</h2>
+
+				<div class="card-box story-card-box">
+
+					<template for:each={stories} for:item="res">
+						<div class="card story-card" key={res.Id}>
+							<img src={res.ResourceImage} alt="">
+							<h5 onclick={handleClick} data-id={res.Id}>
+								{res.Name}
+							</h5>
+							<p>{res.Description__c}</p>
+						</div>
+					</template>
+
+					<!-- <div class="card story-card">
+                        <img src={img1} alt="">
+                        <h5>
+                            6 TIPS FOR EXERCISING AT
+                            HOME WITH PARKINSON'S
+                        </h5>
+                        <p>As budget cuts force schools to
+                            eliminate programs in the arts,
+                            children's music programs are
+                            increasingly rare.....</p>
+                    </div>
+                
+                    <div class="card story-card">
+                        <img src={img2} alt="">
+                        <h5>
+                            LESSONS FROM BEING THE
+                            CHILD OF A PARENT WITH
+                            PARKINSON'S
+                        </h5>
+                        <p>Lorem Ipsum has been the industry's
+                            standard dummy text ever since the
+                            1500s, when an unknown printer took...</p>
+                    </div> -->
+
+				</div>
+			
+
+		</div>
+	</div>
+</template>

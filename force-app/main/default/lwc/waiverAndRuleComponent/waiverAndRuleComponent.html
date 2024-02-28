@@ -1,0 +1,46 @@
+<template>
+	<div class="mainContainer">
+		<h1 class="headerContainer">Waiver & Rules of Participation</h1>
+
+		<div class="bodyContainer">
+			<div class="mainBodyContainer">
+				<div class="firstContainer">
+					<div class="signedContainer">
+						<div class="signedClass">
+							<span>Date Signed</span>
+						</div>
+						<!-- line -->
+						<!-- <div class="signedLineClass"></div> -->
+					</div>
+					<div class="dateContainer">
+						<div class="dateClass">
+							<!-- <span>JULY 21, 2021</span> -->
+							<span>{signDate}</span>
+						</div>
+						<!-- line -->
+						<div class="dateLineClass"></div>
+					</div>
+					<div class="downloadContainer">
+						<!-- <div>
+							<lightning-icon variant="warning" icon-name="utility:download"
+								alternative-text="Utility Download" title="Download" class="downloadIconClass"
+								onclick={downloadWavierPdfMethod}></lightning-icon>
+						</div> -->
+						<div class="downloadClass">
+							<a href={WaiverPdf} download="">
+								<span>DOWNLOAD PDF</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="textContainer">
+					<lightning-formatted-rich-text style="font-weight: 600;font-size: 1.1rem;" value={waiverData} class="new" disable-linkify=true>
+					</lightning-formatted-rich-text>
+				</div>
+			</div>
+		</div>
+	</div>
+	<template if:true={loading}>
+        <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+    </template>
+</template>

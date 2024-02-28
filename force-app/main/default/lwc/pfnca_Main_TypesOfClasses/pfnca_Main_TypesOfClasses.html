@@ -1,0 +1,91 @@
+<template>
+    <!-- <c-bwps_-w-i-p_-dynamic-hero title="Types of Classes" img-url={typeofclass} isbutton="true" buttontext="GET GUEST PASS">
+	</c-bwps_-w-i-p_-dynamic-hero> -->
+
+	<c-pfnca_-main_-dynamic-hero title="Types of Classes" img-url={typeofclass} isbutton="true" buttontext="GET GUEST PASS"></c-pfnca_-main_-dynamic-hero>
+
+
+    <div class="container">
+        <div class="main">
+            <template for:each={classTypeData} for:item="type">
+                <div class="class-type" key={type.Id}>
+                    <div class="icon-box">
+                        <div>
+                            <!-- <img src={exerciseIcon} alt={exerciseIcon}> -->
+                            <img src={type.logoimgLink} alt="noimage">
+                        </div>
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h2>{type.Name}</h2>
+                        <p>
+                            {type.Description__c}
+                        </p>
+                        <div class="button-box">
+                            <a href={liveClassScheduleLink}>
+                                <button>LIVE CLASS SCHEDULE</button>
+                            </a>
+                            <a href={type.Link}>
+                                <button>CLASSES ON DEMAND</button>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <!-- <template for:each={classTypeData} for:item="type">
+                <div class="class-type" key={type.id}>
+                    <div class="icon-box">
+                        <div>
+                            <img src={type.iconSrc} alt={type.iconSrc}>
+                        </div>
+                        
+                    </div>
+                    <div class="detail-box">
+                        <h2>{type.heading}</h2>
+                        <p>
+                            {type.description}
+                        </p>
+                        <div class="button-box">
+                            <a href={liveClassScheduleLink}>
+                                <button>LIVE CLASS SCHEDULE</button>
+                            </a>
+                            <a href={classOnDemandLink}>
+                                <button>CLASSES ON DEMAND</button>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </template> -->
+
+            <div class="intensity-levels">
+                
+                <table>
+                    <tr>
+                        <td>    </td>
+                        <td><h2>Class Intensity Levels</h2></td>
+                    </tr>
+                    <!-- <tr>
+                        <td><h3>Class Intensity</h3></td>
+                    </tr> -->
+                    <tr>
+                        <td class="intensitycontainer"><img src={signalIcon1} alt={signalIcon1}> <div class="intensity">Low / Seated </div></td>
+                        <td class="intensitydesc">Perfect for whatever your level of fitness is and suitable for all abilities</td>
+                    </tr>
+                    <tr>
+                        <td class="intensitycontainer"><img src={signalIcon2} alt={signalIcon2}><div class="intensity"> Medium </div></td>
+                        <td class="intensitydesc">Accessible for all abilities but may be difficult for people new to exercise</td>
+                    </tr>
+                    <tr>
+                        <td class="intensitycontainer"><img src={signalIcon3} alt={signalIcon3}><div class="intensity"> High / Active </div></td>
+                        <td class="intensitydesc">Can be modified all abilities and is for those who enjoy a challenge</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <c-bwps_-w-i-p_-review-slider></c-bwps_-w-i-p_-review-slider>
+    <c-stay-connected-footer></c-stay-connected-footer>
+</template>

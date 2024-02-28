@@ -1,0 +1,146 @@
+<!--
+* @author     	 Cyntexa Labs
+* @description	 Month component with current date Use in myScheduleComp  as child. 
+* @date       	 09-10-2022      	
+*-->
+
+
+
+<template>
+  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+  <!-- <button onclick={getMonthData}>onclick</button> -->
+  <template if:true={showCalendar}>
+    <div class="container" style="margin-top:30px">
+      <div class="calendar" data-id="calenderparentCard">
+        <ul class="day">
+          <li>SUN</li>
+          <li>MON</li>
+          <li>TUE</li>
+          <li>WED</li>
+          <li>THU</li>
+          <li>FRI</li>
+          <li>SAT</li>
+        </ul>
+        <div class="month month-days" data-id="month-days">
+          <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+          </template>
+          <template for:each={fullmonth} for:item="month">
+            <div key={month.key}>
+              <template if:false={month.istoday}>
+                <div class={month.calandarMonth}>
+                  <div class="date-date">
+                    <span>{month.value}</span>
+                  </div>
+                  <template if:true={month.mobileView}>
+                    <div class="events">
+                      <template for:each={month.eventdata} for:item="eventItem">
+                        <div style="width:100%;display:flex" key={eventItem}>
+                          <div class="event" data-id={eventItem.Id} onclick={getEvent}>{eventItem.Name}</div>
+                        </div>
+                      </template>
+                      <div if:true={month.showButton} class="moreEventsList">
+                        <button onclick={viewMoreEventItem} data-key={month.data_id}>
+                          <div class="arrowdown" data-arr={month.data_id}></div>
+                        </button>
+                        <div class="morItemdiv" data-id={month.data_id} style="display: none;">
+                          <ul>
+                            <template for:each={month.moreEvents} for:item="evet">
+                              <li key={evet} data-id={evet.Id} onclick={getEvent}>{evet.Name}</li>
+                            </template>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                  <template if:false={month.mobileView}>
+                    <div class="events">
+                      <template for:each={month.eventdata} for:item="eventItem">
+                        <div style="width:100%;display:flex" key={eventItem}>
+                          <div class="event" data-id={eventItem.Id} onclick={getEvent}></div>
+                        </div>
+                      </template>
+                    </div>
+                  </template>
+                </div>
+              </template>
+            </div>
+            <div key={month.key}>
+              <template if:true={month.istoday}>
+                <div class="todayDate">
+                  <div class="tody-p">
+                    <div class="triangle-right"></div>
+                    <span>{month.value}</span>
+                  </div>
+                  <div class="events">
+                    <template for:each={month.eventdata} for:item="eventItem">
+                      <div style="width:100%;display:flex" key={eventItem}>
+                        <div class="event" data-id={eventItem.Id} onclick={getEvent}>{eventItem.Name}</div>
+                      </div>
+                    </template>
+                    <div if:true={month.showButton} class="moreEventsList">
+                      <button onclick={viewMoreEventItem} data-key={month.data_id}>
+                        <div class="arrowdown"></div>
+                      </button>
+                      <div class="morItemdiv" data-id={month.data_id} style="display: none;">
+                        <ul>
+                          <template for:each={month.moreEvents} for:item="evet">
+                            <li key={evet} data-id={evet.Id} onclick={getEvent}>{evet.Name}</li>
+                          </template>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </template>
+        </div>
+        <div class="eventCard" data-id="eventCardData">
+          <div class="event-card-parent">
+            <div class="imgContainer" style={backgroundStyle}>
+              <div class="hide-button" onclick={hideEvent}><span>X</span></div>
+              <!-- <div class="time-details"> <span>{clickedEvent.time}</span></div> -->
+            </div>
+            <!-- <div class="instructor-info-Container">
+                   <div class="instructor-info">
+                      <div><img src={usericon} alt="#"></div>
+                       <span>{clickedEvent.instructor}</span>
+                   </div>
+                   <div class="class-intencity">
+                     <img src={clickedEvent.intencityicon} alt="#">
+                     <span>{clickedEvent.intensity}</span>
+                   </div>
+                 </div> -->
+            <div class="class-name">
+              <span>{clickedEvent.Name}</span>
+            </div>
+            <!-- <div class="class-detail">
+                    <p>{clickedEvent.description}</p>
+                 </div> -->
+            <div class="class-intencity">
+              <img src={clickedEvent.intencityicon} alt="#">
+              <span>{clickedEvent.intensity}</span>
+            </div>
+            <div class="card-footer-buttons">
+              <div class="share-buttons">
+                <div><img src={usericon} alt="#" onclick={opensendEmail}></div>
+              </div>
+              <div class="action-buttons">
+                <!-- <div style="font-size: 0.8rem;"><span>{clickedEvent.time}</span></div> -->
+                <div>
+                  <div class="box-orange-button">
+                    <button class="orange-button" onclick={takeAttendenceMethod} data-id="play-button"
+                      data-key={clickedEvent.Id}> VIEW CLASS
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+  <c-bwps_-Share-Blue-Theam-U-I sendemailui={showEmailUI}></c-bwps_-Share-Blue-Theam-U-I>
+</template>

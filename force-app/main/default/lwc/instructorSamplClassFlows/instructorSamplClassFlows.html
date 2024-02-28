@@ -1,0 +1,68 @@
+<template>
+	<div class="container1">
+		<div class="Heading">
+			<h1>Sample Class Flows</h1>
+		</div>
+
+		<div class="DivForGrid">
+			<div class="slds-grid slds-wrap">
+				<template if:true={showAllData}>
+					<template for:each={response} for:item="res">
+
+						<div key={res.Id} class="slds-col slds-size_1-of-4 container">
+							<div class="container-box">
+
+								<div class="Img-parent">
+									<img src={myImage} class="container-box-img">
+								</div>
+
+								<div>
+									<p class="container-box-Quizes">{res.Name}</p>
+								</div>
+								<div>
+									<p class="container-box-Date">{res.Date__c}</p>
+								</div>
+								<div>
+									<p style="font-size: 18px;color: black;opacity: 0.7;line-height: 24px;">
+										{res.Description__c}</p>
+								</div>
+							</div>
+
+						</div>
+
+					</template>
+				</template>
+				<template if:false={showAllData}>
+					<template if:false={filteredArr.length}>
+						<p class="blank-block">No Records Found </p>
+					</template>
+					<template if:true={filteredArr}>
+						<template for:each={filteredArr} for:item="res">
+							<div key={res.Id} class="slds-col slds-size_1-of-4 container">
+								<div class="container-box">
+
+									<div class="Img-parent">
+										<img src={myImage} class="container-box-img">
+									</div>
+
+									<div>
+										<h1 class="container-box-Quizes">{res.Name}</h1>
+									</div>
+									<div>
+										<p class="container-box-Date">{res.Date__c}</p>
+									</div>
+									<div>
+										<p>{res.Description__c}</p>
+									</div>
+								</div>
+
+							</div>
+
+						</template>
+					</template>
+				</template>
+			</div>
+		</div>
+	</div>
+
+</template>

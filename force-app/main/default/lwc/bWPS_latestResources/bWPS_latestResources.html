@@ -1,0 +1,85 @@
+<template>
+	<div class="container">
+		<div class="Block1">
+			<template for:each={Arr} for:item="obj">
+				<div key={obj.Id}>
+					<div class="sub-heading">LATEST RESOURCE</div>
+					<div class="img-div">
+						<iframe src={obj.Link} class="img-val" frameborder="0" allow="autoplay; fullscreen"
+							allowfullscreen></iframe>
+					</div>
+					<div class="date1">{splitUpdatedDate}</div>
+					<div class="ResourceText">{obj.Name}</div>
+					<div class="ResourceText1">{obj.Description}
+					</div>
+				</div>
+			</template>
+		</div>
+		<div class="Block2">
+
+			<div class="sub-headingSearch">SEARCH RESOURCES</div>
+			<div class="searchInputdiv">
+
+				<div class="searchInputBox">
+					<input type="email" id="Email" data-inpsearch="inpsrch" value={inpsrch} name="Email"
+						class="searchInput" placeholder="Keyword..." required onchange={changeSearchKeyword}>
+				</div>
+				<div class="SearchBtnDiv">
+					<button type="button" class="Searchbutton" onclick={buttonSearch}
+						data-search="srchbtn">SEARCH</button>
+				</div>
+
+
+
+			</div>
+			<div class="categories">CATEGORIES</div>
+			<div class="searchBtnBox">
+				<div class="searchdiv">
+					<div>
+						<p class="filter-btn" data-id="Boxing" onclick={handleClick}>Boxing</p>
+					</div>
+					<div>
+						<p class="filter-btn" data-id="dance" onclick={handleClick}>Dance</p>
+					</div>
+					<div>
+						<p class="filter-btn" data-id="Warm Up" onclick={handleClick}>Warm Up</p>
+					</div>
+				</div>
+				<div class="searchdiv">
+					<div>
+						<p class="filter-btn" data-id="Excercise" onclick={handleClick}>Excercise</p>
+					</div>
+					<div>
+						<p class="filter-btn" data-id="Communication" onclick={handleClick}>Communication </p>
+					</div>
+				</div>
+				<div class="searchdiv">
+					<div>
+						<p class="filter-btn" data-id="Class Flows" onclick={handleClick}>Class Flows</p>
+					</div>
+					<div>
+						<p class="filter-btn" data-id="Quizes" onclick={handleClick}>Quizes</p>
+					</div>
+					<div>
+						<p class="filter-btn" data-id="Equipment" onclick={handleClick}>Equipment</p>
+					</div>
+				</div>
+				<div class="searchdiv">
+					<div>
+						<p class="filter-btn" data-id="Video" onclick={handleClick}>Video</p>
+					</div>
+					<div>
+						<p class="filter-btn" data-id="Students" onclick={handleClick}>Students</p>
+					</div>
+					<div>
+						<p class="filter-btn" data-id="Winter Excercises" onclick={handleClick}>Winter Excercises</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<c-instructor-videos search-keyword={searchKeyword}></c-instructor-videos>
+	<c-instructor-sampl-class-flows search-keyword={searchKeyword}></c-instructor-sampl-class-flows>
+
+</template>

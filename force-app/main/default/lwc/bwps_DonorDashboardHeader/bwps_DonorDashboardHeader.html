@@ -1,0 +1,113 @@
+<template>
+	<div class="nav shadow-bottom">
+		<!-- <input type="checkbox" id="nav-check" class="nav-check"> -->
+		<div class="header-logo">
+			<!-- <a href="/PFNCADNA/s/donorhomepage"><img src={Header_logo} height="70" width="140" alt="LOGO"> </a> -->
+			<a onclick={navigateToDashboard}><img src={Header_logo} height="70" width="140" alt="LOGO"> </a>
+				<!-- <a href="/PFNCADNA/s/donordashboard"><img src={Header_logo} height="70" width="140" alt="LOGO"> </a> -->
+		</div>
+		<!-- <div class="nav-btn">
+			<label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+		</div> -->
+		<div class="nav-links ">
+			<!-- <a href="/PFNCADNA/s/donordashboard" class="leftlink resp-header-link  homeNav" target="_self">HOMEPAGE</a> -->
+			<div class="profilecontainer">
+				<!-- <a class="rightlink" href="/PFNCADNA/s/bwps-donorprofile" style="color: rgb(0, 140, 167); padding-right: 2rem;"> -->
+				<div onclick={showProfileMenuMethod}>
+					<div class="leftlink">
+						<img src={profileImg} height="26px" width="35px" alt="" style="max-width: 100%; height: auto;margin-right: 5px;padding: 2px;border-radius: 18px;"></div>
+						<div class="rightlink">
+							<!-- {userFirstName} -->
+							Profile
+						</div>
+					</div>
+					<!-- </a> -->
+					<!-- <div class="buttonContainer">
+					<div class="buttonOutterClass">
+						<a href={logoutLink}>
+							<div class="buttonInnerClass">
+								<button class="btnClass">LOG OUT</button>
+							</div>
+						</a>
+					</div>
+				</div> -->
+				</div>
+
+				<!-- <a href={logoutLink} class="rightlink">
+				<div class="box-blue-button">
+					<button class="blue-button">LOGOUT</button>
+				</div>
+			</a> -->
+				<!-- new changes in the component of donor dashboard -->
+				<a onclick={navigateToDashboard} class="rightlink dashboard-link" data-id="dis-btn-link">
+					<div class="box-blue-button" data-id="MyDBBtnBox">
+						<button class="blue-button"  data-id="MyDBBtn">MY DASHBOARD</button>
+					</div>
+				</a>
+				<!-- <a href="/PFNCADNA/s/donordashboard" class="rightlink" data-id="dis-btn-link">
+				<div class="box-blue-button" data-id="MyDBBtnBox">
+					<button class="blue-button"  data-id="MyDBBtn">MY DASHBOARD</button>
+				</div>
+			</a> -->
+				<a href="/PFNCADNA/s/donationpage" class="rightlink donate-link" data-id="dis-btn-link-2">
+					<div class="box-blue-button" data-id="MyDBBtnBox-2">
+						<button class="blue-button" data-id="MyDBBtn-2">DONATE</button>
+					</div>
+				</a>
+			</div>
+			<div if:true={showProfileMenu} class="mainProfileMenuContainerBox" onclick={showProfileMenuMethod}>
+
+				<div if:true={showProfileMenu} class="mainProfileMenuContainer">
+					<div class="mainContainer">
+						<div class="profileContainer">
+							<div class="headerContainer">
+								<div class="profileImage"><img src={profileImg}></div>
+									<div class="nameClass"><span>{userName}</span></div>
+								</div>
+
+								<div>
+									<div class="profileItem">
+										<a href="/PFNCADNA/s/bwps-donorprofile"
+											style="color: rgb(0, 140, 167); padding-right: 2rem;">
+											<span class="menuItemClass" data-name="your profile">Your Profile</span>
+										</a>
+									</div>
+
+								</div>
+								<div>
+									<div class="profileItem m-dashboard-link">
+										<a href="/PFNCADNA/s/donordashboard"
+											style="color: rgb(0, 140, 167); padding-right: 2rem;">
+											<span class="menuItemClass " data-name="My dashboard">My Dashboard</span>
+										</a>
+									</div>
+
+								</div>
+								<div>
+									<div class="profileItem m-donate-link">
+										<a href="/PFNCADNA/s/donationpage"
+											style="color: rgb(0, 140, 167); padding-right: 2rem;">
+											<span class="menuItemClass " data-name="Donate">Donate</span>
+										</a>
+									</div>
+
+								</div>
+								<div class="buttonContainer">
+									<div class="buttonOutterClass">
+										<div class="buttonInnerClass">
+											<a href={logoutLink}>
+												<button class="btnClass">LOG OUT</button>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</template>

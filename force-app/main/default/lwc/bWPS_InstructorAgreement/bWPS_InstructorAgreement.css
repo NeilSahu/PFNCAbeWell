@@ -1,0 +1,83 @@
+.container {
+    max-width: 700px;
+    padding: 15px;
+    margin: 8rem auto 4rem;
+}
+
+.button {
+    background-color: #008da8;
+    border: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .75rem 1rem;
+    text-align: center;
+    border: 1px solid white;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    height: 3rem;
+    margin-top: 22px;
+    width: 6rem;
+}
+
+.button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.button:focus-visible {
+    box-shadow: none;
+}
+
+.searchInput {
+    margin: 20px 13px 20px 0px;
+    /* margin-left: 40px; */
+    width: 95%;
+    height: 3rem;
+    /* padding: 20px 13px 20px 0px;*/
+}
+
+.inpcls {
+    /*display: flex; */
+    /* justify-content: left; */
+    width: 73%;
+}
+
+.search-size {
+    display: flex;
+    width: 100% !important;
+}
+
+.searchdiv {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    width: 31rem !important;
+    margin: 0rem 6rem;
+}
+
+.agreement-data {}
+
+.heading {
+    font-size: 40px;
+    font-weight: 900;
+    padding-bottom: 25px;
+}
+
+.signedOn {
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+.your-name {
+    font-weight: 600;
+}

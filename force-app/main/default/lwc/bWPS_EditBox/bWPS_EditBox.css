@@ -1,0 +1,45 @@
+.form-overlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 200 !important;
+    cursor: default;
+  }
+  .overlay-on{
+    display:block !important;
+  }
+  .overlay-off{
+    display:none !important;
+  }
+  .card-placement{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
+  .card {
+    background-color: white;
+    width: 25rem;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 8px 8px 16px 2px #1b3e59;
+    z-index: 3;
+    cursor: default;
+
+    }.cross{
+    font-size: 1rem;
+    color: lightgrey;
+    text-align: right;
+    padding: 5px 15px;
+}
+.note-icon{
+    width: 2rem;
+    height: 2rem;
+}

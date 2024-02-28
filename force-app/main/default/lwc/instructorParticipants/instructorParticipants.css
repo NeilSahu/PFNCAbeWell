@@ -1,0 +1,531 @@
+.MasterDiv {
+    padding: 1rem 3rem;
+}
+
+.SearchBoxDiv {
+	height: 50px;
+	width: 100%;
+	padding: 1rem 0rem 6rem 0rem;
+}
+
+.SearchBoxDiv1 {
+	height: 50px;
+}
+
+.SearchBoxDiv2 {
+	height: 50px;
+}
+
+.SearchBoxDiv2 .SearchBox {
+	display: flex;
+}
+
+.SearchBoxDiv2 .SearchBox .search {
+	width: 85%;
+	margin: 0% 4% 0% 0%;
+}
+
+.SearchBoxDiv2 .SearchBox .search input {
+	width: 100%;
+	border-radius: 10px;
+	border: 0px;
+	background-color: #f5f7f4;
+	height: 33px;
+}
+.filterInstructorDiv {
+	height: auto;
+}
+.filterDivInnerDiv h1{
+    width: 29%;
+    font-size: 22px;
+    font-weight: bold;
+    margin-left: 6%;
+}
+.filterDiv .filterDivInnerDiv {
+	/* width: max-content; */
+	margin: 4rem auto;
+}
+
+.filterDiv .filterDivInnerDiv .filter {
+	display: flex;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.filterDiv .filterDivInnerDiv .filter .Action {
+	padding-inline: 1rem;
+	text-align: center;
+	/* width: 50%; */
+	margin: 4% 0% 4% 0%;
+	pointer-events: none;
+}
+
+.filterDiv .filterDivInnerDiv .filter .Action   img{
+	width: 2rem;
+	pointer-events: none;
+}
+
+
+.filterDiv .filterDivInnerDiv .filter .ActionName {
+	/* width: fit-content; */
+	color: #008ba7;
+	/* padding: 1.5rem 0 0 1.5rem; */
+	font-size: 1rem;
+	margin: 0.5rem;
+	pointer-events: none;
+}
+.filterDiv .filterDivInnerDiv .filter .ActionName p {
+	pointer-events: none;
+}
+
+.pagination-Container{
+	width: fit-content;
+	margin:0px auto;
+}
+.custom-box{
+	text-align: left !important;
+}
+.row::after {
+	content: "";
+	clear: both !important;
+	display: table !important;
+}
+
+[class*="col-"] {
+	float: left;
+	padding: 0px 0px;
+}
+
+/* For Desktops: */
+.col-1 {
+	width: 8.33%;
+}
+
+.col-2 {
+	width: 16.66%;
+}
+
+.col-3 {
+	width: 25%;
+}
+
+.col-4 {
+	width: 33.33%;
+}
+
+.col-5 {
+	width: 41.66%;
+}
+
+.col-6 {
+	width: 50%;
+}
+
+.col-7 {
+	width: 58.33%;
+}
+
+.col-8 {
+	width: 66.66%;
+}
+
+.col-9 {
+	width: 75%;
+}
+
+.col-10 {
+	width: 83.33%;
+}
+
+.col-11 {
+	width: 91.66%;
+}
+
+.col-12 {
+	width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+
+	/* For mobile phones: */
+	[class*="col-"] {
+		width: 100%;
+	}
+}
+
+.container {
+	margin: 2% auto;
+	overflow: hidden;
+	background-color: #f5f7f4;
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 15px;
+	border-radius: 10px;
+	width: auto;
+}
+
+.layoutElementInstructor {
+	width: 33.33%;
+	padding: 1rem;
+}
+
+.InstructorData {
+	width: 75%;
+	max-height: 90%;
+}
+
+.inst-img {
+	height: 100%;
+    width: fit-content;
+    /* padding: 2% 1% 2% 1%; */
+    border: 3px solid white;
+    box-shadow: 0px 1px 8px 0px #00000080;
+}
+
+.name-exp {
+	width: 93%;
+	margin-bottom: 7%;
+	padding: 5% 0% 0% 0%;
+	margin-top: -9%;
+}
+
+.InstructorData .name-exp h1 {
+	font-size: 1.1rem;
+	color: #008ba7;
+	font-weight: bolder;
+}
+
+.InstructorData .name-exp p {
+	font-size: 1rem;
+}
+
+.InstructorData .name-exp img {
+	margin-top: 3%;
+}
+
+.box-blue-button {
+	background-color: #008CA7;
+	color: white;
+	width: inherit;
+	height: auto;
+	padding: 0.2rem;
+}
+
+.blue-button {
+	margin: auto;
+	background-color: #008CA7;
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.filterButton{
+	display: none;
+}
+.showMobileFilterButton{
+	display:block !important;
+	background-image:url('');
+}
+
+.search input{
+	border-radius: 14px;
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 4rem;
+    /* background-image: url(/s/webruntime/org-asset/f2fdd560c6/resource/0813C000000BFIc);  this will be taken from js*/
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    background-position-x: 2rem;
+    background-position-y: center;
+    box-shadow: inset 0px 7px 14px -11px #00000096;
+}
+
+
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px) {}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+	.layoutElementInstructor {
+		width: 33.33%;
+		padding: 0.8rem;
+	}
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+	.MasterDiv {
+		padding: 1rem 2rem;
+	}
+	
+	.filterDiv .filterDivInnerDiv {
+		/* width: max-content; */
+		margin: 0px auto;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+
+	.filterDiv .filterDivInnerDiv .filter {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		/* align-items: center; */
+		/* justify-content: center; */
+		justify-items: center;
+		align-content: center;
+	}
+
+	.filterDiv .filterDivInnerDiv .filter .Action {
+		padding-inline: 0rem; 
+    	text-align: center;
+    	margin: 0% 0% 0% 0%;
+		display: flex;
+		align-items: center;
+		height: 4rem;
+	}
+
+	.filterDiv .filterDivInnerDiv .filter .Action   img{
+		width: 3rem;
+	}
+
+	.filterDiv .filterDivInnerDiv .filter .ActionName {
+		
+		color: #008ba7;
+		padding: 0;
+		font-size: 1rem;
+		
+		margin: 1rem 0 1rem 0;
+		
+	}
+
+	
+	.layoutElementInstructor {
+		width: 30%;
+		padding: 0.6rem;
+	}
+
+	.InstructorData {
+		width: auto;
+    	max-height: 20rem;
+		margin-bottom: 4rem;
+	}
+
+	.inst-img img{
+		width: 12.2rem;
+		object-fit: cover;
+	}
+}
+
+@media only screen and (max-width: 480px) and (min-width: 320px) {
+
+	.MasterDiv {
+		padding: 1rem 1rem;
+	}
+
+	.filterButton {
+		display:block;
+		background-color: white;
+		color: #008ba7;
+		padding: 1rem;
+		font-size: 1.1rem;
+		font-weight: bold;
+		border: none;
+		cursor: pointer;
+	}
+
+	.filterButton  img {
+		width: 0.8rem;
+		margin-right: 0.8rem;
+	}
+	  
+	/* .filterButton:hover, .filterButton:focus {
+		background-color: #008ba7;
+	} */
+
+	.filterDiv{
+		display: none;
+		
+	}
+
+	.filterDiv .filterDivInnerDiv {
+		margin: 1rem 1rem 1rem 0rem;
+		display: flex;
+		width: 75%;
+		flex-direction: row;
+		flex-wrap: wrap;
+		background-color: #f5f7f4;
+		justify-content: flex-start;
+		padding: 2rem;
+		border-radius: 1rem;
+		align-content: flex-start;
+		align-items: baseline;
+		position: absolute;
+	}
+
+	.filterDiv .filterDivInnerDiv .filter {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		align-items: center;
+		padding-top: 1rem;
+	}
+	.filterDiv .filterDivInnerDiv .filter:hover,
+	.filterDiv .filterDivInnerDiv .filter:focus {
+		border: 1px solid #008ba7;
+	}
+
+	.filterDiv .filterDivInnerDiv .filter .Action {
+		padding-left: 0rem; 
+    	
+    	margin: 0% 0% 0% 0%;
+		text-align: center;
+	}
+	
+	.filterDiv .filterDivInnerDiv .filter .ActionName {
+		
+		color: #008ba7;
+		padding: 0;
+		font-size: 1rem;
+		margin-block: 0.5rem;
+		
+	}
+	.layoutElementInstructor{
+		width: 47%;
+		padding: 0.8rem;
+	}
+
+	.InstructorDiv{
+		margin-top: 2rem;
+	}
+
+	.InstructorData{
+		width: auto;
+    	max-height: 90%;
+	}
+
+	.SearchBoxDiv2 .SearchBox{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		position: relative;
+		top: 1rem;
+	}
+
+	.SearchBoxDiv2 .SearchBox .search {
+		width: 100%;
+		margin: 0% 0% 2rem 0%;
+	}
+	
+	.blue-button {
+		width: 7rem;
+		height: 2.5rem;
+	}
+	
+	
+}
+
+@media only screen and (max-width: 320px) {
+	.MasterDiv {
+		padding: 1rem 0rem;
+	}
+
+	.filterButton {
+		display:block;
+		background-color: white;
+		color: #008ba7;
+		padding: 1rem;
+		font-size: 1.1rem;
+		font-weight: bold;
+		border: none;
+		cursor: pointer;
+	}
+
+	.filterButton  img {
+		width: 0.8rem;
+		margin-right: 0.8rem;
+	}
+	  
+	/* .filterButton:hover, .filterButton:focus {
+		background-color: #008ba7;
+	} */
+
+	.filterDiv{
+		display: none;
+		
+	}
+
+	.filterDiv .filterDivInnerDiv {
+		margin: 1rem 1rem 1rem 0rem;
+		display: flex;
+		width: 75%;
+		flex-direction: row;
+		flex-wrap: wrap;
+		background-color: #f5f7f4;
+		justify-content: flex-start;
+		padding: 2rem;
+		border-radius: 1rem;
+		align-content: flex-start;
+		align-items: baseline;
+		position: absolute;
+	}
+
+	.filterDiv .filterDivInnerDiv .filter {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		align-items: center;
+		padding-top: 1rem;
+	}
+	.filterDiv .filterDivInnerDiv .filter:hover,
+	.filterDiv .filterDivInnerDiv .filter:focus {
+		border: 1px solid #008ba7;
+	}
+
+	.filterDiv .filterDivInnerDiv .filter .Action {
+		padding-left: 0rem; 
+    	
+    	margin: 0% 0% 0% 0%;
+		text-align: center;
+	}
+	
+	.filterDiv .filterDivInnerDiv .filter .ActionName {
+		
+		color: #008ba7;
+		padding: 0;
+		font-size: 1rem;
+		margin-block: 0.5rem;
+		
+	}
+	.layoutElementInstructor{
+		width: 47%;
+	}
+
+	.InstructorDiv{
+		margin-top: 2rem;
+	}
+
+	.InstructorData{
+		width: auto;
+    	max-height: 90%;
+	}
+
+	.SearchBoxDiv2 .SearchBox{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrapxxx;
+		justify-content: flex-end;
+		position: relative;
+		top: 1rem;
+	}
+
+	.SearchBoxDiv2 .SearchBox .search {
+		width: 100%;
+		margin: 0% 0% 2rem 0%;
+	}
+	
+	.blue-button {
+		width: 7rem;
+		height: 2.5rem;
+	}
+	
+	
+}

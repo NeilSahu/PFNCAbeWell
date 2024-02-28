@@ -1,0 +1,173 @@
+.dummy{
+	color : black;
+}
+
+.containe{
+   background-color: white; 
+}
+.container-header
+{
+	height: 200px;
+    background: #008ba7;
+    margin-top: 10px;
+}
+
+.container-header h1 {
+	text-align: center;
+    font-size: 44px;
+    padding-top: 55px;
+    color: white;
+}
+
+.container-header img {
+	position: absolute;
+    top: 38px;
+    right: 42px;
+    display: none;
+}
+
+.Donation-form-div{
+    width: 67%;
+    margin-left: 18%;
+
+    /* border: 2px solid; */
+}
+.Donation-form-div p{
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: 8% ;
+	font-size: 1.7rem;
+    font-weight: bold;
+    color:#008ba7;
+}
+
+.Add-card-form-date{
+
+	width: 50%;
+	float: left;
+}
+
+label {
+    color:#008ba7;
+	font-size: 1rem
+}
+
+.input1{
+
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #008ba7;
+    height: 37px;
+    width: 96%;
+	margin-top: 6px;
+
+}
+.input2{
+	  border: 1px solid;
+	  border-color: #008ba7;
+	 border-radius: 10px;
+	height: 37px;
+	width: 90%;
+	margin-top: 6px;
+    margin-bottom: 22px;
+}
+
+/* .SaveButtonDiv {
+	PADDING: 1%;
+    MARGIN-RIGHT: 44%;
+    PADDING-LEFT: 9PX;
+    PADDING-RIGHT: 0PX;
+    background-color: #ff8a00;
+    margin-top: 5vw;
+} */
+
+
+.button2{
+
+	margin: 5px;
+    color: white;
+    background-color: #ff9900;
+    border: 0.25px solid white;
+    font-size: 1.2vw;
+    padding: 3px 20px 3px 20px;
+}
+
+.btn {
+    background-color: #ff9900;
+    padding-right: 3px;
+    width: fit-content;
+    margin: 8% 0% 0% 33%;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+
+    .container-header h1 {
+        font-size: 30px;
+        padding-top: 78px;
+    }
+
+    
+    .container-header img {
+        top: 35px;
+        right: 19px;
+        display: none;
+    }
+
+    .Donation-form-div p{ 
+        font-size: 1.4rem;
+    }
+
+   .Donation-form-div{
+
+        width: 70%;
+        margin-left: 16%;
+        /* border: 2px solid; */
+    }
+}
+
+@media only screen and (max-width: 480px){
+
+
+        .container-header {
+            height: 171px;
+        }
+        .container-header h1 {
+        font-size: 30px;
+        padding-top: 62px;
+    }
+
+    
+    .container-header img {
+        top: 35px;
+        right: 19px;
+    }
+
+    .Donation-form-div p{ 
+        font-size: 1.2rem;
+    }
+
+   .Donation-form-div{
+
+        width: 82%;
+        margin-left: 10%;
+        /* border: 2px solid; */
+    }
+    
+    label{
+    font-size: 0.80rem;
+}
+
+    .input1{
+        height: 30px;
+    }
+    .input2{
+        height: 30px;
+    }
+}

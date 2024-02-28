@@ -1,0 +1,68 @@
+<template>
+    <div class="mainContainerClass">
+        <!-- <div class="heading-name">
+            <span>Welcome, {userFirstName}!</span>
+        </div>
+        <div class="heading-calendar">
+            <span>YOUR CALENDAR</span>
+        </div> -->
+        <div class="calendarParent">
+            <div class="type">
+                <div class="box" style="background: #f5f7f4;">
+                    <a onclick={dayClickHandler} class="box-click-active day-tag" id="day-tag">
+                        <div class="day">
+                            Day
+                        </div>
+                    </a>
+                    <a onclick={weekClickHandler} class="week-tag" id="week-tag">
+                        <div class="week">
+                            Week
+                        </div>
+                    </a>
+                    <a onclick={monthClickHandler} class="month-tag" id="month-tag">
+                        <div class="month">
+                            Month
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="dateParent">
+                <a class="perv-tag" onclick={prevClickHandler}>
+                    <div class="prev-button">
+                        <img src={prevlogo}>
+                    </div>
+                </a>
+                <template if:false={crossBrowser}>
+                    <input class="date-picker-input" type="date" name="" value={dateValue} data-id="date-picker"
+                        onchange={handlePickedDate}>
+                </template>
+                <div class="date-picker-div" if:true={crossBrowser} style="position: relative;">
+                    <img class="date-picker-img" src={calendar_icon} alt="">
+                    <input class="date-picker-cross-browser" type="date" name="" value={dateValue}
+                        data-id="date-picker2" onchange={handlePickedDate}>
+                </div>
+                <div class="date-text fullDate">
+
+                </div>
+                <a class="next-tag" onclick={nextClickHandler}>
+                    <div class="next-button">
+                        <img src={nextlogo}>
+                    </div>
+                </a>
+            </div>
+            <!-- <div class="eventClass">
+                <div class="eventIconClass">
+                    <lightning-icon icon-name="utility:reminder" alternative-text="Utility reminder" title="reminder" variant="warning" size="small"></lightning-icon>
+                </div>
+                
+                <div class="eventTextClass">
+                    <span>Export Events to a calendar</span>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <br>
+    <c-bwps_instructor-month-View></c-bwps_instructor-month-View>
+    <c-bwps_-Instructor-Week-View weekevnts={weekData} eventmap={evetMap}></c-bwps_-Instructor-Week-View>
+    <c-bwps_-Share-Blue-Theam-U-I sendemailui={showEmailUI}></c-bwps_-Share-Blue-Theam-U-I>
+</template>

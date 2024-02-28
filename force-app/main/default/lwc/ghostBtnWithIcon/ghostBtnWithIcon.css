@@ -1,0 +1,48 @@
+@import "c/sharedStyles";
+
+.btn-small{
+    width: 108px;
+	height: 32px;
+}
+
+.btn-large{
+    width: 145px;
+	height: 47px;
+}
+
+.btn {
+	opacity: 1;
+	border: none;
+	text-align: center;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	outline: none;
+	text-decoration: none;
+	color: var(--pfnca-color-primary);
+	background: none; /* Remove background color */
+	cursor: pointer;
+    box-sizing: border-box;
+}
+
+
+.btn-icon{
+    background-color: transparent; 
+    padding: 0.5px;
+    margin-right: 4px;
+}
+
+.btn:hover{
+    background: var(--pfnca-color-lightGrey) 0% 0% no-repeat padding-box;
+}
+
+.btn.active{
+	border: 1px solid var(--pfnca-color-primary); 
+	color: var(--pfnca-color-primary);
+}
+
+.btn:disabled{
+    background-color: var(--pfnca-color-mediumGrey);
+	color: var(--pfnca-color-white);
+	cursor: not-allowed;
+}

@@ -1,0 +1,35 @@
+<template>
+    <div class="container">
+          
+            <div>
+                <div class="Resources" onclick={handleResources}> 
+                <p>Be Well Platform Learning Resources</p>
+                <hr if:true={Resources}>
+               </div>
+            </div>
+            
+            <div class="Faqs" onclick={handleFaq}>
+                <p>FAQs</p>
+                <hr if:true={Faqs}>      
+               
+            </div>
+            <div class="contact" onclick={handleContact}>
+                <p>Contact Us</p>
+                <hr if:true={contact}>      
+            </div>     
+    </div>
+
+                
+                <template if:true={Resources}>
+                    <!-- <c-instructor-videos></c-instructor-videos>
+                    <c-instructor-sampl-class-flows></c-instructor-sampl-class-flows> -->
+                    <c-instructor-resourse-quizes></c-instructor-resourse-quizes>
+                 </template>
+                <template if:true={Faqs}>
+                    <c-instructor-support-faq></c-instructor-support-faq>
+                    <c-instructor-support-contact-us text="Still have question?"></c-instructor-support-contact-us>
+                 </template>
+                <template if:true={contact}>
+                    <c-instructor-support-contact-us  text="Have question?"></c-instructor-support-contact-us>
+                 </template>
+</template>

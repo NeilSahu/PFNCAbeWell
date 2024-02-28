@@ -1,0 +1,72 @@
+<template>
+    <div class="donation-home-page-container">
+    <!-- <div class="donation-theme-imagge">
+       <div class="image-container">
+           <img src={donationThemeImg} alt="#">
+       </div>
+    </div> -->
+    <c-bwps_-w-i-p_-dynamic-hero title="Donate" isdescription="true" description="Make a one-off Gift Here" img-url={donationThemeImg}></c-bwps_-w-i-p_-dynamic-hero>
+    <div class="bewell-logo">
+       <div class="logo-container">
+           <img src={bewellLogo} alt="">
+       </div>
+    </div>
+    <div class="express-gratitude">
+      <div class="gratitude-contant">
+        <p>Thank you for considering a donation. Be Well Parkinsons is run by the Parkinson's Foundation of The National Capital Area. Your generosity will help us at BWP, bring more  classes and support to those living with Parkinsons as well as their caregivers.</p>
+      </div>
+    </div>
+        <div class="donation-methods-container">
+            <div class="except-method-heading">
+               <label for="">Donate by Mail, Phone or Online</label>
+            </div>
+            <div class="donation-methods">
+                <div class="payment-method">
+                    <div class="payment-method-logo">
+                      <img src={onlineDonation} alt="">
+                    </div>
+                    <div class="donation-action">
+                      <span class="donation-heading"> DONATE ONLINE</span>
+                      <p>Please click Here to donate online</p>
+                         <div class="box-orange-button">
+                            <button class="orange-button" onclick={doPayment}> DONATE </button>
+                         </div>
+                    </div>
+                </div>
+                <div class="payment-method">
+                  <div class="payment-method-logo">
+                       <img src={phoneDonation} alt="">
+                   </div>
+                   <div class="donation-action">
+                         <span class="donation-heading"> DONATE VIA PHONE</span>
+                         <p>If you would like to make a donation over the phone<br>using your credit card, please call the PFNCA office at</p>
+                         <a class="text-style-none yello-text" href="#">(301) 844-6510 ext. 6</a>
+                    </div>
+                </div>
+                <div class="payment-method">
+                      <div class="payment-method-logo">
+                          <img src={smsDonation} alt="">
+                      </div>
+                      <div class="donation-action">
+                           <span class="donation-heading">DONATE VIA TEXT</span>
+                           <p>***TBT On how donors can donate via text?</p>
+                       </div>
+                </div>
+                <div class="payment-method">
+                       <div class="payment-method-logo">
+                           <img src={emailDonation} alt="">
+                       </div>
+                       <div class="donation-action botom-border-none">
+                           <span class="donation-heading">DONATE VIA MAIL</span>
+                           <p>For a donation form you can print at home, please click here.</p>
+                           <a class="text-style-none yello-text" onclick={downloadFile} href={url} download="">
+                            <img src={pdfDownload} alt="#">
+                            <span>DOWNLOAD DONATION FORM</span>
+                           </a>
+                       </div>
+                </div>
+            </div>
+        </div>
+        <c-bwps_-Donor-Dashboard-Donate-Form></c-bwps_-Donor-Dashboard-Donate-Form>
+ </div>
+</template>

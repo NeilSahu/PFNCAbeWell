@@ -1,0 +1,349 @@
+.column1 {
+float: left;
+width: 35%;
+height: auto;
+background-color:#F2F2F2;
+}
+.column2 {
+float: right;
+width: 65%;
+height: auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: flex;
+clear: both;
+}
+.form-input::placeholder {
+  color: #343A40;
+}
+
+.form-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #343A40;
+}
+
+.form-input::-ms-input-placeholder { /* Microsoft Edge */
+ color: #343A40;
+}
+
+.form-input-txtarea::placeholder {
+  color: #343A40;
+}
+
+.form-input-txtarea:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #343A40;
+}
+
+.form-input-txtarea::-ms-input-placeholder { /* Microsoft Edge */
+ color: #343A40;
+}
+
+.colmun1-innerdiv{
+    margin: 14rem 4.1rem 13.2rem 6rem;
+    /* font: normal normal normal 18px/24px IBM Plex Sans; */
+    font-size: 18px;
+    line-height: 24px;
+    font-family: IBMPlexSans;
+
+}
+.contact-div{
+margin-bottom: 1.8rem;
+text-align: left;
+/* font: normal normal bold 22px/28px IBM Plex Sans !important; */
+font-size: 22px;
+line-height: 28px;
+letter-spacing: 0px;
+color: #000000;
+text-transform: uppercase;
+opacity: 1;
+}
+.general-div{
+margin-bottom: 1.8rem;
+}
+.general-div-p1{
+text-align: left;
+/* font: normal normal normal 18px/24px IBM Plex Sans !important; */
+letter-spacing: 0px;
+color: #000000;
+opacity: 0.5;
+}
+.general-div-p2{
+cursor:pointer;
+font-size: 1.2rem;
+letter-spacing: 0.5px;
+color: #008BA7;
+}
+.hq-p1{
+text-align: left;
+/* font: normal normal normal 18px/24px IBM Plex Sans !important; */
+letter-spacing: 0px;
+color: #000000;
+opacity: 0.5;
+}
+.hq-p2{
+text-align: left;
+/* font: normal normal normal 18px/24px IBM Plex Sans !important; */
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+.column2{
+    padding: 6rem;
+}
+.column-2-headertext{
+margin-bottom: 2.6rem;
+text-align: left;
+font: normal normal 800 40px/52px Playfair Display;
+letter-spacing: 0px;
+color: #000000;
+opacity: 1;
+}
+.form-input{
+width: 43rem;
+height: 3rem;
+border: 1px solid;
+border-color: #008BA7;
+/* border-radius: 15px; */
+padding: 0 0 0 1rem;
+font-size: 1rem;
+}
+textarea:focus, input:focus{
+outline: none;
+/* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+transition: all 0.3s cubic-bezier(.25,.8,.25,1); */
+}
+.form-input-txtarea{
+    width: 43rem;
+    border: 1px solid;
+    border-color: #008BA7;
+    /* border-radius: 15px; */
+    padding: 0.5rem 0 0 1rem;
+    font-size: 1rem;
+}
+::placeholder {
+color: black;
+font-size: 1rem;
+}
+.form-divs{
+margin-bottom: 1rem;
+display: grid;
+}
+.submit-bitton-parent-div{
+margin: 1.5rem 0rem ;
+}
+.submit-button{
+    background-color: #008BA7;
+    border: 0.5px solid #ffffffbf;
+    font-size: 1.1rem;
+    font-weight: 550;
+    letter-spacing: 0.5px;
+    color: white;
+    padding: 5px 51px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.submit-button:hover{
+    background-color: #036477;
+}
+
+.submit-button-div{
+     padding: 4px;
+    background-color: #008BA7;
+    width: fit-content;
+}
+.breakLine{
+     white-space: pre;
+}
+label{
+    text-align: left;
+    /* font: normal normal bold 20px/24px IBM Plex Sans !important; */
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 1;
+    margin-bottom: 7px;
+}
+.required{
+    margin-left: 12%;
+    margin-top: 2%;
+    text-align: left;
+    /* font: normal normal normal 16px/22px Open Sans; */
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 1;
+}
+.required h3{
+    font-family: IBMPlexSans;
+    font-weight: normal;
+
+}
+
+a{
+    text-align: left;
+    /* font: normal normal normal 18px/24px IBM Plex Sans; */
+    letter-spacing: 0px;
+    color: #008BA7;
+    opacity: 1;
+
+}
+a.social {
+    /* margin-left: 11px; */
+    margin-top: 22px;
+}
+.b-fb {
+    width: 100%;
+}
+.b-twi {
+    margin-left: 1rem;
+    width: 100%;
+}
+.b-insta {
+    margin-left: 1rem;
+    width: 100%;
+}
+.midimg{
+    width: 100%;
+}
+.innerdiv-row{
+    width: 100%;
+}
+
+/* @media only screen and (max-width: 1200px) and (min-width: 1024px){
+} */
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+
+.innerdiv-row{
+    width: 92%;
+    display: flex;
+    flex-direction: row;
+}
+.innerdiv-col{
+    width: 40%;
+}
+.column1 {
+float: none;
+width: 100%;
+}
+.colmun1-innerdiv{
+    height: 16rem;
+    width: 100%;
+    padding: 2rem;
+    margin: 0rem 0rem;
+}
+.column2 {
+float: none;
+width: fit-content;
+padding: 2rem 0rem;
+}
+.column2-div1{
+margin: 2rem 0 0 2rem;
+}
+/* .form-input{
+width: 98%;
+} */
+.form-input-txtarea{
+width: 98%;
+}
+.midimg {
+    margin-top: 10%;
+}
+.inner-div-col{
+    width: 50%;
+}
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .innerdiv-row{
+    width: 92%;
+}
+.innerdiv-col{
+    width: 100%;
+}
+
+.column1 {
+float: none;
+width: 100%;
+}
+.colmun1-innerdiv{
+    height: 16rem;
+    width: 100%;
+    padding: 2rem;
+    margin: 0rem 0rem;
+}
+.column2 {
+float: none;
+width: 100%;
+padding: 2rem 0rem;
+}
+.column2-div1{
+margin: 2rem 0 0 2rem;
+}
+.inner-div-col{
+    width: 50%;
+}
+/* .form-input{
+width: 90%
+} */
+/* .form-input-txtarea{
+width: 90%
+} */
+}
+@media only screen and (max-width: 480px) {
+    .innerdiv-row{
+    width: 100%;
+}
+.innerdiv-col{
+    width: 100%;
+}
+.column1 {
+float: none;
+width: 100%;
+}
+.colmun1-innerdiv{
+    height: 20rem;
+    width: 100%;
+    padding: 1rem;
+    margin: 0rem 0rem;
+}
+.column2 {
+float: none;
+width: 100%;
+padding: 0rem;
+}
+.column2-div1{
+    padding: 1rem;
+}
+
+ .form-input{
+width: 17rem;
+}
+.form-input-txtarea{
+width: 19rem;
+} 
+.midimg {
+    margin-top: 10%;
+    width: 100%;
+    height: 15rem;
+  }
+.column-2-headertext{
+/* margin-bottom: 2.6rem;
+text-align: left; */
+font: normal normal 800 20px/52px Playfair Display;
+/* letter-spacing: 0px;
+color: #000000;
+opacity: 1; */
+}
+
+label{
+        font-size: 15px;
+}
+  
+}

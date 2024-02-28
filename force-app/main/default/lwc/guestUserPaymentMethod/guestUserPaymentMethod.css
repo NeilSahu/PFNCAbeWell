@@ -1,0 +1,291 @@
+.dummy{
+	color : black;
+}
+.bellicon{
+    cursor: pointer;
+}
+
+.notificationCount{
+    position: absolute;
+    top: 1px;
+    right: -4px;
+    width: 20px;
+    border: 0.5px solid black;
+    border-radius: 50%;
+    height: 20px;
+    text-align: center;
+    color: white;
+    pointer-events: none;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    font-weight: 800;
+}
+.div2 {
+    	position: absolute;
+    top: 39px;
+    right: 39px
+}
+
+.container-header{
+   background-color: white; 
+}
+.container-payment
+{
+	height: 200px;
+    background: #008ba7;
+    margin-top: 0rem;
+}
+
+.container-payment h1 {
+	text-align: center;
+    font-size: calc(16px + 3vw);
+    padding-top: 40px;
+    color: white;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+.container-payment p{
+	text-align: center;
+    font-size: calc(7px + 1vw);
+    color: white;
+   
+}
+/* .container-payment img {
+	position: absolute;
+    top: 30px;
+    right: 42px;
+} */
+
+.contanier-card{
+
+        margin: 7% 24% 5% 24%;
+}
+
+.Text1{
+  text-align: center;
+    font-size: 35px;
+    color: #008ba7;
+    margin-bottom: 4%;
+    font-weight: 400;
+
+}
+
+.card-details{
+    margin-bottom: 3%;
+     display: flex;
+    border: 1px solid #008ba7;
+    height: 77px;
+ }
+ 
+.contanier-card-visa{
+	width: 23%;
+} 
+.contanier-card-visa img{
+	width: 77%; 
+}
+.contanier-card-details{
+	    width: 42%;
+   
+}
+.contanier-card-details p{
+    font-size: 0.95rem;
+    margin-top: 4%;
+}
+
+.contanier-card-button{
+
+       display: flex;
+    align-items: center;
+    margin: 4%;
+    width: 36%;
+    
+} 
+
+.contanier-card-button p{
+    font-size: 0.85rem;
+    margin: 5%;
+}
+
+.EditBtn {
+    width: 50%;
+    display: inherit;
+}
+.EditBtn:hover >img {
+    background-color: #a8e4f0;
+    
+  }
+.DltBtn {
+    width: 50%;
+    display: inherit;
+}
+.DltImg {
+    cursor: pointer;
+}
+.DltBtn:hover >img {
+    background-color: #008ba7;
+    
+  }
+.Add-card{
+
+    border-top: 2px solid  #008ba7; 
+    margin-top: 8%;
+
+}
+.Add-card p{
+    text-align: center;
+    margin-top: 8%;
+    font-size: 24px;
+    color:#008ba7;
+    font-weight: 400;
+}
+
+.Add-card-form-date{
+
+	width: 50%;
+	float: left;
+}
+.Add-card-form-CVV{
+	width: 40%;
+
+}
+
+label {
+    color:#008ba7;
+	font-size: 18px;
+    font-weight: bold;
+}
+
+.input1{
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #008ba7;
+    height: 37px;
+    width: 96%;
+    padding-left: 0.85rem;
+}
+.input2{
+	  border: 1px solid;
+	  border-color: #008ba7;
+	  border-radius: 10px;
+	   height: 37px;
+        width: 90%;
+         padding-left: 0.85rem;
+}
+
+.SaveButtonDiv {
+    PADDING: 3px;
+    width: fit-content;
+    background-color: #008ba7;
+    margin: 2rem auto;
+}
+.saveBtn
+ {
+    background-color: #008ba7;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    padding: 3px 35px;
+    font-size: 1rem;
+    
+}
+
+.saveBtn:hover {
+    background-color: #008ba7;
+    
+  }
+select {
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: #008ba7;
+    height: 37px;
+    width: 96%;
+    padding-left: 0.85rem;
+     color:#767387;
+  } 
+    
+select,
+select option {
+  color: #000000;
+  }
+  
+@media only screen and (max-width: 786px) {
+
+   
+    .contanier-card{
+          margin: 7% 5% 5% 5%;   
+    }
+    ::placeholder {
+    font-size : 10px
+   } 
+ 
+.contanier-card-visa img{
+	
+    margin-top: 9px;
+} 
+ }
+
+/* @media only screen and (max-width: 600px){
+
+        ::placeholder {
+    font-size : 10px
+}
+    .contanier-card-visa {
+    width: 24%;
+        margin-top: 4%;
+    }
+  
+
+} */
+
+@media only screen and (max-width: 480px){
+
+     .notificationCount{
+         display: none;
+     }
+       .container-payment img {
+	display: none;
+}
+    .contanier-card{
+        margin: 7% 4% 5% 4%;   
+  }
+    .contanier-card-visa img{
+	
+        margin-top: 20px;
+    } 
+
+    .DltImg{
+        
+        width:24px
+    }
+    .EditImg{
+        
+        width:24px
+    }
+.contanier-card-details p{
+
+      font-size: 0.75rem;
+    margin-top: 14%;
+
+}
+.contanier-card-button{
+    width: 45%;
+}
+.Text1{
+    font-size: 29px;
+}
+/* .saveBtn {
+    PADDING: 1px 24px 2px 20px;
+    MARGIN-RIGHT: 8PX;
+    background-color: #ff8a00;
+    border: 1px solid white;
+    color: white;
+}
+.SaveButtonDiv{
+    float: right;
+    PADDING: 1%;
+    MARGIN-RIGHT: 33%;
+    PADDING-LEFT: 4PX;
+  } */
+}

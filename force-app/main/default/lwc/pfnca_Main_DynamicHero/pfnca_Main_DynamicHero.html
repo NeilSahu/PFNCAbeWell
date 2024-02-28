@@ -1,0 +1,31 @@
+<template>
+    <div class="hero" style={backgroundStyle}>
+        <div></div>
+        <div class="hero-content">
+            <div class="title">
+                {title}
+            </div>
+            <template if:true={isdescription}>
+                <div class="description">
+                    {description}
+                </div>
+            </template>
+            <template if:true={isbutton}>
+                <!-- <a href="/PFNCADNA/s/bwps-wip-getaguestpass"> -->
+                <a href="/PFNCADNA/s/bwps-wip-signin/?guest=true">
+                <div if:true={guestButton}>
+                    
+                        <div class="box-blue-button">
+                            <button class="blue-button" onclick={onSubmit}>{buttontext}</button>
+                        </div>
+                </div>
+                </a>
+            </template>
+        </div>
+        <!-- <div class="social-media-button">
+                <a class="social" href="https://www.facebook.com/PFNCA/" target="_blank"><div><img src={blueFacebook}></div></a>
+				<a class="social" href="https://twitter.com/pfnca?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><div><img src={blueTwitter}></div></a>
+				<a class="social" href="https://www.instagram.com/pfnca/?hl=en" target="_blank"><div ><img src={blueInstragram}></div></a>
+        </div> -->
+    </div>
+</template>

@@ -1,0 +1,59 @@
+<template>
+    <div class="mainclass">
+        <div class="notificationContainer">
+            <div class="innerContainer">
+                <div class="notificationHeadingClass">
+                    <div class="notificationHeaderClass"> <span class="notificationClass">NOTIFICATIONS</span> </div>
+                    <div class="markClass" onclick={handleClose}>
+                        <div class="checkIconClass"> <lightning-icon class="checkClass" icon-name="utility:close"
+                                size="xx-small" alternative-text="Utility check" title="Check"></lightning-icon></div>
+                        <div class="markAsReadClass"><span>Close</span></div>
+                    </div>
+                </div>
+                <div class="mainContainer">
+                    <template if:true={noNotifications}>
+                        <p style="text-align: center; padding: 50px 0px;">No notifications available !</p>
+                    </template>
+                    <template if:true={loader}>
+                        <div class="demo-only" style="height:6rem;position:relative">
+                            <div class="slds-spinner_container">
+                                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                                    <span class="slds-assistive-text">Loading</span>
+                                    <div class="slds-spinner__dot-a"></div>
+                                    <div class="slds-spinner__dot-b"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template for:each={notifications} for:item="notification">
+                        <div class="singleNotification" key={notification.Id}>
+                            <div class="cardHeaderContainer">
+                                <div class="imageContainer">
+                                    <img src={userImage} class="imageClass">
+                                </div>
+                                <div class="cardHeaderTextContainer">
+                                    <div>
+                                        <span>{notification.Name}</span>
+                                    </div>
+                                    <div class="cardHeaderTimeClass">
+                                        <span>{notification.Time}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 15px;">
+                                <span>
+                                    {notification.Message}
+                                </span>
+
+                            </div>
+                            <div>
+                                <hr class="lineClass">
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

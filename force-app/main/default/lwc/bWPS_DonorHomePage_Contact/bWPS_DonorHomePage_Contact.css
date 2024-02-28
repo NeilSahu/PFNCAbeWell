@@ -1,0 +1,176 @@
+.container{
+   background-position: center; 
+   background-repeat: no-repeat; 
+   background-size: cover;
+}
+.container-header
+{
+	width: 50%;
+    /* margin-left: 25%;
+    margin-right: 25%; */
+	margin: auto;
+}
+.container-header-Div1  {
+    text-align: center;
+    font-size: 1.9rem;
+    padding-top: 55px;
+    color: white;
+}
+.container-header-Div2{
+    text-align: center;
+    color: white;
+}
+.container-header-Div3
+{
+	text-align: center;
+	display: flex;
+	margin-top: 2%;
+	margin-left: 22%;
+	padding-bottom: 55px;
+}
+.container-header-Div3-InnerDiv1
+{
+	width: 50%;
+}
+.container-header-Div3-InnerDiv2
+{
+	width: 50%;
+}
+.container-header-Div3 > .container-header-Div3-InnerDiv1 > input
+{
+    border-radius: 3px;
+    height: 2.2rem;
+    font-size: 0.8rem;
+	background: #cce9ef;
+	border: 0px;
+	padding: 1%;
+	width: 100%;
+
+}
+.button{
+    background-color: rgb(242, 163, 78); 
+	border: 0.5px solid white; 
+	padding: 1px 25px;
+}
+.buttondiv{
+    background-color: rgb(242, 163, 78);
+    padding: 4px; 
+	width: max-content;
+	color: white;
+	margin: auto;
+}
+
+/* @media only screen and (max-width: 480px){
+
+	.container-header
+	{
+		width: 60%;
+		margin-left: 20%;
+		margin-right: 20%;
+	}
+	.container-header-Div1 h1
+	{
+		font-size: 1rem;
+	}
+	.container-header-Div1 p
+	{
+		font-size: 0.7rem;
+	}
+	
+	.container-header-Div2
+	{
+		display: block;
+		text-align: inherit;
+		margin-left: 15%;
+	}
+	.container-header-Div2 > .container-header-Div2-InnerDiv1
+	{
+		width: 100%;
+	}
+	.buttondiv
+	{
+		margin-left: 60%;
+		margin-top: 6%;
+	}
+}
+
+
+@media only screen and (min-width: 480px) and (max-width: 768px){
+	.container
+	{
+		//background: #008ba7;
+        background-position: center;
+        background-repeat: no-repeat;
+	}
+	.container-header
+	{
+		width: 40%;
+		margin-left: 30%;
+		margin-right: 30%;
+	}
+	.container-header-Div1 h1
+	{
+		font-size: 1rem;
+	}
+	.container-header-Div1 p
+	{
+		font-size: 0.7rem;
+	}
+	
+	.container-header-Div2
+	{
+		display: block;
+		text-align: inherit;
+		margin-left: 20%
+	}
+	.container-header-Div2 > .container-header-Div2-InnerDiv1
+	{
+		width: 100%;
+		margin-left: -10%;
+	}
+	.buttondiv
+	{
+		margin-left: 0%;
+		margin-top: 6%;
+	}
+	.button
+	{
+		padding: 1px 10px;
+	}
+}*/
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+	.container
+	{
+		background-size: 60rem;
+	}
+	.container-header
+	{
+		width: 60%;
+		margin: auto;
+	}
+	.container-header-Div3-InnerDiv1
+	{
+        width: 60%;
+    }
+	.button
+	{
+		padding: 1px 15px;
+	}
+}
+
+ @media only screen and (min-width: 1024px) and (max-width: 1200px){ 
+	.container-header
+	{
+		width: 50%;
+	}
+	.container-header-Div3-InnerDiv1
+	{
+        width: 55%;
+	}
+	.button
+	{
+		padding: 1px 20px;
+	}
+}

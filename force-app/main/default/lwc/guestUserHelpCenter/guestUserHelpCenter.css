@@ -1,0 +1,97 @@
+.dummy{
+	color : black;
+}
+.parent-container{
+    /* display: grid;
+    grid-template-columns: 20% 60% 20%;
+    padding: 2rem 2rem;
+    background-color: #008ba7;
+    position: relative;
+    min-height: 20rem; */
+    display: flex;
+    padding: 4rem 2rem;
+    background-color: #008ba7;
+    position: relative;
+    min-height: 20rem;
+}
+.butterfly-img{
+    padding: 1rem;
+    position: absolute;
+    /* margin-top: 2rem; */
+}
+.butterfly-img > img{
+    height: 10rem;
+    margin-left: 3rem;
+}
+.container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.heading{
+    width: max-content; 
+    font: normal normal 900 28px/36px Playfair Display;
+}
+
+.paragraph{
+    width: 39%; 
+    text-align: center;
+    font: normal normal normal 18px/24px IBMPlexSans;
+}
+
+.buttondiv{
+    background-color: #008ca7;
+    padding: 0.2rem;
+    width: max-content;
+    text-decoration: none;
+     border: 1px solid white;
+}
+
+.button {
+    background-color: #008ca7;
+    font: normal normal normal 18px/24px IBMPlexSans;
+    border: 0.5px solid rgba(255,255,255,0.5);
+    padding: 5px 20px;
+    color: white;
+}
+
+.button:hover{
+    background-color: #036477;
+}
+
+.slds-modal__header {
+    border: none;
+    padding: 0px;
+}
+.madalRecuringForm{
+    max-height: 40vw;
+    margin: 0 auto;
+    width: 50%;
+    max-width: 40rem;
+    min-width: 20rem;
+    margin-top: 7%;
+    z-index: 9001;
+}
+.iconBtnClass{
+    --sds-c-icon-color-foreground-default: white;
+}
+@media only screen and (max-width: 768px){
+	.paragraph[c-guestUserHelpCenter_guestUserHelpCenter] {
+    width: 100%;
+    text-align: center;
+    }
+    .heading{
+        text-align: center;
+    }
+
+    .butterfly-img > img{
+    display: none;
+    height: 10rem;
+    margin-left: 3rem;
+}
+  
+}

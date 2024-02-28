@@ -1,0 +1,365 @@
+:host{
+
+    --date-picker-background: url() ;
+
+
+}
+
+.container{
+    padding-inline: 6rem;
+    margin-top: 3rem;
+    color: #323a40;
+}
+
+.schedule-date-box{
+    display: flex;
+    justify-content: center;
+    margin-block: 1rem;
+    padding-block: 1rem;
+    padding-bottom: 2rem;
+    /* border-bottom: 2px solid #008da8; */
+    
+}
+
+.previous-date-btn, .next-date-btn{
+    
+    background-color: #f5f7f4;
+   
+    border: 1px solid #c6c6c6;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 2rem;
+    width: 2.5rem;
+    aspect-ratio: 1/1;
+    font-size: x-large;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 5px 2px 12px 5px rgb(233 233 233 / 43%), 0 10px 10px rgb(160 156 156 / 20%);
+}
+.blue-line{
+    width: 100%;
+    height: 0px;
+    background-color: white;
+    border-bottom: 2px solid #008da8;
+    border-top: none;
+}
+.showTodayClassButton{
+    display: flex;
+    justify-content: center;
+}
+.showTodayClassButton button{
+    background-color: transparent;
+    color: #008da8;
+    border: 1px solid #008da8;
+    outline: 1px solid #008da8a1;
+    outline-offset: -5px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+.scheduled-classes-box{
+    display: flex;
+    gap: 1rem 1rem;
+    padding-block: 1rem; 
+    border-bottom: 2px solid #b1b1b1;
+    margin-block: 1rem;
+}
+
+.schedule-time{
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 15%;
+}
+
+.class-info{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    
+}
+.class-info > div > h2{
+    font-weight: bold;
+    color: #008da8;
+    font-size: 1.2rem;
+}
+
+.class-info div{
+    padding-block: 0.5rem;
+}
+.class-info>:first-child{
+    padding-top: 0;
+}
+.class-info>:last-child{
+    padding-bottom: 0;
+}
+.class-info .capacity-box{
+    display: flex;
+}
+
+.class-info .class-brief-box, .class-info .instructor-box{
+
+    border-bottom: 2px solid #f1f1f1;
+    align-items: center;
+}
+
+.class-actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+}
+.class-actions > div{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0 1rem;
+}
+
+.class-actions div > button{
+    background-color: #008ea8;
+    color: white;
+    outline: 1px solid white;
+    outline-offset: -3px;
+    border: transparent;
+    width: 5rem;
+    height: 2.5rem;
+    padding-inline: 1rem;
+}
+
+.memberIconContainer{
+    display: flex;
+}
+
+.memberIconContainer>:nth-child(1),
+.memberIconContainer>:nth-child(2),
+.memberIconContainer>:nth-child(3),
+.memberIconContainer>:nth-child(4){
+    background-color: #e1e1e1;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+    border: 1px solid white;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+
+.memberIconContainer>:nth-child(1){
+    
+    left: calc(1.25rem * 4);
+    
+
+}
+.memberIconContainer>:nth-child(2){
+    left: calc(1.25rem * 3);
+}
+.memberIconContainer>:nth-child(3){
+   
+    left: calc(1.25rem * 2);
+    
+}
+.memberIconContainer>:nth-child(4){
+   
+    left: calc(1.25rem * 1);
+   
+}
+.memberIconContainer>:nth-child(5){
+    z-index: 2;
+    color: #fff;
+    background-color: #008da8;
+    width: 2.5rem;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
+    border: 1px solid white;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: grid;
+    place-items: center;
+    font-size: 0.8rem;
+}
+.date-picker img, .capacity-box div img, .class-actions div img, .instructor-box img{
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.date-picker > label {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    gap: 2rem;
+}
+
+.instructor-box, .capacity-box, .capacity-box div{
+    display: flex;
+    gap: 3rem;
+}
+.instructor-box{
+    gap: 0.5rem; 
+}
+.capacity-box{
+    width: fit-content;
+}
+.capacity-box div{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.full-list-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.full-list-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #008da8;
+    margin-block: 1rem;
+
+}
+.full-list-button>:first-child{
+    
+    font-size: 2rem;
+
+}
+.full-list-button>:last-child{
+    
+    padding-top: 0.3rem;
+}
+
+
+
+
+
+.date-picker-input{
+    border: none;
+    
+}
+.date-picker-input::-webkit-calendar-picker-indicator {
+    /* background-image: -internal-light-dark(-webkit-image-set(--date-picker-background 1x), -webkit-image-set(--date-picker-background 1x)); */
+    /* background-image: -internal-light-dark(-webkit-image-set(url() 1x), -webkit-image-set(url() 1x)); */
+    background-image: var(--date-picker-background);
+    background-position: left;
+    cursor: pointer;
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* left: 0; */
+    /* right: 0; */
+    /* top: 0; */
+    width: 1.8rem;
+    height: 1.8rem;
+
+}
+.date-picker-input::-webkit-datetime-edit{
+    /* padding-left: 3rem; */
+    display: none;
+    
+}
+
+.date-picker-input:focus, .date-picker-input:active{
+    border:none;
+    outline: none;
+}
+.formattedDateValue{
+    padding-block: 0.4rem;
+}
+
+
+@media only screen and (max-width: 869px) and (min-width: 769px){
+    .container{
+        padding-inline: 4rem;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px){
+
+
+    .container{
+        padding-inline: 3rem;
+    }
+    .scheduled-classes-box{
+        flex-wrap: wrap;
+    }
+
+    .schedule-time, .class-info, .class-actions{
+        width: 100%;
+    }
+
+    .class-actions{       
+        flex-direction: row-reverse;
+        align-items: baseline;
+        height: 3rem;
+    }
+}
+@media only screen and (max-width: 480px) and (min-width: 320px){
+    .container{
+        padding-inline: 2rem;
+    }
+    .scheduled-classes-box{
+        flex-wrap: wrap;
+    }
+
+    .schedule-time, .class-info, .class-actions{
+        width: 100%;
+    }
+
+    .class-actions{       
+       
+        flex-direction: column-reverse;
+    
+        align-items: flex-start;
+    }
+
+    .class-actions > :first-child{
+        display: flex;
+        gap: 0 1rem;
+        width: 100%;
+        justify-content: space-between !important;
+        margin-block: 1rem;
+    }
+    .memberIconContainer{
+        position: relative;
+        left: -5rem;
+    }
+}
+@media only screen and (max-width: 320px){
+    .container{
+        padding-inline: 1rem;
+    }
+    .scheduled-classes-box{
+        flex-wrap: wrap;
+    }
+
+    .schedule-time, .class-info, .class-actions{
+        width: 100%;
+    }
+
+    .class-actions{       
+       
+        flex-direction: column-reverse;
+    
+        align-items: flex-start;
+    }
+
+    .class-actions > :first-child{
+        display: flex;
+        gap: 0 1rem;
+        width: 100%;
+        justify-content: space-between !important;
+        margin-block: 1rem;
+    }
+    .memberIconContainer{
+        position: relative;
+        left: -5rem;
+    }
+
+
+}

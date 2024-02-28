@@ -1,0 +1,512 @@
+.mainContainer {
+    display: flex;
+    padding: 0px 3%;
+}
+
+/* ____________________________ */
+/* CALENDAR HEADING */
+.heading-calendar {
+    color: #008BA7;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1.5%;
+}
+
+.heading-name {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #008BA7;
+    margin-top: 4%;
+    margin-bottom: 3%;
+}
+
+.mainContainerClass {
+    padding: 48px 0px;
+    width: 75%;
+    padding-bottom: 1%;
+}
+
+.secondcontainer {
+    margin-top: 48px;
+    /* padding-left: 15rem; */
+    width: 25%;
+}
+
+.resources {
+    padding-top: 48px;
+}
+
+/* **************** */
+/********************Calender Comp date Picker UI**************************/
+.date-picker-input {
+    border: none;
+}
+
+.date-picker-input::-webkit-calendar-picker-indicator {
+    /* background-image: -internal-light-dark(-webkit-image-set(--date-picker-background 1x), -webkit-image-set(--date-picker-background 1x)); */
+    /* background-image: -internal-light-dark(-webkit-image-set(url() 1x), -webkit-image-set(url() 1x)); */
+    background-image: var(--date-picker-background);
+    /* background-size: auto; */
+    cursor: pointer;
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.date-picker-input::-webkit-datetime-edit {
+    /* padding-left: 3rem; */
+    display: none;
+}
+
+.date-picker-input:focus,
+.date-picker-input:active {
+    border: none;
+    outline: none;
+}
+
+/********************Calender Comp date Picker UI End**************************/
+
+
+/* CALENDAR CSS */
+.calendarParent {
+    /* border-radius: 20px; */
+    /* background-color:rgb(204 201 201 / 20%); */
+    min-height: 7rem;
+    font-size: 1rem;
+}
+
+.eventClass {
+    display: flex;
+    justify-content: end;
+    margin-top: 6.5%;
+    margin-right: 41%;
+}
+
+.eventTextClass,
+.eventIconClass {
+    cursor: pointer;
+}
+
+.eventTextClass {
+    margin-left: 0.5rem;
+    font-size: medium;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #545050;
+    font-weight: 400;
+}
+
+.calendarParent>.type {
+    margin: 0rem auto !important;
+    width: 12rem;
+    text-align: center;
+    padding: 2rem 0rem 1rem 0rem;
+}
+
+.type>.box {
+    border: 1.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+}
+
+.type .day {
+    text-align: center;
+}
+
+.box-click-active {
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 7px !important;
+    background: rgba(0, 0, 0, 0.13) !important;
+}
+
+.box-click-deactive {
+    border: none;
+    background: none;
+}
+
+.type a {
+    color: rgba(0, 0, 0, 1);
+    width: 33.33%;
+    padding: 3px 4px;
+    text-decoration: none !important;
+    text-align: center;
+    margin-top: -1px;
+}
+
+.type a:hover {
+    text-decoration: none !important;
+}
+
+.dateParent {
+    width: 35%;
+    margin: 0rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.dateParent .prev-button {
+    padding: 4px 13px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px 8px rgb(0 0 0 / 18%), 0 0px 1px rgb(0 0 0 / 22%);
+    border-radius: 7px;
+    float: left;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.dateParent .next-button {
+    padding: 4px 13px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0px 8px rgb(0 0 0 / 18%), 0 0px 1px rgb(0 0 0 / 22%);
+    border-radius: 7px;
+    float: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.date-text {
+    margin: 0% 3%;
+    width: 50%;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* ================================= */
+.todayClassContainer {
+    width: 58rem;
+    margin: 0% 5%;
+}
+
+.announcementContainer {
+    width: 100%;
+}
+
+.Calender-View-ParentBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.underlineClass {
+    width: 92%;
+    margin: 1% 4%;
+    background-color: black;
+    border: 1px solid #b8b1b1;
+
+}
+
+.outlineborder {
+    display: flex;
+    flex-direction: row;
+    margin: 0 4% 0 0;
+    padding: 20px 0px;
+    font-size: 1rem;
+}
+
+.Calender-View-column-Box {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    justify-content: center;
+
+}
+
+.Calender-raw-view {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    margin-top: 17px;
+}
+
+.timer-btn-container {
+    flex: 20%;
+    display: flex;
+    align-items: center;
+    font-family: IBMPlexSans;
+}
+
+.section-container {
+    flex: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.attendance-btn-container {
+    flex: 20%;
+    padding: 14px 0;
+    display: flex;
+    align-items: center;
+    margin-bottom: 55px;
+    max-width: 250px;
+}
+
+hr {
+    height: 0px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.toplineclass {
+    height: 2px;
+    width: 94%;
+    margin: 11px auto;
+    background-color: #008ba7;
+}
+
+.timer-btn {
+    -webkit-border-radius: 12;
+    -moz-border-radius: 12;
+    border-radius: 16px;
+    font-family: IBMPlexSans;
+    color: #080108;
+    font-size: 18px;
+    /* margin-bottom: 52px; */
+    font-weight: bold;
+    background: #ffffff;
+    padding: 0px 19px 58px 11px;
+    border: solid transparent 2px;
+    text-decoration: none;
+}
+
+.section-header {
+    font-weight: 800;
+    font-size: 18px;
+    color: #008BA7;
+    margin-bottom: 18px;
+    margin-right: 10px;
+    font-family: IBMPlexSans;
+}
+
+.icons-parent {
+    width: 18rem;
+}
+
+.attendance-btndiv {
+    padding: 0.2rem;
+    width: 100%;
+    background: #008BA7;
+}
+
+.attendance-btndiv :hover {
+    background-color: #036477;
+}
+
+.attendance-btn {
+    /* margin-bottom: 100px; */
+    font-family: IBMPlexSans;
+    color: white;
+    /* font-size: 13px; */
+    background: inherit;
+    padding: 12px 15px;
+    /* padding: 10px 18px 10px 20px; */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 16px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.disabledClass {
+    cursor: not-allowed;
+    pointer-events: none;
+    background: gray;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 14rem;
+    white-space: nowrap;
+    /* margin: 3% 0%; */
+    margin-top: 7px;
+}
+
+.schedule-header {
+    text-align: center;
+}
+
+.schedule-peragraph {
+    color: #443e44;
+}
+
+.iconsecond {
+    /* margin: 10px 0 10px 111px; */
+    text-align: center;
+}
+
+/* .iconfirst{
+    /* margin:10px 0px; */
+/* } */
+.timespan {
+    margin-left: 10px;
+}
+
+.timeminute {
+    margin-left: 10px;
+}
+
+.timerIconClass {
+    width: 32px;
+    height: auto;
+}
+
+.levelIconClass {
+    width: auto;
+    height: 27px;
+}
+
+/* Header Container css */
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 4% 0 0;
+    border-bottom: 2px Solid #008ba7;
+}
+
+.dayClass {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.classContainerParent {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* margin-right: -14rem; */
+}
+
+
+/* day week month css */
+.type {
+    margin: 0rem auto !important;
+    width: 12rem;
+    text-align: center;
+    padding: 2rem 0rem 1rem 0rem;
+}
+
+.box {
+    border: 1.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    background: #f5f5f5;
+}
+
+.boxCommonClass {
+    padding: 0px 11px;
+}
+
+.day {
+    text-align: center;
+}
+
+.box-click-active {
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 7px !important;
+    background: rgba(0, 0, 0, 0.13) !important;
+}
+
+.box-click-deactive {
+    border: none;
+    background: none;
+}
+
+.attendance-btn-container {
+    z-index: 4;
+}
+
+@media only screen and (max-width: 480px) {
+    .mainContainer {
+        padding-top: 12%;
+    }
+
+    .mainContainerClass {
+        padding: 0;
+    }
+
+    .headerContainer {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .calendarParent,
+    .type {
+        width: 100% !important;
+    }
+
+    .timer-btn {
+        padding: 0 0 20px;
+    }
+
+    .icons-parent {
+        width: 100% !important;
+    }
+}
+
+/* @media only screen and (max-width: 1024px) and (min-width: 768px){
+    .mainContainer {
+        padding-top: 12%;
+    }
+    .headerContainer{
+        padding: 4% 4%;
+    }
+}*/
+@media only screen and (max-width: 1200px) {
+    .mainContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mainContainerClass {
+        width: 100%;
+    }
+
+    .classContainerParent {
+        margin-right: 0rem;
+    }
+
+    .secondcontainer {
+        padding-left: 0rem;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .section-container {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 656px) {
+    .mainContainer {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .resources {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 435px) {
+
+    .icons-parent {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .outlineborder {
+        flex-direction: column !important;
+    }
+}

@@ -1,0 +1,78 @@
+.mainContainer{
+	padding-right: 4%;
+    padding-left: 1%;
+}
+.lineClass{
+	background-color: #ffc863;
+    /* margin-left: -2%; */
+    /* width: 134%; */
+}
+.recentMainContainer{
+	display: flex;
+    margin-top: 5%;
+    flex-wrap: wrap;
+}
+.recentResourceContainer{
+    /* width: 62%; */
+    /* margin: 3%; */
+}
+.resImageInnerClass{
+    width: 21rem;
+    height: 10rem;
+}
+.recentDateClass{
+	color: gray;
+    margin-bottom: 2%;
+}
+.resImageContainer {
+    margin-left: -6%;
+}
+.noteTextClass {
+    color: #008ba7;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.noteCardFooterTextClass, .resCardFooterTextClass{
+	margin: 4% 0%;
+}
+.noteCardFooterTextClass{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.resCardFooterTextClass{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* Button css */
+.buttonContainer{
+	width: fit-content;
+    padding: 2px;
+    background-color: #448BA7;
+    color: white;
+}
+.noteBtnClasss{
+	background-color: inherit;
+    border: 1px solid white;
+	padding: 8px 20px;
+}
+
+/* Resources container css */
+.resContainer{
+    margin-left: 9%;
+    width: 78%;
+}
+.resourceDateClass{
+	margin-top: 2%;
+    font-size: 0.9rem;
+    color: #c6c6c6;
+}
+
+ @media only screen and (max-width: 723px){
+    /* .recentMainContainer{
+        flex-direction: column;
+    } */
+}

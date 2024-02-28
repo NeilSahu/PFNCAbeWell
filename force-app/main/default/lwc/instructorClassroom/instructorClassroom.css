@@ -1,0 +1,10 @@
+.liveInnerContainer{
+    display: flex;
+    font-size: medium;
+}
+.underlineClass{
+    width: 1.5rem;
+    height: 3px;
+    margin-left: 1rem;
+    background-color: orange;
+}

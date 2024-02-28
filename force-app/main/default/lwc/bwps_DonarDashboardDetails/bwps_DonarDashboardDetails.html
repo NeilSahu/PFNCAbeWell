@@ -1,0 +1,131 @@
+<template>
+	<div class="row divFont heading-section">
+		<div class="back-btn-container">
+			<div class="back-btn">
+				<a href="/PFNCADNA/s/guestuserdonationpage" style="text-decoration: none;">
+					<img src={backIcom} class="backlIcon">
+				</a>
+				<span>Back</span>
+			</div>
+		</div>
+	</div>
+	<div class="row divFont" style="margin-bottom:1.5rem;">
+		<div class="col-5 col-receipt">
+			<p class="receipt-text">
+				ONE-TIME DONATION FROM {datechanged}
+			</p>
+		</div>
+		<div class="col-1"></div>
+		<div class="col-5 col-receipt receipt-align">
+			<div>
+				<div class="receipt-logo">
+					<a><img src={DownloadLogo} alt="Download logo" data-id={result1.oppoId} data-name={result1.oppoName}
+							onclick={downloadReceiptPDFMethod}></a>
+				</div>
+				<div class="receipt-logo-text receiptClass" data-id={result1.oppoId} data-name={result1.oppoName}
+					onclick={downloadReceiptPDFMethod}>
+					Receipt
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="divFont row height-row" style="    margin-bottom: 6.9rem;">
+		<div class="col-5 grid-item height-col">
+			<div class="dedication">
+				<div class="adjacent_div_1_of_2">
+					<img src={DedicationLogo} alt="Dedication logo">
+				</div>
+				<div style="font-size:1rem; font-weight: 600;  text-align: left;" class="box-design-dedic">
+					DEDICATED
+				</div>
+			</div>
+			<div>
+				<p style="font-size:1rem; font-weight: 800; margin: 0 0 0.5rem 0;" class="box-design-ded">
+					This donation is dedicated to {tributeName}.</p>
+				<p style="font-size:0.9rem; " class="box-design-mail">
+					Your email was sent to {result1.oppoEmail}</p>
+			</div>
+			<!-- <div style="cursor:pointer; margin: 2rem auto 0 auto; padding:2.5rem;">
+				<div class=" adjacent_div_1_of_2">
+					<img src={EyeLogo} alt="Email logo" style="width: 22px;padding: 0px;margin: 6px 10px 0px 0px;">
+				</div>
+				<div style="font-size:1rem; font-weight: 600;  text-align: left; color:#008CA6;padding: 2px 0 0 0;"
+					class="box-design-view">
+					View Email
+				</div>
+			</div> -->
+		</div>
+		<div class="col-5 grid-item second-block height-col">
+			<div class="row">
+				<div class="col-6 details-align new-style-values">
+					Date
+				</div>
+				<div class="col-6 details-value-align new-style">
+					{newdate}
+				</div>
+			</div>
+			<hr style="background-color: rgba(0, 0, 0, 0.118);
+            height: 1px;
+            border: 0px;
+            width: 87% !important;
+            margin-inline: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;">
+			<div class="row">
+				<div class="col-6 details-align new-style-values">
+					Amount
+				</div>
+				<div class="col-6 details-value-align new-style">
+					${result1.Amount} USD
+				</div>
+			</div>
+			<hr style="background-color: rgba(0, 0, 0, 0.118);
+            height: 1px;
+            border: 0px;
+            width: 87% !important;
+            margin-inline: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;">
+			<div class="row">
+				<div class="col-6 details-align new-style-values">
+					Payment Method
+				</div>
+				<div class="col-6 details-value-align new-style">
+					{result1.ChargentOrders__Payment_Method__c}
+				</div>
+			</div>
+			<hr style="background-color: rgba(0, 0, 0, 0.118);
+            height: 1px;
+            border: 0px;
+            width: 87% !important;
+            margin-inline: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;">
+			<div class="row">
+				<div class="col-6 details-align new-style-values">
+					Status
+				</div>
+				<div class="col-6 table-data" style=" font-weight:300;">
+					<div style="display: flex; align-items: center;">
+						<template if:true={result1.Status} class="new-style">
+							<div class=" adjacent_div_1_of_2">
+								<img src={ticklogo} alt="Tick logo" class="allimg img1">
+							</div>
+							<div style="text-align: left; " class="new-style">
+								SUCCESS
+							</div>
+						</template>
+						<template class="new-style" if:false={result1.Status}>
+							<div class=" adjacent_div_1_of_2">
+								<img src={failedlogo} alt="Failed logo" class="allimg img1">
+							</div>
+							<div style="text-align: left;" class="new-style">
+								FAILED
+							</div>
+						</template>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

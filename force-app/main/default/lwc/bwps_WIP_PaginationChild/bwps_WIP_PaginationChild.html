@@ -1,0 +1,24 @@
+<template>
+    <!-- <span class="info slds-float_left">Viewing {startrange}-{endrange} of {totalrecords}</span> -->
+
+    <div class="container">
+        <!-- <button class="PreButton" disabled={disableleftarrow} onclick={handlePrevious} ><img src={pre}></button> -->
+         <lightning-button-icon size="small" class="slds-p-around_medium center-class" variant="bare" disabled={disableleftarrow}
+            onclick={handlePrevious} icon-name="utility:chevronleft"></lightning-button-icon>
+    
+        <span>
+            
+            <template for:each={pageList} for:item="p" for:index="index">
+                <lightning-button key={p} label={p} onclick={handleClick} data-index={index}></lightning-button>
+                
+            </template>
+        </span>
+
+            <!-- <button class="nextButton"><img src={next} onclick={handleNext}
+            disabled={disablerightarrow}></button> -->
+        
+        <lightning-button-icon size="small" class="slds-p-around_medium center-class" variant="bare" onclick={handleNext}
+            disabled={disablerightarrow} icon-name="utility:chevronright"></lightning-button-icon>
+
+    </div>
+</template>

@@ -1,0 +1,121 @@
+<template>
+	<template if:false={InstructorDetailView}>
+		<div class="ins_Master">
+
+			<div class="intro">
+
+				<div class="main_intro">
+					<!-- <h1>Passionate Instructors</h1> -->
+
+					<h1>Dedicated and Passionate Instructors</h1>
+				</div>
+
+				<div class="sub-intro">
+					<!-- <p>Our highly trained instructors are truly passionate about helping people slow Parkinson's through
+                        each of their specialized fields.</p> -->
+
+					<p>Our highly trained instructors have a variety of professional backgrounds and are truly
+						passionate about helping people slow the progression of Parkinson's. They are here to help.</p>
+				</div>
+			</div>
+
+			<div class="slider-container">
+				<template if:true={slideButton}>
+					<a class="prev" onclick={handlePrev}>&#10094;</a>
+				</template>
+
+				<div id="slider-container" class="slider" data-id="slider">
+					<template for:each={Arr} for:item="trainer">
+						<div class="slide" key={trainer.Id}>
+							<div class="card">
+
+								<div class="inst-img">
+									<img class="instimg" src={trainer.imgUrl} alt="image">
+                            </div>
+
+									<br/>
+
+									<div class="name-exp">
+										<h1 data-id={trainer.Id} data-description={trainer.description}
+											data-exp={trainer.exp} data-name={trainer.Name} data-pic={trainer.imgUrl}
+											onclick={InstructorDetailViewhandle}>
+											{trainer.Name}
+										</h1>
+
+										<p class="inst-type">{trainer.Type}</p>
+
+									</div>
+								</div>
+							</div>
+					</template>
+				</div>
+
+				<template if:true={slideButton}>
+					<a class="next" onclick={handleNext}>&#10095;</a>
+				</template>
+			</div>
+		</div>
+	</template>
+
+	<template if:true={InstructorDetailView}>
+		<div>
+			<c-bwps_-w-i-p_-instructor-detail-view instructorname={instructorname} instructor={Instructor}
+				instructorprofile={instructorprofile} instructorexp={instructorexp}
+				instructordescription={instructorDescription} oninstructorreturn={trueInstructors}>
+			</c-bwps_-w-i-p_-instructor-detail-view>
+		</div>
+	</template>
+</template>
+
+<!-- <template if:true={slideButton}>
+					<div class="slider-button-box">
+
+						<button class="control-prev-btn" onclick={handlePrev}>
+                        	<div class="arrow-left"></div>
+                    	</button>
+
+						<button class="control-next-btn" onclick={handleNext}>
+                        	<div class="arrow-right"></div>
+                    	</button>
+
+					</div>
+				</template> -->
+
+<!-- <div class="slider-container-1">
+        <div class="parent-instructor row"  data-id="container_I">
+            <template for:each={Arr} for:item="trainer">
+                <div data-id="card-1" class="card col-3" key={trainer.Id}>
+                    <div class="inst-img">
+                    <img src={trainer.imgUrl} alt="1">
+                    </div>
+                    <br>
+                    <div class="name-exp">
+                        <h1>{trainer.Name}</h1>
+                        <p>{trainer.Type}</p>
+                    </div>
+                </div>
+            </template>
+        </div> -->
+<!-- </div> -->
+<!-- <div class="box-slid-button">
+            <button class="slide-button" onclick={preview} > &#10094; </button>
+            <button class="slide-button" onclick={next} > &#10095; </button>
+        </div> -->
+
+<!-- <template if:false={InstructorDetailView}>
+		<c-custom-carousel-wrapper></c-custom-carousel-wrapper>
+		<c-bwps_-w-i-p_-upcoming-classes> </c-bwps_-w-i-p_-upcoming-classes>
+		<c-be-well-cards-l-w-c></c-be-well-cards-l-w-c>
+		<c-bwps_-w-i-p_-variety-of-classes></c-bwps_-w-i-p_-variety-of-classes>
+	</template> -->
+
+<!-- <template if:false={InstructorDetailView}>
+		<c-bwps_-w-i-p_-get-started></c-bwps_-w-i-p_-get-started>
+		<c-bwps_-w-i-p_-educational-resources-and-stories></c-bwps_-w-i-p_-educational-resources-and-stories>
+	</template>
+	<c-b-w-p-s_-w-i-p_-social-media-links></c-b-w-p-s_-w-i-p_-social-media-links>
+	<c-stay-connected-footer></c-stay-connected-footer> -->
+
+<!-- <div class="slidecontainer">
+                <input type="range" min="0" max ={sliderMaxVal} value="0" class="slider" data-id="myRange" onchange={sliderChange}>
+        </div> -->

@@ -1,0 +1,40 @@
+@import "c/sharedStyles";
+
+.btn-small{
+    width: 86px;
+	height: 32px;
+}
+
+.btn-large{
+    width: 118px;
+	height: 47px;
+}
+
+.btn {
+	opacity: 1;
+	border: none;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	outline: none;
+	text-decoration: none;
+	color: var(--pfnca-color-primary);
+	background: none; /* Remove background color */
+	cursor: pointer;
+}
+
+.btn:hover{
+    background-color: var(--pfnca-color-lightGrey);
+}
+
+.btn.active{
+	border: 1px solid var(--pfnca-color-primary); 
+	color: var(--pfnca-color-primary);
+}
+
+.btn:disabled{
+    background-color: var(--pfnca-color-mediumGrey);
+	color: var(--pfnca-color-white);
+	cursor: not-allowed;
+}

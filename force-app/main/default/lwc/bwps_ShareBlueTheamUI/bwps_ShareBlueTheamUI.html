@@ -1,0 +1,53 @@
+<template>
+    <template if:true={sendemailui}>
+
+        <!--
+           send mail modal
+        --> 
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideSendModalBox}>
+                        <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small"
+                        class="closeIcon" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-hyphenate container-header header-sec">Send Mail</h2>
+                </header>
+
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_large">
+                    <div class="container">
+                        <!-- <div class="container-header">
+                            <h1>Send Mail</h1>
+                        </div> -->
+                        <div class="Donation-form-div">
+                            <div class="Add-card-form"> 
+                                <label for="Email" >Email</label>
+                                <input data-id="Email" type="text" class="input1 emailClass" placeholder="" size="50" > <br><br>
+
+                                <label for="Subject" >Subject</label>
+                                <input data-id="Subject" type="text" class="input1 subjectClass" size="50"><br><br>
+
+                                <label for="Description" >Description</label>
+                                <!-- <input data-id="Description" type="" class="input2" size="50"><br><br> -->
+                                <textarea rows="4" cols="50" name="comment" form="usrform" class="input2 descriptionClass" data-id="Description">
+                                </textarea>
+                                <div class="btn" >
+                                    <Button type="text" onclick={sendMailMethod}  class="button2">Submit</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

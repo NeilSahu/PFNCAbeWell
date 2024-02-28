@@ -1,0 +1,639 @@
+.mainDiv {
+    background-color: #008da8;
+    width: 95%;
+    padding: 50px;
+    border-radius: 25px;
+    margin: 3rem auto;
+}
+
+.MainHeading {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bolder;
+    font-size: 4rem;
+}
+
+.blank-block {
+    text-align: center;
+    width: 100%;
+    color: gray;
+    font-size: x-large;
+}
+
+.center {
+    text-align: center;
+}
+
+.searchdiv {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: row;
+}
+
+.filter-flex {
+    display: flex;
+    /* width: 80%; */
+    /* padding: 0rem 4rem; */
+    justify-content: space-between;
+    flex: 1 53 79.5%;
+}
+
+.inpcls {
+    display: flex;
+    justify-content: left;
+    width: 40%;
+}
+
+.blank-block {
+    text-align: center;
+    width: 100%;
+    color: gray;
+}
+
+.button {
+    background-color: #008da8;
+    border: 0;
+    box-sizing: border-box;
+    color: white;
+    /* font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid white;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    outline: 1px solid #80c7d4;
+    outline-offset: -5px;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    height: 3rem;
+    margin-top: 22px;
+    width: 7rem;
+
+}
+
+.button:focus {
+    outline: 1px solid #80c7d4;
+    outline-offset: -4px;
+}
+
+.button:hover {
+    outline: 1px solid #80c7d4;
+    outline-offset: -4px;
+    background-color: #036477;
+}
+
+/* .button:focus-visible {
+  box-shadow: none;
+} */
+.searchInput {
+    font-size: 1.125rem;
+    margin: 20px;
+    margin-left: 40px;
+    width: 100%;
+    height: 3rem;
+    text-indent: 1rem;
+    border: 1px solid #008BA7;
+}
+
+.filtersize {
+    display: flex;
+    justify-content: right;
+    height: 2rem;
+    width: fit-content;
+    margin-top: 2rem;
+    margin-right: 6rem;
+}
+
+.colorset {
+    color: white;
+    font-size: 1.125rem;
+    margin-left: 1rem;
+    text-transform: uppercase;
+
+
+}
+
+.filterdata {
+    margin-left: 2.5rem;
+    margin-top: 3rem;
+
+}
+
+.Filterspan {
+    height: 5rem;
+    width: 7rem;
+    border: 1px solid white;
+    color: white;
+    padding: 1rem 1.5rem;
+    background-color: #008da8;
+    font-size: large;
+    margin: 0.5rem;
+
+}
+
+.timecls {
+    font-size: large;
+    color: white;
+    margin: 0.7rem;
+}
+
+.row {
+    width: 100% !important;
+    margin-left: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    /* padding: 30px 40px 30px 0px; */
+    padding: 1rem;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.col-6 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 15rem;
+}
+
+.filter-data {
+    display: flex;
+    color: white;
+    width: 100%;
+    justify-content: center;
+    /* margin: 0px 0px 0px 1.7rem; */
+}
+
+.filter-btn {
+    border: 1px solid white;
+    margin: 0.5rem 0.5rem;
+    width: 20%;
+    height: 3rem;
+    text-align: center;
+    padding: 0.7rem 0rem;
+    cursor: pointer;
+}
+
+.filter-btn-active {
+    color: #007ba6 !important;
+    background-color: white !important;
+}
+
+.filter-text {
+    padding: 1rem 0rem;
+    width: 22%;
+    height: 1.5rem;
+}
+
+.record-count {
+    color: white;
+    font-size: 1.25rem;
+}
+
+.mordenLimit {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.mordenLimitName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.filter-picklist {
+    border: 1px solid white;
+    margin: 0.5rem 1rem;
+    width: 70%;
+    height: 3rem;
+    padding: 0.7rem 0rem;
+}
+
+.filter-inst {
+    padding: 0rem 1rem 0 5px;
+    width: fit-content;
+    height: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.filter-data2 {
+    display: flex;
+    color: white;
+    width: 100%;
+    margin: 0px 0px 16px 4.7rem;
+}
+
+.filter-Label {
+    display: flex;
+    color: white;
+    width: 100%;
+    margin: 0px 0px 0px 5.7rem;
+}
+
+.picklist-Val {
+    width: 100%;
+    background-color: #008da8;
+    border: none;
+}
+
+.picklist-option {
+    height: 2rem;
+    width: 4rem;
+}
+
+.cardOutterClass {
+    width: 100%;
+    margin-bottom: 4%;
+}
+
+.cardInnerClass {
+    border: 1px solid #ddd7d7;
+    width: 90%;
+    margin-top: 0.5vw;
+}
+
+.cardImageClass {
+    width: 100%;
+    height: 100%;
+    padding: 1%;
+}
+
+.cardNameLevelClass {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1% 3%;
+}
+
+.cardNameClass {
+    margin: 1%;
+}
+
+.cardLevelClass {
+    margin: 2%;
+    display: flex;
+}
+
+.cardLevelInts {
+    height: 21px;
+    width: 25px;
+}
+
+.exerciseContainer {
+    margin-left: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.descriptionClass {
+    color: gray;
+    margin: 3%;
+    margin-top: 3%;
+    min-height: 1.6rem;
+    margin-bottom: 1%;
+    font-style: italic;
+}
+
+.cardFooterContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 15px;
+    padding: 10px 0px;
+}
+
+/* .cardFooterIconContainer{
+    display: flex; 
+    margin: 3% 1%;
+} */
+.cardFooterContainer2 {
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.cardFooterIconContainer2 {
+    margin: 3% 1%;
+}
+
+/* .cardFooterButtonContainer{
+    margin: 5%;
+    margin-right:6%;
+} */
+.clear-filter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lineFavClass {
+    width: 92%;
+    height: 2px;
+    color: #f0ebeb;
+    margin: 0% 4%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.iconClass {
+    cursor: pointer;
+}
+
+.cardIconClass {
+    width: 30px;
+    height: 30px;
+}
+
+.buttonClass {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.buttonContainer {
+    white-space: nowrap;
+    width: fit-content;
+    text-align: center;
+    background-color: #008BA7;
+    padding: 0.2rem;
+    cursor: pointer;
+    height: fit-content;
+
+}
+
+.buttonContainer:hover {
+    background-color: #036477;
+}
+
+.btnDisabled {
+    background-color: gray !important;
+    pointer-events: none !important;
+}
+
+.mouse-pointer {
+    cursor: pointer;
+}
+
+.buttonInnerContainer {
+    padding: 4px 1rem;
+    background-color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.innerclass {
+    width: 100%;
+
+}
+
+.exerciseNameCLass {
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'IBMPlexSans';
+    text-transform: uppercase;
+    color: #008BA7;
+    font-weight: bold;
+}
+
+.pagination-Container {
+
+    display: flex;
+    justify-content: center;
+}
+
+.setCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 800px) and (min-width: 480px) {
+    [class*="col-"] {
+        width: 50%;
+        padding: 1rem;
+    }
+
+    .cardInnerClass {
+        width: 94%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    [class*="col-"] {
+        width: 100%;
+        padding: 1rem;
+        /* margin-right: 16px; */
+    }
+
+    .cardInnerClass {
+        width: 94%;
+    }
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+    .mainDiv .col-6 {
+        width: 100%;
+    }
+
+    .searchdiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filtersize {
+        justify-content: left;
+    }
+
+    .filtersize img {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .inpcls {
+        display: flex;
+        justify-content: left;
+        width: 100%;
+    }
+
+    .filter-flex {
+        display: flex;
+        /* width: 80%; */
+        padding: 0rem 3rem;
+        justify-content: space-between;
+        flex: 1 53 79.5%;
+        gap: 1rem;
+    }
+
+    .mainDiv {
+        padding: 50px 0;
+    }
+
+    .filter-data {
+        margin: 0;
+    }
+
+    .filter-data2 {
+        margin: 0;
+    }
+
+    .filter-picklist {
+        width: 86%;
+    }
+
+    .clear-filter {
+        margin-inline: 1rem;
+    }
+
+    .filter-Label {
+        margin: 0px 0px 0px 1rem;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    .mainDiv .col-6 {
+        width: 100%;
+    }
+
+    .searchdiv {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filtersize {
+        justify-content: left;
+    }
+
+    .filtersize img {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    .inpcls {
+        display: flex;
+        justify-content: left;
+        width: 100%;
+    }
+
+    .filter-flex {
+        display: flex;
+        /* width: 80%; */
+        padding: 0rem 2rem;
+        gap: 1rem;
+        justify-content: space-between;
+        flex: 1 53 79.5%;
+    }
+
+    .mainDiv {
+        padding: 50px 0;
+    }
+
+    .filter-data {
+        margin: 0;
+        flex-wrap: wrap;
+        gap: 1rem 0;
+    }
+
+    .filter-data2 {
+        margin: 0;
+    }
+
+    .filter-picklist {
+        width: 86%;
+    }
+
+    .clear-filter {
+        margin-inline: 1rem;
+    }
+
+    .filter-btn {
+        margin: 0.5rem 0.5rem;
+        width: calc(100%/3 - 1rem - 2px)
+    }
+
+    .filter-text {
+        width: 100%;
+    }
+
+    .filter-picklist {
+        margin: 0.5rem 0px;
+    }
+
+    .filter-Label {
+        margin: 0px 0px 0px -1rem;
+    }
+}

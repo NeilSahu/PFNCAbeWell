@@ -1,0 +1,294 @@
+:host {
+    --colr-primary: #008BA7;
+    --colr-primary-dark: #193A5A;
+    --colr-primary-darker: #036477;
+    --colr-secondary-light: #FF9F37;
+    --colr-secondary-dark: #D77E0E;
+    --colr-tertiary: #7E964E;
+    --colr-light-gray: #DEE2E6;
+    --colr-medium-gray: #C6C6C6;
+    --colr-background: #F5F7F4;
+    --colr-black: #000000;
+    --colr-regular-font: #343a40;
+}
+.container{
+    padding: 1rem 4rem;
+    --color-blue: #008ba7;
+    --color-black: black;
+    --color-lightblue: #24b9ca;
+    --color-white: #fff;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+}
+.class-type{
+    display:flex;
+    gap: 0 4rem;
+    padding-block: 4rem;
+    border-bottom: 2px solid var(--color-blue);
+    
+}
+
+.detail-box h2{
+    /* font-size: 1.7rem;
+    font-weight: bold; */
+    color: var(--color-black);
+    text-align: left;
+    font: normal normal 900 28px/36px Playfair Display;
+    letter-spacing: 0px;
+    opacity: 1
+}
+
+.detail-box p{
+    color: var(--color-black);
+    padding: 1.8rem 0;
+    max-width: 40rem;
+    /* font-size: 1.2rem; */
+    text-align: left;
+    font: normal normal normal 22px/32px IBMPlexSans;
+    letter-spacing: 0px;
+
+}
+.button-box{
+    display: flex;
+    gap: 1rem 1rem;
+    flex-wrap: wrap;
+}
+.button-box button:hover {
+    background-color: var(--colr-primary-darker);
+    
+}
+
+.button-box button{
+    padding: 0 2.5rem;
+    border: transparent;
+    outline: 1px solid var(--color-lightblue);
+    outline-offset: -0.4rem;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    height: 3rem;
+}
+.blue-button:hover{
+    background-color: var(--colr-primary-darker);
+   
+}
+.icon-box div{ 
+    display: grid;
+    place-items: center;
+    width: 6rem;
+    height: 6rem;
+    border: 1px solid var(--color-blue);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.icon-box img{
+    object-fit: contain;
+    max-height: 4rem;
+
+}
+.intensity{
+    text-align: left;
+    font: normal normal bold 22px/28px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #000000;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+.intensitydesc{
+    text-align: left;
+    font: normal normal normal 22px/32px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #343A40;
+    opacity: 0.8;
+}
+.intensity-levels {
+    padding: 4rem;
+    font-size: 1.2rem;
+    color: var(--color-black);
+}
+.intensitycontainer{
+    display:flex;
+    margin-top: 6%;
+}
+.intensity-levels table h2{
+    font-size: 2.5rem;
+    color: var(--color-black);
+    font: normal normal 800 40px/52px Playfair Display;
+    letter-spacing: 0px;
+    opacity: 1;
+    margin-left: -19rem;
+    margin-bottom: 4%;
+}
+.intensity-levels table h3{
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin-block: 1.5rem;
+    
+}
+.intensity-levels table tr{
+    height: 3rem;
+}
+.intensity-levels table img{
+    width: 2.5rem;
+    position: relative;
+    bottom: 0.9rem;
+    right: 1rem;
+    margin-right: 1rem;
+}
+
+
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    .intensity-levels{
+        padding: 0rem
+    }
+    .intensity-levels table h2{
+        white-space: nowrap;
+        margin-left: 0rem;
+        margin-top: 22%;
+        text-align: left;
+        font: normal normal 800 27px/52px Playfair Display;
+    }
+    .intensity-levels table tr{
+        padding: 0rem;
+        height: 7rem;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+
+    .container{
+        padding: 1rem 3rem;
+    }
+
+    .class-type{
+        gap: 0 3rem;
+        padding-block: 3rem;
+    }
+
+    .icon-box div{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .icon-box img{
+        max-height: 3rem;
+        
+    }
+
+    .detail-box p{
+        padding: 1.5rem 0;
+
+    }
+    .intensity-levels{
+        padding: 0rem
+    }
+    .intensity-levels table h2{
+        white-space: nowrap;
+        margin-left: 0rem;
+        margin-top: 22%;
+        text-align: left;
+        font: normal normal 800 27px/52px Playfair Display;
+    }
+    .intensity-levels table tr{
+        padding: 0rem;
+        height: 7rem;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+
+}
+@media only screen and (max-width: 480px) and (min-width: 320px){
+    .container{
+        padding: 1rem 2rem;
+    }
+
+    .class-type{
+        gap: 1rem 3rem;
+        padding-block: 3rem;
+        flex-direction: column;
+    }
+
+    .icon-box div{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .icon-box img{
+        max-height: 3rem;
+        
+    }
+
+    .detail-box p{
+        padding: 1.5rem 0;
+
+    }
+    .intensity-levels{
+        padding: 0rem
+    }
+    .intensity-levels table h2{
+        white-space: nowrap;
+        margin-left: 0rem;
+        margin-top: 22%;
+        text-align: left;
+        font: normal normal 800 27px/52px Playfair Display;
+    }
+    .intensity-levels table tr{
+        padding: 0rem;
+        height: 7rem;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+}
+@media only screen and (max-width: 320px){
+    .container{
+        padding: 1rem 1rem;
+    }
+
+    .class-type{
+        gap: 1rem 3rem;
+        padding-block: 2rem;
+        flex-direction: column;
+    }
+
+    .icon-box div{
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .icon-box img{
+        max-height: 3rem;
+        
+    }
+
+    .detail-box p{
+        padding: 1rem 0;
+
+    }
+    .intensity-levels{
+        padding: 0rem
+    }
+    .intensity-levels table h2{
+        white-space: nowrap;
+        margin-left: 0rem;
+        margin-top: 22%;
+        text-align: left;
+        font: normal normal 800 27px/52px Playfair Display;
+    }
+    .intensity-levels table tr{
+        padding: 0rem;
+        height: 7rem;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+}

@@ -1,0 +1,69 @@
+<template>
+    <div class="ins_Master">
+         <div class="intro">
+            <div class="main_intro playfair">
+             <h2>New Classes</h2>
+            </div>
+            <!-- <div class="sub-intro">
+                <p>our highly trained instructors are truly passionate apout hrlping people slow<br class="br_br">parkinson's through each of there specialized fields.</p>
+            </div> -->
+        </div>
+        <div class="slidecontainer">
+         <input type="range" min="0" max ={sliderMaxVal} value="0" class="slider" data-id="myRange" onchange={sliderChange}>
+        </div>
+    
+        <div class="slider-container-1">
+           <div class="parent-instructor row"  data-id="container_I">
+                <template for:each={data.tranners} for:item="tranner">
+                    <div class="col-4 card" key={tranner.name} data-id="card-1">
+                        <div class="cardOutterClass">
+                            <div class="cardInnerClass">
+                                <div class="innerclass">
+                                    <div class="inst-img">
+                                    <img src={Classimage} class="cardImageClass">
+                                </div>
+                                <!-- <br> -->
+
+                                    <div class="cardNameLevelClass">
+                                        <div class="cardNameClass mordenLimitName"> <img src={userIcon}> {tranner.name}</div>
+                                        <div class="cardLevelClass"> <img src={levelIcon}> Low/Seated</div>
+                                    </div>
+                                </div>
+                                <div class="cardFooterContainer2">
+                                    <div class="cardFooterIconContainer2">
+                                            <div class="exerciseContainer">
+                                                <h1 class="exerciseNameCLass mordenLimitName">{tranner.name}</h1>
+                                            </div>
+                                            <div class="descriptionClass">{tranner.exp}</div>                                  
+                                        </div>
+                                        </div>
+                                        <div class="lineFavClass">  </div>
+                                <div class="cardFooterContainer">
+                                    <div class="cardFooterIconContainer">
+                                        <div>
+                                            <img src={likeIcon} class="iconClass cardIconClass" onclick={handleLikeClick}>
+                                        </div>
+                                        <!-- <div style="margin-left: 15%;">
+                                            <img src={shareIcon} class="iconClass cardIconClass">
+                                        </div> -->
+                                    </div>
+                                    <div class="cardFooterButtonContainer">
+                                        <div class="buttonContainer" >
+                                            <a href="/PFNCADNA/s/bwps-wip-signin"><div class="buttonInnerContainer">
+                                                <span class="buttonClass" data-name={tranner.name}  data-schname ={tranner.name} data-descp ={tranner.exp}  data-ints={tranner.exp} onclick={scheduleClassDetailViewHandle}>START</span>
+                                            </div></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+           </div>
+        </div>
+        <div class="box-slid-button">
+            <button class="slide-button" onclick={preview} > &#10094; </button>
+            <button class="slide-button" onclick={next} > &#10095; </button>
+        </div>
+    </div>
+    </template>

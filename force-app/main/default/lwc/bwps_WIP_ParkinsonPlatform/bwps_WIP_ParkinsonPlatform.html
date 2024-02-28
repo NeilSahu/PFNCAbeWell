@@ -1,0 +1,96 @@
+<template>
+    <c-bwps_-w-i-p_-dynamic-hero title="Parkinson's Disease" img-url={heroImage} isdescription="true" description="All About Parkinson's Disease"></c-bwps_-w-i-p_-dynamic-hero>
+    
+    <div class="col-12">
+        <div class="row">
+            <!-- <div class="page-head" style={backgroundStyle}>
+                <div class="header">Parkinson's Disease</div>
+                <div class="content">All About Parkinson's Disease</div>
+            </div> -->
+            <div class="firstcontent">
+                <div class="col-6 firstdiv">
+                    <div class="headcontent">
+                        <div class="header">{showtitle}</div>
+                        <div class="content">{showdescription}</div>
+                    </div>
+                </div>
+                <div class="col-6 seconddiv">
+                    <div class="image">
+                        <img src={showimage}>
+                    </div>
+                </div>
+            </div>
+            <div class="allcircle">
+                <div class="col-4">
+                    <div class="circle-container">
+                        <div class="circle">Resting Tremor</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="circle-container">
+                        <div class="circle">Generalised<br>Slowness<br>(BradyKinesia)</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="circle-container">
+                        <div class="circle">Stiffness of the limbs<br>(cogwheel rigidity)</div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="secondcontent">
+                <div class="content">
+                    <p>Other motor manifestations of Parkinson's disease may include 
+                        small handwriting, decreased facial expression, soft speech, 
+                        and difficulty swallowing. As the disease progresses, postural 
+                        instability develops, resulting in a slow, imbalanced shuffling 
+                        gait, which can result in falls.</p>
+
+                    <p>Because other parts of the brain and other neurotransmitters 
+                        (other than dopamine) can be affected in Parkinson's disease, 
+                        other symptoms can occur. These can include lightheadedness, 
+                        constipation, dementia, depression, and sleep disturbance..</p>
+                    
+                    <p>Every patient is different and may not experience all of the
+                         above symptoms.</p>
+                </div>
+            </div>
+            <div class="parkinson-foundation">
+                <div class="headcontent">
+                    <div class="header">Parkinson Foundation</div>
+                    <div class="content">To learn more about Parkinson's disease, please 
+                        visit: <a>https://parkinsonfoundation.org</a></div>
+                </div>
+                <div class="buttons">
+                    <div class="box-blue-button">
+                        <button class="blue-button" onclick={handleVisit}>VISIT WEBSITE</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div>Be well container</div> -->
+            <!-- <div class="try-it">
+                <div class="col-6 headcontent">
+                    <div class="try-it-header">Try It Free For 30 Days</div>
+                    <div class="try-it-content">Get started with one free month of unlimited yoga, 
+                        fitness, and meditation classes. Cancel anytime.</div>
+                </div>
+                
+                <div class="col-6">
+                    <div class="buttons">
+                        <div class="box-orange-button">
+                            <button class="orange-button">START YOUR FREE TRIAL</button>
+                        </div>
+                        <div class="box-blue-button">
+                            <button class="blue-button">EXPLORE</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div> -->
+            <!-- <div>Stay Connected Container</div> -->
+
+        </div>
+    </div>
+    <c-bwps_-w-i-p_-review-slider></c-bwps_-w-i-p_-review-slider>
+    <c-stay-connected-footer></c-stay-connected-footer>    
+</template>

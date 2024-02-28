@@ -1,0 +1,57 @@
+<template>
+    <div class="row">
+        <div class="col-6">
+            <div class="signin-form">
+                <div class="login-details">
+                    <div class="signin-heading">
+                        <h1>Sign In</h1>
+                    </div>
+                    <div class="Login-form">
+                        <form>
+                            <label for="email">Email Address</label><br>
+                            <input type="email" id="email" name="email" data-id="email" onchange={getUsername} required><br>
+                            <label for="password">Password</label><br>
+                            <input type="password" id="password" name="password" data-id="password"
+                                onchange={getPassword} required><br>
+
+                            <div class="rememberMe-div">
+                        <div class="checkbox">
+                            <input type="checkbox" id="RememberMe">
+                            <label for="RememberMe">Remember Me</label>
+                        </div>
+                        <div class="forgot-password">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="submit-button-div">
+                        <div class="box-orange-button">
+                            <button class="orange-button" onclick={signInClickHandle}>SIGN IN</button>
+                        </div>
+                    </div>
+                        </form>
+                    </div>
+                    
+                    <div class="not-member">
+                        <a href="#">Not a member?</a>
+                    </div>
+                    <div class="get-pass-buttons">
+                        <a href={getAGuestPassLink}>
+                            <div class="box-white-button">
+                                <button class="white-button">GET A GUEST PASS</button>
+                            </div>
+                        </a>
+                        <a href={becomeAMemberLink}>
+                            <div class="box-white-button">
+                                <button class="white-button">BECOME A MEMBER</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6" style={backgroundStyle}>
+            <!-- <img src={signinImage} alt="image"> -->
+            &nbsp;
+        </div>
+    </div>
+</template>

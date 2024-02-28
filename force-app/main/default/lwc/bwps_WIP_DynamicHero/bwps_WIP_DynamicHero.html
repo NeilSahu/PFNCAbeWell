@@ -1,0 +1,27 @@
+<template>
+    <div class="hero" style={backgroundStyle}>
+        <div></div>
+        <div class="hero-content">
+            <div class="title">
+                {title}
+            </div>
+            <template if:true={isdescription}>
+                <div class="description">
+                    {description}
+                </div>
+            </template>
+            <template if:true={isbutton}>
+                <!-- <a href="/PFNCADNA/s/bwps-wip-getaguestpass"> -->
+                <a href="/PFNCADNA/s/bwps-wip-signin/?guest=true">
+                <div if:true={guestButton}>
+                    <div class="submit-button-parent-div">
+                        <div class="submit-button-div">
+                            <button class="submit-button" onclick={onSubmit}>{buttontext}</button>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </template>
+        </div>
+    </div>
+</template>

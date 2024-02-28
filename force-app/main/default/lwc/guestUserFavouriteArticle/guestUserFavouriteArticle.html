@@ -1,0 +1,68 @@
+<template>
+   <div class="ArticleSuper">
+        <!-- <div class="Articles">
+            <p>YOUR FAVOURITE ARTICLE</p>
+        </div> -->
+        
+        <div class="ArticleDetail">
+            <lightning-layout multiple-rows="true" style="padding: 2%;">
+                <template if:true={haveFavArticle} for:each={favouriteBlogs} for:item="article">
+                    <lightning-layout-item key={article.id} class="ArticleLayout">
+                        <div class="ArticleData">
+                            <div class="Imagerow">
+                                <img src={article.photo}>
+                            </div>
+                            <br>
+                            <div class="NameExpression">
+                                <p class="DateDetail">{article.auther}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{article.date}</p>
+                                <h1 data-id={article.id} onclick={handleBlogClick}>{article.heading}</h1>
+                                <p>{article.description}</p>
+                                <!-- <img src={favIcon} class="iconClass"> -->
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+                    <!-- <lightning-layout-item key={article.imgUrl} class="ArticleLayout">
+                        <div class="ArticleData">
+                            <div class="Imagerow">
+                                <img src={article.imgUrl}>
+                            </div>
+                            <br>
+                            <div class="NameExpression">
+                                <p class="DateDetail">{article.date}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{article.date1}</p>
+                                <h1>{article.lessons}</h1>
+                                <p>{article.Details}</p>
+                                <img src={favIcon} class="iconClass">
+                            </div>
+                        </div>
+                    </lightning-layout-item> -->
+                    <!-- {article.id} -->
+                </template>
+                <div if:false={haveFavArticle} class="mainCardContainerClass emptyContainer">
+					<span style="color:black;">No Favorties Articles</span>
+				</div>
+            </lightning-layout>
+            <template if:true={showBlogDetail}>
+                
+                <div class="blog-modal">
+                    <c-bwps_-w-i-p_-blog-post-view blog-id={blogId} blog-heading={blogHeading} blog-date={blogDate} blog-author={blogAuthor} blog-image={blogImage} blog-info={blogInfo} onbackclick={handleBackClick}></c-bwps_-w-i-p_-blog-post-view> 
+                </div>
+            </template>
+            <!-- <div class="ArticleDetailRow secondrow">
+                <template for:each={reports.articles} for:item="article">
+                    <div class="ArticleImages col-4" key={article}>
+                        <div class="Imagerow">
+                            <img src={article.imgUrl}>
+                        </div>
+                        <br>
+                        <div class="nameExpression">
+                            <p class="dateDetails">{article.date}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;{article.date1}</p>
+                            <h1>{article.lessons}</h1>
+                            <p>{article.Details}</p>
+                            <img src="/sfsites/c/file-asset/imageHeart?v=1">
+                        </div>
+                    </div>
+                </template>
+            </div> -->
+        </div> 
+    </div>
+</template>

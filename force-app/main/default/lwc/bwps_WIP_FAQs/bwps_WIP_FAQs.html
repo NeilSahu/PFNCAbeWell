@@ -1,0 +1,134 @@
+<template>
+	<div class="main-container" style="background-color: white;">
+		<div class="faq-header" style={bgImgStyle}>
+			<!-- <div class="bell-icon"><img src={bell_Icon} alt=""></div> -->
+			<div class="faq-text">FAQs</div>
+			<div class="search-content">
+				<div class="search-box"><input class="search-input" type="text" placeholder="Search FAQs" data-id="searchInput"> 
+                </div>
+					<div class="serach-btn-box yello-btn-box">
+						<div class="search-btn yello-btn" onclick={handlesearch}>SEARCH</div>
+					</div>
+				</div>
+			</div>
+			<template if:false={showSearchMode}>
+				<div class="popular-questions-container" >
+					<div class="p-questions-text"><h1>Popular Questions</h1></div>
+					<div class="p-questions-box">
+						<template for:each={popularQue} for:item="ques">
+							<div class="p-question" key={ques.id} onclick={handlePopularQue} data-id="PopularQue">{ques.Name}</div>
+						</template>
+					</div>
+				</div>
+				<div class="catagory-container">
+					<div class="help-heading-text">HELP BY CATEGORY</div>
+					<div class="hr-line"></div>
+				</div>
+				<div class="carousel-questions-box">
+					<div id="slider-container" class="slider" data-id="slider">
+						<div class="slide">
+							<div class="card" style={bgImgStyle1}>
+								<div class="card-contents" >
+									<img src={bgBeeSymbol}>
+									<button class="button" onclick={handleClick_gettingStarted}>GETTING STARTED</button>
+
+								</div>
+							</div>
+						</div>
+						<div class="slide">
+							<div class="card" style={bgImgStyle2}>
+								<div class="card-contents">
+									<img src={bgBeeSymbol}>
+									<button class="button" onclick={handleClick_aboutTheProgram}>ABOUT THE PROGRAM</button>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="slide">
+							<div class="card" style={bgImgStyle3}>
+								<div class="card-contents">
+									<img src={bgBeeSymbol}>
+									<button class="button" onclick={handleClick_joiningClasses}>JOINING CLASSES</button>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="slide">
+							<div class="card" style={bgImgStyle1}>
+								<div class="card-contents">
+									<img src={bgBeeSymbol}>
+									<button class="button"  onclick={handleClick_gettingStarted}>GETTING STARTED</button>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="slider-button-box">
+						<button  class="control-prev-btn" onclick={handlePrev}><div class="arrow-left"></div> </button>
+						<button class="control-next-btn" onclick={handleNext}> <div class="arrow-right"></div> </button>
+					</div>
+
+					<div class="c-questions-box">
+						<div class="GettingStartText">
+							<p> {FAQsHeading}</p>
+						</div>
+						<template for:each={category_q_data} for:item="ques_ans" for:index="index">
+						<details id={index} ontoggle={handleDetailsToggle} key={ques_ans.ques}>
+							<summary class="summary">{ques_ans.ques}</summary>
+							<p>{ques_ans.ans}</p>
+							<div class="q-hr-line"></div>
+						</details>
+					</template>
+						<template for:each={response} for:item="res" for:index="index">
+							<details id={index} ontoggle={handleDetailsToggle} key={res.id}>
+								<summary class="summary">{res.Name}</summary>
+								<p>{res.Answer__c}</p>
+								<div class="q-hr-line"></div>
+							</details>
+						</template>
+					</div>
+				</div>
+			</template>
+
+			<template if:true={showSearchMode}>
+				<div class="c-questions-box">
+					<div class="GettingStartText">
+						
+						<!-- <button onclick={handleGoBack} class="back-btn">Back</button> -->
+						<div class="back-btn" onclick={handleGoBack}> <img src={backIcom} class="backlIcon"> Back   </div>
+						<p>SEARCH RESULTS</p>
+					</div>
+					<template if:true={searchFilterResponse.length}>
+					<template for:each={searchFilterResponse} for:item="res" for:index="index">
+						<details id={index} ontoggle={handleDetailsToggle} key={res.id} open>
+							<summary class="summary">{res.Name}</summary>
+							<p>{res.Answer__c}</p>
+							<div class="q-hr-line"></div>
+						</details>
+					</template>
+					</template>
+
+					<template if:false={searchFilterResponse.length}>
+						<div class="no-search-found">
+							No results found
+						</div>
+					</template>
+				</div>
+			</template>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</template>

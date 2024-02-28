@@ -1,0 +1,255 @@
+<template>
+    <div class="TakeAttendance">
+        <div class="heading-section">
+            <div class="back-btn-container">
+                <div class="back-btn" onclick={backButton}>
+                    <img src={backIcom} class="backlIcon">
+                    Back
+                </div>
+            </div>
+            <div class="heading-Attendance" style="margin-top:5%;font-weight:bold;font-weight: bold;font-size: 17px;">
+                <p style="font-size: 20px;">ATTENDANCE</p>
+                <div class="heading-attendance">
+                    <p style="font-size: 20px;">{className}</p>
+                </div>
+                <div class="outerDivSH">
+                    <div class="secondDivSH">
+                        <input type="search" placeholder="Search Participants" class="searchIconColorSH"
+                            onkeyup={inputValue}>
+                        <div class="searchClass">
+                            <button onclick={handleSubmitUsers} class="searchbutton">
+                                SEARCH
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="attendance-details">
+            <div class="attendance-details-header">
+                <div class="dateParent">
+                    {schTime} &nbsp; &nbsp;{splitUpdatedDate}
+                </div>
+            </div>
+            <div class="attendanceiconcont">
+                <div class="presentContainer">
+                    <img class="table-heading-icon presentIconClass" src={green}>
+                    <p style="font-size: 18px;font-weight: bold;padding-left: 10px;" class="presentTextClass">Present
+                    </p>
+                </div>
+                <div class="absentContainer">
+                    <img class="table-heading-icon absentIconClass" src={red}>
+                    <p style="font-size: 18px;font-weight: bold;padding-left: 10px;" class="absentTextClass">Absent</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="attendance-information section-to-print">
+            <div class="sort-filter">
+                <template if:true={headingButton}>
+                    <div style="display:flex;">
+                        <div>
+                            <p style="font-size: 20px;font-weight: bold;"> Sort view by: </p>
+                        </div>
+                        <div style="padding: 4px;">
+                            <a class="sort-filter-link1 sort-filter-active" onclick={clickHandlerActive1}>A to Z</a>
+                            <a class="sort-filter-link2 sort-filter-deactive" onclick={clickHandlerActive2}>Z to A</a>
+                        </div>
+                    </div>
+                    <div class="adduserclass">
+                        <img src={download} alt="download">
+                        <a class="addUserImg" onclick={handleDownload}>DOWNLOAD LIST</a>
+
+                        <!-- <img class="adduserImg" src={addIcon} onclick={clickHandlerUsers}>
+                        
+                        <a  class="addUserImg" onclick={clickHandlerUsers}>Add More Users</a> -->
+                    </div>
+                </template>
+            </div>
+
+            <div class="search-filter">
+                <template if:true={showPopUp}>
+                    <div class="form-overlay">
+                        <lightning-card>
+                            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open"
+                                key={scheduleClass.Id}>
+                                <div class="slds-modal__container">
+                                    <header class="slds-modal__header">
+                                        <button
+                                            class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                            title="Close" onclick={hideSendModalBox}>
+                                            <lightning-icon icon-name="utility:close" alternative-text="close"
+                                                variant="bare" size="small" class="closeIcon"></lightning-icon>
+                                            <span class="slds-assistive-text">Close</span>
+                                        </button>
+                                        <div class="search">
+                                            <label for="searchInput">Find Users </label>
+                                            <img class="searchlogo" src={searchlogo}>
+                                            <input class="searchInput" id="searchInput" type="text" placeholder="Search"
+                                                onchange={inputValue}>
+
+                                        </div>
+                                    </header>
+
+                                    <div class="slds-modal__content slds-p-around_large">
+                                        <template if:true={loadContact}>
+                                            <lightning-spinner alternative-text="Loading" variant="success"
+                                                size="large"></lightning-spinner>
+                                        </template>
+                                        <template for:each={userArray} for:item="con" for:index="index">
+                                            <div key={con.Index} class="trowClass">
+                                                <span>
+                                                    <img src={userImg}>
+                                                    <div> {con.Name}</div>
+                                                </span>
+                                                <span> <img class="filter-user-image" onclick={addClass} src={addIcon}
+                                                        data-index={con.Index} data-id={con.Id}
+                                                        data-name={con.Name}></span>
+                                            </div>
+                                        </template>
+                                    </div>
+                                    <footer class="search-footer">
+                                        <template if:true={showNextButton}>
+                                            <div class="submitClass">
+                                                <button onclick={handleSelectedUsers} class="submitbutton">
+                                                    Next
+                                                </button>
+                                            </div>
+                                        </template>
+                                        <template if:false={showNextButton}>
+                                            <div class="submitClassDisabled">
+                                                <button class="submitbuttonDisabled">
+                                                    Next
+                                                </button>
+                                            </div>
+                                        </template>
+                                    </footer>
+                                </div>
+                            </section>
+                        </lightning-card>
+                    </div>
+                </template>
+                <!-- <template if:true={showNextPopUp}>
+                        <div class="form-overlay">
+                        <lightning-card >
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open" key={scheduleClass.Id}>
+                            <div class="slds-modal__container">
+         
+                                <header class="slds-modal__header">
+                                    
+                                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideSendModalBox}>
+                                        <lightning-icon icon-name="utility:close"
+                                        alternative-text="close"
+                                        variant="bare"
+                                        size="small"
+                                        class="closeIcon" ></lightning-icon>
+                                        <span class="slds-assistive-text">Close</span>
+                                    </button>
+                                    
+                                    <div class="search">
+                                        <label for="selectedusers">Selected Users </label>
+                                    </div>
+                                    
+                                </header> 
+                                 
+                                <div class="slds-modal__content slds-p-around_large">
+                                    <template for:each={finalUserArr} for:item="last" for:index="index">
+                                         <div key={last.index} class="trowClass">
+                                            <span> <img src={userImg} > &nbsp; &nbsp; {last.Name}</span>
+                                            
+                                            <span> <img class="filter-user-image" onclick={minusClass} src={MinusIcon} data-index={last.index} data-id={last.Id} data-name={last.Name}></span>
+                                            
+                                        </div>
+                                    </template>
+                                </div>
+                                <footer class="search-footer-next">
+                                    <input type="checkbox" class="myCheck" id="myCheck" style="margin-left:10px;" onclick={consentClass}>
+                                     <label for="scales" style="margin-left:10px;">Are you sure you want to add the following users?</label>
+                                        <template if:true={submitButton}>
+                                            <div class="submitClass">
+                                                <button onclick={handleSubmitUsers} class="submitbutton">
+                                                    Submit
+                                                </button>
+                                            </div> 
+                                         </template>
+                                         <template if:false={submitButton}>
+                                            <div class="submitClassDisabled">
+                                                <button  class="submitbuttonDisabled">
+                                                    Submit
+                                                </button>
+                                            </div> 
+                                        </template > -->
+                <!-- </footer> -->
+                <!-- </div>
+                        </section>
+                        </lightning-card>
+                        </div> 
+                    </template> -->
+            </div>
+
+
+            <template if:true={noSearchResultArray}>
+                <p style="text-align: center;">There is no participants !</p>
+            </template>
+
+            <div class="attendance-list">
+                <table>
+                    <template if:false={showmsg}>
+
+                        <template if:true={isLoading}>
+
+                            <lightning-spinner alternative-text="Loading" variant="success"
+                                size="large"></lightning-spinner>
+                        </template>
+                        <template if:false={showmsg}>
+                            <template for:each={searchResultArray} for:item="attData" for:index="index">
+                                <tr key={attData.Id}>
+                                    <td> <img class="attendance-user-image" src={attData.ImageURL}>{attData.Name}</td>
+                                    <td class="att-row">
+                                        <div class="presentImgContainer">
+                                            <img onclick={clickHandlerAttedanceMarkPresent} data-pid={attData.Id}
+                                                data-sid={attData.Sch} class="presentImage presentImgClass"
+                                                src={attData.ImageAttendancep}>
+                                        </div>
+                                    </td>
+                                    <td class="att-row">
+                                        <div class="absentContainer">
+                                            <img onclick={clickHandlerAttedanceMarkAbsent} data-aid={attData.Id}
+                                                data-sid={attData.Sch} class="absentImage absentImgClass"
+                                                src={attData.ImageAttendancea}>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </template>
+                        </template>
+                    </template>
+                    <template if:true={showmsg}>
+                        <p class="noclass">{noClassMsg}</p>
+                    </template>
+                </table>
+            </div>
+        </div>
+        <!-- <template if:true={showButton}> -->
+        <template if:false={noSearchResultArray}>
+            <div class="submitClass">
+                <button data-id="attbutton" onclick={handleAttendance} class="submitbutton">
+                    Submit
+                </button>
+            </div>
+        </template>
+
+        <!-- </template>
+            <template if:false={showButton}>
+                <div class="submitClassDisabled">
+                    <button  class="submitbuttonDisabled">
+                        Submit
+                    </button>
+            
+                </div>  
+            </template> -->
+    </div>
+    <c-recurring-donation auto-close-time="1000"></c-recurring-donation>
+</template>

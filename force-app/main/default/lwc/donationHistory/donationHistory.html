@@ -1,0 +1,148 @@
+<template>
+    <div class="donation-container">
+        <div class="d-heading">
+            Your Donations
+        </div>
+        <div class="donation-data">
+            <div class="donation-block">
+                <div class="db-heading">
+                    YOUR DONATIONS IN MEMORY/HONOR OF
+                </div>
+                <div class="db-box">
+                    <div class="db-details">
+                        <div class="db-image">
+                            <img src={donationhandlogo}>
+                        </div>
+                        <div class="dbd-content">
+                            <div class="sub-content">
+                                You donated ${LastDonationAmt}
+                                {LastDonationDate} <template if:true={honorView}> in honor of {honoreeName}. </template>
+                            </div>
+                            <a if:true={LastDonationURL} href={LastDonationURL}>    
+                                <div class="box-white-button">
+                                    <button class="white-button">VIEW DONATION DETAILS</button>    
+                                </div>
+                            </a>
+                            <div if:false={LastDonationURL} >    
+                                <div class="box-white-button">
+                                    <button class="white-button" onclick={handleNoDonationDetailClick}>VIEW DONATION DETAILS</button>    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="db-btn">
+                        <div class="box-blue-button">
+                            <button class="blue-button" onclick={handleClickDonationForm}>ADD DONATIONS IN MEMORY/HONOR OF</button>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="donation-block">
+                <div class="db-heading">
+                    YOUR RECURRING DONATIONS
+                </div>
+                <div class="db-box">
+                    <div class="db-details" style="padding: 1rem 2rem 3.5rem;">
+                        Please consider a recurring donation (monthly or quarterly) which allows us to have predictable funding to better serve those living with Parkinson’s.
+                    </div>
+                    <div class="db-btn">
+                        <div class="box-blue-button">
+                            <button class="blue-button" onclick={handleClickDonationForm}>ADD A RECURRING DONATIONS</button>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <c-bwps_-Donor-Dashboard-Donate-Form ></c-bwps_-Donor-Dashboard-Donate-Form>
+        <div class="alternative-ways">
+            Alternative methods to donate (<a href="https://parkinsonfoundation.org/other-ways-to-give" target="_blank">parkinsonfoundation.org/other-ways-to-give</a>).
+        </div>
+        <div class="donation-history">
+            <div class="donation-heading">
+                <h4 class="heading-color">DONATIONS HISTORY</h4>
+                <div class="flexdiv">
+                    <span class="flexdivspan" onclick={downloadAllReceiptMethod}>Download all receipts</span>
+                    <hr>
+                    <div class='dropdownlogo' onclick={dropDown}>
+                        <template if:true={showDropdown}>
+                            <img class='logotext' src={dropuparrow}>
+                        </template>
+                        <template if:false={showDropdown}>
+                            <img class='logotext' src={dropdownarrow}>
+                        </template>
+                    </div>
+                </div>
+
+            </div>
+            <div class="donation-history-box">
+                <div class="row m-0 ">
+                    <div class="col-2 table-heading">Date</div>
+                    <div class="col-2 table-heading">Amount</div>
+                    <div class="col-2 table-heading">Payment Method</div>
+                    <div class="col-2 table-heading" style="">Status</div>
+                    <div class="col-2 table-heading"></div>
+                    <div class="col-2 table-heading"></div>
+                </div>
+
+                <div class="recordContainerClass">
+                    <template if:false={isEmpty} for:each={tempArr} for:item="donData">
+                        <div class="row mainrow" key={donData.Id}>
+                            <div class="col-2 table-data" style="font-weight:300;">{donData.CreatedDate}</div>
+                            <div class="col-2 table-data">${donData.Amount} USD</div>
+                            <div class="col-2 table-data">{donData.PaymentMethod}</div>
+                            <div class="col-2 table-data" style=" font-weight:300;">
+                                <div style="display: flex; align-items: center;">
+                                    <template if:true={donData.Status}>
+                                        <div class=" adjacent_div_1_of_2">
+                                            <img src={ticklogo} alt="Tick logo" class="allimg img1">
+                                        </div>
+                                        <div style="text-align: left;">
+                                            Success
+                                        </div>
+                                    </template>
+                                    <template if:false={donData.Status}>
+                                        <div class=" adjacent_div_1_of_2">
+                                            <img src={failedlogo} alt="Failed logo" class="allimg img1">
+                                        </div>
+                                        <div style="text-align: left;">
+                                            Failed
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                            <div class="col-2 table-data resp-link">
+                                <a href="#" style="text-decoration:none; color:#008CA7;">
+                                    <div class="flex-receipt">
+                                        <div class="adjacent_div_1_of_2" data-id={donData.oppoId} data-name={donData.oppoName}
+                                            onclick={downloadReceiptPDFMethod}>
+                                            Receipt
+                                        </div>
+                                        <div class=" ">
+                                            <img src={downloadlogo} alt="Download logo" class="allimg img2">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-2 table-data resp-link">
+                                <a href={donData.showURL} style="text-decoration:none; color:#008CA7;">
+                                    <div class="FLEX">
+                                        <div class="adjacent_div_2_of_2" data-id={donData.Id}>
+                                            Show Details
+                                        </div>
+                                        <div class="IMGARR">
+                                            <img src={arrowlogo} alt="Tick logo" class="allimg img3">
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </template>
+                    <div if:true={isEmpty}>
+                        <span>No record found.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

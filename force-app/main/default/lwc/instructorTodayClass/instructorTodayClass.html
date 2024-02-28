@@ -1,0 +1,156 @@
+<template>
+	<div class="mainContainer">
+		<div class="mainContainerClass">
+			<div class="headerContainer">
+				<div class="dateContainer">
+					<template if:true={dayView}>
+						<div class="dayClass">
+							<h1 style="font-size: 40px;">
+								Today
+							</h1>
+						</div>
+						<div class="dateClass">
+							<span>
+                                {splitUpdatedDate}
+                            </span>
+						</div>
+					</template>
+					<template if:true={weekBtn}>
+						<div class="dayClass">
+							<h1 style="font-size: 40px;">
+								This Week
+							</h1>
+						</div>
+						<div class="dateClass">
+							<span>
+                                {splitUpdatedDate} &nbsp;-&nbsp;{splitUpdatedNextDate}
+                            </span>
+						</div>
+					</template>
+					<template if:true={monthBtn}>
+						<div class="dayClass">
+							<h1 style="font-size: 40px;">
+								This Month
+							</h1>
+						</div>
+						<div class="dateClass">
+							<span>
+                                {splitUpdatedDate}&nbsp;-&nbsp;{splitUpdatedNextDate}
+                            </span>
+						</div>
+					</template>
+				</div>
+				<div>
+				</div>
+				<div class="calendarParent">
+					<div class="type">
+						<div class="box">
+							<a onclick={dayClickHandler} class="box-click-active day-tag" id="day-tag">
+								<div class="day">
+									Day
+								</div>
+							</a>
+							<a onclick={weekClickHandler} class="week-tag" id="week-tag">
+								<div class="week">
+									Week
+								</div>
+							</a>
+							<a onclick={monthClickHandler} class="month-tag" id="month-tag">
+								<div class="month">
+									Month
+								</div>
+							</a>
+						</div>
+					</div>
+					<!-- <div class="dateParent">
+                        <a class="perv-tag" onclick={prevClickHandler}>
+                            <div class="prev-button">
+                                &lt;
+                            </div>
+                        </a>
+                        <input class="date-picker-input" type="date" name="" value={dateValue} id="date-picker"
+                            onchange={handlePickedDate}>
+                        <div class="date-text fullDate">
+
+                        </div>
+                        <a class="next-tag" onclick={nextClickHandler}>
+                            <div class="next-button">
+                                &gt;
+                            </div>
+                        </a>
+                    </div> -->
+					<!-- <div class="eventClass">
+                        <div class="eventIconClass">
+                            <lightning-icon icon-name="utility:reminder" alternative-text="Utility reminder"
+                                title="reminder" variant="warning" size="small"></lightning-icon>
+                        </div>
+
+                        <div class="eventTextClass">
+                            <span>Export Events to a calendar</span>
+                        </div>
+                    </div> -->
+				</div>
+			</div>
+			<!-- <hr class="toplineclass">    -->
+			<template if:true={noVisibleScheduleClassLineItemArray}>
+				<p style="text-align: center;padding: 40px 0px;font-weight: bold;color: #777;">No Schedule Classes !
+				</p>
+			</template>
+			<div class="classContainerParent">
+				<template iterator:it={visibleScheduleClassLineItemArray}>
+					<div class="classContainer" key={it.value.Id}>
+						<div class="outlineborder">
+							<div class="timer-btn-container">
+								<button class="timer-btn">{it.value.scLineItemTime} EST</button>
+							</div>
+							<div class="section-container">
+								<div class="icons-parent">
+									<h2 class="section-header">{it.value.Name}</h2>
+									<hr>
+									<div class="icons">
+										<div class="iconfirst">
+											<img class="levelIconClass" src={it.value.Level}>
+											<span class="timespan">{it.value.BWPS_Integrity__c}</span>
+										</div>
+										<div class="timerIconClass">
+											<img class="timerimg" src={it.value.timer}>
+											<span class="timeminute">{it.value.classDuration} Min</span>
+										</div>
+									</div>
+								</div>
+								<div class="attendance-btn-container">
+									<abbr title={it.value.helpText}>
+                                        <div class={it.value.disabledClass}>
+                                            <button class="attendance-btn"
+                                                data-scliclassdate={it.value.BWPS_ClassDate__c}
+                                                data-scname={it.value.scheduleClassName} data-id={it.value.Id}
+                                                data-date={currentDate} data-name={it.value.Name}
+                                                data-timestring={it.value.BWPS_StartTime__c}
+                                                data-time={it.value.BWPS_StartTime__c}
+                                                onclick={takeAttendenceMethod}>{it.value.btnName}</button>
+                                        </div>
+                                    </abbr>
+								</div>
+							</div>
+						</div>
+						<div if:false={it.last} class="underlineClass"></div>
+					</div>
+				</template>
+			</div>
+			<div class="resources">
+				<c-instructor-recent-note-resource></c-instructor-recent-note-resource>
+			</div>
+		</div>
+		<div class="secondcontainer">
+			<div class="announcementContainer">
+				<c-instructor-announcement-section></c-instructor-announcement-section>
+			</div>
+			<div class="notesContainer">
+				<c-bwps_-instructor-notes></c-bwps_-instructor-notes>
+			</div>
+			<div class="summaryContainer">
+				<c-instructor-track-classes-info></c-instructor-track-classes-info>
+			</div>
+		</div>
+	</div>
+</template>

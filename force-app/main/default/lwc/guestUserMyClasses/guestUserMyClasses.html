@@ -1,0 +1,203 @@
+<template>
+     <div class="secondDivSH" >
+                <img class="searchIconColorSH" src={search} ></img>
+                <!-- <span class="searchIconColorSH" style="color:blue" onclick={searchClass}>SEARCH YOUR CLASSES</span> -->
+                <input type="search" placeholder="SEARCH YOUR CLASS" class="searchIconColorSH" onkeyup = {searchHandler}>
+    </div>
+    <div class="firstHeaderDiv">
+          <!-- <div class="div2">
+                <a> <img class="bellIcon" src={bellIcon} onclick={showNotificationMethod}> </a>
+                <div class="notificationCount"><span>{totalNotifications}</span></div>
+                    <div if:true={showNotificationFlag}>
+                       <c-notification-component totalrecords={notificationVisibel}></c-notification-component>
+                    </div>
+    	  </div> -->
+        My Classes
+    </div>
+    <!-- <div class="bellIconClass"><img src={bellIcon} class="bellImageClass"></div> -->
+    <div class="liveContainer">
+        <div class="liveInnerContainer">
+            <div> <span style="font-weight: 700;" class="menuClass recentClass sortclass">Sort view by:</span> 
+            </div>
+            <div class= "menuall"  style="display: flex;">
+                <div if:true={showRecentLine} class="underlineClass">
+                     <div onclick={handleRecentUnderline} data-id="" value="Recent"> <span  class="menuClass recentClass" >Recent</span> </div>
+                 </div>  
+                 <div if:false={showRecentLine} >
+                     <div onclick={handleRecentUnderline} data-id="" value="Recent"> <span  class="menuClass recentClass" >Recent</span> </div>
+                 </div>   
+                <div if:true={showCompletedLine} class="underlineClass">
+                    <div  onclick={handleCompletedUnderline} > <span class="menuClass completeClass" >Completed</span>
+                        </div>
+                </div>
+                <div if:false={showCompletedLine}>
+                    <div  onclick={handleCompletedUnderline} > <span class="menuClass completeClass" >Completed</span>
+                        </div>
+                </div>
+                 <div if:true={showInProgressLine} class="underlineClass">
+                    <div onclick={handleInProgressUnderline}> <span class="menuClass progressClass" >In-progress</span>
+                    </div>
+                </div>
+                <div if:false={showInProgressLine}>
+                    <div  onclick={handleInProgressUnderline}> <span class="menuClass progressClass" >In-progress</span>
+                    </div>
+                </div>
+                <div if:true={showFavLine} class="underlineClass">
+                    <div onclick={handleFavUnderline} value="Favorites"> <span class="menuClass favClas" >Favorites</span>
+                        </div>
+                </div>
+                <div if:false={showFavLine}>
+                    <div  onclick={handleFavUnderline} value="Favorites"> <span class="menuClass favClas" >Favorites</span>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div><span class="viewScheduleClass" onclick={viewAllNavigationHandler}>View all</span></div> -->
+       
+    </div>
+        
+    <div class="upcomingClassesContainer">
+        <div if:false={haveClass}>
+            <div>
+                <span class="noclass">There is no {tab} class.</span>
+            </div>
+            <!-- <div class="addClassContainer">   
+                <div class="addClassBtnOutter">
+                    <button class="addClassBtn">ADD A CLASS</button>
+                </div>
+            </div> -->
+        </div>
+        <div if:true={haveClass} class="slds-grid slds-wrap" style="margin: 0%; width: 100%;">   
+            <template for:each={searchResultArray} for:item="card">
+                    <div class="cardClass slds-col slds-size_1-of-3" key={card.key}>
+                        <div class="cardDetailClass">
+                            <div class="cardImage">
+                                <img src = {card.scImage} style="width: 100%;height:100%;">
+                            </div>
+                            <!-- <div if:true={blueLine}> -->
+                                <div class="overTimeContainer">
+                                   <div class="overlay">
+                                      <p>{card.Schedule_Class_Line_Item_del__r.scLineItemTime} /
+										{card.Schedule_Class_Line_Item_del__r.shortDay} </p> 
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+                            <div class="cardPersonLevelClass">
+                                <div class="nameLevelClass">
+                                    <div class="iconClass"> <img src={userIcon} ></div>
+                                    <div class="cardNameLevelText"><span>{card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_instructor__r.Name}</span></div>
+                                </div>
+                                <div class="nameLevelClass">
+                                    <div> <img class="iconClass" src={card.Schedule_Class_Line_Item_del__r.intensity}> </div>
+                                    <div class="cardNameLevelText"><span>{card.Schedule_Class_Line_Item_del__r.BWPS_Integrity__c}</span></div>
+                                </div>
+                            </div>
+                            <hr></hr>
+                            <div class="exerciseContainer">
+                                <h1 class="exerciseNameClass">{card.Schedule_Class_Line_Item_del__r.Name}</h1>
+                            </div>
+                            <div class="descriptionTextClass">{card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_Description__c}</div>
+                            <div class="cardFooterContainer">
+                                <div class="cardFooterIconContainer">
+                                    <div>
+                                        <!-- <img src={likeIcon} style="width: 30px;height:30px;"> -->
+                                        <img class="iconClass cardIconClass unfav" src={favIcon} if:true={card.classFavStatus} onclick={favoriteHandler} data-id={card.scliId} data-isfav={card.classFavStatus}>
+                                        <img class="iconClass cardIconClass" src={unFavIcon} if:false={card.classFavStatus} onclick={favoriteHandler} data-id={card.scliId} data-isfav={card.classFavStatus}> 
+                                    </div>
+                                    <div style="margin-left: 15%;">
+                                        <!-- <img src={shareIcon} class="shareImage"> -->
+                                        <!-- <img class="shareImage" src={shareIcon} onclick={handleShare} data-id={card.Id} data-description={card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_Description__c}> -->
+                                    </div>
+                                </div>
+                                <div class={card.btnClass}>
+                                    <div class="cardButtonClass">
+                                        <button class="cardButton" data-key={card.Id} data-name={card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_instructor__r.Name} data-meetingid={card.Schedule_Class_Line_Item_del__r.LectureId__c} data-vimeoid={card.Schedule_Class_Line_Item_del__r.BWPS_Vimeo_video_Id__c} data-status={card.Class_Status__c} onclick={handleVimeoIframe}>{card.btnLabel}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </template>
+            <!-- <div class="buttonContainer">
+                <div class="upclassBtn">
+                    <lightning-button-icon icon-name="utility:chevronleft"  size="medium" alternative-text="View More" onclick={PreviousHandler}></lightning-button-icon>
+                </div>
+                <div class="upclassBtn">
+                    <lightning-button-icon icon-name="utility:chevronright"  size="medium" alternative-text="View More" onclick={NextHandler}></lightning-button-icon>
+                </div>
+            </div> -->
+           
+        </div>
+         <template if:true={showMoreData}>
+            <div class="loadContainer">
+                <div class="loadMoreClass">
+                    <button class="loadMore" onclick={loadMoreData}>
+                        <span >
+                            <div class="lazyLoadData"><h>LOAD MORE </h></div>
+                        </span>
+                        <!-- <span class="dot">
+                                <div class="dot1"> </div>
+                                <div class="dot2"></div>
+                                <div class="dot3"></div>
+                         </span> -->
+                     </button>
+                </div>
+            </div>
+         </template>
+    </div>
+    
+    <template if:true={isShowSendModal}>
+
+        <!--
+           send mail modal
+        --> 
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideSendModalBox}>
+                        <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small"
+                        class="closeIcon" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-hyphenate container-header addAClass">Send Mail</h2>
+                </header>
+
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_large">
+                    <div class="container">
+                        <!-- <div class="container-header">
+                            <h1>Send Mail</h1>
+                        </div> -->
+                        <div class="Donation-form-div">
+                            <div class="Add-card-form"> 
+                                <label for="Email" >Email</label>
+                                <input data-id="Email" type="text" class="input1 emailClass" placeholder="" size="50" > <br><br>
+
+                                <label for="Subject" >Subject</label>
+                                <input data-id="Subject" type="text" class="input1 subjectClass" size="50"><br><br>
+
+                                <label for="Description" >Description</label>
+                                <!-- <input data-id="Description" type="" class="input2" size="50"><br><br> -->
+                                <textarea rows="4" cols="50" name="comment" form="usrform" class="input2 descriptionClass" data-id="Description">
+                                </textarea>
+                                <div class="btn" >
+                                    <Button type="text" onclick={sendMailMethod}  class="button2">Submit</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <template if:true={loading}>
+        <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+    </template>
+    <c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

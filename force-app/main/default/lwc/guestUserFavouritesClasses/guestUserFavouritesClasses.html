@@ -1,0 +1,196 @@
+<template>
+
+	<!-- <div class="div2">
+        <a> <img src={bellIcon} onclick={showNotificationMethod}  > </a>
+        <div class="notificationCount"><span>{totalNotifications}</span></div>
+        <div if:true={showNotificationFlag}>
+            <c-notification-component totalrecords={notificationVisibel}></c-notification-component>
+        </div>
+    </div> -->
+	<div class="secondDivSH">
+		<lightning-icon variant="brand" class="searchIconColorSH" icon-name='utility:search' alternative-text='search'
+			size='small' title='search' onclick={searchIconHandler}></lightning-icon>
+		<!-- <span class="searchIconColorSH" style="color:#008ba7">SEARCH YOUR FAVORITES</span> -->
+		<input type="search" placeholder="SEARCH FOR A CLASS" class="searchIconColorSH searchInputClass" onkeyup = {searchHandler}>
+    </div>
+		<div class="firstHeaderDiv">
+			Favorites
+		</div>
+		<div class="outerDivSH">
+
+			<!-- <div class="firstDivSH" id="favClassSectionId-1">
+            <h4 class="secondSpanSH" style="font-weight:bold">YOUR FAVOURITES CLASSES</h4>
+        </div> -->
+			<div class="menuall" style="display: flex;">
+				<div if:true={showFavLine} class="underlineClass">
+					<div onclick={handleClasses} data-id="" value="Recent">
+						<span  class="menuClass recentClass" >Classes</span>
+					</div>
+				</div>
+				<div if:false={showFavLine}>
+					<div onclick={handleClasses} data-id="" value="Recent">
+						<span  class="menuClassUnclicked recentClass" >Classes</span>
+					</div>
+				</div>
+                <div if:true={showInsLine} class="underlineClass">
+					<div onclick={handleInstructor} data-id="" value="Recent">
+						<span  class="menuClass completeClass" >Instructors</span>
+					</div>
+				</div>
+				<div if:false={showInsLine}>
+					<div onclick={handleInstructor} data-id="" value="Recent">
+						<span  class="menuClassUnclicked completeClass" >Instructors</span>
+					</div>
+				</div>
+                <div if:true={showArticlesLine} class="underlineClass">
+					<div onclick={handleArticles} data-id="" value="Recent">
+						<span  class="menuClass progressClass" >Articles</span>
+					</div>
+				</div>
+				<div if:false={showArticlesLine}>
+					<div onclick={handleArticles} data-id="" value="Recent">
+						<span  class="menuClassUnclicked progressClass" >Articles</span>
+					</div>
+				</div>
+				<!-- <div style="margin-left: 1vw;" onclick={handleInstructor}>
+					<span class="menuClass completeClass" >Instructors</span>
+					<div if:true={showInsLine} class="underlineClass"> </div>
+				</div> -->
+				<!-- <div style="margin-left: 1vw;" onclick={handleArticles}>
+					<span class="menuClass progressClass" >Articles</span>
+					<div if:true={showArticlesLine} class="underlineClass"> </div>
+				</div> -->
+			</div>
+		</div>
+        <template if:true={showFavLine}>
+		<div class="secondOuterDivSH">
+			<!-- <lightning-card > -->
+			<div if:false={isLoaded} class="slds-is-relative">
+				<lightning-spinner alternative-text="Loading..." variant="brand"></lightning-spinner>
+			</div>
+			<lightning-layout multiple-rows="true" class="mainCardContainerClass">
+				<template if:true={haveFav}>
+					<template for:each={searchResultArray} for:item="cardElementItem">
+						<!-- Loading code -->
+						<!-- fav condition - if:true={cardElementItem.BPWS_Favourite__c} -->
+						<lightning-layout-item if:true={cardElementItem.classFavStatus} key={cardElementItem.Id}
+							class="layoutElementSH">
+							<!-- <div class="slds-size_1-of-3"> -->
+							<div class="innerTemplateDivSH">
+								<div class="innerDivSH">
+									<img src={cardElementItem.scImage}>
+
+									<div if:true={cardElementItem.classTime}>
+										{cardElementItem.scLineItemTime} /
+										{cardElementItem.shortDay}
+									</div>
+								</div>
+								<div class="DetailDiv">
+									<div class="TrainerName">
+										<div class="image">
+											<img src={userIcon}>
+                                            </div>
+											<div class="Name">
+												<span>{cardElementItem.Schedule_Class__r.BWPS_instructor__r.Name}</span>
+											</div>
+										</div>
+										<div class="ActiveGraph">
+											<div class="graph">
+												<img src={cardElementItem.intensity}>
+                                            </div>
+												<div class="highActive">
+													<span>{cardElementItem.Schedule_Class__r.Integrity__c}</span>
+												</div>
+											</div>
+										</div>
+										<hr class="solid">
+										<div class="ExerciseSH">
+											<h4>{cardElementItem.Name}</h4>
+										</div>
+										<div class="descriptionTextClass">
+											{cardElementItem.Schedule_Class__r.BWPS_Description__c}
+										</div>
+										<div class="ActionSH">
+											<div class="InnerFirstActionSH">
+												<img class="likeButton" src={favIcon} if:true={cardElementItem.classFavStatus} onclick={favoriteHandler2} data-id={cardElementItem.Id} data-isfav={cardElementItem.classFavStatus}>
+												<img class="likeButton" src={unFavIcon} if:false={cardElementItem.classFavStatus} onclick={favoriteHandler2} data-id={cardElementItem.Id} data-isfav={cardElementItem.classFavStatus}>
+												<!-- <img class="share" src={shareIcon} onclick={handleShare} data-id={cardElementItem.Schedule_Class_Line_Item_del__r.Id} data-description={cardElementItem.Schedule_Class_Line_Item_del__r.BWPS_Description__c}> -->
+                                        </div>
+												<div data-name={cardElementItem.Class_Status__c}
+													class={cardElementItem.btnClass}>
+													<button class="orange-buttonSH" data-key={cardElementItem.Id} data-id={cardElementItem.btnLabel} data-name={cardElementItem.Schedule_Class__r.BWPS_instructor__r.Name} data-meetingid={cardElementItem.LectureId__c} data-vimeoid={cardElementItem.BWPS_Vimeo_video_Id__c} data-status={cardElementItem.btnLabel} onclick={handleVimeoIframe}>{cardElementItem.btnLabel}</button>
+												</div>
+											</div>
+										</div>
+										<!-- </div>     -->
+						</lightning-layout-item>
+					</template>
+				</template>
+				<div if:false={haveFav} class="mainCardContainerClass emptyContainer">
+					<span style="color:black;">No Favorties Classes</span>
+				</div>
+			</lightning-layout>
+		</div>
+        </template>
+		<template if:true={isShowSendModal}>
+			<!--send mail modal-->
+			<section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+				aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open" key={scheduleClass.Id}>
+				<div class="slds-modal__container">
+					<!-- modal header start -->
+					<header class="slds-modal__header">
+						<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideSendModalBox}>
+                        <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small"
+                        class="closeIcon" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+						<h2 class="slds-text-heading_medium slds-hyphenate container-header addAClass">Send Mail
+						</h2>
+					</header>
+
+					<!-- modal body start -->
+					<div class="slds-modal__content slds-p-around_large">
+						<div class="container">
+							<!-- <div class="container-header">
+                            <h1>Send Mail</h1>
+                        </div> -->
+							<div class="Donation-form-div">
+								<div class="Add-card-form">
+									<label for="Email" >Email</label>
+									<input data-id="Email" type="text" class="input1 emailClass" placeholder="" size="50" >
+									<br><br>
+
+									<label for="Subject" >Subject</label>
+									<input data-id="Subject" type="text" class="input1 subjectClass" size="50"><br><br>
+
+									<label for="Description" >Description</label>
+									<!-- <input data-id="Description" type="" class="input2" size="50"><br><br> -->
+									<textarea rows="4" cols="50" name="comment" form="usrform" class="input2 descriptionClass" data-id="Description">
+                                </textarea>
+									<div class="btn">
+										<Button type="text" onclick={sendMailMethod}  class="button2">Submit</Button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="slds-backdrop slds-backdrop_open"></div>
+		</template>
+		<!-- Toast Event Child Calling -->
+		<c-toast-message auto-close-time="1000"></c-toast-message>
+        <template if:true={showInsLine}>
+            <div>
+            	<c-guest-user-favourite-instructor></c-guest-user-favourite-instructor>
+            </div>
+       </template>
+       <template if:true={showArticlesLine}>
+            <div>
+               <c-guest-user-favourite-article></c-guest-user-favourite-article>
+            </div>
+       </template>
+</template>

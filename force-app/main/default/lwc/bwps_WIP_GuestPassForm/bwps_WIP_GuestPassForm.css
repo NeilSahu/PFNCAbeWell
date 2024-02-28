@@ -1,0 +1,405 @@
+/* .bgimagediv{
+        display: none;
+    } */
+    .row{  
+         display: flex; 
+    }
+    
+    [class*="col-"] {
+        float: left;
+        padding: 0px 0px;
+    }
+    
+    /* For Desktops: */
+    .col-1 {
+        width: 8.33%;
+    }
+    
+    .col-2 {
+        width: 16.66%;
+    }
+    
+    .col-3 {
+        width: 25%;
+    }
+    
+    .col-4 {
+        flex: 100%;
+    }
+    .col-5 {
+        flex: 41.66%;
+        margin-bottom: 5%;
+        position: relative;
+        right: 5%;
+        display: flex;
+        align-items: flex-end;
+    }
+    .col-6 {
+        flex: 50%;
+    }
+    
+    .col-7 {
+        flex: 58.33%;
+    }
+    
+    .col-8 {
+        flex: 100%;
+    }
+    
+    .col-9 {
+        width: 75%;
+    }
+    
+    .col-10 {
+        width: 83.33%;
+    }
+    
+    .col-11 {
+        width: 91.66%;
+    }
+    
+    .col-12 {
+        flex: 100%;
+    }
+    .signup-form{
+        padding: 0rem;
+        background-color: #006ba7;
+        color: white !important;
+        border-radius: 0px 42px 42px 0px;
+    }
+    
+    .login-details{
+        /* margin: 0px auto; */
+        display: flex;
+        flex-direction: column;
+        padding: 2% 18%;
+    }
+    .signup-heading{
+        display: flex;
+    }
+    .signup-heading h1{
+        font-size: xx-large;
+        font-weight: 900;
+        margin: 2rem 0rem;
+        text-align: center;
+        font-family: none;
+    }
+    .Login-form{
+        width: 100%;
+    }
+    .Login-form input, .Login-form label{
+        line-break: auto;
+    }
+    .Login-form label{
+        font-weight: 600;
+        font-family: 'Poppins-BlackItalic';
+        font-size: inherit;
+    }
+    .Login-form input{
+        padding: 0.7rem 1rem;
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        background-color: WHITE;
+        color: #000000;
+        margin-bottom: 2rem;
+    }
+    
+    .rememberMe-div{
+        display: flex;
+        justify-content: space-between;
+    }
+    .rememberMe-div a{
+        color: white;
+        text-decoration: none;
+    }
+    .box-orange-button {
+        background-color: #ff9f37;
+        color: white;
+        padding: 4px;
+    }
+    .orange-button {
+        padding: 7px 40px;
+        background-color: #ff9f37;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        font-size: large;
+    }
+    .not-member{
+        margin: 0rem;
+        width: fit-content;
+        font-family: 'Poppins-BlackItalic';
+        font-size: inherit;
+    
+    }
+    .not-member a{
+        color: white;
+        text-decoration-line: underline;
+    }
+    
+    .box-white-button {
+        background-color: white;
+        color: #006ba7;
+        padding: 4px;
+        margin: 0.5rem;
+    }
+    
+    .white-button {
+        background-color: white;
+        color: #006ba7;
+        border: 0.5px solid #006ba7;
+        padding: revert;
+    }
+    .get-pass-buttons{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 0rem 1rem;
+        width: 100%;
+    }
+    .subtitle{
+        text-align: justify;
+        margin: 0rem 0rem 1rem 0rem;
+        font-size: medium;
+    }
+    .faqcontainer{
+        color: white;
+        background-color: #7e964e;
+        padding: 6% 10%;
+        font-size: medium;
+        text-align: justify;
+        border-radius: 42px;
+    }
+    .faq-heading{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .faq-question{
+        padding: 5px 0px;
+    }
+    hr{
+        height: 1px;
+        background-color: white;
+        margin: 6px 0px
+    }
+    .faq-content{
+        /* display: none; */
+        background-color: #7E963A;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    /* .faq-icon:hover .faq-content {display: block;} */
+    details[open] summary ~ * {
+        animation: open 1s ease-in-out;
+      }
+      
+      @keyframes open {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+      details summary:after {
+        content: "+";
+        font-size: 1.75rem;
+        margin-left: 1.75rem;
+        transform-origin: center;
+        transition: 200ms linear;
+      }
+      details[open] summary:after {
+        transform: rotate(45deg);
+        font-size: 2rem;
+      }
+      details summary {
+        outline: 0;
+      }
+      details p {
+        font-size: 0.95rem;
+        margin: 0 0 1rem;
+        padding-top: 1rem;
+      }
+      
+    .bgimagediv img{
+        width: 96.5vw;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+    .faqcontainer{
+        font-size: medium;
+    }
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .row{  
+        display: block; 
+   }
+   .col-5 {
+        flex: 100%;
+        margin-top: 16px;
+        display: block;
+        margin-bottom: 0%;
+        position: inherit;
+        right: 0%;
+    }
+    .col-7 {
+        flex: 100%;
+    }    
+    .Login-form label{
+        font-size: medium;
+    }
+    .not-member{
+        font-size: medium;
+    }
+    .subtitle{
+        font-size: large;
+    }
+    .faqcontainer{
+        font-size: large;
+    }
+    .signup-form{
+        border-radius: 42px;
+    }
+}
+@media only screen and (max-width: 480px) and (min-width: 320px){
+    .row{
+        display: block;
+    }
+    .col-5{
+        flex: 100%;
+        margin-top: 16px;
+        display: block;
+        margin-bottom: 0%;
+        position: inherit;
+        right: 0%;
+    }
+    .col-7{
+        flex: 100%;
+    }
+    .signup-form{
+        border-radius: 13px;
+    }
+    .login-details{
+        padding: 0% 10%;
+    }
+    .signup-heading h1{
+        font-size: 207%;
+        font-weight: 900;
+        margin: 1rem 0rem;
+        text-align: center;
+    }
+    .Login-form label{
+        font-size: small;
+    }
+    .Login-form input{
+        padding: 3% 4%;
+    width: 100%;
+    border-radius: 16px;
+    border: none;
+    background-color: WHITE;
+    color: #000000;
+    margin-bottom: 1rem;
+    }
+    .orange-button {
+        padding: 0.25rem 1rem;
+        background-color: #ff9f37;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        font-size: inherit;
+    }
+    .subtitle{
+        text-align: justify;
+        margin: 0rem 0rem 1rem 0rem;
+        font-size: initial;
+    }
+    .faqcontainer{
+        color: white;
+        background-color: #7e964e;
+        padding: 4% 7%;
+        font-size: initial;
+        text-align: justify;
+        border-radius: 13px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    .row{
+        display: block;
+    }
+    .col-5{
+        flex: 100%;
+        margin-top: 16px;
+        display: block;
+        margin-bottom: 0%;
+        position: inherit;
+        right: 0%;
+    }
+    .col-7{
+        flex: 100%;
+    }
+    .signup-form{
+        border-radius: 13px;
+    }
+    .login-details{
+        padding: 0rem 1rem;
+    }
+    .signup-heading h1{
+        font-size: 207%;
+        font-weight: 900;
+        margin: 1rem 0rem;
+        text-align: center;
+    }
+    .Login-form label{
+        font-weight: 600;
+        font-family: 'Poppins-BlackItalic';
+        font-size: smaller;
+    }
+    .Login-form input{
+        padding: 3% 4%;
+        width: 100%;
+        border-radius: 16px;
+        border: none;
+        background-color: WHITE;
+        color: #000000;
+        margin-bottom: 1rem;
+    }
+    .orange-button {
+        padding: 0.25rem 1rem;
+        background-color: #ff9f37;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        font-size: inherit;
+    }
+    .not-member{
+        margin: 0rem;
+        width: fit-content;
+        font-family: 'Poppins-BlackItalic';
+        font-size: 11px;
+    
+    }
+    .subtitle{
+        text-align: justify;
+        margin: 0rem 0rem 1rem 0rem;
+    }
+    .faqcontainer{
+        color: white;
+        background-color: #7e964e;
+        padding: 18px;
+        text-align: justify;
+        border-radius: 13px;
+    }
+}

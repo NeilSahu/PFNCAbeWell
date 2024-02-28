@@ -1,0 +1,133 @@
+.universalContainer{
+    width: 100%;
+    height: 90%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* margin: 1% 2%;
+    padding: 2rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    top: 5rem;
+}
+
+.ifrem-container2{
+    /* width: 90%;
+    height: 32rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99; */
+
+    /* width: 94%;
+    height: 90%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 1% 2%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    top: 4rem; */
+
+
+    width: 46rem;
+    height: 25.9rem;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 1% 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    top: 7rem;
+}
+.ifrem-container2 > span{
+    /* font-size: 2rem;
+    color: white;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer; */
+    
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    right: 0rem;
+    top: -2.5rem;
+    cursor: pointer;
+    z-index: 10000000;
+
+}
+
+.iframe-mainContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+}
+.ifrem-container{
+    /* width: 90%;
+    height: 32rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99; */
+    width: 46rem;
+    height: 25.9rem;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 1% 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    top: 7rem;
+}
+.ifrem-container > span{
+    font-size: 2rem;
+    color: gray;
+    position: absolute;
+    right: 0rem;
+    top: -2.5rem;
+    cursor: pointer;
+}
+.iframe-tag{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* :host c-zoom-web-sdk .av-preview-container{
+    width: 355px !important;
+    height: 200px !important;
+} */
+:host ::ng-deep .av-preview-container {
+  width: 355px !important;
+  height: 200px !important;
+}
+
+@media only screen and (max-width: 1024px) and (min-width:768px) {
+    .ifrem-container2, .ifrem-container{
+        width: 44rem;
+        height: 24.9rem;
+        top: 16rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ifrem-container2, .ifrem-container{
+        width: 24rem;
+        height: 13.9rem;
+        top: 16rem;
+    }
+}

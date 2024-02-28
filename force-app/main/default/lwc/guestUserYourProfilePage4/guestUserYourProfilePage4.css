@@ -1,0 +1,265 @@
+.parent-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 7em;
+}
+.parent-item{
+    display: flex;
+    min-height: 133px;
+    padding: 9px 0px;
+    width: 70%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.heading{
+    color: rgba(44,158,181,255);
+    font-size: large;
+    font-weight: 800;
+}
+.parent-item p{
+    font-weight: 500;
+}
+.parent-item-row{
+    display: flex;
+    flex-direction: row;
+    padding-top: 3em;
+}
+.text-container{
+    flex: 50%;
+}
+.Sibling-text-container{
+    flex: 50%;
+}
+.child-text-container{
+    width: 80%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.input-bar{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.peragraph{
+    height: 170px;
+}
+.span{
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.input-bar span{
+    color: rgba(0,139,167,255);
+}
+.input-bar input{
+    border-radius: 0.5rem;
+    border: 0.5px solid rgba(0,139,167,255);
+    padding: 7px 7px;
+}
+.input-bar-second{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-left: 7.3rem;
+    margin-top: 16.8rem;
+}
+.input-bar-second span{
+    color: rgba(0,139,167,255);
+}
+.input-bar-second input{
+    border-radius: 0.5rem;
+    border: 0.5px solid rgba(0,139,167,255);
+    padding: 7px 7px;
+} span{
+    color: rgba(0,139,167,255);
+}
+.input-bar input{
+    border-radius: 0.5rem;
+    border: 0.5px solid rgba(0,139,167,255);
+    padding: 7px 7px;
+}
+.vertical {
+    border-left: 2px solid rgba(0,139,167,255);
+    height: 25%;
+    position: absolute;
+    left: 50%;
+}
+.floatright{
+    float: right;
+}
+
+@media only screen and (max-width: 480px)
+{
+    .parent-box{
+        padding: 0;
+    }
+    .parent-item{
+        display: block;
+        width: 100%;
+        margin: 0% 0% 0% 1%;
+    }
+    .parent-item > h1
+    {
+        font-size: 1rem;
+    }
+    .parent-item > p
+    {
+        font-size: 0.9rem;
+    }
+    .parent-item-row 
+    {
+        display: block;
+        padding: 0;
+    }
+    .child-text-container 
+    {
+        height: auto;
+        width: 100%;
+        display: block;
+        margin: 5% 0% 0% 0%;
+    }
+    .child-text-container > span
+    {
+        font-size: 1rem;
+    }
+    .child-text-container > p
+    {
+        font-size: 0.9rem;
+    }
+    .peragraph {
+        height: auto;
+    }
+    .input-bar {
+        margin: 2% 0% 2% 0%;
+    }
+    .vertical {
+        display: none;
+    }
+    .floatleft
+    {
+        float: left;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 768px)
+{
+    .parent-box{
+        padding: 0;
+        margin: 4% 0% 0% 0%;
+    }
+    .parent-item{
+        display: block;
+        width: 96%;
+        margin: 0% 2% 0% 2%;
+    }
+    .parent-item > p
+    {
+        width: 65%;
+    }
+    .text-container
+    {
+        margin-top: -3%;
+    }
+    .parent-item-row 
+    {
+        display: block;
+        padding: 0;
+    }
+    .child-text-container 
+    {
+        height: auto;
+        width: 96%;
+        display: block;
+        margin: 4% 2% 0% 2%;
+    }
+    .peragraph {
+        height: auto;
+    }
+    .input-bar {
+        margin: 2% 2% 2% 2%;
+    }
+    .vertical {
+        display: none;
+    }
+    .floatleft
+    {
+        float: left;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .parent-box{
+        padding: 0;
+        margin: 1% 5% 1% 5%;
+    }
+    .parent-item {
+        height: auto;
+        width: auto;
+        display: block;
+    }
+    .parent-item > p
+    {
+        width: 65%;
+    }
+    .parent-item-row
+    {
+        margin: 5% 0% 0% 0%;
+        padding-top: 0;
+    }
+    .child-text-container {
+        width: 90%;
+        height: auto;
+        display: block;
+    }
+    .vertical {
+        height: 42%;
+    }
+    .peragraph {
+        height: auto;
+    }
+    .floatleft
+    {
+        margin-left: 10%;
+    }
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px)
+{
+    .parent-box{
+        padding: 0;
+        margin: 1% 5% 1% 5%;
+    }
+    .parent-item {
+        height: auto;
+        width: auto;
+        display: block;
+    }
+    .parent-item > p
+    {
+        width: 65%;
+    }
+    .parent-item-row
+    {
+        margin: 5% 0% 0% 0%;
+        padding-top: 0;
+    }
+    .child-text-container {
+        width: 90%;
+        height: auto;
+        display: block;
+    }
+    .vertical {
+        height: 34%;
+    }
+    .peragraph {
+        height: auto;
+    }
+    .floatleft
+    {
+        margin-left: 10%;
+    }
+}

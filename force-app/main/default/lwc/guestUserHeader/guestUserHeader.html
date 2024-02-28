@@ -1,0 +1,199 @@
+<template>
+
+	<div class="parent-header-container">
+
+		<div class="Child-header-container">
+			<div class=Bewell-Img>
+				<img src={logo} class="bewell" onclick={navigateToHomepage}>
+             </div>
+			</div>
+			<div class="Child-header-container1">
+				<div class="CenterDiv">
+					<div class="AnkerTagDiv">
+						<span onclick={navigateToActivity}  data-id="2">MY ACTIVITY</span>
+						<span onclick={navigateToBrowseClasses} data-id="1">BROWSE CLASSES</span>
+						<span onclick={navigateToSchedule}  data-id="3">SCHEDULE</span>
+						
+						
+						<!-- <span onclick={navigateToClass}  data-id="4">MY CLASSES</span>
+						<span onclick={navigateToFavorite}  data-id="5">FAVORITES</span>
+						<span onclick={navigateToHowToParticipate}  data-id="6" >HOW TO PARTICIPATE</span> -->
+					</div>
+					<div class="bellDonateContainer">
+						<div style="position:relative;">
+							<img src={notificationIcon} class="Notification1" onclick={showNotificationMethod}>
+							<div class="notificationcountnew"><span>{notificationCount}</span></div>
+						</div>
+						<div class="btn">
+							<button label="DONATE" data-id="donate" onclick={openNavigateToDonatePage} class="button2">DONATE</button>
+						</div>
+					</div>
+					<!-- <div class="btn1" data-id="dis-btn-link">
+						<div class="box-blue-button" data-id="MyDBBtnBox">
+							<button label="MY ACTIVITY" class="blue-button"  data-id="MyDBBtn" onclick={navigateToGuestUserDashboard} >MY ACTIVITY</button>
+						</div>
+					</div> -->
+				</div>
+
+			</div>
+
+
+			<div class="Child-header-container2">
+				<div class="profileImg">
+					<img src={profileImg} class="profileIcon" onclick={profileCard}>
+               </div>
+					<div class="ProfileText" onclick={profileCard}>
+						<span class="profileNameTextClass">{userFirstName}</span>
+					</div>
+				
+						&nbsp; &nbsp; 
+						<div class="div2">
+							<a> <img src={notificationIcon} class="Notification" onclick={showNotificationMethod}></a>
+								<div class="notificationCount"><span>{totalNotifications}</span></div>
+								<div if:true={showNotificationFlag}>
+									<div class="notificationModalContainer"  onclick={showNotificationMethod}> 
+										<c-notification-component totalrecords={notificationVisibel} onmarkasread={handleRead}>
+										</c-notification-component>
+									</div>
+								</div>
+						</div>
+                    
+					</div>
+
+					<!-- progile click card -->
+					<div if:true={showProfileMenu} class="mainProfileMenuContainerBox" onclick={profileCard}>
+					 <div if:true={showProfileMenu} class="mainProfileMenuContainer">
+						<div class="mainContainer">
+							<!-- Profile Details -->
+							<div class="profileContainer">
+								<div class="headerContainer">
+									<div class="profileImage"><img src={profileImg}></div>
+										<div class="nameClass"><span>{userName}</span></div>
+									</div>
+
+									<!-- added tabs  -->
+									<div>
+										<!-- <div class="profileItem">
+											<span class="menuItemClass" onclick={navigateToClass} data-name="My Classes">My classes</span>
+										</div> -->
+										<div class="profileItem">
+											<span class="menuItemClass MobileView" onclick={navigateToHowToParticipate} data-name="HowToParticipate">How To Participate </span>
+										</div>
+										<div class="profileItem MobileView">
+											<span class="menuItemClass" onclick={navigateToFavorite} data-name="Favorites">Favorites</span>
+										</div>
+									</div>
+									<div class="lineClass"></div>
+									<div>
+										<div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Achievements">Achievements</span>
+										</div>
+										<div class="profileItem ">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Class History">Class History</span>
+										</div>
+									</div>
+									<div class="lineClass"></div>
+									<div>
+										<div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Account Settings">Account Settings</span>
+										</div>
+										<div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Profile Survey">Profile Survey</span>
+										</div>
+										<!-- <div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Payment Method">Payment Method</span>
+										</div> -->
+										<div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Payment History">Payment History</span>
+										</div>
+										<div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Waiver">Waiver</span>
+										</div>
+										<div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Ways Give">Ways To Give</span>
+										</div>
+									</div>
+									<div class="lineClass"></div>
+									<div>
+										<!-- <div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Support">Support</span>
+										</div> -->
+										<div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Notifications">Notifications</span>
+										</div>
+									</div>
+									<div>
+										<div class="profileItem">
+											<span class="menuItemClass MobileView" onclick={getProfileMenuItemMethod} data-name="Contact">Contact Us</span>
+										</div>
+										<div class="profileItem">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="DonationHistory">Donation History</span>
+										</div>
+										<div class="profileItem MobileView">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Faq">FAQs</span>
+										</div>
+										<div class="profileItem MobileView">
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Blog">Blogs</span>
+										</div>
+										<div class="profileItem MobileView" >
+											<span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="AboutUs">About Us</span>
+										</div>
+									</div>
+								</div>
+								<!-- LOGOUT Button -->
+								<div class="buttonContainer">
+									<div class="buttonOutterClass">
+										<a href={logoutLink}>
+											<div class="buttonInnerClass">
+												<button class="btnClass">LOG OUT</button>
+											</div>
+										</a>
+										<!-- <div class="buttonInnerClass">
+											<button class="btnClass">LOG OUT</button>
+										</div> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                         
+						<!-- <div if:true={showProfileMenu} class="mainProfileMenuContainer">
+            <div class="mainContainer">
+                LOGOUT Button 
+                <div class="buttonContainer">
+                    <div class="buttonOutterClass">
+                        <div class="buttonInnerClass">
+                            <button class="btnClass">LOG OUT</button>
+                        </div>
+                    </div>
+                </div>
+                Profile Details 
+                <div class="profileContainer">
+                    <div class="headerContainer">
+                        <div class="profileImage"><img src={profileImg}></div>
+                        <div class="nameClass"><span>{userName}</span></div>
+                    </div>
+                    <div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Achievements">Achievements</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Class History">Class History</span></div>
+                    </div>
+                    <div class="lineClass"></div>
+                    <div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Account Settings">Account Settings</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Profile Survey">Profile Survey</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Payment Method">Payment Method</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Payment History">Payment History</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Waiver">Waiver</span></div>
+                    </div>
+                    <div class="lineClass"></div>
+                    <div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Support">Support</span></div>
+                        <div class="profileItem"><span class="menuItemClass" onclick={getProfileMenuItemMethod} data-name="Notifications">Notifications</span></div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+					</div>
+       <c-bwps_-Donor-Dashboard-Donate-Form></c-bwps_-Donor-Dashboard-Donate-Form>
+</template>

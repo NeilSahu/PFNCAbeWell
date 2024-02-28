@@ -1,0 +1,295 @@
+<template>
+    <div class="iframe-mainContainer">
+        <div if:true={showVimeoIframe} class="ifrem-container">
+            <span onclick={showHideVimeoIframe}>&#10006;</span>
+            <!-- <iframe src='https://www.youtube.com/watch?v=h0NTCAGqZDE' frameborder='0' allowfullscreen></iframe> -->
+            <iframe src={currentVideoUrl} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen class="iframe-tag"></iframe>
+        </div>
+    </div>
+    <!-- <div if:true={showClassIframe} class="zoom-container" id="zoom-container"></div> -->
+    <!-- <div if:true={showClassIframe} class="ifrem-container">
+        <span onclick={showAndHideClassIframeMethod}>&#10006;</span>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6dzXMI7YQPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe src={currentClassUrl} frameborder="0" target="_parent" allow="autoplay; fullscreen; microphone; camera; picture-in-picture" allowfullscreen  title="Live Q&amp;amp;A 10/21"></iframe> 
+    </div> -->
+    <!-- <div if:true={showClassIframe} class="zoom-container" id="zoom-container">
+        <iframe id="zoom-iframe" width="100%" height="100%"></iframe>
+    </div> -->
+    <div class="mainCardContainer">
+        <div class="mainContainer slds-grid slds-wrap">
+            <!-- Your Weekly Class Activity - box1 -->
+            <div class="slds-col slds-size_1-of-3 firstContainer">
+                <div class="heading">
+                    <p>MY WEEKLY CLASS ACTIVITY</p>
+                </div>
+                <div class="firstOutterContainer">
+                    <div class="firstInnerContainer">
+                        <div class="firstContainerBtn">
+                            <div class="dateBtn">
+                                <lightning-button-icon icon-name="utility:chevronleft" size="large" alternative-text="View More" onclick={previousWeekHandler}></lightning-button-icon>
+                            </div>
+                            <div> 
+                                <span class="activityDateClass">{currentWeek}</span>
+                            </div>
+                            <div class="dateBtn">
+                                <lightning-button-icon icon-name="utility:chevronright"  size="large" alternative-text="View More" onclick={nextWeekHandler}></lightning-button-icon>
+                            </div>
+                        </div>
+                        <div class="timeExerciseContainer">
+                            <div class="exerciseTimeClass">{exerciseTotalTime}</div>
+                            <div class="timeExercisingClass">TIME EXERCISING</div>
+                        </div>
+                        <div class="slds-grid slds-wrap weekdayContainer">
+                            <template for:each={weekDaysArray} for:item="weekday">
+                                <div key={weekday.id} class="slds-col slds-size_1-of-7 weekdayClass" style={weekday.style}>
+                                    <div class="dayBlock" style={weekday.ratioStyle}>
+                                        <div class={weekday.orangeClass} style={weekday.orangePercent}>
+                                            <div class="remainingClass">{weekday.Total_Remaining_Time__c}</div>
+                                        </div>
+                                        <div class={weekday.greenClass} style={weekday.greenPercent}>
+                                            <div class="totalClass">{weekday.Total_Watch_Time__c}</div>
+                                        </div>
+                                    </div>
+                                    <span>{weekday.day}</span>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <!-- Your Weekly Class Activity - box2 -->
+                    <div class="weekClasses">
+                        <div if:false={showClassesOfWeek} class="weekClassesHidden">
+                            <span class="weekText">Classes you take this week will be listed <br> below. <span class="whereToStart cursorPointerClass">Not sure where to start?</span></span>
+                        </div>
+                        <div if:true={showClassesOfWeek} class="weekClassesVisible">
+                            <div>
+                                <div class="totalClassesOfWeeks"><span>{totalClassesOfWeeks} CLASSESS THIS WEEK</span></div>
+                            </div>
+                            <div class="classActivityLine"></div>
+                            <div class="mainClassActivityContainer">
+                                <template for:each={visibleActivityArray} for:item="classes">
+                                    <div key={classes.Id} class="mainActivityClassContainer">
+                                        <div class="classActivityCardHeader">
+                                            <div class="classActivityNumberContainer"><span class="classActivityNumber">{classes.seqNo}</span></div>
+                                            <div class="classActivityExerciseName">{classes.scheduleLineItemName}</div>
+                                        </div>
+                                        <div class="classActivityOutterBody">
+                                            <div class="classActivityInnerBody">
+                                                <div><img src={classes.Image} class="classActivityImage"></div>
+                                                <div class="nameAndTimeClass">
+                                                    <div>{classes.instructorName}</div>
+                                                    <div style="color: orange;">{classes.Time_Left__c} min left</div>
+                                                </div>
+                                            </div>
+                                            <div if:true={classes.Completed} class={classes.class}>
+                                                <div class="classActivityCompletedBtn">
+                                                    <span class="statusClass" onclick={handleIframeBtn} data-status={classes.Class_Status__c} data-meetingid={classes.meetingId} data-vimeoid={classes.LectureVideoId} data-latlong={classes.LatLong} data-name={classes.instructorName} >{classes.Class_Status__c}</span>
+                                                </div>
+                                            </div>
+                                            <div if:false={classes.Completed} class={classes.class}>
+                                                <div class="classActivityResumeBtn">
+                                                    <span class="statusClass" onclick={handleIframeBtn} data-status={classes.Class_Status__c} data-meetingid={classes.meetingId} data-vimeoid={classes.LectureVideoId} data-latlong={classes.LatLong} data-name={classes.instructorName} >{classes.Class_Status__c}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="activitiesLine"></div>
+                                    </div>
+                                </template>
+                                <div class="scrollContainer" if:true={showScroller}>
+                                    <div if:true={showPreButton} class="upclassBtn">
+                                        <lightning-button-icon icon-name="utility:chevronleft"  size="medium" alternative-text="View More" onclick={PreviousHandler}></lightning-button-icon>
+                                    </div>
+                                    <div class="scrollClass"><span class="scrollTextClass" onclick={showMoreClassHandler}>Scroll</span> </div>
+                                    <div if:true={showNextButton} class="downclassBtn">
+                                        <lightning-button-icon icon-name="utility:chevronright"  size="medium" alternative-text="View More" onclick={NextHandler}></lightning-button-icon>
+                                    </div>
+                                </div>
+                                <!-- <div if:true={showNextPreButton} class="buttonContainer2">
+                                    <div class="upclassBtn">
+                                        <lightning-button-icon icon-name="utility:chevronleft"  size="medium" alternative-text="View More" onclick={PreviousHandler}></lightning-button-icon>
+                                    </div>
+                                    <div class="upclassBtn">
+                                        <lightning-button-icon icon-name="utility:chevronright"  size="medium" alternative-text="View More" onclick={NextHandler}></lightning-button-icon>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Your Today's Schedule -->
+            <div class="secondContainer slds-col slds-size_1-of-3">
+                <div class="heading">
+                    <p>MY TODAY'S SCHEDULE</p>
+                </div>
+                <div class="secondInnerContainer">
+                    <div if:false={isData} class="manageContainer">
+                        <div> 
+                            <!-- <img src="#" class="iconClass"> -->
+                            <lightning-icon size="small" class="iconClass" icon-name="utility:settings" varriant="warning" alternative-text="Settings" title="Settings" onclick={navigateToMySchedule}></lightning-icon> 
+                        </div>
+                        <div class="calendarClass"> <p onclick={navigateToMySchedule}>Manage calendar</p> </div>
+                    </div>
+                    <div if:true={isData} class="calenderContainer">
+                        <div class="calendarClass"> 
+                            <p> <lightning-icon icon-name="utility:event" 
+                                                alternative-text="Calendar"  
+                                                size="small"
+                                                class="icon-color"
+                                                title="Calendar"
+                                                onclick={navigateToMySchedule}></lightning-icon>
+                            </p>
+                            <p onclick={navigateToMySchedule}>VIEW CALENDAR</p> 
+                        </div>
+                    </div>
+                    <div class="dateContainer">
+                        <div> <span class="dayClass">{currentDay}</span> </div>
+                        <div> <span class="dateClass">{currentMonth} {currentDate0}</span> </div>
+                    </div>
+                    <div class="timeContainer">
+                        <template for:each={timeArray} for:item="cls" for:index="index">
+                            <div class="time" key={cls.Id}> 
+                                <div class="timeInnerContainer">
+                                    <span>{cls.Time__c}</span>
+                                    <span class={cls.classOver}>{cls.classOver}</span>
+                                </div>
+                                <div if:true={cls.haveClass} onclick={showButtonHandler} class={cls.class} data-index={index} style="display: flex;justify-content: center;align-items: center;flex-direction: column;position:relative;">
+                                    <div class="exerciseClass">
+                                        <span>{cls.classType}</span>
+                                    </div>
+                                    <div class="exerciseClass2">
+                                        <span>{cls.scliName}</span>
+                                    </div>
+                                    <div class="exerciseClass2">
+                                        <span>{cls.classStartTime} - {cls.classEndTime}</span>
+                                    </div>
+                                    <div if:true={cls.isClicked} class="showButtonClass">
+                                        <div class="buttonInnerContainer2">
+                                            <span if:true={cls.isLive} data-key={cls.Id} class={cls.disabledClassLive} onclick={handleMyScheduleIframe} data-name={cls.scliName} data-meetingurl={cls.MeetingUrl} data-status={cls.ClassStatus__c} data-meetingid={cls.meetingId} data-videoid={cls.LectureVideoId}>{cls.ClassStatus__c}</span>
+                                            <!-- <span if:true={cls.isInPerson} data-key={cls.Id} class={cls.disabledClassHybrid} onclick={handleMyScheduleIframe} data-latlong={cls.LatLong} data-status="In Person" data-videoid={cls.LectureVideoId}>GET LOCATION</span> -->
+                                        </div>
+                                        <!-- <div class="buttonInnerContainer">
+                                            <span class="buttonClass">{card.Class_Status__c}</span>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeLine" key={cls.Id}></div>
+                        </template>
+                    </div>
+                    <div class="footerContainer">
+                        <div>
+                            <!-- <span class="addAClass cursorPointerClass">Add a class</span><img src="#" class="iconClass"> -->
+                        </div>
+                        <div>
+                            <span class="howToParticipateClass cursorPointerClass" onclick={navigateToHowToParticipate}>HOW TO PARTICIPATE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Your Favorite classes -->
+            <div class="slds-col slds-size_1-of-3 thirdContainer">
+                <div class="heading">
+                    <p>MY FAVORITE CLASSES</p>
+                </div>
+                <div class="favClassTextContainer" if:false={haveFav}>
+                    <p class="favTextClass">Click on the heart to save a class to your favorite. <br> To get started, here are classes we think you'll love.</p>
+                </div>
+                <div class="favClassTextContainer" if:true={have2}>
+                    <p class="viewAllClass"> 
+                        <span class="viewAllTextClass" onclick={viewAllHandler}>VIEW ALL</span>
+                    </p>
+                </div>
+
+                <div class="cardContainerClass">
+                    <template for:each={visibleCardElementArray} for:item="card">
+                            <div class="cardOutterClass" key = {card.Id}>
+                                <div class="cardInnerClass">
+                                    <img src = {card.scImage} class="cardImageClass">
+                                    <div class="cardNameLevelClass">
+                                        <div class="cardNameClass"> <img src={userIcon} class="iconClass"> {card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_instructor__r.Name}</div>
+                                        <div class="cardLevelClass"> <img src={card.Schedule_Class_Line_Item_del__r.intensity} class="iconClass"> {card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.Integrity__c}</div>
+                                    </div>
+                                    <div class="lineFavClass"></div>
+                                    <div class="exerciseContainer">
+                                        <h1 class="exerciseNameCLass">{card.Schedule_Class_Line_Item_del__r.Name}</h1>
+                                    </div>
+                                    <div class="descriptionTextClass">{card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_Description__c}</div>
+                                    <div class="cardFooterContainer">
+                                        <div class="cardFooterIconContainer">
+                                            <div>
+                                                <!-- <img src={favIcon} class="iconClass cardIconClass"> -->
+                                                <img class="iconClass cardIconClass" src={favIcon} if:true={card.classFavStatus} onclick={favoriteHandler} data-id={card.scliId} data-isfav={card.classFavStatus}>
+                                                <img class="iconClass cardIconClass" src={unFavIcon} if:false={card.classFavStatus} onclick={favoriteHandler} data-id={card.scliId} data-isfav={card.classFavStatus}>  
+                                            </div>
+                                            <div style="margin-left: 15%;">
+                                                <!-- <img src={shareIcon} class="iconClass cardIconClass" onclick={handleShare}> -->
+                                            </div>
+                                        </div>
+                                        <div class="cardFooterButtonContainer">
+                                            <div class={card.btnClass}>
+                                                <div class="buttonInnerContainer">
+                                                    <span class="buttonClass" data-key={card.Id} onclick={handleVimeoIframe} data-status={card.btnLabel} data-name={card.scheduleLineItemName} data-meetingid={card.meetingId} data-vimeoid={card.LectureVideoId}>{card.btnLabel}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <template if:true={isShowSendModal}>
+
+        <!--
+           send mail modal
+        --> 
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideSendModalBox}>
+                        <lightning-icon icon-name="utility:close"
+                        alternative-text="close"
+                        variant="inverse"
+                        size="small"
+                        class="closeIcon" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-hyphenate container-header addAClass">Send Mail</h2>
+                </header>
+
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_large">
+                    <div class="container">
+                        <!-- <div class="container-header">
+                            <h1>Send Mail</h1>
+                        </div> -->
+                        <div class="Donation-form-div">
+                            <div class="Add-card-form"> 
+                                <label for="Email" >Email</label>
+                                <input data-id="Email" type="text" class="input1 emailClass" placeholder="" size="50" > <br><br>
+
+                                <label for="Subject" >Subject</label>
+                                <input data-id="Subject" type="text" class="input1 subjectClass" size="50"><br><br>
+
+                                <label for="Description" >Description</label>
+                                <!-- <input data-id="Description" type="" class="input2" size="50"><br><br> -->
+                                <textarea rows="4" cols="50" name="comment" form="usrform" class="input2 descriptionClass" data-id="Description">
+                                </textarea>
+                                <div class="btn" >
+                                    <Button type="text" onclick={sendMailMethod}  class="button2">Submit</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <c-toast-message auto-close-time="1000"></c-toast-message>
+</template>

@@ -1,0 +1,262 @@
+<template>
+    <div>
+        <div>
+            <div class="upcomingClassHeadContainer">
+                <div class="upcomingClassesHeading">
+                    <h2 class="upClassHead">Upcoming Classes</h2>
+                </div>
+                <div class="liveContainer">
+                    <div class="liveInnerContainer">
+                        <div if:true={showLiveLine} class="underlineClass">
+                            <div onclick={handleLiveUnderline} data-id="Live"> <span>LIVE</span></div>
+                        </div>
+                        <div if:false={showLiveLine}>
+                            <div onclick={handleLiveUnderline} data-id="Live" class="lineclass"> <span>LIVE</span></div>
+                        </div>
+                        <div if:true={showInPersonLine} class="underlineClass">
+                            <div onclick={handleInPersonUnderline} data-id="In Person"> <span>IN-PERSON</span>
+                            </div>
+                        </div>
+                        <div if:false={showInPersonLine}>
+                            <div onclick={handleInPersonUnderline} data-id="In Person" class="lineclass">
+                                <span>IN-PERSON</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="scheduleContainer" onclick={viewSchedule}>
+                        <a href={myCalendarUrl}>
+                            <img src={calendarlogo} class="viewScheduleIcon">
+                            <span class="viewScheduleClass">View Calendar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="upcomingClassesContainer">
+                <div id="slider-container">
+                    <ul class="slider-timelist TimeList">
+                        <template for:each={timeList} for:item="time">
+
+                            <button key={time.id} onclick={handleTime} data-id={time} value={time}
+                                class="timeButton">{time}</button>
+                            <!-- <li key={time.id} class="timeButton">
+                                <button  onclick={handleTime} data-id={time} value={time} class="timeButton">{time}</button>
+                            </li> -->
+                        </template>
+                    </ul>
+                    <div>
+                    </div>
+                </div>
+                <!-- <div class="slidecontainer">
+                    <input type="range" min="0" max ={sliderMaxVal} value="0" class="slider" data-id="myRange" onchange={sliderChange}>
+                   </div> -->
+                <div id="slider-containerI" class="slider" data-id="slider">
+                    <!-- <div class="parent-instructor row"  data-id="container_I">
+                <div class="slds-grid slds-wrap" style="margin: 0%;"> -->
+                    <template if:true={showMsg}>
+                        <p class="msgClass"> {msg} </p>
+                    </template>
+                    <template if:true={JSONArray}>
+                        <template for:each={JSONArray} for:item="card">
+                            <div class="cardClass slds-col slds-size_1-of-3" data-id="card-1" key={card}>
+                                <div class="cardDetailClass">
+                                    <div class="cardImage">
+                                        <img src={card.CardImage} style="width: 100%;height:100%;">
+                                        <div class="overTimeContainer">
+                                            <!-- <template if:true={card.showOver}>
+                                                <label class="overButton">Over</label>
+                                            </template> -->
+                                            <div class="overlay">
+                                                <p>{card.Time} / {card.Day}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="cardPersonLevelClass">
+                                        <div class="nameLevelClass">
+                                            <div class="userImg"> <img src={card.UserImage}></div>
+                                            <div class="cardNameLevelText"><span>{card.InstructorName}</span></div>
+                                        </div>
+                                        <div class="levelclass">
+                                            <div class="intensityImg">
+                                                <img src={card.IntensityImage}>
+                                            </div>
+                                            <div class="cardNameLevelText"><span>{card.Intensity}</span></div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="nameDesClass">
+                                        <div class="exerciseContainer">
+                                            <h1 class="exerciseNameClass" data-key={card.Id} data-schname={card.Name}
+                                                data-name={card.InstructorName.Name}
+                                                data-ints={card.Intensity}
+                                                data-descp={card.Description}
+                                                onclick={scheduleClassDetailViewHandle}>{card.Name}</h1>
+                                            <p class="exerciseNameClassRec">({card.RecType})</p>
+                                        </div>
+                                        <div class="description">{card.Description}</div>
+                                    </div>
+                                    <div class="cardFooterContainer">
+                                        <div class="cardFooterIconContainer">
+                                            <div>
+                                                <!-- <img src={likeIcon} style="width: 30px;height:30px;"> -->
+                                                <img class="iconClass cardIconClass" src={favIcon}
+                                                    if:true={card.classFavStatus} onclick={favoriteHandler}
+                                                    data-id={card.Id} data-isfav={card.classFavStatus}>
+                                                <img class="iconClass cardIconClass" src={unFavIcon}
+                                                    if:false={card.classFavStatus} onclick={favoriteHandler}
+                                                    data-id={card.Id} data-isfav={card.classFavStatus}>
+                                            </div>
+
+                                            <div style="margin-left: 15%;">
+                                                <!-- <img class="shareImage" src={share} onclick={handleShare} data-id={card.Id} data-description={card.BWPS_Description__c}> -->
+
+                                                <template if:true={isShowSendModal}>
+
+                                                    <!--
+                                                            send mail modal
+                                                            -->
+
+                                                    <section role="dialog" tabindex="-1"
+                                                        aria-labelledby="modal-heading-01" aria-modal="true"
+                                                        aria-describedby="modal-content-id-1"
+                                                        class="slds-modal slds-fade-in-open" key={scheduleClass.Id}>
+                                                        <div class="slds-modal__container">
+                                                            <!-- modal header start -->
+                                                            <header class="slds-modal__header">
+                                                                <button
+                                                                    class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                                                    title="Close" onclick={hideSendModalBox}>
+                                                                    <lightning-icon icon-name="utility:close"
+                                                                        alternative-text="close" variant="inverse"
+                                                                        size="small" class="closeIcon"></lightning-icon>
+                                                                    <span class="slds-assistive-text">Close</span>
+                                                                </button>
+                                                                <h2
+                                                                    class="slds-text-heading_medium slds-hyphenate container-header addAClass">
+                                                                    Send Mail</h2>
+                                                            </header>
+
+                                                            <!-- modal body start -->
+                                                            <div class="slds-modal__content slds-p-around_large">
+                                                                <div class="container">
+                                                                    <!-- <div class="container-header">
+                                                                                <h1>Send Mail</h1>
+                                                                            </div> -->
+                                                                    <div class="Donation-form-div">
+                                                                        <div class="Add-card-form">
+                                                                            <label for="Email">Email</label>
+                                                                            <input data-id="Email" type="text"
+                                                                                class="input1 emailClass" placeholder=""
+                                                                                size="50"> <br><br>
+
+                                                                            <label for="Subject">Subject</label>
+                                                                            <input data-id="Subject" type="text"
+                                                                                class="input1 subjectClass"
+                                                                                size="50"><br><br>
+
+                                                                            <label for="Description">Description</label>
+                                                                            <!-- <input data-id="Description" type="" class="input2" size="50"><br><br> -->
+                                                                            <textarea rows="4" cols="50" name="comment"
+                                                                                form="usrform"
+                                                                                class="input2 descriptionClass"
+                                                                                data-id="Description">
+                                                                                    </textarea>
+                                                                            <div class="btn">
+                                                                                <Button type="text"
+                                                                                    onclick={sendMailMethod}
+                                                                                    class="button2">Submit</Button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                    <div class="slds-backdrop slds-backdrop_open"></div>
+                                                </template>
+                                            </div>
+                                        </div>
+                                        <template if:true={tab}>
+                                            <template if:false={card.disabledBtn}>
+                                                <div class="cardBtnContainer">
+                                                    <div class="cardButtonClass">
+                                                        <button class="cardButton" data-id={card.Id}
+                                                            data-videoid={card.VimeoId} data-name={card.InstructorName}
+                                                            data-lectureid={card.LectureId} data-status={card.Lecture}
+                                                            onclick={handleVideo}>{card.Lecture}</button>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                            <template if:true={card.disabledBtn}>
+                                                <div class="cardBtnContainerDisabled">
+                                                    <div class="cardButtonClassDisabled">
+                                                        <!-- <button class="cardButtonDisabled" data-videoid={card.VimeoId} data-name={card.InstructorName} data-lectureid={card.LectureId} data-status={card.Lecture} onclick={handleVideo}>{card.Lecture}</button> -->
+                                                        <button class="cardButtonDisabled" data-id={card.Id}
+                                                            data-videoid={card.VimeoId} data-name={card.InstructorName}
+                                                            data-lectureid={card.LectureId}
+                                                            data-status={card.Lecture}>{card.Lecture}</button>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                        </template>
+                                        <template if:false={tab}>
+                                            <div class="cardBtnContainer">
+                                                <div class="cardButtonClass">
+                                                    <button class="cardButton" data-videoid={card.VimeoId}
+                                                        data-name={card.InstructorName} data-lectureid={card.LectureId}
+                                                        data-lat={card.LatLong} data-id={card.Id}
+                                                        onclick={handleLocation}>Get Location</button>
+                                                </div>
+                                            </div>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </div>
+                <!-- </div>
+                </div> -->
+                <div class="buttonContainer">
+                    <!-- <template if:false={showMsg}> -->
+                    <!-- <div class="box-slid-button">
+                            <button class="slide-button" onclick={preview} > &#10094; </button>
+                            <button class="slide-button" onclick={next} > &#10095; </button>
+                        </div> -->
+                    <template if:true={showButton}>
+                        <div class="slider-button-box">
+
+                            <button class="control-prev-btn" onclick={handlePrev}>
+                                <div class="arrow-left"></div>
+                            </button>
+
+                            <button class="control-next-btn" onclick={handleNext}>
+                                <div class="arrow-right"></div>
+                            </button>
+
+                        </div>
+                    </template>
+                    <!-- </template> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <template if:true={loading}>
+        <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+    </template>
+    <c-toast-message auto-close-time="3000"></c-toast-message>
+
+
+    <template if:true={InstDetailView}>
+        <div class="upcommingClassesComponentDetailPage">
+            <c-bwps_-w-i-p_-class-details-view scheduleclassname={scheduleClassName} showfooter=true classviewtype={classViewType}
+                scheduleclassinstname={scheduleClassInstName} scheduelclassdescription={scheduelClassDescription}
+                scheduleclassintensity={scheduleclassintensity} classdata={selectedClass}
+                onclassdetailreturn={trueparent} onselectlive={liveCick}>
+            </c-bwps_-w-i-p_-class-details-view>
+        </div>
+    </template>
+</template>

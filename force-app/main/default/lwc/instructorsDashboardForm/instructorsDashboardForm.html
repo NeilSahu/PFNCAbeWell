@@ -1,0 +1,164 @@
+<template>
+    <template if:true={loader}>
+        <div class="demo-only loader" style="height: 100vh;position: fixed;width: 100%;top:0">
+            <div class="slds-spinner_container">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand" style="top:25vh">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <div class="SettingUI">
+        <form action="" data-id="form">
+            <div class="profile_form">
+                <div class="profile-img-sec">
+                    <div class="profile-heading-class" style="font-size: 22px;">Your Photo</div>
+                    <div class="profile-pic">
+                        <div>
+                            <img src={profileImg} data-id="output" width="200">
+                        </div>
+                        <div style="display: flex;align-items: center;">
+                            <div style="flex-direction: column;">
+                                <div class="box-orange-button">
+                                    <label class="orange-button"> UPLOAD PHOTO
+                                        <input name="profilePic" type='file' class="orange-button enable-input"
+                                            data-id="imgInput" onchange={inputImg} disabled>
+                                    </label>
+                                </div>
+                                <p style="color: #666667;">Maximum size of 1MB. JPG, or PNG. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="basicInfo">
+
+
+
+                    <label style="margin-top:30px;font-size:22px;">First Name</label>
+                    <input name="FirstName" class="enable-input" type="text" data-id="FirstName" value={FirstName}
+                        disabled></input>
+                    <!-- value={data.LastName} -->
+                    <label style="margin-top:30px;font-size:22px;">Last Name</label>
+                    <input name="LastName" class="enable-input" type="text" data-id="LastName" value={LastName}
+                        disabled></input>
+                    <label style="margin-top:30px;font-size:22px;">Location</label>
+                    <input name="Location" class="enable-input" type="location" value={Location} disabled></input>
+
+
+                    <!--           
+         <div class="radioInput1">
+         <lightning-radio-group  name="radioGroup"
+                          label="Radio Group"
+                          options={options}
+                          value={value}
+                          type="radio"></lightning-radio-group>
+
+          </div>                    -->
+
+                    <label style="margin-top:30px;font-size:22px;">Gender</label>
+                    <div class="radioInput" data-id="id_drop">
+                        <input type="Radio" class="enable-input" name="gender" value="Female" data-id="Female"
+                            disabled></input>
+                        <span>Female</span>
+                        <input type="Radio" class="enable-input" name="gender" value="Male" data-id="Male"
+                            disabled></input>
+                        <span>Male</span>
+                        <input type="Radio" class="enable-input" name="gender" value="Others" data-id="Others"
+                            disabled></input>
+                        <span>Other</span>
+                        <input type="Radio" class="enable-input" name="gender" value="I'd rather not say"
+                            data-id="DoNotSay" disabled></input>
+                        <span>I'd rather not say</span>
+                    </div>
+
+                    <label style="margin-top:30px;font-size:22px;">Birthday</label>
+                    <div class="select">
+                        <select name="Month" class="enable-input" data-id="month_drop" disabled>
+                            <option value="none" selected disabled hidden>
+                                Month
+                            </option>
+                            <option value='01'>Janaury</option>
+                            <option value='02'>February</option>
+                            <option value='03'>March</option>
+                            <option value='04'>April</option>
+                            <option value='05'>May</option>
+                            <option value='06'>June</option>
+                            <option value='07'>July</option>
+                            <option value='08'>August</option>
+                            <option value='09'>September</option>
+                            <option value='10'>October</option>
+                            <option value='11'>November</option>
+                            <option value='12'>December</option>
+                        </select>
+                        <select name="day" class="enable-input" data-id="Day_drop" disabled>
+                            <option value="none" selected disabled hidden>
+                                Day
+                            </option>
+
+                            <option value='01'>1</option>
+                            <option value='02'>2</option>
+                            <option value='03'>3</option>
+                            <option value='04'>4</option>
+                            <option value='05'>5</option>
+                            <option value='06'>6</option>
+                            <option value='07'>7</option>
+                            <option value='08'>8</option>
+                            <option value='09'>9</option>
+                            <option value='10'>10</option>
+                            <option value='11'>11</option>
+                            <option value='12'>12</option>
+                            <option value='13'>13</option>
+                            <option value='14'>14</option>
+                            <option value='15'>15</option>
+                            <option value='16'>16</option>
+                            <option value='17'>17</option>
+                            <option value='18'>18</option>
+                            <option value='19'>19</option>
+                            <option value='20'>20</option>
+                            <option value='21'>21</option>
+                            <option value='22'>22</option>
+                            <option value='23'>23</option>
+                            <option value='24'>24</option>
+                            <option value='25'>25</option>
+                            <option value='26'>26</option>
+                            <option value='27'>27</option>
+                            <option value='28'>28</option>
+                            <option value='29'>29</option>
+                            <option value='30'>30</option>
+                            <option value='31'>31</option>
+                        </select>
+                        <select name="Year" class="enable-input" data-id="year_drop" disabled>
+                            <option value="none" selected disabled hidden>
+                                Year
+                            </option>
+                        </select>
+                    </div>
+                    <label style="margin-top:30px;font-size:22px;">Phone Number</label>
+                
+
+                          <input name="Phone" class="enable-input" type="text" placeholder="12345" data-id="Phone" value={Phone}
+                        disabled></input>
+                </div>
+            </div>
+
+            <div class="profile_form">
+                <div class="basicInfo">
+                    <label style="margin-top:30px;font-size:22px;" for="">About</label>
+                    <textarea rows="4" cols="50" class="textArea enable-input" name="AboutMe" type="textarea"
+                        disabled>{AboutMe}</textarea>
+
+                </div>
+            </div>
+        </form>
+        <div class="editButton">
+            <div class="box-orange-button">
+                <button class="orange-button1" data-id="Profile-edit" onclick={saveDetail}> EDIT
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <c-toast-message auto-close-time="3000"></c-toast-message>
+</template>

@@ -1,0 +1,28 @@
+.ifrem-container{
+    /* width: 90%;
+    height: 32rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99; */
+    width: 70%;
+    height: 25rem;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    top: 10%;
+}
+.ifrem-container > span{
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}

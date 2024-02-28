@@ -1,0 +1,31 @@
+<template>
+    <div class="mainContainer">
+        <div>
+            <hr class="lineClass">
+        </div>
+        <div class="headerClass">
+            <span>RECENT NOTES</span>
+        </div>
+        <div if:false={NotesAvailable}>
+              <p class="blank-block">No Notes !</p>
+        </div>
+        <div if:true={NotesAvailable} class="cardContainer">
+            <div class="dateclass">{splitUpdatedDate}</div>
+            <div class="cardHeaderContainer">
+                <div class="cardHeaderTextContainer">
+                    <div>
+                        <span>{title}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="detailclass">
+                <span>
+                    {body1}
+                </span>
+            </div>
+        </div>
+        <div class="box-blue-button" onclick={handleNotes}>
+            <button class="blue-button">Notes</button>
+        </div>
+    </div>
+</template>

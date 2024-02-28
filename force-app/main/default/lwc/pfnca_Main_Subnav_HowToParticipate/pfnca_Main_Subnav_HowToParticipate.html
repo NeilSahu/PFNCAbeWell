@@ -1,0 +1,30 @@
+<template>
+    <div class="sub-nav" >
+		<ul style="display:flex  ; height:60px" class="sub-nav-link">
+			<li>
+				<div data-id = 'hiw' onclick={pageChangeHandler}>How It Works</div>
+				<template if:true={HowItWork}>
+					<div class="active-marker"></div>
+				</template>
+			</li>
+			<li>
+				<div class="sub-nav-sec-child">
+				<div data-id = 'toc' onclick={pageChangeHandler}>Types Of Classes</div>
+				<template if:true={TypeOfClasses}>
+					<div class="active-marker"></div>
+				</template>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<template if:true={HowItWork}>
+		<!-- <c-bwps_-w-i-p_-dynamic-hero></c-bwps_-w-i-p_-dynamic-hero> -->
+		<c-pfnca_-main_-how-it-works></c-pfnca_-main_-how-it-works>
+	</template>
+	<template if:true={TypeOfClasses}>
+        <!-- <c-b-w-p-s_-how-it-works></c-b-w-p-s_-how-it-works> -->
+		<!-- <c-bwps_-w-i-p_-instructors></c-bwps_-w-i-p_-instructors> -->
+		<!-- <c-bwps_-w-i-p_-types-of-classes></c-bwps_-w-i-p_-types-of-classes> -->
+		<c-pfnca_-main_-types-of-classes></c-pfnca_-main_-types-of-classes>
+	</template>
+</template>

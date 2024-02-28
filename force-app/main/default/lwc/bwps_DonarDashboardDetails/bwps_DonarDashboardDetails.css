@@ -1,0 +1,427 @@
+.back-btn-container {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.back-btn {
+    color: var(--color-dark-black);
+    font-size: 20px;
+    display: flex;
+    color: #343a40;
+}
+
+.backlIcon {
+    background: #F5F7F4 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #00000026;
+    border: 1px solid #C6C6C6;
+    border-radius: 6px;
+    height: 35px;
+    padding: 9px;
+    width: 35px;
+    margin-right: 10px;
+}
+
+.back-btn span{
+    padding: 2px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+/* For Desktops: */
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 40%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.heading-section {
+    margin: 6rem 3.5rem 6rem 3.5rem;
+}
+
+.back-btn {
+    color: black;
+}
+
+.back-btn a {
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+.back-btn h3 {
+    font-size: 18px;
+}
+
+.height-row {
+    height: 24rem;
+}
+
+.height-col {
+    height: inherit;
+}
+
+.Success-image {
+    height: 2rem;
+    margin: 0 1rem 0 0;
+}
+
+.box-design-back {
+    font: normal normal medium 18px/24px IBM Plex Sans;
+    color: #008BA7;
+}
+
+.new-style {
+    font: normal normal 600 16px/24px IBMPlexSans;
+}
+
+.new-style-values {
+    font: normal normal medium 19px/24px IBMPlexSans;
+}
+
+.box-design-dedic {
+    font: normal normal 600 16px/24px IBMPlexSans;
+}
+
+.box-design-ded {
+    font: normal normal 600 18px/24px IBMPlexSans;
+}
+
+.box-design-mail {
+    font: normal normal normal 16px/24px IBMPlexSans;
+}
+
+.box-design-view {
+    font: normal normal normal 14px/18px IBMPlexSans;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px) {}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+    .grid-item {
+        margin-left: 2.5rem !important;
+    }
+
+    .details-align {
+        padding-left: 1.5rem !important;
+    }
+
+    .details-value-align {
+        padding-left: 1.5rem !important;
+    }
+
+    .second-block {
+        margin: 0 0 0 3rem !important;
+    }
+
+    .height-row {
+        height: 26rem;
+    }
+
+    .height-col {
+        height: inherit;
+    }
+
+    .Success-image {
+        height: 1.5rem;
+        margin: 0 0.1rem 5px 0;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .col-6 {
+        width: 50% !important;
+    }
+
+    /* .col-receipt {
+        width: 45% !important;
+    } */
+
+    .grid-item {
+
+        width: 90%;
+        margin-left: 5% !important;
+        margin-bottom: 2rem;
+    }
+
+    .second-block {
+        width: 90%;
+        margin-left: 5% !important;
+    }
+
+    .details-align {
+        padding-left: 1.5rem !important;
+    }
+
+    .details-value-align {
+        padding-left: 2.5rem !important;
+    }
+
+    .receipt-logo-text {
+        float: left !important;
+    }
+
+    .receipt-logo-text:hover {
+        cursor: pointer;
+    }
+
+    .receipt-logo {
+        float: left !important;
+        margin: 0 1rem 0 0;
+    }
+
+    .col-1 {
+        display: none;
+    }
+
+    .height-row {
+        height: auto;
+    }
+
+    .height-col {
+        height: auto;
+    }
+
+}
+
+@media only screen and (max-width: 480px) {
+    [class*="col-"] {
+        float: none;
+    }
+
+    .grid-item {
+        margin-left: 0 !important;
+
+    }
+
+    .second-block {
+        margin: 1rem 0 0 0 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .receipt-text {
+        padding: 0 !important;
+    }
+
+    .col-5 {
+        width: auto !important;
+    }
+
+    .details-align {
+        padding-left: 1rem !important;
+    }
+
+    .details-value-align {
+        padding-left: 1rem !important;
+    }
+
+    .col-1 {
+        display: none;
+    }
+
+    .receipt-align {
+        margin-left: 0rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .receipt-logo-text {
+        float: left !important;
+
+    }
+
+    .receipt-logo {
+        float: left !important;
+        margin: 0 1rem 0 0;
+    }
+
+    .receipt-logo img {
+        margin: 0 0 0 0 !important;
+
+    }
+
+    .heading-section {
+        margin-left: 2rem;
+    }
+
+    .height-row {
+        height: auto;
+    }
+
+    .height-col {
+        height: auto;
+    }
+}
+
+.grid-item {
+    border: 1px solid #dbdbdb;
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    background-color: #F5F7F4;
+    margin-left: 3.5rem;
+}
+
+.divFont {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.dedication {
+    cursor: pointer;
+    background: white;
+    width: 90%;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    border-radius: 13px;
+    border: 1px solid #dbdbdb;
+}
+
+.dedication img {
+    height: 3rem;
+    /* width: 1.5rem; */
+    /* padding: 2px 0 0 0; */
+    margin: -8px 10px 0 0;
+}
+
+.adjacent_div_1_of_2 {
+    width: 41%;
+    text-align: right;
+    float: left;
+}
+
+.second-block {
+    margin: 0 0 0 6rem;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.details-align {
+    text-align: left;
+    padding-left: 2.5rem;
+    color: #666666;
+}
+
+.details-value-align {
+    text-align: left;
+    padding-left: 4.5rem;
+}
+
+.receipt-align {
+    /* padding: 2rem 0 0 2rem; */
+    color: #008CA6;
+    margin-left: 2rem;
+}
+
+.receipt-text {
+    padding: 0 0 0 3rem;
+    /* font-size: 1rem;
+    font-weight: 700;
+    color: #008CA6; */
+    text-align: left;
+    font: normal normal bold 22px/28px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #000000;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+
+.receipt-logo-text {
+    float: right;
+
+}
+
+.receipt-logo {
+    float: right;
+
+}
+
+.receipt-logo img {
+    /*height: 1.2rem; */
+    /* width: 1rem; */
+    /* padding: 2px 0 0 0; */
+    margin: 0 0 0 0.5rem;
+}
+
+.allimg {
+    margin: 0px 0px 0px -1px;
+    width: fit-content;
+    height: 26px;
+    margin-right: 10px;
+
+}
+
+.adjacent_div_1_of_2 {
+    text-align: right;
+    float: left;
+    font-size: 11px;
+    color: rgb(82 182 228);
+}
+
+.receiptClass {
+    cursor: pointer;
+    text-align: left;
+    font: normal normal normal 16px/20px IBMPlexSans;
+    letter-spacing: 0px;
+    color: #008BA7;
+    opacity: 1;
+}

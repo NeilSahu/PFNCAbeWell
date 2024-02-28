@@ -1,0 +1,76 @@
+<template>
+<c-pfnca_-main_-dynamic-hero title="Contact Us" isdescription="true" description="We'd love to hear from you! Send us a message or give us a call." img-url={heroImage}></c-pfnca_-main_-dynamic-hero>
+	<div class="row">
+		<div class="column1">
+			<div class="colmun1-innerdiv">
+				<div class="row">
+					<div class="contact-div">
+						<p>(202) 852-6688</p>
+					</div>
+				</div>
+				<div class="innerdiv-row">
+					<div class="innerdiv-col">
+						<div class="general-div">
+							<p class="general-div-p1">General Support</p>
+							<p class="general-div-p2">
+								<a href="mailto:support@parkinsonfoundation.org?subject=Regarding Parkinsons Donation" target="_blank">support@parkinsonfoundation.org</a>
+							</p>
+						</div>
+					</div>
+					<div class="innerdiv-col">
+						<div class="headquarters-div">
+							<p class="hq-p1">Headquarters</p>
+							<p class="hq-p2">1735 Connecticut Ave, NW, 2nd Fl, Washington, DC 20009 </a></p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="social-media-link" style="display:flex">
+					<a class="social" href="https://www.facebook.com/PFNCA/" target="_blank"><div class="b-fb"><img src={blueFacebook}></div></a>
+					<a class="social" href="https://twitter.com/pfnca?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><div class="b-twi"><img src={blueTwitter}></div></a>
+					<a class="social" href="https://www.instagram.com/pfnca/?hl=en" target="_blank"><div class="b-insta" ><img src={blueInstragram}></div></a>
+				</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="column2">
+			<div class="column2-div1">
+				<div class="column-2-headertext">
+					<p>What can we do for you?</p>
+				</div>
+				<form>
+					<div class="form-divs">
+						<label for="First and Last Name">First and Last Name*</label>
+						<input class="form-input" value={name} data-id ="name" type="text" name="name" placeholder="First and Last Name" required/>
+					</div>
+					<div class="form-divs">
+						<label >Email Address*</label>
+						<input class="form-input" value={email} data-id ="email" type="email" name="email" placeholder="Email Address" required/>
+					</div>
+					<div class="form-divs">
+						<label >Message*</label>
+						<input class="form-input" value={message} data-id ="message" id="message" type="text" name="message" placeholder="Message" required/>
+					</div>
+					<div class="submit-bitton-parent-div" style="display:flex">
+					<div class="submit-button-div" >
+						<button type="button" class="submit-button" onclick={onSubmit}>SEND</button>
+						</div>
+					<div class="required">
+						<h3 style="line-height: normal">*Required</h3>
+					</div>
+				</div>
+				</form>
+				
+
+			</div>
+		</div>
+	</div>
+	<div >
+		<img class="midimg" src={bottomimg}>
+	</div>
+    <c-pfnca_-main_-stay-connected-footer></c-pfnca_-main_-stay-connected-footer>
+	<template if:true={loading}>
+        <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+    </template>
+</template>

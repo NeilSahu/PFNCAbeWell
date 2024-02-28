@@ -1,0 +1,326 @@
+.layout{
+    width: 24%;
+}
+.Achievement-details-BatchesEarnedNumber-popup-wrapper-container img {
+    width: 41px;
+}
+.container-Achievement
+{
+    background: #008ba7;
+    /* margin-top: 10px; */
+}
+.Achievement-details {
+    position: relative;
+    margin-right: 2rem;
+    margin-left: 2rem;
+
+}
+.Achievement-details-BatchesEarned{    
+    display: flex;
+    justify-content: space-between;
+    padding: 4% 0% 2% 0%;
+}
+.blank-block{
+    text-align: center;
+    width: 100%;
+    color: gray;
+    font-size: x-large;
+}
+.container-Achievement p {
+	text-align: center;
+    font-size: 44px;
+    padding: 70px;
+    color: white;
+    font-family: Playfair Display;
+}
+/* 
+.container-Achievement img {
+	position: absolute;
+    top: 39px;
+    right: 39px
+} */
+.Achievement-details-BatchesEarnedNumber h3{
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: Playfair Display;
+}
+.Achievement-details-BatchesEarnedNumber p{
+    
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: #008ba7;
+
+}
+.Achievement-details-Badges{
+    background: #f5f7f4;
+    height: auto;
+    width: 100%;
+    border-radius: 25px;
+}
+
+.Achievement-details-close {
+    display: flex;    
+    justify-content: flex-end;
+}
+.Achievement-details-close div{
+    cursor: pointer;
+    /* float: right; */
+}
+.Achievement-details-BatchesEarnedNumber-popup-wrapper-container h1{   
+    margin-bottom: 6%;
+    margin-top: 7px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: IBMPlexSans;
+}
+.Achievement-details-BatchesEarnedNumber-popup-wrapper{
+ background-color: white;
+    position: absolute;
+    z-index: 1;
+    top: 16%;
+    right: 4%;
+    border: 1px solid #d5d5d4;
+    border-radius: 32px;
+    width: 43%;
+    padding: 2% 4% 4% 3%;
+    height: 36%;
+    display: inline-table;
+
+}
+
+.Achievement-details-BatchesEarnedNumber-popup-wrapper p{
+    font-size: 91%;
+}
+/* .Achievement-details-BatchesEarnedNumber-popup-wrapper-container{
+    display: flex;
+    flex-direction: column;
+    margin: 35px;
+    width:250px;
+    word-wrap: break-word; 
+    height: auto;
+} */
+.notificationCount{
+   
+    position: absolute;
+    top: 1px;
+    right: -4px;
+    width: 20px;
+    border: 0.5px solid black;
+    border-radius: 50%;
+    height: 20px;
+    text-align: center;
+    color: white;
+    pointer-events: none;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    color: orange;
+    font-weight: 800;
+}
+
+.div2 {
+    	position: absolute;
+    top: 39px;
+    right: 39px
+}
+
+.wrapper-div{ 
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 180px 177px;
+    height: 150px;
+    width: 150px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0px 8px 10px lightgrey;
+}
+.wrapper-div p{
+    text-align: center;
+     margin-top: 33%;
+    font-size: 185%;
+    font-family: fantasy;
+    color: white; margin-top: 40%;
+}
+.wrapper-div img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 32px;
+    margin-left: 78px;
+    
+}
+.image-name{
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 2%;
+    margin-top: 2%;
+}
+
+lightning-layout-item.layout {
+
+    margin-top: 3%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+.hide-button{
+
+    position: absolute;
+    top: 44px;
+    height: 22px;
+    width: 21px;
+    right: 21px;
+    box-shadow: 0px 8px 10px lightgrey;
+    text-align: center;
+    border-radius: 5px;
+    border: 0.5px solid #abaaaae8;
+    font-weight: bold;
+}
+
+@media (min-width:480px) and (max-width: 1200px){
+
+  
+
+.Achievement-details-BatchesEarnedNumber-popup-wrapper{
+        margin-top: 24px;
+    }
+    .layout{
+        width: 32.33%;
+    }
+
+    .Achievement-details-BatchesEarned{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4% 0% 2% 0%;
+    }
+
+}
+
+/* 
+@media (min-width:800px) and (max-width: 1200px){
+    .layout{
+        width: 32.33%;
+    }
+
+     .Achievement-details-BatchesEarned{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4% 0% 2% 0%;
+    } 
+
+} */
+
+@media (min-width:480px) and (max-width: 800px){
+
+                
+        .Achievement-details-BatchesEarnedNumber-popup-wrapper{
+            width: 68%;
+            height: 28%;
+        
+        }
+
+        .Achievement-details-BatchesEarnedNumber-popup-wrapper p{
+            font-size: 81%;
+        }
+
+}
+
+
+/* 
+@media (min-width:600px) and (max-width: 480px){
+
+     .Achievement-details-BatchesEarnedNumber-popup-wrapper{
+         display: none;
+        
+        }
+        
+        .container-Achievement{
+           height: 165px;
+        }
+
+        .container-Achievement p{
+        
+            font-size: 35px;
+            padding: 50px;
+        }
+
+        .container-Achievement img {
+
+            display: none;
+        }
+
+        .layout{
+        width: 49%;
+    } 
+
+    .Achievement-details-BatchesEarned{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4% 0% 2% 0%;
+    }
+
+
+}
+*/
+
+
+@media only screen and (max-width: 480px){
+
+    
+    .div2{
+    display: none;
+    }
+    .notificationCount{
+    display: none;
+    }
+     /* .Achievement-details-BatchesEarnedNumber-popup-wrapper{
+         display: none;
+        
+        } */
+        
+.Achievement-details-BatchesEarnedNumber-popup-wrapper{
+    width: 98%;
+}
+        
+        .container-Achievement{
+           height: 165px;
+        }
+
+        .container-Achievement p{
+        
+            font-size: 35px;
+            padding: 50px;
+        }
+
+        .container-Achievement img {
+
+            display: none;
+        }
+
+        .layout{
+        width: 49%;
+    }
+
+    .Achievement-details-BatchesEarned{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4% 0% 2% 0%;
+    }
+
+
+
+}

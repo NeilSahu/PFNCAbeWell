@@ -1,0 +1,262 @@
+.container{
+    padding: 6rem;
+}
+
+.class-detail-top{
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #000000c5;
+    background-blend-mode: darken;
+    aspect-ratio: 5/3;
+    
+
+    
+}
+
+.class-detail-main{
+    margin-top: 2rem;
+}
+
+.class-handle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.class-handle > button {
+    color: white;
+    background-color: #0084a2;
+    padding: 1rem;
+    outline: 1px solid #ffffff75;
+    outline-offset: -4px;
+    border: transparent;
+}
+
+.class-detail-top img{
+    width: 6rem;
+
+}
+.class-deatil-head {
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap; */
+}
+.class-inst-deatil {
+    display: flex;
+    flex-direction: column;
+}
+.exercise-breif {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.class-inst-name {
+    font-weight: bold;
+    margin-top: 5px;
+}
+.sharing-activity-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    row-gap: 0.5rem;
+}
+.like-share-container {
+    display: flex;
+    justify-content: flex-end;
+}
+.activity-status {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #6C7075;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.icon {
+    width: 1.8rem;
+}
+.like-icon {
+    margin-left: 1rem;
+}
+.capacity-icon {
+    position: relative;
+    right: 10px;
+    bottom: 11px;
+    width: 2rem;
+}
+.hr-line:after {
+    content: " ";
+    display: block;
+    border-bottom: 2px solid #60C7D5;
+    margin-block: 3rem;
+}
+.class-breif {
+    width: min(100%, 41rem);
+    font-size: 1.1rem;
+    color: #6C7075;
+}
+.required-props {
+    padding-block: 2rem;
+    color: #6C7075;
+}
+.unlock-schedule-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+}
+.btn-box {
+    display: grid;
+    padding: 2px;
+    background-color: #008DA8;
+    color: white;
+    width: fit-content;
+    height: fit-content;
+}
+.btn {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    background-color: #008DA8;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding-inline: 10px;
+    height: 2rem;
+    font-weight: bold;
+}
+.live-btn-box {
+    background-color: white;
+    border: 2px solid #9FD4DE;
+}
+.live-btn {
+    background-color: white;
+    color: #008DA8;
+    border: 1px solid #9FD4DE;
+    height: 1.8rem;
+}
+
+/* .class-background{
+    background-color: #0000008c;
+    
+    /* display: grid;
+    place-items: center; */
+
+/* } */
+
+
+
+.on-mobile{
+    display: none;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+
+}
+@media only screen and (max-width: 768px) and (min-width: 480px){
+    .container{
+        padding: 3rem;
+    }
+    .on-mobile{
+        display: block !important;
+    }
+    .onDesktop{
+        display: none !important;
+    }
+
+    .sharing-activity-container {
+        margin-top: 0.8rem;
+        justify-content: unset;
+    }
+    .exercise-breif {
+        font-size: 2rem;
+    }
+    .activity-status {
+        justify-content: flex-end;
+    }
+    .icon {
+        width: 1.5rem;
+    }
+    .capacity-icon {
+        width: 2rem;
+    }
+    .btn {
+        padding-inline: 10px;
+        font-size: 0.8rem;
+    }
+
+
+}
+@media only screen and (max-width: 480px) and (min-width: 320px){
+    .container{
+        padding: 2rem;
+    }
+    .on-mobile{
+        display: block !important;
+    }
+    .onDesktop{
+        display: none !important;
+    }
+
+    .class-deatil-head {
+        flex-wrap: wrap;
+    }
+    .exercise-breif {
+        font-size: 2rem;
+    }
+    .class-inst-name{
+        margin-top: 15px;
+    }
+    .sharing-activity-container {
+        margin-top: 2.5rem;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .icon {
+        width: 1.5rem;
+    }
+    .capacity-icon {
+        width: 2rem;
+    }
+    
+}
+
+@media only screen and (max-width: 320px) {
+    .container {
+        padding-inline: 0.7rem;
+    }
+    .on-mobile{
+        display: block !important;
+    }
+    .onDesktop{
+        display: none !important;
+    }
+    .class-deatil-head {
+        flex-wrap: wrap;
+    }
+    .class-inst-name{
+        margin-top: 15px;
+    }
+    .sharing-activity-container {
+        margin-top: 2.5rem;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .icon {
+        width: 1.5rem;
+    }
+    .capacity-icon {
+        width: 2rem;
+    }
+}

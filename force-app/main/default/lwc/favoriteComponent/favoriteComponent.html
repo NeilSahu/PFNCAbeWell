@@ -1,0 +1,42 @@
+<template>
+    <lightning-card>
+        <div>
+            <div class="headerContianer">
+                <div class="innerHeadingClass">
+                    <div class="NotificationHeading"><span>Favorites</span></div>
+                </div>
+                <div class="bellIconClass"><img src="#"></div>
+            </div>
+            <div>
+                <div class="notificationCardHeadingContainer">
+                    <div><span>YOUR FAVORITES CLASSES</span></div>
+                    <div class="notificationInnerHeading">
+                        <img src="#"><span>SEARCH YOUR FAVORITES</span>
+                    </div>
+                </div>
+                <div class="notificationCardContainer">
+                    <template for:each={visibleRecords} for:item="notify" for:index="index">
+                        <div key={notify.id} class="notifyCardClass">
+                            <div class="notifyCardHeaderClass">
+                               <div class="cardHeadingClass">
+                                 <!-- status icon -->
+                                 <div class="statusClass"></div>
+                                 <!-- name and active time-->
+                                 <div>
+                                     <div class="nameClass"> <span>{notify.Name}</span></div>
+                                     <div class="timeClass"> <span>{notify.Active__c}</span> </div>
+                                 </div>
+                               </div>
+                                <!-- profile picture -->
+                                <div class="profileClass">
+                                    <img src={notify.image} alt="not found" class="profilePictureClass">
+                                </div>
+                            </div>
+                            <div class="messageClass"><span>{notify.Message__c}</span></div>
+                        </div>
+                    </template> 
+                </div>
+            </div>
+        </div>
+    </lightning-card>    
+</template>

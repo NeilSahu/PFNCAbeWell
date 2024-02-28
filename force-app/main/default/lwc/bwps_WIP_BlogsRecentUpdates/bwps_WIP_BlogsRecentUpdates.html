@@ -1,0 +1,20 @@
+<template>
+    <div class="container">
+        <div class="heading-box">
+            <h2>Recent Updates</h2>
+        </div>
+        <div class="blogs-container">
+            <template for:each={recentUpdatesBlogs} for:item="blog">
+                <div class="blog" key={id}>
+                    <div class="blog-photo"><img src={blog.photo} data-id={blog.id} onclick={handleBlogClick} alt=""></div>
+                    <div class="blog-detail">
+                        <div class="blog-auther-date-box">{blog.auther} &nbsp; &nbsp; | &nbsp; &nbsp; {blog.date}
+                        </div>
+                        <div class="blog-heading" onclick={handleBlogClick} data-id={blog.id}>{blog.heading}</div>
+                        <div class="blog-description" data-id={blog.id} onclick={handleBlogClick}>{blog.description}</div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

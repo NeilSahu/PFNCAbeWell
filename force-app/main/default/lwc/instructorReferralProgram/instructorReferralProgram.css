@@ -1,0 +1,119 @@
+.demo-only {
+    height: 100vh;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.demo-only .slds-spinner_container {
+    background: transparent;
+}
+
+.butterfly-img {
+    width: 100%;
+    height: 100%;
+}
+
+.imageClass {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 8% 5%;
+}
+
+/* firstContainer */
+.firstContainer {
+    width: 35%;
+}
+
+.inputClass {
+    display: block;
+    width: 100%;
+    margin-bottom: 4%;
+    height: 45px;
+    padding-left: 24px;
+    border: 1px solid #51A5BB;
+    font-size: 18px;
+}
+
+.inputLabelClass {
+    font-size: 1.375rem;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 1%;
+}
+
+.firstConHeaderTextClass {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 4%;
+}
+
+.firstConFooterTextClass {
+    font-weight: 400;
+}
+
+/* secondContainer */
+.secondContainer {
+    width: 55%;
+}
+
+
+/* button css */
+.btnMainContainer {
+    width: 100%;
+}
+
+.buttonContainer {
+    background-color: #448BA7;
+    width: fit-content;
+    padding: 0.2rem;
+    color: white;
+}
+
+.btnClass {
+    background-color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    padding: 10px 60px;
+    background-color: #008BA7;
+}
+
+.btnClass:hover {
+    background-color: #036477;
+}
+
+/* Mobile View */
+@media only screen and (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+    }
+
+    .firstContainer {
+        width: 100%;
+        ;
+    }
+
+    .secondContainer {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .imageClass {
+        height: 8rem;
+    }
+
+    .btnMainContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,257 @@
+<template>
+    <div class="container">
+        
+        <div class="info-header-container" style={infoHeaderStyle}>
+            <div class="info-header flex">
+                <h1 class="h1">Gift a Membership</h1>
+                <div class="info-header-main flex">
+                    <div class="additional-info flex width45">
+                        <h2 class="h2">Gift recipients are entitled to all of the member benefits for one year.</h2>
+                        <p>
+                            Once you purchase a gift membership, we'll send a welcome
+                            email within one business day to the recipient notifying them
+                            of your gift, and they'll receive an official new member
+                            welcome packet in the mail within 1 to 2 weeks. You will also
+                            receive a confirmation email with tax receipt for your records.
+                        </p>
+                    </div>
+                    <div class="donation-info width45">
+                        <div class="flex">
+                            <!-- <button class="width48">ONE TIME</button>
+                            <button class="width48">RECURRING</button> -->
+                            <div class="radio-toolbar">
+                                <input type="radio" id="oneTime" name="paymentRecursion" value="oneTime" checked>
+                                <label for="oneTime">ONE TIME</label>
+
+                                <input type="radio" id="recurring" name="paymentRecursion" value="recurring">
+                                <label for="recurring">RECURRING</label>
+                            </div>
+
+                        </div>
+                        <div class="flex-col mb-1rem">
+                            <label for="enteramount1">Enter Amount</label>
+                            <input type="text" id="enteramount1" placeholder="$0.00" class="input">
+                        </div>
+                        <div class="flex-col">
+                            <p>OPTIONAL DONATION OPPORTUNITIES</p>
+                            <p>
+                                Tax Deductible contribution to support
+                                ParkinsonFoundation.org/Be Well Parkinson's
+                            </p>
+                            <p>
+                                Your support helps ParkinsonFoundation.org/Be Well Parkinson's
+                                continue providing programs and services to those impacted by
+                                Parkinson's Disease. Thank you for your consideration.
+                            </p>
+                        </div>
+                        <div class="flex-col">
+                            <label for="enterAmount2">Enter Amount</label>
+                            <input type="text" id="enterAmount2" placeholder="$0.00" class="input">
+                        </div>
+                    </div>
+                </div>
+                <div class="info-header-scroll">
+
+                    <a href="#scrollToForm" class="flex">
+                        <img src={downArrow} alt="downArrow">
+                        <p>SCROLL TO CONTINUE </p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="info-form" id="scrollToForm">
+            <form action="" class="form-2">
+
+
+                <div class="flex-col">
+                    <h3 class="h3">PERSONAL INFORMATION</h3>
+                    <div class="flex">
+                        <div class="flex-col width48">
+                            <label for="firstName">First name*</label>
+                            <input type="text" id="firstName" name="firstName" class="input">
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="lastName">Last name*</label>
+                            <input type="text" id="lastName" name="lastName" class="input">
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="emailAddress">Email Address*</label>
+                            <input type="email" id="emailAddress" name="emailAddress" class="input">
+                            <span>Your receipt will be emailed here.</span>
+                        </div>
+                        <div class="flex fx-dir-row_rev width48">
+                            <label for="newsletterConfirm" class="width90">yes, I would like to sign up for Bee Well's
+                                monthly
+                                e-newsletter. We will never sell or rent your personal
+                                information and you can unsubscribe at any time.
+                            </label>
+                            <input type="radio" id="newsletterConfirm" name="newsLetterConfirm" checked={newsLetterChecked} onclick={handleNewsLetterCheck} value={newsLetterChecked}>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="flex-col">
+                    <h3 class="h3">CONTACT INFORMATION/ HOME ADDRESS</h3>
+                    <div class="flex">
+                        <div class="flex-col width48">
+                            <label for="streetAddress">Street Address*</label>
+                            <input type="text" id="streetAddress" name="streetAddress" class="input">
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="city">City*</label>
+                            <input type="text" id="city" name="city" class="input">
+                        </div>
+
+                        <div class="flex-col width30">
+                            <label for="stateProvince">State/Province*</label>
+                            <input type="text" id="stateProvince" name="stateProvince" class="input">
+                        </div>
+                        <div class="flex-col width30">
+                            <label for="postalCode">Postal Code*</label>
+                            <input type="text" id="postalCode" name="postalCode" class="input">
+                        </div>
+                        <div class="flex-col width30">
+                            <label for="country">Select a Country*</label>
+                            <!-- <input type="text" id="selectACountry" class="input"> -->
+                            <select name="country" id="country" class="input">
+                                <option value="United States of America">United States of America</option>
+                                <option value="India">India</option>
+                                <option value="England">England</option>
+                                <option value="Russia">Russia</option>
+                            </select>
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="homePhoneNumber">Home Phone Number</label>
+                            <input type="tel" id="homePhoneNumber" name="homePhoneNumber" class="input">
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="mobilePhoneNumber"> Mobile Phone Number</label>
+                            <input type="tel" id="mobilePhoneNumber" name="mobilePhoneNumber" class="input">
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <div class="flex-col">
+                    <h3 class="h3">GIFT RECIPIENT</h3>
+                    <div class="flex">
+                        <div class="flex-col width48">
+                            <label for="gr_firstName" class="h3">First name*</label>
+                            <input type="text" id="gr_firstName" name="gr_firstName" class="input">
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="gr_lastName" class="h3">Last name*</label>
+                            <input type="text" id="gr_lastName" name="gr_lastName" class="input">
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="gr_streetAddress" class="h3">Street Address*</label>
+                            <input type="text" id="gr_streetAddress" name="gr_streetAddress" class="input">
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="gr_city" class="h3">City*</label>
+                            <input type="text" id="gr_city" name="gr_city" class="input">
+                        </div>
+
+                        <div class="flex-col width30">
+                            <label for="gr_stateProvince">State/Province*</label>
+                            <input type="text" id="gr_stateProvince" name="gr_stateProvince" class="input">
+                        </div>
+                        <div class="flex-col width30">
+                            <label for="gr_postalCode">Postal Code*</label>
+                            <input type="text" id="gr_postalCode" name="gr_postalCode" class="input">
+                        </div>
+                        <div class="flex-col width30">
+                            <label for="gr_country">Select a Country*</label>
+                            <!-- <input type="text" id="selectACountry" class="input"> -->
+                            <select name="gr_country" id="gr_country" class="input">
+                                <option value="India">India</option>
+                                <option value="United States of America">United States of America</option>
+                                <option value="England">England</option>
+                                <option value="Russia">Russia</option>
+                            </select>
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="gr_emailAddress">Email Address*</label>
+                            <input type="email" id="gr_emailAddress" name="gr_emailAddress" class="input" required>
+                        </div>
+                        <div class="flex-col width48">
+                            <label for="gr_mobilePhoneNumber"> Mobile Phone Number</label>
+                            <input type="tel" id="gr_mobilePhoneNumber" name="gr_mobilePhoneNumber" class="input">
+                        </div>
+                        <div class="flex-col width100">
+                            <label for="gr_message">Optional message for gift recipient</label>
+                            <textarea id="gr_message" name="gr_message" class="textarea" rows="3"
+                                placeholder="Type your message here."></textarea>
+                        </div>
+                        <div class="flex-col width100">
+                            <label for="gr_relationship">Relationship to gift recipient</label>
+                            <input type="text" id="gr_relationship" name="gr_relationship" class="input">
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <div class="flex-col payment-methods">
+                    <h3 class="h3">PAYMENT METHODS</h3>
+                    <div class="flex fx-dir-row_rev">
+                        <div class="flex-rev width45">
+                            <label for="newCard" class="flex width90">
+                                <!-- <div class="width50">
+
+                                <img src="" alt="" class="width30">
+                            </div> -->
+                                <div class="flex width50">
+                                    <p>Use a new card</p>
+                                </div>
+                            </label>
+                            <input type="radio" id="newCard" name="paymentMethod" value="newCard">
+                        </div>
+                        <div class="flex-rev width45">
+                            <label for="storedCard1" class="flex width90">
+                                <div class="width50">
+
+                                    <img src={visaLogo} alt="VISA" class="width30">
+                                </div>
+                                <div class="flex width50">
+                                    <p>VISA ending in 6543 </p>
+                                    <p>Expires: 12/2022</p>
+                                </div>
+                            </label>
+                            <input type="radio" id="storedCard1" name="paymentMethod" value="storedCard1">
+                        </div>
+
+                        <div class="flex-rev width45">
+                            <label for="payPal" class="flex width90">
+                                <div class="width50">
+                                    <img src={paypalLogo} alt="paypal" class="width30">
+
+                                </div>
+                                <div class="flex width50">
+                                    <p></p>
+                                </div>
+                            </label>
+                            <input type="radio" id="payPal" name="paymentMethod" value="payPal">
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+            <div class="flex-col submission">
+                <div class="width30">
+                    <div>$150.00 | ONE-TIME</div>
+                    <button value="GIVE NOW!" onclick={handleSubmit}>GIVE NOW!</button>
+                    <!-- <input type="button" onclick={handleSubmit}> -->
+                </div>
+                <div>
+                    <p>By clicking GIVE NOW!, I agree to the Terms of Service and Privacy Policy</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

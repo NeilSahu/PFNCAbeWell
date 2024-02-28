@@ -1,0 +1,108 @@
+<!-- bwps_WIP_BecomeAMember -->
+
+<template>
+	<!-- <div class="row">
+        <div class="col-6">
+            <div class="signup-form">
+                <div class="login-details">
+                    <div class="signup-heading">
+                        <h1>Become a Member</h1>
+                    </div>
+                    <div class="Login-form">
+                        <form class="form">
+                            <label for="name">First and Last Name</label>
+                            
+                            <input type="text" id="name" name="name" data-id="name" >
+                            
+                            <label for="phone">Phone Number</label>
+                            
+                            <input type="number" id="phone" name="phone" data-id="phone" minlength="10" maxlength="10">
+                            
+                            <label for="email">Email Address</label>
+                            
+                            <input type="email" id="email" name="email" data-id="email" >
+                            
+                            <label for="password">Password</label>
+                            
+                            <input type="password" id="password" name="password" data-id="password" >
+                            
+                            <div class="submit-button-div">
+                                <div class="box-orange-button">
+                                    <button class="orange-button" onclick={handleClick}>SIGN UP</button>
+                                </div>
+                            </div> 
+                        </form>
+
+                    </div> 
+                    
+                    
+                    <div class="get-pass-buttons">
+                        <div class="not-member">
+                            <a href="#">Are you a member already?</a>
+                        </div>
+                        <a href={loginLink}>
+
+                            <div class="box-white-button">
+                                <button class="white-button">LOGIN</button>
+                            </div>
+                        </a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            
+            <div class="bgimage">
+                <img src={signupImage} class="bgimage"></img>
+            </div>
+
+
+        </div>
+    </div> -->
+
+	<div class="container">
+		<div class="form-box">
+			<h2>Become a Member</h2>
+			<form class="form">
+
+				<div class="input-box">
+					<label for="name">First and Last Name</label>
+					<input type="text" id="name" name="name" data-id="name" required>
+                </div>
+
+				<div class="input-box">
+					<label for="phone">Phone Number</label>
+					<input type="phone" id="phone" name="phone" data-id="phone" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" data-id="email" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" data-id="password" required>
+                </div>
+
+                <div class="button-box">
+                    <button class="orange-button" onclick={handleClick}>SIGN UP</button>
+                </div>
+
+			</form>
+
+            <div class="login-button-box">
+                
+                        <p>Are you a member already?</p>
+                        <a href={loginLink}>
+                            <button class="white-button">LOGIN</button>
+                        </a> 
+            </div>
+		</div>
+		<div class="image-box">
+            <img src={signupImage} alt="img">
+        </div>
+	</div>
+
+
+</template>

@@ -1,0 +1,1222 @@
+.Master_Profile_Info
+{
+    margin: 0rem 1rem;
+	height: auto;
+	width: auto;
+	/* background-color: #f5f7f4; */
+}
+.Profile_Info_Header
+{
+	height: auto;
+	width: auto;
+}
+
+
+.ContactInformationParent{
+    display: flex;
+    flex-wrap: wrap;
+}
+.half-width{
+   width: calc(35% - 3.5rem);
+    flex: 1 1 calc(40% - 3.5rem);
+    margin-right: 2rem;
+}
+
+ .qurater-width{
+    width: calc(25% - 3.5rem);
+    flex: 1 1 calc(25% - 3.5rem);
+    margin-right: 2rem;
+    } 
+     .qurater-width1{
+    width: calc(25% - 3.5rem);
+    flex: 1 1 calc(25% - 3.5rem);
+    
+    }    
+.BellIcon_Div
+{
+	width: 100%;
+	height:auto;
+    cursor: pointer;
+	/* color:#008ba7; */
+	text-align: center;
+	font-weight: bolder;
+    font-size: 2.5rem;
+	padding: 3% 0% 0% 0%;
+    font-family: Playfair Display;
+}
+.headerIcon{
+    float: right;
+    height: 33px;
+    position: absolute;
+    top: 55px;
+    right: 54px;
+}
+.Profile_Info_Header > .Page_Detail
+{
+	text-align: center;
+	margin: 2% 37% 2% 37.5%;
+}
+.Profile_Info_Header > .Page_Detail > .Page_Detail_Div > p
+{
+	font-size: 1rem;
+    color: #141111d1;
+}
+.Profile_Info_Header > .Page_Detail > .Page_Number
+{
+	text-align: center;
+    margin: 9% 0% 4%;
+}
+.circle1
+{
+      height: 2.2rem;
+    width: 2.2rem;
+    font-size: 1.4rem;
+  border: 1px solid white;
+  color:white;
+  background-color:#008ba7;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1.5%;
+}
+.circle2,.circle3,.circle4,.circle5{
+
+  height: 2.2rem;
+  width: 2.2rem;
+  font-size: 1.5rem;
+  border: 1px solid #008ba7;
+  color:#008ba7;
+  /* background-color: white; */
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1.5%;
+}
+.btn {
+    color: white;
+    display: flex;
+    margin: 5rem auto 1rem auto;
+    justify-content: space-around;
+    max-width: 35rem;
+
+}
+.buttondiv
+{
+  background-color: #008ba7;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 3px;
+    width: fit-content;
+}
+.button{
+    background-color: #008ba7; 
+	border: 1px solid rgba(255, 255, 255, 0.5); 
+	padding: 3px 32px;
+}
+.button:hover {
+    background-color: #036477;
+}
+
+.button1{
+    background-color: #008ba7;
+	border: 1px solid rgba(255, 255, 255, 0.5); 
+	padding: 3px 32px;
+
+}
+.button1:hover {
+    background-color: #036477;
+}
+.buttondiv1{
+    display: flex;
+    background-color: #008ba7;
+    padding: 3px;
+    width: fit-content;
+    color: white;
+    /* margin-left: 54px; */
+}
+.select > select:nth-of-type(1) {
+        font: inherit;
+        border-color: #008ba7;
+        width: 100%;
+        height: 3rem;
+        font-size: 1rem;
+        margin-left: 0%;
+}
+.genderPicklist > select:nth-of-type(1) {
+        font: inherit;
+        border-color: #008ba7 !important;
+        width: 80%;
+        height: 3rem;
+        font-size: 1rem;
+     /* margin: 1%; */
+    border: 1px solid;
+}
+.relationDropdown{
+margin-top: 3%;
+}
+.BellIcon_Div > img {
+    position: absolute;
+    top: 65px;
+    right: 42px;
+}
+
+.SocialMediaInfoInnerDiv1{      
+    font-size: 1rem;
+    font-weight: 600;
+}
+.footerTextClass{
+   
+    background-color: #f3dedc;
+    margin: 4% 28% 0% 36%;
+}
+.footerText-p {
+    color: red;
+}
+
+.SocialMediaInfoInnerDiv1 p{
+    color: red;
+    background-color: #f3dedc;
+    display: initial;
+    margin-left: 22px;
+    padding: 10px;
+}
+
+
+.Master-container label{
+    font-size: 1.125rem;
+
+}
+.ContactInformationDiv1 p{
+
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.numOfyear input{
+    
+    width: 15rem;
+    border: 1px solid #008ba7;
+    margin-top: 3rem;
+    height: 3rem;
+    padding-left: 1rem;
+
+
+}
+.ContactInformationDiv3 input{
+    width: 100%;
+    border: 1px solid #008ba7;
+    height: 3rem;
+    margin-top: 1%;
+    font-size: 1.1rem;
+    padding-left: 1.5rem;
+}
+.ContactInformationDiv4 input{
+    display: flex;
+    width: 30%;
+    border: 1px solid #008ba7;
+    height: 3rem;
+    margin-top: 1%;
+    font-size: 1.1rem; 
+    border: 2px solid
+}
+
+.ContactInformationDiv5 input{
+    display: flex;
+    width: 20%;
+    border: 1px solid #008ba7;
+    height: 3rem;
+    margin-top: 1%;
+    font-size: 1.1rem; 
+    border: 2px solid
+}
+
+
+
+.SocialMediaInfoDiv1{
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button{
+    display: none;
+}
+
+
+@media only screen and (min-width: 360px) and (max-width: 480px)
+{
+    .BellIcon_Div {
+        font-size: 2rem;
+    }
+    .Profile_Info_Header > .Page_Detail{
+        text-align: center;
+        margin: 2% 13% 2% 15%;
+        width: 70%;
+    }
+    .Profile_Info_Header > .Page_Detail > .Page_Detail_Div > p {
+        font-size: 1rem;
+    }
+    .btn > .buttondiv
+    {
+            margin: 0% 0% 0% 9%;
+    }
+       .ContactInformation{
+	width: auto;
+	height: auto;
+    margin: 2.5rem 7% 0 10% !important;
+    }
+  
+}
+
+ @media only screen and (min-width: 480px) and (max-width: 768px)
+{
+    .genderPicklist > select:nth-of-type(1) {
+        width: 90%;
+    }
+    .ContactInformationParent{
+         display: flex;
+         flex-direction: column;
+    }
+    .half-width{
+        width: 100%;
+    }
+    .qurater-width{
+        width: 100%;
+    }
+    .qurater-width1{
+        width: 100%;
+    }
+    .BellIcon_Div {
+        font-size: 2rem;
+    }
+    .Profile_Info_Header > .Page_Detail 
+    {
+        text-align: center;
+        margin: 2% 28% 2% 28%;
+    }
+   .btn {
+           width: 50%;
+    }
+} 
+.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv > input{
+    margin-bottom: 5%;
+    
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .Profile_Info_Header > .Page_Detail 
+    {
+        text-align: center;
+        margin: 2% 36% 2% 37.5%
+    }
+    .btn {
+           width: 50%;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px)
+{
+    .genderPicklist > select:nth-of-type(1) {
+        width: 90%;
+    }
+    .Profile_Info_Header > .Page_Detail 
+    {
+        text-align: center;
+        margin: 2% 36% 2% 37.5%
+    }
+    .btn {
+           width: 30%;
+    }
+       .ContactInformation{
+	
+    margin: 2.5rem 10% 0 10% !important;
+    }
+}
+/* profile 1 form */
+
+.PersonalInformation
+{
+	width: auto;
+	height: auto;
+    margin: 2.5rem 5% 0 10%;
+}
+.PersonalInformationDiv2 > .BasicInfo
+{
+	display: flex;
+}
+.PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv
+{
+	width: 50%;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv > input
+{
+	width: 80%;
+	border:1px solid #008ba7;
+    height: 3rem;
+    margin: 1%;
+    font-size: 1.1rem;
+    padding-left: 1.5rem;
+}
+.ContactInformation
+{
+	width: auto;
+	height: auto;
+    margin: 2.5rem 13% 0 10%;
+}
+.PersonalInformationDiv1 p{
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+.ContactInformationDiv2
+{
+	display: flex;
+	flex-direction: column;
+    gap: 1rem;
+}
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo
+{
+	display: flex;
+}
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv
+{
+	width: 50%;
+    margin-top : 12px;
+} 
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1
+{
+	width: 50%;
+    margin-top : 12px;
+} 
+
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input
+{
+	width: 78%;
+	border:1px solid #008ba7;
+    height: 3rem;
+    margin: 1%;
+    font-size: 1.1rem;
+} 
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 >input
+{
+	width: 85%;
+	border:1px solid #008ba7;
+    height: 3rem;
+    margin: 1%;
+    font-size: 1.1rem;
+} 
+.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > .select 
+{
+	width: 67%;
+    height: 3rem;
+    margin: 1%;
+    font-size: 1.1rem;
+} 
+.EmergencyContactInfo
+{
+	display: flex;
+	flex-direction: column;
+	margin-left: 15%;
+	margin-right: 10%;
+	margin-top: 4rem;
+}
+.select > select:nth-of-type(1) {
+        font: inherit;
+        border: 1px solid #008ba7;
+        width: 100%;
+        height: 3rem;
+        font-size: 1rem;
+        margin-left: 0%;
+  }
+.EmergencyContactInfo > .EmergencyContactInfoDiv1 > p
+{
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+.EmergencyContactInfoDiv2 label{
+        font-size: 1.125rem;
+}
+.EmergencyContactInfo > .EmergencyContactInfoDiv2 
+{
+	display: flex;
+}
+.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv 
+{
+	width: 50%;
+}
+.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv > input
+{
+	width: 80%;
+	border:1px solid #008ba7;
+    height: 3rem;
+    font-size: 1.1rem;
+    margin: 1px;
+    margin-top: 12px;
+    margin-bottom: 5%;
+    padding: 10px;
+}
+.SocialMediaInfo
+{
+	/* display: flex; */
+	flex-direction: column;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 3%;
+}
+
+
+.SocialMediaInfoInnerDiv > .SocialMediaInfoInnerDiv2
+{
+	width: 21%;
+	text-align: center;
+	display: none;
+}
+.BasicQuestions >.InnerDiv {
+    width: 100%;
+   
+}
+.InnerDiv2 {
+    width: 100%;
+}
+
+@media only screen and (min-width: 360px) and (max-width: 480px)
+{
+    .Achievement-details-close span{
+        
+        display: none;
+    }
+        .ContactInformationParent{
+         display: flex;
+         flex-direction: column;
+    }
+    .half-width{
+        width: 100%;
+    }
+    .qurater-width{
+        width: 100%;
+    }
+    .qurater-width1{
+        width: 100%;
+    }
+	.PersonalInformationDiv2 > .BasicInfo{
+		width: 100%;
+		display: block;
+	}
+	.PersonalInformation > .PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv{
+		width: 100%;
+	}
+	.PersonalInformation > .PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input{
+		width: 100%;
+		border: 1px solid #008ba7;
+		margin: 0%;
+	}
+	.ContactInformationDiv2 {
+        display: block;
+    } 
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo {
+		display: block;
+        width: 100%;
+    }
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv{
+        width: 100%;
+    }
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input {
+        width: 100%;
+		border: 1.8px solid #008ba7;
+		margin: 0%;
+    }
+
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1
+	{
+		width: 100%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > input
+	{
+		width: 100%;
+		border: 1px solid #008ba7;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > .select
+	{
+		width: 100%;
+	}
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv {
+       width: 100%;
+    }
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv  > input {
+       width: 100%;
+	   border: 1px solid #008ba7;
+	   margin: 0%;
+    } 
+	.SocialMediaInfoInnerDiv
+	{
+		display: block;
+	}
+	.SocialMediaInfoInnerDiv > .SocialMediaInfoInnerDiv2
+	{   
+		width: 58%;
+	}
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 {
+       display: block
+	}
+}
+@media only screen and (min-width: 768) and (max-width: 1200)
+{
+     .ContactInformation{
+	width: auto;
+	height: auto;
+    /* margin: 2.5rem 10% 0 50%; */
+}   
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px)
+{
+    .ContactInformation{
+	width: auto;
+	height: auto;
+    margin: 2.5rem 10% 0 10%;
+    }
+	.PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv > input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 >input 
+    {
+		width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation> .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > .select {
+        width: 84%;
+	}
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv > input
+	{
+		width: 90%;
+		margin-bottom: 13%;
+	}
+	.SocialMediaInfoInnerDiv > .SocialMediaInfoInnerDiv2
+	{
+		width: 36%;
+	}
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px)
+{
+	.PersonalInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv > input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv >input {
+        width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation > .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 >input 
+    {
+		width: 90%;
+		margin: 0%;
+	}
+	.ContactInformation> .ContactInformationDiv2 > .BasicInfo > .BasicInfoInnerDiv1 > .select {
+        width: 84%;
+	}
+	.EmergencyContactInfo > .EmergencyContactInfoDiv2 > .EmergencyContactInfoInnerDiv > input
+	{
+		width: 90%;
+		margin-bottom: 5px;
+	}
+	.SocialMediaInfoInnerDiv > .SocialMediaInfoInnerDiv2
+	{
+		width: 32%;
+	}
+}
+/* 
+profile form2 */
+
+.BasicQuestions  input{
+    margin-right: 15px;
+}
+span.slds-form-element__label{
+    margin-top: 30px;
+}
+
+.parent-block{
+    margin: 5rem 15% 0% 15%;
+    font-size: 1.1rem;
+    
+}
+
+.Information > .InformationHeader
+{
+    margin-top: 2%;
+   font-size: 1.125rem !important;
+    width: 100%;
+
+}
+
+.Information > .BasicQuestions
+{
+    display: flex;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.Information > .BasicQuestions > .InnerDiv2
+{
+        margin-left: 7.5%;
+}
+
+
+ @media only screen and (min-width: 0px) and (max-width: 480px)
+{
+    .genderPicklist > select:nth-of-type(1) {
+        width: 100%;
+    }
+    .parent-block 
+    {
+        margin-left: 0%;
+    }
+    .Information
+    {
+        margin-left: 5%;
+        margin-top: 4rem;
+    }
+    .Information > .BasicQuestions 
+    {
+        display: block;
+    }
+    .Information > .BasicQuestions > .InnerDiv2 
+    {
+        margin-left: 0%;
+        margin-top: -4%;
+    }
+} 
+
+
+@media only screen and (min-width: 480px) and (max-width: 768px)
+{
+    .parent-block
+    {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    /* .Information
+    {
+        margin-left: 7%;
+    } */
+    .Information > .BasicQuestions 
+    {
+        display: block;
+    }
+    .Information > .BasicQuestions > .InnerDiv2 
+    {
+        margin-left: 0%;
+        margin-top: 4%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .parent-block
+    {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .Information
+    {
+        margin-left: 12%;
+    }
+    .DetailInfo .Information
+    {
+        margin-left: 0%;
+    }
+    .Information > .BasicQuestions 
+    {
+        display: block;
+    }
+    .Information > .BasicQuestions > .InnerDiv2 
+    {
+        margin-left: 0%;
+        margin-top: 4%;
+    }
+}
+/* 
+profile form 3 */
+.RadioButton{
+margin-top: 9px;
+}
+
+.Master-Container
+{
+    margin-bottom: 10%;
+}
+.DetailInfo
+{
+    margin: 2% 8% 0% 15%;
+}
+
+.Information > .InformationHeader
+{
+    margin-top: 2%;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: black;
+}
+
+.Information > .BasicQuestions
+{
+    display: flex;
+    width: 100%;
+    margin-top: 2%;
+    font-size: 1.125rem !important;
+}
+
+.Information > .BasicQuestions > .InnerDiv2
+{
+        margin-left: 7.5%;
+}
+.TherapistInfo
+{
+    height: auto;
+    width: auto;
+    /* font-weight: 600; */
+    margin-top: 4rem;
+}
+.TherapistInfo > .Header
+{
+    margin-top: 2%;
+    width: 90%;
+    font-weight: 800;
+    color: black;
+}
+.Detail input{
+    color: black;
+}
+.TherapistInfo > .Detail
+{
+    display: flex;
+    flex-direction: row;
+}
+.TherapistInfo > .Detail > .DetailDiv1
+{
+    width: 50%;
+    
+}
+.DetailDiv2
+{
+    width: 50%;
+}
+.TherapistInfo > .Detail > .DetailDiv1 >input
+{
+    border:1px solid #008ba7;
+    height: 3rem;
+    margin-bottom: 5%;
+    font-size: 1.1rem;
+    width: 90%;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+.TherapistInfo > .Detail > .DetailDiv2 >input
+{
+    border:1px solid #008ba7;
+     margin-bottom: 5%;
+    height: 3rem;
+    font-size: 1.1rem;
+    width: 100%;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+.TherapistInfo > .Detail > .DetailDiv1 > .select
+{
+    
+    height: 3rem;
+    margin: 1%;
+    font-size: 1.1rem;
+    width: 90%;
+}
+.select > select:nth-of-type(1) {
+        font: inherit;
+        border: 1px solid #008ba7;
+        width: 100%;
+        height: 3rem;
+        font-size: 1rem;
+        margin-left: 0%;
+  }
+
+
+@media only screen and (min-width: 360px) and (max-width: 480px)
+{
+    .DetailInfo
+    {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+    .Information > .BasicQuestions {
+        display: block;
+        width: 100%;
+        
+    }
+
+    .Information > .BasicQuestions > .InnerDiv2 {
+        margin-left: 0%;
+        margin-top: 3%;
+        font-size: 1.1rem;
+    }
+    .TherapistInfo > .Detail {
+        display: block;
+    }
+    .TherapistInfo > .Detail > .DetailDiv1
+    {
+        width: 100%;
+    }
+    .TherapistInfo > .Detail > .DetailDiv1 >input
+    {
+        margin: 0%;
+        width: 100%;
+    }
+    .TherapistInfo > .Detail > .DetailDiv1 > .select {
+    margin: 0%;
+    width: 100%;
+    }
+    .TherapistInfo > .Detail > .DetailDiv2
+    {
+        width: 100%;
+    }
+    .TherapistInfo > .Detail > .DetailDiv2 >input
+    {
+        margin: 0%;
+        width: 100%;
+    }
+    .TherapistInfo
+    {
+        margin-left: 4%;
+    }
+} 
+
+@media only screen and (min-width: 480px) and (max-width: 768px)
+{
+    .DetailInfo
+    {
+        margin-left: 20%;
+        margin-right: 15%;
+    }
+    .Information > .BasicQuestions {
+        display: block;
+        width: 100%;
+    }
+    .Information > .BasicQuestions > .InnerDiv2 {
+        margin-left: 0%;
+        margin-top: 3%;
+    }
+    .TherapistInfo > .Detail {
+        display: block;
+    }
+    .TherapistInfo > .Detail > .DetailDiv1
+    {
+        width: 100%;
+    }
+    .TherapistInfo > .Detail > .DetailDiv1 >input
+    {
+        margin: 0%;
+        width: 100%;
+    }
+    .TherapistInfo > .Detail > .DetailDiv1 > .select {
+    margin: 0%;
+    width: 100%;
+    }
+    .TherapistInfo > .Detail > .DetailDiv2
+    {
+        width: 100%;
+    }
+    .TherapistInfo > .Detail > .DetailDiv2 >input
+    {
+        margin: 0%;
+        width: 100%;
+    }
+    .TherapistInfo > .Header{
+        width: 100%;
+    }
+} 
+
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .DetailInfo
+    {
+        margin-left: 20%;
+        margin-right: 15%;
+    }
+    .Information > .BasicQuestions {
+        display: block;
+        width: 100%;
+    }
+    .Information > .BasicQuestions > .InnerDiv2 {
+        margin-left: 0%;
+        margin-top: 3%;
+    }
+    .TherapistInfo > .Header{
+        width: 100%;
+    }
+}
+
+/* 
+profile form 4  */
+
+
+.parent-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 7em;
+}
+.parent-item{
+    display: flex;
+    min-height: 133px;
+    padding: 9px 0px;
+    width: 70%;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.heading{
+    font-size: large;
+    font-weight: 800;
+}
+.parent-item p{
+    font-weight: 500;
+    color: #141111d1;
+}
+.parent-item-row{
+    display: flex;
+    flex-direction: row;
+    padding-top: 3em;
+}
+.text-container{
+    flex: 50%;
+    /* border-right: 2px solid rgba(0,139,167,255); */
+}
+.Sibling-text-container{
+    flex: 50%;
+}
+.child-text-container{
+    width: 80%;
+    height: 262px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.input-bar{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.peragraph{
+    height: 215px;
+}
+.span{
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #141111d1;
+}
+.input-bar span{
+    color: rgba(0,139,167,255);
+    margin-top: 59px
+}
+.input-bar input{
+    //border-radius: 0.5rem;
+    border: 0.5px solid rgba(0,139,167,255);
+    padding: 7px 7px;
+}
+.input-bar-second{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-left: 7.3rem;
+    margin-top: 22.8rem;
+}
+.input-bar-second span{
+    color: rgba(0,139,167,255);
+}
+.input-bar-second input{
+  
+    border: 0.5px solid rgba(0,139,167,255);
+    padding: 7px 7px;
+} span{
+    color: rgba(0,139,167,255);
+}
+.input-bar input{
+
+    border: 0.5px solid rgba(0,139,167,255);
+    padding: 7px 7px;
+}
+
+.floatright{
+    float: right;
+}
+.peragraph p{
+    color: #141111d1;
+}
+
+@media only screen and (max-width: 480px)
+{
+        .floatright{
+            float: none;
+        }
+    .parent-box{
+        padding: 0;
+    }
+    .parent-item{
+        display: block;
+        width: 100%;
+        margin: 0% 0% 0% 1%;
+    }
+    .parent-item > h1
+    {
+        font-size: 1rem;
+    }
+    .parent-item > p
+    {
+        font-size: 0.9rem;
+    }
+    .parent-item-row 
+    {
+        display: block;
+        padding: 0;
+    }
+    .child-text-container 
+    {
+        height: auto;
+        width: 99%;
+        display: block;
+        margin: 5% 0% 0% 0%;
+    }
+    .child-text-container > span
+    {
+        font-size: 1rem;
+    }
+    .child-text-container > p
+    {
+        font-size: 0.9rem;
+    }
+    .peragraph {
+        height: auto;
+    }
+    .input-bar {
+        margin: 2% 0% 2% 0%;
+    }
+    .vertical {
+        display: none;
+    }
+    .floatleft
+    {
+        float: left;
+    }
+    .text-container{
+    border-right: none
+    }
+    .input-bar span{
+    margin-top: 0%;
+    }
+    .input-bar-second{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-left: 0.3rem;
+    margin-top: 2.8rem;
+}
+}
+@media only screen and (min-width: 480px) and (max-width: 767px)
+{
+    .parent-box{
+        padding: 0;
+        margin: 4% 0% 0% 0%;
+    }
+    .parent-item{
+        display: block;
+        width: 96%;
+        margin: 0% 2% 0% 2%;
+    }
+    .parent-item > p
+    {
+        width: 65%;
+    }
+
+    .parent-item-row 
+    {
+        display: block;
+        padding: 0;
+    }
+    .child-text-container 
+    {
+        height: auto;
+        width: 96%;
+        display: block;
+        margin: 4% 2% 0% 2%;
+    }
+    .peragraph {
+        height: auto;
+    }
+    .input-bar {
+        margin: 2% 2% 2% 2%;
+    }
+    .vertical {
+        display: none;
+    }
+    .floatleft
+    {
+        float: left;
+        margin-top: 56px;
+    }
+    .text-container{
+    border-right: none;
+    }
+    .input-bar-second{
+        margin-left: 11px;
+    }
+    .input-bar span{
+    margin-top: 0%;
+    }
+    
+}
+@media only screen and (min-width: 767px) and (max-width: 1024px)
+{
+    .parent-box{
+        padding: 0;
+        margin: 1% 5% 1% 5%;
+    }
+    .parent-item {
+        height: auto;
+        width: auto;
+        display: block;
+    }
+    .parent-item > p
+    {
+        width: 65%;
+    }
+    .parent-item-row
+    {
+        margin: 5% 0% 0% 0%;
+        padding-top: 0;
+    }
+    .child-text-container {
+        width: 90%;
+        height: auto;
+        display: block;
+    }
+    .vertical {
+        height: auto%;
+    }
+    .peragraph {
+        height: 193px;
+    }
+    .floatleft
+    {
+        margin-left: 10%;
+    }
+
+}

@@ -1,0 +1,223 @@
+<template>
+    <div class="iframe-mainContainer">
+        <div if:true={showVimeoIframe} class="ifrem-container">
+            <span onclick={showHideVimeoIframe}>&#10006;</span>
+            <!-- <iframe src='https://www.youtube.com/watch?v=h0NTCAGqZDE' frameborder='0' allowfullscreen></iframe> -->
+            <iframe src={currentVideoUrl} frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen class="iframe-tag"></iframe>
+        </div>
+    </div>
+    <!-- <div if:true={showClassIframe} class="zoom-container" id="zoom-container"></div> -->
+    <!-- <div if:true={showClassIframe} class="ifrem-container">
+        <span onclick={showAndHideClassIframeMethod}>&#10006;</span>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/6dzXMI7YQPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <iframe src={currentClassUrl} frameborder="0" target="_parent" allow="autoplay; fullscreen; microphone; camera; picture-in-picture" allowfullscreen  title="Live Q&amp;amp;A 10/21"></iframe>
+    </div> -->
+    <div>
+        <div class="upcomingClassMainContainer">
+            <div class="upcomingClassHeadContainer">
+                <!-- <div if:false={haveClass} class="upcomingClassesHeading">
+                    <span class="upClassHead">MY ON-DEMAND CLASSES</span>
+                </div> -->
+                <!-- if:true={haveClass} -->
+                <div class="upcomingClassesHeading">
+                    <span class="upClassHead">MY CLASSES</span>
+                </div>
+                <div class="liveContainer">
+                    <div class="liveInnerContainer">
+                        <div onclick={handleRecentUnderline} data-id="" class="mobileViewClass"> <span style="font-weight: 700;"
+                                class="menuClass recentClass">Recently watched</span>
+                            <!-- <div if:true={showRecentLine} class="underlineClass"></div> -->
+                        </div>
+                        <div style="margin-left: 1vw;" class="mobileViewClass" onclick={handleFavUnderline}> <span
+                                class="menuClass favClas">Favorites</span>
+                            <!-- <div if:true={showFavLine} class="underlineClass"></div> -->
+                        </div>
+                        <div style="margin-left: 1vw;" class="mobileViewClass" onclick={handleCompletedUnderline}> <span
+                                class="menuClass completeClass">Completed</span>
+                            <!-- <div if:true={showCompletedLine} class="underlineClass"></div> -->
+                        </div>
+                        <div style="margin-left: 1vw;" class="mobileViewClass" onclick={handleInProgressUnderline}> <span
+                                class="menuClass progressClass">In-progress</span>
+                            <!-- <div if:true={showInProgressLine} class="underlineClass"></div> -->
+                        </div>
+                        <div style="margin-left: 1vw;" class="mobileViewClass" onclick={handleInOndemandUnderline}> <span
+                                class="menuClass onDemand">Play On-Demand</span>
+                            <!-- <div if:true={showInProgressLine} class="underlineClass"></div> -->
+                        </div>
+                    </div>
+                    <!-- <div><span class="viewScheduleClass" onclick={viewAllNavigationHandler}>VIEW ALL</span></div> -->
+                </div>
+            </div>
+            <div class="upcomingClassesContainer">
+                <div if:false={haveClass}>
+                    <div>
+                        <span>On-demand classes you watch will be listed here.</span>
+                    </div>
+                    <div class="addClassContainer">
+                        <div class="addClassBtnOutter">
+                            <button class="addClassBtn">ADD A CLASS</button>
+                        </div>
+                    </div>
+                </div>
+                <div if:true={haveClass} id="slider-containerI" class="slider" data-id="slider"
+                    style="margin: 0%; width: 100%;">
+                    <template for:each={visibleRecords} for:item="card">
+                        <div class="cardClass slds-col slds-size_1-of-3" key={card.key}>
+                            <div class="cardDetailClass">
+                                <div class="cardImage">
+                                    <img src={card.scImage} style="width: 100%;height:100%;aspect-ratio: 16/9;">
+                                </div>
+                                <div class="overTimeContainer">
+                                    <div class="overlay">
+                                        <p>{card.scliStartTime} / {card.Day}</p>
+                                    </div>
+                                </div>
+                                <div class="cardPersonLevelClass">
+                                    <div class="nameLevelClass">
+                                        <div class="iconClass"> <img src={userIcon}></div>
+                                        <div class="cardNameLevelText">
+                                            <span>{card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_instructor__r.Name}</span>
+                                        </div>
+                                    </div>
+                                    <div class="nameLevelClass">
+                                        <div> <img class="iconClass"
+                                                src={card.Schedule_Class_Line_Item_del__r.intensity}> </div>
+                                        <div class="cardNameLevelText">
+                                            <span>{card.Schedule_Class_Line_Item_del__r.BWPS_Integrity__c}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="cardLineClass">
+                                <div class="exerciseContainer">
+                                    <h1 class="exerciseNameClass" data-key={card.Schedule_Class_Line_Item_del__r.Id}
+                                        data-schname={card.Schedule_Class_Line_Item_del__r.Name}
+                                        data-name={card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_instructor__r.Name}
+                                        data-descp={card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_Description__c}
+                                        data-ints={card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.Integrity__c}
+                                        onclick={scheduleClassDetailViewHandle}>
+                                        {card.Schedule_Class_Line_Item_del__r.Name}</h1>
+                                </div>
+                                <div class="descriptionTextClass">
+                                    {card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_Description__c}</div>
+                                <div class="cardFooterContainer">
+                                    <div class="cardFooterIconContainer">
+                                        <div>
+                                            <!-- <img src={likeIcon} style="width: 30px;height:30px;"> -->
+                                            <img class="iconClass cardIconClass" src={favIcon}
+                                                if:true={card.classFavStatus} onclick={favoriteHandler}
+                                                data-id={card.scliId} data-isfav={card.classFavStatus}>
+                                            <img class="iconClass cardIconClass" src={unFavIcon}
+                                                if:false={card.classFavStatus} onclick={favoriteHandler}
+                                                data-id={card.scliId} data-isfav={card.classFavStatus}>
+                                        </div>
+                                        <div style="margin-left: 15%;">
+                                            <!-- <img src={shareIcon} class="shareImage"> -->
+                                            <!-- <img class="shareImage" src={shareIcon} onclick={handleShare} data-id={card.Id} data-description={card.Schedule_Class_Line_Item_del__r.Schedule_Class__r.BWPS_Description__c}> -->
+                                        </div>
+                                    </div>
+                                    <div class={card.btnClass}>
+                                        <div class="cardButtonClass">
+                                            <button class="cardButton" onclick={handleVimeoIframe}
+                                                data-key={card.Id}>{card.btnLabel}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+                <div if:true={noRecordFlag} class="noRecordTextClass">
+                    <p> You do not have any class. </p>
+                </div>
+            </div>
+            <div if:false={noRecordFlag} class="buttonMainContainer">
+                <!-- <div class="upclassBtn slider-button-box">
+                        <lightning-button-icon icon-name="utility:chevronleft"  size="medium" alternative-text="View More" onclick={handlePrev}></lightning-button-icon>
+                    </div>
+                    <div class="upclassBtn slider-button-box">
+                        <lightning-button-icon icon-name="utility:chevronright"  size="medium" alternative-text="View More" onclick={handleNext}></lightning-button-icon>
+                    </div> -->
+                <div class="slider-button-box">
+
+                    <button class="control-prev-btn" onclick={handlePrev}>
+                        <div class="arrow-left"></div>
+                    </button>
+
+                    <button class="control-next-btn" onclick={handleNext}>
+                        <div class="arrow-right"></div>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <template if:true={isShowSendModal}>
+
+        <!--
+           send mail modal
+        -->
+
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- modal header start -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={hideSendModalBox}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                            size="small" class="closeIcon"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-hyphenate container-header addAClass">Send Mail</h2>
+                </header>
+
+                <!-- modal body start -->
+                <div class="slds-modal__content slds-p-around_large">
+                    <div class="container">
+                        <!-- <div class="container-header">
+                            <h1>Send Mail</h1>
+                        </div> -->
+                        <div class="Donation-form-div">
+                            <div class="Add-card-form">
+                                <label for="Email">Email</label>
+                                <input data-id="Email" type="text" class="input1 emailClass" placeholder="" size="50">
+                                <br><br>
+
+                                <label for="Subject">Subject</label>
+                                <input data-id="Subject" type="text" class="input1 subjectClass" size="50"><br><br>
+
+                                <label for="Description">Description</label>
+                                <!-- <input data-id="Description" type="" class="input2" size="50"><br><br> -->
+                                <textarea rows="4" cols="50" name="comment" form="usrform"
+                                    class="input2 descriptionClass" data-id="Description">
+                                </textarea>
+                                <div class="btn">
+                                    <Button type="text" onclick={sendMailMethod} class="button2">Submit</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <template if:true={loading}>
+        <lightning-spinner alternative-text="Loading" variant="success" size="large"></lightning-spinner>
+    </template>
+    <c-toast-message auto-close-time="3000"></c-toast-message>
+
+
+
+    <template if:true={InstDetailView}>
+        <div class="classComplateDetailPage">
+            <c-bwps_-w-i-p_-class-details-view scheduleclassname={scheduleClassName} showfooter='showFooter' classviewtype={classViewType}
+                scheduleclassinstname={scheduleClassInstName} scheduelclassdescription={scheduelClassDescription}
+                scheduleclassintensity={scheduleclassintensity} classdata={selectedClass}
+                onclassdetailreturn={trueparent} onselectlive={liveCick}>
+            </c-bwps_-w-i-p_-class-details-view>
+        </div>
+    </template>
+
+</template>

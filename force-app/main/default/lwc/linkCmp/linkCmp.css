@@ -1,0 +1,42 @@
+@import 'c/sharedStyles';
+
+.link-inline{
+	font: normal normal normal 18px/22px Helvetica Neue;
+	text-decoration: underline;
+}
+
+.link-standalone{
+	font: normal normal bold 18px/23px IBM Plex Sans;
+}
+
+a:link {
+	letter-spacing: var(--pfnca-character-spacing-0);
+	color: var(--pfnca-color-primary);
+	text-align: center;
+	opacity: 1;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus{
+	border: 1px solid var(--pfnca-color-primary);
+	text-decoration: none;
+}
+
+a:active {
+  color: var(--pfnca-color-darkBlue);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--pfnca-color-tertiaryLight);
+  text-decoration: none;
+}
+
+a:disabled{
+	 color: var(--pfnca-color-mediumGrey);
+	 text-decoration: none;
+	 cursor: not-allowed;
+}

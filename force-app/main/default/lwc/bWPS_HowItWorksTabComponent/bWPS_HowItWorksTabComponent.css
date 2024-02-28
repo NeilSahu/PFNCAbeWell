@@ -1,0 +1,65 @@
+.img-dim{
+	max-height:15rem;
+	width:100%;
+}
+
+.centered{
+    position: absolute;
+    top: 32%;
+    left: 36%;
+    color: #ffff;
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.box-blue-button {
+    background-color: #008CA7;
+    color: white;
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem;
+}
+
+.blue-button {
+    padding: 0.5rem 2rem;
+    margin: auto;
+    background-color: #008CA7;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.box-blue-button-white-border{
+    background-color: #008CA7;
+    color: white;
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem;
+    border: 1px solid #ffffff;
+    
+}
+
+.image-background{
+    position:;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+}
+
+.button-position{
+    position:absolute;
+    top: 68%;
+    left: 42%;
+}
+
+@media screen and (max-width: 519px){
+    .centered{
+
+        position: absolute;
+        /* width: 36vw; */
+        left: 36vw;
+        color: #ffff;
+        font-size: 56px;
+        font-weight: 700;
+
+    }
+}

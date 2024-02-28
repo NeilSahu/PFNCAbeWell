@@ -1,0 +1,73 @@
+<!-- <template>
+   <div class="container">
+       <div class="back-btn" onclick={handleBack}> <img src={backIcon} class="backlIcon"> Back   </div>
+       <div class="action-box">
+
+                <label for="">
+                    <img src={downloadIcon} alt="pdfIcon">
+                    <span class="icon-text">DOWNLOAD PDF</span>
+                </label>
+                <label for="">
+                    <img src={shareIcon} alt="LIKE">
+                    <span class="icon-text">SHARE</span>
+                </label>
+
+                <label for="">
+                    <img src={likeIcon} alt="share">
+                    <span class="icon-text">ADD TO FAVORITES</span>
+                </label>
+            </div>
+       <div class="blog-head">
+            <div class="heading-box">
+                <h1>{name}</h1>
+                
+            </div>
+            <div class="image-box">
+                <img src={img1} alt="blog-image">
+            </div>
+        </div>
+        <div class="description">
+            <p>{description}</p>
+        </div>
+   </div>
+</template> -->
+<template>
+    <div class="container">
+        <div class="quick-action-container">
+            <div class="back-btn" onclick={handleBack}> <img src={backIcon} class="backlIcon"> Back   </div>
+            <!-- <div class="action-box">
+
+                <label for="">
+                    <img src={downloadIcon} alt="pdfIcon">
+                    <span class="icon-text">DOWNLOAD PDF</span>
+                </label>
+                <label for="">
+                    <img src={shareIcon} alt="LIKE">
+                    <span class="icon-text">SHARE</span>
+                </label>
+
+                <label for="">
+                    <img src={likeIcon} alt="share">
+                    <span class="icon-text">ADD TO FAVORITES</span>
+                </label>
+            </div> -->
+        </div>
+        <div class="blog-container">
+            <div class="blog-head">
+                <div class="heading-box">
+                    <h1>{name}</h1>
+                    <p>{author} &nbsp; | &nbsp; {date}</p>
+                </div>
+                <div class="image-box">
+                    <img src={img1} alt="blog-image">
+                </div>
+            </div>
+            <div class="blog-info">
+                Loading..
+            </div>
+            <div class="blog-video">
+               <iframe class="blog-inner-video" src={link} frameborder="0"  allow="autoplay; fullscreen" allowfullscreen ></iframe>
+            </div>
+        </div>
+    </div>
+</template>

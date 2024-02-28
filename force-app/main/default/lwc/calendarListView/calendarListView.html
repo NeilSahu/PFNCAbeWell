@@ -1,0 +1,109 @@
+<template>
+    <div if:true={dayView}>
+        <div class="eventClass">
+            <!-- <div class="eventIconClass">
+                    <img class="tick" src={doubletick}>
+                </div> -->
+
+            <!-- <div class="eventTextClass">
+                    <span>Export Events to a calendar</span>
+                </div> -->
+        </div>
+        <div class="mainContainerClass">
+            <!-- <div class="schedule-header">
+                <p class="schedule-peragraph">{visibleScheduleClassLineItemArrayLength} classes scheduled</p>
+            </div> -->
+            <div class="Calender-View-ParentBox">
+                <div class="Calender-View-column-Box">
+                    <template if:true={noVisibleScheduleClassLineItem}>
+                        <p class="noClasses">No classes available !</p>
+                    </template>
+                    <!-- LineItem Iteration -->
+                    <template iterator:it={visibleScheduleClassLineItemArray}>
+                        <div class="classContainer" key={it.value.Id}>
+                            <div class="outlineborder">
+                                <div class="timer-btn-container">
+                                    <button class="timer-btn">{it.value.scLineItemTime}</button>
+                                </div>
+                                <div class="section-container">
+                                    <div class="icons-parent">
+                                        <h2 class="section-header">{it.value.Name}</h2>
+                                        <hr>
+                                        <div class="icons">
+                                            <div class="iconfirst">
+                                                <img class="levelIconClass" src={it.value.Level}>
+                                                <span class="timespan">{it.value.BWPS_Integrity__c}</span>
+                                            </div>
+                                            <div class="timerIconClass">
+                                                <img class="timerimg" src={it.value.timer}>
+                                                <span class="timeminute">{it.value.classDuration} Min</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="attendance-btn-container">
+                                    <abbr title={it.value.joinHelpText}>
+                                        <div class={it.value.joinStatusClass}>
+                                            <button class="attendance-btn"
+                                                data-scliclassdate={it.value.BWPS_ClassDate__c}
+                                                data-scname={it.value.scheduleClassName} data-id={it.value.LectureId__c}
+                                                data-date={currentDate} data-name={it.value.Name}
+                                                data-timestring={it.value.BWPS_StartTime__c}
+                                                data-time={it.value.BWPS_StartTime__c}
+                                                onclick={joinClass}>{it.value.joinStatus}</button>
+                                        </div>
+                                    </abbr>
+                                    <abbr title={it.value.helpText}>
+                                        <div class={it.value.disabledClass}>
+                                            <button class="attendance-btn"
+                                                data-scliclassdate={it.value.BWPS_ClassDate__c}
+                                                data-scname={it.value.scheduleClassName} data-id={it.value.Id}
+                                                data-date={currentDate} data-name={it.value.Name}
+                                                data-timestring={it.value.BWPS_StartTime__c}
+                                                data-time={it.value.BWPS_StartTime__c}
+                                                onclick={takeAttendenceMethod}>{it.value.btnName}</button>
+                                        </div>
+                                    </abbr>
+                                </div>
+                            </div>
+                            <div if:false={it.last} class="underlineClass"></div>
+
+                        </div>
+                        <!-- <div if:true={it.underLine} key={it.key} class="underlineClass"></div>vale -->
+                        <!-- <template if:true={it.check}>vale
+                        <div class="outlineborder"  key={it.key}>
+                            <div class="timer-btn-container">
+                                <button class="timer-btn">09:00AM</button>
+                            </div>
+                            <div class="section-container">
+                                <div class="icons-parent">
+                                    <h2 class="section-header slds-grid">EXERCISE FOR PARKINSONS I</h2>
+                                    <div class="icons">
+                                        <div class="iconfirst">
+                                            <img class="timerimg" src={timerimg}>
+                                            <span class="timespan">Low/Seated</span>
+                                        </div>
+                                        <div class="iconsecond">
+                                            <img class="timerimg" src={networkimg}>
+                                            <span class="timeminute">30 Min</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                 
+                            <div class="attendance-btn-container">
+                                <div class="attendance-btndiv">
+                                    <button class="attendance-btn" onclick={takeAttendenceMethod}>TAKE ATTENDANCE</button>
+                                </div>     
+                            </div>
+
+                        
+                        </div>
+                    </template> -->
+
+                    </template>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

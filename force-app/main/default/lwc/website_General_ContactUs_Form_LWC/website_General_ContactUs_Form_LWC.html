@@ -1,0 +1,49 @@
+<template>
+	<div class="row">
+		<div class="column2">
+			<div class="column2-div1">
+				<div class="column-2-headertext">
+					<p>What can we do for you?</p>
+				</div>
+				<form>
+					<div class="form-divs">
+						<input class="form-input" type="text" name="name" placeholder="Name*" required/>
+					</div>
+						<div class="form-divs">
+							<input class="form-input" type="email" name="email" placeholder="Email*" required/>
+					</div>
+							<div class="form-divs">
+								<input class="form-input" type="tel" id="phone" name="mobile" placeholder="Mobile*"
+                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required/>
+					</div>
+								<div>
+									<textarea class="form-input-txtarea" id="message" name="message" rows="4" cols="50" placeholder="Message..."></textarea>
+								</div>
+				</form>
+				<div class="submit-bitton-parent-div">
+					<div class="submit-button-div">
+						<button class="submit-button" onclick={onSubmit}>SUBMIT</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="column1">
+			<div class="colmun1-innerdiv">
+				<div class="contact-div">
+					<p>(202) 852-6688</p>
+				</div>
+				<div class="general-div">
+					<p class="general-div-p1">General Support</p>
+					<p class="general-div-p2">
+						<a href="">support@parkinsonfoundation.org</a>
+					</p>
+				</div>
+				<div>
+					<p class="hq-p1">Headquarters</p>
+					<p class="hq-p2">1735 Connecticut Ave, NW, 2nd Fl, Washington, DC 20009 </a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

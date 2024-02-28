@@ -1,0 +1,71 @@
+@import "c/sharedStyles";
+
+.box-button-small{
+    width: fit-content;
+    height: fit-content;
+    min-width: 92px;
+	min-height: 32px;
+}
+
+.box-button-large{
+    min-width: 110px;
+    min-height: 47px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.box-button {
+	opacity: 1;
+    background-color: var(--pfnca-color-primary);
+	border: 1px solid var(--pfnca-color-white); 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.box-button-disabled {
+	opacity: 1;
+    background-color: var(--pfnca-color-mediumGrey);
+	border: 1px solid var(--pfnca-color-white); 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.btn-small{
+    min-width: 86px;
+	min-height: 26px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.btn-large{
+    min-width: 102px;
+    min-height: 39px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.btn {
+    margin: 1px;
+	opacity: 1;
+    background-color: var(--pfnca-color-primary);
+	border: 1px solid var(--pfnca-color-white4D); 
+	text-align: center;	
+}
+.btn:hover{
+    background-color: var(--pfnca-color-primaryDarker);
+}
+
+.btn:active{
+    background-color: var(--pfnca-color-primary);
+}
+
+.btn:disabled{
+    background-color: var(--pfnca-color-mediumGrey);
+    cursor: not-allowed;
+}
+
+.btn-label{
+    color: var(--pfnca-color-white);
+}

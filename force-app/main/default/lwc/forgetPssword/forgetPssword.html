@@ -1,0 +1,14 @@
+<template>
+    <div class="container">
+        <div class="main">
+            <div class="logo" style={backgroundImage}></div>
+            <h2>PASSWORD RESET</h2>
+            <p>To reset your password, we'll need your username. We'll send password reset instructions to the email address associated with your account.</p>
+            <div class="input-box">
+                <label for="username">Email Address</label>
+                <input type="email" id="username" onchange={getUserPassword} placeholder="Enter Email Address">
+            </div>
+            <button onclick={resetPassword}>RESET PASSWORD</button>
+        </div>
+    </div>
+</template>

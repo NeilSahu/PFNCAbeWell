@@ -1,0 +1,160 @@
+<template>
+    <template if:false={InstructorDetailView}>
+        <div class="classroom">
+          <c-instructor-classroom title="Instructors" isbutton="true" buttontext="GET GUEST PASS"></c-instructor-classroom>
+        </div>
+        <div class="MasterDiv">
+            <div class="filterDiv col-3" data-id="filterDivId">
+                    <div class="filterDivInnerDiv">
+                        <h1>By Your Classes</h1>
+                        <div class="filter" data-expertise="Yoga" onclick={handleAction}>
+                            <div class="Action">
+                                <img src={ImageYoga}>
+                            </div>
+                            <div class="ActionName">
+                                <p onclick={handleAction} data-id="myAction">Yoga</p>
+                            </div>
+                        </div>
+                        <div class="filter" data-expertise="Fitness" onclick={handleAction}>
+                            <div class="Action">
+                                <img src={fitnessImage}>
+                            </div>
+                            <div class="ActionName">
+                                <p onclick={handleAction} data-id="myAction">Fitness</p>
+                            </div>
+                        </div>
+                        <div class="filter" data-expertise="Dance" onclick={handleAction}>
+                            <div class="Action">
+                                <img src={DanceImage}>
+                            </div>
+                            <div class="ActionName">
+                                <p onclick={handleAction} data-id="myAction">Dance</p>
+                            </div>
+                        </div>
+                        <div class="filter" data-expertise="Boxing" onclick={handleAction}>
+                            <div class="Action">
+                                <img src={BoxingImage}>
+                            </div>
+                            <div class="ActionName">
+                                <p onclick={handleAction} data-id="myAction">Boxing</p>
+                            </div>
+                        </div>
+                        <div class="filter" data-expertise="Aerobic" onclick={handleAction}>
+                            <div class="Action">
+                                <img src={AerobicImage}>
+                            </div>
+                            <div class="ActionName">
+                                <p onclick={handleAction} data-id="myAction">Aerobic</p>
+                            </div>
+                        </div>
+                        <div class="filter" data-expertise="Martial Arts" onclick={handleAction}>
+                            <div class="Action">
+                                <img src={MartialArtsImage}>
+                            </div>
+                            <div class="ActionName">
+                                <p onclick={handleAction} data-id="myAction">Martial Arts</p>
+                            </div>
+                        </div>
+                        <div class="filter" data-expertise="Speech" onclick={handleAction}>
+                            <div class="Action">
+                                <img src={SpeechImage}>
+                            </div>
+                            <div class="ActionName">
+                                <p onclick={handleAction} data-id="myAction">Speech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="SearchBoxDiv row">
+                <div class="SearchBoxDiv1 col-3">&nbsp;
+                </div>
+                <div class="SearchBoxDiv2 col-8">
+                    <div class="SearchBox">
+                        <div class="search">
+                            <input type="text" data-id="searchInput" class="form-control"
+                                placeholder="Search Instructor" style={searchIconBankground}>
+                        </div>
+                        <div class="box-blue-button" onclick={searchfunction}>
+                            <button class="blue-button">SEARCH</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1">&nbsp;
+                </div>
+            </div>
+            <div class="filterInstructorDiv row">
+                <!-- <button onclick={handleMobileFilter} class="filterButton" data-id="mobileFilterButton"> <img
+                        src={FilterImage}> FILTERS </button> -->
+
+                
+                <div class="InstructorDiv col-9">
+                    <div class="Container">
+                        <lightning-layout multiple-rows="true" horizontal-align="start">
+                            <template if:true={value}>
+                                <template for:each={paginationData} for:item="tranner">
+                                    <lightning-layout-item key={tranner.imgUrl} flexibility="auto"
+                                        class="layoutElementInstructor">
+                                        <div class="InstructorData" data-id="searchData">
+                                            <div class="inst-img">
+                                                <img data-pic={tranner.imgUrl} src={tranner.imgUrl} alt="1">
+                                            </div>
+                                            <br>
+                                            <div class="name-exp">
+                                                <h1 data-id={tranner.Id} data-exp ={tranner.exp} data-name ={tranner.name} onclick={InstructorDetailViewhandle}>
+                                                    {tranner.name}</h1>
+                                                <p>{tranner.exp}</p>
+                                            </div>
+                                        </div>
+                                    </lightning-layout-item>
+                                </template>
+                            </template>
+                            <template if:false={value}>
+                                <template for:each={paginationFilteredData} for:item="tranner">
+                                    <lightning-layout-item key={tranner.imgUrl} class="layoutElementInstructor">
+                                        <div class="InstructorData" data-id="searchData">
+                                            <div class="inst-img" >
+                                                <img src={tranner.imgUrl} alt="1">
+                                            </div>
+                                            <br>
+                                            <div class="name-exp">
+                                                <h1 data-id={tranner.id}  data-exp ={tranner.exp} data-name ={tranner.name}  data-pic={tranner.imgUrl} onclick={InstructorDetailViewhandle}>
+                                                    {tranner.name}</h1>
+                                                <p>{tranner.exp}</p>
+                                            </div>
+                                        </div>
+                                    </lightning-layout-item>
+                                </template>
+                            </template>
+                        </lightning-layout>
+                    </div>
+                </div>
+                <!-- <div class="col-1">&nbsp; -->
+                <!-- </div> -->
+                <div class="row">
+                    <div class="col-3">&nbsp;</div>
+                    <div class="pagination-Container col-9">
+                        <template if:true={value}>
+
+                            <c-bwps-_-w-i-p-_-pagination-child totalrecords={totalData} page-size={pageSize}
+                                onpagination={handlePaginationAllData}></c-bwps-_-w-i-p-_-pagination-child>
+                        </template>
+
+                        <template if:false={value}>
+                            <c-bwps-_-w-i-p-_-pagination-child totalrecords={totalFilteredData} page-size={pageSize}
+                                onpagination={handlePaginationFilteredData}></c-bwps-_-w-i-p-_-pagination-child>
+                        </template>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- <c-bwps_-w-i-p_-review-slider></c-bwps_-w-i-p_-review-slider>
+        <c-stay-connected-footer></c-stay-connected-footer> -->
+    </template>
+    <template if:true={InstructorDetailView}>
+        <!-- <div>
+            <c-bwps_-w-i-p_-instructor-detail-view instructorname ={instructorname} instructor = {Instructor} instructorrofile ={instructorprofile} instructorexp ={instructorexp} >
+            </c-bwps_-w-i-p_-instructor-detail-view>
+        </div> -->
+    </template>
+</template>

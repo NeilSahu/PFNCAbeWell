@@ -1,0 +1,45 @@
+.headerContianer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(6 130 161);
+    width: 70%;
+    height: 26vw;
+    margin-left: 15%;
+}
+.innerHeadingClass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+.NotificationHeading{
+    color: white;
+    font-size: 2vw;
+    font-weight: bold;
+    margin: 0.3vw;
+}
+.totalNotificationClass{
+    font-size: 1vw;
+    margin: 0.3vw;
+}
+.allowBtnContainerClass{
+    background-color: orange;
+    border: 1px solid rgb(233, 152, 1);
+    width: fit-content;
+    padding: 2px;
+    margin: 1vw;
+}
+.allowBtnInnerClass{
+    border: 1px solid white;
+    background-color: orange;
+    color: white;
+    font-weight: 400;
+    padding: 0.2vw 1vw;
+    font-size: 1vw;
+}
+.allowButtonClass{
+    background-color: orange;
+    border: none;
+}

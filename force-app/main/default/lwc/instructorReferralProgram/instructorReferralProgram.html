@@ -1,0 +1,50 @@
+<template>
+	<template if:true={loader}>
+		<div class="demo-only">
+			<div class="slds-spinner_container">
+				<div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+					<span class="slds-assistive-text">Loading</span>
+					<div class="slds-spinner__dot-a"></div>
+					<div class="slds-spinner__dot-b"></div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<div>
+		<div class="butterfly-img">
+			<img src={getAllClasses} alt="#" class="imageClass">
+		</div>
+	</div>
+	<div class="mainContainer">
+		<div class="firstContainer">
+			<div class="firstConHeaderTextClass">
+				<h1 style="font-size: 40px;">Referral Program</h1>
+			</div>
+			<div class="firstConFooterTextClass">
+				<span style="font-size: 18px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+					sed do eusmod tempor incididunt ut labore et dolore
+					magna aqua, Ut enim ad minim veniam, quis nostrud
+					exercitation uilame labors is ut aliquip ex ea commodo
+					consequat, Duis ata inure dolorin prehendert in
+					voluptate velit esse eilum dolore eu fugit mula priate
+					Excepteursintoccaecat cupidatat non proident, sunt in
+					ntudina cid ofioks Gakerant mini salen 4 aot ste.
+				</span>
+			</div>
+		</div>
+		<div class="secondContainer">
+			<div>
+				<label class="inputLabelClass">Prospective Participant Name</label>
+				<input type="text" placeholder="Name" class="inputClass nameClass" required>
+				<label class="inputLabelClass">Prospective Participant Email Address</label>
+				<input type="text" placeholder="Email Address" class="inputClass emailClass" required>
+			</div>
+			<!--send button -->
+			<div class="btnMainContainer">
+				<div class="buttonContainer">
+					<button class="btnClass" onclick={sendMailMethod} type="submit">SEND</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

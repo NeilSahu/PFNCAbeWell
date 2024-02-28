@@ -1,0 +1,278 @@
+/* .ParentDiv {
+    background-color: white;
+	bottom: 0;
+    left: 0;
+    right: 0;
+	padding-bottom: 1%;
+}
+
+.footer-container {
+    margin: 5% 10%;
+}
+
+.footer-header {
+    position: relative;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #c2c2c2;
+    padding-bottom: 25px;
+}
+
+.footer-header-links button {
+    border: none;
+    background: transparent;
+    margin-right: 30px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.footer-header-social-icons {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.footer-header-social-icons img {
+    margin-left: 10px;
+    width: 27px;
+	border-radius : 5px
+}
+
+
+	
+.footer-bottom-line {
+    display: flex;
+    text-align: center;
+}
+
+.footer-bottom-line .left {
+    text-align: left;
+}
+
+.footer-bottom-line .right {
+    text-align: right;
+}
+
+.footer-bottom-line div {
+    width: 33%;
+}
+.linkStyle{
+    color: #1A1B1E !important;
+    text-decoration: none !important;
+}
+
+@media only screen and (max-width: 768px){
+	.footer-header-links {
+		margin: auto;
+		text-align: center;
+	}
+	.footer-header-links button {
+		margin-bottom: 5px;
+	}
+	.footer-header-social-icons {
+		position: unset;
+		margin: auto;
+		width: fit-content;
+		margin-top: 15px;
+	}
+	.footer-header-social-icons img {
+		margin-left: 15px;
+		width: 30px;
+	}
+	.footer-bottom-line[c-guestUserFooter_guestUserFooter] {
+		display: unset;
+		text-align: center;
+	}
+	.footer-bottom-line div {
+		width: 100%;
+	}
+	.footer-bottom-line .left {
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.footer-bottom-line .right {
+		text-align: center;
+	}
+	.ParentDiv{
+		margin-bottom: 9%;
+	}
+}
+@media only screen and (max-width: 468px){
+	.ParentDiv{
+		margin-bottom: 12%;
+	}
+} */
+
+
+/* ParentDiv {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+} */
+
+.footer-container {
+    padding: 5% 5%;
+    background-color: white;
+}
+
+.footer-header {
+    position: relative;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #c2c2c2;
+    padding-bottom: 25px;
+}
+.footer-header-links{
+	display: flex;
+}
+
+.footer-header-links > div {
+padding-right: 1rem;
+
+}
+.right a{
+	color: black;
+	text-decoration: none;
+}
+.footer-header-links button {
+    border: none;
+    background: transparent;
+    margin-right: 30px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+	
+}
+
+.footer-header-social-icons {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.footer-header-social-icons img {
+    margin-left: 30px;
+    width: 27px;
+	border-radius : 5px
+}
+
+
+
+
+	
+.footer-bottom-line {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+	flex-wrap: wrap-reverse;
+}
+
+.footer-bottom-line .left {
+    text-align: left;
+}
+
+.footer-bottom-line .right {
+    text-align: right;
+}
+
+.footer-bottom-line div {
+    width: 33%;
+}
+.linkStyle{
+    color: #007ba6 !important;
+    text-decoration: none !important;
+	width: fit-content;
+	/* padding-right: 1rem; */
+}
+a.\.org-link {
+    text-decoration: none;
+}
+@media only screen and (max-width: 768px){
+	.footer-header-links {
+		margin: auto;
+		text-align: center;
+	}
+	.footer-header-links button {
+		margin-bottom: 5px;
+	}
+	.footer-header-social-icons {
+		position: unset;
+		margin: auto;
+		width: fit-content;
+		margin-top: 15px;
+	}
+	.footer-header-social-icons img {
+		margin-left: 15px;
+		width: 30px;
+	}
+	.footer-bottom-line[c-guestUserFooter_guestUserFooter] {
+		display: unset;
+		text-align: center;
+	}
+	.footer-bottom-line div {
+		width: 100%;
+	}
+	.footer-bottom-line .left {
+		margin-bottom: 10px;
+		text-align: center;
+	}
+	.footer-bottom-line .right {
+		text-align: center;
+		margin: 1rem;
+	}
+}
+
+
+
+ .top-box{
+	display: flex;
+    justify-content: space-between;
+	position: relative;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #c2c2c2;
+    padding-bottom: 25px;
+}
+
+.site-link
+{
+	display: flex;
+	gap: 1rem;
+}
+
+.linkclass{
+gap: 1rem;
+color: black;
+text-decoration: none;
+}
+
+.site-icon-box{
+	display: flex;
+	gap: 2rem;
+}
+.social-icon-box img{
+	margin-left: 12px;
+
+}
+
+
+
+@media only screen and (max-width: 768px){
+	.ParentDiv{
+		margin-bottom: 4rem;
+	}
+	.site-icon-box{
+		display: flex;
+		/* flex-wrap: wrap; */
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+	.site-link{
+		/* display: none; */
+		justify-content: center;
+		margin-bottom: 1rem;
+	}
+	.top-box{
+		justify-content: center;
+		flex-direction: column;
+	}
+}
