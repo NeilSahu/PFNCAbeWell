@@ -1,6 +1,5 @@
 .main-div
 {
-	/* background-color: rgba(0,0,0,0.2); */
     width: fit-content;
     position: fixed;
     right: 0rem;
@@ -10,11 +9,9 @@
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 0.54;
 }
-
 .main-div:hover{
   	background: #D9D7D5 0% 0% no-repeat padding-box; 
 }
-
 .social-media-link{
     display: flex;
     flex-direction: column;
@@ -26,58 +23,12 @@
     height: 2rem;
     width: 2rem;
 }
-
 .social-media-link img:hover{
    	height: 2.5rem;
 	width: 2.5rem;
 }
-
-
 @media only screen and (max-width: 768px) {
-
 	.main-div{
 		display: none;
 	}
 }
-
-/* .row{
-    width: 106.3% !important;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-[class*="col-"] {
-  float: left;
-  padding: 30px 40px 30px 0px;
-}
-
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-
-::placeholder {
-  color: #343A40;
-} */
-
-/* Internet Explorer 10-11 */
-/* :-ms-input-placeholder { 
- color: #343A40;
-} */
-
-/* Microsoft Edge */
-/* ::-ms-input-placeholder { 
- color: #343A40;
-} */

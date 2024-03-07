@@ -1,0 +1,309 @@
+<template>
+
+	<c-bwps_-w-i-p_-dynamic-hero title="Gift a Membership" isdescription="true"
+		description="GIFT RECIPIENTS ARE ENTITLED TO ALL OF THE MEMBER BENEFITS FOR ONE YEAR." img-url={heroImage}>
+	</c-bwps_-w-i-p_-dynamic-hero>
+	<div class="container">
+		<div class="header-message">
+			<p>Once you purchase a gift membership, we'll send a welcome email within one business day to the recipient
+				notifying them of your gift, and they'll receive an official new member welcome packet in the mail
+				within 1 to 2 weeks. You will also receive a confirmation email with tax receipt for your records.</p>
+
+		</div>
+		<template if:false={flowcall}>
+			<template if:true={donationcreated}>
+				<div class="main">
+					<h2>Send a Gift</h2>
+					<div class="form-box-container">
+
+						<div class="form-steps">
+							<div class={step1css}>
+								<p class="step-count">1</p>
+								<p class="step-info">GIFT DETAILS</p>
+							</div>
+							<div class={step2css}>
+								<p class="step-count">2</p>
+								<p class="step-info">PERSONAL INFORMATION</p>
+							</div>
+							<div class={step3css}>
+								<p class="step-count">3</p>
+								<p class="step-info">GIFT RECIPIENT</p>
+							</div>
+							<div class={step4css}>
+								<p class="step-count">4</p>
+								<p class="step-info">PAYMENT METHOD</p>
+							</div>
+						</div>
+						<div class="form-box">
+							<div class="form">
+								<template if:true={showFormStep1}>
+
+									<div class="radio-button-group">
+
+										<div class="radio-box">
+											<input id="one" data-id="giftone" type="radio" name="anountType"
+												checked={giftonce} onclick={handlepaytype}>
+											<label for="one" id="onceOneTime"> ONE TIME</label>
+										</div>
+
+										<div class="radio-box">
+											<input id="two" data-id="giftyear" type="radio" name="anountType"
+												checked={giftfrequency} onclick={handlepaytype}>
+											<label for="two" id="onceYearly">YEARLY</label>
+										</div>
+
+										<!-- <div class="info-box">
+											<img src={img_InfoBox}>
+											<div class="info-box-content">Description of the yearly option can be placed
+												here.</div>
+										</div> -->
+
+									</div>
+
+									<div class="input-box">
+										<label for="amount">Enter Amount($)*</label>
+										<input id="amount" data-id="amount" min="1" type="number" value={amountValue}
+											onchange={handleAmount} onclick={handletotal} required readonly>
+									</div>
+										<div class="additional-info">
+											<h4>
+												Optional Donation Opportunities
+											</h4>
+											<p> Your support helps ParkinsonFoundation.org/Be Well Parkinson’s continue
+												providing programs and services to those impacted by Parkinson’s
+												Disease.
+												Thank
+												you for your consideration.</p>
+										</div>
+										<!-- <div class="radio-button-group">
+
+											<div class="radio-box">
+												<input id="three" data-id="donationone" type="radio"
+												name="anountDonationType" checked={donationonce}
+												onclick={hanldedonationpaytype}>
+												<label for="three"> ONE TIME</label>
+											</div>
+
+											<div class="radio-box">
+												<input id="four" data-id="donationyear" type="radio"
+												name="anountDonationType" checked={donationyearly}
+												onclick={hanldedonationpaytype}>
+												<label for="four">YEARLY</label>
+											</div>
+
+										</div> -->
+
+										<div class="input-box">
+											<label for="donationAmount">Enter Donation Amount($)</label>
+											<input id="donationAmount" min="1" data-id="donationAmount"
+											value={donationAmountValue} onchange={handleAmount} type="number">
+									</div>
+								</template>
+								<template if:true={showFormStep2}>
+									<div class="input-box">
+										<label for="fName">First Name*</label>
+										<input id="FName" data-id="FName" type="text" placeholder="First Name"
+											value={FName} required>
+									</div>
+										<div class="input-box">
+											<label for="lName">Last Name*</label>
+											<input id="lName" data-id="lName" type="text" placeholder="Last Name"
+											value={lName} required>
+									</div>
+											<div class="input-box">
+												<label for="emailAddress">Email Address*</label>
+												<input id="emailAddress" data-id="emailAddress" type="email"
+											value={emailAddress} placeholder="Email Address" required>
+									</div>
+												<div class="input-box">
+													<label for="confirmemailAddress">Confirm Email Address*</label>
+													<input id="confirmemailAddress" data-id="confirmemailAddress" type="email"
+											value={confirmemailAddress} placeholder="Confirm Email Address" required>
+									</div>
+													<div class="input-box">
+														<label for="phoneNumber">Phone Number*</label>
+														<input type="tel" id="phoneNumber"  data-id="phoneNumber"  name="Phone" onkeyup={validatePhoneField} value={phoneNumber} required></input>
+
+														<!-- <input id="phoneNumber" data-id="phoneNumber" type="number" value={phoneNumber}
+											onkeyup={validatePhoneField} placeholder="Phone Number" required> -->
+
+													</div>
+													<div>
+														<h1 class="contactInformation">CONTACT INFORMATION</h1>
+													</div>
+
+													<div class="input-box">
+														<label for="Street">Street Address*</label>
+														<input id="Street" data-id="Street" type="text" placeholder="Street Address"
+											value={Street} required>
+									</div>
+														<div class="input-box">
+															<label for="city">City*</label>
+															<input id="city" data-id="city" type="text" placeholder="City" value={city}
+											required>
+									</div>
+															<div class="input-box half-width">
+																<label for="state">State*</label>
+																<input id="state" data-id="state" type="text" placeholder="State" value={state}
+											required>
+									</div>
+																<div class="input-box half-width">
+																	<label for="postalCode">Postal code*</label>
+																	<input id="postalCode" data-id="postalCode" type="text"
+											placeholder="Postal code" value={postalCode} required>
+									</div>
+
+																	<div class="input-box">
+																		<label for="country">Country*</label>
+																		<input id="country" data-id="country" type="text" placeholder="Country"
+											value={country} required>
+									</div>
+								</template>
+								<template if:true={showFormStep3}>
+
+									<div class="input-box">
+										<label for="fName3">Recipient’s First Name*</label>
+										<input id="FName3" data-id="FName3" type="text" placeholder="First Name"
+											value={FName3} required>
+									</div>
+										<div class="input-box">
+											<label for="lName3">Recipient’s Last Name*</label>
+											<input id="lName3" data-id="lName3" type="text" placeholder="Last Name"
+											value={lName3} required>
+									</div>
+											<div class="input-box">
+												<label for="emailAddress3">Recipient’s Email Address*</label>
+												<input id="emailAddress3" data-id="emailAddress3" type="email"
+											placeholder="Email Address" value={emailAddress3} required>
+									</div>
+												<div class="input-box">
+													<label for="confirmemailAddress3">Confirm Email Address*</label>
+													<input id="confirmemailAddress3" data-id="confirmemailAddress3" type="email"
+											placeholder="Confirm Email Address" value={confirmemailAddress3} required>
+									</div>
+													<div class="input-box">
+														<label for="phoneNumber3">Recipient’s Phone Number*</label>
+														<input  id="phoneNumber3" type="tel" data-id="phoneNumber3"  name="Phone" value={phoneNumber3} required></input>
+
+														<!-- <input id="phoneNumber3" data-id="phoneNumber3" type="number"
+											placeholder="Phone Number" value={phoneNumber3} required> -->
+									</div>
+														<div>
+															<h1 class="contactInformation">CONTACT INFORMATION</h1>
+														</div>
+
+														<div class="input-box">
+															<label for="Street3">Recipient’s Street Address*</label>
+															<input id="Street3" data-id="Street3" type="text" placeholder="Street Address"
+											value={Street3} required>
+									</div>
+															<div class="input-box">
+																<label for="city3">Recipient’s City*</label>
+																<input id="city3" data-id="city3" type="text" placeholder="City" value={city3}
+											required>
+									</div>
+																<div class="input-box half-width">
+																	<label for="state3">Recipient’s State*</label>
+																	<input id="state3" data-id="state3" type="text" placeholder="State"
+											value={state3} required>
+									</div>
+																	<div class="input-box half-width">
+																		<label for="postalCode3">Recipient’s Postal code*</label>
+																		<input id="postalCode3" data-id="postalCode3" type="text" value={postalCode3}
+											required>
+									</div>
+
+																		<div class="input-box">
+																			<label for="country3">Recipient’s Country*</label>
+																			<input id="country3" data-id="country3" type="text" placeholder=""
+											value={country3} required>
+									</div>
+								</template>
+								<template if:true={showFormStep4}>
+
+									<div class="radio-container">
+									<h4>CHOOSE PAYMENT OPTION</h4>
+									<div class="input-radio-box">
+										<input type="radio" name="paymentOption" id="visa">
+										<label for="visa"> <img src={visa}> VISA ending in 1234 </label>
+									</div>
+									<div class="input-radio-box">
+										<input type="radio" name="paymentOption" id="newcard">
+										<label for="newcard"> Use a new Card</label>
+									</div>
+
+									<div class="input-radio-box">
+										<input type="radio" name="paymentOption" id="paypal">
+										<label for="paypal"><img src={paypal}> paypal </label>
+									</div>
+									</div>
+
+								</template>
+
+							</div>
+							<div class="order-summary">
+								<h5>Order Summary</h5>
+								<div>
+									<p>Your Gift</p>
+									<p>${amountValue}</p>
+								</div>
+								<div>
+									<p>Your Donation</p>
+									<p>${donationAmountValue}</p>
+								</div>
+								<div>
+									<p>Your Total</p>
+									<p>${totalAmount}</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="button-container required-footnote">
+
+							<!-- <div class="previous-btn" data-nav="previous" onclick={nextPreviousHandler} style={prevStyle}>
+					</div> -->
+							<template if:true={previousAvailable}>
+								<button data-nav="previous" onclick={nextPreviousHandler}>PREVIOUS</button>
+							</template>
+
+							<template if:false={showSubmit}>
+
+								<button data-nav="next" onclick={nextPreviousHandler}>NEXT</button>
+							</template>
+
+							<template if:true={showSubmit}>
+								<button type="submit" onclick={handleSubmit}>SUBMIT/PAY</button>
+
+							</template>
+							<!-- <p>* &nbsp; Required</p>
+
+							<div class="next-btn" data-nav="next" onclick={nextPreviousHandler} style={nextStyle}>
+					</div> -->
+
+						</div>
+					</div>
+				</div>
+			</template>
+			<template if:false={donationcreated}>
+				<lightning-spinner variant="brand" alternative-text="Loading" size="large"> </lightning-spinner>
+			</template>
+		</template>
+	</div>
+	<template if:true={flowcall}>
+		<div class="payment-modal-container">
+			<div class="payment-modal-main">
+				<div class="payment-modal-close">
+					<span class="closeClass" onclick={offpays}>&#10006;</span>
+				</div>
+				<lightning-flow flow-api-name={flowApiName} flow-input-variables={flowInputVariables}
+					onstatuschange={handleFlowStatusChange}>
+				</lightning-flow>
+			</div>
+		</div>
+	</template>
+	<template if:true={showSpinner}>
+		<lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+	</template>
+	<c-pfnca_-main_-stay-connected-footer></c-pfnca_-main_-stay-connected-footer>  
+
+</template>

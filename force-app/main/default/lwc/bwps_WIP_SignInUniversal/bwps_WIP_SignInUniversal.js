@@ -3,12 +3,14 @@ import { publish, subscribe, unsubscribe, createMessageContext, releaseMessageCo
 import SENDDATA from "@salesforce/messageChannel/VimeoOff__c";
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import imageResource from "@salesforce/resourceUrl/WebsiteGenFaqImage";
+import LoginImage from "@salesforce/resourceUrl/LoginImage";
 import doLogin from '@salesforce/apex/CommunityAuthController.doLogin';
 import registerUser from '@salesforce/apex/CommunitiesSelfRegControllerGuest.registerUser';
+import GuesUserPassReadyMail from '@salesforce/apex/BWPS_EmailSend.GuesUserPassReadyMail';
 //import registerUser from '@salesforce/apex/CommunitiesSelfRegControllerGuest.registerUser';
 import isEmailExist from '@salesforce/apex/CommunityAuthController.isEmailExist';
 import CheckPaymentStatus from '@salesforce/apex/CommunityAuthController.CheckPaymentStatus';
-import updateUserProfile from '@salesforce/apex/CommunityAuthController.updateUserProfile';
+//import updateUserProfile from '@salesforce/apex/CommunityAuthController.updateUserProfile';
 import forgotPassword from '@salesforce/apex/CommunityAuthController.forgotPassword';
 import { CurrentPageReference } from 'lightning/navigation';
 const ACTIVE_NAV_CSS_CLASS = 'nav active';
@@ -16,7 +18,8 @@ const DEFAULT_NAV_CSS_CLASS = 'nav';
 const ACTIVE_SUB_NAV_CSS_CLASS = 'sub-nav sub-nav-active';
 const DEFAULT_SUB_NAV_CSS_CLASS = 'sub-nav';
 
-export default class Bwps_WIP_SignInUniversal extends LightningElement {
+export default class Bwps_WIP_SignInUniversal extends LightningElement{
+
     context = createMessageContext();
     subscription = null;
     urlStateParameters;
@@ -31,6 +34,8 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
     @track errorCheck;
     @track errorMessage;
     showUserName;
+    @track becomeAMemberUserName ='';
+    @track GuestUserUserName ='';
     @track showTermsAndConditions;
     @track showTermsAndConditionsLoading = false;
     @track infoTooltipDisplayData = {};
@@ -42,6 +47,7 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
     @track showSpinner = false;
     @track userIdUpdation;
     typeOfuser ='';
+    usernamepfnce = null;
      @track flowcall = false;
      //@api GatewayId ='';
      @api OppId; //'0063C00000KOfm6QAD';
@@ -57,7 +63,8 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
             }
         ];
     }
-    signinImg = imageResource + '/signinImg.png';
+    // signinImg = imageResource + '/signinImg.png';
+    signinImg = LoginImage;
 
     showMemberForm = true;
     showGuestForm = false;
@@ -80,20 +87,57 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
     getAGuestPassCssClass = DEFAULT_SUB_NAV_CSS_CLASS;
     guestSignUpCssClass = DEFAULT_SUB_NAV_CSS_CLASS;
     guestLoginCssClass = ACTIVE_SUB_NAV_CSS_CLASS;
+    @track memberPasswordVisible = false;
+    @track memberConfirmPasswordVisible = false;
+    @track guestPasswordVisible = false;
+    @track guestConfirmPasswordVisible = false;
+    @track loginPasswordVisible = false;
 
+    toggleMemberPasswordVisibility() {
+        console.log('Show/Hide toggle');
+        this.memberPasswordVisible = !this.memberPasswordVisible;
+        // const passwordInput = this.template.querySelector(`[data-id="becomeMemberconfirm"]`);
+        // let passwordInput = document.getElementById('becomeMemberPassword');
+        // console.log('passwordInput : ',JSON.stringify(passwordInput));
+        // console.log('passwordVisible : ',this.passwordVisible);
+        // if (this.passwordVisible) {
+        //     passwordInput.type = 'text';
+        // } else {
+        //     passwordInput.type = 'password';
+        // }
+    }
+    toggleMemberConfirmPasswordVisibility(){
+        this.memberConfirmPasswordVisible = !this.memberConfirmPasswordVisible;
+    }
+    toggleGuestPasswordVisibility(){
+        this.guestPasswordVisible = !this.guestPasswordVisible;
+    }
+    toggleGuestConfirmPasswordVisibility(){
+        this.guestConfirmPasswordVisible = !this.guestConfirmPasswordVisible;
+    }
+    toggleLoginPasswordVisibility(){
+        this.loginPasswordVisible = !this.loginPasswordVisible;
+    }
     connectedCallback() {
-        this.subscription = subscribe(this.context, SENDDATA, (message) => {
-            console.log('msg : ', message);
-            if (message.isGuest) {
+        // this.subscription = subscribe(this.context, SENDDATA, (message) => {
+        //     console.log('msg : ', message);
+        //     if (message.isGuest) {
+        //         this.handleSubNavigation({target:{dataset:{subnav:'getAGuestPass'}}})
+        //     }
+        // });
+        let intervalId = setInterval(() => {
+            const urlParams = new URL(window.location.href).searchParams;
+            const isGuestt = urlParams.get('guest');
+            const isMember = urlParams.get('signup');
+            console.log('isGuest : ',isGuestt);
+            if(isGuestt){
                 this.handleSubNavigation({target:{dataset:{subnav:'getAGuestPass'}}})
             }
-        });
-        // const urlParams = new URL(window.location.href).searchParams;
-        // const isGuestt = urlParams.get('guest');
-        // console.log('isGuest : ',isGuestt);
-        // if(isGuestt){
-        //     this.handleSubNavigation({target:{dataset:{subnav:'getAGuestPass'}}})
-        // }
+            if(isMember){
+                this.handleSubNavigation({target:{dataset:{subnav:'becomeMember'}}})
+            }
+            clearInterval(intervalId);
+        }, 0);
         this.showUserName = false;
 
         this.infoTooltipDisplayData.username = "tooltiptext usernameTooltiptext";
@@ -106,10 +150,13 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
         //this.requiredTooltipDisplayData.hearAboutUs = 'tooltiptext tooltipHide';
         this.requiredTooltipDisplayData.password = 'tooltiptext tooltipHide';
         this.requiredTooltipDisplayData.confirmPassword = 'tooltiptext tooltipHide';
+         this.requiredTooltipDisplayData.loginusername = 'tooltiptext tooltipHide';
+          this.requiredTooltipDisplayData.loginpassword = 'tooltiptext tooltipHide';
 
         this.errorTooltipDisplayData.email = 'tooltiptext tooltipHide';
  
         this.errorTooltipDisplayData.password = 'tooltiptext tooltipHide';
+        
     }
 
     // @wire(CurrentPageReference)
@@ -172,13 +219,11 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
         console.log("event : ", event.target.dataset.nav);
 
         if (nav == 'member') {
-
             this.showMemberForm = true;
             this.showGuestForm = false;
             this.showDonorForm = false;
             this.showInstructorForm = false;
             this.isguest = false;
-
             this.memberCssClass = ACTIVE_NAV_CSS_CLASS;
             this.guestCssClass = DEFAULT_NAV_CSS_CLASS;
             this.donorCssClass = DEFAULT_NAV_CSS_CLASS;
@@ -276,6 +321,7 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
     handleUserNameChange(event) {
 
         this.username = event.target.value;
+         this.usernamepfnce = event.target.value;
         console.log(' this.username ', this.username);
     }
 
@@ -296,6 +342,8 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
     }
     async handleLogin(event) {
         this.username = this.template.querySelector(`[data-id='memberEmailAddress']`).value;
+        //this.username = this.template.querySelector(`[data-id='memberEmailAddress']`).value;
+         //this.usernamepfnce = this.template.querySelector(`[data-id='memberEmailAddress']`).value;
         this.password = this.template.querySelector(`[data-id='memberPassword']`).value;
         console.log('this.username ', this.username);
         console.log('this.password ', this.password);
@@ -305,15 +353,25 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
         if (!this.template.querySelector('input[type="email"]').reportValidity()) {
             return
         };
-        if (!this.template.querySelector('input[type="password"]').reportValidity()) {
-            return
-        };
+        let inputType = this.template.querySelector(`[data-id='memberPassword']`).type;
+        if(inputType == 'text'){
+            if (!this.template.querySelector('input[type="text"]').reportValidity()) {
+                return
+            };
+        }
+        else{
+            if (!this.template.querySelector('input[type="password"]').reportValidity()) {
+                return
+            };
+        }
         if (this.username && this.password) {
             await doLogin({ username: this.username, password: this.password })
                 .then((result) => {
-                    console.log('loginResult : ', result);
-                    if (result == null && result == undefined) {
-                        this.showErrorToast();
+                    console.log('loginResultt : ', result);
+                    if (result == null || result == undefined) {
+                        //this.showErrorToast();
+                         this.requiredTooltipDisplayData.loginusername = 'tooltiptext tooltipShow';
+                        this.requiredTooltipDisplayData.loginpassword = 'tooltiptext tooltipShow';
                     }
                     else {
                         window.location.href = result;
@@ -350,9 +408,20 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
         this.dispatchEvent(event);
     }
     showErrorToast() {
+        console.log('OUTPUT : ');
         const evt = new ShowToastEvent({
             title: 'Oops! The email or password you entered is incorrect.',
             message: 'please check your email and password again or contact your systemadmin',
+            variant: 'error',
+            mode: 'dismissable'
+        });
+        this.dispatchEvent(evt);
+        console.log('evt : ',this.dispatchEvent(evt), evt);
+    }
+     showErrorToastCreateUser() {
+        const evt = new ShowToastEvent({
+            title: 'Oops! The email is already somewhere in salesforce .',
+            message: 'please use another mail id for create your account',
             variant: 'error',
             mode: 'dismissable'
         });
@@ -386,6 +455,7 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
 
             this.email = event.target.value;
             this.userName = this.email;
+            this.usernamepfnce = this.email;
             console.log('this.userName ', this.userName);
             console.log('this.email ', this.email);
 
@@ -394,6 +464,7 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
 
             this.email = event.target.value;
             this.userName = this.email;
+            this.usernamepfnce = this.email;
             console.log('else this.userName ', this.userName);
             console.log('this.email ', this.email);
         }
@@ -401,36 +472,59 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
 
     handleEmailChangeconfirm(){
 
-     this.confirmEmail =this.template.querySelector(`[data-id= 'becomeMemberEmailAddressconfirmconfirm']`).value;   
+     this.confirmEmail =this.template.querySelector(`[data-id= 'becomeMemberEmailAddressconfirmconfirm']`).value;  
      console.log('conemail',this.confirmEmail)
+     this.becomeAMemberUserName =  this.confirmEmail; 
+    //  if(this.confirmEmail.includes('@')){
+    //           let tempemailchange = this.confirmEmail.split('@');
+    //            let firstsplit = tempemailchange[0];
+    //            let secondslpit = tempemailchange[1];
+    //            let newmailpfnca = firstsplit+'.pfnca@'+secondslpit;
+    //            this.becomeAMemberUserName = newmailpfnca;
+    //  }
+    //  else {
+    //      this.becomeAMemberUserName =  this.confirmEmail;
+    //  }
+     
     //  this.confirmEmail =this.template.querySelector(`[data-id= 'EmailChangeconfirm']`).value;  
     //   console.log('conemail1',this.confirmEmail) 
     }
 
     handleEmailChangeconfirm1(){
 
-          this.confirmEmail =this.template.querySelector(`[data-id= 'guestEmailAddressconfirm']`).value;  
-      console.log('conemail1',this.confirmEmail) 
+        this.confirmEmail =this.template.querySelector(`[data-id= 'guestEmailAddressconfirm']`).value;  
+        console.log('conemail1',this.confirmEmail); 
+        this.GuestUserUserName =  this.confirmEmail;
+        // if(this.confirmEmail.includes('@')){
+        //         let tempemailchange = this.confirmEmail.split('@');
+        //         let firstsplit = tempemailchange[0];
+        //         let secondslpit = tempemailchange[1];
+        //         let newmailpfnca = firstsplit+'.pfnca@'+secondslpit;
+        //         this.GuestUserUserName = newmailpfnca;
+        // }
+        // else {
+        //     this.GuestUserUserName =  this.confirmEmail;
+        // }
     }
     
 
 
        async paysuccess(){
         console.log('inside method');
-        console.log('User Name ' ,this.email);
+        console.log('User Name ' ,this.usernamepfnce);
         console.log('Password con' , this.confirmPassword);
-        if (this.email && this.confirmPassword) {
+        if (this.usernamepfnce && this.confirmPassword) {
             console.log('insdi pass and username ');
-            await doLogin({ username: this.email, password: this.confirmPassword })
+            await doLogin({ username: this.usernamepfnce, password: this.confirmPassword })
            .then((result) => {
                console.log('result ', result);
                if (result == null && result == undefined) {
-                this.updateProfile();
+                //this.updateProfile();
                 this.forgetPasswordfun();
                    this.ShowToastPasswordReset();
                }
                else {
-                    this.updateProfile();
+                    //this.updateProfile();
                    window.location.href = result;
                }
            })
@@ -444,7 +538,7 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
 
             }
        }
-        updateProfile(){
+        /*updateProfile(){
                  console.log('update profile ',this.email);
         if (this.email) {
             console.log('insde update user ');
@@ -464,12 +558,12 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
            });
 
             }
-        }
-        forgetPasswordfun(){
+        }*/
+        async forgetPasswordfun(){
             console.log('forget password ',this.email);
    if (this.email) {
        console.log('inside forget password ');
-       forgotPassword({ userName: this.email})
+      await forgotPassword({ userName: this.email})
       .then((result) => {
           console.log('forget password return ', result);
           if (result == null && result == undefined) {
@@ -525,13 +619,14 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
         {
             this.typeOfuser = 'Guest';
             console.log("type1111111111",this.typeOfuser);
+             this.usernamepfnce = this.GuestUserUserName;
         }
         else
         {
             this.typeOfuser = 'Member';
             console.log("type2222222222222222",this.typeOfuser);
+             this.usernamepfnce = this.becomeAMemberUserName;
         }
-         
         event.preventDefault();
         this.errorCheck = false;
         this.errorMessage = null;
@@ -575,7 +670,7 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
             this.requiredTooltipDisplayData.confirmPassword = 'tooltiptext tooltipHide';
         }
 
-        if (this.firstName && this.lastName && this.email && this.userName && this.hearAboutUs && this.password && this.confirmPassword) {
+        if (this.firstName && this.lastName && this.email && this.usernamepfnce && this.hearAboutUs && this.password && this.confirmPassword) {
             //this.showTermsAndConditionsLoading = true;
             if (this.password != this.confirmPassword) {
                 this.infoTooltipDisplayData.password = "tooltiptext tooltipHide";
@@ -623,8 +718,8 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
             }
 
             //event.preventDefault();
-
-            isEmailExist({ username: this.userName, GuestUser : this.showGetAGuestPass, MemberUser :this.showBecomeMember })
+              console.log('this.this.usernamepfnce ', this.usernamepfnce);
+            isEmailExist({ username: this.usernamepfnce, GuestUser : this.showGetAGuestPass, MemberUser :this.showBecomeMember })
                 .then((result) => {
                     console.log('login result---' + result, typeof result);
                     console.log('result ',result[0]);
@@ -660,24 +755,30 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
                         console.log('inside else');
                         console.log('this.firstName ', this.firstName);
                         console.log('this.lastName ', this.lastName);
-                        console.log('this.userName ', this.userName);
+                        console.log('this.usernamepfnce ', this.usernamepfnce);
+                        console.log('this.GuestUserUserName ', this.GuestUserUserName);
+                        console.log('this.becomeAMemberUserName ', this.becomeAMemberUserName);
                         console.log('this.email ', this.email);
                         console.log('this.communityNickname ', this.firstName);
                         console.log('this.password ', this.password);
+                        
                         this.showSpinner = true;
                         registerUser({
                             firstName: this.firstName, lastName: this.lastName, email: this.email, password: this.password, confirmPassword:
-                                this.confirmPassword, SignUpAs: this.typeOfuser
+                                this.confirmPassword, SignUpAs: this.typeOfuser , usernamepfnca : this.usernamepfnce
                         })
-                            .then((result) => {
+                            .then((data) => {
+                                let result, userId, userEmail;
+                                if(data != null && data != undefined) {
+                                    result = data[0];
+                                    userId = data[1];
+                                    userEmail = data[2];
+                                }
                                 if (result) {
                                     console.log('result Neha check ', result);
                                     this.showSpinner = false;
-                                    if(result=='Error'){
+                                    if(result=='Error' || result == undefined){
                                       this.showErrorToast();
-                                       if(this.showBecomeMember){                                           
-                                             this.flowcall = true;
-                                        }
                                     } else if(result !='Error') {
                                         //window.location.href = result;
                                          let arrreturn = [];
@@ -695,6 +796,16 @@ export default class Bwps_WIP_SignInUniversal extends LightningElement {
                                              this.flowcall = true;
                                         }
                                          if( this.showGetAGuestPass){
+                                             console.log('data in guest : ',JSON.stringify(data, null, 2));
+                                             console.log('urll : ',result);
+                                             console.log('userId : ',userId);
+                                             console.log('userEmail : ',userEmail);
+                                            GuesUserPassReadyMail({ UserCreatedId : userId, UserEmail : userEmail})
+                                            .then(result=>{
+                                                console.log(JSON.stringify(result));
+                                            }).catch(error=>{
+                                                console.log(error);
+                                            })
                                             window.location.href = result;
                                          }
                                    

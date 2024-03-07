@@ -1,3 +1,4 @@
+@import 'c/sharedStyles';
 :host {
     --colr-primary: #008BA7;
     --colr-primary-dark: #193A5A;
@@ -14,6 +15,42 @@
 }
 .main-container{
 	background-color: white;
+}
+
+.box-blue-button {
+    /* color: white; */
+    background-color: var(--pfnca-color-primary);
+    width: inherit;
+    height: auto;
+    padding: 0.25rem;
+    border: 1px solid var(--pfnca-color-white);
+     
+}
+.blue-button {
+    padding: 0.5rem 0.8rem;
+    margin: auto;
+    background-color: var(--pfnca-color-primary);
+    color: var(--pfnca-color-white);
+    border: 1px solid var(--pfnca-color-white4D); 
+    font-family: "IBM Plex Sans";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    font-style: normal;
+    text-align: center;
+}
+.blue-button:hover{
+    background-color: var(--pfnca-color-primaryDarker);
+}
+.anchorLinkClass{
+    cursor:initial;
+}
+.rightlink {
+    /* padding-top: 5px; */
+    float: right !important;
+    padding: 1.5rem 0.75rem 1.5rem 0.75rem;
+   margin-left: 430px;
+    margin-top: 6px;
 }
 
 .back-btn{
@@ -34,8 +71,9 @@
     margin-right: 10px;  
 }
 .faq-header{
+   position: relative;
     /* background-color: #008BA7; */
- height: 20.25rem;
+ height: 30.25rem;
     background-color: #00000059;
     background-size: cover;
     background-blend-mode: color;
@@ -43,6 +81,18 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.faq-header::before {
+    /* content: ""; */
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #193a5a; /* Overlay color */
+    opacity: 0.7; /* Adjust the opacity as needed */
 }
 
 
@@ -84,19 +134,20 @@ margin-bottom: 31px;
 .search-content{
     display: flex;
     justify-content: center;
-    margin-top: 0.9rem;
+    margin-top: 6.9rem;
 }
 .search-box{
     /* padding-right: 1rem; */
     /* position: relative; */
 	position: absolute;
-margin-top: 31px;
+margin-top: 32px;
 
 border-color: #008ba7;
 border-width: 1px;
 border-style: solid;
 background: #ffffff
 }
+
 .clear-search{
     position: absolute;
     top: 50%;
@@ -112,7 +163,7 @@ background: #ffffff
     height: 3rem;
     font-size: 1.125rem;
     padding-inline: 1rem;
-    width: 17.5rem;
+        width: fit-content;
     border: 1px solid #008BA7;
 
 }
@@ -593,7 +644,7 @@ aspect-ratio: 1.4/1;
     
   }
   .p-question{
-    font-size: 16px;
+    font-size: 13px;
     font-family: "IBM Plex Sans";
   }
 }
@@ -642,4 +693,6 @@ aspect-ratio: 1.4/1;
     font-size: 16px;
     font-family: "IBM Plex Sans";
   }
+
+  
 }

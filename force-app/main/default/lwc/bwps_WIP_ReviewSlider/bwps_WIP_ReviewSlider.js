@@ -4,6 +4,7 @@ import testimg2 from '@salesforce/resourceUrl/testimg2';
 import testimg3 from '@salesforce/resourceUrl/testimg3';
 import BackgroundImageContact from '@salesforce/resourceUrl/BackgroundImageContact';
 import sliderbackgroundimg from '@salesforce/resourceUrl/sliderbackgroundimg';
+import sliderbackgroundimg2 from '@salesforce/resourceUrl/sliderbackgroundimg2';
 import testimonialAboutUs from '@salesforce/apex/GetSliderSRecords.testimonialAboutUs';
 
 export default class Bwps_HowItWorksSlider extends LightningElement {
@@ -30,7 +31,7 @@ export default class Bwps_HowItWorksSlider extends LightningElement {
         background-size: 95%;
         background-position: bottom;
         background-position-x: 0rem;
-        background-image:url(${sliderbackgroundimg})`;
+        background-image:url(${sliderbackgroundimg2})`;
     }
     connectedCallback() {  
         // this.slideimg = this.imgarr[this.count];

@@ -1,17 +1,12 @@
-<template>
-    <!-- <c-bwps_-w-i-p_-dynamic-hero title="Types of Classes" img-url={typeofclass} isbutton="true" buttontext="GET GUEST PASS">
-	</c-bwps_-w-i-p_-dynamic-hero> -->
+<!-- <template>
+ 	<c-pfnca_-main_-dynamic-hero title="Types of Classesds" img-url={typeofclass}  isbutton="true" buttontext="Let's get started"></c-pfnca_-main_-dynamic-hero>
 
-	<c-pfnca_-main_-dynamic-hero title="Types of Classes" img-url={typeofclass} isbutton="true" buttontext="GET GUEST PASS"></c-pfnca_-main_-dynamic-hero>
-
-
-    <div class="container">
+   <div class="container">
         <div class="main">
             <template for:each={classTypeData} for:item="type">
                 <div class="class-type" key={type.Id}>
-                    <div class="icon-box">
-                        <div>
-                            <!-- <img src={exerciseIcon} alt={exerciseIcon}> -->
+                    <div >
+                        <div  class="icon-box">
                             <img src={type.logoimgLink} alt="noimage">
                         </div>
                         
@@ -21,44 +16,26 @@
                         <p>
                             {type.Description__c}
                         </p>
-                        <div class="button-box">
+<div class="button-container">
+
+                        <div  class="box-blue-button">
                             <a href={liveClassScheduleLink}>
-                                <button>LIVE CLASS SCHEDULE</button>
+                                <button class="blue-button">LIVE CLASS SCHEDULE</button>
                             </a>
+                            <div class="box-blue-button">
+
                             <a href={type.Link}>
-                                <button>CLASSES ON DEMAND</button>
+                            <button class="blue-button">Classes On Demand</button>
                             </a>
+                            </div>
+</div>
+                            
                             
                         </div>
                     </div>
                 </div>
             </template>
-            <!-- <template for:each={classTypeData} for:item="type">
-                <div class="class-type" key={type.id}>
-                    <div class="icon-box">
-                        <div>
-                            <img src={type.iconSrc} alt={type.iconSrc}>
-                        </div>
-                        
-                    </div>
-                    <div class="detail-box">
-                        <h2>{type.heading}</h2>
-                        <p>
-                            {type.description}
-                        </p>
-                        <div class="button-box">
-                            <a href={liveClassScheduleLink}>
-                                <button>LIVE CLASS SCHEDULE</button>
-                            </a>
-                            <a href={classOnDemandLink}>
-                                <button>CLASSES ON DEMAND</button>
-                            </a>
-                            
-                        </div>
-                    </div>
-                </div>
-            </template> -->
-
+          
             <div class="intensity-levels">
                 
                 <table>
@@ -66,9 +43,7 @@
                         <td>    </td>
                         <td><h2>Class Intensity Levels</h2></td>
                     </tr>
-                    <!-- <tr>
-                        <td><h3>Class Intensity</h3></td>
-                    </tr> -->
+
                     <tr>
                         <td class="intensitycontainer"><img src={signalIcon1} alt={signalIcon1}> <div class="intensity">Low / Seated </div></td>
                         <td class="intensitydesc">Perfect for whatever your level of fitness is and suitable for all abilities</td>
@@ -79,13 +54,84 @@
                     </tr>
                     <tr>
                         <td class="intensitycontainer"><img src={signalIcon3} alt={signalIcon3}><div class="intensity"> High / Active </div></td>
-                        <td class="intensitydesc">Can be modified all abilities and is for those who enjoy a challenge</td>
+                        <td class="intensitydesc"> Can be modified to all abilities and is for those who enjoy a challenge</td>
                     </tr>
 
                 </table>
             </div>
         </div>
     </div>
-    <c-bwps_-w-i-p_-review-slider></c-bwps_-w-i-p_-review-slider>
-    <c-stay-connected-footer></c-stay-connected-footer>
+    
+    <c-pfnca_main_reviewslider></c-pfnca_main_reviewslider>
+    <c-pfnca_-main_-stay-connected-footer></c-pfnca_-main_-stay-connected-footer>
+
+</template> -->
+
+
+<template>
+   <c-pfnca_-main_-dynamic-hero title="Types of Classesds" img-url={typeofclass}  isbutton="true" buttontext="Let's get started"></c-pfnca_-main_-dynamic-hero>
+   <div class="container">
+   
+      <template for:each={classTypeData} for:item="type">
+         <div class="class-type main" key={type.Id}>
+            <div>
+               <img src={type.logoimgLink} alt="noimage">
+            </div>
+            <div >
+               <div class="detail-box">
+                  <h2>{type.Name}</h2>
+                  <p>
+                     {type.Description__c}
+                  </p>
+                  <div class="button-container main">
+                     <div  class="box-blue-button">
+                        <a href={liveClassScheduleLink}>
+                        <button class="blue-button">LIVE CLASS SCHEDULE</button>
+                        </a>
+                     </div>
+                     <div class="box-blue-button">
+                        <a href={type.Link}>
+                        <button class="blue-button">Classes On Demand</button>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+   
+   </template>
+   <div class="intensity-levels">
+      <table>
+         <tr>
+            <td>    </td>
+            <td>
+               <h2>Class Intensity Levels</h2>
+            </td>
+         </tr>
+         <tr>
+            <td class="intensitycontainer">
+               <img src={signalIcon1} alt={signalIcon1}> 
+               <div class="intensity">Low / Seated </div>
+            </td>
+            <td class="intensitydesc">Perfect for whatever your level of fitness is and suitable for all abilities</td>
+         </tr>
+         <tr>
+            <td class="intensitycontainer">
+               <img src={signalIcon2} alt={signalIcon2}>
+               <div class="intensity"> Medium </div>
+            </td>
+            <td class="intensitydesc">Accessible for all abilities but may be difficult for people new to exercise</td>
+         </tr>
+         <tr>
+            <td class="intensitycontainer">
+               <img src={signalIcon3} alt={signalIcon3}>
+               <div class="intensity"> High / Active </div>
+            </td>
+            <td class="intensitydesc"> Can be modified to all abilities and is for those who enjoy a challenge</td>
+         </tr>
+      </table>
+   </div>
+   </div>
+   <c-pfnca_main_reviewslider></c-pfnca_main_reviewslider>
+   <c-pfnca_-main_-stay-connected-footer></c-pfnca_-main_-stay-connected-footer>
 </template>

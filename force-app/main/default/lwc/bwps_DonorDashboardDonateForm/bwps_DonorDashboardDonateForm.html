@@ -5,7 +5,7 @@
 			<template if:true={card1}>
 				<div class="card">
 					<div class="card-heading">
-						<img src={secureDonationImageUrl} height="25px" width="25px">
+						<img src={secureDonationImageUrl}  height="25px" width="25px">
 						<h3>SECURE DONATION</h3>
 					</div>
 					<div class="page-navigator">
@@ -17,7 +17,7 @@
 					</div>
 					<div class="about-form">
 						<h4>
-							Personal Information
+							Personal InformationS
 						</h4>
 					</div>
 					<div class="card-input">
@@ -30,7 +30,9 @@
 						<label data-id="confirm-email-label">Confirm Email Address* </label>
 						<input  data-id="ConfirmEmail" value={ConfirmEmail} name="ConfirmEmailAddress" type="email" onchange={getFormData} placeholder="Confirm Email Address" required></input>
 						<label data-id="phone-label">Phone Number *</label>
-						<input  data-id="Phone" name="Phone" type="number" value={Phone} onchange={getFormData}  min="10" max="10" placeholder="Phone Number" required></input>
+						<input  type="tel" data-id="Phone"  name="Phone" onchange={getFormData} value={Phone} required></input>
+						<!-- <input  data-id="Phone" name="Phone" type="number" value={Phone} onchange={getFormData}  min="10" max="10" placeholder="Phone Number" required></input> -->
+
 					</div>
 					<div class="navigate-buttons">
 						<div class="box-button">
@@ -77,7 +79,7 @@
 							</div>
 							<div>
 								<label data-id="MailingPostalCode-label" >ZIP / Postal Code</label>
-								<input  data-id="MailingPostalCode" value={MailingPostalCode} name="ZipCode" onchange={getFormData} type="number" min="6" max="6" placeholder="ZIP/Postal Code"></input>
+								<input  data-id="MailingPostalCode" value={MailingPostalCode} name="ZipCode" onchange={getFormData} type="number" min="6" max="6" placeholder="ZIP/Postal Code" style="width: 13rem;"></input>
 							</div>
 						</div>
 						<label>Country</label>
@@ -118,7 +120,7 @@
 						</div>
 					</template>
 					<div class="amount-section">
-						<div class="row">
+						<!--<div class="row">
 							<div class="col-12">
 								<div class="amount-div amount-div-full-width" data-id="giveonce"
 									onclick={GiveOnceOrMonthly}>Give Once</div>
@@ -139,6 +141,24 @@
 							</div>
 							<div class="col-6">
 								<div class="amount-div" data-id="annual" onclick={GiveOnceOrMonthly}>Annually</div>
+							</div>
+						</div>-->
+						<div class="row">
+							<div class="col-12">
+								<select name="DonationType" value={Donationval} data-id="DonationSelect" onchange={GiveOnceOrMonthly}
+										class="picklist-Val amount-div amount-div-full-width">
+										//<option value="none" selected disabled>Select a Donation Type</option>
+											<option selected class="picklist-option" value="GiveOnce" data-id="giveonce"
+												>Give Once</option>
+												<option class="picklist-option" value="Monthly" data-id="monthly"
+												>Monthly</option>
+												<option class="picklist-option" value="Quaterly" data-id="quaterly"
+												>Quaterly</option>
+												<option class="picklist-option" value="Semi Annual" data-id="semiAnnual"
+												>Semi Annual</option>
+												<option class="picklist-option" value="Annual" data-id="annual"
+												>Annual</option>
+									</select>
 							</div>
 						</div>
 						<div class="row amount-row-padding">
@@ -233,16 +253,18 @@
                                         <input type="checkbox"  name="GiveHonorCheckbox" onchange={ShowGiveHonorNameField} checked={GivenHonorOrMemory}>
                                         <span class="checkmark"></span>
                                     </label>
-									<div if:true={GivenHonorOrMemory}>
-									    <div class="row">
-							             <div class="col-6">
-								          <div class="amount-div" data-id="HonorIn" onclick={HandleGiveHonorOrMemory}>HONOR</div>
-							                </div>
-							              <div class="col-6">
-								            <div class="amount-div" data-id="MemoryIn" onclick={HandleGiveHonorOrMemory}>MEMORY</div>
-							                   </div>
-						                      </div>
-											  </div>
+										<div if:true={GivenHonorOrMemory}>
+											<div class="row">
+												<div class="col-6">
+													<div class="amount-div" data-id="HonorIn"
+														onclick={HandleGiveHonorOrMemory}>HONOR</div>
+												</div>
+												<div class="col-6">
+													<div class="amount-div" data-id="MemoryIn"
+														onclick={HandleGiveHonorOrMemory}>MEMORY</div>
+												</div>
+											</div>
+										</div>
 										<template if:true={GivenHonorOrMemory}>
 											<div class="name-input">
 												<label for="memoriesHFName" if:true={honor}>Honoree’s First Name*</label>
@@ -258,38 +280,74 @@
 														<label for="memoriesEmail">Email*</label>
 														<input type="email" data-id="memoriesEmail" value={memoEmail} onchange={getFormData} class="GiveHonorName"  placeholder="Email of someone special">
                                         			</div>
-													<div class="name-input">
-														<label for="memoriesConfirmEmail">ConfirmEmail*</label>
-														<input type="email" data-id="memoriesConfirmEmail" value={memoConfirmEmail} onchange={getFormData} class="GiveHonorName"  placeholder="Confirm Email">
+														<div class="name-input">
+															<label for="memoriesConfirmEmail">ConfirmEmail*</label>
+															<input type="email" data-id="memoriesConfirmEmail" value={memoConfirmEmail} onchange={getFormData} class="GiveHonorName"  placeholder="Confirm Email">
                                         			</div>
-														<div if:true={Inmemory} class="name-input">
-															<label for="memoriesRFName">Name of Person to be Notified - First Name</label>
-															<input type="text" data-id="memoriesRFName" value={memoRFName} onchange={getFormData} class="GiveHonorName"  placeholder="Name of Person to be Notified - First Name">
-                                        				</div>
 															<div if:true={Inmemory} class="name-input">
-																<label for="memoriesRLName">Name of Person to be Notified - Last Name</label>
-																<input type="text" data-id="memoriesRLName" value={memoRLName} onchange={getFormData} class="GiveHonorName"  placeholder="Name of Person to be Notified - Last Name">
+																<label for="memoriesRFName">Name of Person to be Notified - First Name</label>
+																<input type="text" data-id="memoriesRFName" value={memoRFName} onchange={getFormData} class="GiveHonorName"  placeholder="Name of Person to be Notified - First Name">
+                                        				</div>
+																<div if:true={Inmemory} class="name-input">
+																	<label for="memoriesRLName">Name of Person to be Notified - Last Name</label>
+																	<input type="text" data-id="memoriesRLName" value={memoRLName} onchange={getFormData} class="GiveHonorName"  placeholder="Name of Person to be Notified - Last Name">
                                         					</div>
 
-																<label class="checkbox-style">Send a card in the mail.
-																	<input type="checkbox"  name="CheckboxForAddress" onchange={ShowCardSendAddress}>
+																	<label class="checkbox-style">Send a card in the mail.
+																	<input type="checkbox"  name="CheckboxForAddress" onchange={ShowCardSendAddress} checked={CardSendAddress}>
 																	<span class="checkmark"></span>
 																</label>
-																<template if:true={CardSendAddress}>
+																	<template if:true={CardSendAddress}>
+																		<div class="name-input">
+																			<label>Street Address</label>
+																			<input class="SendMailAddInput" data-id="SendMailingStreet" value={SendMailingStreet} name="Street Address" onchange={getFormData}  type="text" placeholder="Street Address"></input>
+																			<input  data-id="SendMailingApartment" value={SendMailingApartment} name="Apartment" onchange={getFormData} type="text" placeholder="Apartment / Suite / Floor"></input>
+																			<br>
+																			<label>City</label>
+																			<input  data-id="SendMailingCity" value={SendMailingCity} name="City" onchange={getFormData} type="text" placeholder="City"></input>
+																			<div class="Sendstate">
+																				<div>
+																					<label>State</label>
+																					<input data-id="SendMailingState" value={SendMailingState} name="State" onchange={getFormData} type="text" placeholder="State"></input>
+																				</div>
+																				<div>
+																					<label data-id="MailingPostalCode-label" >ZIP / Postal Code</label>
+																					<input  data-id="SendMailingZipCode" value={SendMailingZipCode} name="ZipCode" onchange={getFormData} type="number" min="6" max="6" placeholder="ZIP/Postal Code"></input>
+																				</div>
+																			</div>
+																			<label>Country</label>
+																			<input  data-id="SendMailingCountry" name="Country" onchange={getFormData} value={SendMailingCountry} type="text" placeholder="Country"></input>
+
+
+																			<!--<label for="SendMailAddress">Address</label>
+																		<label for="SendMailingStreet">Street Address</label>
+																		<input type="text" id="SendMailingStreet" data-id="SendMailingStreet" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing Street" value={SendMailingStreet} />
+
+																		<label for="SendMailingCity">City</label>
+																		<input type="text" id="SendMailingCity" data-id="SendMailingCity" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing City" value={SendMailingCity} />
+
+																		<label for="SendMailingState">State</label>
+																		<input type="text" id="SendMailingState" data-id="SendMailingState" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing State/Province" value={SendMailingState} />
+
+																		<label for="SendMailingZipCode">Zip/Postal Code</label>
+																		<input type="text" id="SendMailingZipCode" data-id="SendMailingZipCode" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing Zip/Postal Code" value={SendMailingZipCode} />
+
+																		<label for="SendMailingCountry">Country</label>
+																		<input type="text" id="SendMailingCountry" data-id="SendMailingCountry" onchange={getFormData} class="GiveHonorName" placeholder="Enter Mailing Country" value={SendMailingCountry} />
+
+																		
+																		<textarea data-id="SendMailAddress" onchange={getFormData}  class="GiveHonorName" placeholder="Give your complete Address here" >{RecipientAddress}</textarea> -->
+																		</div>
+																	</template>
 																	<div class="name-input">
-																		<label for="SendMailAddress">Address</label>
-																		<textarea data-id="SendMailAddress" onchange={getFormData}  class="GiveHonorName" placeholder="Give your complete Address here" >{RecipientAddress}</textarea>
+																		<label for="memoriesMessage">Description(Optional)</label>
+																		<textarea data-id="memoriesMessage" onchange={getFormData} class="GiveHonorName" placeholder="Give your message here (Optional)" >{memoMessage}</textarea>
 																	</div>
-																</template>
-																<div class="name-input">
-																	<label for="memoriesMessage">Description(Optional)</label>
-																	<textarea data-id="memoriesMessage" onchange={getFormData} class="GiveHonorName" placeholder="Give your message here (Optional)" >{memoMessage}</textarea>
-																</div>
 																	<div class="name-input">
-																<label for="tributePhoto">Celebrate special occasions, honor someone living with Parkinson's or remember someone special. Upload a photo to be included with your message that will be sent by email to the person above when they are notified of your gift.</label>
-																  </div>
-																<div class="memories-file">
-																	<input type='file' class="GiveHonorName"  data-id="memories-imgInput" onchange={openfileUpload}>
+																		<label for="tributePhoto">Celebrate special occasions, honor someone living with Parkinson's or remember someone special. Upload a photo to be included with your message that will be sent by email to the person above when they are notified of your gift.</label>
+																	</div>
+																	<div class="memories-file">
+																		<input type='file' class="GiveHonorName"  data-id="memories-imgInput" onchange={openfileUpload}>
                                         </div>
 										</template>
 
@@ -364,6 +422,13 @@
 										</div>
 										</div>
 										<div class="col-6">
+											<!-- <div class="payment-options-btn" data-id="bt"
+												onclick={paymentMethodHandler}>
+												<img src={bankTransferImg}>
+										             	Bank Transfer
+									               	</div> -->
+											</div>
+											<div class="col-6">
 
 											<div class="payment-options-btn" data-id="pp"
 												onclick={paymentMethodHandler}>
@@ -384,13 +449,13 @@
 													<div class="payment-options-btn" data-id="bt"
 														onclick={paymentMethodHandler}>
 														<img src={bankTransferImg}>
-											Bank Transfer
-										</div>
+										             	Bank Transfer
+									               	</div>
 													</div>
 												</div>
-											</div>
-										</div>
 									</div>
+								</div>
+							</div>
 				</template>
 			</template>
 			<template if:true={creditcard}>
@@ -440,17 +505,17 @@
             </div> -->
 		</div>
 
-			<template if:true={flowcall}>
-		<!-- <div class="payment-modal-container"> -->
+		<template if:true={flowcall}>
+			<!-- <div class="payment-modal-container"> -->
 			<div class="payment-modal-main">
 				<div class="payment-modal-close">
 					<span onclick={offpay}>&#10006;</span>
-					</div>
+				</div>
 				<lightning-flow flow-api-name={flowApiName} flow-input-variables={flowInputVariables}
 					onstatuschange={handleFlowStatusChange}>
 				</lightning-flow> <!-- Invoke a Screen flow in LWC -->
 			</div>
-		<!-- </div> -->
-	</template>
+			<!-- </div> -->
+		</template>
 	</div>
 </template>

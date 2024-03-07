@@ -2,21 +2,21 @@
     <div class="sub-nav">
 		<ul style="display:flex;margin-top: 1rem;" class="sub-nav-link">
 			<li>
-				<div data-id = 'lcs' onclick={pageChangeHandler}>Live Class Schedule</div>
+				<div data-id = 'lcs' onclick={pageChangeHandler} style="font-size:25px;">Live Class Schedule</div>
 				<template if:true={LiveClassSchedule}>
 
 					<div class="active-marker"></div>
 				</template>
 			</li>
 			<li>
-				<div data-id = 'cod' onclick={pageChangeHandler}>Classes on Demand</div>
+				<div data-id = 'cod' onclick={pageChangeHandler} style="font-size:25px;">Classes on Demand</div>
 				<template if:true={ClassesOnDemand}>
 
 					<div class="active-marker"></div>
 				</template>
 			</li>
             <li>
-				<div data-id = 'ins' onclick={pageChangeHandler}>Instructors</div>
+				<div data-id = 'ins' onclick={pageChangeHandler} style="font-size:25px;">Instructors</div>
 				<template if:true={Instructors}>
 					<div class="active-marker"></div>
 				</template>
@@ -26,7 +26,8 @@
 	</div>
 	<template if:true={ClassesOnDemand}>
 		<div class="browse-class">
-		<c-b-w-p-s_-w-i-p_-browse-classes filterclassid = {classId} fiterintensity ={intensityURL} onselectlive={LiveClassSchedule}></c-b-w-p-s_-w-i-p_-browse-classes>
+		<!-- <c-b-w-p-s_-w-i-p_-browse-classes filterclassid = {classId} fiterintensity ={intensityURL} onselectlive={LiveClassSchedule}></c-b-w-p-s_-w-i-p_-browse-classes> -->
+		<c-pfnca_-main_-browse-classes filterclassid = {classId} fiterintensity ={intensityURL} onselectlive={LiveClassSchedule}></c-pfnca_-main_-browse-classes>
 		</div>
 	</template>
 	<template if:true={Instructors}>

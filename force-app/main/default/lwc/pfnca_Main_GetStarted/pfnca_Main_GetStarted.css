@@ -1,5 +1,6 @@
 .container{
     background-color: #FFFFFF;
+    margin: 148px 0 0 0;
 }
 
 .main{
@@ -13,7 +14,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    height: 37rem;
+    height: 50rem;
     align-items: center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -68,7 +69,7 @@
     height: fit-content; */
     /* margin-top: 75px; */
     position: relative;
-    top: 15rem;
+    top: 25rem;
     right: 0rem;
     height: fit-content;
    

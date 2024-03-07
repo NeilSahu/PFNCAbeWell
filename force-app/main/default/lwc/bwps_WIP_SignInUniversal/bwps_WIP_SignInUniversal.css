@@ -16,9 +16,9 @@
 
 .form-container {
     display: flex;
-    gap: 3rem;
+    gap: 0rem;
     background-color: var(--colr-background);
-    padding: 6rem clamp(3rem, 6vw, 4rem);
+    /* padding: 6rem clamp(3rem, 6vw, 4rem); */
 
 }
 
@@ -32,13 +32,14 @@
 }
 
 .image-box {
-    flex: 1 1 auto;
+    /* flex: 1 1 auto; */
+    flex: 1 1 35%;
 }
 
 .image-box img {
     height: 100%;
     object-fit: cover;
-    border-radius: 3rem;
+    /* border-radius: 3rem; */
 }
 
 .main-box {
@@ -101,7 +102,7 @@
 .form-box {
     height: 100%;
     box-shadow: 0px 3px 6px #00000029;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background-color: #fff;
     padding: 4.5rem;
     display: flex;
@@ -188,8 +189,22 @@
     width: 100%;
 }
 
+/* To Show and Hide Password */
+.password-container {
+  position: relative;
+}
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+
 .input-box input {
     /* margin-bottom: 1rem; */
+    width: 100%;
     height: 3rem;
     border: 1px solid var(--colr-primary);
     padding-inline: 1rem;
@@ -212,6 +227,8 @@
 .remember-me {
     display: flex;
     gap: 1rem;
+    align-items: center;
+   
 }
 
 

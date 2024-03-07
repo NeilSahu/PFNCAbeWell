@@ -1,19 +1,10 @@
 .mainContainer{
     display: flex;
 }
-
 .hide {
   display: none;
 }
-
 .topButton {
-	/* font-size: 18px; */
-	/* border-radius: 4px; */
-	/* border: var(--lwc-brandAccessible);
-    color: white; */
-    /* width: 3rem;
-    height: 3rem;
-    margin-right: 1.5rem; */
     position: fixed;
     bottom: 20px;
     right: 30px;
@@ -23,19 +14,7 @@
     cursor: pointer;
     background-color: transparent;  
 }
-
-/* .topButton:hover {
-    background-color: #555;
-} */
-
-
 .downButton {
-	/* border: var(--lwc-brandAccessible);
-    color: white; */
-    /* width: 3rem;
-    height: 3rem; */
-	/* font-size: 18px; */
-	/* border-radius: 4px; */
     position: fixed;
     bottom: 20px;
     right: 95px;
@@ -45,11 +24,6 @@
     cursor: pointer;
     background-color: transparent;
 }
-
-/* .downButton:hover {
-    background-color: #555;
-} */
-
 @media only screen and (max-width: 1024px){
     .mainContainer{
         display: none;

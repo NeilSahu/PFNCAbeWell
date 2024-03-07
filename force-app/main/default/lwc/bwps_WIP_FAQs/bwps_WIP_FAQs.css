@@ -49,9 +49,10 @@
     position: relative;
     font-size: 1.375rem;
     font-weight: bold;
+    font-family: "IBM Plex Sans";
     /* padding: 1.7rem 0; */
     padding: 0 0 1.7rem 0;
-    border-bottom: 2px solid #008BA7;
+    border-bottom: 1px solid #008BA7;
     color: #000000;
     text-transform: uppercase;
 
@@ -60,9 +61,10 @@
 .faq-text{
     display: flex;
     justify-content: center;
+    font-family: "Playfair Display";
     font-size: 2.5rem;
     font-weight: 700;
-    color: white;
+    color:#ffffff;
     font: normal normal 900 60px/76px Playfair Display;
 }
 .search-content{
@@ -89,6 +91,8 @@
     height: 3rem;
     font-size: 1.125rem;
     padding-inline: 1rem;
+    font-family: "IBM Plex Sans";
+    color: #343a40;
     width: 17.5rem;
     border: 1px solid #008BA7;
 
@@ -119,6 +123,8 @@
     /* height: 2rem; */
     height: 2.625rem;
     user-select: none;
+    font-family: "IBM Plex Sans";
+    color: #ffffff;
 }
 .search-btn:hover{
   background-color: #036477;
@@ -133,6 +139,7 @@
 .p-questions-text{
     padding-block: 2.8rem;
     display: flex;
+    font-family: "Playfair Display";
     justify-content: center;
     font-size: 1.7rem;
     font-weight: 800;
@@ -155,6 +162,7 @@
     border-radius: 2px;
     color: #193A5A;
     cursor: pointer;
+    font-family: "IBM Plex Sans";
     background: #F5F7F4 0% 0% no-repeat padding-box;
     box-shadow: 0px 1px 2px #00000026;
     border-radius: 6px;
@@ -167,13 +175,15 @@
 .help-heading-text{
     font-weight: bold;
     font-size: 1.375rem;
-    color: black;
+    font-family: "IBM Plex Sans";
+    color: #193a5a;
+    
     text-transform: uppercase;
 }
 .hr-line:after {
     content: " ";
     display: block;
-    border-bottom: 2px solid #008BA7;
+    border-bottom: 1px solid #008BA7;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
@@ -250,6 +260,8 @@ details[open] summary ~ * {
     font-weight: bold;
     list-style: none;
     color: #008BA7;
+    font-family: "IBM Plex Sans";
+    /* color: #343a40; */
   }
   .hrlineset{
     width: 100%;
@@ -401,7 +413,7 @@ details[open] summary ~ * {
     border-top: 1rem solid #DEE2E6;
 }
 .slider::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #008BA7;
      border-top: 1rem solid transparent;
 }
 .slider::-webkit-scrollbar-thumb:hover {
@@ -506,6 +518,9 @@ aspect-ratio: 1.4/1;
     flex-direction: column;
     align-items: center;
     backdrop-filter: brightness(0.5);
+}
+.card-contents img{
+  margin-bottom: 24px;
 }
 
 

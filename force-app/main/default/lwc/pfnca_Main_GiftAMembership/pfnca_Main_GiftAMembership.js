@@ -5,16 +5,11 @@ import Imageicon from '@salesforce/resourceUrl/WIPlogo';
 import VisaLogo from '@salesforce/resourceUrl/VisaLogo';
 import creategiftMemberShip from '@salesforce/apex/BWPS_GiftmemberShipHelper.creategiftMemberShip';
 import registerUser from '@salesforce/apex/BWPS_GiftmemberShipHelper.registerUser';
-import forgotPassword from '@salesforce/apex/CommunityAuthController.forgotPassword';
 import CheckPaymentStatus from '@salesforce/apex/CommunityAuthController.CheckPaymentStatus';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import heroImage from '@salesforce/resourceUrl/headerHeroImages';
 
-import intTelInput from '@salesforce/resourceUrl/intTelInput';
-import imask from '@salesforce/resourceUrl/imask';
-import { loadScript, loadStyle } from 'lightning/platformResourceLoader';
 export default class Pfnca_Main_GiftAMembership extends LightningElement {
-
     @api OppId;
     @api OppIds;
     //@api GatewayId = 'a173C000002vIIv';
@@ -73,7 +68,7 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
     showFormStep3 = false;
     showFormStep4 = false;
 
-    amountValue =  50.00;
+    amountValue = 50;
     donationAmountValue = 0;
 
     nextStyle = `background-image: url(${this.next});background-position: center;width:5rem;height:5rem`;
@@ -81,75 +76,6 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
 
     stepcounter = 0;
     flowApiName = "PaymentAccept";
-
-    @track inputElem;
-    @track iti;
-    @track mask;
-
-
-    intializeLib(inputId) {
-        loadStyle(this, intTelInput + '/democss.css')
-            .then(() => {
-            });
-        loadStyle(this, intTelInput + '/intlTelInputcss.css')
-            .then(() => {
-            });
-
-        Promise.all([loadScript(this, intTelInput + '/utilsjs.js'), loadScript(this, imask), loadScript(this, intTelInput + '/intlTelInputjs.js')])
-            .then(() => {
-                //this.inputElem = this.template.querySelector("[data-id=phoneNumber]");
-                //this.inputElem = input;
-                this.inputElem = this.template.querySelector(`[data-id=${inputId}]`);
-                this.iti = window.intlTelInput(this.inputElem, {
-
-                    // utilsScript: utils,
-                    preferredCountries: ['US', 'IN'],
-                    separateDialCode: true,
-                    utilsScript: intTelInput + '/utilsjs.js',
-                });
-
-                // const countryData = window.intlTelInputGlobals.getCountryData();
-                // console.log('cd ', JSON.stringify(window.intlTelInputGlobals));
-                let firstMaskChange = false;
-                this.inputElem.addEventListener('countrychange', (event) => {
-                    var selectedCountryData = this.iti.getSelectedCountryData();
-
-                    console.log("selectedCountryData ", JSON.stringify(selectedCountryData, null, 2));
-                    let newPlaceHolder = intlTelInputUtils.getExampleNumber(selectedCountryData.iso2, true, intlTelInputUtils.numberFormat.INTERNATIONAL);
-                    this.iti.setNumber("");
-
-
-                    let newmask = newPlaceHolder.replace(/[1-9]/g, "0");
-
-
-                    if (firstMaskChange) {
-
-                        this.mask.destroy();
-
-                        var maskOptions = {
-                            mask: newmask
-                        };
-                        this.mask = IMask(this.inputElem, maskOptions);
-                        this.mask.updateValue()
-
-                    } else {
-                        firstMaskChange = true;
-
-                        var maskOptions = {
-                            mask: newmask
-                        };
-                        this.mask = IMask(this.inputElem, maskOptions);
-                        console.log('mask : ', this.mask.toString());
-                    }
-                });
-
-                this.iti.promise.then(() => {
-                    this.inputElem.dispatchEvent(new CustomEvent('countrychange'));
-                })
-
-            })
-    }
-
     get flowInputVariables() {
         console.log('this.OppId get ', this.OppId);
         return [
@@ -274,7 +200,7 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
     temp = {};
     async handleSubmit(event) {
         event.preventDefault();
-        try {
+        try{
             this.previousAvailable = true;
 
             this.FName3 = this.template.querySelector(`[data-id= 'FName3']`).value.trim();
@@ -339,7 +265,7 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
                 emailAddress3FieldElement.setCustomValidity('Invalid Email Address');
                 emailAddress3FieldElement.reportValidity();
                 this.scrollWindow(1000);
-            } else if (this.confirmemailAddress3 == '') {
+            }else if (this.confirmemailAddress3 == '') {
                 comfirmEmailAddress3FieldElement.setCustomValidity('Value Required');
                 comfirmEmailAddress3FieldElement.reportValidity();
                 this.scrollWindow(1000);
@@ -404,7 +330,6 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
                         "country": this.country,
                         "DonationType": this.DonationSelected,
                         "DonationAmount": Number(this.donationAmountValue) + Number(this.amountValue),
-                        "donateAmount": this.donationAmountValue,
                     },
                     "giftinfo": {
                         "Fname": this.FName3,
@@ -430,14 +355,10 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
                             this.showErrorToast();
                         }
                         else {
-                            let resultArray = result.split(',');
-                            this.OppId = resultArray[0];
-                            this.OppIds = resultArray[0];
-                            let accId = resultArray[1];
-                            let conId = resultArray[2];
+                            this.OppId = result;
+                            this.OppIds = result;
                             console.log('this.OppId ', this.OppId);
                             console.log('this.flowcall ', this.flowcall);
-                            this.updateProfile(accId, conId);
                             this.donationcreated = true;
                             //this.ShowToast();
                             this.flowcall = true;
@@ -449,29 +370,21 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
                     });
             }
         }
-        catch (error) {
-            console.log('error : ', error, error.message, JSON.stringify(error));
+        catch(error){
+            console.log('error : ',error, error.message , JSON.stringify(error));
         }
     }
 
-    async updateProfile(accId, conId) {
+    updateProfile() {
         console.log('update profile ', this.emailAddress3);
         if (this.emailAddress3) {
             console.log('insde update user ');
             let password = 'Parkinson&1User';
-            await registerUser({ firstName: this.FName3, lastName: this.lName3, email: this.emailAddress3, password: password, confirmPassword: password, conId: conId, accId: accId })
+            registerUser({ firstName: this.FName3, lastName: this.lName3, email: this.emailAddress3, password: password, confirmPassword: password })
                 .then((result) => {
                     console.log('result update profile ', result);
                     if (result == null && result == undefined) {
                         this.showErrorToast();
-                    }
-                    else {
-                        forgotPassword({ usernames: this.emailAddress3 })
-                            .then(result => {
-                                console.log('Resultt>> ', result);
-                            }).catch(e => {
-                                console.log('ERRRR>> ', e);
-                            })
                     }
                 })
                 .catch((error) => {
@@ -496,8 +409,7 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
                 this.showSpinner = false;
                 if (result == 'Approved') {
                     console.log('result inside if', result);
-                    //this.updateProfile();
-                    window.location.reload();
+                    this.updateProfile();
                 }
                 else if (result == 'Failed') {
                     console.log('result inside else if', result);
@@ -548,19 +460,9 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
 
     nextPreviousHandler(event) {
 
-        //this.intializeLib();
-
-        if (this.stepcounter == 0) {
-
-             this.intializeLib("phoneNumber");
-
-
-        } else if (this.stepcounter == 1) {
-            this.intializeLib("phoneNumber3");
-        }
-
-
         const nav = event.target.dataset.nav;
+
+
         if (nav == "previous") {
 
             if (this.stepcounter == 1) {
@@ -607,8 +509,8 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
                 var giftyearly;
                 var donationsingle;
                 var donationyearly;
-                //giftsingle = this.template.querySelector(`[data-id= 'giftone']`).checked;
-                //giftyearly = this.template.querySelector(`[data-id= 'giftyear']`).checked;
+                giftsingle = this.template.querySelector(`[data-id= 'giftone']`).checked;
+                giftyearly = this.template.querySelector(`[data-id= 'giftyear']`).checked;
                 this.amountValue = this.template.querySelector(`[data-id= 'amount']`).value.trim();
                 let amountFieldElement = this.template.querySelector(`[data-id= 'amount']`);
                 donationsingle = this.template.querySelector(`[data-id= 'donationone']`).checked;
@@ -669,7 +571,6 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
                 this.confirmemailAddress = this.template.querySelector(`[data-id= 'confirmemailAddress']`).value.trim();
                 let confirmEmailAddressFieldElement = this.template.querySelector(`[data-id= 'confirmemailAddress']`);
 
-
                 this.phoneNumber = this.template.querySelector(`[data-id= 'phoneNumber']`).value.trim();
                 let phoneNumberFieldElement = this.template.querySelector(`[data-id= 'phoneNumber']`);
 
@@ -717,7 +618,7 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
                     confirmEmailAddressFieldElement.setCustomValidity("Email did'nt match");
                     confirmEmailAddressFieldElement.reportValidity();
                     this.scrollWindow(1000);
-                } else if (this.phoneNumber == '') {
+                }else if (this.phoneNumber == '') {
                     phoneNumberFieldElement.setCustomValidity('Value Required');
                     phoneNumberFieldElement.reportValidity();
                     this.scrollWindow(1100);
@@ -829,7 +730,7 @@ export default class Pfnca_Main_GiftAMembership extends LightningElement {
                     emailAddress3FieldElement.setCustomValidity('Invalid Email Address');
                     emailAddress3FieldElement.reportValidity();
                     this.scrollWindow(1000);
-                } else if (this.confirmemailAddress3 == '') {
+                }else if (this.confirmemailAddress3 == '') {
                     confirmEmailAddress3FieldElement.setCustomValidity('Value Required');
                     confirmEmailAddress3FieldElement.reportValidity();
                     this.scrollWindow(1000);

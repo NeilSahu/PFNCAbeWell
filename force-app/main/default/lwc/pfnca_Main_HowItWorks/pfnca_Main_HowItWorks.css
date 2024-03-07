@@ -179,9 +179,16 @@ color: #ffffff;
         
         background-color: #036477;;
     }
+    .tablet-view{
+        display: none;
+    }
+    
 
 
 @media only screen and (max-width: 1200px) and (min-width: 1024px){
+    .tablet-view{
+        display: none;
+    }
     .row {
         display: flex;
         margin: 4rem 4rem 4rem 0rem;
@@ -319,6 +326,19 @@ color: #ffffff;
     }
 }
 @media only screen and (max-width: 1024px) and (min-width: 767px){
+     .desktop-view{
+        
+        display: none;
+    }
+    .tablet-view{
+      
+        display:block
+    }
+    .tab-margin-top{
+        margin-top: 24px;
+    }
+    
+    
     .row {
         display: flex;
         flex-direction: column;
@@ -333,9 +353,15 @@ color: #ffffff;
         font-weight: 900;
         font-size: 35px;
     }
-    .card-content{
-        width: 100%;
+    
+    .btn-container-width {
+        background-color: lightblue; /* Adjust the background color as needed */
+        /* width: calc(100% - 322px);  */
+        /* Calculate the width of the remaining space after the first column */
+        margin-bottom: 2rem;
+        margin-top: 79px;
     }
+    
     .box-blue-button {
         background-color: #008CA7;
         color: white;
@@ -343,6 +369,10 @@ color: #ffffff;
         height: auto;
         padding: 0.2rem;
     }
+
+
+
+
 
     .blue-button {
         padding: 0.5rem 2rem;
@@ -359,6 +389,7 @@ color: #ffffff;
         padding: 0.2rem;
         border: 1px solid #0091ab;
         margin-top: 2rem;
+        margin-left: 0px;
     }
 
     .white-button {
@@ -377,16 +408,18 @@ color: #ffffff;
     }
     .card-heading{
         margin-bottom: 2.5rem;
+        margin-left: 28px;
+       
     }
 
     .card-content{
-        
-        margin:0 4rem 5rem 0;
+        margin:3.5rem 4rem 5rem 1.75rem;
     }
 
     .span-content{
         margin-left: 1rem;
-        font-weight: 510;	
+        font-weight: 510;
+        	
     }
 
     .span-style{
@@ -452,7 +485,7 @@ color: #ffffff;
     }
 
     .box-white-button{
-        margin: 0 20px;
+        margin: 0 0px;
     }
 
     .white-button{
@@ -460,6 +493,18 @@ color: #ffffff;
     }
 }
 @media only screen and (max-width: 767px) and (min-width: 480px){
+    .desktop-view{
+    
+        display:none
+    }
+    .tablet-view{
+  
+        display:block
+    }
+     .tab-margin-top{
+        margin-top: 24px;
+    }
+    
     .row {
         display: flex;
         flex-direction: column;
@@ -500,13 +545,15 @@ color: #ffffff;
     }
     .card-heading{
         margin-bottom: 2.5rem;
-        background-color: yellow;
+         margin-left: 28px;
+       
+        
     }
     
 
     .card-content{
         
-        margin:0 4rem 5rem 0;
+        margin:3.5rem 4rem 5rem 1.75rem;
     }
 
     .span-content{
@@ -576,7 +623,10 @@ color: #ffffff;
     }
 }
 @media only screen and (max-width: 480px){
-    
+     
+    .desktop-view{
+        display: block;
+    }
     .row {
         display: flex;
         flex-direction: column;

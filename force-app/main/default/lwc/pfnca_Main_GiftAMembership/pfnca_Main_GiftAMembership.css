@@ -8,7 +8,7 @@
 	--colr-light-gray: #DEE2E6;
 	--colr-medium-gray: #C6C6C6;
 	--colr-background: #F5F7F4;
-	--colr-black: #161212;
+	--colr-black: #000000;
 	--colr-regular-font: #343a40;
 	--colr-primary-lighter: #008BA74D;
 }
@@ -43,8 +43,15 @@ input::-webkit-inner-spin-button {
 }
 
 .main h2 {
-	font-size: 3rem;
-	font-weight: bold;
+	/* font-size: 3rem;
+	font-weight: bold; */
+	font-family: "Playfair Display";
+font-size: 60px;
+font-weight: 900;
+line-height: 76px;
+font-style: normal;
+text-align: left;
+color: #000000;
 }
 
 .form-box-container {
@@ -59,17 +66,9 @@ input::-webkit-inner-spin-button {
 
 .form-steps {
 	display: flex;
-	justify-content:space-between;
-	
-    flex-direction: row;
+	justify-content: space-between;
 	width: 100%;
 	max-width: 60rem;
-	
-}
-
-.form-steps > div {
-    flex-grow: 1;
-    text-align: center; 
 }
 
 .step {
@@ -145,7 +144,7 @@ input::-webkit-inner-spin-button {
 	padding: 1rem;
 	font-size: 1rem;
 	text-align: center;
-	margin-right: 190px;
+	margin-right: 350px;
 }
 
 .order-summary div :last-child {
@@ -167,20 +166,20 @@ input::-webkit-inner-spin-button {
 
 .input-box {
 	display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 590px;
-    margin-top: 2rem;
-    padding-left: 229px;
+	flex-direction: column;
+	gap: 0.8rem;
+	width: 100%;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	margin-left: 355px;
 }
 
 .input-box input {
-	margin-bottom: 1rem;
+	/* margin-bottom: 1rem; */
 	height: 3rem;
 	border: 1px solid var(--colr-primary);
 	font-size: 1.125rem;
 	padding: 0 1rem;
-	
 }
 
 .input-box label {
@@ -220,8 +219,8 @@ input::-webkit-inner-spin-button {
 }
 
 .additional-info {
-    margin-bottom: 2rem;
-    padding-left: 228px;
+	margin-bottom: 2rem;
+	margin-left: 355px;
 	font-family: "IBM Plex Sans";
 font-size: 16px;
 font-weight: normal;
@@ -234,7 +233,7 @@ color: #343a40;
 	position: relative;
 	display: flex;
 	gap: 6rem;
-	padding-left: 223px;
+	margin-left: 355px;
 
 }
 
@@ -360,17 +359,9 @@ button:hover {
 
 .form h4 {
 	width: 100%;
-	/* font-size: 1rem;
-	font-weight: bold; */
-	/* margin: 3rem 0rem 2rem; */
-	
-font-family: "IBM Plex Sans";
-font-size: 16px;
-font-weight: normal;
-font-style: normal;
-text-align: left;
-color: #343a40;
-margin-top: 35px;
+	font-size: 1rem;
+	font-weight: bold;
+	margin: 3rem 0rem 2rem;
 }
 
 .input-radio-box input {
@@ -449,11 +440,6 @@ margin-top: 35px;
 	.form {
 		width: 100%;
 	}
-	.form-steps {
-        flex-direction: row;
-        align-items: center;
-		padding-inline: 123px;
-    }
 
 	.order-summary {
 

@@ -9,7 +9,7 @@ p{
 .ins_Master{
 	width: auto;
 	height: auto;
-    margin-top: 87px;
+    margin-top: 135px;
     position: relative;
 }
 .intro{
@@ -44,39 +44,43 @@ p{
     font-style: normal;
     text-align: center;
     color: #343a40;
-    margin-top: 24px;
+    margin-top: 25px;
 }
 .slider-container{
-    margin: 66px 21px 0 21px;
-    padding: 0px 30px;
+    margin: 69px 55px 0 55px;
     position: relative;
 }
 
 .prev {
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     border-color: #c6c6c6;
     border-width: 1px;
     border-style: solid;
     border-radius: 6px;
     filter: drop-shadow(0px 5px 7.5px rgba(0,0,0,0.15 ));
-    background: #f5f7f4
+    background: #f5f7f4;
+    padding: 12px 20px;
+    color: #193a5a;
+    font-weight: 900;
 }
 .next {
     position: absolute;
     right: 0;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     border-color: #c6c6c6;
     border-width: 1px;
     border-style: solid;
     border-radius: 6px;
     filter: drop-shadow(0px 5px 7.5px rgba(0,0,0,0.15 ));
-    background: #f5f7f4
+    background: #f5f7f4;
+    padding: 12px 20px;
+    color: #193a5a;
+    font-weight: 900;
 }
-
 .slider {
     /* height: 350px; */
     /* overflow-x: none !important; */
@@ -98,17 +102,21 @@ p{
     position: relative;
     padding: 0px 30px; */
 
-    width: 100%;
+    width: 85%;
     height: auto;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    margin: 0 auto;
+    gap: 0 48px;
+    transform: rotateX(180deg);
+    scrollbar-width: none;
 }
 .slider::-webkit-scrollbar {
-    height: 25px;
+    height: 17px;
     width: 2rem;
     display: none;
 }
@@ -119,16 +127,12 @@ p{
     background: #008ba7;
 }
 .slider::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    /* background: #555; */
+    background: #dee2e6;
 }
 .slide {
     position: relative;
     scroll-snap-align: start;
-
-    width: 120px;
-    height: 100px;
-    margin: 1px 10px;
-    overflow: hidden;
 }
 .slide > div{
     /* width: 21.5rem;
@@ -162,6 +166,7 @@ p{
     font-style: normal;
     text-align: left;
     color: #008ba7;
+    padding: 13.5px 0;
 }
 .inst-type{
     font-family: "IBM Plex Sans";
@@ -174,7 +179,115 @@ p{
     letter-spacing: 0px;
     opacity: 1;
 }
-.slider-button-box{
+
+/* Tablet Media */
+@media only screen and (max-width: 1200px) and (min-width:480px ){
+
+    .ins_Master{
+        margin-top: 80px;
+    }
+    .main_intro >h1{
+        font-family: "Playfair Display";
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 40px;
+        font-style: normal;
+        text-align: center;
+        color: #000000;
+    }
+    .sub-intro{
+        /* margin: 4px auto; */
+        /* color: rgb(32 29 29 / 60%);
+        font-size: 1.3rem; */
+        width: 50%;
+        transform: translateX(50%); 
+        opacity: 0.80;
+        font-family: "IBM Plex Sans";
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 28px;
+        font-style: normal;
+        text-align: center;
+        color: #343a40;
+        margin-top: 21px;
+    }
+    .slider-container{
+        margin: 69px 40px 0 40px;
+    }
+    .prev{
+        padding:8px 16px;
+    }
+    .next {
+        padding:8px 16px;
+    }
+}
+
+/* Mobile Media */
+@media only screen and (max-width: 480px) and (min-width: 320px){
+     .ins_Master{
+        margin-top: 95px;
+    }
+    .main_intro >h1{
+        font-family: "Playfair Display";
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 32px;
+        font-style: normal;
+        text-align: center;
+        color: #000000;
+    }
+    .sub-intro{
+        width: unset;
+        transform: none; 
+        opacity: 0.80;
+        font-family: "IBM Plex Sans";
+        font-size: 20px;
+        font-weight: normal;
+        line-height: 28px;
+        font-style: normal;
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+    .slider-container{
+        margin: 50px 10px 0 10px;
+    }
+    .prev{
+        padding:4px 12px;
+    }
+    .next {
+        padding:4px 12px;
+    }
+    .slider {
+        width: 70%;
+    }
+    .card {
+        width: 12.5rem;
+    }
+    
+    .instimg{
+        width: 264px;
+        height: 260px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .slider-button-box{
     display: flex;
     justify-content: center;
     margin: 2rem;
@@ -208,26 +321,14 @@ p{
     width: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 .slider-container-1{
 	margin: 2% auto;
 	overflow: hidden;
-}
+} */
 
 
 /* grids */
-* {
+/* * {
 box-sizing: border-box;
 }
 h1{
@@ -245,11 +346,11 @@ display: table;
 [class*="col-"] {
 float: left;
 padding:0px 0px;
-}
+} */
 
 
 /* For Desktops: */
-.col-1 {width: 8.33%;}
+/* .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}
 .col-3 {width: 25%;}
 .col-4 {width: 33.33%;}
@@ -260,7 +361,7 @@ padding:0px 0px;
 .col-9 {width: 75%;}
 .col-10 {width: 83.33%;}
 .col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+.col-12 {width: 100%;} */
 /* SLIDER */
 
 
@@ -276,169 +377,8 @@ padding:0px 0px;
 
 
 
-@media only screen and (max-width: 1200px) and (min-width:1024px ){
-/* For mobile phones: */
-[class*="col-"] {
-width: 50% !important;
-}
-.parent-instructor > .card{
-max-width: 50% !important;
-}
-.box-slid-button {
-    display: none;
-}
-.TimeList{
-    overflow-x: scroll;
-}
- .slider::-webkit-scrollbar {
-        display: block;
-        color: #008bA7;
-        /* width: 5rem;
-        border-radius: 11px; */
-    }
-    .slider::-webkit-scrollbar-thumb {
-       display: block;
-        color: #008bA7;
-        width: 5rem;
-        border-radius: 11px;
-    }
-    .slider-button-box {
-        display: none;
-    }
-    .slide > div{
-        width: 19.5rem;
-        margin-left: 3%;
-    }
-    .slider{
-        margin-top: 4%;
-    }
-}
-@media only screen and (max-width: 1024px) and (min-width:768px ){
-/* For mobile phones: */
-[class*="col-"] {
-width: 50% !important;
+/* ------------------------------------------------------------------------- */
 
-}
-.TimeList{
-    overflow-x: scroll;
-}
-.parent-instructor > .card{
-    max-width: 50% !important;
-    }
- .slider::-webkit-scrollbar {
-        display: block;
-        color: #008bA7;
-        /* width: 5rem;
-        border-radius: 11px; */
-    }
-    .slider::-webkit-scrollbar-track {
-       background: #DEE2E6;
-        border-radius: 11px;
-    }
-    .slider::-webkit-scrollbar-thumb {
-       display: block;
-        color: #008bA7;
-        width: 5rem;
-        border-radius: 11px;
-    }
-    .slider-button-box {
-        display: none;
-    }
-    .slide > div{
-        width: 19.5rem;
-        margin-left: 3%;
-    }
-    .slider{
-        margin-top: 4%;
-    }
-.main_intro >h1{
-    font-size: 2rem !important;
-    white-space: nowrap;
-    }
-	  .main_intro{
-        width: 60% !important;
-    }
-    .box-slid-button {
-        width: 19% !important;
-    }
-  
-    .sub-intro{
-        /* font-size: 11px !important; */
-        font-size: 16px !important;
-   
-     }
-     
-}
-@media only screen and (max-width: 768px) and (min-width: 0px) { /*480px*/
-/* For mobile phones: */
-[class*="col-"] {
-width: 100% !important;
-}
-.TimeList{
-    overflow-x: scroll;
-}
-.parent-instructor {
-    padding: 10px 2rem !important;
-}
-.parent-instructor > .card{
-max-width: 100% !important;
-}
-.box-slid-button {
-display: none;
-}
-.parent-instructor > .card >.name-exp > h1{
-font-size: 1rem !important;
-}
-.parent-instructor > .card >.name-exp > p{
-font-size: 0.7rem !important;
-}
-.main_intro{
-    width: 100% !important;
-}
-.br_br{
-    display: none;
-}
-.main_intro > h1{
-    font-size: 1.5rem !important;
-    }
-    .sub-intro{
-        width: 100% !important;
-        font-size: 18px !important; 
-        }
-        .slider-container-1{
-        margin: 1% auto !important;
-        
-        }
-        .parent-instructor > .card{
-            padding-top: 0% !important;
-            }
-            .slidecontainer {
-                display: block !important;
-                }
-    .slider::-webkit-scrollbar {
-        display: block;
-        color: #008bA7;
-        /* width: 5rem;
-        border-radius: 11px; */
-    }
-    .slider::-webkit-scrollbar-track {
-       background: #DEE2E6;
-        border-radius: 11px;
-    }
-    .slider::-webkit-scrollbar-thumb {
-       display: block;
-        color: #008bA7;
-        width: 5rem;
-        border-radius: 11px;
-    }
-    .slider-button-box {
-        display: none;
-    }
-    .slide > div{
-        width: 19.5rem;
-        margin-left: 3%;
-    }
-}
 /*@media only screen and (max-width: 480px) and (min-width:320px ){
 /* For mobile phones: 
 [class*="col-"] {
@@ -463,22 +403,22 @@ max-width: 100% !important;
 
 
 
+/* ----------------------------------------------------------------- */
 
+/* overflow-y: hidden; */
+/*scroll-snap-type: x mandatory;*/
 
-
-.parent-instructor{
+/* .parent-instructor{
 padding: 0px 2rem;
 margin-top: 28px;
 align-items: stretch;
 display: flex;
 flex-direction: row;
-/* overflow-y: hidden; */
 overflow: scroll;
 overflow-x: scroll;
 overflow-y: hidden;
 position: relative;
 scroll-behavior: smooth;
-/*scroll-snap-type: x mandatory;*/
 -ms-overflow-style: none;
 scrollbar-width: none;   
 }
@@ -532,8 +472,8 @@ transform: translateX(-50%);
 width: 90%;
 display: none;
 margin: 1% auto;
-}
-
+} */
+/* ------------------------------------------------------------------ */
 /* .slider {
 -webkit-appearance: none;
 width: 100%;

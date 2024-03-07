@@ -14,37 +14,30 @@
 }
 
 .nav {
-    /* padding: 0 4rem; */
     width: 100% !important;
     background-color: var(--pfnca-color-white);
     top: 0;
     left: 0;
     padding:1rem 4rem;
     height: 124px;
-     position: fixed; 
+    position: fixed; 
     z-index: 1;
 }
 
 .shadow-bottom {
-    /* box-shadow: 0 5px 5px -7px #333; */
     filter: drop-shadow(0px 5px 7.5px rgba(0,0,0,0.15 ));
 }
 
 .nav .header-logo {
-    /* padding: 0.5rem 2rem 0.5rem 0rem; */
     float: left;
     padding: 0rem 4rem 0rem 0rem;
 }
 
 .nav .nav-links {
-    /* font-size: 17px; */
     display: inline;
 }
 
 .nav>.nav-links>a {
-     /*top 33 to 26*/
-    /* padding: 26px 4px 13px 4px;  */
-    /* color: #000000b7; */
     display: inline-block;
     text-decoration: none;
 }
@@ -63,7 +56,6 @@ a:hover{
 }
 
 .homeNav{
-  /* padding-top: 40px !important; */
   padding: 2.5rem 0rem 2.5rem 1rem;
 }
 
@@ -72,11 +64,6 @@ a:hover{
 }
 
 .menuItemClass{
-    /* cursor: pointer;
-    color: #008BA7;
-    font-weight: 500;
-    font-size: 1rem;
-    margin-inline: 0.25rem; */
     font-family: var(--pfnca-font-family-ibm-plex-sans);
     font-size: 16px;
     font-weight: 500;
@@ -92,13 +79,11 @@ a:hover{
 }
 
 .rightlink {
-    /* padding-top: 5px; */
     float: right !important;
     padding: 1.5rem 0.75rem 1.5rem 0.75rem;
 }
 
 .box-white-button {
-    /* color: white; */
     background-color: var(--pfnca-color-white);
     width: inherit;
     height: auto;
@@ -125,7 +110,6 @@ a:hover{
 }
 
 .box-blue-button {
-    /* color: white; */
     background-color: var(--pfnca-color-primary);
     width: inherit;
     height: auto;
@@ -167,7 +151,6 @@ a:hover{
         padding: 0rem 1rem 0rem 0rem;
     }
 }
-/* ---------------------------------------------------------------------------------------------------- */
 
 /* Tablet */
 .nav{
@@ -185,14 +168,11 @@ a:hover{
 }
 
 .tablet-top{
-    /* margin-top: 3rem; */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .tablet-top > span{
-    /* width: 3rem;
-    height: 3rem; */
     width: 4rem;
     height: 4rem;
     background-position: center;
@@ -227,7 +207,6 @@ a:hover{
     
 }
 .tablet-top span,.tablet-main span{
-    /* font-size: 1.125rem; */
     font-family: "IBM Plex Sans";
     font-size: 18px;
     font-weight: normal;
@@ -249,7 +228,6 @@ a:hover{
    height: 2.5rem;
    width: 2.5rem;
 }
-
 .tablet-menu-hemburger span{
     font-family: "IBM Plex Sans";
     font-size: 16px;
@@ -258,43 +236,12 @@ a:hover{
     text-align: center;
     color: #008ba7;
 }
-
 .rightlink{
     padding: 0.75rem;
 }
 
 /* tablet Media*/
-@media only screen and (max-width: 1200px) and (min-width: 1024px){
-    .desktop-header-container{
-        display:none;
-    }
-    .tablet-header-container{
-        display:flex;
-    }
-    .mobile-header-container{
-        display: none;
-    }
-    /* .nav{ 
-         padding: 21px 4px 13px 4px; 
-        padding: 1.5rem 3rem 1.5rem 3rem; 
-     } 
-     .tablet-menu-hemburger { 
-         margin: 2rem 0px  0px 0px  !important;
-    } */
-}
-@media only screen and (max-width: 1024px) and (min-width: 768px){
-    /* 
-     .leftlink{
-        display: none !important;
-    }
-    .nav{ 
-        padding: 0px; 
-         padding: 1.5rem 3rem 1.5rem 3rem; 
-     } 
-     .tablet-menu-hemburger { 
-         margin: 2rem 0px  0px 0px  !important; 
-     } */
-  
+@media only screen and (max-width: 1200px) and (min-width: 768px){
     .desktop-header-container{
         display:none;
     }
@@ -306,23 +253,6 @@ a:hover{
     }
 }
 @media only screen and (max-width: 768px) and (min-width: 480px){
-    /* .nav{ 
-         padding: 0 1.8rem; 
-     padding: 1.5rem 3rem 1.5rem 3rem; 
-     } 
-     .nav .header-logo img{
-        width: 7.2rem;
-    }
-    .nav > .nav-links > a{
-        padding: 16px 4px 16px 7px;
-    }
-    .white-button{
-        padding: 0 0.2rem;
-    }
-    .blue-button{
-        padding: 0 0.2rem;
-    } */
-
     .desktop-header-container{
         display:none;
     }
@@ -337,13 +267,9 @@ a:hover{
     }   
 }
 
-/* -------------------------------------------------------------------------------------------------------------------------- */
-
 /* Mobile */
 /* Mobile header top */
 .m-header-top{
-    /* gap: 2rem; */
-    /* width: calc(100% - 1rem); */
     background-color: white;
     position: fixed;
     top: 0;
@@ -356,24 +282,16 @@ a:hover{
     height: 6.5rem;
     padding:1.3rem 1.3rem;
 }
-
-.m-header-logo{
-    /* width: 7rem; */
-}
-
 .m-active-menu{
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 20px;
 }
-
 .m-active-menu img{
     width: 3rem;
 }
 .m-active-menu span{
-    /* color: var(--colr-primary);
-    font-weight: bold; */
     font-family: "IBM Plex Sans";
     font-size: 12px;
     font-weight: bold;
@@ -382,11 +300,7 @@ a:hover{
     text-align: center;
     color: var(--pfnca-color-primary);
 }
-
 .m-blue-button{
-    /* font-size: 0.8rem; */
-    /* font-weight: bold; */
-    /* color: white; */
     height: 2rem;
     padding-inline: 1rem;
     background-color: var(--pfnca-color-primary);
@@ -401,15 +315,11 @@ a:hover{
     color: #ffffff;
 }
 .m-blue-button:hover{
-     /* outline: transparent; */
     background-color: var(--pfnca-color-primaryDarker);
 }
 
 /* header main */
 .m-header-main{
-    /* background-color: var(--dxp-g-success); */
-    /* width: 100%; */
-    /* margin-top: 4rem; */
     display: none;
     background-color: #F5F7F4;
     height: calc(100vh - 4rem);
@@ -419,7 +329,6 @@ a:hover{
     right: 0;
     z-index: 9;
 }
-
 .m-nav-top{
     margin-top: 1.5rem;
     display: flex;
@@ -443,11 +352,7 @@ a:hover{
     text-align: center;
     color: #008ba7;
 }
-
 .m-nav-top span,.m-nav-main span{   
-    /* font-size: 1.125rem;
-    text-align: center; */
-    /* line-height: 52px; */
     font-family: "IBM Plex Sans";
     font-size: 18px;
     font-weight: normal;
@@ -455,10 +360,6 @@ a:hover{
     text-align: center;
     color: #008ba7;
 }
-.m-nav-top span:hover,.m-nav-main span:hover{
-    /* font-weight: bold; */
-}
-
 .m-nav-main{
     display: grid;
     gap: 1rem;
@@ -466,7 +367,6 @@ a:hover{
     place-items: center;
     padding: 1rem;
 }
-
 .m-nav-main .m-nav-link{
     display: flex;
     flex-direction: column;
@@ -480,8 +380,6 @@ a:hover{
 
 /* header bottom */
 .m-header-bottom{
-    /* box-shadow: 0px -3px 15px #00000026; */
-    /* width: calc(100% - 1rem); */
     height: 4rem;
     background-color: #F5F7F4;
     position: fixed;
@@ -516,9 +414,6 @@ a:hover{
     display: none;
 }
 .m-white-button {
-    /* font-size: 0.8rem; */
-    /* font-weight: bold; */
-    /* color: white; */
     height: 2rem;
     padding-inline: 1rem;
     background-color: var(--pfnca-color-white);
@@ -532,7 +427,6 @@ a:hover{
     text-align: center;
     color: var(--pfnca-color-primary);
 }
-
 .m-white-button:hover{
     background-color: var(--pfnca-color-lightGrey); 
 }
@@ -553,55 +447,23 @@ a:hover{
     }
 
 }
-@media only screen and (max-width: 320px){
-    .desktop-header-container{
-        display:none;
-    }
-    .tablet-header-container{
-        display:none;
-    }
-    .mobile-header-container{
-        display: block;
-    }
-      .leftlink{
-        display: none !important;
-    }
-}
-
 .font-800{
     font-weight: 800 !important;
 }
-
 .donateDisableClass{
     pointer-events: none;
 }
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
-.buttonContainer{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
-.buttonInnerClass{
-    border: 1px solid white;
-    background-color: #008BA7;
-    width: 7rem;
-}
-.buttonOutterClass{
-    border: 1px solid #008BA7;
-    padding: 1px;
-    background-color: #008BA7;
-    width: fit-content;
-}
+/* will need in profile , don't delete */
 /* Profile Menu Container CSS */
-.mainProfileMenuContainer{
+/* .mainProfileMenuContainer{
     display: flex;
     justify-content: end;
     width: 100%;
 }
 .mainContainer{
-    padding: 0% 0%;
     width: 14rem;
     position: fixed;
     z-index: 1;
@@ -644,3 +506,19 @@ a:hover{
     height: 100%;
     width: 100%;
 }
+.buttonContainer{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.buttonInnerClass{
+    border: 1px solid white;
+    background-color: #008BA7;
+    width: 7rem;
+}
+.buttonOutterClass{
+    border: 1px solid #008BA7;
+    padding: 1px;
+    background-color: #008BA7;
+    width: fit-content;
+} */

@@ -5,7 +5,7 @@
 			<template if:true={card1}>
 				<div class="card">
 					<div class="card-heading">
-						<img src={secureDonationImageUrl} height="25px" width="25px">
+						<img src={secureDonationImageUrl}  height="25px" width="25px">
 						<h3>SECURE DONATION</h3>
 					</div>
 					<div class="page-navigator">
@@ -30,8 +30,8 @@
 						<label data-id="confirm-email-label">Confirm Email Address* </label>
 						<input  data-id="ConfirmEmail" value={ConfirmEmail} name="ConfirmEmailAddress" type="email" onchange={getFormData} placeholder="Confirm Email Address" required></input>
 						<label data-id="phone-label">Phone Number *</label>
-						<!-- <input  type="tel" data-id="Phone"  name="Phone" onchange={getFormData} value={Phone} required></input> -->
-						<input  data-id="Phone" name="Phone" type="number" value={Phone} onchange={getFormData}  min="10" max="10" placeholder="Phone Number" required></input>
+						<input  type="tel" data-id="Phone"  name="Phone" onchange={getFormData} value={Phone} required></input>
+						<!-- <input  data-id="Phone" name="Phone" type="number" value={Phone} onchange={getFormData}  min="10" max="10" placeholder="Phone Number" required></input> -->
 
 					</div>
 					<div class="navigate-buttons">
@@ -422,22 +422,22 @@
 										</div>
 										</div>
 										<div class="col-6">
-											<div class="payment-options-btn" data-id="bt"
+											<!-- <div class="payment-options-btn" data-id="bt"
 												onclick={paymentMethodHandler}>
 												<img src={bankTransferImg}>
 										             	Bank Transfer
-									               	</div>
+									               	</div> -->
 											</div>
-											<!--<div class="col-6">
+											<div class="col-6">
 
 											<div class="payment-options-btn" data-id="pp"
 												onclick={paymentMethodHandler}>
 												<img src={payPalImg}>
 											PayPal
 										</div>
-											</div>-->
+											</div>
 										</div>
-										<!--<div class="row">
+										<div class="row">
 											<div class="col-6">
 												<div class="payment-options-btn" data-id="gp"
 													onclick={paymentMethodHandler}>
@@ -452,7 +452,7 @@
 										             	Bank Transfer
 									               	</div>
 													</div>
-												</div>-->
+												</div>
 									</div>
 								</div>
 							</div>

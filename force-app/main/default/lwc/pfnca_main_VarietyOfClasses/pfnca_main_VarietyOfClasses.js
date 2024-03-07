@@ -14,23 +14,25 @@ export default class Pfnca_main_VarietyOfClasses extends LightningElement {
     img4 = `${VarietyOfClasses}/SOCIALIZATION.png`;
 
     get typesOfClassesLink(){
-        return "/pfnca/pfnca-main-howtoparticipate?active=toc";
+       return "/pfnca/pfnca-main-howtoparticipate?active=toc";
     }
     @track Arr = [];
     @wire(FetchRecordType)
-    wiredRec({data,error}){
+     wiredRec({data,error}){
         if(data){
         var data = data;
         console.log('OUTPUT REC: ',JSON.stringify(data));
         function removeDuplicates(data) {
             let unique = [];
             data.forEach(element => {
-                if (!unique.includes(element.RecordType.Name)) {
+                if (element.RecordType && element.RecordType.Name && !unique.includes(element.RecordType.Name)) {
                     unique.push(element.RecordType.Name);
                 }
             });
             return unique;
         }
+
+
         var recordTypes =  removeDuplicates(data);
         recordTypes.forEach(rec => {
                 rec = rec.toUpperCase() ;

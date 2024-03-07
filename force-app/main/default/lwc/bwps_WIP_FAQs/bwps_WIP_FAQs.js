@@ -16,6 +16,10 @@ export default class Bwps_WIP_FAQs extends LightningElement {
     response = [];
     faqsresponse = [];
     searchFilterResponse =[];
+    searchresultLength = 0;
+    searchresultboardershow = true;
+    Faqsearchlength = 0;
+    faqsearchresultline = false;
     popularQue =[];
     // BgImage = `${CAROUSEL_IMAGES}/WebsiteGeneralFiles/pxfuelcom.jpg`;
     bgImgStyle = `background-image: url(${Bg_IMAGES}/HeaderImage.png)`;
@@ -56,6 +60,11 @@ export default class Bwps_WIP_FAQs extends LightningElement {
         fetchFaqsDetails({ faqsType: this.FAQsHeading })
             .then((result) => {
                 this.response = result;
+                 this.Faqsearchlength = this.response.length();
+        if(this.Faqsearchlength == 1){
+          this.faqsearchresultline = true;
+        }
+
                 console.log("lo1", this.response);
             })
             .catch((error) => {
@@ -140,21 +149,38 @@ export default class Bwps_WIP_FAQs extends LightningElement {
     const searchData = event.target.innerText;
 
     this.searchFilterResponse = this.faqsresponse.filter((ele)=> ele.Name.toLowerCase().includes(searchData.toLowerCase()));
+     this.searchresultLength = this.searchFilterResponse.length;
+    console.log('searchresultLength lenght ',this.searchresultLength);
+    if(this.searchresultLength == 1){
+          this.searchresultboardershow = false;
+        }
 
     }
+     handleKeyPress(event){
+    if(event.keyCode === 13){
+      this.handlesearch();
+    }
+  }
+  handleClearSerach(){
+      this.template.querySelector(`[data-id= 'searchInput']`).value = "";
+      this.handlesearch();
+  }
     handlesearch() {
 
 
         const searchData = this.template.querySelector(`[data-id= 'searchInput']`).value.trim();
         
         if(searchData == ''){
-            return
+            this.showSearchMode = false;
+            return 
         }
 
       this.showSearchMode = true;
       this.searchFilterResponse = this.faqsresponse.filter((ele)=> ele.Name.toLowerCase().includes(searchData.toLowerCase()));
-
-
+        this.searchresultLength = this.searchFilterResponse.length;
+        if(this.searchresultLength == 1){
+          this.searchresultboardershow = false;
+        }
     }
 
     handleGoBack(){

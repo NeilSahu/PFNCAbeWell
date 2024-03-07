@@ -4,9 +4,12 @@
 	<c-pfnca_-main_-dynamic-hero title="How It Works" img-url={heroImage} isbutton="true" buttontext="GET GUEST PASS"></c-pfnca_-main_-dynamic-hero>
 
 	<div>
+		<!-- desktop / mobile view for how to participate -->
+		<div class="desktop-view">
 		<div class="row">
+			<!-- this will for desktop n mobile -->
 			<div class="column">
-				<div class="card-content-parent">
+				<div class="card-content-parent" >
 					<div class="txt-container-width">
 						<div class="card-heading">
 							<div class="sub-card-heading">How to Participate</div>
@@ -39,6 +42,7 @@
 				</div>
 				<hr class="card-line">
 			</div>
+			<!--here tablet view ends -->
 			<div class="column" style={participateBackground}>
 				<div class="image-background">
 					<div class="icon-position">
@@ -52,8 +56,139 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>	
 		</div>
+		</div>
+<!-- desktop / mobile view for how to participate ends-->
+
+<!-- tablet view for how to participate -->
+	<div class="tablet-view">
+    <!-- First Row -->
+    <div class="row">
+    <!-- First Column -->
+    <div class="column" style="display: flex;">
+        <!-- First Part (50%) -->
+        <div style="flex: 1; width: 50%;">
+            <div class="txt-container-width">
+                <div class="card-heading">
+                    <div class="sub-card-heading">How to Participate</div>
+                </div>
+                <div class="card-content">
+                    <p>Don’t let the technology overwhelm you. The online classes are easy to join and
+                        participate. Please see the video tutorial about how it works and download the
+                        Step-by-step Guide to assist you when you need it.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Second Part (50%) -->
+        <div style="flex: 1; width: 50%; ">
+            <div class='btn-container-width'>
+                <div class="step-margin">
+                    <a style="color: #448ba7;" class="span-content" href=#>
+                        <img class="span-style" src={downloadIcon}>
+                        STEP-BY-STEP-GUIDE
+                    </a>
+                </div>
+
+               
+        <!-- First Button -->
+        <a href={handleLiveClassScheduleClick} >
+            <div class="box-blue-button">
+                <button class="blue-button">LIVE CLASS SCHEDULE</button>
+            </div>
+        </a>
+        <!-- Second Button -->
+		<div class="tab-margin-top">
+        <a if:false={VALID_USER} href={handleGetStartedClick} >
+            <div class="box-white-button">
+                <button class="white-button">GET STARTED</button>
+            </div>
+        </a>
+		</div>
+    </div>
+</div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+  <hr class="card-line">
+    <!-- Second Row -->
+    <div class="row">
+        <!-- Second Column -->
+        <div class="column" style="flex: 1;">
+            <div class="image-background" style={participateBackground}>
+					<div class="icon-position">
+						<img style="filter: grayscale(0.8); width :7rem; height:auto;" src={butterfly}>
+					</div>
+					<div class="centered">Online classes are easy to participate in</div>
+					<div class="button-position">
+						<div class="box-blue-button-white-border">
+							<button class="blue-button" data-vimeoid={howToParticipateResourceId}
+								data-status='howtoparticipate' onclick={iframeHandler}>WATCH THE VIDEO</button>
+						</div>
+					</div>
+				</div>
+        </div>
+    </div>
+</div>
+<!-- tablet view for how to participate ends-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- desktop / mobile view for what are the live classes-->
+
+		<div class="desktop-view">
 		<div class="row">
 			<div class="column">
 				<div class="card-content-parent">
@@ -103,6 +238,77 @@
 				</div>
 			</div>
 		</div>
+		</div>
+	<!-- desktop / mobile view for what are the live classes ends-->	
+
+<!-- tablet view for what are the live classes-->
+
+<div class="tablet-view">
+    <div class="row">
+        <div class="column" style="display: flex;">
+            <div style="flex: 1; width: 50%;">
+                <div class="txt-container-width">
+                    <div class="card-heading">
+                        <div class="sub-card-heading"> Live Classes </div>
+                    </div>
+                    <div class="card-content">
+                        <p>PFNCA provides about 30 wellness classes live online each week focusing on exercise and
+                            voice strengthening.
+                        </p>
+                        <p style="color:#EAA273;margin-top: 2rem;"> Add CTA text about: Join our community and start
+                            enjoying the classes today. .
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1; width: 50%; ">
+                <div class="btn-container-width">
+                    <div class="step-margin">
+                        <a href={handleLiveClassScheduleClick}>
+                            <div class="box-blue-button">
+                                <button class="blue-button">LIVE CLASS SCHEDULE</button>
+                            </div>
+                        </a>
+						<div class="tab-margin-top">
+                        <a if:false={VALID_USER} href={handleGetStartedClick}>
+                            <div class="box-white-button">
+                                <button class="white-button">GET STARTED</button>
+                            </div>
+                        </a>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="card-line">
+    <div class="row">
+        <div class="column" style="flex: 1;">
+            <div class="image-background" style={liveClassBackground}>
+                <div class="icon-position">
+                    <img style="filter: grayscale(0.8); width :7rem; height:auto;" src={butterfly}>
+                </div>
+                <div class="centered">What are the live classes</div>
+                <div class="button-position">
+                    <div class="box-blue-button-white-border">
+                        <button class="blue-button" data-vimeoid={liveClassesResourceId} data-status='liveclasses'
+                            onclick={iframeHandler}>WATCH THE VIDEO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- tablet view for what are the live classes ends-->
+
+
+
+
+
+	<!-- desktop / mobile view for explore the taste of our class -->
+		<div class="desktop-view">
 		<div class="row">
 			<div class="column">
 				<div class="card-content-parent">
@@ -148,6 +354,71 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		<!-- desktop / mobile view for explore the taste of our class ends here-->
+
+
+
+
+
+<!-- tablet view for explore the taste of our class -->
+
+
+		<div class="tablet-view">
+    <div class="row">
+        <div class="column" style="display: flex;">
+            <div style="flex: 1; width: 50%;">
+                <div class="card-content-parent">
+                    <div class="txt-container-width">
+                        <div class="card-heading">
+                            <div class="sub-card-heading">Classes on Demand</div>
+                        </div>
+                        <div class="card-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                                ut labore et dolore magna aliqua.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1; width: 50%;">
+                <div class="btn-container-width">
+                    <div>
+                        <a href={handleClassOnDemandClick}>
+                            <div class="box-blue-button">
+                                <button class="blue-button">CLASSES ON DEMAND</button>
+                            </div>
+                        </a>
+						<div class="tab-margin-top">
+                        <a if:false={VALID_USER} href={handleGetStartedClick}>
+                            <div class="box-white-button">
+                                <button class="white-button">GET STARTED</button>
+                            </div>
+                        </a>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column" style="flex: 1;">
+            <div class="image-background" style={classesOnDemandBackground}>
+                <div class="icon-position">
+                    <img style="filter: grayscale(0.8); width :7rem; height:auto;" src={butterfly}>
+                </div>
+                <div class="centered">Explore a taste of our classes</div>
+                <div class="button-position">
+                    <div class="box-blue-button-white-border">
+                        <button class="blue-button" data-vimeoid={classesOnDemandResourceId} data-status='ondemand'
+                            onclick={iframeHandler}>WATCH THE VIDEO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 	</div>
 	<c-bwps_-contact-form_works></c-bwps_-contact-form_works>
 	<c-bwps_-w-i-p_-review-slider></c-bwps_-w-i-p_-review-slider>

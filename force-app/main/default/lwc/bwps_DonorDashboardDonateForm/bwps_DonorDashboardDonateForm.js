@@ -10,6 +10,9 @@ import sendingEmail from '@salesforce/apex/BWPS_TributeMail.sendingEmail';
 import googlePayImage from '@salesforce/resourceUrl/googlePayImage';
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
+import intTelInput from '@salesforce/resourceUrl/intTelInput';
+import imask from '@salesforce/resourceUrl/imask';
+import { loadScript, loadStyle } from 'lightning/platformResourceLoader';
 export default class Bwps_DonorDashboardDonateForm extends LightningElement {
     secureDonationImageUrl = secureDonationImage;
     @track count = 1;
@@ -19,6 +22,7 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
     @track tempRecurring;
     @track currentSelectBtn = '';
     @track currentRecurringType = '';
+    @track Donationval = '';
     //@api GatewayId ='a173C000002vIIv';
     @api OppId;
     mailreqvalidation;
@@ -44,13 +48,19 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
     MailingCountry = "";
     MailingCity = "";
     MailingStreet = "";
+    SendMailingCountry = "";
+    SendMailingZipCode = "";
+    SendMailingState = "";
+    SendMailingCity = "";
+    SendMailingApartment = "";
+    SendMailingStreet = "";
     Amounts = 0;
     PaymentMethod = "Credit Card";
     transactionCost = 8;
     coverTC = true;
     totalAmount = 0;
     showError = false;
-    giveOnce = false;
+    giveOnce = true;
     recurring = false;
     payMethodError = false;
     period = '';
@@ -77,10 +87,105 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
     CardSendAddress = false;
     honor = false;
     Inmemory = false;
+    paid = false;
     GivenHonorOrMemory = false;
     IncludeTransactionChargeCheckbox = true;
     @track donationcreated = false;
     flowApiName = "PaymentAccept";
+
+    @track inputElem;
+    @track iti;
+    @track mask;
+
+    connectedCallback() {
+        this.intilalizeLib();
+    }
+
+    intilalizeLib() {
+        loadStyle(this, intTelInput + '/democss.css')
+            .then(() => {
+            });
+        loadStyle(this, intTelInput + '/intlTelInputcss.css')
+            .then(() => {
+            });
+
+        Promise.all([loadScript(this, intTelInput + '/utilsjs.js'), loadScript(this, imask), loadScript(this, intTelInput + '/intlTelInputjs.js')])
+            .then(() => {
+
+                this.inputElem = this.template.querySelector("[data-id=Phone]");
+                this.iti = window.intlTelInput(this.inputElem, {
+
+                    // utilsScript: utils,
+                    preferredCountries: ['US','IN'],
+                    separateDialCode: true,
+                    //customContainer: "iti_margin",
+                    utilsScript: intTelInput + '/utilsjs.js',
+
+                });
+
+                const itiElement = this.template.querySelector(".iti__flag-container");
+                if (itiElement) {
+                    itiElement.style.margin = '0px 9%';
+                }
+
+                // const countryData = window.intlTelInputGlobals.getCountryData();
+                // console.log('cd ', JSON.stringify(window.intlTelInputGlobals));
+                let firstMaskChange = false;
+                this.inputElem.addEventListener('countrychange', (event) => {
+                    var selectedCountryData = this.iti.getSelectedCountryData();
+
+                    console.log("selectedCountryData ", JSON.stringify(selectedCountryData, null, 2));
+                    let newPlaceHolder = intlTelInputUtils.getExampleNumber(selectedCountryData.iso2, true, intlTelInputUtils.numberFormat.INTERNATIONAL);
+                    this.iti.setNumber("");
+
+
+                    let newmask = newPlaceHolder.replace(/[1-9]/g, "0");
+
+
+                    if (firstMaskChange) {
+
+                        this.mask.destroy();
+
+                        var maskOptions = {
+                            mask: newmask
+                        };
+                        this.mask = IMask(this.inputElem, maskOptions);
+                        this.mask.updateValue()
+
+                    } else {
+                        firstMaskChange = true;
+
+                        var maskOptions = {
+                            mask: newmask
+                        };
+                        this.mask = IMask(this.inputElem, maskOptions);
+                        console.log('mask : ', this.mask.toString());
+                    }
+                });
+
+                this.iti.promise.then(() => {
+                    this.inputElem.dispatchEvent(new CustomEvent('countrychange'));
+                })
+
+            })
+
+        // console.log('OUTPUT : Imask', JSON.stringify( imask.toString())  );
+
+
+    }
+
+    renderedCallback() {
+        console.log('Render Callback Run count');
+        console.log('card4 ', this.card4);
+        console.log('count ', this.count);
+        if (this.oppId != undefined && this.oppId != '' && this.count == 4) {
+            console.log('inside condition off pay ');
+            setTimeout(() => {
+                this.offpay();
+            }, 20000);
+        }
+    }
+
     get flowInputVariables() {
         console.log('this.OppId get ', this.OppId);
         return [
@@ -90,11 +195,6 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
                 value: this.OppId,//"0063C00000JqTWUQA3",//"a1D3C000000o66TUAQ",// this.OppId,
             }
         ];
-    }
-
-
-    renderedCallback() {
-        console.log('Render Callback Run');
     }
 
     getFormData(evt) {
@@ -116,7 +216,6 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
         }
         else if (fieldId == 'Phone') {
             this.Phone = this.template.querySelector(`[data-id='Phone']`).value;
-            console.log("Phone: ", this.Phone);
         }
         else if (fieldId == 'MailingApartment') {
             this.MailingApartment = this.template.querySelector(`[data-id= 'MailingApartment']`).value;
@@ -168,9 +267,34 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
             this.memoRLName = this.template.querySelector(`[data-id= 'memoriesRLName']`).value;
             console.log("memoRLName: ", this.memoRLName);
         }
-        else if (fieldId == 'SendMailAddress') {
+        /*else if (fieldId == 'SendMailAddress') {
             this.RecipientAddress = this.template.querySelector(`[data-id= 'SendMailAddress']`).value;
             console.log("RecipientAddress: ", this.RecipientAddress);
+            
+        }*/
+        else if (fieldId == 'SendMailingStreet') {
+            this.SendMailingStreet = this.template.querySelector(`[data-id= 'SendMailingStreet']`).value;
+            console.log("SendMailingStreet: ", this.SendMailingStreet);
+        }
+        else if (fieldId == 'SendMailingCity') {
+            this.SendMailingCity = this.template.querySelector(`[data-id= 'SendMailingCity']`).value;
+            console.log("SendMailingCity: ", this.SendMailingCity);
+        }
+        else if (fieldId == 'SendMailingApartment') {
+            this.SendMailingApartment = this.template.querySelector(`[data-id= 'SendMailingApartment']`).value;
+            console.log("SendMailingApartment: ", this.SendMailingApartment);
+        }
+        else if (fieldId == 'SendMailingState') {
+            this.SendMailingState = this.template.querySelector(`[data-id= 'SendMailingState']`).value;
+            console.log("SendMailingState: ", this.SendMailingState);
+        }
+        else if (fieldId == 'SendMailingZipCode') {
+            this.SendMailingZipCode = this.template.querySelector(`[data-id= 'SendMailingZipCode']`).value;
+            console.log("SendMailingZipCode: ", this.SendMailingZipCode);
+        }
+        else if (fieldId == 'SendMailingCountry') {
+            this.SendMailingCountry = this.template.querySelector(`[data-id= 'SendMailingCountry']`).value;
+            console.log("SendMailingCountry: ", this.SendMailingCountry);
         }
         else if (fieldId == 'memoriesMessage') {
             this.memoMessage = this.template.querySelector(`[data-id= 'memoriesMessage']`).value;
@@ -203,9 +327,9 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
     }
     memoData() {
         console.log("Memo data call");
-        const { base64, filename, recordId } = this.fileData
-        sendEmail({ base64, filename, recordId, name: this.memoName, email: this.memoEmail, description: this.memoMessage }).then(result => {
-        })
+        //const { base64, filename, recordId } = this.fileData
+        //sendEmail({ base64, filename, recordId, name: this.memoName, email: this.memoEmail, description: this.memoMessage }).then(result => {
+        //})
     }
 
     async handleClick() {
@@ -254,7 +378,12 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
                 "HonoreeName": this.memoName,
                 "RecipientName": this.RecipientName,
                 "RecipientEmail": this.memoEmail,
-                "RecipientAddress": this.RecipientAddress,
+                "RecipientAddress": this.SendMailingStreet + ' ' + this.SendMailingApartment + ' ' + this.SendMailingCity + ' ' + this.SendMailingState + ' ' + this.SendMailingCountry + ' ' + this.SendMailingZipCode,
+                "SendMailingCountry": this.SendMailingCountry,
+                "SendMailingZipCode": this.SendMailingZipCode,
+                "SendMailingState": this.SendMailingState,
+                "SendMailingCity": this.SendMailingCity,
+                "SendMailingStreet": this.SendMailingStreet + ' ' + this.SendMailingApartment,
                 "HonoreeDescription": this.memoMessage,
                 "tributetype": this.selectedtype
 
@@ -296,6 +425,8 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
                 "selectedCount": this.stopSelectedCount
             }
         }
+        this.donationcreated = false;
+        console.log("this.donationcreated ", this.donationcreated);
         console.log("inside before once");
         console.log("DataMap same ", JSON.stringify(this.tempRecurring));
         console.log("DataMap same  ", JSON.stringify(this.temp));
@@ -312,7 +443,7 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
             console.log("DataMap " + this.temp);
             console.log("DataMap 11111", JSON.stringify(this.temp));
             let str = 'hey';
-            await DonationRecs({ DataMap: this.temp, HonneePhoto: honorphoto })
+            await DonationRecs({ DataMap: this.temp, HonneePhoto: honorphoto, OpportunityDetails: this.OppId })
                 .then(result => {
                     this.DonationRecords = result;
                     console.log('result ', result);
@@ -329,10 +460,11 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
                     console.log('error JSOn ', JSON.stringify(error.body.message));
                 });
         }
+
         else if (this.recurring) {
             console.log("DataMap recurring " + this.tempRecurring);
             console.log("DataMap recurring 11111", JSON.stringify(this.tempRecurring));
-            await recurringRecs({ DataMap: this.tempRecurring, HonneePhoto: honorphoto })
+            await recurringRecs({ DataMap: this.tempRecurring, HonneePhoto: honorphoto, OpportunityDetails: this.OppId })
                 .then(result => {
                     this.DonationRecords = result;
                     console.log('result ', result);
@@ -418,58 +550,60 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
         }
     }
     GiveOnceOrMonthly(evt) {
-        let dataId = evt.currentTarget.dataset.id;
-        if (dataId == 'giveonce') {
+        let selectedtype = evt.target.value;
+        if (selectedtype == 'GiveOnce') {
             this.giveOnce = true;
             this.recurring = false;
             // this.period= '';
-            this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width selected-btn';
+            /*this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width selected-btn';
             this.template.querySelector("[data-id='monthly']").className = 'amount-div';
             this.template.querySelector("[data-id='quaterly']").className = 'amount-div';
             this.template.querySelector("[data-id='semiAnnual']").className = 'amount-div';
-            this.template.querySelector("[data-id='annual']").className = 'amount-div';
+            this.template.querySelector("[data-id='annual']").className = 'amount-div';*/
         }
-        else if (dataId == 'monthly') {
+        else if (selectedtype == 'Monthly') {
             this.giveOnce = false;
             this.recurring = true;
             this.period = 'Monthly';
-            this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width';
+            /*this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width';
             this.template.querySelector("[data-id='monthly']").className = 'amount-div selected-btn';
             this.template.querySelector("[data-id='quaterly']").className = 'amount-div';
             this.template.querySelector("[data-id='semiAnnual']").className = 'amount-div';
-            this.template.querySelector("[data-id='annual']").className = 'amount-div';
+            this.template.querySelector("[data-id='annual']").className = 'amount-div';*/
         }
-        else if (dataId == 'quaterly') {
+        else if (selectedtype == 'Quaterly') {
             this.giveOnce = false;
             this.recurring = true;
             this.period = 'Quarterly';
-            this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width';
-            this.template.querySelector("[data-id='monthly']").className = 'amount-div';
-            this.template.querySelector("[data-id='quaterly']").className = 'amount-div selected-btn';
-            this.template.querySelector("[data-id='semiAnnual']").className = 'amount-div';
-            this.template.querySelector("[data-id='annual']").className = 'amount-div';
+            /* this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width';
+             this.template.querySelector("[data-id='monthly']").className = 'amount-div';
+             this.template.querySelector("[data-id='quaterly']").className = 'amount-div selected-btn';
+             this.template.querySelector("[data-id='semiAnnual']").className = 'amount-div';
+             this.template.querySelector("[data-id='annual']").className = 'amount-div';*/
         }
-        else if (dataId == 'semiAnnual') {
+        else if (selectedtype == 'Semi Annual') {
             this.giveOnce = false;
             this.recurring = true;
             this.period = 'Semiannual';
-            this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width';
+            /*this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width';
             this.template.querySelector("[data-id='monthly']").className = 'amount-div ';
             this.template.querySelector("[data-id='quaterly']").className = 'amount-div';
             this.template.querySelector("[data-id='semiAnnual']").className = 'amount-div selected-btn';
-            this.template.querySelector("[data-id='annual']").className = 'amount-div';
+            this.template.querySelector("[data-id='annual']").className = 'amount-div';*/
         }
-        else if (dataId == 'annual') {
+        else if (selectedtype == 'Annual') {
             this.giveOnce = false;
             this.recurring = true;
             this.period = 'Annual';
-            this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width';
-            this.template.querySelector("[data-id='monthly']").className = 'amount-div ';
-            this.template.querySelector("[data-id='quaterly']").className = 'amount-div';
-            this.template.querySelector("[data-id='semiAnnual']").className = 'amount-div';
-            this.template.querySelector("[data-id='annual']").className = 'amount-div selected-btn';
+            //this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width';
+            //this.template.querySelector("[data-id='monthly']").className = 'amount-div ';
+            //this.template.querySelector("[data-id='quaterly']").className = 'amount-div';
+            //this.template.querySelector("[data-id='semiAnnual']").className = 'amount-div';
+            //this.template.querySelector("[data-id='annual']").className = 'amount-div selected-btn';
         }
-        console.log("period:>>>>>>>>>>>> ", this.period);
+        console.log('Give once ', this.giveOnce);
+        console.log('Give period ', this.period);
+        console.log('Give recurring ', this.recurring);
     }
     amountInputChange(evt) {
         let val = evt.target.value;
@@ -724,6 +858,9 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
         }
     }
     backClickHandler() {
+
+        this.intilalizeLib();
+
         this.count--;
         this.creditcard = false;
         this.gpay = false;
@@ -747,28 +884,28 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
             this.card1 = false; this.card2 = false; this.card3 = true; this.card4 = false;
             if (this.giveOnce == true) {
                 setTimeout(() => {
-                    this.template.querySelector("[data-id='giveonce']").className = 'amount-div amount-div-full-width selected-btn';
+                    this.template.querySelector("[data-id='giveonce']").value = 'GiveOnce';
                 }, 200);
             }
             else if (this.recurring == true) {
                 if (this.period == 'Monthly') {
                     setTimeout(() => {
-                        this.template.querySelector("[data-id='monthly']").className = 'amount-div selected-btn';
+                        this.template.querySelector("[data-id='monthly']").value = 'Monthly';
                     }, 200);
                 }
                 else if (this.period == 'Quarterly') {
                     setTimeout(() => {
-                        this.template.querySelector("[data-id='quaterly']").className = 'amount-div selected-btn';
+                        this.template.querySelector("[data-id='quaterly']").value = 'Quaterly';
                     }, 200);
                 }
                 else if (this.period == 'Semiannual') {
                     setTimeout(() => {
-                        this.template.querySelector("[data-id='semiAnnual']").className = 'amount-div selected-btn';
+                        this.template.querySelector("[data-id='semiAnnual']").value = 'Semi Annual';
                     }, 200);
                 }
                 else if (this.period == 'Annual') {
                     setTimeout(() => {
-                        this.template.querySelector("[data-id='annual']").className = 'amount-div selected-btn';
+                        this.template.querySelector("[data-id='annual']").className = 'Annual';
                     }, 200);
                 }
             }
@@ -843,7 +980,8 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
         console.log("element>>>>>>>>>", pay);
         if (pay == 'cc') {
             //count++;
-            this.creditcard = false;
+            this.creditcard = true;
+
             this.gpay = false;
             this.paypal = false;
             this.banktransfer = false;
@@ -855,6 +993,7 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
             console.log('this.OppId ', this.OppId);
             this.closecancel = false;
             this.flowcall = true;
+            this.paid = true;
             // this.template.querySelector(`[data-id='cc']`).className = 'payment-options-btn selected-btn';
             // this.template.querySelector(`[data-id='pp']`).className = 'payment-options-btn '; 
             // this.template.querySelector(`[data-id='gp']`).className = 'payment-options-btn '; 
@@ -863,7 +1002,7 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
         else if (pay == 'pp') {
             this.creditcard = false;
             this.gpay = false;
-            this.paypal = false;
+            this.paypal = true;
             this.banktransfer = false;
             this.card1 = false;
             this.card2 = false;
@@ -877,7 +1016,7 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
         }
         else if (pay == 'gp') {
             this.creditcard = false;
-            this.gpay = false;
+            this.gpay = true;
             this.paypal = false;
             this.banktransfer = false;
             this.card1 = false;
@@ -903,6 +1042,7 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
             this.off();
             console.log('this.OppId ', this.OppId);
             this.flowcall = true;
+            this.paid = true;
             // this.template.querySelector(`[data-id='cc']`).className = 'payment-options-btn ';
             // this.template.querySelector(`[data-id='pp']`).className = 'payment-options-btn '; 
             // this.template.querySelector(`[data-id='gp']`).className = 'payment-options-btn '; 
@@ -1018,7 +1158,8 @@ export default class Bwps_DonorDashboardDonateForm extends LightningElement {
                 if (result == 'Approved') {
                     console.log('result inside if', result);
                     console.log('before mail');
-                    this.sendmail();
+                    //this.sendmail();
+                    window.location.reload();
                 }
                 else if (result == 'Failed') {
                     console.log('result inside else if', result);

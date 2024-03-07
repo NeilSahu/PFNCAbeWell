@@ -42,14 +42,25 @@
 								<form class="form">
 									<div class="input-box">
 
-										<label for="memberEmailAddress">Email Address*</label>
-										<input id="memberEmailAddress"  data-id="memberEmailAddress" placeholder="Email Address" type="email" onchange={handleUserNameChange} required>
+										<label for="memberEmailAddress">Email*</label>
+										<input id="memberEmailAddress"  data-id="memberEmailAddress" placeholder="Email" type="email" onchange={handleUserNameChange} required>
+										<span class={requiredTooltipDisplayData.loginusername}>You have entered wrong username or password.</span>
 
                             </div>
 										<div class="input-box">
 
 											<label for="memberPassword">Password*</label>
-											<input id="memberPassword" data-id="memberPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required>
+											<div class="password-container">
+												<input if:true={loginPasswordVisible} id="memberPassword" data-id="memberPassword" placeholder="Password" type="text" onchange={handlePasswordChange} value={password} required>
+												<input if:false={loginPasswordVisible} id="memberPasswordHide" data-id="memberPassword" placeholder="Password" type="password" onchange={handlePasswordChange} value={password} required>
+												<!-- <input id="becomeMemberPassword" data-id="becomeMemberPassword" placeholder="Password" type="password" value={password} onchange={handlePasswordChange} required> -->
+												<div class="eye-icon" onclick={toggleLoginPasswordVisibility}>
+													<lightning-icon if:true={loginPasswordVisible} icon-name='utility:hide' size="small"></lightning-icon>
+													<lightning-icon if:false={loginPasswordVisible} icon-name='utility:preview' size="small"></lightning-icon>
+												</div>
+											</div>
+											<!-- <input id="memberPassword" data-id="memberPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required> -->
+											<span class={requiredTooltipDisplayData.loginpassword}>You have entered wrong username or password.</span>
 
                             </div>
 
@@ -72,7 +83,7 @@
 							</template>
 							<template if:true={showBecomeMember}>
 								<form class="form">
-										<p>Start your membership today. Your will get access to
+										<p style="width:100%;">Start your membership today. Your will get access to
 										our platform,you will be asked to pay a $50.00 membership fee.</p>
 									<div class="input-box half-width">
 
@@ -103,19 +114,40 @@
 
 									<div class="input-box">
 										<label for="becomeMemberPassword">Password*</label>
-										<input id="becomeMemberPassword" data-id="becomeMemberPassword" placeholder="Password" type="password" value={password} onchange={handlePasswordChange} required>
+										<div class="password-container">
+											<input if:true={memberPasswordVisible} id="becomeMemberPassword" data-id="becomeMemberPassword" placeholder="Password" type='text' value={password} onchange={handlePasswordChange} required>
+											<input if:false={memberPasswordVisible} id="becomeMemberPasswordHide" data-id="becomeMemberPassword" placeholder="Password" type="password" value={password} onchange={handlePasswordChange} required>
+											<!-- <input id="becomeMemberPassword" data-id="becomeMemberPassword" placeholder="Password" type="password" value={password} onchange={handlePasswordChange} required> -->
+											<div class="eye-icon" onclick={toggleMemberPasswordVisibility}>
+												<lightning-icon if:true={memberPasswordVisible} icon-name='utility:hide' size="small"></lightning-icon>
+												<lightning-icon if:false={memberPasswordVisible} icon-name='utility:preview' size="small"></lightning-icon>
+											</div>
+										</div>
 										<span class={requiredTooltipDisplayData.password}>This field is required.</span>
 										<span class={errorTooltipDisplayData.password}>{passwordError}</span>
 									</div>
 									<div class="input-box">
 										<label for="becomeMemberconfirm">Confirm Password*</label>
-										<input id="becomeMemberconfirm" data-id="becomeMemberconfirm" placeholder="Confirm Password" type="password" value={confirmPassword} onchange={handleconfirmPassword} required>
+										<div class="password-container">
+											<input if:true={memberConfirmPasswordVisible} id="becomeMemberconfirm" data-id="becomeMemberconfirm" placeholder="Confirm Password" type="text" value={confirmPassword} onchange={handleconfirmPassword} required>
+											<input if:false={memberConfirmPasswordVisible} id="becomeMemberconfirmHide" data-id="becomeMemberconfirm" placeholder="Confirm Password" type="password" value={confirmPassword} onchange={handleconfirmPassword} required>
+											<!-- <input id="becomeMemberPassword" data-id="becomeMemberPassword" placeholder="Password" type="password" value={password} onchange={handlePasswordChange} required> -->
+											<div class="eye-icon" onclick={toggleMemberConfirmPasswordVisibility}>
+												<lightning-icon if:true={memberConfirmPasswordVisible} icon-name='utility:hide' size="small"></lightning-icon>
+												<lightning-icon if:false={memberConfirmPasswordVisible} icon-name='utility:preview' size="small"></lightning-icon>
+											</div>
+										</div>
+										<!-- <input id="becomeMemberconfirm" data-id="becomeMemberconfirm" placeholder="Confirm Password" type="password" value={confirmPassword} onchange={handleconfirmPassword} required> -->
 										<span class={requiredTooltipDisplayData.confirmPassword}>This field is required.</span>
 										<span class={errorTooltipDisplayData.confirmPassword}>{passwordError}</span>
 									</div>
+									<!-- <div class="input-box ">
+										<label for="usernamebecomeamember">Your Username</label>
+										<input id="usernamebecomeamember" data-id="usernamebecomeamember"  type="text" value={becomeAMemberUserName} readonly>
+									</div> -->
 								</form>
 								<div class="button-box">
-									<button type="button" onclick={handleRegister}>MAKE A PAYMENT</button>
+									<button type="button" onclick={handleRegister}>PAY $50</button>
 								</div>
 							</template>
 							<template if:true={showGetAGuestPass}>
@@ -156,16 +188,38 @@
 									<div class="input-box half-width">
 
 										<label for="guestPassword">Password*</label>
-										<input id="guestPassword" data-id="guestPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required>
+										<div class="password-container">
+											<input if:true={guestPasswordVisible} id="guestPassword" data-id="guestPassword" placeholder="Password" type="text" onchange={handlePasswordChange} value={password} required>
+											<input if:false={guestPasswordVisible} id="guestPasswordHide" data-id="guestPassword" placeholder="Password" type="password" onchange={handlePasswordChange} value={password} required>
+											<!-- <input id="becomeMemberPassword" data-id="becomeMemberPassword" placeholder="Password" type="password" value={password} onchange={handlePasswordChange} required> -->
+											<div class="eye-icon" onclick={toggleGuestPasswordVisibility}>
+												<lightning-icon if:true={guestPasswordVisible} icon-name='utility:hide' size="small"></lightning-icon>
+												<lightning-icon if:false={guestPasswordVisible} icon-name='utility:preview' size="small"></lightning-icon>
+											</div>
+										</div>
+										<!-- <input id="guestPassword" data-id="guestPassword" placeholder="Password" type="password" onchange={handlePasswordChange} required> -->
 										<span class={requiredTooltipDisplayData.password}>This field is required.</span>
 										<span class={errorTooltipDisplayData.password}>{passwordError}</span>
 									</div>
 									<div class="input-box">
 										<label for="guestconfirm">Confirm Password*</label>
-										<input id="guestconfirm" data-id="guestconfirm" placeholder="Confirm Password" type="password" value={confirmPassword} onchange={handleconfirmPassword} required>
+										<div class="password-container">
+											<input if:true={guestConfirmPasswordVisible} id="guestconfirm" data-id="guestconfirm" placeholder="Confirm Password" type="text" value={confirmPassword} onchange={handleconfirmPassword} required>
+											<input if:false={guestConfirmPasswordVisible} id="guestconfirmHide" data-id="guestconfirm" placeholder="Confirm Password" type="password" value={confirmPassword} onchange={handleconfirmPassword} required>
+											<!-- <input id="becomeMemberPassword" data-id="becomeMemberPassword" placeholder="Password" type="password" value={password} onchange={handlePasswordChange} required> -->
+											<div class="eye-icon" onclick={toggleGuestConfirmPasswordVisibility}>
+												<lightning-icon if:true={guestConfirmPasswordVisible} icon-name='utility:hide' size="small"></lightning-icon>
+												<lightning-icon if:false={guestConfirmPasswordVisible} icon-name='utility:preview' size="small"></lightning-icon>
+											</div>
+										</div>
+										<!-- <input id="guestconfirm" data-id="guestconfirm" placeholder="Confirm Password" type="password" value={confirmPassword} onchange={handleconfirmPassword} required> -->
 										<span class={requiredTooltipDisplayData.confirmPassword}>This field is required.</span>
 										<span class={errorTooltipDisplayData.confirmPassword}>{passwordError}</span>
 									</div>
+									<!-- <div class="input-box ">
+										<label for="usernameguestuser">Your Username</label>
+										<input id="usernameguestuser" data-id="usernameguestuser"  type="text" value={GuestUserUserName} readonly>
+									</div> -->
 									<div class="button-box">
 										<button type="submit" onclick={handleRegister} >SIGN UP</button>
 									</div>
@@ -297,9 +351,9 @@
 
 										<div class="button-box">
 											<button type="submit" onclick={handleLogin}>LOGIN</button>
-											<!-- <span>
+											<span>
                                     * Required
-                                </span> -->
+                                </span>
 										</div>
 
 
@@ -335,9 +389,9 @@
 
 										<div class="button-box">
 											<button type="submit" onclick={handleLogin}>LOGIN</button>
-											<!-- <span>
+											<span>
                                     * Required
-                                </span> -->
+                                </span>
 										</div>
 
 

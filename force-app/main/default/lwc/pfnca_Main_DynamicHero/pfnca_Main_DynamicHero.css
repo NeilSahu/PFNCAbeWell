@@ -51,7 +51,7 @@ color: #ffffff;
     width: 100%;
     padding: 0 1rem; */
     
-    width:  41.6875rem;
+    /* width:  41.6875rem; */
     font-family: "IBM Plex Sans";
     font-size: 22px;
     font-weight: bold;
@@ -59,6 +59,7 @@ color: #ffffff;
     font-style: normal;
     text-align: center;
     color: #ffffff;
+    
 }
 
 .social-media-button{
@@ -97,17 +98,18 @@ color: #ffffff;
     height: auto;
     padding: 0.25rem;
     border: 1px solid var(--pfnca-color-white); 
+    
 }
 .blue-button {
-    padding: 0.5rem 0.8rem;
-    margin: auto;
+    padding: 0rem 2.125rem;
+    /* margin: auto; */
     background-color: var(--pfnca-color-primary);
     color: var(--pfnca-color-white);
     border: 1px solid var(--pfnca-color-white4D); 
     font-family: "IBM Plex Sans";
     font-size: 18px;
     font-weight: 500;
-    line-height: 24px;
+    /* line-height: 24px; */
     font-style: normal;
     text-align: center;
 }

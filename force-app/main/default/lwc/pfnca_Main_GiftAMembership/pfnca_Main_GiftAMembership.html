@@ -62,17 +62,19 @@
 
 									<div class="input-box">
 										<label for="amount">Enter Amount($)*</label>
-										<input id="amount" data-id="amount" min="1" type="number" placeholder="USD" value={amountValue}
+										<input id="amount" data-id="amount" min="1" type="number" value={amountValue}
 											onchange={handleAmount} onclick={handletotal} required readonly>
 									</div>
 									<div class="additional-info">
-										<h4>
+										<!-- <h4>
 											Optional Donation Opportunities
-										</h4>
-										<p> Your support helps ParkinsonFoundation.org/Be Well Parkinson’s continue
+										</h4> -->
+										<p> Optional Donation Opportunities<br>
+											Your support helps ParkinsonFoundation.org/Be Well Parkinson’s continue
 											providing programs and services to those impacted by Parkinson’s
 											Disease.
-											Thank you for your consideration.</p>
+											Thank
+											you for your consideration.</p>
 									</div>
 									<!-- <div class="radio-button-group">
 
@@ -298,5 +300,6 @@
 	<template if:true={showSpinner}>
 		<lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
 	</template>
-    <c-pfnca_-main_-stay-connected-footer></c-pfnca_-main_-stay-connected-footer>
+	
+<c-pfnca_-main_-stay-connected-footer></c-pfnca_-main_-stay-connected-footer>
 </template>

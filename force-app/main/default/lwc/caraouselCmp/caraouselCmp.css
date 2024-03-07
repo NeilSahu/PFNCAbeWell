@@ -4,35 +4,20 @@
     width: 100% !important;
     position: relative;
 }
-
-
 .container img{
-    /* height: auto; */
     width: 100%;
     height: 740px;
     object-fit: cover;
     opacity: 0.86;
 }
-
 .img-bg{
     background: #193a5a;
 }
-
-
-.imageClass{
-    /* aspect-ratio:16/9; */
-}
-
 .fade {
     animation-name: fade;
     animation-duration: 1.5s;
 }
-
 .text-section {
-    /* color: #f2f2f2; */
-    /* font-size: 15px; */
-    /* margin: 0px auto 10rem; */
-    /* right: 44%; */
     position: absolute;
     width: fit-content;
     text-align: center;
@@ -40,14 +25,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
-
 .heading-text {
-    /* font-size: 3rem;
-    font-weight: 700;
-    font-family: PlayfairDisplay;
-    margin:0px auto 1rem;
-    width: fit-content;
-    color: #f2f2f2; */
     margin: 0px auto 2rem;
     width: fit-content;
     letter-spacing: 0px;
@@ -60,15 +38,7 @@
     text-align: center;
     color: #ffffff;
 }
-
 .description-text{
-    /* text-align: center;
-    font-weight: 500;
-    font-size: 1.375rem;
-    margin-bottom: 2rem;
-    color: #ffffff;
-    opacity: 1;
-    width: 28rem; */
     margin-bottom: 2rem;
     width: fit-content;
     letter-spacing: 0px;
@@ -81,7 +51,6 @@
     text-align: center;
     color: #ffffff;
 }
-
 .box-blue-button {
     background-color: #008BA7;
     color: white;
@@ -91,15 +60,7 @@
     margin: 0px auto;
     border: 1px solid var(--pfnca-color-white); 
 }
-
 .blue-button {
-    /* padding: 0.5rem 1rem;
-    margin: auto;
-    font-size: 1.125rem;
-    text-transform: uppercase;
-    background-color: #008bA7;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.5); */
     padding: 0.5rem 0.8rem;
     margin: auto;
     background-color: var(--pfnca-color-primary);
@@ -115,14 +76,11 @@
     font-style: normal;
     text-align: center;
 }
-
 .blue-button:hover{
     background-color: var(--pfnca-color-primaryDarker);
 }
-
 .prev,
 .next {
-    /* border-radius: 0 3px 3px 0; */
     position: absolute;
     top: 50%;
     width: auto;
@@ -141,18 +99,13 @@
     margin: 0 2rem;
     font-size: small;
 }
-
 .next {
-    /* border-radius: 3px 0 0 3px; */
     right: 0;
 }
-
 .prev:hover,
 .next:hover {
-    /* background: rgba(0, 0, 0, 0.8); */
     background-color: var(--pfnca-color-primaryDarker);
 }
-
 .dotes{
     bottom: 1rem;
     right: 47%;
@@ -160,7 +113,6 @@
     text-align: center;
     padding: 1rem;
 }
-
 .dot {
     height: 15px;
     width: 15px;
@@ -170,7 +122,6 @@
     margin: 0 2px;
     display: inline-block;
 }
-
 .active,
 .dot:hover {
     background-color: #008BA7;
@@ -185,19 +136,13 @@
         opacity: 1
     }
 }
-@media only screen and (max-width: 1200px) and (min-width: 1024px){
-    .dotes{
-       right: 45%;
-   }
-}
-@media only screen and (max-width: 1024px) and (min-width: 768px){
+@media only screen and (max-width: 1200px) and (min-width: 768px){
     .dotes{
        right: 45%;
    }
 }
 @media only screen and (max-width: 768px) and (min-width: 480px){
     .container img {
-        /* height: 29rem; */
         width: 100%;
         height: 600px;
         object-fit: cover;
@@ -209,11 +154,9 @@
         font-size: 45px;
         line-height: 55px;
     }
-
 }
 @media only screen and (max-width: 480px) and (min-width: 0px){
     .container img {
-        /* height: 29rem; */
         width: 100%;
         height: 450px;
         object-fit: cover;
@@ -224,7 +167,6 @@
         margin: 0px auto 0.5rem;
    }
    .description-text {
-        /* width: 18rem; */
         font-size: 16px;
         line-height: 22px;
         margin-bottom: 0.5rem;
@@ -234,56 +176,19 @@
        bottom: 0px;
        padding: 0px 1rem;
    }
-
    .blue-button {
         font-size: 14px;
         line-height: 21px;  
         padding: 4px;
     }
-
     .prev,
     .next {
         margin: 0 0.5rem;
         padding: 8px;
     }
-
     .dot {
         height: 12px;
         width: 12px;
         margin: 0 2px;
     }
-
-
-   /* .description-text{
-       font-size: 1rem;
-       
-   } */
 }
-
-
-/* .slds-col_padded,
-.slds-col--padded {
-    padding: 0rem !important;
-}
-
-.bg-image {
-    filter: blur(1px);
-    height: 32rem;
-    width: 100%;
-    background:linear-gradient(
-          rgba(0, 0, 0, 0.7), 
-          rgba(0, 0, 0, 0.7)
-        );
-}
-
-.slideNumbers {
-    font-size: 12px;
-    position: absolute;
-    padding: 8px 12px;
-    top: 0;
-    color: #f2f2f2;
-} 
-@font-face {
-    font-family: PlayfairDisplay;
-    src: url(/resource/PlayfairDisplayFont);
-} */

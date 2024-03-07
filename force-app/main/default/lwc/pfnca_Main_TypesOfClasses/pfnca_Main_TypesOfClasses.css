@@ -1,3 +1,4 @@
+@import 'c/sharedStyles';
 :host {
     --colr-primary: #008BA7;
     --colr-primary-dark: #193A5A;
@@ -12,7 +13,7 @@
     --colr-regular-font: #343a40;
 }
 .container{
-    padding: 1rem 4rem;
+    padding: 1rem 3rem;
     --color-blue: #008ba7;
     --color-black: black;
     --color-lightblue: #24b9ca;
@@ -20,15 +21,12 @@
 }
 
 .main{
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
+
 .class-type{
     display:flex;
-    gap: 0 4rem;
-    padding-block: 4rem;
     border-bottom: 2px solid var(--color-blue);
-    
 }
 
 .detail-box h2{
@@ -74,7 +72,7 @@
     background-color: var(--colr-primary-darker);
    
 }
-.icon-box div{ 
+/* .icon-box div{ 
     display: grid;
     place-items: center;
     width: 6rem;
@@ -84,11 +82,18 @@
     overflow: hidden;
 }
 
+
 .icon-box img{
     object-fit: contain;
     max-height: 4rem;
+} */
 
-}
+
+/* .icon-box{
+border: 1px solid var(--color-blue);
+} */
+
+
 .intensity{
     text-align: left;
     font: normal normal bold 22px/28px IBMPlexSans;
@@ -141,9 +146,10 @@
 
 
 
-@media only screen and (max-width: 1200px) and (min-width: 1024px){
+@media  screen and (max-width: 1024px) and (min-width: 768px){
+    .main{
+    flex-direction: column;
 }
-@media only screen and (max-width: 1024px) and (min-width: 768px){
     .intensity-levels{
         padding: 0rem
     }
@@ -162,6 +168,8 @@
         margin-bottom: 4rem;
     }
 }
+
+
 @media only screen and (max-width: 768px) and (min-width: 480px){
 
     .container{
@@ -173,15 +181,14 @@
         padding-block: 3rem;
     }
 
-    .icon-box div{
+    /* .icon-box div{
         width: 5rem;
         height: 5rem;
     }
 
     .icon-box img{
-        max-height: 3rem;
-        
-    }
+        max-height: 3rem;  
+    } */
 
     .detail-box p{
         padding: 1.5rem 0;
@@ -216,16 +223,15 @@
         padding-block: 3rem;
         flex-direction: column;
     }
-
+/* 
     .icon-box div{
         width: 5rem;
         height: 5rem;
     }
 
     .icon-box img{
-        max-height: 3rem;
-        
-    }
+        max-height: 3rem; 
+    } */
 
     .detail-box p{
         padding: 1.5rem 0;
@@ -260,6 +266,8 @@
         flex-direction: column;
     }
 
+    
+
     .icon-box div{
         width: 5rem;
         height: 5rem;
@@ -291,4 +299,41 @@
         flex-direction: column;
         margin-bottom: 4rem;
     }
+}
+/* Changes by */
+.button-container{
+    display: flex;
+    gap: 5rem;
+}
+.box-blue-button {
+    background-color:var(--pfnca-color-primary);
+    width: fit-content;
+    height: auto;
+    padding: 0.2rem; 
+    /* white-space: nowrap; */
+}
+
+.blue-button {
+    padding: 0.5rem 1rem;
+    /* margin: auto; */
+    background-color: var(--pfnca-color-primary);
+    color: var(--pfnca-color-white);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.blue-button:hover{
+    background-color: var(--pfnca-color-primaryDarker);
+}
+
+.button-container{
+    display: flex;
+}
+
+.main{
+    flex-direction: row;
+}
+
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px){
+    
 }

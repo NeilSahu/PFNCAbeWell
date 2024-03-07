@@ -204,19 +204,28 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 13px auto 5px;
     height: 2rem;
     font-weight: 900;
-    color: #008ba7;
+    gap: 32px;
 }
 
 .card-heading h3{
     margin-top: 6px;
     margin-left: 5px;
     font-size: 16px;
-    font-family: IBMPlexSans;
+    /* font-family: IBMPlexSans; */
+
+font-family: "IBM Plex Sans";
+/* font-size: 22px; */
+font-weight: bold;
+line-height: 28px;
+font-style: normal;
+text-align: center;
+color: #000000;
 }
 .page-navigator{
     display: flex;
     width: fit-content;
     margin: 0px auto;
+    padding-left: 45px;
 }
 .round-span{
     height: 25px;
@@ -259,13 +268,22 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 1rem 0rem 2rem;
 }
 .card-input  label{
-    color: #343a40;
+    /* color: #343a40;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: bold; */
     margin: 1% 9%;
+
+    
+font-family: "IBM Plex Sans";
+font-size: 20px;
+font-weight: bold;
+line-height: 24px;
+font-style: normal;
+text-align: left;
+color: #343a40;
 }
 .card-input  input{
-    border: 1px solid #008ba7;
+    /* border: 1px solid #008ba7; */
     height: 2.5rem;
     margin: 0px 9% 0.4rem;
     padding: 0px 16px;
@@ -276,6 +294,17 @@ input[type=number]::-webkit-outer-spin-button {
     /* margin: 0px 9% 1rem; */
     /* padding: 0px 16px; */
     /* font-size: 0.8rem; */
+
+border-color: #008ba7;
+border-width: 1px;
+border-style: solid;
+background: #ffffff
+
+
+}
+
+.iti__flag-container{
+    margin: 0px 9%;
 }
 
 .card-error-input{
@@ -296,16 +325,37 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .state input{
     margin: 0% 0% !important;
-    width: -webkit-fill-available;
-    width: -moz-available;
+    /* width: -webkit-fill-available; */
+    /* width: -moz-available; */
 }
 .state label{
     margin: 0% 0% !important;
 }
 .state div{
-    width:49% 
+    /* width:49%  */
 }
 .state div:nth-child(1){
+    margin-right: 7px;    
+}
+.SendMailAddInput{
+    margin-bottom: 5px;
+}
+.Sendstate{
+    display: flex;
+    
+}
+.Sendstate input{
+    margin: 0% 0% !important;
+    /* width: -webkit-fill-available;
+    width: -moz-available; */
+}
+.Sendstate label{
+    margin: 0% 0% !important;
+}
+.Sendstate div{
+    /* width:49%  */
+}
+.Sendstate div:nth-child(1){
     margin-right: 7px;    
 }
 .amount-section{
@@ -372,10 +422,18 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
     padding-left: 28px;
     margin-bottom: 12px;
-    font-size: 15px;
+    /* font-size: 15px; */
     user-select: none;
     width: fit-content;
     /* margin: 1rem auto; */
+    font-family: "IBM Plex Sans";
+font-size: 18px;
+font-weight: normal;
+line-height: 24px;
+font-style: normal;
+text-align: left;
+color: #000000;
+
   }
   
   /* Hide the browser's default checkbox */
@@ -431,6 +489,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: column;
     margin: 0rem 0rem 0.5rem;
+    
 }
 .GiveHonorName{
     border: 1px solid #008ba7;
@@ -441,13 +500,14 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: bold;
     margin: 1% 2%;
     font-size: 1rem;
+    margin-left: 0rem;
 }
 .name-input input{
     /* border: 1px solid #008ba7; */
     height: 2.7rem;
     /* border-radius: 9px; */
     /* margin: 0px 9% 5px; */
-    padding: 0px 5%;
+    //padding: 0px 5%;
     /* font-size: 0.8rem; */
     font-size: 1rem;
 }
@@ -483,10 +543,18 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
 }
 .entered-amount {
-    text-align: center;
+    /* 
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 600; */
     margin-top:2rem;
+
+    
+font-family: "IBM Plex Sans";
+font-size: 18px;
+font-weight: bold;
+font-style: normal;
+text-align: center;
+color: #343a40;
 }
 
 .costs-cover {
@@ -495,21 +563,43 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .transaction-cost{
     margin: 7% 5% 12%;
-    font-size: 14px;
+    /* font-size: 14px; */
+    font-family: "IBM Plex Sans";
+font-size: 18px;
+font-weight: normal;
+line-height: 24px;
+font-style: normal;
+text-align: left;
+color: #000000;
 }
+
 .cost span:nth-child(2){
     float:right;
-    padding-right: 6px;
+    padding-right:  16px;
+   
 }
 .donate-now span:nth-child(2){
     float:right;
     padding-right: 6px;
+    /* font-family: "IBM Plex Sans";
+font-size: 18px;
+font-weight: normal;
+line-height: 24px;
+font-style: normal;
+
+color: #000000; */
 }
 .payment-option h1{
     text-align: center;
-    font-size: 16px;
-    font-weight: 600;
+    /* font-size: 16px;
+    font-weight: 600; */
     margin-bottom: 1rem;
+    font-family: "IBM Plex Sans";
+font-size: 18px;
+font-weight: bold;
+font-style: normal;
+/* text-align: left; */
+color: #343a40;
 }
 
 .payment-options-btn{
@@ -527,6 +617,11 @@ input[type=number]::-webkit-outer-spin-button {
 .payment-options-btn img{
     margin-right: 0.5rem;
 }
+.picklist-Val {
+    width: 90%;
+    cursor: pointer;
+}
+
 .selected-btn{
     background-color:#008BA7 !important;
     color: white !important;

@@ -115,11 +115,6 @@ export default class Pfnca_header extends NavigationMixin(LightningElement) {
         this.menuStyle = 'color: #DEE2E6';
     }
 
-    openNavigateToDonatePage() {
-        const paymentComp = this.template.querySelector('c-bwps_-Donor-Dashboard-Donate-Form');
-        paymentComp.donateClickHandler();
-    }
-
     handleMobileNavModalClose() {
         let mobileModal = this.template.querySelector(`[data-id="m-header-main"]`);
         mobileModal.style = `display: none`;
@@ -136,10 +131,14 @@ export default class Pfnca_header extends NavigationMixin(LightningElement) {
         mobileTop.style = `display: none`;
     }
 
-
+    // Donate & join button
+    openNavigateToDonatePage() {
+        //const paymentComp = this.template.querySelector('c-pfnca_-Main_-Donor-Dashboard-Donate-Form');
+        // const paymentComp = this.template.querySelector('c-bwps_-Donor-Dashboard-Donate-Form');
+        // paymentComp.donateClickHandler();
+    }
 
     //tool tip
-
     handleShowDonationToolTip() {
         console.log('handletooltip', this.currentPageReference.attributes.name);
         if (this.currentPageReference.attributes.name == 'bwps_WIP_SignIn__c') {
